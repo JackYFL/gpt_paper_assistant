@@ -60,6 +60,8 @@ def calc_price(model, usage):
         return (0.0015 * usage.prompt_tokens + 0.002 * usage.completion_tokens) / 1000.0
     elif "gpt-4o" in model:
         return (0.0025 * usage.prompt_tokens + 0.01 * usage.completion_tokens) / 1000.0
+    elif "gpt-4.1" in model:
+        return (0.002 * usage.prompt_tokens + 0.008 * usage.completion_tokens) / 1000.0
 
 @retry.retry(tries=3, delay=2)
 def call_chatgpt(full_prompt, openai_client, model):
