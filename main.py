@@ -258,7 +258,7 @@ if __name__ == "__main__":
         attachment_path = f"out/output_{today_str}.md"
         with open(attachment_path, "w") as f:
             f.write(render_md_string(selected_papers))
-        
+
         # only push to slack for non-empty dicts
         if config["OUTPUT"].getboolean("push_to_slack"):
             SLACK_KEY = os.environ.get("SLACK_KEY")
