@@ -37,10 +37,8 @@ def send_email(
     try:
         # Create the email object
         message = MIMEMultipart()
-        # message['From'] = Header(sender_email, 'utf-8')
-        message["From"] = "Daily ArXiv <jackyfl@daily_arxiv.com>"
-        # message['To'] = Header(", ".join(recipient_emails), 'utf-8')  # Join recipient emails with commas
-        message["To"] = "Undisclosed Recipients"  # hideen the recipient emails
+        message['From'] = Header(sender_email, 'utf-8')
+        message['To'] = Header(", ".join(recipient_emails), 'utf-8')  # Join recipient emails with commas
         message["Subject"] = Header(subject, "utf-8")
 
         # Attach the email body
@@ -92,11 +90,11 @@ if __name__ == "__main__":
         # push to target emails
         if config["EMAIL"].getboolean("push_to_email"):
             email = config["EMAIL"]
-            sender_email = email["send_email"]  # sender email
-            sender_password = os.environ.get("EMAIL_KEY")  # sender passwd
-
-            recipient_email_list = email["receve_emails"].split(", ")
-
+            sender_email = email['send_email']        # sender email
+            sender_password = os.environ.get("EMAIL_KEY") # sender passwd
+            
+            recipient_email_list = email['receive_emails'].split(', ')
+            
             subject = f"Daily ArXiv: {datetime.today().strftime('%m/%d/%Y')}"
             paper_len = len(selected_papers)
 

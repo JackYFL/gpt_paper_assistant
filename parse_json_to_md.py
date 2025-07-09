@@ -92,7 +92,7 @@ if __name__ == "__main__":
         email = config["EMAIL"]
         sender_email = email['send_email']        # sender email
         sender_password = os.environ.get("EMAIL_KEY") # sender passwd
-        recipient_email_list = email['receve_emails'].split(', ')
+        recipient_email_list = email['receive_emails'].split(', ')
 
         today_str = datetime.today().strftime("%Y_%m%d")
         subject = f"Daily ArXiv: {datetime.today().strftime('%m/%d/%Y')}"
