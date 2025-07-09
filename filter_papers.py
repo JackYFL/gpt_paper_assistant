@@ -62,9 +62,8 @@ def calc_price(model, usage):
         return (0.0015 * usage.prompt_tokens + 0.002 * usage.completion_tokens) / 1000.0
     elif "gpt-4o" in model:
         return (0.0025 * usage.prompt_tokens + 0.01 * usage.completion_tokens) / 1000.0
-    elif model.startswith("gpt-4"):
-        # Default to gpt-4 pricing for newer gpt-4 model variants.
-        return (0.03 * usage.prompt_tokens + 0.06 * usage.completion_tokens) / 1000.0
+    elif "gpt-4.1" in model:
+        return (0.002 * usage.prompt_tokens + 0.008 * usage.completion_tokens) / 1000.0
     else:
         raise ValueError(f"Unknown model for price calculation: {model}")
 
