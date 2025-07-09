@@ -6,7 +6,6 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 import os
-import re
 import json
 import configparser
 from datetime import datetime
@@ -29,7 +28,7 @@ def send_email(sender_email, sender_password, recipient_emails, subject, body, s
         # Create the email object
         message = MIMEMultipart()
         # message['From'] = Header(sender_email, 'utf-8')
-        message['From'] = f"Daily ArXiv <jackyfl@daily_arxiv.com>"
+        message['From'] = "Daily ArXiv <jackyfl@daily_arxiv.com>"
         # message['To'] = Header(", ".join(recipient_emails), 'utf-8')  # Join recipient emails with commas
         message['To'] = "Undisclosed Recipients"  # hideen the recipient emails
         message['Subject'] = Header(subject, 'utf-8')
@@ -85,7 +84,7 @@ if __name__ == "__main__":
             sender_email = email['send_email']        # sender email
             sender_password = os.environ.get("EMAIL_KEY") # sender passwd
             
-            recipient_email_list = email['receve_emails'].split(', ')
+            recipient_email_list = email['receive_emails'].split(', ')
             
             subject = f"Daily ArXiv: {datetime.today().strftime('%m/%d/%Y')}"
             paper_len = len(selected_papers)

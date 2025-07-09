@@ -17,7 +17,6 @@ from parse_json_to_md import render_md_string
 from push_to_slack import push_to_slack
 from arxiv_scraper import EnhancedJSONEncoder
 
-from send_emails import send_email
 from datetime import datetime
 
 T = TypeVar("T")
