@@ -17,7 +17,6 @@ from parse_json_to_md import render_md_string
 from push_to_slack import push_to_slack
 from arxiv_scraper import EnhancedJSONEncoder
 
-from send_emails import send_email
 from datetime import datetime
 
 T = TypeVar("T")
@@ -259,7 +258,7 @@ if __name__ == "__main__":
         attachment_path = f"out/output_{today_str}.md"
         with open(attachment_path, "w") as f:
             f.write(render_md_string(selected_papers))
-        
+
         # only push to slack for non-empty dicts
         if config["OUTPUT"].getboolean("push_to_slack"):
             SLACK_KEY = os.environ.get("SLACK_KEY")

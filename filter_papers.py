@@ -52,16 +52,21 @@ def filter_papers_by_hindex(all_authors, papers, config):
 
 
 def calc_price(model, usage):
+    """Return the approximate cost for an OpenAI API call."""
+
     if model == "gpt-4-1106-preview":
         return (0.01 * usage.prompt_tokens + 0.03 * usage.completion_tokens) / 1000.0
     elif model == "gpt-4":
         return (0.03 * usage.prompt_tokens + 0.06 * usage.completion_tokens) / 1000.0
-    elif (model == "gpt-3.5-turbo") or (model == "gpt-3.5-turbo-1106"):
+    elif model in {"gpt-3.5-turbo", "gpt-3.5-turbo-1106"}:
         return (0.0015 * usage.prompt_tokens + 0.002 * usage.completion_tokens) / 1000.0
     elif "gpt-4o" in model:
         return (0.0025 * usage.prompt_tokens + 0.01 * usage.completion_tokens) / 1000.0
     elif "gpt-4.1" in model:
         return (0.002 * usage.prompt_tokens + 0.008 * usage.completion_tokens) / 1000.0
+    else:
+        raise ValueError(f"Unknown model for price calculation: {model}")
+
 
 @retry.retry(tries=3, delay=2)
 def call_chatgpt(full_prompt, openai_client, model):
