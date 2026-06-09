@@ -400,15 +400,13 @@ def render_archive_links(output_date=None) -> str:
         f"""
         <a class="archive-link" href="{esc(archive_filename(archive_date))}">
           <span>{esc(archive_title_from_date(archive_date))}</span>
-          <small>{esc(Path(path).name)}</small>
         </a>
         """
-        for archive_date, path in entries
+        for archive_date, _path in entries
     )
     return f"""
   <section class="archive-block">
     <h2>Past ArXiv</h2>
-    <p>Previous daily digests from the last month.</p>
     <div class="archive-links">
       {links}
     </div>
@@ -579,6 +577,11 @@ a {
   gap: 10px;
 }
 
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
 .metric {
   min-height: 88px;
   padding: 16px;
@@ -599,6 +602,7 @@ a {
   margin-top: 8px;
   font-size: 1.65rem;
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .section-title {
