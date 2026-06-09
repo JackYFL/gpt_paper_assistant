@@ -1,154 +1,596 @@
-# Personalized Daily ArXiv Papers 06/09/2026
-Total relevant papers: 9
-
-Paper selection prompt and criteria at the bottom
-
-Table of contents with paper titles:
-
-0. [Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models](#link0)
-**Authors:** Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng
-
-1. [CRANE: Knowledge Editing for Reasoning MLLMs](#link1)
-**Authors:** Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang
-
-2. [REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction](#link2)
-**Authors:** Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes
-
-3. [A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology](#link3)
-**Authors:** Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen
-
-4. [Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs](#link4)
-**Authors:** Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana
-
-5. [WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis](#link5)
-**Authors:** Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia
-
-6. [InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs](#link6)
-**Authors:** Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li
-
-7. [Cross-LLM Consistency in Inference: Evidence from Shared Interactions](#link7)
-**Authors:** Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang
-
-8. [NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis](#link8)
-**Authors:** Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang
-
----
-## 0. [Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models](https://arxiv.org/abs/2606.07641) <a id="link0"></a>
-**ArXiv ID:** 2606.07641
-**Authors:** Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng
-
-**Abstract:**  Can vision-language models predict what a 180{\deg} rotation would reveal from the original image alone? We study this ability through Rotated-Outcome Prediction: given an original image, a model must answer what would be seen or read after a 180{\deg} in-plane rotation, without directly observing the rotated target. To isolate this gap, we introduce RotOutBench, a paired diagnostic benchmark spanning open visual cases and controlled text-image rotations. A sharp pattern emerges: many VLMs can recognize the relevant content when directly given either the original or rotated image, yet fail to infer the rotated result from the original image alone. On controlled text-image rotations, predicted-rotation accuracy collapses to near zero even for models with high direct-reading accuracy. A model-level case study further shows that the prediction state can approach a rotated-image reading state, while the final readout still shifts toward the original string. Current VLMs can recognize a transformed visual state when it is shown, but often fail to predict that state from the original view.
-
-**Comment:** This paper introduces RotOutBench, a new diagnostic benchmark for vision-language models to test their ability to predict rotated outcomes. It reveals a surprising empirical limitation in VLMs' spatial reasoning. This matches criterion 1 (spatial understanding in VLMs) and criterion 3 (new benchmark with a novel angle).
-**Relevance:** 10
-**Novelty:** 8
-
----
-
-## 1. [CRANE: Knowledge Editing for Reasoning MLLMs](https://arxiv.org/abs/2606.09033) <a id="link1"></a>
-**ArXiv ID:** 2606.09033
-**Authors:** Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang
-
-**Abstract:**  The emergence of reasoning multimodal large language models (MLLMs), which generate explicit chain-of-thought (CoT) reasoning before producing answers, has introduced a new challenge for knowledge editing: methods that appear successful under traditional metrics (teacher-forcing accuracy up to 100%) can fail severely when the model's reasoning process is examined (Grounded Success as low as 0%). We identify three failure modes: (1) Structural Collapse, where weight-modifying methods destroy the CoT format; (2) Cognitive Dissonance, where the model's reasoning chain actively rejects the injected edit fact based on visual evidence; and (3) Shallow Internalization, where methods succeed on exact queries but fail on rephrase or multi-hop variants. On reasoning MLLMs, these modes interact: methods that generalize (FT, LoRA) trigger format collapse, while methods without deep modification cannot generalize. To expose these failures, we propose a CoT-aware evaluation protocol and construct ReasonEdit-Bench, with conflict stratification, multi-level probes, and multi-hop portability tests.   We propose CRANE, a retrieval-augmented framework that requires no per-edit parameter modification. CRANE combines a modality-aware dual-library retrieval system with a two-phase training strategy: Supervised Fine-Tuning (SFT) for structural initialization, followed by GRPO with a Cognitive Routing Reward that trains the model to arbitrate between visual priors and injected edit facts. On ReasonEdit-Bench, CRANE achieves 96.9% Grounded Success on conflict scenarios and 96.9% intermediate entity usage in multi-hop chains, with 97.6% text-locality and 68.1% image-locality Edit Independence. On the out-of-distribution MMEVOKE benchmark, CRANE reaches 87.0% under gold retrieval.
-
-**Comment:** This paper introduces CRANE, a knowledge editing framework for reasoning MLLMs, and proposes a new benchmark (ReasonEdit-Bench) for evaluating knowledge editing in reasoning multimodal LLMs. This directly matches criterion 2 (new MLLMs) and criterion 3 (new benchmark for embodied/MLLMs with novel evaluation angles).
-**Relevance:** 10
-**Novelty:** 8
-
----
-
-## 2. [REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction](https://arxiv.org/abs/2606.07935) <a id="link2"></a>
-**ArXiv ID:** 2606.07935
-**Authors:** Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes
-
-**Abstract:**  In dyadic interactions, various human facial reactions could be appropriate for responding to each human speaker behaviour. Following the successful organisation of the REACT 2023, 2024 and 2025 challenge series, a body of generative deep learning (DL) models have been developed for the problem of multiple appropriate facial reaction generation (MAFRG). This year, we propose the REACT 2026 challenge encouraging the development and benchmarking of Machine Learning (ML) models that can generate multiple personalised, appropriate, diverse, realistic and synchronised human-style facial reactions expressed by a specific human listener for responding to each given speaker behaviour. As a key of the challenge, we continuously provide challenge participants with MARS dataset introduced by REACT 2025 but additionally provide individual-level Big-Five personality labels and EEG recordings. This introduces a new one-to-many personalised facial reaction generation setting combining human expressive behavioural, affective and neurophysiological signals, which remains largely unexplored in current dyadic interaction modelling. This paper also presents the challenge guidelines and new baselines on the four proposed sub-challenges: Offline generic and personalised MAFRG as well as Online generic and personalised MAFRG, respectively, which are publicly available at https://github.com/reactmultimodalchallenge/baseline_react2026.
-
-**Comment:** This paper presents the REACT 2026 challenge for personalised multiple appropriate facial reaction generation, introducing new benchmarks and settings (including EEG and personality). This matches criterion 3 (new embodied AI benchmark with novel angles, i.e., combining facial, affective, and neurophysiological signals).
-**Relevance:** 9
-**Novelty:** 8
-
----
-
-## 3. [A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology](https://arxiv.org/abs/2606.08093) <a id="link3"></a>
-**ArXiv ID:** 2606.08093
-**Authors:** Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen
-
-**Abstract:**  Pathology is the cornerstone of modern medicine, where accurate decision-making relies heavily on evidence-based practices. While artificial intelligence (AI) has the potential to transform clinical workflows, the intersection of AI and evidence-based medicine remains under-explored, with primitive attempts restricted to text-only general medicine. In this work, we present PathPocket, a multimodal AI agentic co-pilot designed specifically for evidence grounded pathology. We construct the most comprehensive pathology evidence corpus to date, encompassing approximately 110,472 public and authorized documents structured across a rigorous hierarchy of evidence from clinical guideline to expert opinion. From this meticulously graded foundation, we build a large-scale multimodal pathology hypergraph containing over 4.55 million entities and 7.10 million relations. Serving as a robust knowledge engine, this hypergraph provides traceable evidence for a collaborative multi-agent reasoning framework integrating input understanding, evidence retrieval, filtering, and diagnosis generation. This enables PathPocket to seamlessly resolve a wide spectrum of clinical tasks, ranging from text-only queries to complex multimodal diagnostics involving region-of-interest (ROI) and gigapixel whole-slide images (WSIs). We rigorously evaluate the system on a multidimensional benchmark of over 200,000 real-world cases, where it significantly outperforms existing state-of-the-arts. Crucially, extensive user studies demonstrate that PathPocket substantially improves the diagnostic accuracy and confidence of pathologists. By directly grounding pathology interpretations in verifiable literature, PathPocket offers a practical and scalable solution for the future of evidence grounded computational pathology.
-
-**Comment:** This paper introduces PathPocket, a multimodal AI agentic co-pilot for evidence-grounded computational pathology. It builds a large-scale multimodal pathology hypergraph and integrates multi-agent reasoning, including visual (WSI) and text modalities. This matches criterion 2 (new MLLMs) and is a strong example of a novel multi-modal agent for a real-world application.
-**Relevance:** 8
-**Novelty:** 7
-
----
-
-## 4. [Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs](https://arxiv.org/abs/2606.07963) <a id="link4"></a>
-**ArXiv ID:** 2606.07963
-**Authors:** Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana
-
-**Abstract:**  Backdoor attacks in large language models (LLMs) are often treated as isolated trigger-response failures, motivating defenses tailored to specific triggers or behaviors. We show this view is incomplete. Across diverse backdoor behaviors, we identify a shared latent mechanism that can be detected, causally controlled, and suppressed. Using sparse autoencoders (SAEs) on residual-stream activations, we find a small set of latent features consistently activated across jailbreaking, refusal manipulation, password-locking, bias induction, sentiment misclassification, and country-conditioned harmful advice. These features generalize across Qwen3, Gemma~3, and Llama~3.1 models from 4B to 32B parameters, and across both fine-tuning and weight-editing attacks. Through bidirectional activation steering, we show these features are causal: suppressing them reduces attack success, while amplifying them induces target behaviors on clean prompts. We further train lightweight SAE-feature classifiers that generalize zero-shot to unseen backdoors and outperform residual-stream and weight-diffing baselines. Finally, we introduce Concept Ablation Fine-Tuning (CAFT), which suppresses backdoor formation by ablating the shared latent subspace during training. Together, our results suggest that many backdoors rely on a transferable latent mechanism, enabling unified detection and mitigation.
-
-**Comment:** This paper studies backdoor attacks in LLMs and proposes a unified detection and mitigation method using shared latent structures. While it is a novel method for LLM robustness, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models.
-**Relevance:** 3
-**Novelty:** 7
-
----
-
-## 5. [WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis](https://arxiv.org/abs/2606.08670) <a id="link5"></a>
-**ArXiv ID:** 2606.08670
-**Authors:** Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia
-
-**Abstract:**  Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT
-
-**Comment:** This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.
-**Relevance:** 3
-**Novelty:** 6
-
----
-
-## 6. [InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs](https://arxiv.org/abs/2606.08601) <a id="link6"></a>
-**ArXiv ID:** 2606.08601
-**Authors:** Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li
-
-**Abstract:**  Large Language Models (LLMs) have recently demonstrated impressive potential for time series forecasting. However, existing methods predominantly rely on passive modality alignment or static task reprogramming, which often fail to capture fine-grained, non-stationary temporal patterns or to adapt to nuanced task intents. In this paper, we propose Instruction-aware Active Probing (InA-Probe), which shifts the paradigm from passive alignment toward an active, instruction-driven probing mechanism. Specifically, we design a Multi-Level Instruction Injection mechanism that enriches the model with both global task objectives and fine-grained, patch-level semantic priors. Building on this, an Adaptive Query Generation module produces sample-specific probes that are dynamically modulated by the temporal context. These probes are then refined through a dual-stage attention process: they first internalize task-specific intents via Instruction-Aware Self-Attention, and subsequently interrogate the projected temporal representations through Temporal Cross-Attention to extract salient patterns. Comprehensive experiments on seven real-world benchmarks show that InA-Probe consistently outperforms state-of-the-art deep learning and LLM-based baselines, excelling in both one-for-all generalization and zero-shot transfer while reducing forecasting error by up to 37\% in challenging cross-domain scenarios. Ablation studies further confirm that the synergy between adaptive querying and fine-grained instructions is key to unlocking the reasoning power of LLMs for complex time series.
-
-**Comment:** This paper proposes a new instruction-aware active probing mechanism for time series forecasting with LLMs. While it introduces a novel method for LLMs in time series, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models. It is more about time series and LLMs.
-**Relevance:** 3
-**Novelty:** 6
-
----
-
-## 7. [Cross-LLM Consistency in Inference: Evidence from Shared Interactions](https://arxiv.org/abs/2606.08129) <a id="link7"></a>
-**ArXiv ID:** 2606.08129
-**Authors:** Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang
-
-**Abstract:**  Large language models (LLMs) differ in architecture, training data, and optimization procedures, yet they may still develop similar internal inference patterns. In this paper, we examine this hypothesis using interaction-based explanations. We find that LLMs often share interaction patterns when predicting the same target token from the same prompt. This consistency is more pronounced among advanced LLMs. Shared interactions also tend to be lower-order and show weaker positive-negative cancellation than non-shared interactions. These results suggest that advanced LLMs may be implicitly optimized toward common inference patterns, even though the mechanisms that give rise to such cross-model consistency remain open.
-
-**Comment:** This paper studies cross-LLM consistency in inference patterns. While it provides insights into LLMs, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models.
-**Relevance:** 3
-**Novelty:** 5
-
----
-
-## 8. [NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis](https://arxiv.org/abs/2606.07635) <a id="link8"></a>
-**ArXiv ID:** 2606.07635
-**Authors:** Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang
-
-**Abstract:**  Multimodal neuroimaging fusion of functional MRI (fMRI) and diffusion tensor imaging (DTI) provides complementary information for cognitive impairment analysis, but remains challenged by heterogeneous feature spaces and misaligned representations. We propose \textit{NeuroAlign}, a hierarchical framework for structured multimodal fusion. It introduces (1) \textit{Dual-Modal Hierarchical Alignment} (DMHA), which models multi-scale dynamic connectivity and aligns dynamic-static and functional-structural embeddings; and (2) \textit{Dual-Domain Hierarchical Interaction} (DDHI), which enables fine-grained modulation and global interaction between connectivity- and region-level features. To support feature-level inspection, we design \textit{Synergistic Activation Mapping} (SAM), a gradient-free, marker-oriented attribution method for DFC, SFC, ALFF, and FA. Evaluated on GUTCM, ADNI, and OASIS under five-fold validation, NeuroAlign achieves competitive MCI/SCD detection and preliminary cross-dataset transferability. Attribution analyses reveal modality-specific and partially consistent brain patterns, providing model-derived evidence for multimodal representation analysis.
-
-**Comment:** This paper proposes a new hierarchical multimodal fusion framework for neuroimaging, but it is focused on medical imaging and cognitive impairment analysis, not spatial intelligence or embodied agents. It does introduce new multimodal fusion methods, which is tangentially related to criterion 2, but not in the context of VLLMs/MLLMs.
-**Relevance:** 3
-**Novelty:** 5
-
----
 
 
----
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
 
-## Paper selection prompt
- 1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-action {
+    display: inline-block;
+    margin-top: 14px;
+  }
+}
+</style>
+
+
+<main class="daily-arxiv">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Daily ArXiv / June 09, 2026</p>
+      <h1>Personalized paper radar</h1>
+      <p class="hero-copy">
+        A focused reading queue selected from today's ArXiv feed, ranked by topic fit,
+        novelty, and configured author matches.
+      </p>
+    </div>
+    <div class="metrics">
+
+    <div class="metric">
+      <span>Relevant papers</span>
+      <strong>9</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>18</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>12.4</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv RSS</strong>
+    </div>
+
+    </div>
+  </section>
+
+  <h2 class="section-title">Reading Queue</h2>
+  <nav class="queue" aria-label="selected papers">
+
+    <a class="queue-item" href="#link0">
+      <span class="queue-index">1</span>
+      <span class="queue-copy">
+        <strong>Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models</strong>
+        <small>Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</small>
+      </span>
+      <span class="score-pill">18</span>
+    </a>
+
+
+    <a class="queue-item" href="#link1">
+      <span class="queue-index">2</span>
+      <span class="queue-copy">
+        <strong>CRANE: Knowledge Editing for Reasoning MLLMs</strong>
+        <small>Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</small>
+      </span>
+      <span class="score-pill">18</span>
+    </a>
+
+
+    <a class="queue-item" href="#link2">
+      <span class="queue-index">3</span>
+      <span class="queue-copy">
+        <strong>REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction</strong>
+        <small>Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</small>
+      </span>
+      <span class="score-pill">17</span>
+    </a>
+
+
+    <a class="queue-item" href="#link3">
+      <span class="queue-index">4</span>
+      <span class="queue-copy">
+        <strong>A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology</strong>
+        <small>Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</small>
+      </span>
+      <span class="score-pill">15</span>
+    </a>
+
+
+    <a class="queue-item" href="#link4">
+      <span class="queue-index">5</span>
+      <span class="queue-copy">
+        <strong>Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs</strong>
+        <small>Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</small>
+      </span>
+      <span class="score-pill">10</span>
+    </a>
+
+
+    <a class="queue-item" href="#link5">
+      <span class="queue-index">6</span>
+      <span class="queue-copy">
+        <strong>WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</strong>
+        <small>Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</small>
+      </span>
+      <span class="score-pill">9</span>
+    </a>
+
+
+    <a class="queue-item" href="#link6">
+      <span class="queue-index">7</span>
+      <span class="queue-copy">
+        <strong>InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs</strong>
+        <small>Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</small>
+      </span>
+      <span class="score-pill">9</span>
+    </a>
+
+
+    <a class="queue-item" href="#link7">
+      <span class="queue-index">8</span>
+      <span class="queue-copy">
+        <strong>Cross-LLM Consistency in Inference: Evidence from Shared Interactions</strong>
+        <small>Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</small>
+      </span>
+      <span class="score-pill">8</span>
+    </a>
+
+
+    <a class="queue-item" href="#link8">
+      <span class="queue-index">9</span>
+      <span class="queue-copy">
+        <strong>NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</strong>
+        <small>Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</small>
+      </span>
+      <span class="score-pill">8</span>
+    </a>
+
+  </nav>
+
+  <h2 class="section-title">Paper Notes</h2>
+  <section class="paper-list">
+
+    <article class="paper-card" id="link0">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 1 / arXiv:2606.07641</p>
+          <h2><a href="https://arxiv.org/abs/2606.07641">Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.07641">Open arXiv</a>
+      </header>
+      <p class="authors">Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>10</strong></span>
+          <span>Novelty <strong>8</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper introduces RotOutBench, a new diagnostic benchmark for vision-language models to test their ability to predict rotated outcomes. It reveals a surprising empirical limitation in VLMs&#x27; spatial reasoning. This matches criterion 1 (spatial understanding in VLMs) and criterion 3 (new benchmark with a novel angle).</p>
+      <p class="abstract">Can vision-language models predict what a 180{\deg} rotation would reveal from the original image alone? We study this ability through Rotated-Outcome Prediction: given an original image, a model must answer what would be seen or read after a 180{\deg} in-plane rotation, without directly observing the rotated target. To isolate this gap, we introduce RotOutBench, a paired diagnostic benchmark spanning open visual cases and controlled text-image rotations. A sharp pattern emerges: many VLMs can recognize the relevant content when directly given either the original or rotated image, yet fail to infer the rotated result from the original image alone. On controlled text-image rotations, predicted-rotation accuracy collapses to near zero even for models with high direct-reading accuracy. A model-level case study further shows that the prediction state can approach a rotated-image reading state, while the final readout still shifts toward the original string. Current VLMs can recognize a transformed visual state when it is shown, but often fail to predict that state from the original view.</p>
+    </article>
+
+
+    <article class="paper-card" id="link1">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 2 / arXiv:2606.09033</p>
+          <h2><a href="https://arxiv.org/abs/2606.09033">CRANE: Knowledge Editing for Reasoning MLLMs</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.09033">Open arXiv</a>
+      </header>
+      <p class="authors">Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>10</strong></span>
+          <span>Novelty <strong>8</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper introduces CRANE, a knowledge editing framework for reasoning MLLMs, and proposes a new benchmark (ReasonEdit-Bench) for evaluating knowledge editing in reasoning multimodal LLMs. This directly matches criterion 2 (new MLLMs) and criterion 3 (new benchmark for embodied/MLLMs with novel evaluation angles).</p>
+      <p class="abstract">The emergence of reasoning multimodal large language models (MLLMs), which generate explicit chain-of-thought (CoT) reasoning before producing answers, has introduced a new challenge for knowledge editing: methods that appear successful under traditional metrics (teacher-forcing accuracy up to 100%) can fail severely when the model&#x27;s reasoning process is examined (Grounded Success as low as 0%). We identify three failure modes: (1) Structural Collapse, where weight-modifying methods destroy the CoT format; (2) Cognitive Dissonance, where the model&#x27;s reasoning chain actively rejects the injected edit fact based on visual evidence; and (3) Shallow Internalization, where methods succeed on exact queries but fail on rephrase or multi-hop variants. On reasoning MLLMs, these modes interact: methods that generalize (FT, LoRA) trigger format collapse, while methods without deep modification cannot generalize. To expose these failures, we propose a CoT-aware evaluation protocol and construct ReasonEdit-Bench, with conflict stratification, multi-level probes, and multi-hop portability tests.   We propose CRANE, a retrieval-augmented framework that requires no per-edit parameter modification. CRANE combines a modality-aware dual-library retrieval system with a two-phase training strategy: Supervised Fine-Tuning (SFT) for structural initialization, followed by GRPO with a Cognitive Routing Reward that trains the model to arbitrate between visual priors and injected edit facts. On ReasonEdit-Bench, CRANE achieves 96.9% Grounded Success on conflict scenarios and 96.9% intermediate entity usage in multi-hop chains, with 97.6% text-locality and 68.1% image-locality Edit Independence. On the out-of-distribution MMEVOKE benchmark, CRANE reaches 87.0% under gold retrieval.</p>
+    </article>
+
+
+    <article class="paper-card" id="link2">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 3 / arXiv:2606.07935</p>
+          <h2><a href="https://arxiv.org/abs/2606.07935">REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.07935">Open arXiv</a>
+      </header>
+      <p class="authors">Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>9</strong></span>
+          <span>Novelty <strong>8</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper presents the REACT 2026 challenge for personalised multiple appropriate facial reaction generation, introducing new benchmarks and settings (including EEG and personality). This matches criterion 3 (new embodied AI benchmark with novel angles, i.e., combining facial, affective, and neurophysiological signals).</p>
+      <p class="abstract">In dyadic interactions, various human facial reactions could be appropriate for responding to each human speaker behaviour. Following the successful organisation of the REACT 2023, 2024 and 2025 challenge series, a body of generative deep learning (DL) models have been developed for the problem of multiple appropriate facial reaction generation (MAFRG). This year, we propose the REACT 2026 challenge encouraging the development and benchmarking of Machine Learning (ML) models that can generate multiple personalised, appropriate, diverse, realistic and synchronised human-style facial reactions expressed by a specific human listener for responding to each given speaker behaviour. As a key of the challenge, we continuously provide challenge participants with MARS dataset introduced by REACT 2025 but additionally provide individual-level Big-Five personality labels and EEG recordings. This introduces a new one-to-many personalised facial reaction generation setting combining human expressive behavioural, affective and neurophysiological signals, which remains largely unexplored in current dyadic interaction modelling. This paper also presents the challenge guidelines and new baselines on the four proposed sub-challenges: Offline generic and personalised MAFRG as well as Online generic and personalised MAFRG, respectively, which are publicly available at https://github.com/reactmultimodalchallenge/baseline_react2026.</p>
+    </article>
+
+
+    <article class="paper-card" id="link3">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 4 / arXiv:2606.08093</p>
+          <h2><a href="https://arxiv.org/abs/2606.08093">A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.08093">Open arXiv</a>
+      </header>
+      <p class="authors">Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper introduces PathPocket, a multimodal AI agentic co-pilot for evidence-grounded computational pathology. It builds a large-scale multimodal pathology hypergraph and integrates multi-agent reasoning, including visual (WSI) and text modalities. This matches criterion 2 (new MLLMs) and is a strong example of a novel multi-modal agent for a real-world application.</p>
+      <p class="abstract">Pathology is the cornerstone of modern medicine, where accurate decision-making relies heavily on evidence-based practices. While artificial intelligence (AI) has the potential to transform clinical workflows, the intersection of AI and evidence-based medicine remains under-explored, with primitive attempts restricted to text-only general medicine. In this work, we present PathPocket, a multimodal AI agentic co-pilot designed specifically for evidence grounded pathology. We construct the most comprehensive pathology evidence corpus to date, encompassing approximately 110,472 public and authorized documents structured across a rigorous hierarchy of evidence from clinical guideline to expert opinion. From this meticulously graded foundation, we build a large-scale multimodal pathology hypergraph containing over 4.55 million entities and 7.10 million relations. Serving as a robust knowledge engine, this hypergraph provides traceable evidence for a collaborative multi-agent reasoning framework integrating input understanding, evidence retrieval, filtering, and diagnosis generation. This enables PathPocket to seamlessly resolve a wide spectrum of clinical tasks, ranging from text-only queries to complex multimodal diagnostics involving region-of-interest (ROI) and gigapixel whole-slide images (WSIs). We rigorously evaluate the system on a multidimensional benchmark of over 200,000 real-world cases, where it significantly outperforms existing state-of-the-arts. Crucially, extensive user studies demonstrate that PathPocket substantially improves the diagnostic accuracy and confidence of pathologists. By directly grounding pathology interpretations in verifiable literature, PathPocket offers a practical and scalable solution for the future of evidence grounded computational pathology.</p>
+    </article>
+
+
+    <article class="paper-card" id="link4">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 5 / arXiv:2606.07963</p>
+          <h2><a href="https://arxiv.org/abs/2606.07963">Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.07963">Open arXiv</a>
+      </header>
+      <p class="authors">Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper studies backdoor attacks in LLMs and proposes a unified detection and mitigation method using shared latent structures. While it is a novel method for LLM robustness, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models.</p>
+      <p class="abstract">Backdoor attacks in large language models (LLMs) are often treated as isolated trigger-response failures, motivating defenses tailored to specific triggers or behaviors. We show this view is incomplete. Across diverse backdoor behaviors, we identify a shared latent mechanism that can be detected, causally controlled, and suppressed. Using sparse autoencoders (SAEs) on residual-stream activations, we find a small set of latent features consistently activated across jailbreaking, refusal manipulation, password-locking, bias induction, sentiment misclassification, and country-conditioned harmful advice. These features generalize across Qwen3, Gemma~3, and Llama~3.1 models from 4B to 32B parameters, and across both fine-tuning and weight-editing attacks. Through bidirectional activation steering, we show these features are causal: suppressing them reduces attack success, while amplifying them induces target behaviors on clean prompts. We further train lightweight SAE-feature classifiers that generalize zero-shot to unseen backdoors and outperform residual-stream and weight-diffing baselines. Finally, we introduce Concept Ablation Fine-Tuning (CAFT), which suppresses backdoor formation by ablating the shared latent subspace during training. Together, our results suggest that many backdoors rely on a transferable latent mechanism, enabling unified detection and mitigation.</p>
+    </article>
+
+
+    <article class="paper-card" id="link5">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 6 / arXiv:2606.08670</p>
+          <h2><a href="https://arxiv.org/abs/2606.08670">WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.08670">Open arXiv</a>
+      </header>
+      <p class="authors">Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.</p>
+      <p class="abstract">Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT</p>
+    </article>
+
+
+    <article class="paper-card" id="link6">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 7 / arXiv:2606.08601</p>
+          <h2><a href="https://arxiv.org/abs/2606.08601">InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.08601">Open arXiv</a>
+      </header>
+      <p class="authors">Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new instruction-aware active probing mechanism for time series forecasting with LLMs. While it introduces a novel method for LLMs in time series, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models. It is more about time series and LLMs.</p>
+      <p class="abstract">Large Language Models (LLMs) have recently demonstrated impressive potential for time series forecasting. However, existing methods predominantly rely on passive modality alignment or static task reprogramming, which often fail to capture fine-grained, non-stationary temporal patterns or to adapt to nuanced task intents. In this paper, we propose Instruction-aware Active Probing (InA-Probe), which shifts the paradigm from passive alignment toward an active, instruction-driven probing mechanism. Specifically, we design a Multi-Level Instruction Injection mechanism that enriches the model with both global task objectives and fine-grained, patch-level semantic priors. Building on this, an Adaptive Query Generation module produces sample-specific probes that are dynamically modulated by the temporal context. These probes are then refined through a dual-stage attention process: they first internalize task-specific intents via Instruction-Aware Self-Attention, and subsequently interrogate the projected temporal representations through Temporal Cross-Attention to extract salient patterns. Comprehensive experiments on seven real-world benchmarks show that InA-Probe consistently outperforms state-of-the-art deep learning and LLM-based baselines, excelling in both one-for-all generalization and zero-shot transfer while reducing forecasting error by up to 37\% in challenging cross-domain scenarios. Ablation studies further confirm that the synergy between adaptive querying and fine-grained instructions is key to unlocking the reasoning power of LLMs for complex time series.</p>
+    </article>
+
+
+    <article class="paper-card" id="link7">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 8 / arXiv:2606.08129</p>
+          <h2><a href="https://arxiv.org/abs/2606.08129">Cross-LLM Consistency in Inference: Evidence from Shared Interactions</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.08129">Open arXiv</a>
+      </header>
+      <p class="authors">Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper studies cross-LLM consistency in inference patterns. While it provides insights into LLMs, it does not focus on spatial intelligence, embodied agents, or vision/multimodal models.</p>
+      <p class="abstract">Large language models (LLMs) differ in architecture, training data, and optimization procedures, yet they may still develop similar internal inference patterns. In this paper, we examine this hypothesis using interaction-based explanations. We find that LLMs often share interaction patterns when predicting the same target token from the same prompt. This consistency is more pronounced among advanced LLMs. Shared interactions also tend to be lower-order and show weaker positive-negative cancellation than non-shared interactions. These results suggest that advanced LLMs may be implicitly optimized toward common inference patterns, even though the mechanisms that give rise to such cross-model consistency remain open.</p>
+    </article>
+
+
+    <article class="paper-card" id="link8">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 9 / arXiv:2606.07635</p>
+          <h2><a href="https://arxiv.org/abs/2606.07635">NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</a></h2>
+        </div>
+        <a class="paper-action" href="https://arxiv.org/abs/2606.07635">Open arXiv</a>
+      </header>
+      <p class="authors">Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</p>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new hierarchical multimodal fusion framework for neuroimaging, but it is focused on medical imaging and cognitive impairment analysis, not spatial intelligence or embodied agents. It does introduce new multimodal fusion methods, which is tangentially related to criterion 2, but not in the context of VLLMs/MLLMs.</p>
+      <p class="abstract">Multimodal neuroimaging fusion of functional MRI (fMRI) and diffusion tensor imaging (DTI) provides complementary information for cognitive impairment analysis, but remains challenged by heterogeneous feature spaces and misaligned representations. We propose \textit{NeuroAlign}, a hierarchical framework for structured multimodal fusion. It introduces (1) \textit{Dual-Modal Hierarchical Alignment} (DMHA), which models multi-scale dynamic connectivity and aligns dynamic-static and functional-structural embeddings; and (2) \textit{Dual-Domain Hierarchical Interaction} (DDHI), which enables fine-grained modulation and global interaction between connectivity- and region-level features. To support feature-level inspection, we design \textit{Synergistic Activation Mapping} (SAM), a gradient-free, marker-oriented attribution method for DFC, SFC, ALFF, and FA. Evaluated on GUTCM, ADNI, and OASIS under five-fold validation, NeuroAlign achieves competitive MCI/SCD detection and preliminary cross-dataset transferability. Attribution analyses reveal modality-specific and partially consistent brain patterns, providing model-derived evidence for multimodal representation analysis.</p>
+    </article>
+
+  </section>
+
+  <section class="prompt-block">
+    <h2>Paper selection prompt</h2>
+    <pre> 1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;
  2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)
  3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.
  4. Vision foundation models related and its applications.
 
  In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.
- Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.
+ Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.</pre>
+  </section>
+</main>

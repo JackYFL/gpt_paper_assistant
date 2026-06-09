@@ -1,119 +1,470 @@
+import configparser
+import html
 import json
-from datetime import datetime
+import os
 import re
+from datetime import datetime
 
-def render_paper(paper_entry: dict, idx: int) -> str:
+
+def clean_abstract(abstract: str) -> str:
+    return re.sub(r"^.*?Abstract:", "", abstract, flags=re.DOTALL).strip()
+
+
+def esc(value) -> str:
+    return html.escape(str(value), quote=True)
+
+
+def strip_trailing_whitespace(value: str) -> str:
+    return "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
+
+
+def paper_score(paper_entry: dict) -> int | None:
+    if "RELEVANCE" not in paper_entry or "NOVELTY" not in paper_entry:
+        return None
+    return int(paper_entry["RELEVANCE"]) + int(paper_entry["NOVELTY"])
+
+
+def render_metric(label: str, value: str) -> str:
+    return f"""
+    <div class="metric">
+      <span>{esc(label)}</span>
+      <strong>{esc(value)}</strong>
+    </div>
     """
-    :param paper_entry: is a dict from a json. an example is
-    {"paperId": "2754e70eaa0c2d40972c47c4c23210f0cece8bfc", "externalIds": {"ArXiv": "2310.16834", "CorpusId": 264451832}, "title": "Discrete Diffusion Language Modeling by Estimating the Ratios of the Data Distribution", "abstract": "Despite their groundbreaking performance for many generative modeling tasks, diffusion models have fallen short on discrete data domains such as natural language. Crucially, standard diffusion models rely on the well-established theory of score matching, but efforts to generalize this to discrete structures have not yielded the same empirical gains. In this work, we bridge this gap by proposing score entropy, a novel discrete score matching loss that is more stable than existing methods, forms an ELBO for maximum likelihood training, and can be efficiently optimized with a denoising variant. We scale our Score Entropy Discrete Diffusion models (SEDD) to the experimental setting of GPT-2, achieving highly competitive likelihoods while also introducing distinct algorithmic advantages. In particular, when comparing similarly sized SEDD and GPT-2 models, SEDD attains comparable perplexities (normally within $+10\\%$ of and sometimes outperforming the baseline). Furthermore, SEDD models learn a more faithful sequence distribution (around $4\\times$ better compared to GPT-2 models with ancestral sampling as measured by large models), can trade off compute for generation quality (needing only $16\\times$ fewer network evaluations to match GPT-2), and enables arbitrary infilling beyond the standard left to right prompting.", "year": 2023, "authors": [{"authorId": "2261494043", "name": "Aaron Lou"}, {"authorId": "83262128", "name": "Chenlin Meng"}, {"authorId": "2490652", "name": "Stefano Ermon"}], "ARXIVID": "2310.16834", "COMMENT": "The paper shows a significant advance in the performance of diffusion language models, directly meeting one of the criteria.", "RELEVANCE": 10, "NOVELTY": 8}, "2310.16779": {"paperId": "edc8953d559560d3237fc0b27175cdb1114c0ca5", "externalIds": {"ArXiv": "2310.16779", "CorpusId": 264451949}, "title": "Multi-scale Diffusion Denoised Smoothing", "abstract": "Along with recent diffusion models, randomized smoothing has become one of a few tangible approaches that offers adversarial robustness to models at scale, e.g., those of large pre-trained models. Specifically, one can perform randomized smoothing on any classifier via a simple\"denoise-and-classify\"pipeline, so-called denoised smoothing, given that an accurate denoiser is available - such as diffusion model. In this paper, we investigate the trade-off between accuracy and certified robustness of denoised smoothing: for example, we question on which representation of diffusion model would maximize the certified robustness of denoised smoothing. We consider a new objective that aims collective robustness of smoothed classifiers across multiple noise levels at a shared diffusion model, which also suggests a new way to compensate the cost of accuracy in randomized smoothing for its certified robustness. This objective motivates us to fine-tune diffusion model (a) to perform consistent denoising whenever the original image is recoverable, but (b) to generate rather diverse outputs otherwise. Our experiments show that this fine-tuning scheme of diffusion models combined with the multi-scale smoothing enables a strong certified robustness possible at highest noise level while maintaining the accuracy closer to non-smoothed classifiers.", "year": 2023, "authors": [{"authorId": "83125078", "name": "Jongheon Jeong"}, {"authorId": "2261688831", "name": "Jinwoo Shin"}], "ARXIVID": "2310.16779", "COMMENT": "The paper presents an advancement in the performance of diffusion models, specifically in the context of denoised smoothing.", "RELEVANCE": 9, "NOVELTY": 7}
-    :return: a markdown formatted string showing the arxiv id, title, arxiv url, abstract, authors, score and comment (if those fields exist)
-    """
-    # get the arxiv id
-    arxiv_id = paper_entry["arxiv_id"]
-    # get the title
-    title = paper_entry["title"]
-    # get the arxiv url
-    arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
-    # get the abstract
-    abstract = paper_entry["abstract"]
-    # remove the strings before (include) 'Abstract:'
-    cleaned_abstract = re.sub(r'^.*?Abstract:', '', abstract, flags=re.DOTALL)
-    # get the authors
-    authors = paper_entry["authors"]
-    paper_string = f'## {idx}. [{title}]({arxiv_url}) <a id="link{idx}"></a>\n'
-    paper_string += f"**ArXiv ID:** {arxiv_id}\n"
-    paper_string += f'**Authors:** {", ".join(authors)}\n\n'
-    paper_string += f"**Abstract:** {cleaned_abstract}\n\n"
-    if "COMMENT" in paper_entry:
-        comment = paper_entry["COMMENT"]
-        paper_string += f"**Comment:** {comment}\n"
-    if "RELEVANCE" in paper_entry and "NOVELTY" in paper_entry:
-        # get the relevance and novelty scores
-        relevance = paper_entry["RELEVANCE"]
-        novelty = paper_entry["NOVELTY"]
-        paper_string += f"**Relevance:** {relevance}\n"
-        paper_string += f"**Novelty:** {novelty}\n"
-    return paper_string + "\n---\n"
 
 
 def render_title_and_author(paper_entry: dict, idx: int) -> str:
     title = paper_entry["title"]
-    authors = paper_entry["authors"]
-    paper_string = f"{idx}. [{title}](#link{idx})\n"
-    paper_string += f'**Authors:** {", ".join(authors)}\n'
-    return paper_string
+    authors = ", ".join(paper_entry["authors"])
+    score = paper_score(paper_entry)
+    score_html = f'<span class="score-pill">{score}</span>' if score is not None else ""
+    return f"""
+    <a class="queue-item" href="#link{idx}">
+      <span class="queue-index">{idx + 1}</span>
+      <span class="queue-copy">
+        <strong>{esc(title)}</strong>
+        <small>{esc(authors)}</small>
+      </span>
+      {score_html}
+    </a>
+    """
 
 
-def render_md_string(papers_dict):
-    # header
+def render_paper(paper_entry: dict, idx: int) -> str:
+    arxiv_id = paper_entry["arxiv_id"]
+    title = paper_entry["title"]
+    arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
+    abstract = clean_abstract(paper_entry["abstract"])
+    authors = ", ".join(paper_entry["authors"])
+    comment = paper_entry.get("COMMENT", "Selected by configured paper filters.")
+    relevance = paper_entry.get("RELEVANCE")
+    novelty = paper_entry.get("NOVELTY")
+
+    score_html = ""
+    if relevance is not None and novelty is not None:
+        score_html = f"""
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>{esc(relevance)}</strong></span>
+          <span>Novelty <strong>{esc(novelty)}</strong></span>
+        </div>
+        """
+
+    return f"""
+    <article class="paper-card" id="link{idx}">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper {idx + 1} / arXiv:{esc(arxiv_id)}</p>
+          <h2><a href="{esc(arxiv_url)}">{esc(title)}</a></h2>
+        </div>
+        <a class="paper-action" href="{esc(arxiv_url)}">Open arXiv</a>
+      </header>
+      <p class="authors">{esc(authors)}</p>
+      {score_html}
+      <p class="comment"><strong>Why selected:</strong> {esc(comment)}</p>
+      <p class="abstract">{esc(abstract)}</p>
+    </article>
+    """
+
+
+def render_styles() -> str:
+    return """
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-action {
+    display: inline-block;
+    margin-top: 14px;
+  }
+}
+</style>
+"""
+
+
+def render_md_string(papers_dict, output_date=None):
     with open("configs/paper_topics.txt", "r") as f:
         criterion = f.read()
-    output_string = (
-        "# Personalized Daily ArXiv Papers "
-        + datetime.today().strftime("%m/%d/%Y")
-        + "\nTotal relevant papers: "
-        + str(len(papers_dict))
-        + "\n\n"
-        + "Paper selection prompt and criteria at the bottom\n\n"
-        + "Table of contents with paper titles:\n\n"
-    )
-    title_strings = [
+
+    output_date = output_date or datetime.today()
+    paper_count = len(papers_dict)
+    dated = output_date.strftime("%B %d, %Y")
+    scores = [paper_score(paper) for paper in papers_dict.values()]
+    scores = [score for score in scores if score is not None]
+    avg_score = f"{sum(scores) / len(scores):.1f}" if scores else "n/a"
+    top_score = str(max(scores)) if scores else "n/a"
+
+    queue = "\n".join(
         render_title_and_author(paper, i)
         for i, paper in enumerate(papers_dict.values())
-    ]
-    output_string = output_string + "\n".join(title_strings) + "\n---\n"
-    # render each paper
-    paper_strings = [
+    )
+    paper_cards = "\n".join(
         render_paper(paper, i) for i, paper in enumerate(papers_dict.values())
-    ]
-    # join all papers into one string
-    output_string = output_string + "\n".join(paper_strings)
-    output_string += "\n\n---\n\n"
-    output_string += f"## Paper selection prompt\n{criterion}"
-    return output_string
+    )
+
+    return strip_trailing_whitespace(f"""
+{render_styles()}
+
+<main class="daily-arxiv">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Daily ArXiv / {esc(dated)}</p>
+      <h1>Personalized paper radar</h1>
+      <p class="hero-copy">
+        A focused reading queue selected from today's ArXiv feed, ranked by topic fit,
+        novelty, and configured author matches.
+      </p>
+    </div>
+    <div class="metrics">
+      {render_metric("Relevant papers", str(paper_count))}
+      {render_metric("Top score", top_score)}
+      {render_metric("Average score", avg_score)}
+      {render_metric("Source", "ArXiv RSS")}
+    </div>
+  </section>
+
+  <h2 class="section-title">Reading Queue</h2>
+  <nav class="queue" aria-label="selected papers">
+    {queue}
+  </nav>
+
+  <h2 class="section-title">Paper Notes</h2>
+  <section class="paper-list">
+    {paper_cards}
+  </section>
+
+  <section class="prompt-block">
+    <h2>Paper selection prompt</h2>
+    <pre>{esc(criterion)}</pre>
+  </section>
+</main>
+""")
+
 
 if __name__ == "__main__":
-    # parse output.json into a dict
     with open("out/output.json", "r") as f:
         output = json.load(f)
 
-    # write to output.md
     with open("out/output.md", "w") as f:
         f.write(render_md_string(output))
 
-    import configparser
-    import os
     from send_emails import send_email
-    from datetime import datetime
 
     config = configparser.ConfigParser()
     config.read("configs/config.ini")
-    if len(output)!=0:
+    if len(output) != 0:
         email = config["EMAIL"]
-        sender_email = email['send_email']        # sender email
-        sender_password = os.environ.get("EMAIL_KEY") # sender passwd
-        recipient_email_list = email['receive_emails'].split(', ')
+        sender_email = email["send_email"]
+        sender_password = os.environ.get("EMAIL_KEY")
+        recipient_email_list = email["receive_emails"].split(", ")
 
         today_str = datetime.today().strftime("%Y_%m%d")
         subject = f"Daily ArXiv: {datetime.today().strftime('%m/%d/%Y')}"
         paper_len = len(output)
 
-        title_authors = ''
+        title_authors = ""
         for i, paper_id in enumerate(output):
             paper_entry = output[paper_id]
             title = paper_entry["title"]
-            authors = paper_entry["authors"]
-            authors = ", ".join(authors)
+            authors = ", ".join(paper_entry["authors"])
             title_authors += f"{i}: {title}. {authors}. \n"
 
-        title_authors +=  '\n'
-
-        body = f"Hi, \n\nThis is Daily ArXiv: https://jackyfl.github.io/gpt_paper_assistant/. There are {paper_len} relevant papers on {datetime.today().strftime('%m/%d/%Y')}:\n\n{title_authors} \nReading papers everyday, keep innocence away! \n\nBest,\nDaily ArXiv"
-        smtp_server = "smtp.gmail.com"                # SMTP server address, e.g., Gmail: smtp.gmail.com
-        smtp_port = 587                                 # SMTP port, e.g., Gmail: 587
+        body = (
+            "Hi, \n\n"
+            "This is Daily ArXiv: https://jackyfl.github.io/gpt_paper_assistant/. "
+            f"There are {paper_len} relevant papers on "
+            f"{datetime.today().strftime('%m/%d/%Y')}:\n\n"
+            f"{title_authors}\n"
+            "Reading papers everyday, keep innocence away! \n\n"
+            "Best,\nDaily ArXiv"
+        )
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
         attachment_path = f"out/output_{today_str}.md"
         with open(attachment_path, "w") as f:
             f.write(render_md_string(output))
-        
-        # send emails
-        send_email(sender_email, sender_password, recipient_email_list, subject, body, smtp_server, smtp_port, attachment=attachment_path)
+
+        send_email(
+            sender_email,
+            sender_password,
+            recipient_email_list,
+            subject,
+            body,
+            smtp_server,
+            smtp_port,
+            attachment=attachment_path,
+        )

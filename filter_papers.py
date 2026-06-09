@@ -51,37 +51,85 @@ def filter_papers_by_hindex(all_authors, papers, config):
     return paper_list
 
 
+@dataclasses.dataclass
+class OpenAIResult:
+    text: str
+    usage: object
+    raw: object
+
+
+MODEL_PRICES_PER_MTOK = {
+    "gpt-5.5": (5.0, 30.0),
+    "gpt-5.4-mini": (0.75, 4.5),
+    "gpt-5.4": (2.5, 15.0),
+    "gpt-4.1": (2.0, 8.0),
+    "gpt-4o": (2.5, 10.0),
+    "gpt-4-1106-preview": (10.0, 30.0),
+    "gpt-4": (30.0, 60.0),
+    "gpt-3.5-turbo": (1.5, 2.0),
+}
+
+
+def get_usage_tokens(usage):
+    input_tokens = getattr(usage, "input_tokens", None)
+    output_tokens = getattr(usage, "output_tokens", None)
+    if input_tokens is None:
+        input_tokens = getattr(usage, "prompt_tokens", 0)
+    if output_tokens is None:
+        output_tokens = getattr(usage, "completion_tokens", 0)
+    return input_tokens or 0, output_tokens or 0
+
+
+def model_price(model):
+    if model in MODEL_PRICES_PER_MTOK:
+        return MODEL_PRICES_PER_MTOK[model]
+    for prefix, prices in MODEL_PRICES_PER_MTOK.items():
+        if model.startswith(prefix):
+            return prices
+    return None
+
+
 def calc_price(model, usage):
     """Return the approximate cost for an OpenAI API call."""
 
-    if model == "gpt-4-1106-preview":
-        return (0.01 * usage.prompt_tokens + 0.03 * usage.completion_tokens) / 1000.0
-    elif model == "gpt-4":
-        return (0.03 * usage.prompt_tokens + 0.06 * usage.completion_tokens) / 1000.0
-    elif model in {"gpt-3.5-turbo", "gpt-3.5-turbo-1106"}:
-        return (0.0015 * usage.prompt_tokens + 0.002 * usage.completion_tokens) / 1000.0
-    elif "gpt-4o" in model:
-        return (0.0025 * usage.prompt_tokens + 0.01 * usage.completion_tokens) / 1000.0
-    elif "gpt-4.1" in model:
-        return (0.002 * usage.prompt_tokens + 0.008 * usage.completion_tokens) / 1000.0
-    else:
-        raise ValueError(f"Unknown model for price calculation: {model}")
+    prices = model_price(model)
+    if prices is None:
+        print(f"Warning: unknown model for price calculation: {model}")
+        return 0.0
+    input_tokens, output_tokens = get_usage_tokens(usage)
+    input_price, output_price = prices
+    return (input_price * input_tokens + output_price * output_tokens) / 1_000_000.0
 
 
 @retry.retry(tries=3, delay=2)
-def call_chatgpt(full_prompt, openai_client, model):
-    return openai_client.chat.completions.create(
+def call_chatgpt(full_prompt, openai_client, model, reasoning_effort="low"):
+    if hasattr(openai_client, "responses"):
+        response = openai_client.responses.create(
+            model=model,
+            input=full_prompt,
+            reasoning={"effort": reasoning_effort},
+        )
+        return OpenAIResult(response.output_text, response.usage, response)
+
+    completion = openai_client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": full_prompt}],
         temperature=0.0,
         seed=0,
     )
+    return OpenAIResult(
+        completion.choices[0].message.content,
+        completion.usage,
+        completion,
+    )
 
 
 def run_and_parse_chatgpt(full_prompt, openai_client, config):
     # just runs the chatgpt prompt, tries to parse the resulting JSON
-    completion = call_chatgpt(full_prompt, openai_client, config["SELECTION"]["model"])
-    out_text = completion.choices[0].message.content
+    model = config["SELECTION"]["model"]
+    reasoning_effort = config["SELECTION"].get("reasoning_effort", "low")
+    completion = call_chatgpt(full_prompt, openai_client, model, reasoning_effort)
+    out_text = completion.text
     out_text = re.sub("```jsonl\n", "", out_text)
     out_text = re.sub("```", "", out_text)
     out_text = re.sub(r"\n+", "\n", out_text)
@@ -98,9 +146,9 @@ def run_and_parse_chatgpt(full_prompt, openai_client, config):
                 print("Failed to parse LM output as json")
                 print(out_text)
                 print("RAW output")
-                print(completion.choices[0].message.content)
+                print(completion.text)
             continue
-    return json_dicts, calc_price(config["SELECTION"]["model"], completion.usage)
+    return json_dicts, calc_price(model, completion.usage)
 
 
 def paper_to_string(paper_entry: Paper) -> str:
@@ -139,9 +187,10 @@ def filter_papers_by_title(
             base_prompt + "\n " + criterion + "\n" + papers_string + filter_postfix
         )
         model = config["SELECTION"]["model"]
-        completion = call_chatgpt(full_prompt, openai_client, model)
+        reasoning_effort = config["SELECTION"].get("reasoning_effort", "low")
+        completion = call_chatgpt(full_prompt, openai_client, model, reasoning_effort)
         cost += calc_price(model, completion.usage)
-        out_text = completion.choices[0].message.content
+        out_text = completion.text
         try:
             filtered_set = set(json.loads(out_text))
             for paper in batch:
@@ -152,7 +201,7 @@ def filter_papers_by_title(
         except Exception as ex:
             print("Exception happened " + str(ex))
             print("Failed to parse LM output as list " + out_text)
-            print(completion)
+            print(completion.raw)
             continue
     return final_list, cost
 
