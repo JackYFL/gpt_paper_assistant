@@ -331,24 +331,51 @@ def write_archive_pages(output_date=None):
         archive_path.write_text(render_archive_page(archive_date, markdown_text))
 
 
-def render_title_and_author(paper_entry: dict, idx: int) -> str:
+def render_paper_row(paper_entry: dict, idx: int) -> str:
+    arxiv_id = paper_entry["arxiv_id"]
     title = paper_entry["title"]
     authors = ", ".join(paper_entry["authors"])
+    arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
+    abstract = clean_abstract(paper_entry["abstract"])
+    comment = paper_entry.get("COMMENT", "Selected by configured paper filters.")
+    relevance = paper_entry.get("RELEVANCE")
+    novelty = paper_entry.get("NOVELTY")
     score = paper_score(paper_entry)
     score_html = f'<span class="score-pill">{score}</span>' if score is not None else ""
     categories_html = render_category_tags(paper_entry)
     topic_tags_html = render_topic_tags(paper_entry)
+
+    score_detail_html = ""
+    if relevance is not None and novelty is not None:
+        score_detail_html = f"""
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>{esc(relevance)}</strong></span>
+          <span>Novelty <strong>{esc(novelty)}</strong></span>
+        </div>
+        """
+
     return f"""
-    <a class="queue-item" href="#link{idx}">
-      <span class="queue-index">{idx + 1}</span>
-      <span class="queue-copy">
-        <strong>{esc(title)}</strong>
-        <small>{esc(authors)}</small>
-        {topic_tags_html}
-        {categories_html}
-      </span>
-      {score_html}
-    </a>
+    <details class="paper-row" id="link{idx}">
+      <summary class="paper-row-summary">
+        <span class="queue-index">{idx + 1}</span>
+        <span class="paper-row-copy">
+          <strong>{esc(title)}</strong>
+          <small>{esc(authors)}</small>
+          {topic_tags_html}
+          {categories_html}
+        </span>
+        {score_html}
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper {idx + 1} / arXiv:{esc(arxiv_id)}</span>
+          <a class="paper-action" href="{esc(arxiv_url)}">Open arXiv</a>
+        </div>
+        {score_detail_html}
+        <p class="comment"><strong>Why selected:</strong> {esc(comment)}</p>
+        <p class="abstract">{esc(abstract)}</p>
+      </div>
+    </details>
     """
 
 
@@ -370,84 +397,16 @@ def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
 
 
 def render_topic_queue_group(topic: str, papers: list[tuple[int, dict]]) -> str:
-    queue_items = "\n".join(
-        render_title_and_author(paper, idx) for idx, paper in papers
+    paper_rows = "\n".join(
+        render_paper_row(paper, idx) for idx, paper in papers
     )
     return f"""
     <details class="topic-section" open>
       <summary class="topic-heading">{esc(topic)}</summary>
       <div class="queue">
-        {queue_items}
+        {paper_rows}
       </div>
     </details>
-    """
-
-
-def render_paper_group(category: str, papers: list[tuple[int, dict]]) -> str:
-    topic_sections = "\n".join(
-        render_topic_paper_group(topic, topic_papers)
-        for topic, topic_papers in group_papers_by_topic(papers).items()
-    )
-    return f"""
-    <details class="paper-category-section" open>
-      <summary class="category-heading">
-        <h3>{esc(category)}</h3>
-      </summary>
-      {topic_sections}
-    </details>
-    """
-
-
-def render_topic_paper_group(topic: str, papers: list[tuple[int, dict]]) -> str:
-    paper_cards = "\n".join(render_paper(paper, idx) for idx, paper in papers)
-    return f"""
-    <details class="topic-section" open>
-      <summary class="topic-heading">{esc(topic)}</summary>
-      <div class="paper-list">
-        {paper_cards}
-      </div>
-    </details>
-    """
-
-
-def render_paper(paper_entry: dict, idx: int) -> str:
-    arxiv_id = paper_entry["arxiv_id"]
-    title = paper_entry["title"]
-    arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
-    abstract = clean_abstract(paper_entry["abstract"])
-    authors = ", ".join(paper_entry["authors"])
-    comment = paper_entry.get("COMMENT", "Selected by configured paper filters.")
-    relevance = paper_entry.get("RELEVANCE")
-    novelty = paper_entry.get("NOVELTY")
-
-    score_html = ""
-    if relevance is not None and novelty is not None:
-        score_html = f"""
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>{esc(relevance)}</strong></span>
-          <span>Novelty <strong>{esc(novelty)}</strong></span>
-        </div>
-        """
-
-    return f"""
-    <article class="paper-card" id="link{idx}">
-      <header class="paper-head">
-        <div>
-          <p class="paper-kicker">Paper {idx + 1} / arXiv:{esc(arxiv_id)}</p>
-          <h2><a href="{esc(arxiv_url)}">{esc(title)}</a></h2>
-        </div>
-        <div class="paper-actions">
-          <a class="paper-action" href="{esc(arxiv_url)}">Open arXiv</a>
-          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
-        </div>
-      </header>
-      <p class="authors">{esc(authors)}</p>
-      {render_topic_tags(paper_entry)}
-      {render_category_tags(paper_entry)}
-      {score_html}
-      <p class="comment"><strong>Why selected:</strong> {esc(comment)}</p>
-      <p class="abstract">{esc(abstract)}</p>
-    </article>
     """
 
 
@@ -553,14 +512,12 @@ a {
   font-size: 1.35rem;
 }
 
-.category-groups,
-.paper-category-groups {
+.category-groups {
   display: grid;
   gap: 24px;
 }
 
 .category-section,
-.paper-category-section,
 .topic-section {
   scroll-margin-top: 18px;
 }
@@ -633,21 +590,47 @@ details:not([open]) > .topic-heading::before {
 
 .queue {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
 }
 
-.queue-item {
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: start;
-  min-height: 96px;
-  padding: 14px;
+.paper-row {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
-  text-decoration: none;
+  overflow: hidden;
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
 }
 
 .queue-index {
@@ -661,16 +644,34 @@ details:not([open]) > .topic-heading::before {
   font-weight: 800;
 }
 
-.queue-copy strong {
+.paper-row-copy strong {
   display: block;
   line-height: 1.28;
 }
 
-.queue-copy small {
+.paper-row-copy small {
   display: block;
   margin-top: 7px;
   color: var(--muted);
   line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .category-tags,
@@ -713,40 +714,6 @@ details:not([open]) > .topic-heading::before {
   text-align: center;
 }
 
-.paper-list {
-  display: grid;
-  gap: 18px;
-  margin-top: 14px;
-}
-
-.paper-card {
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-}
-
-.paper-head {
-  display: flex;
-  gap: 18px;
-  justify-content: space-between;
-}
-
-.paper-head h2 {
-  max-width: 900px;
-  margin: 0;
-  font-size: 1.45rem;
-  line-height: 1.2;
-}
-
-.paper-actions {
-  display: flex;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
 .paper-action {
   flex: 0 0 auto;
   align-self: start;
@@ -757,11 +724,6 @@ details:not([open]) > .topic-heading::before {
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
-}
-
-.paper-action.secondary {
-  border-color: var(--line);
-  color: var(--muted);
 }
 
 .authors, .comment, .abstract {
@@ -884,21 +846,18 @@ details:not([open]) > .topic-heading::before {
     grid-template-columns: 1fr;
   }
 
-  .paper-card {
-    padding: 18px;
-  }
-
-  .paper-head {
-    display: block;
-  }
-
-  .paper-actions {
-    justify-content: flex-start;
-    margin-top: 14px;
-  }
-
   .paper-action {
     display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
   }
 }
 </style>
@@ -920,10 +879,6 @@ def render_md_string(papers_dict, output_date=None):
 
     queue = "\n".join(
         render_queue_group(category, papers)
-        for category, papers in grouped_papers.items()
-    )
-    paper_groups = "\n".join(
-        render_paper_group(category, papers)
         for category, papers in grouped_papers.items()
     )
 
@@ -952,11 +907,6 @@ def render_md_string(papers_dict, output_date=None):
   <nav class="category-groups" aria-label="selected papers by category">
     {queue}
   </nav>
-
-  <h2 class="section-title">Paper Notes</h2>
-  <section class="paper-category-groups">
-    {paper_groups}
-  </section>
 
   {render_archive_links(output_date)}
 
