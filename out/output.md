@@ -400,6 +400,13 @@ details:not([open]) > .topic-heading::before {
   color: var(--muted);
 }
 
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
 .archive-content {
   padding: 24px;
   border: 1px solid var(--line);
@@ -428,6 +435,10 @@ details:not([open]) > .topic-heading::before {
 
   .metrics {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
   }
 
   .queue {

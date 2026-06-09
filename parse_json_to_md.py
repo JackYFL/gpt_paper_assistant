@@ -264,7 +264,103 @@ def markdown_to_archive_body(markdown_text: str) -> str:
     return "\n".join(html_lines)
 
 
+def markdown_field(block: str, label: str) -> str:
+    match = re.search(
+        rf"\*\*{re.escape(label)}:\*\*\s*(.*?)(?=\n+\*\*[\w\s]+:\*\*|\n+---|\Z)",
+        block,
+        flags=re.DOTALL,
+    )
+    if not match:
+        return ""
+    return " ".join(match.group(1).strip().split())
+
+
+def parse_archive_markdown_papers(markdown_text: str) -> dict[str, dict]:
+    heading_pattern = re.compile(
+        r"^##\s+\d+\.\s+\[(?P<title>.*?)\]\((?P<url>https://arxiv\.org/abs/(?P<arxiv_id>[^)]+))\).*?$",
+        flags=re.MULTILINE,
+    )
+    headings = list(heading_pattern.finditer(markdown_text))
+    papers = {}
+
+    for idx, heading in enumerate(headings):
+        block_start = heading.end()
+        block_end = (
+            headings[idx + 1].start()
+            if idx + 1 < len(headings)
+            else len(markdown_text)
+        )
+        block = markdown_text[block_start:block_end]
+
+        title = heading.group("title").strip()
+        arxiv_id = markdown_field(block, "ArXiv ID") or heading.group("arxiv_id")
+        authors = markdown_field(block, "Authors")
+        abstract = markdown_field(block, "Abstract")
+        comment = markdown_field(block, "Comment")
+        relevance = markdown_field(block, "Relevance")
+        novelty = markdown_field(block, "Novelty")
+
+        if not title or not abstract:
+            continue
+
+        paper = {
+            "arxiv_id": arxiv_id,
+            "title": title,
+            "authors": [
+                author.strip()
+                for author in authors.split(",")
+                if author.strip()
+            ],
+            "abstract": abstract,
+            "COMMENT": comment or "Selected by configured paper filters.",
+            "primary_category": "ArXiv",
+            "categories": [],
+        }
+        if relevance:
+            paper["RELEVANCE"] = relevance
+        if novelty:
+            paper["NOVELTY"] = novelty
+        papers[str(len(papers))] = paper
+
+    return papers
+
+
+def render_archive_digest(papers_dict: dict) -> str:
+    scores = [paper_score(paper) for paper in papers_dict.values()]
+    scores = [score for score in scores if score is not None]
+    avg_score = f"{sum(scores) / len(scores):.1f}" if scores else "n/a"
+    top_score = str(max(scores)) if scores else "n/a"
+    grouped_papers = group_indexed_papers(papers_dict)
+    queue = "\n".join(
+        render_queue_group(category, papers)
+        for category, papers in grouped_papers.items()
+    )
+
+    return f"""
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+      {queue}
+    </nav>
+    <section class="archive-summary">
+      {render_metric("Archived papers", str(len(papers_dict)))}
+      {render_metric("Top score", top_score)}
+      {render_metric("Average score", avg_score)}
+    </section>
+    """
+
+
 def render_archive_page(archive_date: datetime, markdown_text: str) -> str:
+    archived_papers = parse_archive_markdown_papers(markdown_text)
+    archive_body = (
+        render_archive_digest(archived_papers)
+        if archived_papers
+        else f"""
+    <article class="archive-content">
+      {markdown_to_archive_body(markdown_text)}
+    </article>
+        """
+    )
+
     return strip_trailing_whitespace(f"""
 <!doctype html>
 <html lang="en">
@@ -288,9 +384,7 @@ def render_archive_page(archive_date: datetime, markdown_text: str) -> str:
       </div>
     </section>
     <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
-    <article class="archive-content">
-      {markdown_to_archive_body(markdown_text)}
-    </article>
+    {archive_body}
   </main>
 </body>
 </html>
@@ -812,6 +906,13 @@ details:not([open]) > .topic-heading::before {
   color: var(--muted);
 }
 
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
 .archive-content {
   padding: 24px;
   border: 1px solid var(--line);
@@ -840,6 +941,10 @@ details:not([open]) > .topic-heading::before {
 
   .metrics {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
   }
 
   .queue {
