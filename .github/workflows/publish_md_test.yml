@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - out/index.html
       - out/output.md
       - .github/workflows/publish_md_test.yml
   workflow_dispatch:
@@ -28,7 +29,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Use repository output on push
       if: github.event_name == 'push'
-      run: cp out/output.md output.md
+      run: |
+        cp out/output.md output.md
+        cp out/index.html index.html
     - name: Download artifact
       if: github.event_name != 'push'
       id: download-artifact
@@ -39,14 +42,28 @@ jobs:
         name: arxiv-scanner-outputs
     - name: Display structure of downloaded files
       run: ls -R
-    - name: Check for output.md
+    - name: Check for site input
       id: check_files
-      uses: andstor/file-existence-action@v2
-      with:
-        files: output.md
+      shell: sh
+      run: |
+        if [ -f index.html ]; then
+          echo "files_exists=true" >> "$GITHUB_OUTPUT"
+          echo "html_exists=true" >> "$GITHUB_OUTPUT"
+        elif [ -f output.md ]; then
+          echo "files_exists=true" >> "$GITHUB_OUTPUT"
+          echo "html_exists=false" >> "$GITHUB_OUTPUT"
+        else
+          echo "files_exists=false" >> "$GITHUB_OUTPUT"
+          echo "html_exists=false" >> "$GITHUB_OUTPUT"
+        fi
+    - name: Prepare HTML site
+      if: steps.check_files.outputs.html_exists == 'true'
+      run: |
+        mkdir -p dist
+        cp index.html dist/index.html
     - name: Convert output.md to pages
       uses: wranders/markdown-to-pages-action@v0.1
-      if: steps.check_files.outputs.files_exists == 'true'
+      if: steps.check_files.outputs.files_exists == 'true' && steps.check_files.outputs.html_exists != 'true'
       with:
        token: ${{ secrets.GITHUB_TOKEN }}
        file: output.md

@@ -13,7 +13,7 @@ from tqdm import tqdm
 
 from arxiv_scraper import get_papers_from_arxiv_rss_api
 from filter_papers import filter_by_author, filter_by_gpt
-from parse_json_to_md import render_md_string
+from parse_json_to_md import render_html_string, render_md_string
 from push_to_slack import push_to_slack
 from arxiv_scraper import EnhancedJSONEncoder
 
@@ -253,6 +253,8 @@ if __name__ == "__main__":
         if config["OUTPUT"].getboolean("dump_md"):
             with open(config["OUTPUT"]["output_path"] + "output.md", "w") as f:
                 f.write(render_md_string(selected_papers))
+            with open(config["OUTPUT"]["output_path"] + "index.html", "w") as f:
+                f.write(render_html_string(selected_papers))
 
         today_str = datetime.today().strftime("%Y_%m%d")
         attachment_path = f"out/output_{today_str}.md"

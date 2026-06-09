@@ -415,12 +415,30 @@ def render_md_string(papers_dict, output_date=None):
 """)
 
 
+def render_html_string(papers_dict, output_date=None):
+    return strip_trailing_whitespace(f"""
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily ArXiv Paper Radar</title>
+</head>
+<body>
+{render_md_string(papers_dict, output_date)}
+</body>
+</html>
+""")
+
+
 if __name__ == "__main__":
     with open("out/output.json", "r") as f:
         output = json.load(f)
 
     with open("out/output.md", "w") as f:
         f.write(render_md_string(output))
+    with open("out/index.html", "w") as f:
+        f.write(render_html_string(output))
 
     from send_emails import send_email
 
