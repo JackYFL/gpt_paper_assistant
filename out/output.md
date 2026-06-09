@@ -113,15 +113,37 @@ a {
 }
 
 .category-heading,
-.paper-category-section h3 {
+.topic-heading {
   display: flex;
   align-items: baseline;
   gap: 10px;
   margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
 
-.category-heading h3,
-.paper-category-section h3 {
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
   color: var(--ink);
   font-size: 1rem;
   margin: 0;
@@ -144,6 +166,16 @@ a {
   color: var(--accent-2);
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
 }
 
 .queue {
@@ -460,14 +492,14 @@ a {
   <h2 class="section-title" id="paper-content">Reading Queue</h2>
   <nav class="category-groups" aria-label="selected papers by category">
 
-    <section class="category-section">
-      <header class="category-heading">
+    <details class="category-section" open>
+      <summary class="category-heading">
         <h3>cs.CV</h3>
         <span>5 papers</span>
-      </header>
+      </summary>
 
-    <section class="topic-section">
-      <h4>Vision-Language Reasoning</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link0">
@@ -491,11 +523,11 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Multimodal LLM</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link1">
@@ -569,11 +601,11 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Benchmark &amp; Evaluation</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link5">
@@ -599,19 +631,19 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
-    </section>
+    </details>
 
 
-    <section class="category-section">
-      <header class="category-heading">
+    <details class="category-section" open>
+      <summary class="category-heading">
         <h3>cs.AI</h3>
         <span>4 papers</span>
-      </header>
+      </summary>
 
-    <section class="topic-section">
-      <h4>Multimodal LLM</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link3">
@@ -637,11 +669,11 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Safety &amp; Backdoors</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Safety &amp; Backdoors</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link4">
@@ -666,11 +698,11 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Benchmark &amp; Evaluation</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link6">
@@ -695,11 +727,11 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>LLM Interpretability</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Interpretability</summary>
       <div class="queue">
 
     <a class="queue-item" href="#link7">
@@ -723,20 +755,22 @@ a {
     </a>
 
       </div>
-    </section>
+    </details>
 
-    </section>
+    </details>
 
   </nav>
 
   <h2 class="section-title">Paper Notes</h2>
   <section class="paper-category-groups">
 
-    <section class="paper-category-section">
-      <h3>cs.CV</h3>
+    <details class="paper-category-section" open>
+      <summary class="category-heading">
+        <h3>cs.CV</h3>
+      </summary>
 
-    <section class="topic-section">
-      <h4>Vision-Language Reasoning</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link0">
@@ -773,11 +807,11 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Multimodal LLM</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link1">
@@ -890,11 +924,11 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Benchmark &amp; Evaluation</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link5">
@@ -933,16 +967,18 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
-    </section>
+    </details>
 
 
-    <section class="paper-category-section">
-      <h3>cs.AI</h3>
+    <details class="paper-category-section" open>
+      <summary class="category-heading">
+        <h3>cs.AI</h3>
+      </summary>
 
-    <section class="topic-section">
-      <h4>Multimodal LLM</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link3">
@@ -981,11 +1017,11 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Safety &amp; Backdoors</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Safety &amp; Backdoors</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link4">
@@ -1023,11 +1059,11 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>Benchmark &amp; Evaluation</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link6">
@@ -1065,11 +1101,11 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
 
-    <section class="topic-section">
-      <h4>LLM Interpretability</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Interpretability</summary>
       <div class="paper-list">
 
     <article class="paper-card" id="link7">
@@ -1106,15 +1142,15 @@ a {
     </article>
 
       </div>
-    </section>
+    </details>
 
-    </section>
+    </details>
 
   </section>
 
 
   <section class="archive-block">
-    <h2>往日 ArXiv</h2>
+    <h2>Past ArXiv</h2>
     <p>Previous daily digests from the last month.</p>
     <div class="archive-links">
 

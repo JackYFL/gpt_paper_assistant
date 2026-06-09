@@ -313,7 +313,7 @@ def render_archive_links(output_date=None) -> str:
     )
     return f"""
   <section class="archive-block">
-    <h2>往日 ArXiv</h2>
+    <h2>Past ArXiv</h2>
     <p>Previous daily digests from the last month.</p>
     <div class="archive-links">
       {links}
@@ -359,13 +359,13 @@ def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
     )
     label = "paper" if len(papers) == 1 else "papers"
     return f"""
-    <section class="category-section">
-      <header class="category-heading">
+    <details class="category-section" open>
+      <summary class="category-heading">
         <h3>{esc(category)}</h3>
         <span>{len(papers)} {label}</span>
-      </header>
+      </summary>
       {topic_sections}
-    </section>
+    </details>
     """
 
 
@@ -374,12 +374,12 @@ def render_topic_queue_group(topic: str, papers: list[tuple[int, dict]]) -> str:
         render_title_and_author(paper, idx) for idx, paper in papers
     )
     return f"""
-    <section class="topic-section">
-      <h4>{esc(topic)}</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">{esc(topic)}</summary>
       <div class="queue">
         {queue_items}
       </div>
-    </section>
+    </details>
     """
 
 
@@ -389,22 +389,24 @@ def render_paper_group(category: str, papers: list[tuple[int, dict]]) -> str:
         for topic, topic_papers in group_papers_by_topic(papers).items()
     )
     return f"""
-    <section class="paper-category-section">
-      <h3>{esc(category)}</h3>
+    <details class="paper-category-section" open>
+      <summary class="category-heading">
+        <h3>{esc(category)}</h3>
+      </summary>
       {topic_sections}
-    </section>
+    </details>
     """
 
 
 def render_topic_paper_group(topic: str, papers: list[tuple[int, dict]]) -> str:
     paper_cards = "\n".join(render_paper(paper, idx) for idx, paper in papers)
     return f"""
-    <section class="topic-section">
-      <h4>{esc(topic)}</h4>
+    <details class="topic-section" open>
+      <summary class="topic-heading">{esc(topic)}</summary>
       <div class="paper-list">
         {paper_cards}
       </div>
-    </section>
+    </details>
     """
 
 
@@ -564,15 +566,37 @@ a {
 }
 
 .category-heading,
-.paper-category-section h3 {
+.topic-heading {
   display: flex;
   align-items: baseline;
   gap: 10px;
   margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
 
-.category-heading h3,
-.paper-category-section h3 {
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
   color: var(--ink);
   font-size: 1rem;
   margin: 0;
@@ -595,6 +619,16 @@ a {
   color: var(--accent-2);
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
 }
 
 .queue {

@@ -119,15 +119,37 @@ a {
 }
 
 .category-heading,
-.paper-category-section h3 {
+.topic-heading {
   display: flex;
   align-items: baseline;
   gap: 10px;
   margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
 
-.category-heading h3,
-.paper-category-section h3 {
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
   color: var(--ink);
   font-size: 1rem;
   margin: 0;
@@ -150,6 +172,16 @@ a {
   color: var(--accent-2);
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
 }
 
 .queue {
