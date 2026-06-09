@@ -1,0 +1,555 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / June 04, 2026</title>
+
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / June 04, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>06/04/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+    <article class="archive-content">
+      <h1>Personalized Daily ArXiv Papers 06/04/2026</h1>
+<p>Total relevant papers: 15</p>
+<p>Paper selection prompt and criteria at the bottom</p>
+<p>Table of contents with paper titles:</p>
+<p>0. <a href="#link0">Plan, Watch, Recover: A Benchmark and Architectures for Proactive Procedural Assistance</a><br><strong>Authors:</strong> Kaustav Kundu, Ritvik Shrivastava, Maxim Arap, Nanshu Wang, Xianhui Zhu, Quintin Fettes, Gautam Tiwari, Parth Suresh, Th\&#x27;eo Moutakanni, Alejandro Castillejo Munoz, Allen Bolourchi, Pascale Fung, Pinar Donmez, Babak Damavandi, Anuj Kumar, Seungwhan Moon</p>
+<p>1. <a href="#link1">FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs</a><br><strong>Authors:</strong> Eshika Khandelwal, Jingjing Pan, Mingfang Zhang, Quan Kong, Lorenzo Garattoni, Hilde Kuehne</p>
+<p>2. <a href="#link2">MetaPoint: Unlocking Precise Spatial Control in Agentic Visual Generation</a><br><strong>Authors:</strong> Dewei Zhou, Xinyu Huang, Xun Wang, Ji Xie, Yabo Zhang, Liang Li, Kunchang Li, Zongxin Yang, Yi Yang</p>
+<p>3. <a href="#link3">M$^3$Eval: Multi-Modal Memory Evaluation through Cognitively-Grounded Video Tasks</a><br><strong>Authors:</strong> Jie Huang, Ruixun Liu, Sirui Sun, Xinyi Yang, Yin Li, Yixin Zhu, Yiwu Zhong</p>
+<p>4. <a href="#link4">Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models</a><br><strong>Authors:</strong> Shuwen Yu, Zhanxuan Hu, Yi Zhao, Yonghang Tai, Huafeng Li</p>
+<p>5. <a href="#link5">The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?</a><br><strong>Authors:</strong> Xinyu Lu, Tianshu Wang, Pengbo Wang, zujie wen, Zhiqiang Zhang, Jun Zhou, Boxi Cao, Yaojie Lu, Hongyu Lin, Xianpei Han, Le Sun</p>
+<p>6. <a href="#link6">VT-3DAD: Cross-Category 3D Anomaly Detection via Visual-Text Normal Space Alignment</a><br><strong>Authors:</strong> Zi Wang, Katsuya Hotta, Yawen Zou, Koichiro Kamide, Yijin Wei, Chao Zhang, Jun Yu</p>
+<p>7. <a href="#link7">Scaling Self-Evolving Agents via Parametric Memory</a><br><strong>Authors:</strong> Tao Ren, Weiyao Luo, Hui Yang, Rongzhi Zhu, Xiang Huang, Yuchuan Wu, Bingxue Chou, Jieping Ye, Jiafeng Liang, Yongbin Li, Yijie Peng</p>
+<p>8. <a href="#link8">Imagine Before You Draw: Visual Prompt Engineering for Image Generation</a><br><strong>Authors:</strong> Liyu Jia, Fengda Zhang, Jiachun Pan, Kesen Zhao, Saining Zhang, Wang Lin, Weijia Wu, Yue Liao, Aojun Zhou, Hanwang Zhang</p>
+<p>9. <a href="#link9">AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning</a><br><strong>Authors:</strong> Qingxu Fu, Boyin Liu, Shuchang Tao, Zhaoyang Liu, Bolin Ding</p>
+<p>10. <a href="#link10">Weakly Supervised Incremental Segmentation via Semantic Anchors and Spatial Arbitration</a><br><strong>Authors:</strong> Zhonggai Wang, Kai Fang, Guangyu Gao</p>
+<p>11. <a href="#link11">Trivium: Temporal Regret as a First-Class Objective for Causal-Memory Controllers</a><br><strong>Authors:</strong> Edward Y. Chang</p>
+<p>12. <a href="#link12">Crafting Your Evolving Dreams: Concept-Incremental Versatile Customization</a><br><strong>Authors:</strong> Jiahua Dong, Wenqi Liang, Hongliu Li, Yang Cong, Duzhen Zhang, Hanbin Zhao, Henghui Ding, Yulun Zhang, Salman Khan, Fahad Shahbaz Khan</p>
+<p>13. <a href="#link13">DSA: Dynamic Step Allocation for Fast Autoregressive Video Generation</a><br><strong>Authors:</strong> Thanh-Tung Le, Yunhan Zhao, Menglei Chai, Zhengyang Shen, Zhe Cao, Danhang Tang, Xiaohui Xie, Deying Kong</p>
+<p>14. <a href="#link14">OA-CutMix: Correcting the Label Bias of CutMix</a><br><strong>Authors:</strong> Tobias Christian Nauen, Stanislav Frolov, Federico Raue, Brian B. Moser, Andreas Dengel</p>
+<hr>
+<h2>0. <a href="https://arxiv.org/abs/2606.04970">Plan, Watch, Recover: A Benchmark and Architectures for Proactive Procedural Assistance</a> <a id="link0"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04970<br><strong>Authors:</strong> Kaustav Kundu, Ritvik Shrivastava, Maxim Arap, Nanshu Wang, Xianhui Zhu, Quintin Fettes, Gautam Tiwari, Parth Suresh, Th\&#x27;eo Moutakanni, Alejandro Castillejo Munoz, Allen Bolourchi, Pascale Fung, Pinar Donmez, Babak Damavandi, Anuj Kumar, Seungwhan Moon</p>
+<p><strong>Abstract:</strong>  We envision a proactive multi-modal assistant system which gives users real-time step-by-step guidance on a procedural task, autonomously deciding \textit{when} to interrupt, and \textit{how} to coach. However, progress is limited by the absence of large-scale, cross-domain benchmarks that reflect realistic conditions, particularly the common case in which users deviate from the expected step sequence. We address this gap with four contributions: \textbf{(1)}~we release \textbf{EgoProactive}, a large-scale wearable-egocentric dataset for proactive procedural assistance with explicit Out-of-Plan (OOP) annotations and recovery steps; \textbf{(2)}~we augment five established benchmarks (Ego4D, EPIC-KITCHENS, EgoExo4D, HoloAssist, HowTo100M) into \textbf{Pro\textsuperscript{2}Bench} under a unified proactive-guidance schema; \textbf{(3)}~we propose a \textbf{decoupled planner--interaction architecture} specialized for procedural state, visual cues, and recovery injection; \textbf{(4)}~we introduce a post-training recipe that transfers across model families, validated by cross-backbone replication on Llama~4 and Qwen-3.6-VL. In extensive experiments, our trained Llama-4 system substantially improves objective intervention quality over strong proprietary baselines (Claude Opus~4.6, Gemini~3.1~Pro, GPT~5.2) and open-weight baselines (Qwen3~VL~235B) baselines across all six datasets. Oracle-plan experiments further show that, when plan quality is controlled, the trained duplex model produces high-quality guidance and large gains on Out-of-Plan recovery.</p>
+<p><strong>Comment:</strong> This paper introduces a new large-scale egocentric dataset (EgoProactive) and a unified benchmark (Pro2Bench) for proactive procedural assistance, as well as new architectures for real-time guidance and recovery in procedural tasks. This directly matches criterion 3 (new embodied AI benchmark and methods with a novel angle, focusing on out-of-plan recovery and proactive assistance).<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>1. <a href="https://arxiv.org/abs/2606.04282">FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs</a> <a id="link1"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04282<br><strong>Authors:</strong> Eshika Khandelwal, Jingjing Pan, Mingfang Zhang, Quan Kong, Lorenzo Garattoni, Hilde Kuehne</p>
+<p><strong>Abstract:</strong>  Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, and summarization. However, their practical use is rapidly expanding to more structured computer vision settings, where users prompt models to perform localization-centric tasks such as object detection, often within larger agentic or decision-making systems. Despite this shift, there is currently no standardized benchmark that systematically evaluates these capabilities at scale. In this work, we introduce the first comprehensive benchmark specifically designed to assess the promptable localization abilities of generalist MLLMs. Our benchmark spans four core task categories: object detection, referring expression detection, instance-level detection, and video-based detection. To enable consistent and fair evaluation, we develop a unified framework that standardizes inputs, enforces parsable bounding box outputs, and defines transparent evaluation protocols across tasks. Using this suite, we evaluate a diverse set of open-source and proprietary MLLMs, providing an in-depth analysis of their performance and limitations. Beyond accuracy, we examine models&#x27; ability to adhere to output format specifications, showing that current systems are highly sensitive to formatting constraints and often fail to generalize even to minor variations. Our results highlight both the strengths and shortcomings of state-of-the-art MLLMs in localization settings, and point toward important directions for improving multimodal model design and evaluation.</p>
+<p><strong>Comment:</strong> This paper introduces a new benchmark (FindIt) specifically for evaluating localization abilities of generalist multimodal large language models (MLLMs), with a focus on structured vision tasks like object detection. This directly matches criteria 2 (new MLLMs/VLLMs) and 3 (new benchmark for embodied AI/vision-language models with a novel angle).<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>2. <a href="https://arxiv.org/abs/2606.05031">MetaPoint: Unlocking Precise Spatial Control in Agentic Visual Generation</a> <a id="link2"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.05031<br><strong>Authors:</strong> Dewei Zhou, Xinyu Huang, Xun Wang, Ji Xie, Yabo Zhang, Liang Li, Kunchang Li, Zongxin Yang, Yi Yang</p>
+<p><strong>Abstract:</strong>  Generative visual models fundamentally struggle with precise spatial control. This arises from a core disconnect: models can process textual descriptions of space but cannot directly map numerical coordinates onto the 2D image canvas. We introduce MetaPoint, a method that bridges this gap by representing a continuous 2D coordinate as a single, special token. Crucially, MetaPoint requires no new architectural components; it directly leverages the model&#x27;s inherent positional encoding schemes to interpret these coordinates, treating our token as a virtual point on the canvas. This lightweight approach enables pixel-level control of an object&#x27;s position with one token or its bounding box with two, all without requiring architectural changes or bespoke attention masking. The MetaPoint tokens are designed to be compositional, serving as spatial primitives. This allows a planner agent to decompose a high-level user request into a structured sequence of primitives for the generator. By providing a simple, precise, and scalable building block for spatial control, MetaPoint unlocks more powerful compositional generative agents and enables intuitive, interactive editing systems.</p>
+<p><strong>Comment:</strong> Matches criterion 1 (new methodological improvements to spatial understanding and spatial control in generative visual models for embodied agents). Also relevant to criterion 4 (vision foundation models and applications) due to compositional generative agents.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>3. <a href="https://arxiv.org/abs/2606.05008">M$^3$Eval: Multi-Modal Memory Evaluation through Cognitively-Grounded Video Tasks</a> <a id="link3"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.05008<br><strong>Authors:</strong> Jie Huang, Ruixun Liu, Sirui Sun, Xinyi Yang, Yin Li, Yixin Zhu, Yiwu Zhong</p>
+<p><strong>Abstract:</strong>  As multi-modal models advance towards long-form video understanding, memory emerges as a critical capability. Despite substantial efforts in developing video datasets and benchmarks, existing works primarily focus on perception and reasoning, without systematically evaluating memory: what models retain, how faithfully information is preserved, and how robust memory remains under interference. To address this gap, we introduce M$^3$Eval, the first comprehensive evaluation framework and benchmark for probing different memory dimensions in multi-modal models. Grounded in cognitive psychology, our design features carefully constructed tasks that isolate key aspects of memory. Leveraging M$^3$Eval, we conduct extensive experiments across representative multi-modal models, revealing consistent weaknesses and distinctive behaviors. We find that models struggle to maintain disentangled representations when processing parallel video streams, exhibit interference patterns differing substantially from those observed in human memory, ground memory sources more reliably in the spatial domain than the temporal domain, and demonstrate limited symbolic memory. Collectively, our benchmark provides a valuable resource for future research, while our findings highlight memory as a fundamental yet underexplored capability and offer insights for designing more effective memory mechanisms in multi-modal models. Our code and dataset are available at https://pku-value-lab.github.io/m3eval-homepage.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new benchmark for embodied/multi-modal AI, focusing on memory in multi-modal models, a novel and underexplored angle). Also relevant to criterion 2 (evaluates VLLMs/MLLMs).<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>4. <a href="https://arxiv.org/abs/2606.04385">Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models</a> <a id="link4"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04385<br><strong>Authors:</strong> Shuwen Yu, Zhanxuan Hu, Yi Zhao, Yonghang Tai, Huafeng Li</p>
+<p><strong>Abstract:</strong>  Foundation models have driven rapid progress in computer vision, yet the two dominant paradigms, vision-language foundation models (VLMs) and vision-only foundation models (VFMs), remain only partially compatible. VLMs offer language-grounded semantic alignment but are often visually coarse, while VFMs learn discriminative perceptual geometry but lack semantic grounding. We propose GPUA (Geometry-Preserving Unsupervised Alignment), a framework that integrates the complementary strengths of VFMs and VLMs. Inspired by cross-lingual alignment, GPUA treats VFM features as a visual language and learns an orthogonal mapping that translates the VFM space into the VLM semantic space, preserving geometry and narrowing the modality gap without labels or model parameter updates. GPUA is task-agnostic and requires only feature-level access to pretrained models. Experiments across diverse benchmarks demonstrate improved cross-model compatibility and strong gains in downstream zero-shot recognition and segmentation with negligible overhead. Code is available at https://github.com/Yuteam14/GPUA</p>
+<p><strong>Comment:</strong> Matches criterion 4 (vision foundation models and their alignment; proposes a geometry-preserving unsupervised alignment between vision-only and vision-language foundation models).<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>5. <a href="https://arxiv.org/abs/2606.04455">The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?</a> <a id="link5"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04455<br><strong>Authors:</strong> Xinyu Lu, Tianshu Wang, Pengbo Wang, zujie wen, Zhiqiang Zhang, Jun Zhou, Boxi Cao, Yaojie Lu, Hongyu Lin, Xianpei Han, Le Sun</p>
+<p><strong>Abstract:</strong>  Current AI benchmarks evaluate agents on task execution within human-designed workflows. These evaluations fundamentally fail to measure a critical next-level capability: whether models can autonomously develop agent systems. We introduce the Meta-Agent Challenge (MAC), an evaluation framework designed to test the capacity of frontier models for autonomous agent development. Specifically, a code agent (the meta-agent) is given a sandboxed environment, an evaluation API, and a time limitation to iteratively program an agent artifact that maximizes performance on a held-out test set across five domains. To ensure evaluation integrity, this framework is secured by multi-layer defenses against reward hacking. Leveraging this framework, we demonstrate that meta-agents rarely match human-engineered baseline policies, and the few that do are dominated by proprietary frontier models. Moreover, the design process exhibits high variance, and high optimization pressure surfaces emergent adversarial behaviors like ground-truth exfiltration-highlighting critical deficits in both robustness and model alignment. Ultimately, MAC provides a rigorous, open-source benchmark for autonomous AI research and development, offering an empirical proxy for evaluating recursive self-improvement. Benchmark is publicly available at: https://github.com/ant-research/meta-agent-challenge.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new benchmark for autonomous agent development, focusing on meta-agents and recursive self-improvement, a novel evaluation angle in embodied AI).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>6. <a href="https://arxiv.org/abs/2606.04369">VT-3DAD: Cross-Category 3D Anomaly Detection via Visual-Text Normal Space Alignment</a> <a id="link6"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04369<br><strong>Authors:</strong> Zi Wang, Katsuya Hotta, Yawen Zou, Koichiro Kamide, Yijin Wei, Chao Zhang, Jun Yu</p>
+<p><strong>Abstract:</strong>  Few-shot cross-category 3D anomaly detection aims to determine whether an unknown point cloud belongs to a target normal category using only a few normal references. Existing training-based methods usually require category-wise optimization, while recent training-free methods based on multi-view CLIP visual features mainly rely on visual similarity and may be confused by geometrically similar categories. In this paper, we propose VT-3DAD, a training-free framework for cross-category 3D anomaly detection via Visual-Text Normal Space Alignment. Given few-shot normal references and a test point cloud, VT-3DAD first generates realistic multi-view depth maps and extracts view-wise features using a frozen CLIP visual encoder. The visual branch measures reference-test deviation in the multi-view feature space. In parallel, depth-aware and 3D-aware prompts are encoded by the frozen CLIP text encoder to construct textual normal anchors, which provide semantic normality constraints for the target category. The final anomaly score is obtained by fusing visual deviation from normal references and semantic deviation from the textual normal space. Experiments on the ShapeNetPart dataset demonstrate that VT-3DAD achieves state-of-the-art performance. In particular, VT-3DAD improves the one-shot average AUC-ROC from 92.49% to 94.80% compared with the visual-only baseline, while also reducing the average standard deviation from 5.64 to 3.41.</p>
+<p><strong>Comment:</strong> Matches criterion 2 (uses CLIP-based VLLMs for 3D anomaly detection) and criterion 4 (application of vision foundation models to 3D anomaly detection).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>7. <a href="https://arxiv.org/abs/2606.04536">Scaling Self-Evolving Agents via Parametric Memory</a> <a id="link7"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04536<br><strong>Authors:</strong> Tao Ren, Weiyao Luo, Hui Yang, Rongzhi Zhu, Xiang Huang, Yuchuan Wu, Bingxue Chou, Jieping Ye, Jiafeng Liang, Yongbin Li, Yijie Peng</p>
+<p><strong>Abstract:</strong>  Existing memory-augmented LLM agents store past experience exclusively in prompt space, as textual summaries or retrieved passages, while keeping model parameters frozen throughout a rollout. Such agents can \emph{look up} what they have seen but cannot \emph{learn from} it: their policy is unchanged by experience, and any information dropped from the context is permanently lost. We introduce \texttt{TMEM}, a self-evolving parametric memory framework in which the agent not only compresses history into explicit memory but also absorbs distilled supervision into fast LoRA weights $\Delta_t$ via lightweight online updates, genuinely altering its future behavior within a single episode. We formalize this as an agentic decision process with fast-weight rollout dynamics: actions are sampled from $\pi_{\theta_0+\Delta_t}$, while extraction actions produce supervision that updates $\Delta_t$ for subsequent decisions. This view makes the extraction policy directly optimizable by RL: training $\theta_0$ improves not only task actions but also the quality of the data used for online LoRA adaptation. We further propose SVD-based initialization of the LoRA subspace to accelerate online convergence. Experiments on LoCoMo, LongMemEval-S, multi-objective search, and CL-Bench show that \texttt{TMEM} consistently outperforms summary-based and retrieval-based baselines across different model scales.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new method for memory in agents, enabling self-evolving parametric memory and online adaptation, which is a novel angle in embodied agent learning).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>8. <a href="https://arxiv.org/abs/2606.04457">Imagine Before You Draw: Visual Prompt Engineering for Image Generation</a> <a id="link8"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04457<br><strong>Authors:</strong> Liyu Jia, Fengda Zhang, Jiachun Pan, Kesen Zhao, Saining Zhang, Wang Lin, Weijia Wu, Yue Liao, Aojun Zhou, Hanwang Zhang</p>
+<p><strong>Abstract:</strong>  Incorporating visual semantic representations as an intermediate step before image generation can reduce the modeling difficulty between text and images, thereby improving generation quality. Recent works such as X-Omni and BLIP3o-Next have explored this direction, but they typically use a two-stage external pipeline: a separate autoregressive model first generates semantic tokens, which are then fed as conditioning to an independent diffusion decoder. Since the decoder cannot jointly access the original input and the semantic plan, this design introduces an information bottleneck that limits detail preservation in downstream tasks such as editing. Internal architectures such as Transfusion, BAGEL, and Show-o2 avoid this bottleneck by enabling cross-modal interaction within a single model, but they still face the difficult text-to-pixel modeling gap without intermediate semantic guidance. We propose Visual Prompt Engineering (VPE), which can be seamlessly integrated into such internal frameworks. Specifically, the model first autoregressively generates visual semantic tokens (e.g., SigLIP 2) as &quot;visual prompts&quot; that capture the semantic layout, then generates the full image tokens conditioned on this plan. We validate VPE across class-conditional generation, text-to-image generation, and image editing, covering various token types and model architectures. Results show that VPE can accelerate convergence, raise quality ceilings, and through internal integration, achieve substantially better editing preservation (PSNR: 26.76 vs. 19.92) than external alternatives of the same parameter scale, while maintaining competitive editing responsiveness.</p>
+<p><strong>Comment:</strong> This paper proposes Visual Prompt Engineering (VPE), a new method for integrating visual semantic tokens as intermediate representations in image generation models, improving text-to-image and editing tasks. This is a methodological improvement in vision foundation models and generative modeling (criteria 4 and 1).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>9. <a href="https://arxiv.org/abs/2606.04484">AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning</a> <a id="link9"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04484<br><strong>Authors:</strong> Qingxu Fu, Boyin Liu, Shuchang Tao, Zhaoyang Liu, Bolin Ding</p>
+<p><strong>Abstract:</strong>  We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks that tightly couple agent rollouts with model optimization, AgentJet adopts a decoupled multi-node architecture in which swarm server nodes host trainable models and run optimization on GPU clusters, whereas swarm client nodes execute arbitrary agents on arbitrary devices. This design provides capabilities that are difficult to support in centralized frameworks: (1) heterogeneous multi-model reinforcement learning, enabling the training of heterogeneous multi-agent teams with multiple LLM as brains; (2) multi-task cocktail training with isolated agent runtimes; (3) fault-tolerant execution that prevents external environment failures from interrupting the training process; and (4) live code iteration, which allows agents to be edited during training by replacing swarm client nodes. To support efficient RL in multi-model, multi-turn, and multi-agent settings, AgentJet introduces a context tracking module with timeline merging, which consolidates redundant context and achieves a 1.5-10x training speedup. Finally, AgentJet introduces an automated research system that takes a research topic as input and autonomously conducts long-horizon, multi-day RL studies on large-scale clusters. By leveraging the swarm architecture, this system reproduces key exploratory workflows of RL researchers without human intervention during execution.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new framework for distributed swarm training of agentic RL, enabling new research workflows and multi-agent RL at scale).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>10. <a href="https://arxiv.org/abs/2606.04060">Weakly Supervised Incremental Segmentation via Semantic Anchors and Spatial Arbitration</a> <a id="link10"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04060<br><strong>Authors:</strong> Zhonggai Wang, Kai Fang, Guangyu Gao</p>
+<p><strong>Abstract:</strong>  Weakly Incremental Learning for Semantic Segmentation (WILSS) suffers from the continuous introduction of noisy supervision, which progressively corrupts class-level representations, leading to severe feature drift and semantic corruption, thereby causing newly learned classes to overwrite old ones. To address these issues, we propose a drift-resilient WILSS approach, named SASA, designed to stabilize semantic learning via Semantic Anchors and Spatial Arbitration. Specifically, at the representation level, we introduce semantic anchors of learnable tokens as rigid class-level references to preserve long-term semantic identity. Complementary to this, an elastic residual adaptation facilitates controlled, instance-specific refinement, ensuring a stable yet flexible learning trajectory. At the supervision level, we develop a Spatial Label Arbitration mechanism that performs geometry-aware decisions to directly filter unreliable signals and enforce a strict &quot;one object, one class&quot; constraint. By synergistically stabilizing representations and improving supervision reliability, SASA effectively mitigates feature drift under weak supervision. Extensive experiments on standard benchmarks demonstrate that our approach consistently outperforms existing state-of-the-art methods, particularly in challenging multi-step incremental settings. The code is available at https://github.com/ZhonggaiWang/SASA.</p>
+<p><strong>Comment:</strong> Matches criterion 1 (methodological improvement for spatial understanding in weakly supervised incremental segmentation, with semantic anchors and spatial arbitration).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>11. <a href="https://arxiv.org/abs/2606.04421">Trivium: Temporal Regret as a First-Class Objective for Causal-Memory Controllers</a> <a id="link11"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04421<br><strong>Authors:</strong> Edward Y. Chang</p>
+<p><strong>Abstract:</strong>  Many current agentic systems and LLM pipelines correct mistakes by optimizing outcome reward. This addresses only the what of failure: when an outcome diverges from prediction, the why and when of the mismatch are not systematically logged, reviewed, or corrected, so the same error can recur episode after episode. We argue that this is a structural problem, not merely a model-capacity one. We propose long-horizon temporal regret as a first-class objective alongside outcome regret and epistemic regret over the working causal model. Temporal regret captures when failure persists: how long a miscalibrated causal model is tolerated before correction. Epistemic regret captures why failure persists: residual uncertainty or error in the working causal model. Together, the three regrets give a falsifiable account of what, why, and when a long-lived agent can fail. Modeling the agent as a stream of E episodes, we prove three conditional results under explicit causal-probing, persistence, and detectability assumptions. First, under observationally equivalent confounding, outcome-only learning cannot distinguish causal from spurious structure without an intervention channel, so temporal miscalibration can persist linearly even after outcome regret is driven to zero. Second, with a persistent causal log and budgeted probes, total probe complexity is logarithmic in the episode horizon, inducing O(log E) temporal regret. Third, under K detectable change-points, the rate extends to O(K log E). We instantiate Trivium and pre-register five falsifiable predictions. On CausalBench-Seq, Trivium follows the predicted logarithmic envelope while outcome-only baselines grow linearly. A pilot real-LLM stream provides preliminary external-validity evidence across one full E = 500 run and three E = 100 frontier-model pilots. Self-learning here means revising an external causal model, not retraining LLM weights.</p>
+<p><strong>Comment:</strong> This paper proposes a new objective (temporal regret) for agentic systems and introduces the Trivium framework for causal-memory controllers, with theoretical and empirical results. While it is a novel angle on agent learning, it is not directly about spatial intelligence, VLLMs/MLLMs, or vision foundation models, but is tangentially related to embodied AI methodology.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>12. <a href="https://arxiv.org/abs/2606.04797">Crafting Your Evolving Dreams: Concept-Incremental Versatile Customization</a> <a id="link12"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04797<br><strong>Authors:</strong> Jiahua Dong, Wenqi Liang, Hongliu Li, Yang Cong, Duzhen Zhang, Hanbin Zhao, Henghui Ding, Yulun Zhang, Salman Khan, Fahad Shahbaz Khan</p>
+<p><strong>Abstract:</strong>  Custom diffusion models (CDMs) have garnered significant interest owing to their remarkable capacity for generating personalized concepts. However, the majority of CDMs unrealistically presume that the user&#x27;s collection of personalized concepts is static and incapable of incremental growth over time. Furthermore, they exhibit significant catastrophic forgetting and concept neglect of previously learned concepts when incrementally learning a sequence of new ones. To resolve the above challenges, we develop a novel Continually Customizable Diffusion Model (CCDM), enabling users to perform concept-incremental versatile customization. Specifically, we design an attribute-decoupled LoRA (AD-LoRA) module and a relevance-guided AD-LoRA aggregation strategy to mitigate catastrophic forgetting. They can preserve concept-specific attributes of each task and leverage beneficial inter-task correlations to enhance the continual learning of new customization tasks. Additionally, to address the challenge of concept neglect, we propose a controllable regional context synthesis strategy that performs multi-concept composition in alignment with user-provided conditions. This strategy enhances the overall consistency in multi-concept synthesis by guaranteeing semantic independence between user-defined regions and their smooth boundary transitions. Experiments show our CCDM exhibits significant improvements over baseline methods.</p>
+<p><strong>Comment:</strong> This paper introduces a new continual learning method for custom diffusion models, enabling incremental concept learning and multi-concept composition. It is a methodological improvement in generative modeling, but not directly about spatial intelligence or embodied agents. It is relevant to vision foundation models and generative modeling (criterion 4).<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>13. <a href="https://arxiv.org/abs/2606.04432">DSA: Dynamic Step Allocation for Fast Autoregressive Video Generation</a> <a id="link13"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04432<br><strong>Authors:</strong> Thanh-Tung Le, Yunhan Zhao, Menglei Chai, Zhengyang Shen, Zhe Cao, Danhang Tang, Xiaohui Xie, Deying Kong</p>
+<p><strong>Abstract:</strong>  Video diffusion transformers have achieved state-of-the-art visual quality, but their high inference cost remains a major bottleneck for real-time applications. Recent distillation frameworks produce autoregressive video diffusion models with reduced latency, yet these models still use a fixed number of denoising steps per frame, wasting computation on predictable frames and under-refining challenging ones. We present DSA, a confidence-guided adaptive computation framework for AR video diffusion. DSA introduces a lightweight confidence head, trained jointly with the generator under a distribution-matching distillation objective, to estimate per-frame denoising reliability. At inference, this confidence signal dynamically adjusts the number of diffusion steps: simple frames terminate early for speed, while complex frames receive additional refinement. Our method requires no extra video data, no heuristics, and little architectural modification. Experiments show that DSA achieves real-time autoregressive video generation, reaching 22.63 FPS with sub-second latency on H100 GPUs, while maintaining competitive or superior VBench quality compared to recent autoregressive and bidirectional video diffusion models. Our results demonstrate that confidence-guided adaptive sampling provides an effective and practical path toward interactive video generation.</p>
+<p><strong>Comment:</strong> This paper proposes a new method (DSA) for adaptive computation in autoregressive video diffusion models, introducing a confidence-guided dynamic step allocation for faster and more efficient video generation. This is a methodological improvement in generative modeling for video, which is relevant to spatial intelligence and generative modeling (criterion 1).<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>14. <a href="https://arxiv.org/abs/2606.04820">OA-CutMix: Correcting the Label Bias of CutMix</a> <a id="link14"></a></h2>
+<p><strong>ArXiv ID:</strong> 2606.04820<br><strong>Authors:</strong> Tobias Christian Nauen, Stanislav Frolov, Federico Raue, Brian B. Moser, Andreas Dengel</p>
+<p><strong>Abstract:</strong>  CutMix has become the de facto standard mixing augmentation, yet its label assignment rests on a flawed assumption: The area of the pasted patch faithfully reflects its semantic contribution to the mixed image. In practice, however, patches frequently land on background regions, assigning label credit to classes whose objects are not visible. The mean discrepancy of the CutMix label and the semantic object area is $21.5\%$. In $17\%$ of samples an image contributes zero visible object pixels yet receives nonzero label weight. We propose Object-Aware CutMix (OA-CutMix), which corrects this bias by replacing the area-based CutMix weight with one derived from precomputed segmentation masks, assigning labels in proportion to the visible object area each image contributes to the mix. The image mixing procedure is left entirely unchanged. We evaluate OA-CutMix against 10+ static and dynamic mixing methods across 4 architectures and 6 datasets. OA-CutMix consistently achieves the highest accuracy over all tasks, outperforming even dynamic mixing methods, but at a fraction of the training-time cost. Improvements are largest for small objects, where the label bias from CutMix is greatest. Thus, correcting the label is sufficient to match or exceed the performance of methods modifying the image mixing algorithm.</p>
+<p><strong>Comment:</strong> Does not match any specific criterion; focuses on label bias correction in CutMix for image classification, not spatial intelligence, VLLMs, embodied AI, or vision foundation models.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 6</p>
+<hr>
+<hr>
+<h2>Paper selection prompt</h2>
+<p>1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
+<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.</p>
+    </article>
+  </main>
+</body>
+</html>

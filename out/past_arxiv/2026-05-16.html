@@ -1,0 +1,609 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / May 16, 2026</title>
+
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / May 16, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>05/16/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+    <article class="archive-content">
+      <h1>Personalized Daily ArXiv Papers 05/16/2026</h1>
+<p>Total relevant papers: 24</p>
+<p>Paper selection prompt and criteria at the bottom</p>
+<p>Table of contents with paper titles:</p>
+<p>0. <a href="#link0">Learning to Build the Environment: Self-Evolving Reasoning RL via Verifiable Environment Synthesis</a><br><strong>Authors:</strong> Yucheng Shi, Zhenwen Liang, Kishan Panaganti, Dian Yu, Wenhao Yu, Haitao Mi</p>
+<p>1. <a href="#link1">ASH: Agents that Self-Hone via Embodied Learning</a><br><strong>Authors:</strong> Benjamin Schneider, Xavier Schneider, Victor Zhong, Sun Sun</p>
+<p>2. <a href="#link2">From Table to Cell: Attention for Better Reasoning with TABALIGN</a><br><strong>Authors:</strong> Tung Sum Thomas Kwok, Zeyong Zhang, Xinyu Wang, Chunhe Wang, Xiaofeng Lin, Hanwei Wu, Lei Ding, Guang Cheng, Zhijiang Guo</p>
+<p>3. <a href="#link3">Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model</a><br><strong>Authors:</strong> Minghao Wu, Yuting Yan, Zhenyang Cai, Ke Ji, Chuangsen Fang, Ziying Sheng, Xidong Wang, Rongsheng Wang, Hejia Zhang, Shuang Li, Benyou Wang, Hongyuan Zha</p>
+<p>4. <a href="#link4">AI Outperforms Humans in Personalized Image Aesthetics Assessment via LLM-Based Interviews and Semantic Feature Extraction</a><br><strong>Authors:</strong> Yoshia Abe, Tatsuya Daikoku, Yasuo Kuniyoshi</p>
+<p>5. <a href="#link5">ClawForge: Generating Executable Interactive Benchmarks for Command-Line Agents</a><br><strong>Authors:</strong> Yuxiang Lai, Peng Xia, Haonian Ji, Kaiwen Xiong, Kaide Zeng, Jiaqi Liu, Fang Wu, Jike Zhong, Zeyu Zheng, Cihang Xie, Huaxiu Yao</p>
+<p>6. <a href="#link6">Coding Agent Is Good As World Simulator</a><br><strong>Authors:</strong> Hongyu Wang, Jingquan Wang, Bocheng Zou, Radu Serban, Dan Negrut</p>
+<p>7. <a href="#link7">Orchard: An Open-Source Agentic Modeling Framework</a><br><strong>Authors:</strong> Baolin Peng, Wenlin Yao, Qianhui Wu, Hao Cheng, Xiao Yu, Rui Yang, Tao Ge, Alessandrio Sordoni, Xingdi Yuan, Yelong Shen, Pengcheng He, Tong Zhang, Zhou Yu, Jianfeng Gao</p>
+<p>8. <a href="#link8">$\pi$-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows</a><br><strong>Authors:</strong> Haoran Zhang, Luxin Xu, Zhilin Wang, Runquan Gui, Shunkai Zhang, Haodi Lei, Zihao He, Bingsu He, Chicheng Qin, Tong Zhu, Xiaoye Qu, Yang Yang, Yu Cheng, Yafu Li</p>
+<p>9. <a href="#link9">Are Agents Ready to Teach? A Multi-Stage Benchmark for Real-World Teaching Workflows</a><br><strong>Authors:</strong> Zixin Chen, Peng Liu, Rui Sheng, Haobo Li, Jianhong Tu, Xiaodong Deng, Kashun Shum, Dayiheng Liu, Huamin Qu</p>
+<p>10. <a href="#link10">LEMON: Learning Executable Multi-Agent Orchestration via Counterfactual Reinforcement Learning</a><br><strong>Authors:</strong> Xudong Chen, Yixin Liu, Hua Wei, Kaize Ding</p>
+<p>11. <a href="#link11">GraphBit: A Graph-based Agentic Framework for Non-Linear Agent Orchestration</a><br><strong>Authors:</strong> Yeahia Sarker, Md Rahmat Ullah, Musa Molla, Shafiq Joty</p>
+<p>12. <a href="#link12">Good to Go: The LOOP Skill Engine That Hits 99% Success and Slashes Token Usage by 99% via One-Shot Recording and Deterministic Replay</a><br><strong>Authors:</strong> Xiaohua Wang, Kai Yu, XuXiao Liang, Liang Wang, Chao Han</p>
+<p>13. <a href="#link13">Stateful Reasoning via Insight Replay</a><br><strong>Authors:</strong> Bin Lei, Caiwen Ding, Jiachen Yang, Ang Li, Xin Eric Wang</p>
+<p>14. <a href="#link14">Herculean: An Agentic Benchmark for Financial Intelligence</a><br><strong>Authors:</strong> Xueqing Peng, Zhuohan Xie, Yupeng Cao, Haohang Li, Lingfei Qian, Yan Wang, Vincent Jim Zhang, Huan He, Xuguang Ai, Linhai Ma, Ruoyu Xiang, Yueru He, Yi Han, Shuyao Wang, Yuqing Guo, Mingyang Jiang, Yilun Zhao, Youzhong Dong, Xiaoyu Wang, Yankai Chen, Ye Yuan, Qiyuan Zhang, Fuyuan Lyu, Haolun Wu, Yonghan Yang, Zichen Zhao, Yuyang Dai, Fan Zhang, Rania Elbadry, Ayesha Gull, Muhammad Usman Safder, Nuo Chen, Fengbin Zhu, Tianshi Cai, Zimu Wang, Polydoros Giannouris, Yuechen Jiang, Zhiwei Liu, Mohsinul Kabir, Yuyan Wang, Yixiang Zheng, Yangyang Yu, Weijin Liu, Wenbo Cao, Anke Xu, Peng Lu, Jerry Huang, Fengran Mo, Mingquan Lin, Prayag Tiwari, Yijia Zhao, Victor Gutierrez Basulto, Xiao-Yang Liu, Kaleb E Smith, Jiahuan Pei, Arman Cohan, Jimin Huang, Yuehua Tang, Alejandro Lopez-Lira, Xi Chen, Xue Liu, Junichi Tsujii, Jian-Yun Nie, Sophia Ananiadou</p>
+<p>15. <a href="#link15">MediaClaw: Multimodal Intelligent-Agent Platform Technical Report</a><br><strong>Authors:</strong> Shaoan Zhao, Huanlin Gao, Qiang Hui, Ting Lu, Xueqiang Guo, Yantao Li, Xinpei Su, Fuyuan Shi, Chao Tan, Fang Zhao, Kai Wang, Shiguo Lian</p>
+<p>16. <a href="#link16">CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation</a><br><strong>Authors:</strong> Yuyang Wu, Stefano Falletta, Delia McGrath, Sherry Yang</p>
+<p>17. <a href="#link17">Grounded Continuation: A Linear-Time Runtime Verifier for LLM Conversations</a><br><strong>Authors:</strong> Qisong He, Yi Dong, Xiaowei Huang</p>
+<p>18. <a href="#link18">Case-Based Calibration of Adaptive Reasoning and Execution for LLM Tool Use</a><br><strong>Authors:</strong> Renning Pang, Tian Lan, Leyuan Liu, Piao Tong, Sheng Cao, Xiaosong Zhang</p>
+<p>19. <a href="#link19">Probabilistic Verification of Recurrent Neural Networks for Single and Multi-Agent Reinforcement Learning</a><br><strong>Authors:</strong> Luca Marzari, Enrico Marchesini</p>
+<p>20. <a href="#link20">Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems</a><br><strong>Authors:</strong> Shihao Qi, Jie Ma, Rui Xing, Wei Guo, Xiao Huang, Zhitao Gao, Jianhao Deng, Jun Liu, Lingling Zhang, Bifan Wei, Boqian Yang, Pinghui Wang, Jianwen Sun, Jing Tao, Yaqiang Wu, Hui Liu, Yu Yao, Tongliang Liu</p>
+<p>21. <a href="#link21">Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use</a><br><strong>Authors:</strong> Yize Cheng, Chenrui Fan, Mahdi JafariRaviz, Keivan Rezaei, Soheil Feiz</p>
+<p>22. <a href="#link22">Hypergraph Enterprise Agentic Reasoner over Heterogeneous Business Systems</a><br><strong>Authors:</strong> Ling Wang, Songnan Liu, Jianan Wang, Cheng Cheng, Xin Liu, Yihan Zhu, Enyu Li, Yu Xiao, Jiangyong Xie, Duogong Yan, Jiangyi Chen</p>
+<p>23. <a href="#link23">Precise Verification of Transformers through ReLU-Catalyzed Abstraction Refinement</a><br><strong>Authors:</strong> Hengjie Liu, Zhenya Zhang, Jianjun Zhao</p>
+<hr>
+<h2>0. <a href="https://arxiv.org/abs/2605.14392">Learning to Build the Environment: Self-Evolving Reasoning RL via Verifiable Environment Synthesis</a> <a id="link0"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14392<br><strong>Authors:</strong> Yucheng Shi, Zhenwen Liang, Kishan Panaganti, Dian Yu, Wenhao Yu, Haitao Mi</p>
+<p><strong>Abstract:</strong>  We pursue a vision for self-improving language models in which the model does not merely generate problems or traces to imitate, but constructs the environments that train it. In zero-data reasoning RL, this reframes self-improvement from a data-generation loop into an environment-construction loop, where each artifact is a reusable executable object that samples instances, computes references, and scores responses. Whether this vision sustains improvement hinges on a single property: the environments must exhibit stable solve--verify asymmetry, the model must be able to write an oracle once that it cannot reliably execute in natural language on fresh instances. This asymmetry takes two complementary forms. Some tasks are algorithmically hard to reason through but trivial as code: a dynamic program or graph traversal, compiled once, yields unboundedly many calibrated instances. Others are intrinsically hard to solve but easy to verify, like planted subset-sum or constraint satisfaction. Both create a durable gap between proposing and solving that the policy cannot close by gaming the verifier, and it is this gap that keeps reward informative as the learner improves. We instantiate this view in EvoEnv, a single-policy generator, solver method that synthesizes Python environments from ten seeds and admits them only after staged validation, semantic self-review, solver-relative difficulty calibration, and novelty checks. The strongest evidence comes from the already-strong regime: on Qwen3-4B-Thinking, fixed public-data RLVR and fixed hand-crafted environment RLVR reduce the average, while EvoEnv improves it from 72.4 to 74.8, a relative gain of 3.3%. Stable self-improvement, we suggest, depends not on producing more synthetic data, but on models learning to construct worlds whose difficulty stays structurally beyond their own reach.</p>
+<p><strong>Comment:</strong> Matches criterion 3: Proposes EvoEnv, a novel self-evolving reasoning RL framework where the agent constructs its own training environments, focusing on stable self-improvement and environment synthesis. Presents a new angle on embodied AI and benchmarking.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>1. <a href="https://arxiv.org/abs/2605.14211">ASH: Agents that Self-Hone via Embodied Learning</a> <a id="link1"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14211<br><strong>Authors:</strong> Benjamin Schneider, Xavier Schneider, Victor Zhong, Sun Sun</p>
+<p><strong>Abstract:</strong>  Long-horizon embodied tasks remain a fundamental challenge in AI, as current methods rely on hand-engineered rewards or action-labeled demonstrations, neither of which scales. We introduce ASH, an agentic system that learns an embodied policy from unlabeled, noisy internet video, without reward shaping or expert annotation. ASH follows a self-improvement loop; when it gets stuck, ASH learns an Inverse Dynamics Model (IDM) from its own trajectories, and uses its IDM to extract supervision from relevant internet video. ASH uses unsupervised learning to identify key moments from large-scale internet video and retains them as long-term memory -- allowing it to tackle long-horizon problems. We evaluate ASH on two complementary environments demanding multi-hour planning: Pokemon Emerald, a turn-based RPG, and The Legend of Zelda: The Minish Cap, a real-time action-adventure game. In both games, behavioral cloning, retrieval-augmented and zero-shot foundation-model baselines plateau, while ASH sustains progression across our 8-hour evaluation. ASH reaches an average of $11.2/12$ milestones in Pokemon Emerald and $9.9/12$ in Legend of Zelda, while the strongest baseline gets stuck in both environments at an average of $6.5/12$ and $6.0/12$ milestones, respectively. We demonstrate that self-improving agents are a scalable recipe for long-horizon embodied learning.</p>
+<p><strong>Comment:</strong> Matches criterion 1 and 3: Introduces a new method (ASH) for embodied agents to learn from unlabeled, noisy internet video without reward shaping or expert annotation, and demonstrates a scalable self-improvement loop for long-horizon embodied learning. Also presents strong empirical results in game environments.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>2. <a href="https://arxiv.org/abs/2605.14465">From Table to Cell: Attention for Better Reasoning with TABALIGN</a> <a id="link2"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14465<br><strong>Authors:</strong> Tung Sum Thomas Kwok, Zeyong Zhang, Xinyu Wang, Chunhe Wang, Xiaofeng Lin, Hanwei Wu, Lei Ding, Guang Cheng, Zhijiang Guo</p>
+<p><strong>Abstract:</strong>  Multi-step LLM reasoning over structured tables fails because planning and execution share no explicit cell-grounding contract. Existing methods constrain the planner to a left-to-right factorization at odds with table permutation invariance, and score intermediate states by generated content alone, overlooking cell grounding. We conduct a pilot study showing that diffusion language models (DLMs) produce more human-aligned and permutation-stable cell attention on tables than autoregressive models, with a 40.2% median reduction in attention-AUROC variability under row reordering. Motivated by this, we propose TABALIGN, a planned table reasoning framework that operationalizes the contract. TABALIGN pairs a masked DLM planner, whose bidirectional denoising emits plan steps as binary cell masks, with TABATTN, a lightweight verifier trained on 1,600 human-verified attention standards to score each step by its attention overlap with the plan-designated mask. Across eight benchmarks covering table question answering and fact verification, TABALIGN improves average accuracy by 15.76 percentage points over the strongest open-source baseline at comparable 8B-class scale, with a matched-backbone ablation attributing 2.87 percentage points of this gain to the DLM planner over an AR planner on a fixed reasoner. Cleaner DLM plans also accelerate downstream reasoning execution by 44.64%.</p>
+<p><strong>Comment:</strong> Matches criterion 2 and 4: Proposes TABALIGN, a new table reasoning framework using diffusion language models (DLMs) for better cell-level attention and reasoning, with significant empirical improvements. Focuses on multi-modal reasoning and foundation model applications.<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>3. <a href="https://arxiv.org/abs/2605.14723">Agentifying Patient Dynamics within LLMs through Interacting with Clinical World Model</a> <a id="link3"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14723<br><strong>Authors:</strong> Minghao Wu, Yuting Yan, Zhenyang Cai, Ke Ji, Chuangsen Fang, Ziying Sheng, Xidong Wang, Rongsheng Wang, Hejia Zhang, Shuang Li, Benyou Wang, Hongyuan Zha</p>
+<p><strong>Abstract:</strong>  Sepsis management in the ICU requires sequential treatment decisions under rapidly evolving patient physiology. Although large language models (LLMs) encode broad clinical knowledge and can reason over guidelines, they are not inherently grounded in action-conditioned patient dynamics. We introduce SepsisAgent, a world model-augmented LLM agent for sepsis treatment recommendation. SepsisAgent uses a learned Clinical World Model to simulate patient responses under candidate fluid--vasopressor interventions, and follows a propose--simulate--refine workflow before committing to a prescription. We first show that world-model access alone yields inconsistent LLM decision performance, motivating agent-specific training. We then train SepsisAgent through a three-stage curriculum: patient-dynamics supervised fine-tuning, propose--simulate--refine behavior cloning, and world-model-based agentic reinforcement learning. On MIMIC-IV sepsis trajectories, SepsisAgent outperforms all traditional RL and LLM-based baselines in off-policy value while achieving the best safety profile under guideline adherence and unsafe-action metrics. Further analysis shows that repeated interaction with the Clinical World Model enables the agent to learn regularities in patient evolution, which remain useful even when simulator access is removed.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (embodied AI with a new agentic method using a Clinical World Model for patient dynamics, with a novel propose-simulate-refine workflow).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>4. <a href="https://arxiv.org/abs/2605.14761">AI Outperforms Humans in Personalized Image Aesthetics Assessment via LLM-Based Interviews and Semantic Feature Extraction</a> <a id="link4"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14761<br><strong>Authors:</strong> Yoshia Abe, Tatsuya Daikoku, Yasuo Kuniyoshi</p>
+<p><strong>Abstract:</strong>  Accurately predicting individual aesthetic evaluation for images is a fundamental challenge for AI. Various deep learning (DL)-based models have been proposed for this task, training on image evaluation data to extract objective low-level features. However, aesthetic preferences are inherently subjective and individual-dependent. Accurate prediction thus requires the extraction of high-level semantic features of images and the active collection of preference information from the target individual. To address this issue, we focus on the utility of Large Language Models (LLMs) pretrained on vast amounts of textual data, and develop an integrated DL-LLM system. The system actively elicits aesthetic preferences through LLM-based semi-structured interviews and predicts aesthetic evaluation by leveraging both low-level and high-level features. In our experiments, we compare the proposed system against conventional systems, human predictors, and the target individual&#x27;s own re-evaluations after a certain time interval. Our results show that the proposed system outperforms all of them, with particularly strong performance on highly-rated images. Moreover, the prediction error of the proposed system is smaller than within-person variability, while human predictors show the largest error, likely due to the influence of their own aesthetic values. These results suggest that AI may be better positioned than others or one&#x27;s future self to capture individual aesthetic preferences at a given point. This opens a new question of whether AI could serve as a deeper interpreter of human aesthetic sensibility than humans themselves.</p>
+<p><strong>Comment:</strong> Matches criterion 2 and 4: Presents a system integrating deep learning and LLMs for personalized image aesthetics assessment, leveraging both low-level and high-level semantic features. Strong empirical results showing AI outperforming humans in this task.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>5. <a href="https://arxiv.org/abs/2605.14133">ClawForge: Generating Executable Interactive Benchmarks for Command-Line Agents</a> <a id="link5"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14133<br><strong>Authors:</strong> Yuxiang Lai, Peng Xia, Haonian Ji, Kaiwen Xiong, Kaide Zeng, Jiaqi Liu, Fang Wu, Jike Zhong, Zeyu Zheng, Cihang Xie, Huaxiu Yao</p>
+<p><strong>Abstract:</strong>  Interactive agent benchmarks face a tension between scalable construction and realistic workflow evaluation. Hand-authored tasks are expensive to extend and revise, while static prompt evaluation misses failures that only appear when agents operate over persistent state. Existing interactive benchmarks have advanced agent evaluation significantly, but most initialize tasks from clean state and do not systematically test how agents handle pre-existing partial, stale, or conflicting artifacts. We present \textbf{ClawForge}, a generator-backed benchmark framework for executable command-line workflows under state conflict. The framework compiles scenario templates, grounded slots, initialized state, reference trajectories, and validators into reproducible task specifications, and evaluates agents step by step over persistent workflow surfaces using normalized end state and observable side effects rather than exact trajectory matching. We instantiate this framework as the ClawForge-Bench (17 scenarios, 6 ability categories). Results across seven frontier models show that the best model reaches only 45.3% strict accuracy, wrong-state replacement remains below 17\% for all models, and the widest model separation (17% to 90%) is driven by whether agents inspect existing state before acting. Partial-credit and step-efficiency analyses further reveal that many failures are near-miss closures rather than early breakdowns, and that models exhibit qualitatively different failure styles under state conflict.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces ClawForge, a generator-backed benchmark for command-line agents under state conflict, focusing on realistic workflow evaluation and persistent state, a novel angle.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>6. <a href="https://arxiv.org/abs/2605.14398">Coding Agent Is Good As World Simulator</a> <a id="link6"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14398<br><strong>Authors:</strong> Hongyu Wang, Jingquan Wang, Bocheng Zou, Radu Serban, Dan Negrut</p>
+<p><strong>Abstract:</strong>  World models have emerged as a powerful paradigm for building interactive simulation environments, with recent video-based approaches demonstrating impressive progress in generating visually plausible dynamics. However, because these models typically infer dynamics from video and represent them in latent states, they do not explicitly enforce physical constraints. As a result, the generated video rollouts are not physically plausible, exhibiting unstable contacts, distorted shapes, or inconsistent motion. In this paper, we present an agentic framework constructing physics-based world models through executable simulation code. The framework coordinates planning, code generation, visual review, and physics analysis agents. The planning agent converts the natural language prompt into a structured scene plan, the code agent implements it as executable simulation code, and the visual review agent provide visual feedback while the physics analysis agent checks physical consistency. The code is iteratively revised based on the feedback until the simulation matches the prompt reqirements and physical constraints. Experimental results show that our framework outperforms advanced video-based models in physical accuracy, instruction fidelity and visual quality, which could be applied to various scenarios including driving simulation and embodied robot tasks.</p>
+<p><strong>Comment:</strong> Matches criterion 3: proposes a new agentic framework for building physics-based world models using code generation and multi-agent coordination, outperforming video-based models in physical accuracy. Relevant for embodied AI and simulators.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>7. <a href="https://arxiv.org/abs/2605.15040">Orchard: An Open-Source Agentic Modeling Framework</a> <a id="link7"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15040<br><strong>Authors:</strong> Baolin Peng, Wenlin Yao, Qianhui Wu, Hao Cheng, Xiao Yu, Rui Yang, Tao Ge, Alessandrio Sordoni, Xingdi Yuan, Yelong Shen, Pengcheng He, Tong Zhang, Zhou Yu, Jianfeng Gao</p>
+<p><strong>Abstract:</strong>  Agentic modeling aims to transform LLMs into autonomous agents capable of solving complex tasks through planning, reasoning, tool use, and multi-turn interaction with environments. Despite major investment, open research remains constrained by infrastructure and training gaps. Many high-performing systems rely on proprietary codebases, models, or services, while most open-source frameworks focus on orchestration and evaluation rather than scalable agent training. We present Orchard, an open-source framework for scalable agentic modeling. At its core is Orchard Env, a lightweight environment service providing reusable primitives for sandbox lifecycle management across task domains, agent harnesses, and pipeline stages. On top of Orchard Env, we build three agentic modeling recipes. Orchard-SWE targets coding agents. We distill 107K trajectories from MiniMax-M2.5 and Qwen3.5-397B, introduce credit-assignment SFT to learn from productive segments of unresolved trajectories, and apply Balanced Adaptive Rollout for RL. Starting from Qwen3-30B-A3B-Thinking, Orchard-SWE achieves 64.3% on SWE-bench Verified after SFT and 67.5% after SFT+RL, setting a new state of the art among open-source models of comparable size. Orchard-GUI trains a 4B vision-language computer-use agent using only 0.4K distilled trajectories and 2.2K open-ended tasks. It achieves 74.1%, 67.0%, and 64.0% success rates on WebVoyager, Online-Mind2Web, and DeepShop, respectively, making it the strongest open-source model while remaining competitive with proprietary systems. Orchard-Claw targets personal assistant agents. Trained with only 0.2K synthetic tasks, it achieves 59.6% pass@3 on Claw-Eval and 73.9% when paired with a stronger ZeroClaw harness. Collectively, these results show that a lightweight, open, harness-agnostic environment layer enables reusable agentic data, training recipes, and evaluations across domains.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces Orchard, an open-source agentic modeling framework with new environment primitives and agentic recipes, including a vision-language agent (Orchard-GUI). Also relevant to criterion 4 for vision-language applications.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>8. <a href="https://arxiv.org/abs/2605.14678">$\pi$-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows</a> <a id="link8"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14678<br><strong>Authors:</strong> Haoran Zhang, Luxin Xu, Zhilin Wang, Runquan Gui, Shunkai Zhang, Haodi Lei, Zihao He, Bingsu He, Chicheng Qin, Tong Zhu, Xiaoye Qu, Yang Yang, Yu Cheng, Yafu Li</p>
+<p><strong>Abstract:</strong>  The rise of personal assistant agents, e.g., OpenClaw, highlights the growing potential of large language models to support users across everyday life and work. A core challenge in these settings is proactive assistance, since users often begin with underspecified requests and leave important needs, constraints, or preferences unstated. However, existing benchmarks rarely evaluate whether agents can identify and act on such hidden intents before they are explicitly stated, especially in sustained multi-turn interactions where user needs emerge gradually. To address this gap, we introduce $\pi$-Bench, a benchmark for proactive assistance comprising 100 multi-turn tasks across 5 domain-specific user personas. By incorporating hidden user intents, inter-task dependencies, and cross-session continuity, $\pi$-Bench evaluates agents&#x27; ability to anticipate and address user needs over extended interactions, jointly measuring proactivity and task completion in long-horizon trajectories that better reflect real-world use. Experiments show (1) proactive assistance remains challenging, (2) a clear distinction between task completion and proactivity, and (3) the value of prior interaction for proactive intent resolution in later tasks.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces π-Bench, a new benchmark for proactive personal assistant agents in long-horizon workflows, focusing on hidden user intents and proactivity, which is a novel angle.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>9. <a href="https://arxiv.org/abs/2605.14322">Are Agents Ready to Teach? A Multi-Stage Benchmark for Real-World Teaching Workflows</a> <a id="link9"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14322<br><strong>Authors:</strong> Zixin Chen, Peng Liu, Rui Sheng, Haobo Li, Jianhong Tu, Xiaodong Deng, Kashun Shum, Dayiheng Liu, Huamin Qu</p>
+<p><strong>Abstract:</strong>  Language agents are increasingly deployed in complex professional workflows, with tutoring emerging as a particularly high-stakes capability that remains largely unmeasured in existing benchmarks. Effective tutor agents require more than producing correct answers or executing accurate tool calls: a robust tutor must diagnose learner state, adapt support over time, make pedagogically justified decisions grounded in educational evidence, and execute interventions within realistic learning-management systems. We introduce EduAgentBench, a source-grounded benchmark for holistically evaluating tutor agents across the full scope of teaching work. It contains 150 quality-controlled tasks across three capability surfaces: professional pedagogical judgment, situated multi-turn tutoring, and Canvas-style teaching workflow completion. Tasks are constructed through a pedagogical-insight-driven pipeline and evaluated with complementary verification signals and human review. Across a comprehensive evaluation of frontier models, our findings reveal that current models are generally capable of bounded pedagogical judgment, but still fall short of professional teaching standards in situated tutoring and autonomous teaching-workflow execution. To our knowledge, EduAgentBench is the first theory-grounded and realistic benchmark for evaluating the holistic teaching capability of tutor agents, providing a measurement foundation for developing future tutor agents that can support realistic teaching work.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces EduAgentBench, a new benchmark for evaluating tutor agents in realistic teaching workflows, focusing on holistic teaching capabilities that previous benchmarks ignored.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>10. <a href="https://arxiv.org/abs/2605.14483">LEMON: Learning Executable Multi-Agent Orchestration via Counterfactual Reinforcement Learning</a> <a id="link10"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14483<br><strong>Authors:</strong> Xudong Chen, Yixin Liu, Hua Wei, Kaize Ding</p>
+<p><strong>Abstract:</strong>  Large language models (LLMs) have become a strong foundation for multi-agent systems, but their effectiveness depends heavily on orchestration design. Across different tasks, role design, capacity assignment, and dependency construction jointly affect both solution quality and execution efficiency. Existing approaches automate parts of this design process, yet they often optimize these decisions partially or sequentially, and rely on execution-level feedback that provides limited credit assignment for local orchestration decisions. We propose LEMON (\textbf{L}earning \textbf{E}xecutable \textbf{M}ulti-agent \textbf{O}rchestratio\textbf{N} via Counterfactual Reinforcement Learning), an LLM-based orchestrator that generates an executable orchestration specification. The specification integrates task-specific roles, customized duties, capacity levels, and dependency structure into a single deployable system. To train the orchestrator, we augment the orchestration-level GRPO objective with a localized counterfactual signal that edits role, capacity, or dependency fields and applies the resulting reward contrast only to the edited spans. Experiments on six reasoning and coding benchmarks, including MMLU, GSM8K, AQuA, MultiArith, SVAMP, and HumanEval, show that LEMON achieves state-of-the-art performance among the evaluated multi-agent orchestration methods. Our code is available at https://anonymous.4open.science/r/LEMON-B23C.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new method for multi-agent orchestration using counterfactual RL, a novel approach to agent collaboration and credit assignment).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>11. <a href="https://arxiv.org/abs/2605.13848">GraphBit: A Graph-based Agentic Framework for Non-Linear Agent Orchestration</a> <a id="link11"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.13848<br><strong>Authors:</strong> Yeahia Sarker, Md Rahmat Ullah, Musa Molla, Shafiq Joty</p>
+<p><strong>Abstract:</strong>  Agentic LLM frameworks that rely on prompted orchestration, where the model itself determines workflow transitions, often suffer from hallucinated routing, infinite loops, and non-reproducible execution. We introduce GraphBit, an engine-orchestrated framework that defines workflows explicitly and deterministically as a directed acyclic graph (DAG). Unlike prompted orchestration, agents in GraphBit operate as typed functions, while a Rust-based engine governs routing, state transitions, and tool invocation, ensuring reproducibility and auditability. The engine supports parallel branch execution, conditional control flow over structured state predicates, and configurable error recovery. A three-tier memory architecture consisting of ephemeral scratch space, structured state, and external connectors isolates context across stages, preventing cascading context bloat that degrades reasoning in long-running pipelines. Across GAIA benchmark tasks spanning zero-tool, document-augmented, and web-enabled workflows, GraphBit outperforms six existing frameworks, achieving the highest accuracy (67.6 percent), zero framework-induced hallucinations, the lowest latency (11.9 ms overhead), and the highest throughput. Ablation studies demonstrate that each memory tier contributes measurably to performance, with deterministic execution providing the greatest gains on tool-intensive tasks representative of real-world deployments.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces GraphBit, a graph-based agentic framework for non-linear agent orchestration, addressing reproducibility and workflow control in agentic LLMs. Novel in orchestration and memory architecture.<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>12. <a href="https://arxiv.org/abs/2605.14237">Good to Go: The LOOP Skill Engine That Hits 99% Success and Slashes Token Usage by 99% via One-Shot Recording and Deterministic Replay</a> <a id="link12"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14237<br><strong>Authors:</strong> Xiaohua Wang, Kai Yu, XuXiao Liang, Liang Wang, Chao Han</p>
+<p><strong>Abstract:</strong>  Deploying AI agents for repetitive periodic tasks exposes a critical tension: Large Language Models (LLMs) offer unmatched flexibility in tool orchestration, yet their inherent stochasticity causes unpredictable failures, and repeated invocations incur prohibitive token costs. We present the LOOP SKILL ENGINE, a system that achieves a combined 99% success rate and 99% token reduction for periodic agent tasks through a one-shot recording, deterministic replay paradigm. On its first run, the agent executes the task with full LLM reasoning while the system transparently intercepts and records the complete tool-call trajectory. A greedy length-descending template extraction algorithm then converts this recording into a parameterized, branch-free Loop Skill -- a deterministic execution plan that captures the task&#x27;s functional intent while parameterizing time-dependent and result-dependent variables. All subsequent executions bypass the LLM entirely: the engine resolves template variables against real-time values and replays the tool sequence deterministically. We prove two theorems: (1) Replay Determinism -- the step sequence of a validated Loop Skill is invariant across all future executions; (2) Write Safety -- concurrent access to persistent configuration is serialized through reentrant locks and atomic file replacement. Across a benchmark of periodic agent tasks spanning intervals from 5 minutes to 24 hours, the Loop Skill Engine reduces monthly token consumption by 93.3%--99.98% and cuts execution latency by 8.7x while eliminating output non-determinism. A multi-layer degradation strategy guarantees that tasks never stall. We release the engine as part of the buddyMe open-source agent framework.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (new method for agent execution in repetitive tasks, focusing on deterministic replay and token efficiency, which is a novel angle for agent reliability and efficiency).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>13. <a href="https://arxiv.org/abs/2605.14457">Stateful Reasoning via Insight Replay</a> <a id="link13"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14457<br><strong>Authors:</strong> Bin Lei, Caiwen Ding, Jiachen Yang, Ang Li, Xin Eric Wang</p>
+<p><strong>Abstract:</strong>  Chain-of-Thought (CoT) reasoning has become a foundation for eliciting multi-step reasoning in large language models, but recent studies show that its benefits do not scale monotonically with chain length: while longer CoT generally enables a model to tackle harder problems, on a given problem, accuracy typically increases with CoT length up to a point, after which it declines. We identify a major cause of this phenomenon: as the CoT grows, the model&#x27;s attention to critical insights produced earlier in the trace gradually weakens, making those insights progressively less accessible when they are most needed. Therefore, we propose \textbf{InsightReplay}, a stateful reasoning approach in which the model periodically extracts critical insights from its reasoning trace and replays them near the active generation frontier, keeping them accessible as the reasoning scales. Extensive experiments on a $\mathbf{2}\!\times\!\mathbf{3}\!\times\!\mathbf{4}$ benchmark grid, covering model scales $\{\text{8B}, \text{30B}\}$, model families $\{\text{Qwen3.5}, \text{DeepSeek-R1-Distill-Qwen}, \text{Gemma-4}\}$, and reasoning benchmarks $\{\text{AIME}, \text{HMMT}, \text{GPQA Diamond}, \text{LiveCodeBench v5}\}$, show that 3-round InsightReplay yields accuracy gains across \textbf{all 24 settings}, with an averaged improvement of $\mathbf{+1.65}$ points over standard CoT, and a largest single-setting gain of $\mathbf{+9.2}$ points on R1-Distill-32B&#x27;s LiveCodeBench v5 subset. Our results suggest that the effectiveness of test-time scaling depends not only on how much a model reasons, but also on whether critical intermediate insights remain accessible throughout long reasoning trajectories.</p>
+<p><strong>Comment:</strong> Matches criterion 1 (methodological improvement to reasoning in agents, specifically maintaining access to critical insights during long reasoning chains). Also relevant to criterion 3 (novel method for reasoning in LLMs).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>14. <a href="https://arxiv.org/abs/2605.14355">Herculean: An Agentic Benchmark for Financial Intelligence</a> <a id="link14"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14355<br><strong>Authors:</strong> Xueqing Peng, Zhuohan Xie, Yupeng Cao, Haohang Li, Lingfei Qian, Yan Wang, Vincent Jim Zhang, Huan He, Xuguang Ai, Linhai Ma, Ruoyu Xiang, Yueru He, Yi Han, Shuyao Wang, Yuqing Guo, Mingyang Jiang, Yilun Zhao, Youzhong Dong, Xiaoyu Wang, Yankai Chen, Ye Yuan, Qiyuan Zhang, Fuyuan Lyu, Haolun Wu, Yonghan Yang, Zichen Zhao, Yuyang Dai, Fan Zhang, Rania Elbadry, Ayesha Gull, Muhammad Usman Safder, Nuo Chen, Fengbin Zhu, Tianshi Cai, Zimu Wang, Polydoros Giannouris, Yuechen Jiang, Zhiwei Liu, Mohsinul Kabir, Yuyan Wang, Yixiang Zheng, Yangyang Yu, Weijin Liu, Wenbo Cao, Anke Xu, Peng Lu, Jerry Huang, Fengran Mo, Mingquan Lin, Prayag Tiwari, Yijia Zhao, Victor Gutierrez Basulto, Xiao-Yang Liu, Kaleb E Smith, Jiahuan Pei, Arman Cohan, Jimin Huang, Yuehua Tang, Alejandro Lopez-Lira, Xi Chen, Xue Liu, Junichi Tsujii, Jian-Yun Nie, Sophia Ananiadou</p>
+<p><strong>Abstract:</strong>  As AI agents improve, the central question is no longer whether they can solve isolated well-defined financial tasks, but whether they can reliably carry out financial professional work. Existing financial benchmarks offer only a partial view of this ability, as they primarily evaluate static competencies such as question answering, retrieval, summarization, and classification. We introduce Herculean, the first skilled benchmark for agentic financial intelligence spanning four representative workflows, including Trading, Hedging, Market Insights, and Auditing. Each workflow is instantiated as a standardized MCP-based skill environment with its own tools, interaction dynamics, constraints, and success criteria, enabling consistent end-to-end assessment of heterogeneous agent systems. Across frontier agents, we find agents perform relatively well on Trading and Market Insights, but struggle substantially on Hedging and Auditing, where long-horizon coordination, state consistency, and structured verification are critical. Overall, our results point to a key gap in current agents in turning financial reasoning into dependable workflow execution in high-stakes financial workflows.</p>
+<p><strong>Comment:</strong> Matches criterion 3: introduces Herculean, a new benchmark for agentic financial intelligence, evaluating agents on complex workflows beyond static tasks.<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>15. <a href="https://arxiv.org/abs/2605.14771">MediaClaw: Multimodal Intelligent-Agent Platform Technical Report</a> <a id="link15"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14771<br><strong>Authors:</strong> Shaoan Zhao, Huanlin Gao, Qiang Hui, Ting Lu, Xueqiang Guo, Yantao Li, Xinpei Su, Fuyuan Shi, Chao Tan, Fang Zhao, Kai Wang, Shiguo Lian</p>
+<p><strong>Abstract:</strong>  MediaClaw is a multimodal agent platform built on the OpenClaw ecosystem. Its core design follows a three-layer architecture of unified abstraction, pluginized extension, and workflow orchestration. The system is intended to address practical deployment pain points in AIGC adoption, including fragmented capabilities, heterogeneous interfaces, disconnected production processes, and limited reuse of high-quality production workflows. \system{} abstracts full-category AIGC capabilities into a unified invocation model, uses plugins to support hot-pluggable capability expansion, and uses task-oriented Skills to turn complex production processes into reusable workflow assets. This report focuses on the architectural design philosophy of MediaClaw, the design logic of its core capability model, and the key engineering trade-offs in implementation. It aims to provide reusable practical reference for building multimodal capability platforms.</p>
+<p><strong>Comment:</strong> Matches criterion 2 (multimodal agent platform, relevant to MLLMs) and criterion 4 (platform for multimodal capabilities, relevant to vision foundation models and their applications).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>16. <a href="https://arxiv.org/abs/2605.14344">CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation</a> <a id="link16"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14344<br><strong>Authors:</strong> Yuyang Wu, Stefano Falletta, Delia McGrath, Sherry Yang</p>
+<p><strong>Abstract:</strong>  Generative modeling has emerged as a promising approach for crystal structure discovery. However, existing LLM-based generative models struggle with low-level atomic precision, while diffusion-based methods fall short in integrating high-level scientific knowledge. As a result, generated structures are often invalid, unstable, or do not possess desirable properties. To address this gap, we propose CrystalReasoner (\method), an end-to-end LLM framework that generates crystal structures from natural language instructions through reasoning and alignment. \method introduces physical priors as thinking tokens, which include crystallographic symmetry, local coordination environments and predicted physical properties before generating atomic coordinates. This bridges the gap between natural language and 3D structures. \method then employs reinforcement learning (RL) with a multi-objective, dense reward function to align generation with physical validity, chemical consistency, and thermodynamic stability. For property-conditioned tasks, we design task-specific reward functions and train specialized models for discrete constraints (e.g., space group) and continuous properties (e.g., elasticity, thermal expansion). Empirical results demonstrate that compared to prior works and baselines without thinking traces or RL, \method obtains better performance on diverse metrics, triples S.U.N. ratio, and achieves better performance for property conditioned generation. \method also exhibits adaptive reasoning, increasing reasoning lengths as the number of atoms increases. Our work demonstrates the potential of leveraging thinking traces and RL for generating valid, stable, and property-conditioned crystal structures. Please see our work at https://crystalreasoner.github.io/ .</p>
+<p><strong>Comment:</strong> Somewhat matches criterion 4: proposes CrystalReasoner, an LLM-based generative model for property-conditioned crystal structure generation, using RL and reasoning. Interesting for generative modeling and multi-modal learning, but not directly a vision foundation model.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>17. <a href="https://arxiv.org/abs/2605.14175">Grounded Continuation: A Linear-Time Runtime Verifier for LLM Conversations</a> <a id="link17"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14175<br><strong>Authors:</strong> Qisong He, Yi Dong, Xiaowei Huang</p>
+<p><strong>Abstract:</strong>  In long conversations, an LLM can produce a next utterance that sounds plausible but rests on premises the conversation has already abandoned. Context-manipulation attacks against deployed agents now actively exploit this gap. We close it with a runtime verifier that maintains an explicit dependency graph: an LLM classifies each turn into one of 8 update operations drawn from four formalisms (dynamic epistemic logic, abductive reasoning, awareness logic, argumentation), and a symbolic engine records which claims depend on which evidence. Checking whether a continuation is supported reduces to a graph walk; retraction propagates through the same graph to flag exactly the conclusions that lose support, with linear per-turn cost and a formal conflict-free guarantee. On LongMemEval-KU oracle (n=78), the verifier reaches 89.7% accuracy vs. 88.5% for the LLM-only baseline (+1.3pp) and 87.2% for a transcript-RAG baseline matched on retrieval budget (+2.6pp); wins among disagreements are correct abstentions where the baseline confabulates. On LoCoMo&#x27;s 60 official QA items the verifier is competitive with retrieval-augmented baselines. Beyond external benchmarks, we construct two multi-agent scenarios and a 50-item grounding test: on the 15-item stale-premise subset, the verifier reaches 100% accuracy vs. 93.3% (+6.7pp). These instantiate a soundness-faithfulness decomposition: the structural check is sound by construction, and per-deployment LLM extraction faithfulness is the empirical question we measure across four LLM families. The retraction check plateaus at microseconds while history-replay grows linearly with conversation length.</p>
+<p><strong>Comment:</strong> Somewhat matches criterion 2: proposes a runtime verifier for LLM conversations using explicit dependency graphs and formal logic, improving conversation soundness. Not a new VLLM/MLLM, but a novel method for LLM reliability.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>18. <a href="https://arxiv.org/abs/2605.15041">Case-Based Calibration of Adaptive Reasoning and Execution for LLM Tool Use</a> <a id="link18"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15041<br><strong>Authors:</strong> Renning Pang, Tian Lan, Leyuan Liu, Piao Tong, Sheng Cao, Xiaosong Zhang</p>
+<p><strong>Abstract:</strong>  Tool use extends large language models beyond parametric knowledge, but reliable execution requires balancing appropriate reasoning depth with strict structural validity. We approach this problem from a case-based perspective to present CAST, a case-driven framework that treats historical execution trajectories as structured cases. Instead of reusing raw exemplar outputs, CAST extracts case-derived signals to identify complexity profiles for estimating optimal reasoning strategies, alongside failure profiles to map likely structural breakdowns. The framework translates this knowledge into a fine-grained reward design and adaptive reasoning, enabling the model to autonomously internalize case-based strategies during reinforcement learning. Experiments on BFCLv2 and ToolBench demonstrate that CAST improves both schema-faithful execution and task-level tool-use success while reducing unnecessary deliberation. The approach achieves up to 5.85 percentage points gain in overall execution accuracy and reduces average reasoning length by 26%, significantly mitigating high-impact structural errors. Ultimately, this demonstrates how historical execution cases can provide reusable adaptation knowledge for calibrated tool use.</p>
+<p><strong>Comment:</strong> Somewhat matches criterion 2: proposes CAST, a case-based calibration framework for LLM tool use, improving adaptive reasoning and execution. While not a new VLLM/MLLM, it is a novel method for tool-using LLMs.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>19. <a href="https://arxiv.org/abs/2605.14758">Probabilistic Verification of Recurrent Neural Networks for Single and Multi-Agent Reinforcement Learning</a> <a id="link19"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14758<br><strong>Authors:</strong> Luca Marzari, Enrico Marchesini</p>
+<p><strong>Abstract:</strong>  History-dependent policies induced by recurrent neural networks (RNNs) rely on latent hidden state dynamics, making verification in partially observable reinforcement learning (RL) challenging. Existing RNN verification tools typically rely on restrictive modeling assumptions or coarse over-approximations of the hidden state space, which can lead to overly conservative or inconclusive results. We propose $\textbf{RNN}$ $\textbf{Pro}$babilistic $\textbf{Ve}$rification ($\texttt{RNN-ProVe}$), a probabilistic framework that $\textit{estimates the likelihood}$ of undesired behaviors in RNN-based policies. $\texttt{RNN-ProVe}$ uses policy-driven sampling to approximate the set of hidden states that are feasible under a trained policy, and derives statistical error bounds to produce bounded-error, high-confidence estimates of behavioral violations. Experiments on partially observable single-agent and cooperative multi-agent tasks show that $\texttt{RNN-ProVe}$ yields more quantitative, feasibility-aware probabilistic guarantees than existing tools, while scaling to recurrent and multi-agent settings.</p>
+<p><strong>Comment:</strong> Somewhat related to criterion 3: Proposes a probabilistic verification framework for RNN-based policies in RL, including multi-agent settings. Focus is on verification/statistical guarantees, not new embodied agent methods or benchmarks.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>20. <a href="https://arxiv.org/abs/2605.14892">Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems</a> <a id="link20"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14892<br><strong>Authors:</strong> Shihao Qi, Jie Ma, Rui Xing, Wei Guo, Xiao Huang, Zhitao Gao, Jianhao Deng, Jun Liu, Lingling Zhang, Bifan Wei, Boqian Yang, Pinghui Wang, Jianwen Sun, Jing Tao, Yaqiang Wu, Hui Liu, Yu Yao, Tongliang Liu</p>
+<p><strong>Abstract:</strong>  LLM-based autonomous agents have demonstrated strong capabilities in reasoning, planning, and tool use, yet remain limited when tasks require sustained coordination across roles, tools, and environments. Multi-agent systems address this through structured collaboration among specialized agents, but tighter coordination also amplifies a less explored risk: errors can propagate across agents and interaction rounds, producing failures that are difficult to diagnose and rarely translate into structural self-improvement. Existing surveys cover individual agent capabilities, multi-agent collaboration, or agent self-evolution separately, leaving the causal dependencies among them unexamined. This survey provides a unified review organized around four causally linked stages, which we term the LIFE progression: Lay the capability foundation, Integrate agents through collaboration, Find faults through attribution, and Evolve through autonomous self-improvement. For each stage, we provide systematic taxonomies and formally characterize the dependencies between adjacent stages, revealing how each stage both depends on and constrains the next. Beyond synthesizing existing work, we identify open challenges at stage boundaries and propose a cross-stage research agenda for closed-loop multi-agent systems capable of continuously diagnosing failures, reorganizing structures, and refining agent behaviors, extending current coordination frameworks toward more self-organizing forms of collective intelligence. By bridging these previously fragmented research threads, this survey aims to offer both a systematic reference and a conceptual roadmap toward autonomous, self-improving multi-agent intelligence.</p>
+<p><strong>Comment:</strong> Survey paper on multi-agent LLM systems, relevant to criterion 3 (embodied AI, multi-agent systems), but as a survey, less novel.<br><strong>Relevance:</strong> 6<br><strong>Novelty:</strong> 4</p>
+<hr>
+<h2>21. <a href="https://arxiv.org/abs/2605.14038">Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use</a> <a id="link21"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14038<br><strong>Authors:</strong> Yize Cheng, Chenrui Fan, Mahdi JafariRaviz, Keivan Rezaei, Soheil Feiz</p>
+<p><strong>Abstract:</strong>  Large language models (LLMs) increasingly act as autonomous agents that must decide when to answer directly vs. when to invoke external tools. Prior work studying adaptive tool use has largely treated tool necessity as a model-agnostic property, annotated by human or LLM judge, and mostly cover cases where the answer is obvious (e.g., fetching the weather vs. paraphrasing text). However, tool necessity in the wild is more nuanced due to the divergence of capability boundaries across models: a problem solvable by a strong model on its own may still require tools for a weaker one. In this work, we introduce a model-adaptive definition of tool-necessity, grounded in each model&#x27;s empirical performance. Following this definition, we compare the necessity against observed tool-call behavior across four models on arithmetic and factual QA dataset, and find substantial mismatches of 26.5-54.0% and 30.8-41.8%, respectively. To diagnose the failure, we decompose tool use into two stages: an internal cognition stage that reflects whether a model believes a tool is necessary, and an execution stage that determines whether the model actually makes a tool-call action. By probing the LLM hidden states, we find that both signals are often linearly decodable, yet their probe directions become nearly orthogonal in the late-layer, last-token regime that drives the next-token action. By tracing the trajectory of samples in the two-stage process, we further discover that the majority of mismatch is concentrated in the cognition-to-action transition, not in cognition itself. These results reveal a knowing-doing gap in LLM tool-use: improving tool-use reliability requires not only better recognition of when tools are needed, but also better translation of that recognition into action.</p>
+<p><strong>Comment:</strong> Somewhat related to criterion 2: Investigates tool-use behavior in LLMs, focusing on the knowing-doing gap. While not directly about VLLMs/MLLMs, it provides empirical insights into LLM agent behavior, which may be of tangential interest.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>22. <a href="https://arxiv.org/abs/2605.14259">Hypergraph Enterprise Agentic Reasoner over Heterogeneous Business Systems</a> <a id="link22"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14259<br><strong>Authors:</strong> Ling Wang, Songnan Liu, Jianan Wang, Cheng Cheng, Xin Liu, Yihan Zhu, Enyu Li, Yu Xiao, Jiangyong Xie, Duogong Yan, Jiangyi Chen</p>
+<p><strong>Abstract:</strong>  Applying Large Language Models (LLMs) to heterogeneous enterprise systems is hindered by hallucinations and failures in multi-hop, n-ary reasoning. Existing paradigms (e.g., GraphRAG, NL2SQL) lack the semantic grounding and auditable execution required for these complex environments. We introduce HEAR, an enterprise agentic reasoner built on a Stratified Hypergraph Ontology. Its base Graph Layer virtualizes provenance-aware data interfaces, while the Hyperedge Layer encodes n-ary business rules and procedural protocols. Operating an evidence-driven reasoning loop, HEAR dynamically orchestrates ontology tools for structured multi-hop analysis without requiring LLM retraining. Evaluations on supply-chain tasks, including order fulfillment blockage root cause analysis (RCA), show HEAR achieves up to 94.7% accuracy. Crucially, HEAR demonstrates adaptive efficiency: utilizing procedural hyperedges to minimize token costs, while leveraging topological exploration for rigorous correctness on complex queries. By matching proprietary model performance with open-weight backbones and automating manual diagnostics, HEAR establishes a scalable, auditable foundation for enterprise intelligence.</p>
+<p><strong>Comment:</strong> Related to agentic reasoning in enterprise systems, but not directly about spatial intelligence, VLLMs, embodied AI, or vision foundation models.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 5</p>
+<hr>
+<h2>23. <a href="https://arxiv.org/abs/2605.14294">Precise Verification of Transformers through ReLU-Catalyzed Abstraction Refinement</a> <a id="link23"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14294<br><strong>Authors:</strong> Hengjie Liu, Zhenya Zhang, Jianjun Zhao</p>
+<p><strong>Abstract:</strong>  Formal verification of transformers has become increasingly important due to their widespread deployment in safety-critical applications. Compared to classic neural networks, the inferences of transformers involve highly complex computations, such as dot products in self-attention layers, rendering their verification extremely difficult. Existing approaches explored over-approximation methods by constructing convex constraints to bound the output ranges of transformers, which can achieve high efficiency. However, they may sacrifice verification precision, and consequently introduce significant approximation error that leads to frequent occurrences of false alarms. In this paper, we propose a transformer verification approach that can achieve improved precision. At the core of our approach is a novel usage of ReLU, by which we represent a precise but non-linear bound for dot products such that we can further exploit the rich body of literature for convex relaxation of ReLU to derive precise bounds. We extend two classic approaches to the context of transformers, a rule-based one and an optimization-based one, resulting in two new frameworks for efficient and precise verification. We evaluate our approaches on different model architectures and robustness properties derived from two datasets about sentiment analysis, and compare with the state-of-the-art baseline approach. Compared to the baseline, our approach can achieve significant precision improvement for most of the verification tasks with acceptable compromise of efficiency, which demonstrates the effectiveness of our approach.</p>
+<p><strong>Comment:</strong> Related to formal verification of transformers, not directly matching any criterion, but of tangential interest for model robustness.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 5</p>
+<hr>
+<hr>
+<h2>Paper selection prompt</h2>
+<p>1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
+<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.</p>
+    </article>
+  </main>
+</body>
+</html>

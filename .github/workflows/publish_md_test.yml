@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - out/index.html
+      - out/past_arxiv/**
       - out/output.md
       - .github/workflows/publish_md_test.yml
   workflow_dispatch:
@@ -32,6 +33,9 @@ jobs:
       run: |
         cp out/output.md output.md
         cp out/index.html index.html
+        if [ -d out/past_arxiv ]; then
+          cp -R out/past_arxiv past_arxiv
+        fi
     - name: Download artifact
       if: github.event_name != 'push'
       id: download-artifact
@@ -61,6 +65,9 @@ jobs:
       run: |
         mkdir -p dist
         cp index.html dist/index.html
+        if [ -d past_arxiv ]; then
+          cp -R past_arxiv dist/past_arxiv
+        fi
     - name: Convert output.md to pages
       uses: wranders/markdown-to-pages-action@v0.1
       if: steps.check_files.outputs.files_exists == 'true' && steps.check_files.outputs.html_exists != 'true'

@@ -1,0 +1,579 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / May 15, 2026</title>
+
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / May 15, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>05/15/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+    <article class="archive-content">
+      <h1>Personalized Daily ArXiv Papers 05/15/2026</h1>
+<p>Total relevant papers: 19</p>
+<p>Paper selection prompt and criteria at the bottom</p>
+<p>Table of contents with paper titles:</p>
+<p>0. <a href="#link0">MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models</a><br><strong>Authors:</strong> Xiyu Ren, Zhaowei Wang, Yiming Du, Zhongwei Xie, Chi Liu, Xinlin Yang, Haoyue Feng, Wenjun Pan, Tianshi Zheng, Baixuan Xu, Zhengnan Li, Yangqiu Song, Ginny Wong, Simon See</p>
+<p>1. <a href="#link1">Orchard: An Open-Source Agentic Modeling Framework</a><br><strong>Authors:</strong> Baolin Peng, Wenlin Yao, Qianhui Wu, Hao Cheng, Xiao Yu, Rui Yang, Tao Ge, Alessandrio Sordoni, Xingdi Yuan, Yelong Shen, Pengcheng He, Tong Zhang, Zhou Yu, Jianfeng Gao</p>
+<p>2. <a href="#link2">MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory</a><br><strong>Authors:</strong> Minghao Guo, Qingyue Jiao, Zeru Shi, Yihao Quan, Boxuan Zhang, Danrui Li, Liwei Che, Wujiang Xu, Shilong Liu, Zirui Liu, Mubbasir Kapadia, Vladimir Pavlovic, Jiang Liu, Mengdi Wang, Yiyu Shi, Dimitris N. Metaxas, Ruixiang Tang</p>
+<p>3. <a href="#link3">Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation</a><br><strong>Authors:</strong> Min Zhao, Hongzhou Zhu, Kaiwen Zheng, Zihan Zhou, Bokai Yan, Xinyuan Li, Xiao Yang, Chongxuan Li, Jun Zhu</p>
+<p>4. <a href="#link4">Herculean: An Agentic Benchmark for Financial Intelligence</a><br><strong>Authors:</strong> Xueqing Peng, Zhuohan Xie, Yupeng Cao, Haohang Li, Lingfei Qian, Yan Wang, Vincent Jim Zhang, Huan He, Xuguang Ai, Linhai Ma, Ruoyu Xiang, Yueru He, Yi Han, Shuyao Wang, Yuqing Guo, Mingyang Jiang, Yilun Zhao, Youzhong Dong, Xiaoyu Wang, Yankai Chen, Ye Yuan, Qiyuan Zhang, Fuyuan Lyu, Haolun Wu, Yonghan Yang, Zichen Zhao, Yuyang Dai, Fan Zhang, Rania Elbadry, Ayesha Gull, Muhammad Usman Safder, Nuo Chen, Fengbin Zhu, Tianshi Cai, Zimu Wang, Polydoros Giannouris, Yuechen Jiang, Zhiwei Liu, Mohsinul Kabir, Yuyan Wang, Yixiang Zheng, Yangyang Yu, Weijin Liu, Wenbo Cao, Anke Xu, Peng Lu, Jerry Huang, Fengran Mo, Mingquan Lin, Prayag Tiwari, Yijia Zhao, Victor Gutierrez Basulto, Xiao-Yang Liu, Kaleb E Smith, Jiahuan Pei, Arman Cohan, Jimin Huang, Yuehua Tang, Alejandro Lopez-Lira, Xi Chen, Xue Liu, Junichi Tsujii, Jian-Yun Nie, Sophia Ananiadou</p>
+<p>5. <a href="#link5">Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image</a><br><strong>Authors:</strong> Ming Qian, Zimin Xia, Changkun Liu, Shuailei Ma, Wen Wang, Zeran Ke, Bin Tan, Hang Zhang, Gui-Song Xia</p>
+<p>6. <a href="#link6">Systematic Discovery of Semantic Attacks in Online Map Construction through Conditional Diffusion</a><br><strong>Authors:</strong> Chenyi Wang, Ruoyu Song, Raymond Muller, Jean-Philippe Monteuuis, Jonathan Petit, Z. Berkay Celik, Ryan Gerdes, Ming F. Li</p>
+<p>7. <a href="#link7">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</a><br><strong>Authors:</strong> Yang Yue, Fangyun Wei, Tianyu He, Jinjing Zhao, Zanlin Ni, Zeyu Liu, Jiayi Guo, Lei Shi, Yue Dong, Li Chen, Ji Li, Gao Huang, Dong Chen</p>
+<p>8. <a href="#link8">MultiEmo-Bench: Multi-label Visual Emotion Analysis for Multi-modal Large Language Models</a><br><strong>Authors:</strong> Tianwei Chen, Takuya Furusawa, Yuki Hirakawa, Ryotaro Shimizu, Mo Fan, Takashi Wada</p>
+<p>9. <a href="#link9">Editor&#x27;s Choice: Evaluating Abstract Intent in Image Editing through Atomic Entity Analysis</a><br><strong>Authors:</strong> Mor Ventura, Roy Hirsch, Yonatan Bitton, Regev Cohen, Roi Reichart</p>
+<p>10. <a href="#link10">LiWi: Layering in the Wild</a><br><strong>Authors:</strong> Yu He, Fang Li, Haoyang Tong, Lichen Ma, Xinyuan Shan, Jingling Fu, Dong Chen, Luohang Liu, Junshi Huang, Yan Li</p>
+<p>11. <a href="#link11">StyleTextGen: Style-Conditioned Multilingual Scene Text Generation</a><br><strong>Authors:</strong> Zeyu Chen, Fangmin Zhao, Yan Shu, Yichao Liu, Liu Yu, Yu Zhou</p>
+<p>12. <a href="#link12">ProtoMedAgent: Multimodal Clinical Interpretability via Privacy-Aware Agentic Workflows</a><br><strong>Authors:</strong> Alvaro Lopez Pellicer, Plamen Angelov, Marwan Bukhari, Yi Li, Eduardo Soares, Jemma Kerns</p>
+<p>13. <a href="#link13">EverAnimate: Minute-Scale Human Animation via Latent Flow Restoration</a><br><strong>Authors:</strong> Wuyang Li, Yang Gao, Mariam Hassan, Lan Feng, Wentao Pan, Po-Chien Luan, Alexandre Alahi</p>
+<p>14. <a href="#link14">Generating HDR Video from SDR Video</a><br><strong>Authors:</strong> SaiKiran Tedla, Francesco Banterle, Trevor Canham, Karanpreet Raja, David B. Lindell, Kiriakos N. Kutulakos, Jiacheng Li, Feiran Li, Daisuke Iso</p>
+<p>15. <a href="#link15">SpectraFlow: Unifying Structural Pretraining and Frequency Adaptation for Medical Image Segmentation</a><br><strong>Authors:</strong> Zhiquan Chen, Haitao Wang, Guowei Zou, Hejun Wu</p>
+<p>16. <a href="#link16">SCRWKV: Ultra-Compact Structure-Calibrated Vision-RWKV for Topological Crack Segmentation</a><br><strong>Authors:</strong> Hanxu Zhang, Chen Jia, Hui Liu, Xu Cheng, Fan Shi, Shengyong Chen</p>
+<p>17. <a href="#link17">HDRFace: Rethinking Face Restoration with High-Dimensional Representation</a><br><strong>Authors:</strong> Zirui Wang, Xianhui Lin, Yi Dong, Bo Wei, Gangjian Zhang, Siteng Ma, Zebiao Zheng, Xing Liu, Hong Gu, Minjing Dong</p>
+<p>18. <a href="#link18">ArcGate: Adaptive Arctangent Gated Activation</a><br><strong>Authors:</strong> Avik Bhattacharya, Siddhant Dnyanesh Gole, Subhasis Chaudhuri, Alejandro C. Frery, Biplab Banerjee</p>
+<hr>
+<h2>0. <a href="https://arxiv.org/abs/2605.14906">MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models</a> <a id="link0"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14906<br><strong>Authors:</strong> Xiyu Ren, Zhaowei Wang, Yiming Du, Zhongwei Xie, Chi Liu, Xinlin Yang, Haoyue Feng, Wenjun Pan, Tianshi Zheng, Baixuan Xu, Zhengnan Li, Yangqiu Song, Ginny Wong, Simon See</p>
+<p><strong>Abstract:</strong>  Memory is essential for large vision-language models (LVLMs) to handle long, multimodal interactions, with two method directions providing this capability: long-context LVLMs and memory-augmented agents. However, no existing benchmark conducts a systematic comparison of the two on questions that genuinely require multimodal evidence. To close this gap, we introduce MEMLENS, a comprehensive benchmark for memory in multimodal multi-session conversations, comprising 789 questions across five memory abilities (information extraction, multi-session reasoning, temporal reasoning, knowledge update, and answer refusal) at four standard context lengths (32K-256K tokens) under a cross-modal token-counting scheme. An image-ablation study confirms that solving MEMLENS requires visual evidence: removing evidence images drops two frontier LVLMs below 2% accuracy on the 80.4% of questions whose evidence includes images. Evaluating 27 LVLMs and 7 memory-augmented agents, we find that long-context LVLMs achieve high short-context accuracy through direct visual grounding but degrade as conversations grow, whereas memory agents are length-stable but lose visual fidelity under storage-time compression. Multi-session reasoning caps most systems below 30%, and neither approach alone solves the task. These results motivate hybrid architectures that combine long-context attention with structured multimodal retrieval. Our code is available at https://github.com/xrenaf/MEMLENS.</p>
+<p><strong>Comment:</strong> Matches criterion 2 (new VLLMs/MLLMs) and criterion 3 (new benchmarks for embodied/multimodal AI). Introduces MEMLENS, a comprehensive benchmark for memory in large vision-language models, with systematic evaluation and surprising empirical findings.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>1. <a href="https://arxiv.org/abs/2605.15040">Orchard: An Open-Source Agentic Modeling Framework</a> <a id="link1"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15040<br><strong>Authors:</strong> Baolin Peng, Wenlin Yao, Qianhui Wu, Hao Cheng, Xiao Yu, Rui Yang, Tao Ge, Alessandrio Sordoni, Xingdi Yuan, Yelong Shen, Pengcheng He, Tong Zhang, Zhou Yu, Jianfeng Gao</p>
+<p><strong>Abstract:</strong>  Agentic modeling aims to transform LLMs into autonomous agents capable of solving complex tasks through planning, reasoning, tool use, and multi-turn interaction with environments. Despite major investment, open research remains constrained by infrastructure and training gaps. Many high-performing systems rely on proprietary codebases, models, or services, while most open-source frameworks focus on orchestration and evaluation rather than scalable agent training. We present Orchard, an open-source framework for scalable agentic modeling. At its core is Orchard Env, a lightweight environment service providing reusable primitives for sandbox lifecycle management across task domains, agent harnesses, and pipeline stages. On top of Orchard Env, we build three agentic modeling recipes. Orchard-SWE targets coding agents. We distill 107K trajectories from MiniMax-M2.5 and Qwen3.5-397B, introduce credit-assignment SFT to learn from productive segments of unresolved trajectories, and apply Balanced Adaptive Rollout for RL. Starting from Qwen3-30B-A3B-Thinking, Orchard-SWE achieves 64.3% on SWE-bench Verified after SFT and 67.5% after SFT+RL, setting a new state of the art among open-source models of comparable size. Orchard-GUI trains a 4B vision-language computer-use agent using only 0.4K distilled trajectories and 2.2K open-ended tasks. It achieves 74.1%, 67.0%, and 64.0% success rates on WebVoyager, Online-Mind2Web, and DeepShop, respectively, making it the strongest open-source model while remaining competitive with proprietary systems. Orchard-Claw targets personal assistant agents. Trained with only 0.2K synthetic tasks, it achieves 59.6% pass@3 on Claw-Eval and 73.9% when paired with a stronger ZeroClaw harness. Collectively, these results show that a lightweight, open, harness-agnostic environment layer enables reusable agentic data, training recipes, and evaluations across domains.</p>
+<p><strong>Comment:</strong> This paper presents Orchard, an open-source agentic modeling framework with new agentic modeling recipes and a lightweight environment layer for agent training and evaluation. It matches criterion 3 (embodied AI, new benchmark/simulator/methods with novel angles).<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>2. <a href="https://arxiv.org/abs/2605.15128">MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory</a> <a id="link2"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15128<br><strong>Authors:</strong> Minghao Guo, Qingyue Jiao, Zeru Shi, Yihao Quan, Boxuan Zhang, Danrui Li, Liwei Che, Wujiang Xu, Shilong Liu, Zirui Liu, Mubbasir Kapadia, Vladimir Pavlovic, Jiang Liu, Mengdi Wang, Yiyu Shi, Dimitris N. Metaxas, Ruixiang Tang</p>
+<p><strong>Abstract:</strong>  Long-term agent memory is increasingly multimodal, yet existing evaluations rarely test whether agents preserve the visual evidence needed for later reasoning. In prior work, many visually grounded questions can be answered using only captions or textual traces, allowing answers to be inferred without preserving the fine-grained visual evidence. Meanwhile, harder cases that require reasoning over changing visual states are largely absent. Therefore, we introduce MemEye, a framework that evaluates memory capabilities from two dimensions: one measures the granularity of decisive visual evidence (from scene-level to pixel-level evidence), and the other measures how retrieved evidence must be used (from single evidence to evolutionary synthesis). Under this framework, we construct a new benchmark across 8 life-scenario tasks, with ablation-driven validation gates for assessing answerability, shortcut resistance, visual necessity, and reasoning structure. By evaluating 13 memory methods across 4 VLM backbones, we show that current architectures still struggle to preserve fine-grained visual details and reason about state changes over time. Our findings show that long-term multimodal memory depends on evidence routing, temporal tracking, and detail extraction.</p>
+<p><strong>Comment:</strong> This paper introduces MemEye, a visual-centric evaluation framework for multimodal agent memory, with a new benchmark and analysis of visual evidence preservation and reasoning. It matches criterion 3 (embodied AI, new benchmark with novel evaluation angles) and is relevant to vision-language models (criterion 4).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>3. <a href="https://arxiv.org/abs/2605.15141">Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation</a> <a id="link3"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15141<br><strong>Authors:</strong> Min Zhao, Hongzhou Zhu, Kaiwen Zheng, Zihan Zhou, Bokai Yan, Xinyuan Li, Xiao Yang, Chongxuan Li, Jun Zhu</p>
+<p><strong>Abstract:</strong>  Real-time interactive video generation requires low-latency, streaming, and controllable rollout. Existing autoregressive (AR) diffusion distillation methods have achieved strong results in the chunk-wise 4-step regime by distilling bidirectional base models into few-step AR students, but they remain limited by coarse response granularity and non-negligible sampling latency. In this paper, we study a more aggressive setting: frame-wise autoregression with only 1--2 sampling steps. In this regime, we identify the initialization of a few-step AR student as the key bottleneck: existing strategies are either target-misaligned, incapable of few-step generation, or too costly to scale. We propose \textbf{Causal Forcing++}, a principled and scalable pipeline that uses \emph{causal consistency distillation} (causal CD) for few-step AR initialization. The core idea is that causal CD learns the same AR-conditional flow map as causal ODE distillation, but obtains supervision from a single online teacher ODE step between adjacent timesteps, avoiding the need to precompute and store full PF-ODE trajectories. This makes the initialization both more efficient and easier to optimize. The resulting pipeline, \ours, surpasses the SOTA 4-step chunk-wise Causal Forcing under the \textit{\textbf{frame-wise 2-step setting}} by 0.1 in VBench Total, 0.3 in VBench Quality, and 0.335 in VisionReward, while reducing first-frame latency by 50\% and Stage 2 training cost by $\sim$$4\times$. We further extend the pipeline to action-conditioned world model generation in the spirit of Genie3. Project Page: https://github.com/thu-ml/Causal-Forcing and https://github.com/shengshu-ai/minWM .</p>
+<p><strong>Comment:</strong> This paper proposes Causal Forcing++, a new scalable few-step autoregressive diffusion distillation method for real-time interactive video generation, with extension to action-conditioned world model generation (Genie3-style). This is highly relevant to generative modeling in multi-modal learning and embodied AI (criterion 3), especially with the world model angle.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>4. <a href="https://arxiv.org/abs/2605.14355">Herculean: An Agentic Benchmark for Financial Intelligence</a> <a id="link4"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14355<br><strong>Authors:</strong> Xueqing Peng, Zhuohan Xie, Yupeng Cao, Haohang Li, Lingfei Qian, Yan Wang, Vincent Jim Zhang, Huan He, Xuguang Ai, Linhai Ma, Ruoyu Xiang, Yueru He, Yi Han, Shuyao Wang, Yuqing Guo, Mingyang Jiang, Yilun Zhao, Youzhong Dong, Xiaoyu Wang, Yankai Chen, Ye Yuan, Qiyuan Zhang, Fuyuan Lyu, Haolun Wu, Yonghan Yang, Zichen Zhao, Yuyang Dai, Fan Zhang, Rania Elbadry, Ayesha Gull, Muhammad Usman Safder, Nuo Chen, Fengbin Zhu, Tianshi Cai, Zimu Wang, Polydoros Giannouris, Yuechen Jiang, Zhiwei Liu, Mohsinul Kabir, Yuyan Wang, Yixiang Zheng, Yangyang Yu, Weijin Liu, Wenbo Cao, Anke Xu, Peng Lu, Jerry Huang, Fengran Mo, Mingquan Lin, Prayag Tiwari, Yijia Zhao, Victor Gutierrez Basulto, Xiao-Yang Liu, Kaleb E Smith, Jiahuan Pei, Arman Cohan, Jimin Huang, Yuehua Tang, Alejandro Lopez-Lira, Xi Chen, Xue Liu, Junichi Tsujii, Jian-Yun Nie, Sophia Ananiadou</p>
+<p><strong>Abstract:</strong>  As AI agents improve, the central question is no longer whether they can solve isolated well-defined financial tasks, but whether they can reliably carry out financial professional work. Existing financial benchmarks offer only a partial view of this ability, as they primarily evaluate static competencies such as question answering, retrieval, summarization, and classification. We introduce Herculean, the first skilled benchmark for agentic financial intelligence spanning four representative workflows, including Trading, Hedging, Market Insights, and Auditing. Each workflow is instantiated as a standardized MCP-based skill environment with its own tools, interaction dynamics, constraints, and success criteria, enabling consistent end-to-end assessment of heterogeneous agent systems. Across frontier agents, we find agents perform relatively well on Trading and Market Insights, but struggle substantially on Hedging and Auditing, where long-horizon coordination, state consistency, and structured verification are critical. Overall, our results point to a key gap in current agents in turning financial reasoning into dependable workflow execution in high-stakes financial workflows.</p>
+<p><strong>Comment:</strong> This paper introduces Herculean, a new agentic benchmark for financial intelligence, focusing on agent workflows and evaluation in complex environments. It matches criterion 3 (new embodied AI benchmark with novel angles, simulator-related).<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>5. <a href="https://arxiv.org/abs/2605.14984">Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image</a> <a id="link5"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14984<br><strong>Authors:</strong> Ming Qian, Zimin Xia, Changkun Liu, Shuailei Ma, Wen Wang, Zeran Ke, Bin Tan, Hang Zhang, Gui-Song Xia</p>
+<p><strong>Abstract:</strong>  Generating a street-level 3D scene from a single satellite image is a crucial yet challenging task. Current methods present a stark trade-off: geometry-colorization models achieve high geometric fidelity but are typically building-focused and lack semantic diversity. In contrast, proxy-based models use feed-forward image-to-3D frameworks to generate holistic scenes by jointly learning geometry and texture, a process that yields rich content but coarse and unstable geometry. We attribute these geometric failures to the extreme viewpoint gap and sparse, inconsistent supervision inherent in satellite-to-street data. We introduce Sat3DGen to address these fundamental challenges, which embodies a geometry-first methodology. This methodology enhances the feed-forward paradigm by integrating novel geometric constraints with a perspective-view training strategy, explicitly countering the primary sources of geometric error. This geometry-centric strategy yields a dramatic leap in both 3D accuracy and photorealism. For validation, we first constructed a new benchmark by pairing the VIGOR-OOD test set with high-resolution DSM data. On this benchmark, our method improves geometric RMSE from 6.76m to 5.20m. Crucially, this geometric leap also boosts photorealism, reducing the Fr\&#x27;echet Inception Distance (FID) from $\sim$40 to 19 against the leading method, Sat2Density++, despite using no extra tailored image-quality modules. We demonstrate the versatility of our high-quality 3D assets through diverse downstream applications, including semantic-map-to-3D synthesis, multi-camera video generation, large-scale meshing, and unsupervised single-image Digital Surface Model (DSM) estimation. The code has been released on https://github.com/qianmingduowan/Sat3DGen.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (embodied AI, new benchmarks, novel methods) and criterion 4 (vision foundation models and applications). Introduces a new benchmark and a geometry-first method for 3D scene generation from satellite images, with strong empirical results and downstream applications.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>6. <a href="https://arxiv.org/abs/2605.14396">Systematic Discovery of Semantic Attacks in Online Map Construction through Conditional Diffusion</a> <a id="link6"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14396<br><strong>Authors:</strong> Chenyi Wang, Ruoyu Song, Raymond Muller, Jean-Philippe Monteuuis, Jonathan Petit, Z. Berkay Celik, Ryan Gerdes, Ming F. Li</p>
+<p><strong>Abstract:</strong>  Autonomous vehicles depend on online HD map construction to perceive lane boundaries, dividers, and pedestrian crossings -- safety-critical road elements that directly govern motion planning. While existing pixel perturbation attacks can disrupt the mapping, they can be neutralized by standard adversarial defenses. We present MIRAGE, a framework for systematic discovery of semantic attacks that bypass adversarial defenses and degrade mapping predictions by finding plausible environmental variation (e.g. shadows, wet roads). MIRAGE exploits the latent manifold of real-world data learned by diffusion models, and searches for semantically mutated scenes neighboring the ground truth with the same road topology yet mislead the mapping predictions. We evaluate MIRAGE on nuScenes and demonstrate two attacks: (1) boundary removal, suppressing 57.7% of detections and corrupting 96% of planned trajectories; and (2) boundary injection, the only method that successfully injects fictitious boundaries, while pixel PGD and AdvPatch fail entirely. Both attacks remain potent under various adversarial defenses. We use two independent VLM judges to quantify realism, where MIRAGE passes as realistic 80--84% of the time (vs. 97--99% for clean nuScenes), while AdvPatch only 0--9%. Our findings expose a categorical gap in current adversarial defenses: semantic-level perturbations that manifest as legitimate environmental variation are substantially harder to mitigate than pixel-level perturbations.</p>
+<p><strong>Comment:</strong> Matches criterion 4 (vision foundation models and applications) and is of interest for its use of diffusion models to discover semantic attacks in autonomous vehicle mapping, with surprising empirical results.<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>7. <a href="https://arxiv.org/abs/2605.14333">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</a> <a id="link7"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14333<br><strong>Authors:</strong> Yang Yue, Fangyun Wei, Tianyu He, Jinjing Zhao, Zanlin Ni, Zeyu Liu, Jiayi Guo, Lei Shi, Yue Dong, Li Chen, Ji Li, Gao Huang, Dong Chen</p>
+<p><strong>Abstract:</strong>  Text and faces are among the most perceptually salient and practically important patterns in visual generation, yet they remain challenging for autoregressive generators built on discrete tokenization. A central bottleneck is the tokenizer: aggressive downsampling and quantization often discard the fine-grained structures needed to preserve readable glyphs and distinctive facial features. We attribute this gap to standard discrete-tokenizer objectives being weakly aligned with text legibility and facial fidelity, as these objectives typically optimize generic reconstruction while compressing diverse content uniformly. To address this, we propose InsightTok, a simple yet effective discrete visual tokenization framework that enhances text and face fidelity through localized, content-aware perceptual losses. With a compact 16k codebook and a 16x downsampling rate, InsightTok significantly outperforms prior tokenizers in text and face reconstruction without compromising general reconstruction quality. These gains consistently transfer to autoregressive image generation in InsightAR, producing images with clearer text and more faithful facial details. Overall, our results highlight the potential of specialized supervision in tokenizer training for advancing discrete image generation.</p>
+<p><strong>Comment:</strong> This paper proposes InsightTok, a new discrete visual tokenization framework that improves text and face fidelity for autoregressive image generation. It is relevant to vision foundation models and generative modeling (criterion 4), with a clever statistical trick (content-aware perceptual losses).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>8. <a href="https://arxiv.org/abs/2605.14635">MultiEmo-Bench: Multi-label Visual Emotion Analysis for Multi-modal Large Language Models</a> <a id="link8"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14635<br><strong>Authors:</strong> Tianwei Chen, Takuya Furusawa, Yuki Hirakawa, Ryotaro Shimizu, Mo Fan, Takashi Wada</p>
+<p><strong>Abstract:</strong>  This paper introduces a multi-label visual emotion analysis benchmark dataset for comprehensively evaluating the ability of multimodal large language models (MLLMs) to predict the emotions evoked by images. Recent user studies report an unintuitive finding: humans may prefer the predictions of MLLMs over the labels in existing datasets. We argue that this phenomenon stems from the suboptimal annotation scheme used in existing datasets, where each annotator is shown a single candidate emotion for each image and judges whether it is evoked or not. This approach is clearly limited because a single image can evoke multiple emotions with varying intensities. As a result, evaluations based on these datasets may underestimate the capabilities of MLLMs, yet an appropriate benchmark for evaluating such models remains lacking. To address this issue, we introduce a new multi-label benchmark dataset for visual emotion analysis toward MLLMs evaluation. We hire $20$ annotators per image and ask them to select all emotions they feel from an image. Then, we aggregate the votes across all annotators, providing a more reliable and representative dataset labeled with a distribution of emotions. The resulting dataset contains $10,344$ images with $236,998$ valid votes across eight emotions. Based on this benchmark dataset, we evaluate several recent models, including Qwen3-VL, OpenAI&#x27;s GPT, Gemini, and Claude. We assess model performance on both dominant emotion prediction and emotion distribution prediction. Our results demonstrate the progress achieved by recent MLLMs while also indicating that substantial room for improvement remains. Furthermore, our experiments with LLM-as-a-judge show that the method does not consistently improve MLLMs&#x27; performance, indicating its limitations for the subjective task of visual emotion analysis.</p>
+<p><strong>Comment:</strong> This paper introduces MultiEmo-Bench, a new multi-label visual emotion analysis benchmark for evaluating MLLMs, and provides empirical insights into model performance and annotation schemes. It matches criterion 2 (new MLLM evaluation) and criterion 4 (vision foundation model application).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>9. <a href="https://arxiv.org/abs/2605.14842">Editor&#x27;s Choice: Evaluating Abstract Intent in Image Editing through Atomic Entity Analysis</a> <a id="link9"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14842<br><strong>Authors:</strong> Mor Ventura, Roy Hirsch, Yonatan Bitton, Regev Cohen, Roi Reichart</p>
+<p><strong>Abstract:</strong>  Humans naturally communicate through abstract concepts like &quot;mood&quot;. However, current image editing benchmarks focus primarily on explicit, literal commands, leaving abstract instructions largely underexplored. In this work, we first formalize the definition and taxonomy of abstract image editing. To measure instruction-following in this challenging domain, we introduce Entity-Rubrics, a framework that breaks down abstract edits into individual, entity-level assessments and achieves strong correlation with human judgment. Alongside this framework, we contribute AbstractEdit, the first benchmark dedicated to abstract image editing across diverse real-world scenes. Evaluating 11 leading models on this dataset reveals a fundamental challenge: standard architectures struggle to balance intent and preservation, commonly defaulting to under-editing or over-editing. Our analysis demonstrates that driving meaningful improvements relies heavily on integrating advanced LLM text encoders and iterative thinking. Looking forward, our entity-based paradigm can generalize beyond assessment to serve as a reward model, enable models to correctly interpret abstract communication, or highlight specific failures in test-time critique loops. Ultimately, we hope this work serves as a stepping stone toward seamless multimodal interaction, closing the gap between rigid machine execution and the natural, open-ended way humans communicate.</p>
+<p><strong>Comment:</strong> This paper introduces a new benchmark and framework for evaluating abstract intent in image editing, focusing on entity-level analysis and abstract communication. It is relevant to vision-language models and benchmarks (criterion 4), and introduces a new angle (abstract intent) that is underexplored.<br><strong>Relevance:</strong> 6<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>10. <a href="https://arxiv.org/abs/2605.14552">LiWi: Layering in the Wild</a> <a id="link10"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14552<br><strong>Authors:</strong> Yu He, Fang Li, Haoyang Tong, Lichen Ma, Xinyuan Shan, Jingling Fu, Dong Chen, Luohang Liu, Junshi Huang, Yan Li</p>
+<p><strong>Abstract:</strong>  Recent advances in generative models have empowered impressive layered image generation, yet their success is largely confined to graphic design domains. The layering of in-the-wild images remains an underexplored problem, limiting fine-grained editing and applications of images in real-world scenarios. Specifically, challenges remain in scalable layered data and the modeling of object interaction in natural images, such as illumination effects and structural boundary. To address these bottlenecks, we propose a novel framework for high-fidelity natural image decomposition. First, we introduce an Agent-driven Data Decomposition (ADD) pipeline that orchestrates agents and tools to synthesize layered data without manual intervention. Utilizing this pipeline, we construct a large-scale dataset, named LiWi-100k, with over 100,000 high-quality layered in-the-wild images. Second, we present a novel framework that jointly improves photometric fidelity and alpha boundary accuracy. Specifically, shadow-guided learning explicitly models the illumination effects, and degradation-restoration objective provides boundary-correction supervision by recovering clean foreground image from degraded one. Extensive experiments demonstrate that our framework achieves state-of-the-art (SoTA) performance in natural image decomposition, outperforming existing models in RGB L1 and Alpha IoU metrics. We will soon release our code and dataset.</p>
+<p><strong>Comment:</strong> Matches criterion 4 (vision foundation models and applications) by introducing a new dataset and framework for layered image decomposition in the wild, enabling new applications in generative modeling.<br><strong>Relevance:</strong> 6<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>11. <a href="https://arxiv.org/abs/2605.14708">StyleTextGen: Style-Conditioned Multilingual Scene Text Generation</a> <a id="link11"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14708<br><strong>Authors:</strong> Zeyu Chen, Fangmin Zhao, Yan Shu, Yichao Liu, Liu Yu, Yu Zhou</p>
+<p><strong>Abstract:</strong>  Style-conditioned scene text generation faces unique challenges in extracting precise text styles from complex backgrounds and maintaining fine-grained style consistency across characters, especially for multilingual scripts. We propose StyleTextGen, a novel framework that learns to perceive and replicate visual text styles across different languages and writing systems. Our approach features three key contributions: First, we introduce a dual-branch style encoder dedicated to style modeling, yielding robust multilingual text style representations in complex real-world scenes. Second, we design a text style consistency loss that enhances style coherence and improves overall visual quality. Third, we develop a mask-guided inference strategy that ensures precise style alignment between generated and reference text. To facilitate systematic evaluation, we construct StyleText-CE, a bilingual scene text style benchmark covering both monolingual and cross-lingual settings. Extensive experiments demonstrate that StyleTextGen significantly outperforms existing methods in style consistency and cross-lingual generalization, establishing new state-of-the-art performance in multilingual style-conditioned text generation.</p>
+<p><strong>Comment:</strong> Matches criterion 4 (vision foundation models and applications) due to its novel multilingual scene text generation framework and benchmark, with strong generative modeling and cross-lingual style transfer.<br><strong>Relevance:</strong> 6<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>12. <a href="https://arxiv.org/abs/2605.14113">ProtoMedAgent: Multimodal Clinical Interpretability via Privacy-Aware Agentic Workflows</a> <a id="link12"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14113<br><strong>Authors:</strong> Alvaro Lopez Pellicer, Plamen Angelov, Marwan Bukhari, Yi Li, Eduardo Soares, Jemma Kerns</p>
+<p><strong>Abstract:</strong>  While interpretable prototype networks offer compelling case-based reasoning for clinical diagnostics, their raw continuous outputs lack the semantic structure required for medical documentation. Bridging this gap via standard Retrieval-Augmented Generation (RAG) routinely triggers ``retrieval sycophancy,&#x27;&#x27; where Large Language Models (LLMs) hallucinate post-hoc rationalizations to align with visual predictions. We introduce ProtoMedAgent, a framework that formalizes multimodal clinical reporting as an iterative, zero-gradient test-time optimization problem over a strict neuro-symbolic bottleneck. Operating on a frozen prototype backbone, we distill latent visual and tabular features into a discrete semantic memory. Online generation is strictly constrained by exact set-theoretic differentials and a reflective Scribe-Critic loop, mathematically precluding unsupported narrative claims. To safely bound data disclosure, we introduce a semantic privacy gate governed by $k$-anonymity and $\ell$-diversity. Evaluated on a 4,160-patient clinical cohort, ProtoMedAgent achieves 91.2\% Comparison Set Faithfulness where it fundamentally outperforms standard RAG (46.2\%). ProtoMedAgent additionally leverages a binding $\ell$-diversity phase transition to systematically reduce artifact-level membership inference risks by an absolute 9.8\%.</p>
+<p><strong>Comment:</strong> This paper introduces a multimodal agent for clinical interpretability, with a neuro-symbolic bottleneck and privacy-aware workflows. It is a new method for multimodal agentic reasoning, but not specifically about spatial intelligence or embodied agents. It does show a new MLLM-based agentic workflow (criterion 2).<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>13. <a href="https://arxiv.org/abs/2605.15042">EverAnimate: Minute-Scale Human Animation via Latent Flow Restoration</a> <a id="link13"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.15042<br><strong>Authors:</strong> Wuyang Li, Yang Gao, Mariam Hassan, Lan Feng, Wentao Pan, Po-Chien Luan, Alexandre Alahi</p>
+<p><strong>Abstract:</strong>  We propose EverAnimate, an efficient post-training method for long-horizon animated video generation that preserves visual quality and character identity. Long-form animation remains challenging because highly dynamic human motion must be synthesized against relatively static environments, making chunk-based generation prone to accumulated drift: (i) low-level quality drift, such as progressive degradation of static backgrounds, and (ii) high-level semantic drift, such as inconsistent character identity and view-dependent attributes. To address this issue, EverAnimate restores drifted flow trajectories by anchoring generation to a persistent latent context memory, consisting of two complementary mechanisms. (i) Persistent Latent Propagation maintains a context memory across chunks to propagate identity and motion in latent space while mitigating temporal forgetting. (ii) Restorative Flow Matching introduces an implicit restoration objective during sampling through velocity adjustment, improving within-chunk fidelity. With only lightweight LoRA tuning, EverAnimate outperforms state-of-the-art long-animation methods in both short- and long-horizon settings: at 10 seconds, it improves PSNR/SSIM by 8%/7% and reduces LPIPS/FID by 22%/11%; at 90 seconds, the gains increase to 15%/15% and 32%/27%, respectively.</p>
+<p><strong>Comment:</strong> Relevant to criterion 4 (vision foundation models and applications) as it proposes a new method for long-horizon human animation using generative models, but not directly about spatial intelligence or VLLMs.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>14. <a href="https://arxiv.org/abs/2605.14703">Generating HDR Video from SDR Video</a> <a id="link14"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14703<br><strong>Authors:</strong> SaiKiran Tedla, Francesco Banterle, Trevor Canham, Karanpreet Raja, David B. Lindell, Kiriakos N. Kutulakos, Jiacheng Li, Feiran Li, Daisuke Iso</p>
+<p><strong>Abstract:</strong>  The high dynamic range (HDR) video ecosystem is approaching maturity, but the problem of upconverting legacy standard dynamic range (SDR) videos persists without a convincing solution. We propose a framework for HDR video synthesis from casual SDR footage by leveraging large-scale generative video models. We introduce a Multi-Exposure Video Model (MEVM) that can predict exposure-bracketed linear SDR video sequences from a single nonlinear SDR video input. We further propose a learnable Video Merging Model (VMM) that merges the predicted exposure-bracketed video into a high-quality HDR sequence while preserving detail in both shadows and highlights. Extensive experiments, quantitative and qualitative evaluation, and a user study demonstrate that our approach enables robust HDR conversion for in-the-wild examples from casual consumer videos and even iconic films. Finally, our model can support HDR synthesis pipelines built upon existing SDR generative video models. Output HDR videos can be viewed on our supplementary webpage: sdr2hdrvideo.github.io</p>
+<p><strong>Comment:</strong> Relevant to criterion 4 (vision foundation models and applications) as it leverages large-scale generative video models for HDR video synthesis, but not directly about spatial intelligence or VLLMs.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>15. <a href="https://arxiv.org/abs/2605.14566">SpectraFlow: Unifying Structural Pretraining and Frequency Adaptation for Medical Image Segmentation</a> <a id="link15"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14566<br><strong>Authors:</strong> Zhiquan Chen, Haitao Wang, Guowei Zou, Hejun Wu</p>
+<p><strong>Abstract:</strong>  Medical image segmentation remains challenging in low-data regimes, where scarce annotations often yield poor generalization and ambiguous boundaries with missing fine structures. Recent self-supervised pretraining has improved transferability, but it often exhibits a texture bias. In contrast, accurate segmentation is inherently geometry-aware and depends on both topological consistency and precise boundary preservation. To address this problem, we propose a two-stage framework that couples structure-aware encoder pretraining with boundary-oriented decoding. In Stage-1, we aim to learn structure-aware representations for downstream segmentation in low-data regimes. To this end, we propose Mixed-Domain MeanFlow Pretraining, which aligns images and binary masks in a shared latent space through latent transport regression, where masks act as conditional structural guidance rather than prediction targets, making the pretraining task-agnostic. To further improve training stability under scarce supervision, we incorporate a lightweight Dispersive Loss to prevent representation collapse. In Stage-2, we fine-tune the pretrained encoder with a lightweight decoder that combines Direct Attentional Fusion for adaptive cross-scale gating and Frequency-Directional Dynamic Convolution for high-frequency boundary refinement under appearance variation. Experiments on ISIC-2016, Kvasir-SEG, and GlaS demonstrate consistent gains over state-of-the-art methods, with improved robustness in low-data settings and sharper boundary delineation.</p>
+<p><strong>Comment:</strong> This paper proposes a new two-stage framework for medical image segmentation, focusing on structure-aware pretraining and frequency adaptation. While it is about spatial structure in images, it is not about embodied agents or spatial intelligence in agents. It is a new method for vision foundation models in medical imaging (criterion 4).<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>16. <a href="https://arxiv.org/abs/2605.14926">SCRWKV: Ultra-Compact Structure-Calibrated Vision-RWKV for Topological Crack Segmentation</a> <a id="link16"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14926<br><strong>Authors:</strong> Hanxu Zhang, Chen Jia, Hui Liu, Xu Cheng, Fan Shi, Shengyong Chen</p>
+<p><strong>Abstract:</strong>  Achieving pixel-level accurate segmentation of structural cracks across diverse scenarios remains a formidable challenge. Existing methods face significant bottlenecks in balancing crack topology modeling with computational efficiency, often failing to reconcile high segmentation quality with low resource demands. To address these limitations, we propose the Ultra-Compact Structure-Calibrated Vision RWKV (SCRWKV), a network that achieves high-precision modeling via a novel Structure-Field Encoder (SFE) backbone while maintaining linear complexity. The SFE integrates the Adaptive Multi-scale Cascaded Modulator (AMCM) to enhance texture representation and utilizes the Structure-Calibrated Insight Unit (SCIU) as its core engine. Specifically, the SCIU employs the Geometry-guided Bidirectional Structure Transformation (GBST) to capture topological correlations and integrates the Dynamic Self-Calibrating Decay (DSCD) into Dy-WKV to suppress noise propagation. Furthermore, we introduce a lightweight Cross-Scale Harmonic Fusion (CSHF) decoder to achieve precise feature aggregation. Systematic evaluations on multiple benchmarks characterized by complex textures and severe interference demonstrate that SCRWKV, with only 1.22M parameters, significantly outperforms SOTA methods. Achieving an F1 score of 0.8428 and mIoU of 0.8512 on the TUT dataset, the model confirms its robust potential for efficient real-world deployment. The code is available at https://github.com/zhxhzy/SCRWKV.</p>
+<p><strong>Comment:</strong> Somewhat relevant to criterion 4 (vision foundation models and applications) due to its novel, efficient vision model for crack segmentation, but not directly about spatial intelligence or VLLMs.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 5</p>
+<hr>
+<h2>17. <a href="https://arxiv.org/abs/2605.14821">HDRFace: Rethinking Face Restoration with High-Dimensional Representation</a> <a id="link17"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14821<br><strong>Authors:</strong> Zirui Wang, Xianhui Lin, Yi Dong, Bo Wei, Gangjian Zhang, Siteng Ma, Zebiao Zheng, Xing Liu, Hong Gu, Minjing Dong</p>
+<p><strong>Abstract:</strong>  Face restoration under complex degradations still remains an ill-posed inverse problem due to severe information loss. Although diffusion models benefit from strong generative priors, most methods still condition only on low-quality inputs, making it difficult to recover identity-critical details under heavy degradations. In this work, we propose HDRFace, a High-Dimensional Representation conditioned Face restoration framework that injects semantically rich priors into the conditional flow without modifying the generative backbone. Our pipeline first obtains a structurally reliable intermediate restoration with an off-the-shelf restorer, then uses a pretrained high-dimensional feature encoder to extract fine-grained facial representations from both the low-quality input and the intermediate result, and injects them as additional conditions for generation. We further introduce SDFM, a Structure-Detail aware adaptive Fusion Mechanism that emphasizes global constraints during structure modeling and strengthens representation guidance during detail synthesis, balancing structural consistency and detail fidelity. To validate the generalization ability of our method, we implement the proposed framework on two generative models, SD V2.1-base and Qwen-Image, and consistently observe stable and coherent performance gains across different architectures.</p>
+<p><strong>Comment:</strong> Somewhat relevant to criterion 4 (vision foundation models and applications) as it proposes a new face restoration framework leveraging generative models and high-dimensional representations, but not directly about spatial intelligence or VLLMs.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 5</p>
+<hr>
+<h2>18. <a href="https://arxiv.org/abs/2605.14518">ArcGate: Adaptive Arctangent Gated Activation</a> <a id="link18"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.14518<br><strong>Authors:</strong> Avik Bhattacharya, Siddhant Dnyanesh Gole, Subhasis Chaudhuri, Alejandro C. Frery, Biplab Banerjee</p>
+<p><strong>Abstract:</strong>  Activation functions are central to deep networks, influencing non-linearity, feature learning, convergence, and robustness. This paper proposes the Adaptive Arctangent Gated Activation (ArcGate) function, a flexible formulation that generates a broad spectrum of activation shapes via a three-stage non-linear transformation. Unlike conventional fixed-shape activations such as ReLU, GELU, or SiLU, ArcGate uses seven learnable parameters per layer, allowing the neural network to autonomously optimize its non-linearity to the specific requirements of the feature hierarchy and data distribution. We evaluate ArcGate using ResNet-50 and Vision Transformer (ViT-B/16) architectures on three widely used remote sensing benchmarks: PatternNet, UC Merced Land Use, and the 13-band EuroSAT MSI multispectral dataset. Experimental results show that ArcGate consistently outperforms standard baselines, achieving a peak overall accuracy of 99.67% on PatternNet. Most notably, ArcGate exhibits superior structural resilience in noisy environments, maintaining a 26.65% performance lead over ReLU under moderate Gaussian noise (standard deviation 0.1). Analysis of the learned parameters reveals a depth-dependent functional evolution, where the model increases gating strength in deeper layers to enhance signal propagation. These findings suggest that ArcGate is a robust and adaptive general node activation function for high-resolution earth observation tasks.</p>
+<p><strong>Comment:</strong> This paper proposes a new adaptive activation function for deep networks, evaluated on remote sensing (spatial data), but it is not specifically about spatial understanding or embodied agents. It is a general deep learning method with some application to spatial data.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 5</p>
+<hr>
+<hr>
+<h2>Paper selection prompt</h2>
+<p>1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
+<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.</p>
+    </article>
+  </main>
+</body>
+</html>

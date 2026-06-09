@@ -116,7 +116,8 @@ a {
 }
 
 .category-section,
-.paper-category-section {
+.paper-category-section,
+.topic-section {
   scroll-margin-top: 18px;
 }
 
@@ -139,6 +140,19 @@ a {
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .queue {
@@ -183,7 +197,8 @@ a {
   line-height: 1.35;
 }
 
-.category-tags {
+.category-tags,
+.topic-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -196,6 +211,16 @@ a {
   border-radius: 999px;
   background: #f8fbf9;
   color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1;
@@ -305,6 +330,66 @@ a {
   white-space: pre-wrap;
 }
 
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
 @media (max-width: 760px) {
   .daily-arxiv {
     padding: 24px 14px 56px;
@@ -375,7 +460,7 @@ a {
 
     <div class="metric">
       <span>Source</span>
-      <strong>ArXiv RSS</strong>
+      <strong>ArXiv</strong>
     </div>
 
     </div>
@@ -389,6 +474,9 @@ a {
         <h3>cs.CV</h3>
         <span>5 papers</span>
       </header>
+
+    <section class="topic-section">
+      <h4>Vision-Language Reasoning</h4>
       <div class="queue">
 
     <a class="queue-item" href="#link0">
@@ -396,6 +484,12 @@ a {
       <span class="queue-copy">
         <strong>Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models</strong>
         <small>Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
@@ -405,12 +499,27 @@ a {
       <span class="score-pill">18</span>
     </a>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Multimodal LLM</h4>
+      <div class="queue">
 
     <a class="queue-item" href="#link1">
       <span class="queue-index">2</span>
       <span class="queue-copy">
         <strong>CRANE: Knowledge Editing for Reasoning MLLMs</strong>
         <small>Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Knowledge Editing</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
@@ -428,6 +537,14 @@ a {
         <strong>REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction</strong>
         <small>Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</small>
 
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
     </div>
@@ -437,26 +554,19 @@ a {
     </a>
 
 
-    <a class="queue-item" href="#link5">
-      <span class="queue-index">6</span>
-      <span class="queue-copy">
-        <strong>WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</strong>
-        <small>Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</small>
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-    </div>
-
-      </span>
-      <span class="score-pill">9</span>
-    </a>
-
-
     <a class="queue-item" href="#link8">
       <span class="queue-index">9</span>
       <span class="queue-copy">
         <strong>NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</strong>
         <small>Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
@@ -471,11 +581,46 @@ a {
     </section>
 
 
+    <section class="topic-section">
+      <h4>Benchmark &amp; Evaluation</h4>
+      <div class="queue">
+
+    <a class="queue-item" href="#link5">
+      <span class="queue-index">6</span>
+      <span class="queue-copy">
+        <strong>WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</strong>
+        <small>Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+      </span>
+      <span class="score-pill">9</span>
+    </a>
+
+      </div>
+    </section>
+
+    </section>
+
+
     <section class="category-section">
       <header class="category-heading">
         <h3>cs.AI</h3>
         <span>4 papers</span>
       </header>
+
+    <section class="topic-section">
+      <h4>Multimodal LLM</h4>
       <div class="queue">
 
     <a class="queue-item" href="#link3">
@@ -483,6 +628,14 @@ a {
       <span class="queue-copy">
         <strong>A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology</strong>
         <small>Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -492,12 +645,25 @@ a {
       <span class="score-pill">15</span>
     </a>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Safety &amp; Backdoors</h4>
+      <div class="queue">
 
     <a class="queue-item" href="#link4">
       <span class="queue-index">5</span>
       <span class="queue-copy">
         <strong>Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs</strong>
         <small>Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -508,12 +674,26 @@ a {
       <span class="score-pill">10</span>
     </a>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Benchmark &amp; Evaluation</h4>
+      <div class="queue">
 
     <a class="queue-item" href="#link6">
       <span class="queue-index">7</span>
       <span class="queue-copy">
         <strong>InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs</strong>
         <small>Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -523,12 +703,25 @@ a {
       <span class="score-pill">9</span>
     </a>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>LLM Interpretability</h4>
+      <div class="queue">
 
     <a class="queue-item" href="#link7">
       <span class="queue-index">8</span>
       <span class="queue-copy">
         <strong>Cross-LLM Consistency in Inference: Evidence from Shared Interactions</strong>
         <small>Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -541,6 +734,8 @@ a {
       </div>
     </section>
 
+    </section>
+
   </nav>
 
   <h2 class="section-title">Paper Notes</h2>
@@ -548,6 +743,9 @@ a {
 
     <section class="paper-category-section">
       <h3>cs.CV</h3>
+
+    <section class="topic-section">
+      <h4>Vision-Language Reasoning</h4>
       <div class="paper-list">
 
     <article class="paper-card" id="link0">
@@ -563,6 +761,12 @@ a {
       </header>
       <p class="authors">Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</p>
 
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
     </div>
@@ -577,6 +781,13 @@ a {
       <p class="abstract">Can vision-language models predict what a 180{\deg} rotation would reveal from the original image alone? We study this ability through Rotated-Outcome Prediction: given an original image, a model must answer what would be seen or read after a 180{\deg} in-plane rotation, without directly observing the rotated target. To isolate this gap, we introduce RotOutBench, a paired diagnostic benchmark spanning open visual cases and controlled text-image rotations. A sharp pattern emerges: many VLMs can recognize the relevant content when directly given either the original or rotated image, yet fail to infer the rotated result from the original image alone. On controlled text-image rotations, predicted-rotation accuracy collapses to near zero even for models with high direct-reading accuracy. A model-level case study further shows that the prediction state can approach a rotated-image reading state, while the final readout still shifts toward the original string. Current VLMs can recognize a transformed visual state when it is shown, but often fail to predict that state from the original view.</p>
     </article>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Multimodal LLM</h4>
+      <div class="paper-list">
 
     <article class="paper-card" id="link1">
       <header class="paper-head">
@@ -590,6 +801,14 @@ a {
         </div>
       </header>
       <p class="authors">Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Knowledge Editing</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
@@ -620,6 +839,14 @@ a {
       </header>
       <p class="authors">Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</p>
 
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
     </div>
@@ -635,34 +862,6 @@ a {
     </article>
 
 
-    <article class="paper-card" id="link5">
-      <header class="paper-head">
-        <div>
-          <p class="paper-kicker">Paper 6 / arXiv:2606.08670</p>
-          <h2><a href="https://arxiv.org/abs/2606.08670">WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</a></h2>
-        </div>
-        <div class="paper-actions">
-          <a class="paper-action" href="https://arxiv.org/abs/2606.08670">Open arXiv</a>
-          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
-        </div>
-      </header>
-      <p class="authors">Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</p>
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-    </div>
-
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>6</strong></span>
-        </div>
-
-      <p class="comment"><strong>Why selected:</strong> This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.</p>
-      <p class="abstract">Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT</p>
-    </article>
-
-
     <article class="paper-card" id="link8">
       <header class="paper-head">
         <div>
@@ -675,6 +874,14 @@ a {
         </div>
       </header>
       <p class="authors">Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
@@ -695,8 +902,56 @@ a {
     </section>
 
 
+    <section class="topic-section">
+      <h4>Benchmark &amp; Evaluation</h4>
+      <div class="paper-list">
+
+    <article class="paper-card" id="link5">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 6 / arXiv:2606.08670</p>
+          <h2><a href="https://arxiv.org/abs/2606.08670">WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</a></h2>
+        </div>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.08670">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
+      </header>
+      <p class="authors">Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.</p>
+      <p class="abstract">Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT</p>
+    </article>
+
+      </div>
+    </section>
+
+    </section>
+
+
     <section class="paper-category-section">
       <h3>cs.AI</h3>
+
+    <section class="topic-section">
+      <h4>Multimodal LLM</h4>
       <div class="paper-list">
 
     <article class="paper-card" id="link3">
@@ -712,6 +967,14 @@ a {
       </header>
       <p class="authors">Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</p>
 
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
     </div>
@@ -726,6 +989,13 @@ a {
       <p class="abstract">Pathology is the cornerstone of modern medicine, where accurate decision-making relies heavily on evidence-based practices. While artificial intelligence (AI) has the potential to transform clinical workflows, the intersection of AI and evidence-based medicine remains under-explored, with primitive attempts restricted to text-only general medicine. In this work, we present PathPocket, a multimodal AI agentic co-pilot designed specifically for evidence grounded pathology. We construct the most comprehensive pathology evidence corpus to date, encompassing approximately 110,472 public and authorized documents structured across a rigorous hierarchy of evidence from clinical guideline to expert opinion. From this meticulously graded foundation, we build a large-scale multimodal pathology hypergraph containing over 4.55 million entities and 7.10 million relations. Serving as a robust knowledge engine, this hypergraph provides traceable evidence for a collaborative multi-agent reasoning framework integrating input understanding, evidence retrieval, filtering, and diagnosis generation. This enables PathPocket to seamlessly resolve a wide spectrum of clinical tasks, ranging from text-only queries to complex multimodal diagnostics involving region-of-interest (ROI) and gigapixel whole-slide images (WSIs). We rigorously evaluate the system on a multidimensional benchmark of over 200,000 real-world cases, where it significantly outperforms existing state-of-the-arts. Crucially, extensive user studies demonstrate that PathPocket substantially improves the diagnostic accuracy and confidence of pathologists. By directly grounding pathology interpretations in verifiable literature, PathPocket offers a practical and scalable solution for the future of evidence grounded computational pathology.</p>
     </article>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Safety &amp; Backdoors</h4>
+      <div class="paper-list">
 
     <article class="paper-card" id="link4">
       <header class="paper-head">
@@ -739,6 +1009,12 @@ a {
         </div>
       </header>
       <p class="authors">Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -755,6 +1031,13 @@ a {
       <p class="abstract">Backdoor attacks in large language models (LLMs) are often treated as isolated trigger-response failures, motivating defenses tailored to specific triggers or behaviors. We show this view is incomplete. Across diverse backdoor behaviors, we identify a shared latent mechanism that can be detected, causally controlled, and suppressed. Using sparse autoencoders (SAEs) on residual-stream activations, we find a small set of latent features consistently activated across jailbreaking, refusal manipulation, password-locking, bias induction, sentiment misclassification, and country-conditioned harmful advice. These features generalize across Qwen3, Gemma~3, and Llama~3.1 models from 4B to 32B parameters, and across both fine-tuning and weight-editing attacks. Through bidirectional activation steering, we show these features are causal: suppressing them reduces attack success, while amplifying them induces target behaviors on clean prompts. We further train lightweight SAE-feature classifiers that generalize zero-shot to unseen backdoors and outperform residual-stream and weight-diffing baselines. Finally, we introduce Concept Ablation Fine-Tuning (CAFT), which suppresses backdoor formation by ablating the shared latent subspace during training. Together, our results suggest that many backdoors rely on a transferable latent mechanism, enabling unified detection and mitigation.</p>
     </article>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>Benchmark &amp; Evaluation</h4>
+      <div class="paper-list">
 
     <article class="paper-card" id="link6">
       <header class="paper-head">
@@ -768,6 +1051,13 @@ a {
         </div>
       </header>
       <p class="authors">Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -783,6 +1073,13 @@ a {
       <p class="abstract">Large Language Models (LLMs) have recently demonstrated impressive potential for time series forecasting. However, existing methods predominantly rely on passive modality alignment or static task reprogramming, which often fail to capture fine-grained, non-stationary temporal patterns or to adapt to nuanced task intents. In this paper, we propose Instruction-aware Active Probing (InA-Probe), which shifts the paradigm from passive alignment toward an active, instruction-driven probing mechanism. Specifically, we design a Multi-Level Instruction Injection mechanism that enriches the model with both global task objectives and fine-grained, patch-level semantic priors. Building on this, an Adaptive Query Generation module produces sample-specific probes that are dynamically modulated by the temporal context. These probes are then refined through a dual-stage attention process: they first internalize task-specific intents via Instruction-Aware Self-Attention, and subsequently interrogate the projected temporal representations through Temporal Cross-Attention to extract salient patterns. Comprehensive experiments on seven real-world benchmarks show that InA-Probe consistently outperforms state-of-the-art deep learning and LLM-based baselines, excelling in both one-for-all generalization and zero-shot transfer while reducing forecasting error by up to 37\% in challenging cross-domain scenarios. Ablation studies further confirm that the synergy between adaptive querying and fine-grained instructions is key to unlocking the reasoning power of LLMs for complex time series.</p>
     </article>
 
+      </div>
+    </section>
+
+
+    <section class="topic-section">
+      <h4>LLM Interpretability</h4>
+      <div class="paper-list">
 
     <article class="paper-card" id="link7">
       <header class="paper-head">
@@ -796,6 +1093,12 @@ a {
         </div>
       </header>
       <p class="authors">Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</p>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.AI</span>
@@ -814,7 +1117,138 @@ a {
       </div>
     </section>
 
+    </section>
+
   </section>
+
+
+  <section class="archive-block">
+    <h2>往日 ArXiv</h2>
+    <p>Previous daily digests from the last month.</p>
+    <div class="archive-links">
+
+        <a class="archive-link" href="past_arxiv/2026-06-08.html">
+          <span>June 08, 2026</span>
+          <small>output_2026_0608.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-06.html">
+          <span>June 06, 2026</span>
+          <small>output_2026_0606.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-05.html">
+          <span>June 05, 2026</span>
+          <small>output_2026_0605.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-04.html">
+          <span>June 04, 2026</span>
+          <small>output_2026_0604.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-03.html">
+          <span>June 03, 2026</span>
+          <small>output_2026_0603.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-02.html">
+          <span>June 02, 2026</span>
+          <small>output_2026_0602.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-06-01.html">
+          <span>June 01, 2026</span>
+          <small>output_2026_0601.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-29.html">
+          <span>May 29, 2026</span>
+          <small>output_2026_0529.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-28.html">
+          <span>May 28, 2026</span>
+          <small>output_2026_0528.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-27.html">
+          <span>May 27, 2026</span>
+          <small>output_2026_0527.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-26.html">
+          <span>May 26, 2026</span>
+          <small>output_2026_0526.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-25.html">
+          <span>May 25, 2026</span>
+          <small>output_2026_0525.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-22.html">
+          <span>May 22, 2026</span>
+          <small>output_2026_0522.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-21.html">
+          <span>May 21, 2026</span>
+          <small>output_2026_0521.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-20.html">
+          <span>May 20, 2026</span>
+          <small>output_2026_0520.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-19.html">
+          <span>May 19, 2026</span>
+          <small>output_2026_0519.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-18.html">
+          <span>May 18, 2026</span>
+          <small>output_2026_0518.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-16.html">
+          <span>May 16, 2026</span>
+          <small>output_2026_0516.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-15.html">
+          <span>May 15, 2026</span>
+          <small>output_2026_0515.md</small>
+        </a>
+
+
+        <a class="archive-link" href="past_arxiv/2026-05-14.html">
+          <span>May 14, 2026</span>
+          <small>output_2026_0514.md</small>
+        </a>
+
+    </div>
+  </section>
+
 
   <section class="prompt-block">
     <h2>Paper selection prompt</h2>

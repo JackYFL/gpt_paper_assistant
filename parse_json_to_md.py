@@ -1,9 +1,11 @@
 import configparser
+import glob
 import html
 import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
+from pathlib import Path
 
 
 def clean_abstract(abstract: str) -> str:
@@ -16,6 +18,30 @@ def esc(value) -> str:
 
 def strip_trailing_whitespace(value: str) -> str:
     return "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
+
+
+ARCHIVE_DIR = "past_arxiv"
+
+
+TOPIC_TAG_RULES = [
+    (
+        "Vision-Language Reasoning",
+        r"vision-language|visual language|vlm|rotated|spatial",
+    ),
+    ("Multimodal LLM", r"mllm|multimodal large language|multi-modal|multimodal"),
+    ("Benchmark & Evaluation", r"benchmark|challenge|evaluation|diagnostic|dataset"),
+    ("Embodied Interaction", r"embodied|agentic|agent|co-pilot|robot|simulator|dyadic"),
+    ("Knowledge Editing", r"knowledge editing|reasonedit|edit fact|crane"),
+    ("Medical AI", r"pathology|medical|brain|mri|neuroimaging|mci|diagnosis"),
+    ("Generative Modeling", r"generation|synthesis|diffusion|flow matching|generative"),
+    ("Safety & Backdoors", r"backdoor|safety|mitigation|detection"),
+    (
+        "LLM Interpretability",
+        r"interpretability|inference|latent|interaction|consistency",
+    ),
+    ("Time-Series LLM", r"time series|forecasting|temporal"),
+    ("Retrieval & Grounding", r"retrieval|grounded|evidence|knowledge"),
+]
 
 
 def paper_score(paper_entry: dict) -> int | None:
@@ -40,6 +66,57 @@ def get_paper_categories(paper_entry: dict) -> list[str]:
     return unique_categories
 
 
+def normalize_tags(tags) -> list[str]:
+    if not tags:
+        return []
+    if isinstance(tags, str):
+        tags = re.split(r"[,;/]", tags)
+
+    seen = set()
+    normalized_tags = []
+    for tag in tags:
+        tag = str(tag).strip()
+        if not tag or tag in seen:
+            continue
+        seen.add(tag)
+        normalized_tags.append(tag)
+    return normalized_tags
+
+
+def infer_topic_tags(paper_entry: dict) -> list[str]:
+    text = " ".join(
+        [
+            paper_entry.get("title", ""),
+            paper_entry.get("abstract", ""),
+        ]
+    ).lower()
+    tags = [
+        tag
+        for tag, pattern in TOPIC_TAG_RULES
+        if re.search(pattern, text, flags=re.IGNORECASE)
+    ]
+    if tags:
+        return tags[:4]
+
+    primary_category = get_primary_category(paper_entry)
+    if primary_category == "cs.CV":
+        return ["Computer Vision"]
+    if primary_category == "cs.AI":
+        return ["AI Methods"]
+    return ["General ML"]
+
+
+def get_topic_tags(paper_entry: dict) -> list[str]:
+    tags = normalize_tags(paper_entry.get("topic_tags") or paper_entry.get("TAGS"))
+    if tags:
+        return tags[:4]
+    return infer_topic_tags(paper_entry)
+
+
+def get_primary_topic_tag(paper_entry: dict) -> str:
+    return get_topic_tags(paper_entry)[0]
+
+
 def get_primary_category(paper_entry: dict) -> str:
     if paper_entry.get("primary_category"):
         return paper_entry["primary_category"]
@@ -49,6 +126,15 @@ def get_primary_category(paper_entry: dict) -> str:
     return "Uncategorized"
 
 
+def group_papers_by_topic(
+    papers: list[tuple[int, dict]],
+) -> dict[str, list[tuple[int, dict]]]:
+    topic_groups = {}
+    for idx, paper in papers:
+        topic_groups.setdefault(get_primary_topic_tag(paper), []).append((idx, paper))
+    return topic_groups
+
+
 def group_indexed_papers(papers_dict: dict) -> dict[str, list[tuple[int, dict]]]:
     grouped_papers = {}
     for idx, paper in enumerate(papers_dict.values()):
@@ -56,6 +142,18 @@ def group_indexed_papers(papers_dict: dict) -> dict[str, list[tuple[int, dict]]]
     for papers in grouped_papers.values():
         papers.sort(key=lambda item: paper_score(item[1]) or -1, reverse=True)
     return grouped_papers
+
+
+def render_topic_tags(paper_entry: dict) -> str:
+    tags = "\n".join(
+        f'<span class="topic-tag">{esc(tag)}</span>'
+        for tag in get_topic_tags(paper_entry)
+    )
+    return f"""
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      {tags}
+    </div>
+    """
 
 
 def render_category_tags(paper_entry: dict) -> str:
@@ -82,18 +180,171 @@ def render_metric(label: str, value: str) -> str:
     """
 
 
+def archive_filename(output_date: datetime) -> str:
+    return f"{ARCHIVE_DIR}/{output_date.strftime('%Y-%m-%d')}.html"
+
+
+def archive_title_from_date(output_date: datetime) -> str:
+    return output_date.strftime("%B %d, %Y")
+
+
+def parse_archive_date(path: str) -> datetime | None:
+    match = re.search(r"output_(\d{4})_(\d{2})(\d{2})\.md$", path)
+    if not match:
+        return None
+    year, month, day = match.groups()
+    return datetime(int(year), int(month), int(day))
+
+
+def get_recent_archive_entries(output_date=None, days=31) -> list[tuple[datetime, str]]:
+    output_date = output_date or datetime.today()
+    output_day = output_date.date()
+    start_day = (output_date - timedelta(days=days)).date()
+    entries = []
+    for path in glob.glob("out/output_*.md"):
+        archive_date = parse_archive_date(path)
+        if archive_date is None:
+            continue
+        archive_day = archive_date.date()
+        if start_day <= archive_day < output_day:
+            entries.append((archive_date, path))
+    return sorted(entries, reverse=True)
+
+
+def inline_markdown_to_html(text: str) -> str:
+    text = html.escape(text)
+    text = re.sub(
+        r"\[([^\]]+)\]\(([^)]+)\)",
+        r'<a href="\2">\1</a>',
+        text,
+    )
+    text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
+    text = re.sub(
+        r"&lt;a id=&quot;([^&]+)&quot;&gt;&lt;/a&gt;",
+        r'<a id="\1"></a>',
+        text,
+    )
+    return text
+
+
+def markdown_to_archive_body(markdown_text: str) -> str:
+    html_lines = []
+    paragraph_lines = []
+
+    def flush_paragraph():
+        if paragraph_lines:
+            paragraph = "<br>".join(
+                inline_markdown_to_html(line) for line in paragraph_lines
+            )
+            html_lines.append(
+                f"<p>{paragraph}</p>"
+            )
+            paragraph_lines.clear()
+
+    for line in markdown_text.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            flush_paragraph()
+            continue
+        if stripped == "---":
+            flush_paragraph()
+            html_lines.append("<hr>")
+            continue
+        if stripped.startswith("## "):
+            flush_paragraph()
+            html_lines.append(f"<h2>{inline_markdown_to_html(stripped[3:])}</h2>")
+            continue
+        if stripped.startswith("# "):
+            flush_paragraph()
+            html_lines.append(f"<h1>{inline_markdown_to_html(stripped[2:])}</h1>")
+            continue
+        paragraph_lines.append(stripped)
+
+    flush_paragraph()
+    return "\n".join(html_lines)
+
+
+def render_archive_page(archive_date: datetime, markdown_text: str) -> str:
+    return strip_trailing_whitespace(f"""
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / {esc(archive_title_from_date(archive_date))}</title>
+  {render_styles()}
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / {esc(archive_title_from_date(archive_date))}</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+        {render_metric("Archive date", archive_date.strftime("%m/%d/%Y"))}
+        {render_metric("Source", "ArXiv")}
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+    <article class="archive-content">
+      {markdown_to_archive_body(markdown_text)}
+    </article>
+  </main>
+</body>
+</html>
+""")
+
+
+def render_archive_links(output_date=None) -> str:
+    entries = get_recent_archive_entries(output_date)
+    if not entries:
+        return ""
+
+    links = "\n".join(
+        f"""
+        <a class="archive-link" href="{esc(archive_filename(archive_date))}">
+          <span>{esc(archive_title_from_date(archive_date))}</span>
+          <small>{esc(Path(path).name)}</small>
+        </a>
+        """
+        for archive_date, path in entries
+    )
+    return f"""
+  <section class="archive-block">
+    <h2>往日 ArXiv</h2>
+    <p>Previous daily digests from the last month.</p>
+    <div class="archive-links">
+      {links}
+    </div>
+  </section>
+    """
+
+
+def write_archive_pages(output_date=None):
+    out_dir = Path("out") / ARCHIVE_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for archive_date, path in get_recent_archive_entries(output_date):
+        markdown_text = Path(path).read_text()
+        archive_path = Path("out") / archive_filename(archive_date)
+        archive_path.write_text(render_archive_page(archive_date, markdown_text))
+
+
 def render_title_and_author(paper_entry: dict, idx: int) -> str:
     title = paper_entry["title"]
     authors = ", ".join(paper_entry["authors"])
     score = paper_score(paper_entry)
     score_html = f'<span class="score-pill">{score}</span>' if score is not None else ""
     categories_html = render_category_tags(paper_entry)
+    topic_tags_html = render_topic_tags(paper_entry)
     return f"""
     <a class="queue-item" href="#link{idx}">
       <span class="queue-index">{idx + 1}</span>
       <span class="queue-copy">
         <strong>{esc(title)}</strong>
         <small>{esc(authors)}</small>
+        {topic_tags_html}
         {categories_html}
       </span>
       {score_html}
@@ -102,8 +353,9 @@ def render_title_and_author(paper_entry: dict, idx: int) -> str:
 
 
 def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
-    queue_items = "\n".join(
-        render_title_and_author(paper, idx) for idx, paper in papers
+    topic_sections = "\n".join(
+        render_topic_queue_group(topic, topic_papers)
+        for topic, topic_papers in group_papers_by_topic(papers).items()
     )
     label = "paper" if len(papers) == 1 else "papers"
     return f"""
@@ -112,6 +364,18 @@ def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
         <h3>{esc(category)}</h3>
         <span>{len(papers)} {label}</span>
       </header>
+      {topic_sections}
+    </section>
+    """
+
+
+def render_topic_queue_group(topic: str, papers: list[tuple[int, dict]]) -> str:
+    queue_items = "\n".join(
+        render_title_and_author(paper, idx) for idx, paper in papers
+    )
+    return f"""
+    <section class="topic-section">
+      <h4>{esc(topic)}</h4>
       <div class="queue">
         {queue_items}
       </div>
@@ -120,10 +384,23 @@ def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
 
 
 def render_paper_group(category: str, papers: list[tuple[int, dict]]) -> str:
-    paper_cards = "\n".join(render_paper(paper, idx) for idx, paper in papers)
+    topic_sections = "\n".join(
+        render_topic_paper_group(topic, topic_papers)
+        for topic, topic_papers in group_papers_by_topic(papers).items()
+    )
     return f"""
     <section class="paper-category-section">
       <h3>{esc(category)}</h3>
+      {topic_sections}
+    </section>
+    """
+
+
+def render_topic_paper_group(topic: str, papers: list[tuple[int, dict]]) -> str:
+    paper_cards = "\n".join(render_paper(paper, idx) for idx, paper in papers)
+    return f"""
+    <section class="topic-section">
+      <h4>{esc(topic)}</h4>
       <div class="paper-list">
         {paper_cards}
       </div>
@@ -163,6 +440,7 @@ def render_paper(paper_entry: dict, idx: int) -> str:
         </div>
       </header>
       <p class="authors">{esc(authors)}</p>
+      {render_topic_tags(paper_entry)}
       {render_category_tags(paper_entry)}
       {score_html}
       <p class="comment"><strong>Why selected:</strong> {esc(comment)}</p>
@@ -280,7 +558,8 @@ a {
 }
 
 .category-section,
-.paper-category-section {
+.paper-category-section,
+.topic-section {
   scroll-margin-top: 18px;
 }
 
@@ -303,6 +582,19 @@ a {
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .queue {
@@ -347,7 +639,8 @@ a {
   line-height: 1.35;
 }
 
-.category-tags {
+.category-tags,
+.topic-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -360,6 +653,16 @@ a {
   border-radius: 999px;
   background: #f8fbf9;
   color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1;
@@ -469,6 +772,66 @@ a {
   white-space: pre-wrap;
 }
 
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
 @media (max-width: 760px) {
   .daily-arxiv {
     padding: 24px 14px 56px;
@@ -547,7 +910,7 @@ def render_md_string(papers_dict, output_date=None):
       {render_metric("Relevant papers", str(paper_count))}
       {render_metric("Top score", top_score)}
       {render_metric("Average score", avg_score)}
-      {render_metric("Source", "ArXiv RSS")}
+      {render_metric("Source", "ArXiv")}
     </div>
   </section>
 
@@ -560,6 +923,8 @@ def render_md_string(papers_dict, output_date=None):
   <section class="paper-category-groups">
     {paper_groups}
   </section>
+
+  {render_archive_links(output_date)}
 
   <section class="prompt-block">
     <h2>Paper selection prompt</h2>
@@ -593,6 +958,7 @@ if __name__ == "__main__":
         f.write(render_md_string(output))
     with open("out/index.html", "w") as f:
         f.write(render_html_string(output))
+    write_archive_pages()
 
     from send_emails import send_email
 

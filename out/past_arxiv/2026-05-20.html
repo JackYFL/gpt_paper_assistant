@@ -1,0 +1,597 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / May 20, 2026</title>
+
+<style>
+:root {
+  color-scheme: light;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-size: 1.35rem;
+}
+
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.queue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.queue-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-decoration: none;
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.queue-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.queue-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.paper-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.paper-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.paper-head {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.paper-head h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbf9;
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfaf7;
+  text-decoration: none;
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-content h1,
+.archive-content h2 {
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    padding: 18px;
+  }
+
+  .paper-head {
+    display: block;
+  }
+
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / May 20, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>05/20/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+    <article class="archive-content">
+      <h1>Personalized Daily ArXiv Papers 05/20/2026</h1>
+<p>Total relevant papers: 22</p>
+<p>Paper selection prompt and criteria at the bottom</p>
+<p>Table of contents with paper titles:</p>
+<p>0. <a href="#link0">PRISM: A Benchmark for Programmatic Spatial-Temporal Reasoning</a><br><strong>Authors:</strong> Qiran Zhang, Yuheng Wang, Runde Yang, Lin Wu, Jingru Fan, Shu Yao, Jie Zhang, Tianle Zhou, Huatao Li, Ruijie Shi, Yihan Li, Chen Qian</p>
+<p>1. <a href="#link1">GeoX: Mastering Geospatial Reasoning Through Self-Play and Verifiable Rewards</a><br><strong>Authors:</strong> Kyeongjin Ahn, Seungeon Lee, Krishna P. Gummadi, Meeyoung Cha</p>
+<p>2. <a href="#link2">AQuaUI: Visual Token Reduction for GUI Agents with Adaptive Quadtrees</a><br><strong>Authors:</strong> Yuankai Li, Tinghui Zhu, Ha Min Son, Zhe Zhao, Xin Liu, Muhao Chen</p>
+<p>3. <a href="#link3">P2DNav: Panorama-to-Downview Reasoning for Zero-shot Vision-and-Language Navigation</a><br><strong>Authors:</strong> Kai Sheng, Liuyi Wang, Haojie Dai, Jinlong Li, Yongrui Qin, Zongtao He, Chengju Liu, Qijun Chen</p>
+<p>4. <a href="#link4">Benchmarking and Evolving Reason-Reflect-Rectify for Reflective Visual Generation</a><br><strong>Authors:</strong> Junjie Wang, Xinghua Lou, Jason Li, Ye Tian, Keyu Chen, Yulin Li, Bin Kang, Jacky Mai, Yanwei Li, Zhuotao Tian, Liqiang Nie</p>
+<p>5. <a href="#link5">SimGym: A Framework for A/B Test Simulation in E-Commerce with Traffic-Grounded VLM Agents</a><br><strong>Authors:</strong> Han Li, Vibhor Malik, Zahra Zanjani Foumani, Alberto Castelo, Shuang Xie, Ailin Fan, Keat Yang Koay, Yuanzheng Zhu, Meysam Feghhi, Ronie Uliana, Zhaoyu Zhang, Angelo Ocana Martins, Mingyu Zhao, Francis Pelland, Jonathan Faerman, Nikolas LeBlanc, Aaron Glazer, Andrew McNamara, Zhong Wu, Lingyun Wang</p>
+<p>6. <a href="#link6">SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction</a><br><strong>Authors:</strong> Zhixiong Zhang, Yizhuo Li, Shuangrui Ding, Yuhang Zang, Shengyuan Ding, Long Xing, Yibin Wang, Qiaosheng Zhang, Jiaqi Wang</p>
+<p>7. <a href="#link7">Tango3D: Towards Alignment for Global and Local 2D-3D Correspondence</a><br><strong>Authors:</strong> Zebin He, Mingxin Yang, Shuhui Yang, Hanxiao Sun, Xintong Han, Chunchao Guo, Wenhan Luo</p>
+<p>8. <a href="#link8">OP2GS: Object-Aware 3D Gaussian Splatting with Dual-Opacity Primitives</a><br><strong>Authors:</strong> Guiyu Liu, Niklas Vaara, Janne Mustaniemi, Juho Kannala, Janne Heikkil\&quot;a</p>
+<p>9. <a href="#link9">iGSP:Implicit Gradient Subspace Projection for Efficient Continual Learning of Vision-Language Models</a><br><strong>Authors:</strong> Xuezhi Cui, Dongbo Zhou, Wang Guo, Zeyuan Wang, Ziyu Li, Gaozhi Zhou, Xian Li, Ling Zhao, Wentao Yang, Chao Tao, Haifeng Li</p>
+<p>10. <a href="#link10">CPC-VAR:Continual Personalized and Compositional Generation in Visual Autoregressive Models</a><br><strong>Authors:</strong> Junhao Li, Xinhao Zhong, Yi sun, Yuxia Qiao, Bin Chen, Shu-Tao Xia, Yaowei Wang</p>
+<p>11. <a href="#link11">Feed-Forward Gaussian Splatting from Sparse Aerial Views</a><br><strong>Authors:</strong> Dongli Wu, Zhuoxiao Li, Tongyan Hua, Yinrui Ren, Xiaobao Wei, Rongjun Qin, Wufan Zhao</p>
+<p>12. <a href="#link12">FlowErase-RL: Rethinking Concept Erasure as Reward Optimization in Flow Matching Models</a><br><strong>Authors:</strong> Yi Sun, Zhiqi Zhang, Xinhao Zhong, Yimin Zhou, Shuoyang Sun, Bin Chen, Shu-Tao Xia, Ke Xu</p>
+<p>13. <a href="#link13">EgoTraj: Real-World Egocentric Human Trajectory Dataset for Multimodal Prediction</a><br><strong>Authors:</strong> Ahmad Yehia, Abduallah Mohamed, Tianyi Wang, Jiseop Byeon, Kun Qian, Junfeng Jiao, Christian Claudel</p>
+<p>14. <a href="#link14">When Preference Labels Fall Short: Aligning Diffusion Models from Real Data</a><br><strong>Authors:</strong> Weiyan Chen, Weijian Deng, Yao Xiao, Weijie Tu, ZiYi Dong, Ibrahim Radwan, Liang Lin, Pengxu Wei</p>
+<p>15. <a href="#link15">A Framework for Evaluating Zero-Shot Image Generation in Concept-based Explainability</a><br><strong>Authors:</strong> Giacomo Astolfi, Matteo Bianchi, Riccardo Campi, Antonio De Santis, Marco Brambilla</p>
+<p>16. <a href="#link16">What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code</a><br><strong>Authors:</strong> Yuze Zhao, Junpeng Fang, Lu Yu, Zhenya Huang, Kai Zhang, Qing Cui, Qi Liu, Jun Zhou, Enhong Chen</p>
+<p>17. <a href="#link17">iDiff: Interpretable Difference-aware Framework for Pairwise Image Quality Assessment</a><br><strong>Authors:</strong> Xinli Yue, JianHui Sun, Tao Shao, Liangchao Yao, Fan Xia, Yuetang Deng</p>
+<p>18. <a href="#link18">Robotics-Inspired Guardrails for Foundation Models in Socially Sensitive Domains</a><br><strong>Authors:</strong> Rebecca Ramnauth, Drazen Brscic, Brian Scassellati</p>
+<p>19. <a href="#link19">Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents</a><br><strong>Authors:</strong> Xi Zhang, Meijun Gao, Yuntian Zhao, Xinyu Tan, Yilun Yao, Feiyu Wang, Yanshu Wang, Dingsiyi, Tong Yang</p>
+<p>20. <a href="#link20">Scalable, Energy-Efficient Optical-Neural Architecture for Multiplexed Deepfake Video Detection</a><br><strong>Authors:</strong> Parnian Ghapandar Kashani, Shiqi Chen, Aydogan Ozcan</p>
+<p>21. <a href="#link21">deadtrees.earth-aerial: A Multi-Resolution Aerial Image Dataset for Tree Cover and Mortality Detection</a><br><strong>Authors:</strong> Ayushi Sharma, Clemens Mosig, Lukas Drees, Salim Soltani, Janusch Vajna-Jehle, Aaron Sheppard, Belqis Ahmadi, Jonathan Schmid, Paul Neumeier, Nathan Jacobs, Jan Dirk Wegner, Teja Kattenborn</p>
+<hr>
+<h2>0. <a href="https://arxiv.org/abs/2605.19382">PRISM: A Benchmark for Programmatic Spatial-Temporal Reasoning</a> <a id="link0"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19382<br><strong>Authors:</strong> Qiran Zhang, Yuheng Wang, Runde Yang, Lin Wu, Jingru Fan, Shu Yao, Jie Zhang, Tianle Zhou, Huatao Li, Ruijie Shi, Yihan Li, Chen Qian</p>
+<p><strong>Abstract:</strong>  Programmatic video generation through code offers geometric precision and temporal coherence beyond pixel-level diffusion models, yet rigorously evaluating whether language models can produce spatially correct animated outputs remains an open problem. We introduce PRISM, a large-scale benchmark of 10,372 human-calibrated instruction-code pairs (20 times larger than prior programmatic video generation benchmarks), grounded in real-world knowledge visualization scenarios across English and Chinese and spanning 437 subject categories. We further propose a funnel-style evaluation framework with four complementary metrics: Code-Level Reliability for executability, Spatial Reasoning for layout correctness over full animation sequences, and Prompt-Aware Dynamic Visual Complexity (PADVC) and Temporal Density (TD) for diagnosing dynamic expression and temporal activity. Systematic evaluation of seven mainstream LLMs reveals a striking Execution-Spatial Gap: the average drop from execution success rate to spatial pass rate is approximately 41%, showing that runnable code does not necessarily yield spatially coherent visual output. These findings show that programmatic video generation evaluation should go beyond executability. PRISM provides a principled benchmark for advancing spatially coherent code generation.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (embodied AI, new benchmark/simulator) and criterion 1 (spatial understanding). Introduces PRISM, a large-scale benchmark for programmatic spatial-temporal reasoning in video generation, with new evaluation metrics and empirical findings.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 9</p>
+<hr>
+<h2>1. <a href="https://arxiv.org/abs/2605.20006">GeoX: Mastering Geospatial Reasoning Through Self-Play and Verifiable Rewards</a> <a id="link1"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.20006<br><strong>Authors:</strong> Kyeongjin Ahn, Seungeon Lee, Krishna P. Gummadi, Meeyoung Cha</p>
+<p><strong>Abstract:</strong>  Geospatial reasoning requires solving image-grounded problems over the complex spatial structure of a scene. However, developing this capability is hindered by the cost of annotating a vast and combinatorial question space. We propose GeoX, a self-play framework that acquires spatial logic through executable programs that yield verifiable rewards, without relying on large-scale human-curated data Given a satellite or aerial image, our framework employs a single multimodal policy that proposes spatial problems as executable programs and solves them under three reasoning modes-abduction, deduction, and induction-over spatial primitives and an image understanding tool. A verifier executes each program to covert a reward signal that jointly optimizes the two roles via reinforcement learning. GeoX consistently improves its base VLMs by up to 5.5 points on average, matching or exceeding conventional baselines trained on millions of curated data. Along-side the proposed method, we release a benchmark for geospatial understanding accumulated through self-play.</p>
+<p><strong>Comment:</strong> Matches criteria 1 (new methodological improvements to spatial understanding on embodied agents) and 3 (embodied AI, new benchmark for geospatial understanding via self-play). The paper introduces a self-play framework for geospatial reasoning, executable programs for spatial logic, and releases a new benchmark.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>2. <a href="https://arxiv.org/abs/2605.19260">AQuaUI: Visual Token Reduction for GUI Agents with Adaptive Quadtrees</a> <a id="link2"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19260<br><strong>Authors:</strong> Yuankai Li, Tinghui Zhu, Ha Min Son, Zhe Zhao, Xin Liu, Muhao Chen</p>
+<p><strong>Abstract:</strong>  Large Multimodal Models (LMMs) have recently emerged as promising backbones for GUI-agent models, where high-resolution GUI screenshots are introduced to the prompts at each iteration step. However, these screenshots exhibit highly non-uniform spatial information density: large regions may carry little information and are visually homogeneous, while key text and icons may require high visual fidelity. Existing approaches to this problem either require additional training or rely on attention-based token compression, ignoring the structured layout and spatial redundancy of GUI screenshots. To fill the gap, this paper proposes AquaUI, a training-free inference-time token reduction method for GUI agent models that utilizes the non-uniform information density in screenshots. AQuaUI constructs an adaptive quadtree on each screenshot input and keeps one representative merged token per leaf of the quadtree. AQuaUI preserves the spatial positions of retained tokens throughout the pipeline to ensure that all position-encoding stages remain consistent. To further improve temporal consistency across multi-step GUI interactions, we propose a conditional quadtree algorithm that leverages the continuity between consecutive screenshots within a single request. Specifically, it refines the current quadtree using previous quadtrees as references, helping preserve fine-grained regions across static or mildly shifted GUI states. We implement AQuaUI on state-of-the-art GUI agent models and conduct experiments on standard grounding and navigational benchmarks. AQuaUI consistently shows improved accuracy-efficiency trade-offs over prior baselines. Notably, on GUI-Owl-1.5-32B-Instruct, AQuaUI achieves up to 13.22% speedup and 29.52% fewer visual tokens while retaining 99.06% of full-token performance, suggesting that the spatial redundancy of GUI screenshots can be exploited at inference without retraining.</p>
+<p><strong>Comment:</strong> Matches criterion 1 (methodological improvement to spatial understanding on embodied agents) and criterion 2 (applies to LMMs for GUI agents). Proposes a novel, training-free, inference-time spatial token reduction method using adaptive quadtrees for GUI screenshots, improving efficiency and accuracy.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>3. <a href="https://arxiv.org/abs/2605.19634">P2DNav: Panorama-to-Downview Reasoning for Zero-shot Vision-and-Language Navigation</a> <a id="link3"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19634<br><strong>Authors:</strong> Kai Sheng, Liuyi Wang, Haojie Dai, Jinlong Li, Yongrui Qin, Zongtao He, Chengju Liu, Qijun Chen</p>
+<p><strong>Abstract:</strong>  Vision-and-language navigation (VLN) requires an embodied agent to ground natural-language instructions into executable navigation actions in unseen environments. Existing zero-shot methods typically rely on additional waypoint prediction modules, which often entangle high-level directional reasoning with fine-grained local grounding, leading to error-prone and unstable decisions. In this paper, we propose P2DNav, a hierarchical framework for zero-shot vision-and-language navigation. P2DNav consists of three core components: Panorama-to-Downview (P2D), Sliding-Window Dialogue Memory (SDM), and Reflective Reorientation Mechanism (RRM). P2D explicitly decomposes navigation decision-making into two stages: panoramic direction selection and downview local grounding. It first selects the instruction-relevant direction from a 360{\deg} panorama, and then predicts a pixel-level target point from the downview RGB observation in that direction. In addition, SDM organizes navigation history as a multi-turn dialogue context and maintains recent visual observations within a sliding window to support long-horizon navigation. RRM further enables reflective reorientation by assessing the reliability of local grounding based on the downview observation and returning to panoramic direction selection when necessary. Experiments on the R2R-CE benchmark show that P2DNav achieves strong performance among zero-shot methods. In particular, compared with the state-of-the-art (SOTA) zero-shot waypoint-based and waypoint-free methods, P2DNav achieves SR gains of 146.6% and 58.9%, respectively, demonstrating the effectiveness of P2D, SDM, and RRM for zero-shot VLN. Code will be released for public use.</p>
+<p><strong>Comment:</strong> Matches criterion 1 and 3. This paper proposes a new hierarchical framework (P2DNav) for zero-shot vision-and-language navigation, introducing novel components for spatial reasoning and navigation memory in embodied agents. It also establishes strong empirical results and will release code, making it relevant for new methods in embodied AI and spatial intelligence.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>4. <a href="https://arxiv.org/abs/2605.19639">Benchmarking and Evolving Reason-Reflect-Rectify for Reflective Visual Generation</a> <a id="link4"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19639<br><strong>Authors:</strong> Junjie Wang, Xinghua Lou, Jason Li, Ye Tian, Keyu Chen, Yulin Li, Bin Kang, Jacky Mai, Yanwei Li, Zhuotao Tian, Liqiang Nie</p>
+<p><strong>Abstract:</strong>  Text-to-Image (T2I) models and Unified Multimodal Models (UMMs) have achieved remarkable progress in visual generation. However, their reliance on a single-pass generation paradigm limits their ability to handle complex prompts requiring iterative refinement. To enable multi-round Reflective Visual Generation (RVG), we formalize the Reason-Reflect-Rectify (R^3) loop as a core framework and introduce R^3-Bench, a benchmark of over 600 expert-annotated instances that quantifies iterative reasoning and rectification capabilities. Evaluation on R^3-Bench reveals a critical gap: while state-of-the-art models can identify generation errors, they fail to generate actionable rectification instructions. To bridge this gap, we propose R^3-Refiner, a dual-stage framework leveraging Group Relative Policy Optimization (GRPO) and a Hierarchical Reward Mechanism (HRM) to better align rectification with reflective reasoning. Experiments show that R^3-Refiner achieves significant improvements on R^3-Bench (+12.0% in Reflective Verdict Score, +9.0% in Rectification Score), and can be seamlessly integrated with various MLLMs to enhance the generation quality of different T2I models on GenEval++ and T2I-CompBench. Code is available at https://github.com/xiaomoguhz/R3-Bench.</p>
+<p><strong>Comment:</strong> Matches criteria 2 (new MLLMs/VLLMs) and 4 (vision foundation models and applications). The paper introduces a new benchmark (R^3-Bench) for reflective visual generation, proposes a new dual-stage framework (R^3-Refiner) for iterative reasoning and rectification in T2I and MLLMs, and demonstrates integration with various models.<br><strong>Relevance:</strong> 10<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>5. <a href="https://arxiv.org/abs/2605.19219">SimGym: A Framework for A/B Test Simulation in E-Commerce with Traffic-Grounded VLM Agents</a> <a id="link5"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19219<br><strong>Authors:</strong> Han Li, Vibhor Malik, Zahra Zanjani Foumani, Alberto Castelo, Shuang Xie, Ailin Fan, Keat Yang Koay, Yuanzheng Zhu, Meysam Feghhi, Ronie Uliana, Zhaoyu Zhang, Angelo Ocana Martins, Mingyu Zhao, Francis Pelland, Jonathan Faerman, Nikolas LeBlanc, Aaron Glazer, Andrew McNamara, Zhong Wu, Lingyun Wang</p>
+<p><strong>Abstract:</strong>  A/B testing remains the gold standard for evaluating modifications to e-commerce storefronts, yet it diverts traffic, requires weeks to reach statistical significance, and risks degrading user experience. We present SimGym, a framework for simulating A/B tests on e-commerce storefronts using vision-language model (VLM) agents operating in a live browser. The framework comprises three key components: (a) a traffic-grounded persona generation pipeline that derives per-shop buyer archetypes and intents from production clickstream data; (b) a live-browser agent architecture that combines multimodal perception over visual and browser-structured observations with episodic memory and guardrails to conduct coherent shopping sessions across control and treatment storefronts; and (c) an evaluation protocol that compares simulated outcome shifts with observed shifts in real buyer behavior. We validate SimGym on A/B tests of visually driven UI theme changes from a major e-commerce platform across diverse storefronts and product categories. Empirical results show that SimGym agents achieve strong agreement with observed outcome shifts, attaining 77% directional alignment with add-to-cart shifts observed across interface variants in real-buyer traffic. It reduces experimental cycles from weeks to under an hour, enabling rapid experimentation without exposing real buyers to candidate variants.</p>
+<p><strong>Comment:</strong> Matches criterion 3 (embodied AI, new benchmark/simulator). Proposes SimGym, a framework for simulating A/B tests in e-commerce using VLM agents in a live browser, with traffic-grounded personas and empirical validation.<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>6. <a href="https://arxiv.org/abs/2605.20110">SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction</a> <a id="link6"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.20110<br><strong>Authors:</strong> Zhixiong Zhang, Yizhuo Li, Shuangrui Ding, Yuhang Zang, Shengyuan Ding, Long Xing, Yibin Wang, Qiaosheng Zhang, Jiaqi Wang</p>
+<p><strong>Abstract:</strong>  Referring segmentation grounds natural-language queries to pixel-level masks, but extending it to complex scenarios with multiple instances, cross-category groups, or open-ended target sets remains challenging. Previous Large Vision Language Model (LVLM)-based methods represent referred targets with one or more special tokens sequentially, treating multiple targets as separate outputs rather than a coherent set and offering little incentive to capture set-level properties such as completeness and mutual exclusivity. We reformulate open-ended referring segmentation as explicit set-level concept prediction and propose Set-Concept Segmentation (SetCon), which uses LVLM-generated natural-language concepts, instead of segmentation-specific tokens, as semantic conditions for joint mask-set decoding. A hierarchical semantic decomposition first predicts a shared set-level concept defining the target scope and then refines it into fine-grained concept groups aligned with target subsets. To support this, a two-stage annotation pipeline augments existing reasoning segmentation datasets with hierarchical semantic supervision (236k samples, 784k concept phrases). SetCon achieves state-of-the-art results on image benchmarks (+3.3 gIoU on gRefCOCO, +12.1 gIoU on MUSE), with margins that grow as the number of referred targets increases. The concept interface also transfers to video under a detect-and-track setting, yielding new state-of-the-art results on seven referring video benchmarks, including +10.9 J&amp;F on MeViS and +12.4 J&amp;F on Ref-SeCVOS.</p>
+<p><strong>Comment:</strong> Matches criterion 2 (new VLLMs) and criterion 4 (vision foundation models and applications). Proposes SetCon, a new LVLM-based method for open-ended referring segmentation, with hierarchical semantic decomposition and strong empirical results.<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>7. <a href="https://arxiv.org/abs/2605.19727">Tango3D: Towards Alignment for Global and Local 2D-3D Correspondence</a> <a id="link7"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19727<br><strong>Authors:</strong> Zebin He, Mingxin Yang, Shuhui Yang, Hanxiao Sun, Xintong Han, Chunchao Guo, Wenhan Luo</p>
+<p><strong>Abstract:</strong>  Existing 3D foundation models typically align point clouds to frozen vision-language spaces like CLIP, which achieve strong cross-modal retrieval by compressing 3D shape into a global vector. However, this global-only alignment cannot establish fine-grained pixel-to-point correspondence. To solve this, we present Tango3D, a foundation model that unifies dense correspondence and global retrieval. We use a geometry-aware 2D visual backbone and a pretrained 3D VAE to encode images into 2D patches and point clouds into 3D tokens. These are mapped into a single shared space to achieve both local pixel-to-point alignment and global semantic alignment. To stabilize the joint learning of dense and global objectives, we introduce a three-stage progressive training strategy. Experiments show our model successfully achieves object-level pixel-to-point alignment while maintaining competitive global retrieval, a joint capability not offered by existing 3D foundation models. By establishing a fine-grained alignment feature space, Tango3D injects rich semantics into purely geometric 3D tokens, paving the way for a wide range of dense 3D downstream tasks.</p>
+<p><strong>Comment:</strong> Matches criterion 4. Tango3D proposes a new 3D foundation model that unifies dense correspondence and global retrieval, enabling fine-grained pixel-to-point alignment in 2D-3D tasks. This is a novel methodological improvement in vision foundation models and their applications.<br><strong>Relevance:</strong> 9<br><strong>Novelty:</strong> 8</p>
+<hr>
+<h2>8. <a href="https://arxiv.org/abs/2605.20044">OP2GS: Object-Aware 3D Gaussian Splatting with Dual-Opacity Primitives</a> <a id="link8"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.20044<br><strong>Authors:</strong> Guiyu Liu, Niklas Vaara, Janne Mustaniemi, Juho Kannala, Janne Heikkil\&quot;a</p>
+<p><strong>Abstract:</strong>  3D Gaussian Splatting (3DGS) provides an explicit and efficient scene representation, but its primitives lack inherent object-level identity, hindering downstream tasks such as open-vocabulary scene understanding. Existing methods typically address this by either distilling high-dimensional feature embeddings into Gaussians or by lifting 2D mask labels into 3D via heuristic refinement. However, feature-based approaches incur heavy storage and decoding overhead, while lifting-based pipelines remain vulnerable to label contamination: Gaussians necessary for appearance reconstruction often receive incorrect object labels during 2D-to-3D projection. We propose OP2GS, an object-aware Gaussian representation that augments each primitive with an explicit instance identity and a dedicated instance opacity $\sigma^{*}$ for object-mask rendering. The original opacity $\sigma$ remains responsible for visual reconstruction, while $\sigma^{*}$ models whether a Gaussian should contribute to a particular object mask. This dual-opacity formulation decouples visual existence from instance occupancy: mislabeled Gaussians can remain available for image rendering while becoming transparent in the object-mask branch. To learn this representation, we introduce a random object loss that optimizes the 1D instance occupancy field using the standard transmittance-based visibility of 3DGS. Semantic descriptors are then attached at the object level through multi-view aggregation, eliminating per-Gaussian feature storage. Compared with feature-training approaches, OP2GS achieves competitive open-vocabulary performance while significantly reducing computational overhead. Compared with training-free pipelines, it leverages physically consistent occupancy learning to resolve visibility ambiguities.</p>
+<p><strong>Comment:</strong> Matches criterion 4 (vision foundation models and applications). Proposes OP2GS, an object-aware 3D Gaussian Splatting method with dual-opacity primitives for open-vocabulary scene understanding, improving efficiency and semantic representation.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>9. <a href="https://arxiv.org/abs/2605.19301">iGSP:Implicit Gradient Subspace Projection for Efficient Continual Learning of Vision-Language Models</a> <a id="link9"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19301<br><strong>Authors:</strong> Xuezhi Cui, Dongbo Zhou, Wang Guo, Zeyuan Wang, Ziyu Li, Gaozhi Zhou, Xian Li, Ling Zhao, Wentao Yang, Chao Tao, Haifeng Li</p>
+<p><strong>Abstract:</strong>  Vision-Language Models require efficient adaptation to continually emerging downstream tasks. While Parameter-Efficient Fine-Tuning mitigates catastrophic forgetting, assigning isolated modules per task leads to parameter explosion. Conversely, recent similarity-driven sharing mechanisms falsely equate superficial visual similarity with underlying alignment consistency. This fundamental mismatch triggers severe negative transfer between visually similar but logically distinct tasks and fails to exploit alignment reuse across visually diverse ones. We argue thatalignment sharing is fundamentally a geometric problem of overlapping optimization trajectories within shared low-rank subspaces. Grounded in this insight, we propose iGSP, a novel framework that achieves efficient adaptation via implicit gradient subspace projection. Leveraging the early convergence of MoE routers to establish the subspace basis, iGSP bifurcates the adaptation process into two phases. First, the Subspace Identification phase introduces candidate experts via basis pre-expansion, applies a novel subspace-constrained regularization to implicitly project new task gradients onto the historical subspace, and precisely prunes redundant dimensions by treating routing probabilities as gradient flow indicators, ultimately to maximize knowledge reuse. Second, the Orthogonal Subspace Fine-Tuning phase fixes this structural basis and removes the regularization to rapidly fit the task-specific residual loss. Extensive experiments on the MTIL benchmark demonstrate that iGSP achieves state-of-the-art accuracy while significantly improving training efficiency, reducing the average trainable parameters by 42.7\% compared to current SOTA methods, and decreasing the final total parameters by 86.9\% relative to counterparts. The source code is available at https://github.com/GeoX-Lab/iGSP.</p>
+<p><strong>Comment:</strong> Matches criterion 2 (vision-language models) and is relevant to continual learning for VLMs. Proposes iGSP, a new framework for efficient continual adaptation of VLMs using implicit gradient subspace projection.<br><strong>Relevance:</strong> 8<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>10. <a href="https://arxiv.org/abs/2605.19750">CPC-VAR:Continual Personalized and Compositional Generation in Visual Autoregressive Models</a> <a id="link10"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19750<br><strong>Authors:</strong> Junhao Li, Xinhao Zhong, Yi sun, Yuxia Qiao, Bin Chen, Shu-Tao Xia, Yaowei Wang</p>
+<p><strong>Abstract:</strong>  Visual autoregressive (VAR) models have recently emerged as an efficient paradigm for text-to-image generation. Despite their strong generative capability, existing VAR-based personalization methods remain limited to static settings, failing to accommodate evolving user demands. In particular, sequential concept learning leads to severe catastrophic forgetting, while multi-concept synthesis often suffers from feature entanglement and attribute inconsistency. In this work, we present the first systematic study of continual personalized generation in VAR models. We identify two key challenges: (i) preserving previously learned concepts during sequential customization, and (ii) composing multiple personalized concepts in a controllable manner. To address these issues, we propose a unified framework with two core components. For continual single-concept learning, we introduce Gradient-based Concept Neuron Selection (GCNS), which identifies concept-relevant neurons and constrains only conflicting parameters across tasks, effectively mitigating forgetting without additional model expansion. For multi-concept synthesis, we propose a context-aware composition strategy that performs multi-branch feature modeling and localized cross-attention fusion guided by spatial conditions, enabling precise and disentangled concept composition. Extensive experiments demonstrate that our method significantly improves performance in long-sequence continual personalization while achieving superior results in multi-concept image synthesis compared to existing baselines. These findings highlight the potential of VAR models for scalable and controllable personalized generation.</p>
+<p><strong>Comment:</strong> This paper presents a systematic study and new framework for continual personalized and compositional generation in visual autoregressive models. It introduces new methods for continual learning and multi-concept synthesis in generative models, which is relevant to generative modeling in multi-modal learning (criterion 4).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>11. <a href="https://arxiv.org/abs/2605.19949">Feed-Forward Gaussian Splatting from Sparse Aerial Views</a> <a id="link11"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19949<br><strong>Authors:</strong> Dongli Wu, Zhuoxiao Li, Tongyan Hua, Yinrui Ren, Xiaobao Wei, Rongjun Qin, Wufan Zhao</p>
+<p><strong>Abstract:</strong>  Reconstructing large-scale urban scenes from sparse aerial views is a crucial yet challenging task. Due to biased top-down and shallow-oblique camera poses, sparse aerial captures exhibit strong evidence imbalance: roofs and open regions are repeatedly observed, while facades, distant buildings, and occluded structures receive little multi-view support. Existing feed-forward 3D Gaussian Splatting methods directly regress a deterministic representation from sparse inputs, but this often leads to ghosting, melted facades, and stretched textures. Recent pseudo-view and video-based generative reconstruction methods use additional supervision or generative priors. However, they often lack a clear separation between observed geometry and prior-driven content, which can lead to plausible but inconsistent structures. We propose AnyCity, an observation-grounded generative reconstruction framework for sparse aerial urban scenes. AnyCity first predicts an observation-supported geometry latent to anchor reliable structures, and then uses scaffold-conditioned aerial completion tokens to predict a gated residual update for weakly constrained content before Gaussian decoding. During training, dense-to-sparse distillation transfers structural cues from dense-view reconstruction, while an aerial-adapted video diffusion prior provides fine-grained urban appearance cues through gated token conditioning. Observation-preserving objectives keep the refined representation consistent with input-supported geometry. At inference time, AnyCity reconstructs the final 3D Gaussian scene from sparse aerial views in a single feed-forward pass, achieving coherent urban novel-view synthesis with second-level inference. Experiments on synthetic, aerial-domain, UAV-textured, and real-world scenes show consistent improvements over feed-forward baselines.</p>
+<p><strong>Comment:</strong> This paper proposes AnyCity, a generative reconstruction framework for sparse aerial urban scenes using feed-forward Gaussian Splatting. It introduces new methods for observation-grounded generative modeling in 3D scene reconstruction, which is relevant to vision foundation models and generative modeling (criterion 4), and also touches on spatial understanding (criterion 1).<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>12. <a href="https://arxiv.org/abs/2605.19739">FlowErase-RL: Rethinking Concept Erasure as Reward Optimization in Flow Matching Models</a> <a id="link12"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19739<br><strong>Authors:</strong> Yi Sun, Zhiqi Zhang, Xinhao Zhong, Yimin Zhou, Shuoyang Sun, Bin Chen, Shu-Tao Xia, Ke Xu</p>
+<p><strong>Abstract:</strong>  Recent advances in flow matching models have significantly improved text-to-image generation quality, but also introduce growing safety risks due to the generation of harmful or undesirable content. Existing concept erasure methods are either inference-time interventions with limited effectiveness or rely on supervised fine-tuning (SFT), which requires precisely aligned data and struggles with scalability and multi-concept settings. In this paper, we propose \emph{FlowErase-RL}, the first GRPO-based framework for concept erasure in flow matching models. We reformulate concept erasure as a reward optimization problem and introduce a \textbf{dynamic dual-path reward mechanism} that jointly optimizes (i) a Concept Erasure (CE) reward to suppress target concepts and (ii) a Non-target Space (NS) reward to preserve generative fidelity. The two reward paths are adaptively balanced during training via a performance-driven switching strategy, enabling stable optimization without explicit supervision. Extensive experiments on nudity, object, and artistic style erasure demonstrate that our method achieves state-of-the-art erasure performance while maintaining strong image quality and semantic alignment. Moreover, it exhibits robust resistance to adversarial attacks and scales effectively to multi-concept scenarios. Our results establish a new paradigm for safe and controllable generation in flow matching models.</p>
+<p><strong>Comment:</strong> Matches criteria 4 (vision foundation models and applications). The paper proposes a new method (FlowErase-RL) for safe and controllable generation in flow matching models, focusing on concept erasure via reward optimization, which is relevant to generative modeling and safety in vision foundation models.<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>13. <a href="https://arxiv.org/abs/2605.19004">EgoTraj: Real-World Egocentric Human Trajectory Dataset for Multimodal Prediction</a> <a id="link13"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19004<br><strong>Authors:</strong> Ahmad Yehia, Abduallah Mohamed, Tianyi Wang, Jiseop Byeon, Kun Qian, Junfeng Jiao, Christian Claudel</p>
+<p><strong>Abstract:</strong>  Accurately forecasting human trajectories from an egocentric perspective plays a central role in applications such as humanoid robotics, wearable sensing systems, and assistive navigation. However, progress in this direction remains limited due to the scarcity of egocentric trajectory datasets collected in real-world environments. Addressing this need, we introduce EgoTraj, an egocentric multimodal open dataset recorded using Meta Quest Pro (MQPro). EgoTraj contains 75 sequences of human navigation collected from multiple MQPro wearers in real-world urban environments. Each recording provides synchronized RGB video along with ground-truth data, including continuous time-synchronized 6-degree-of-freedom head poses, per-frame 3D eye gaze vectors, scene annotations. To the best of our knowledge, EgoTraj differs from typical egocentric trajectory datasets by capturing long-horizon, self-directed navigation across diverse urban routes with broad participant diversity. To demonstrate the potential of the dataset, we benchmark several state-of-the-art methods for egocentric trajectory prediction and conduct ablation studies to analyze the contributions of gaze, scene, and motion cues. The results highlight the utility of EgoTraj for AR-based perception, navigation, and assistive systems. The EgoTraj dataset, code, and EgoViz Dashboard are publicly available at https://github.com/yehiahmad/EgoTraj.</p>
+<p><strong>Comment:</strong> This paper introduces a new real-world egocentric human trajectory dataset for multimodal prediction, which is relevant to embodied AI and spatial understanding (criteria 1 and 3). The dataset enables benchmarking and analysis of trajectory prediction methods in AR and navigation contexts.<br><strong>Relevance:</strong> 7<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>14. <a href="https://arxiv.org/abs/2605.19839">When Preference Labels Fall Short: Aligning Diffusion Models from Real Data</a> <a id="link14"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19839<br><strong>Authors:</strong> Weiyan Chen, Weijian Deng, Yao Xiao, Weijie Tu, ZiYi Dong, Ibrahim Radwan, Liang Lin, Pengxu Wei</p>
+<p><strong>Abstract:</strong>  Preference alignment aims to guide generative models by learning from comparisons between preferred and non-preferred samples. In practice, most existing approaches rely on preference pairs constructed from model-generated images. Such supervision is inherently relative and can be ambiguous when both samples exhibit artifacts or limited visual quality, making it difficult to infer what constitutes a truly desirable output. In this work, we investigate whether real data can serve as an alternative source of supervision for preference alignment. We adopt a data-centric perspective and study a curation strategy that treats real images as reference points and constructs preference signals by contrasting them with generated or perturbed samples, without requiring manually annotated preference pairs. Through empirical analysis, we show that real-data-based supervision provides effective guidance for aligning diffusion models and achieves performance comparable to existing preference-based methods. Our results suggest that real data offers a practical and complementary source of supervision for preference alignment and highlight directions of label-efficient alignment strategies. Code and models are available at https://cwyxx.github.io/RealAlign.</p>
+<p><strong>Comment:</strong> This paper explores real-data-based supervision for aligning diffusion models, providing a new angle on preference alignment in generative modeling. It is relevant to generative modeling and label-efficient alignment strategies (criterion 4), with empirical insights into diffusion model alignment.<br><strong>Relevance:</strong> 6<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>15. <a href="https://arxiv.org/abs/2605.19855">A Framework for Evaluating Zero-Shot Image Generation in Concept-based Explainability</a> <a id="link15"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19855<br><strong>Authors:</strong> Giacomo Astolfi, Matteo Bianchi, Riccardo Campi, Antonio De Santis, Marco Brambilla</p>
+<p><strong>Abstract:</strong>  Concept-based Explainable Artificial Intelligence (XAI) interprets deep learning models using human-understandable visual features (e.g., textures or object parts) by linking internal representations to class predictions, thereby bridging the gap between low-level image data and high-level semantics. A major challenge, however, is the reliance on large sets of labeled images to represent each concept, which limits scalability. In this work, we investigate the use of zero-shot Text-to-Image (T2I) generative models as a source of synthetic concept datasets for concept-based XAI methods. Specifically, we generate concepts using predefined prompts and evaluate their faithfulness to real ones through four complementary analyses: (1) comparing synthetic vs. real concept images via concept representation similarity; (2) evaluating their intra-similarity by comparing pairs of subsets of the same concept with progressively increasing size; (3) evaluating their performance for downstream explanation tasks using relevant class images; (4) evaluating how removing a concept from tested class images affects explanations of generated concepts. While current T2I generative models promise a shortcut to concept-based XAI, our study highlights challenges and raises open questions about the use of synthetic data generated by zero-shot pipelines in model analyses. The resulting dataset is available at https://github.com/DataSciencePolimi/ZeroShot-T2I-Concepts.</p>
+<p><strong>Comment:</strong> This paper investigates the use of zero-shot text-to-image generative models for concept-based explainability, which is tangentially related to vision foundation models and generative modeling (criterion 4), but focuses more on XAI and synthetic data for explanations.<br><strong>Relevance:</strong> 5<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>16. <a href="https://arxiv.org/abs/2605.19762">What Really Improves Mathematical Reasoning: Structured Reasoning Signals Beyond Pure Code</a> <a id="link16"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19762<br><strong>Authors:</strong> Yuze Zhao, Junpeng Fang, Lu Yu, Zhenya Huang, Kai Zhang, Qing Cui, Qi Liu, Jun Zhou, Enhong Chen</p>
+<p><strong>Abstract:</strong>  Code has become a standard component of modern foundation language model (LM) training, yet its role beyond programming remains unclear. We revisit the claim that code improves reasoning through controlled pretraining experiments on a 10T-token corpus with fine-grained domain separation. Our findings are threefold. First, when code is restricted to standalone executable programs and Code-NL data are controlled for, code substantially improves programming ability but does not act as a general reasoning enhancer; instead, it competes with knowledge-intensive tasks, especially complex mathematical reasoning. Second, the reasoning gains often attributed to code are better explained by cross-domain structured reasoning traces, such as code-text and math-text mixtures, rather than by executable code alone. Third, increasing the density of structured math-domain samples within a fixed math budget yields substantial gains on difficult mathematical reasoning while largely preserving programming performance, suggesting that cognitive scaffolds offer a targeted way to mitigate cross-domain trade-offs. Finally, routing analyses show that data-composition effects are reflected in expert-activation patterns, providing mechanism-level evidence for competitive and synergistic interactions across domains. Our results clarify which data characteristics transfer across capability dimensions and point to more precise data-centric optimization strategies.</p>
+<p><strong>Comment:</strong> Related to foundation models and reasoning, but not directly about spatial intelligence, VLLMs, or vision foundation models. Focus is on the effect of code and structured reasoning signals in LMs.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 7</p>
+<hr>
+<h2>17. <a href="https://arxiv.org/abs/2605.19522">iDiff: Interpretable Difference-aware Framework for Pairwise Image Quality Assessment</a> <a id="link17"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19522<br><strong>Authors:</strong> Xinli Yue, JianHui Sun, Tao Shao, Liangchao Yao, Fan Xia, Yuetang Deng</p>
+<p><strong>Abstract:</strong>  Pairwise image quality assessment (IQA) in professional photography requires a model not only to identify the preferred image between two candidates, but also to provide convincing and image-grounded reasoning. In the NTIRE 2026 RAIM challenge, this requirement is further emphasized by jointly evaluating preference prediction and rationale generation. To address this task, we propose iDiff, an Interpretable Difference-aware framework for pairwise image quality assessment. Our method adopts a dual-branch design consisting of an Answer Model and a Thinking Model. The Answer Model performs robust preference prediction by explicitly decomposing each sample into left/right global and local views, followed by content-aware specialization for person and scene images and ensemble-based aggregation across backbones. The Thinking Model focuses on rationale generation and is progressively enhanced with expert-style templates, multi-source quality features, and answer-aware supervision conditioned on the Answer Model prediction. In this way, iDiff jointly models discriminative decision making and structured explanation, improving both robustness and interpretability. Extensive experiments demonstrate the effectiveness of the proposed framework on both accuracy and reasoning-quality metrics. Our method achieved first place in the NTIRE 2026 RAIM challenge, showing the effectiveness of integrating explicit difference modeling with structured multimodal reasoning for pairwise IQA.</p>
+<p><strong>Comment:</strong> Related to vision-language reasoning and interpretable image quality assessment, but not directly about spatial intelligence, VLLMs, or embodied AI. Focus is on pairwise IQA with structured multimodal reasoning.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>18. <a href="https://arxiv.org/abs/2605.19940">Robotics-Inspired Guardrails for Foundation Models in Socially Sensitive Domains</a> <a id="link18"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19940<br><strong>Authors:</strong> Rebecca Ramnauth, Drazen Brscic, Brian Scassellati</p>
+<p><strong>Abstract:</strong>  Foundation models are increasingly deployed in socially sensitive domains such as education, mental health, and caregiving, where failures are often cumulative and context-dependent. Existing guardrail approaches -- ranging from training-time alignment to prompting, decoding constraints, and post-hoc moderation -- primarily provide empirical risk reduction rather than enforceable behavioral guarantees, and largely treat safety as a property of individual outputs rather than interaction trajectories. We reframe guardrails as a problem of runtime behavioral control over interaction trajectories, drawing on robotics to introduce formal constructs for constraint enforcement in uncertain, closed-loop systems. We instantiate these ideas in the Grounded Observer framework and apply it across three real-world deployments: small talk, in-home autism therapy, and behavioral de-escalation in schools. Across settings, the framework enables runtime interventions that mitigate drift into undesirable interaction regimes while adapting to diverse social contexts. We discuss extensions to the framework and propose research directions toward stronger guarantees.</p>
+<p><strong>Comment:</strong> Somewhat related to embodied AI (criterion 3) in the sense of runtime behavioral control and safety in foundation models, but focus is on guardrails in socially sensitive domains, not spatial intelligence or new benchmarks.<br><strong>Relevance:</strong> 4<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>19. <a href="https://arxiv.org/abs/2605.19604">Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents</a> <a id="link19"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19604<br><strong>Authors:</strong> Xi Zhang, Meijun Gao, Yuntian Zhao, Xinyu Tan, Yilun Yao, Feiyu Wang, Yanshu Wang, Dingsiyi, Tong Yang</p>
+<p><strong>Abstract:</strong>  Large Language Model (LLM) agents increasingly act inside real workspaces, where tools and skills determine whether model reasoning becomes reliable action. Existing skills remain largely informal: Markdown skills and instruction packs encode procedures as long natural-language documents, while function calling, Model Context Protocol (MCP) servers, and framework tools structure individual actions but usually leave workflow state, policy enforcement, and completion discipline outside the skill itself. We introduce Formal Skill, a runtime-native abstraction that represents reusable capability with JSON metadata and action schemas, reliable Python executors, hook-governed control logic, Formal Skill routing, and skill-local runtime state. By moving reusable procedure from repeated prompt text into executable state machines and hook policies, Formal Skill gives agents a token-efficient and enforceable control surface. We implement the abstraction in FairyClaw, an open-source event-driven runtime for executable, observable, and composable Formal Skills. On Harness-Bench, FairyClaw obtains highly competitive average scores while using substantially fewer tokens, with especially strong results on tasks that expose the role of Formal Skill.</p>
+<p><strong>Comment:</strong> Related to LLM agents and skill abstraction, but not directly about spatial intelligence, VLLMs, or vision foundation models. Focus is on programmable runtime skills for LLM agents.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>20. <a href="https://arxiv.org/abs/2605.19360">Scalable, Energy-Efficient Optical-Neural Architecture for Multiplexed Deepfake Video Detection</a> <a id="link20"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19360<br><strong>Authors:</strong> Parnian Ghapandar Kashani, Shiqi Chen, Aydogan Ozcan</p>
+<p><strong>Abstract:</strong>  The rapid proliferation of AI-generated visual media has created an urgent need for efficient, trustworthy deepfake detection systems. However, existing deep learning-based detection methods rely on computationally intensive and energy-demanding inference algorithms, limiting their scalability. Here, we present a hybrid digital-analog deepfake video detection framework that combines a lightweight digital front-end with a spatially multiplexed optical decoding back-end for massively parallel analog inference through a programmable spatial light modulator. By simultaneously processing 15 or more video streams within a single optical propagation pass, the system enables high-throughput and accurate video-level authenticity prediction at reduced computational cost compared with purely digital methods. We validated this hybrid deepfake video processor using different datasets spanning classical face-swapping, real-world deepfake recordings, and fully AI-generated videos. Using a spatially multiplexed experimental set-up operating in the visible spectrum, we achieved average deepfake detection accuracy, sensitivity and specificity of 97.79%, 99.86% and 95.72%, respectively, on the Celeb-DF video dataset with 15 videos tested in parallel in a single optical pass per inference. The multiplexed optical decoder also demonstrates resilience against various types of video degradation, noise, compression, experimental misalignments and black-box adversarial attacks. Our results show that integrating optical computation into AI inference enables simultaneous gains in throughput, energy efficiency, and adversarial robustness - three properties that are difficult to achieve together in purely digital systems.</p>
+<p><strong>Comment:</strong> This paper presents a hybrid optical-neural architecture for deepfake video detection. While it is an interesting application of computer vision and energy-efficient inference, it does not directly address any of the four criteria (spatial intelligence, VLLMs/MLLMs, embodied AI, or vision foundation models).<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 6</p>
+<hr>
+<h2>21. <a href="https://arxiv.org/abs/2605.19605">deadtrees.earth-aerial: A Multi-Resolution Aerial Image Dataset for Tree Cover and Mortality Detection</a> <a id="link21"></a></h2>
+<p><strong>ArXiv ID:</strong> 2605.19605<br><strong>Authors:</strong> Ayushi Sharma, Clemens Mosig, Lukas Drees, Salim Soltani, Janusch Vajna-Jehle, Aaron Sheppard, Belqis Ahmadi, Jonathan Schmid, Paul Neumeier, Nathan Jacobs, Jan Dirk Wegner, Teja Kattenborn</p>
+<p><strong>Abstract:</strong>  Forests worldwide are increasingly threatened by climate change and disturbances such as fire, pests, and pathogens, creating an urgent need for scalable monitoring of tree cover and tree mortality. Aerial imagery from drones and aircraft is a key data source for detailed and large-scale mapping of tree crowns and mortality. However, related progress is limited by the lack of globally representative, harmonized datasets for joint segmentation of tree cover and mortality. We introduce two novel, open, machine-learning-ready datasets to enable joint segmentation of tree cover and tree mortality from centimeter-scale aerial imagery for the first time at global scales. With DTE-aerial-train, we provide a training dataset comprising 385K image patches of size 1024x1024 pixels, with resolutions ranging from 2.5 to 20 cm. It includes multi-class expert-annotated and -audited pseudo-labels for tree cover and mortality. With DTE-aerial-bench, we provide a geographically balanced benchmark test set of 25 globally distributed orthoimages totaling 525 patches with high-quality expert annotations for both tree cover and mortality. Both the training and benchmark datasets span tropical, temperate, boreal, and dryland biomes and cover a wide range of forest structures and mortality patterns. Using the benchmark test set for evaluation, we establish strong reference baselines that improve mortality segmentation across all biomes and scales with significant gains in challenging regions, such as boreal forests, where the F1 score increases from 0.40 to 0.58 with around 45% relative improvement. All data, models, and code will be publicly released under permissive open-source licenses. An interactive visualization of the benchmark dataset is available at deadtrees.earth/releases/dte-aerial-bench.</p>
+<p><strong>Comment:</strong> This paper introduces a new multi-resolution aerial image dataset for tree cover and mortality detection. While it is a valuable resource for remote sensing and computer vision, it does not directly address new methodological improvements to spatial understanding on embodied agents, VLLMs/MLLMs, embodied AI benchmarks, or vision foundation models. It is more of a dataset paper for environmental monitoring.<br><strong>Relevance:</strong> 3<br><strong>Novelty:</strong> 5</p>
+<hr>
+<hr>
+<h2>Paper selection prompt</h2>
+<p>1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
+<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.</p>
+    </article>
+  </main>
+</body>
+</html>
