@@ -1,6 +1,12 @@
 name: Publish output MD to github pages
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - out/output.md
+      - .github/workflows/publish_md_test.yml
   workflow_dispatch:
   workflow_run:
     workflows: ["Run daily arxiv"]
@@ -20,7 +26,11 @@ jobs:
       file-exists: ${{steps.file-check.outputs.file_exists}}
     steps:
     - uses: actions/checkout@v4
+    - name: Use repository output on push
+      if: github.event_name == 'push'
+      run: cp out/output.md output.md
     - name: Download artifact
+      if: github.event_name != 'push'
       id: download-artifact
       uses: dawidd6/action-download-artifact@v2
       with:
