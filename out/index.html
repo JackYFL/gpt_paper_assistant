@@ -109,6 +109,38 @@ a {
   font-size: 1.35rem;
 }
 
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .queue {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -151,6 +183,24 @@ a {
   line-height: 1.35;
 }
 
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .score-pill {
   min-width: 38px;
   padding: 5px 8px;
@@ -188,6 +238,14 @@ a {
   line-height: 1.2;
 }
 
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .paper-action {
   flex: 0 0 auto;
   align-self: start;
@@ -198,6 +256,11 @@ a {
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
 }
 
 .authors, .comment, .abstract {
@@ -268,9 +331,13 @@ a {
     display: block;
   }
 
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
   .paper-action {
     display: inline-block;
-    margin-top: 14px;
   }
 }
 </style>
@@ -314,14 +381,26 @@ a {
     </div>
   </section>
 
-  <h2 class="section-title">Reading Queue</h2>
-  <nav class="queue" aria-label="selected papers">
+  <h2 class="section-title" id="paper-content">Reading Queue</h2>
+  <nav class="category-groups" aria-label="selected papers by category">
+
+    <section class="category-section">
+      <header class="category-heading">
+        <h3>cs.CV</h3>
+        <span>5 papers</span>
+      </header>
+      <div class="queue">
 
     <a class="queue-item" href="#link0">
       <span class="queue-index">1</span>
       <span class="queue-copy">
         <strong>Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models</strong>
         <small>Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
       </span>
       <span class="score-pill">18</span>
     </a>
@@ -332,6 +411,12 @@ a {
       <span class="queue-copy">
         <strong>CRANE: Knowledge Editing for Reasoning MLLMs</strong>
         <small>Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.CL</span>
+    </div>
+
       </span>
       <span class="score-pill">18</span>
     </a>
@@ -342,16 +427,67 @@ a {
       <span class="queue-copy">
         <strong>REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction</strong>
         <small>Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
       </span>
       <span class="score-pill">17</span>
     </a>
 
+
+    <a class="queue-item" href="#link5">
+      <span class="queue-index">6</span>
+      <span class="queue-copy">
+        <strong>WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</strong>
+        <small>Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+      </span>
+      <span class="score-pill">9</span>
+    </a>
+
+
+    <a class="queue-item" href="#link8">
+      <span class="queue-index">9</span>
+      <span class="queue-copy">
+        <strong>NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</strong>
+        <small>Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
+    </div>
+
+      </span>
+      <span class="score-pill">8</span>
+    </a>
+
+      </div>
+    </section>
+
+
+    <section class="category-section">
+      <header class="category-heading">
+        <h3>cs.AI</h3>
+        <span>4 papers</span>
+      </header>
+      <div class="queue">
 
     <a class="queue-item" href="#link3">
       <span class="queue-index">4</span>
       <span class="queue-copy">
         <strong>A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology</strong>
         <small>Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
       </span>
       <span class="score-pill">15</span>
     </a>
@@ -362,18 +498,14 @@ a {
       <span class="queue-copy">
         <strong>Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs</strong>
         <small>Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+<span class="category-tag">cs.CL</span>
+    </div>
+
       </span>
       <span class="score-pill">10</span>
-    </a>
-
-
-    <a class="queue-item" href="#link5">
-      <span class="queue-index">6</span>
-      <span class="queue-copy">
-        <strong>WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</strong>
-        <small>Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</small>
-      </span>
-      <span class="score-pill">9</span>
     </a>
 
 
@@ -382,6 +514,11 @@ a {
       <span class="queue-copy">
         <strong>InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs</strong>
         <small>Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
       </span>
       <span class="score-pill">9</span>
     </a>
@@ -392,24 +529,26 @@ a {
       <span class="queue-copy">
         <strong>Cross-LLM Consistency in Inference: Evidence from Shared Interactions</strong>
         <small>Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</small>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
       </span>
       <span class="score-pill">8</span>
     </a>
 
-
-    <a class="queue-item" href="#link8">
-      <span class="queue-index">9</span>
-      <span class="queue-copy">
-        <strong>NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</strong>
-        <small>Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</small>
-      </span>
-      <span class="score-pill">8</span>
-    </a>
+      </div>
+    </section>
 
   </nav>
 
   <h2 class="section-title">Paper Notes</h2>
-  <section class="paper-list">
+  <section class="paper-category-groups">
+
+    <section class="paper-category-section">
+      <h3>cs.CV</h3>
+      <div class="paper-list">
 
     <article class="paper-card" id="link0">
       <header class="paper-head">
@@ -417,9 +556,17 @@ a {
           <p class="paper-kicker">Paper 1 / arXiv:2606.07641</p>
           <h2><a href="https://arxiv.org/abs/2606.07641">Readable Yet Unpredictable: Rotated-Outcome Prediction in Vision-Language Models</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.07641">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.07641">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Lexin Wang, Shenghua Liu, Yiwei Wang, Jiafeng Guo, Xueqi Cheng</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>10</strong></span>
@@ -437,9 +584,18 @@ a {
           <p class="paper-kicker">Paper 2 / arXiv:2606.09033</p>
           <h2><a href="https://arxiv.org/abs/2606.09033">CRANE: Knowledge Editing for Reasoning MLLMs</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.09033">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.09033">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Han Huang, Hao Wang, Mengqi Zhang, Shu Wu, Qiang Liu, Liang Wang</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.CL</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>10</strong></span>
@@ -457,9 +613,17 @@ a {
           <p class="paper-kicker">Paper 3 / arXiv:2606.07935</p>
           <h2><a href="https://arxiv.org/abs/2606.07935">REACT 2026: The Fourth Multiple Appropriate Facial Reaction Generation Challenge: Personalised MAFRG and Appropriate EEG Reaction Prediction</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.07935">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.07935">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Siyang Song, Micol Spitale, Zijian Wu, Xiangyu Kong, Cheng Luo, Cristina Palmero, German Barquero, Sergio Escalera, Michel Valstar, Mohamed Daoudi, Fabien Ringeval, Andrew Howes, Elisabeth Andre, Hatice Gunes</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>9</strong></span>
@@ -471,15 +635,87 @@ a {
     </article>
 
 
+    <article class="paper-card" id="link5">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 6 / arXiv:2606.08670</p>
+          <h2><a href="https://arxiv.org/abs/2606.08670">WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</a></h2>
+        </div>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.08670">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
+      </header>
+      <p class="authors">Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.</p>
+      <p class="abstract">Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT</p>
+    </article>
+
+
+    <article class="paper-card" id="link8">
+      <header class="paper-head">
+        <div>
+          <p class="paper-kicker">Paper 9 / arXiv:2606.07635</p>
+          <h2><a href="https://arxiv.org/abs/2606.07635">NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</a></h2>
+        </div>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.07635">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
+      </header>
+      <p class="authors">Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
+    </div>
+
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+      <p class="comment"><strong>Why selected:</strong> This paper proposes a new hierarchical multimodal fusion framework for neuroimaging, but it is focused on medical imaging and cognitive impairment analysis, not spatial intelligence or embodied agents. It does introduce new multimodal fusion methods, which is tangentially related to criterion 2, but not in the context of VLLMs/MLLMs.</p>
+      <p class="abstract">Multimodal neuroimaging fusion of functional MRI (fMRI) and diffusion tensor imaging (DTI) provides complementary information for cognitive impairment analysis, but remains challenged by heterogeneous feature spaces and misaligned representations. We propose \textit{NeuroAlign}, a hierarchical framework for structured multimodal fusion. It introduces (1) \textit{Dual-Modal Hierarchical Alignment} (DMHA), which models multi-scale dynamic connectivity and aligns dynamic-static and functional-structural embeddings; and (2) \textit{Dual-Domain Hierarchical Interaction} (DDHI), which enables fine-grained modulation and global interaction between connectivity- and region-level features. To support feature-level inspection, we design \textit{Synergistic Activation Mapping} (SAM), a gradient-free, marker-oriented attribution method for DFC, SFC, ALFF, and FA. Evaluated on GUTCM, ADNI, and OASIS under five-fold validation, NeuroAlign achieves competitive MCI/SCD detection and preliminary cross-dataset transferability. Attribution analyses reveal modality-specific and partially consistent brain patterns, providing model-derived evidence for multimodal representation analysis.</p>
+    </article>
+
+      </div>
+    </section>
+
+
+    <section class="paper-category-section">
+      <h3>cs.AI</h3>
+      <div class="paper-list">
+
     <article class="paper-card" id="link3">
       <header class="paper-head">
         <div>
           <p class="paper-kicker">Paper 4 / arXiv:2606.08093</p>
           <h2><a href="https://arxiv.org/abs/2606.08093">A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.08093">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.08093">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Zhe Xu, Zhengyu Zhang, Zhiyuan Cai, Jiahao Xu, Yijie Lin, Ziyi Liu, Junlin Hou, Hongyi Wang, Yuxiang Nie, Ling Liang, Yihui Wang, Yingxue Xu, Ronald Cheong Kin Chan, Li Liang, Hao Chen</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>8</strong></span>
@@ -497,9 +733,18 @@ a {
           <p class="paper-kicker">Paper 5 / arXiv:2606.07963</p>
           <h2><a href="https://arxiv.org/abs/2606.07963">Shared Latent Structures Enable Unified Backdoor Detection and Mitigation in LLMs</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.07963">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.07963">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Omar Mahmoud, Aly M. Kassem, Thommen George Karimpanal, Buddhika Laknath Semage, Negar Rostamzadeh, Golnoosh Farnadi, Santu Rana</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+<span class="category-tag">cs.CL</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
@@ -511,35 +756,23 @@ a {
     </article>
 
 
-    <article class="paper-card" id="link5">
-      <header class="paper-head">
-        <div>
-          <p class="paper-kicker">Paper 6 / arXiv:2606.08670</p>
-          <h2><a href="https://arxiv.org/abs/2606.08670">WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis</a></h2>
-        </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.08670">Open arXiv</a>
-      </header>
-      <p class="authors">Danilo Danese, Angela Lombardi, Giuseppe Fasano, Matteo Attimonelli, Tommaso Di Noia</p>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>6</strong></span>
-        </div>
-
-      <p class="comment"><strong>Why selected:</strong> This paper proposes a new generative modeling method (WaveDiT) for efficient 3D brain MRI synthesis using a wavelet-based flow matching approach. While it is a novel generative model for 3D data, it does not directly address spatial understanding in embodied agents (criterion 1), VLLMs/MLLMs (criterion 2), embodied AI benchmarks/methods (criterion 3), or vision foundation models (criterion 4). It is relevant to your general interest in generative modeling and computer vision, but not a direct match to the listed criteria.</p>
-      <p class="abstract">Large and demographically balanced datasets are essential for reliable neuroimaging biomarkers. Full-resolution 3D brain MRI synthesis can support data augmentation in this setting, but existing approaches either incur prohibitive computational cost at volumetric scale or rely on lossy latent compression that may compromise anatomical detail. As a result, practical 3D generative augmentation often requires specialized compute infrastructure. We propose WaveDiT, a conditional flow matching framework operating in the coefficient space of a 3D Haar Discrete Wavelet Transform. The model combines factorized spatio-depth attention with band-wise heteroscedastic uncertainty modeling derived from higher-order wavelet statistics. Predicted log-variance is integrated directly into both the flow objective and conditioning pathway, enabling adaptive precision consistent with the heavy-tailed and input-dependent variance structure of anatomical detail. This formulation supports full-resolution 3D synthesis under practical memory and time constraints on a single modern GPU. Evaluation on a multi-site cohort demonstrates improved alignment between generated and real MRI distributions, together with enhanced downstream brain age prediction and region-level anatomical agreement relative to diffusion, latent, and wavelet-based baselines. Code is available at https://github.com/sisinflab/WaveDiT</p>
-    </article>
-
-
     <article class="paper-card" id="link6">
       <header class="paper-head">
         <div>
           <p class="paper-kicker">Paper 7 / arXiv:2606.08601</p>
           <h2><a href="https://arxiv.org/abs/2606.08601">InA-Probe: Instruction-Aware Active Probing for Time Series Forecasting with LLMs</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.08601">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.08601">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Peiliang Gong, Emadeldeen Eldele, Chenyu Liu, Ziyu Jia, Yi Ding, Xinliang Zhou, Lianchao Gu, Qi Zhu, Yang Liu, Daoqiang Zhang, Xiaoli Li</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
@@ -557,9 +790,17 @@ a {
           <p class="paper-kicker">Paper 8 / arXiv:2606.08129</p>
           <h2><a href="https://arxiv.org/abs/2606.08129">Cross-LLM Consistency in Inference: Evidence from Shared Interactions</a></h2>
         </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.08129">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="https://arxiv.org/abs/2606.08129">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">Siyu Lou, Yao Yan, Yuntian Chen, Quanshi Zhang</p>
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
@@ -570,25 +811,8 @@ a {
       <p class="abstract">Large language models (LLMs) differ in architecture, training data, and optimization procedures, yet they may still develop similar internal inference patterns. In this paper, we examine this hypothesis using interaction-based explanations. We find that LLMs often share interaction patterns when predicting the same target token from the same prompt. This consistency is more pronounced among advanced LLMs. Shared interactions also tend to be lower-order and show weaker positive-negative cancellation than non-shared interactions. These results suggest that advanced LLMs may be implicitly optimized toward common inference patterns, even though the mechanisms that give rise to such cross-model consistency remain open.</p>
     </article>
 
-
-    <article class="paper-card" id="link8">
-      <header class="paper-head">
-        <div>
-          <p class="paper-kicker">Paper 9 / arXiv:2606.07635</p>
-          <h2><a href="https://arxiv.org/abs/2606.07635">NeuroAlign: Hierarchical Multimodal Fusion of Dynamic and Structural Neuroimaging for MCI Analysis</a></h2>
-        </div>
-        <a class="paper-action" href="https://arxiv.org/abs/2606.07635">Open arXiv</a>
-      </header>
-      <p class="authors">Xiongri Shen, Zhenxi Song, Jiaqi wang, Yi Zhong, Leilei Zhao, Chenqi Xu, Linling Li, Yichen Wei, Lingyan Liang, Demao Deng, Luping Song, Ping Luan, Ahmed M. Anter, Shuqiang Wang, Baiying Lei, Zhiguo Zhang</p>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>5</strong></span>
-        </div>
-
-      <p class="comment"><strong>Why selected:</strong> This paper proposes a new hierarchical multimodal fusion framework for neuroimaging, but it is focused on medical imaging and cognitive impairment analysis, not spatial intelligence or embodied agents. It does introduce new multimodal fusion methods, which is tangentially related to criterion 2, but not in the context of VLLMs/MLLMs.</p>
-      <p class="abstract">Multimodal neuroimaging fusion of functional MRI (fMRI) and diffusion tensor imaging (DTI) provides complementary information for cognitive impairment analysis, but remains challenged by heterogeneous feature spaces and misaligned representations. We propose \textit{NeuroAlign}, a hierarchical framework for structured multimodal fusion. It introduces (1) \textit{Dual-Modal Hierarchical Alignment} (DMHA), which models multi-scale dynamic connectivity and aligns dynamic-static and functional-structural embeddings; and (2) \textit{Dual-Domain Hierarchical Interaction} (DDHI), which enables fine-grained modulation and global interaction between connectivity- and region-level features. To support feature-level inspection, we design \textit{Synergistic Activation Mapping} (SAM), a gradient-free, marker-oriented attribution method for DFC, SFC, ALFF, and FA. Evaluated on GUTCM, ADNI, and OASIS under five-fold validation, NeuroAlign achieves competitive MCI/SCD detection and preliminary cross-dataset transferability. Attribution analyses reveal modality-specific and partially consistent brain patterns, providing model-derived evidence for multimodal representation analysis.</p>
-    </article>
+      </div>
+    </section>
 
   </section>
 

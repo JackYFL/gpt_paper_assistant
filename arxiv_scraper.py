@@ -25,6 +25,8 @@ class Paper:
     title: str
     abstract: str
     arxiv_id: str
+    primary_category: str = ""
+    categories: Optional[List[str]] = None
 
     # add a hash function using arxiv_id
     def __hash__(self):
@@ -65,6 +67,8 @@ def get_papers_from_arxiv_api(area: str, timestamp, last_id) -> List[Paper]:
                 title=result.title,
                 abstract=summary,
                 arxiv_id=result.get_short_id()[:10],
+                primary_category=getattr(result, "primary_category", ""),
+                categories=getattr(result, "categories", []),
             )
             api_papers.append(paper)
     return api_papers
@@ -98,6 +102,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> List[Paper]:
             continue
         # extract area
         paper_area = paper.tags[0]["term"]
+        categories = [tag["term"] for tag in paper.tags]
         # ignore papers not in primary area
         if (area != paper_area) and (config["FILTERING"].getboolean("force_primary")):
             print(f"ignoring {paper.title}")
@@ -111,11 +116,18 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> List[Paper]:
         summary = re.sub("<[^<]+?>", "", paper.summary)
         summary = unescape(re.sub("\n", " ", summary))
         # strip the last pair of parentehses containing (arXiv:xxxx.xxxxx [area.XX])
-        title = re.sub("\(arXiv:[0-9]+\.[0-9]+v[0-9]+ \[.*\]\)$", "", paper.title)
+        title = re.sub(r"\(arXiv:[0-9]+\.[0-9]+v[0-9]+ \[.*\]\)$", "", paper.title)
         # remove the link part of the id
         id = paper.link.split("/")[-1]
         # make a new paper
-        new_paper = Paper(authors=authors, title=title, abstract=summary, arxiv_id=id)
+        new_paper = Paper(
+            authors=authors,
+            title=title,
+            abstract=summary,
+            arxiv_id=id,
+            primary_category=paper_area,
+            categories=categories,
+        )
         paper_list.append(new_paper)
 
     return paper_list, timestamp, last_id
@@ -151,4 +163,3 @@ if __name__ == "__main__":
     print([paper.arxiv_id for paper in paper_list])
     print([paper.arxiv_id for paper in api_paper_list])
     print("success")
-    

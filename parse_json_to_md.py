@@ -24,6 +24,55 @@ def paper_score(paper_entry: dict) -> int | None:
     return int(paper_entry["RELEVANCE"]) + int(paper_entry["NOVELTY"])
 
 
+def get_paper_categories(paper_entry: dict) -> list[str]:
+    categories = paper_entry.get("categories") or []
+    primary_category = paper_entry.get("primary_category")
+    if primary_category:
+        categories = [primary_category, *categories]
+
+    seen = set()
+    unique_categories = []
+    for category in categories:
+        if not category or category in seen:
+            continue
+        seen.add(category)
+        unique_categories.append(category)
+    return unique_categories
+
+
+def get_primary_category(paper_entry: dict) -> str:
+    if paper_entry.get("primary_category"):
+        return paper_entry["primary_category"]
+    categories = get_paper_categories(paper_entry)
+    if categories:
+        return categories[0]
+    return "Uncategorized"
+
+
+def group_indexed_papers(papers_dict: dict) -> dict[str, list[tuple[int, dict]]]:
+    grouped_papers = {}
+    for idx, paper in enumerate(papers_dict.values()):
+        grouped_papers.setdefault(get_primary_category(paper), []).append((idx, paper))
+    for papers in grouped_papers.values():
+        papers.sort(key=lambda item: paper_score(item[1]) or -1, reverse=True)
+    return grouped_papers
+
+
+def render_category_tags(paper_entry: dict) -> str:
+    categories = get_paper_categories(paper_entry)
+    if not categories:
+        return ""
+
+    tags = "\n".join(
+        f'<span class="category-tag">{esc(category)}</span>' for category in categories
+    )
+    return f"""
+    <div class="category-tags" aria-label="arXiv categories">
+      {tags}
+    </div>
+    """
+
+
 def render_metric(label: str, value: str) -> str:
     return f"""
     <div class="metric">
@@ -38,15 +87,47 @@ def render_title_and_author(paper_entry: dict, idx: int) -> str:
     authors = ", ".join(paper_entry["authors"])
     score = paper_score(paper_entry)
     score_html = f'<span class="score-pill">{score}</span>' if score is not None else ""
+    categories_html = render_category_tags(paper_entry)
     return f"""
     <a class="queue-item" href="#link{idx}">
       <span class="queue-index">{idx + 1}</span>
       <span class="queue-copy">
         <strong>{esc(title)}</strong>
         <small>{esc(authors)}</small>
+        {categories_html}
       </span>
       {score_html}
     </a>
+    """
+
+
+def render_queue_group(category: str, papers: list[tuple[int, dict]]) -> str:
+    queue_items = "\n".join(
+        render_title_and_author(paper, idx) for idx, paper in papers
+    )
+    label = "paper" if len(papers) == 1 else "papers"
+    return f"""
+    <section class="category-section">
+      <header class="category-heading">
+        <h3>{esc(category)}</h3>
+        <span>{len(papers)} {label}</span>
+      </header>
+      <div class="queue">
+        {queue_items}
+      </div>
+    </section>
+    """
+
+
+def render_paper_group(category: str, papers: list[tuple[int, dict]]) -> str:
+    paper_cards = "\n".join(render_paper(paper, idx) for idx, paper in papers)
+    return f"""
+    <section class="paper-category-section">
+      <h3>{esc(category)}</h3>
+      <div class="paper-list">
+        {paper_cards}
+      </div>
+    </section>
     """
 
 
@@ -76,9 +157,13 @@ def render_paper(paper_entry: dict, idx: int) -> str:
           <p class="paper-kicker">Paper {idx + 1} / arXiv:{esc(arxiv_id)}</p>
           <h2><a href="{esc(arxiv_url)}">{esc(title)}</a></h2>
         </div>
-        <a class="paper-action" href="{esc(arxiv_url)}">Open arXiv</a>
+        <div class="paper-actions">
+          <a class="paper-action" href="{esc(arxiv_url)}">Open arXiv</a>
+          <a class="paper-action secondary" href="#paper-content">Back to queue</a>
+        </div>
       </header>
       <p class="authors">{esc(authors)}</p>
+      {render_category_tags(paper_entry)}
       {score_html}
       <p class="comment"><strong>Why selected:</strong> {esc(comment)}</p>
       <p class="abstract">{esc(abstract)}</p>
@@ -188,6 +273,38 @@ a {
   font-size: 1.35rem;
 }
 
+.category-groups,
+.paper-category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.paper-category-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.paper-category-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.category-heading h3,
+.paper-category-section h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .queue {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -230,6 +347,24 @@ a {
   line-height: 1.35;
 }
 
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid rgba(39, 110, 106, 0.2);
+  border-radius: 999px;
+  background: #f8fbf9;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .score-pill {
   min-width: 38px;
   padding: 5px 8px;
@@ -267,6 +402,14 @@ a {
   line-height: 1.2;
 }
 
+.paper-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .paper-action {
   flex: 0 0 auto;
   align-self: start;
@@ -277,6 +420,11 @@ a {
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.paper-action.secondary {
+  border-color: var(--line);
+  color: var(--muted);
 }
 
 .authors, .comment, .abstract {
@@ -347,9 +495,13 @@ a {
     display: block;
   }
 
+  .paper-actions {
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
   .paper-action {
     display: inline-block;
-    margin-top: 14px;
   }
 }
 </style>
@@ -367,13 +519,15 @@ def render_md_string(papers_dict, output_date=None):
     scores = [score for score in scores if score is not None]
     avg_score = f"{sum(scores) / len(scores):.1f}" if scores else "n/a"
     top_score = str(max(scores)) if scores else "n/a"
+    grouped_papers = group_indexed_papers(papers_dict)
 
     queue = "\n".join(
-        render_title_and_author(paper, i)
-        for i, paper in enumerate(papers_dict.values())
+        render_queue_group(category, papers)
+        for category, papers in grouped_papers.items()
     )
-    paper_cards = "\n".join(
-        render_paper(paper, i) for i, paper in enumerate(papers_dict.values())
+    paper_groups = "\n".join(
+        render_paper_group(category, papers)
+        for category, papers in grouped_papers.items()
     )
 
     return strip_trailing_whitespace(f"""
@@ -397,14 +551,14 @@ def render_md_string(papers_dict, output_date=None):
     </div>
   </section>
 
-  <h2 class="section-title">Reading Queue</h2>
-  <nav class="queue" aria-label="selected papers">
+  <h2 class="section-title" id="paper-content">Reading Queue</h2>
+  <nav class="category-groups" aria-label="selected papers by category">
     {queue}
   </nav>
 
   <h2 class="section-title">Paper Notes</h2>
-  <section class="paper-list">
-    {paper_cards}
+  <section class="paper-category-groups">
+    {paper_groups}
   </section>
 
   <section class="prompt-block">
