@@ -1,4 +1,4 @@
-# Daily ArXiv: a GPT-powered personalized paper assistant
+# Daily ArXiv: Personalized paper assistant
 
 A daily ArXiv scanner that finds papers you actually want to read. Every day it pulls new
 papers from your chosen ArXiv categories, scores them with a GPT model against your research
