@@ -1,8 +1,10 @@
 
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --paper-bg: #f6f7f4;
   --ink: #1f2a2e;
   --muted: #647071;
@@ -12,6 +14,35 @@
   --accent-2: #a63d40;
   --soft: #e6efe8;
   --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
 }
 
 body {
@@ -24,7 +55,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration-color: rgba(39, 110, 106, 0.35);
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
   text-underline-offset: 0.18em;
 }
 
@@ -32,6 +63,14 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
 }
 
 .hero {
@@ -55,9 +94,11 @@ a {
 .hero h1 {
   max-width: 820px;
   margin: 0;
+  font-family: var(--serif);
   font-size: clamp(2.2rem, 7vw, 5.8rem);
-  line-height: 0.95;
-  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
 }
 
 .hero-copy {
@@ -96,14 +137,17 @@ a {
 .metric strong {
   display: block;
   margin-top: 8px;
-  font-size: 1.65rem;
+  font-family: var(--serif);
+  font-size: 1.8rem;
   line-height: 1;
   overflow-wrap: anywhere;
 }
 
 .section-title {
   margin: 34px 0 14px;
-  font-size: 1.35rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .category-groups {
@@ -192,6 +236,17 @@ details:not([open]) > .topic-heading::before {
   border-radius: 8px;
   background: var(--panel);
   overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
 }
 
 .paper-row-summary {
@@ -204,6 +259,18 @@ details:not([open]) > .topic-heading::before {
   cursor: pointer;
   list-style: none;
   user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .paper-row-summary::-webkit-details-marker {
@@ -236,6 +303,12 @@ details:not([open]) > .topic-heading::before {
   background: var(--soft);
   color: var(--accent);
   font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
 }
 
 .paper-row-copy strong {
@@ -253,6 +326,21 @@ details:not([open]) > .topic-heading::before {
 .paper-row-detail {
   padding: 0 18px 18px 62px;
   border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .paper-row-meta {
@@ -278,9 +366,9 @@ details:not([open]) > .topic-heading::before {
 
 .category-tag {
   padding: 4px 8px;
-  border: 1px solid rgba(39, 110, 106, 0.2);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 999px;
-  background: #f8fbf9;
+  background: var(--tint);
   color: var(--accent);
   font-size: 0.76rem;
   font-weight: 800;
@@ -308,6 +396,17 @@ details:not([open]) > .topic-heading::before {
   text-align: center;
 }
 
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
 .paper-action {
   flex: 0 0 auto;
   align-self: start;
@@ -318,6 +417,12 @@ details:not([open]) > .topic-heading::before {
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
 }
 
 .authors, .comment, .abstract {
@@ -343,10 +448,16 @@ details:not([open]) > .topic-heading::before {
   font-weight: 700;
 }
 
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
 .comment {
   padding: 12px 14px;
   border-left: 4px solid var(--accent);
-  background: #f8fbf9;
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
 }
 
 .prompt-block {
@@ -354,7 +465,7 @@ details:not([open]) > .topic-heading::before {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfaf7;
+  background: var(--cream);
 }
 
 .prompt-block pre {
@@ -391,8 +502,15 @@ details:not([open]) > .topic-heading::before {
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfaf7;
+  background: var(--cream);
   text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
 }
 
 .archive-link span {
@@ -420,13 +538,28 @@ details:not([open]) > .topic-heading::before {
   background: var(--panel);
 }
 
+.archive-block h2,
+.prompt-block h2,
 .archive-content h1,
 .archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .archive-content h2 {
   margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 @media (max-width: 760px) {
@@ -537,7 +670,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">18</span>
+        <span class="score-pill score-high">18</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -584,7 +717,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">18</span>
+        <span class="score-pill score-high">18</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -623,7 +756,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">17</span>
+        <span class="score-pill score-high">17</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -663,7 +796,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">8</span>
+        <span class="score-pill score-low">8</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -709,7 +842,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">9</span>
+        <span class="score-pill score-low">9</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -763,7 +896,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">15</span>
+        <span class="score-pill score-high">15</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -808,7 +941,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">10</span>
+        <span class="score-pill score-mid">10</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -853,7 +986,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">9</span>
+        <span class="score-pill score-low">9</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -897,7 +1030,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill">8</span>
+        <span class="score-pill score-low">8</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
