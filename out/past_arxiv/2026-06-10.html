@@ -1,0 +1,840 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / June 10, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / June 10, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>06/10/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <article class="archive-content">
+      <p>&lt;style&gt;<br>@import url(&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;display=swap&quot;);</p>
+<p>:root {<br>color-scheme: light dark;<br>--paper-bg: #f6f7f4;<br>--ink: #1f2a2e;<br>--muted: #647071;<br>--line: #d9dfda;<br>--panel: #ffffff;<br>--accent: #276e6a;<br>--accent-2: #a63d40;<br>--soft: #e6efe8;<br>--soft-2: #f4e8df;<br>--tint: #f8fbf9;<br>--cream: #fbfaf7;<br>--shadow: 0 10px 24px rgba(31, 42, 46, 0.08);<br>--serif: Newsreader, &quot;Iowan Old Style&quot;, Georgia, serif;<br>}</p>
+<p>@media (prefers-color-scheme: dark) {<br>:root {<br>--paper-bg: #14181a;<br>--ink: #e7ecea;<br>--muted: #9aa7a5;<br>--line: #2c3537;<br>--panel: #1c2225;<br>--accent: #7cc7c0;<br>--accent-2: #e29a9c;<br>--soft: #21302e;<br>--soft-2: #34272a;<br>--tint: #1e2629;<br>--cream: #20262a;<br>--shadow: 0 10px 24px rgba(0, 0, 0, 0.35);<br>}<br>}</p>
+<p>html {<br>scroll-behavior: smooth;<br>}</p>
+<p>::selection {<br>background: var(--soft);<br>}</p>
+<p>body {<br>margin: 0;<br>background: var(--paper-bg);<br>color: var(--ink);<br>font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,<br>BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;<br>}</p>
+<p>a {<br>color: inherit;<br>text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);<br>text-underline-offset: 0.18em;<br>}</p>
+<p>.daily-arxiv {<br>max-width: 1180px;<br>margin: 0 auto;<br>padding: 40px 20px 72px;<br>}</p>
+<p>.daily-arxiv::before {<br>content: &quot;&quot;;<br>display: block;<br>height: 4px;<br>border-radius: 999px;<br>background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);<br>}</p>
+<p>.hero {<br>display: grid;<br>grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);<br>gap: 28px;<br>align-items: end;<br>padding: 42px 0 30px;<br>border-bottom: 1px solid var(--line);<br>}</p>
+<p>.eyebrow, .paper-kicker {<br>margin: 0 0 10px;<br>color: var(--accent);<br>font-size: 0.78rem;<br>font-weight: 800;<br>letter-spacing: 0;<br>text-transform: uppercase;<br>}</p>
+<p>.hero h1 {<br>max-width: 820px;<br>margin: 0;<br>font-family: var(--serif);<br>font-size: clamp(2.2rem, 7vw, 5.8rem);<br>font-weight: 600;<br>line-height: 1;<br>letter-spacing: -0.015em;<br>}</p>
+<p>.hero-copy {<br>max-width: 760px;<br>margin: 18px 0 0;<br>color: var(--muted);<br>font-size: 1.06rem;<br>}</p>
+<p>.metrics {<br>display: grid;<br>grid-template-columns: repeat(2, minmax(0, 1fr));<br>gap: 10px;<br>}</p>
+<p>.archive-hero .metrics {<br>grid-template-columns: minmax(220px, 1fr);<br>min-width: 220px;<br>}</p>
+<p>.metric {<br>min-height: 88px;<br>padding: 16px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
+<p>.metric span {<br>display: block;<br>color: var(--muted);<br>font-size: 0.8rem;<br>font-weight: 700;<br>}</p>
+<p>.metric strong {<br>display: block;<br>margin-top: 8px;<br>font-family: var(--serif);<br>font-size: 1.8rem;<br>line-height: 1;<br>overflow-wrap: anywhere;<br>}</p>
+<p>.section-title {<br>margin: 34px 0 14px;<br>font-family: var(--serif);<br>font-size: 1.6rem;<br>font-weight: 600;<br>}</p>
+<p>.category-groups {<br>display: grid;<br>gap: 24px;<br>}</p>
+<p>.category-section,<br>.topic-section {<br>scroll-margin-top: 18px;<br>}</p>
+<p>.category-heading,<br>.topic-heading {<br>display: flex;<br>align-items: baseline;<br>gap: 10px;<br>margin: 0 0 10px;<br>cursor: pointer;<br>list-style: none;<br>user-select: none;<br>}</p>
+<p>.category-heading::-webkit-details-marker,<br>.topic-heading::-webkit-details-marker {<br>display: none;<br>}</p>
+<p>.category-heading::before,<br>.topic-heading::before {<br>content: &quot;▾&quot;;<br>color: var(--accent);<br>font-size: 0.9rem;<br>line-height: 1;<br>transform: rotate(0deg);<br>transition: transform 140ms ease;<br>}</p>
+<p>details:not([open]) &gt; .category-heading::before,<br>details:not([open]) &gt; .topic-heading::before {<br>transform: rotate(-90deg);<br>}</p>
+<p>.category-heading h3 {<br>color: var(--ink);<br>font-size: 1rem;<br>margin: 0;<br>}</p>
+<p>.category-heading span {<br>color: var(--muted);<br>font-size: 0.86rem;<br>font-weight: 700;<br>}</p>
+<p>.topic-section {<br>display: grid;<br>gap: 10px;<br>margin-top: 14px;<br>}</p>
+<p>.topic-section h4 {<br>margin: 0;<br>color: var(--accent-2);<br>font-size: 0.9rem;<br>font-weight: 900;<br>}</p>
+<p>.topic-heading {<br>color: var(--accent-2);<br>font-size: 0.9rem;<br>font-weight: 900;<br>}</p>
+<p>.topic-heading::before {<br>color: var(--accent-2);<br>}</p>
+<p>.queue {<br>display: grid;<br>gap: 10px;<br>}</p>
+<p>.paper-row {<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>overflow: hidden;<br>transition: border-color 150ms ease, box-shadow 150ms ease;<br>}</p>
+<p>.paper-row:hover {<br>border-color: color-mix(in srgb, var(--accent) 55%, var(--line));<br>box-shadow: var(--shadow);<br>}</p>
+<p>.paper-row[open] {<br>border-color: color-mix(in srgb, var(--accent) 45%, var(--line));<br>box-shadow: inset 3px 0 0 var(--accent), var(--shadow);<br>}</p>
+<p>.paper-row-summary {<br>display: grid;<br>grid-template-columns: 36px minmax(0, 1fr) auto 14px;<br>gap: 12px;<br>align-items: start;<br>min-height: 74px;<br>padding: 14px;<br>cursor: pointer;<br>list-style: none;<br>user-select: none;<br>transition: background 140ms ease;<br>}</p>
+<p>.paper-row-summary:hover {<br>background: var(--tint);<br>}</p>
+<p>.paper-row-summary:focus-visible,<br>.category-heading:focus-visible,<br>.topic-heading:focus-visible {<br>outline: 2px solid var(--accent);<br>outline-offset: 2px;<br>}</p>
+<p>.paper-row-summary::-webkit-details-marker {<br>display: none;<br>}</p>
+<p>.paper-row-summary::after {<br>content: &quot;▾&quot;;<br>grid-column: 4;<br>grid-row: 1;<br>justify-self: end;<br>margin-top: 5px;<br>color: var(--muted);<br>font-size: 0.85rem;<br>line-height: 1;<br>transform: rotate(0deg);<br>transition: transform 140ms ease;<br>}</p>
+<p>.paper-row:not([open]) &gt; .paper-row-summary::after {<br>transform: rotate(-90deg);<br>}</p>
+<p>.queue-index {<br>display: grid;<br>width: 36px;<br>height: 36px;<br>place-items: center;<br>border-radius: 50%;<br>background: var(--soft);<br>color: var(--accent);<br>font-weight: 800;<br>transition: background 140ms ease, color 140ms ease;<br>}</p>
+<p>.paper-row[open] .queue-index {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
+<p>.paper-row-copy strong {<br>display: block;<br>line-height: 1.28;<br>}</p>
+<p>.paper-row-copy small {<br>display: block;<br>margin-top: 7px;<br>color: var(--muted);<br>line-height: 1.35;<br>}</p>
+<p>.paper-row-detail {<br>padding: 0 18px 18px 62px;<br>border-top: 1px solid var(--line);<br>}</p>
+<p>.paper-row[open] .paper-row-detail {<br>animation: detail-reveal 200ms ease;<br>}</p>
+<p>@keyframes detail-reveal {<br>from {<br>opacity: 0;<br>transform: translateY(-4px);<br>}<br>to {<br>opacity: 1;<br>transform: none;<br>}<br>}</p>
+<p>.paper-row-meta {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 10px;<br>align-items: center;<br>justify-content: space-between;<br>padding-top: 16px;<br>color: var(--muted);<br>font-size: 0.82rem;<br>font-weight: 800;<br>text-transform: uppercase;<br>}</p>
+<p>.category-tags,<br>.topic-tags {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 6px;<br>margin-top: 10px;<br>}</p>
+<p>.category-tag {<br>padding: 4px 8px;<br>border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);<br>border-radius: 999px;<br>background: var(--tint);<br>color: var(--accent);<br>font-size: 0.76rem;<br>font-weight: 800;<br>line-height: 1;<br>}</p>
+<p>.topic-tag {<br>padding: 4px 8px;<br>border-radius: 999px;<br>background: var(--soft-2);<br>color: var(--accent-2);<br>font-size: 0.76rem;<br>font-weight: 800;<br>line-height: 1;<br>}</p>
+<p>.score-pill {<br>min-width: 38px;<br>padding: 5px 8px;<br>border-radius: 999px;<br>background: var(--soft-2);<br>color: var(--accent-2);<br>font-size: 0.84rem;<br>font-weight: 800;<br>text-align: center;<br>}</p>
+<p>.score-pill.score-high {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
+<p>.score-pill.score-low {<br>border: 1px solid var(--line);<br>background: transparent;<br>color: var(--muted);<br>}</p>
+<p>.paper-action {<br>flex: 0 0 auto;<br>align-self: start;<br>padding: 8px 12px;<br>border: 1px solid var(--accent);<br>border-radius: 999px;<br>color: var(--accent);<br>font-size: 0.88rem;<br>font-weight: 800;<br>text-decoration: none;<br>transition: background 140ms ease, color 140ms ease;<br>}</p>
+<p>.paper-action:hover {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
+<p>.authors, .comment, .abstract {<br>margin: 14px 0 0;<br>}</p>
+<p>.authors {<br>color: var(--muted);<br>}</p>
+<p>.paper-scores {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 8px;<br>margin-top: 16px;<br>}</p>
+<p>.paper-scores span {<br>padding: 6px 10px;<br>border-radius: 999px;<br>background: var(--soft);<br>color: var(--accent);<br>font-weight: 700;<br>}</p>
+<p>.abstract {<br>max-width: 78ch;<br>line-height: 1.7;<br>}</p>
+<p>.comment {<br>padding: 12px 14px;<br>border-left: 4px solid var(--accent);<br>border-radius: 0 8px 8px 0;<br>background: var(--tint);<br>}</p>
+<p>.prompt-block {<br>margin-top: 30px;<br>padding: 22px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--cream);<br>}</p>
+<p>.prompt-block pre {<br>overflow-x: auto;<br>white-space: pre-wrap;<br>}</p>
+<p>.archive-block {<br>margin-top: 30px;<br>padding: 22px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
+<p>.archive-block h2 {<br>margin: 0;<br>}</p>
+<p>.archive-block p,<br>.archive-nav {<br>color: var(--muted);<br>}</p>
+<p>.archive-links {<br>display: grid;<br>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));<br>gap: 10px;<br>margin-top: 14px;<br>}</p>
+<p>.archive-link {<br>display: block;<br>padding: 12px 14px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--cream);<br>text-decoration: none;<br>transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;<br>}</p>
+<p>.archive-link:hover {<br>border-color: color-mix(in srgb, var(--accent) 55%, var(--line));<br>box-shadow: var(--shadow);<br>transform: translateY(-1px);<br>}</p>
+<p>.archive-link span {<br>display: block;<br>font-weight: 900;<br>}</p>
+<p>.archive-link small {<br>display: block;<br>margin-top: 4px;<br>color: var(--muted);<br>}</p>
+<p>.archive-summary {<br>display: grid;<br>grid-template-columns: repeat(3, minmax(0, 1fr));<br>gap: 10px;<br>margin-top: 24px;<br>}</p>
+<p>.archive-content {<br>padding: 24px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
+<p>.archive-block h2,<br>.prompt-block h2,<br>.archive-content h1,<br>.archive-content h2 {<br>font-family: var(--serif);<br>font-weight: 600;<br>line-height: 1.2;<br>}</p>
+<p>.archive-content h2 {<br>margin-top: 26px;<br>}</p>
+<p>@media (prefers-reduced-motion: reduce) {<br>html {<br>scroll-behavior: auto;<br>}</p>
+<p>* {<br>transition: none !important;<br>animation: none !important;<br>}<br>}</p>
+<p>@media (max-width: 760px) {<br>.daily-arxiv {<br>padding: 24px 14px 56px;<br>}</p>
+<p>.hero {<br>grid-template-columns: 1fr;<br>padding-top: 20px;<br>}</p>
+<p>.metrics {<br>grid-template-columns: 1fr 1fr;<br>}</p>
+<p>.archive-summary {<br>grid-template-columns: 1fr;<br>}</p>
+<p>.queue {<br>grid-template-columns: 1fr;<br>}</p>
+<p>.paper-action {<br>display: inline-block;<br>}</p>
+<p>.paper-row-summary {<br>grid-template-columns: 32px minmax(0, 1fr) auto 14px;<br>gap: 10px;<br>padding: 12px;<br>}</p>
+<p>.paper-row-detail {<br>padding: 0 14px 16px;<br>}<br>}<br>&lt;/style&gt;</p>
+<p>&lt;main class=&quot;daily-arxiv&quot;&gt;<br>&lt;section class=&quot;hero&quot;&gt;<br>&lt;div&gt;<br>&lt;p class=&quot;eyebrow&quot;&gt;Daily ArXiv / June 10, 2026&lt;/p&gt;<br>&lt;h1&gt;Personalized paper radar&lt;/h1&gt;<br>&lt;p class=&quot;hero-copy&quot;&gt;<br>A focused reading queue selected from today&#x27;s ArXiv feed, ranked by topic fit,<br>novelty, and configured author matches.<br>&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;metrics&quot;&gt;</p>
+<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Relevant papers&lt;/span&gt;<br>&lt;strong&gt;10&lt;/strong&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Top score&lt;/span&gt;<br>&lt;strong&gt;15&lt;/strong&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Average score&lt;/span&gt;<br>&lt;strong&gt;10.8&lt;/strong&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Source&lt;/span&gt;<br>&lt;strong&gt;ArXiv&lt;/strong&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/section&gt;</p>
+<p>&lt;h2 class=&quot;section-title&quot; id=&quot;paper-content&quot;&gt;Reading Queue&lt;/h2&gt;<br>&lt;nav class=&quot;category-groups&quot; aria-label=&quot;selected papers by category&quot;&gt;</p>
+<p>&lt;details class=&quot;category-section&quot; open&gt;<br>&lt;summary class=&quot;category-heading&quot;&gt;<br>&lt;h3&gt;cs.CV&lt;/h3&gt;<br>&lt;span&gt;10 papers&lt;/span&gt;<br>&lt;/summary&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Embodied AI&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link0&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;1&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;ABot-Earth 0.5: Generative 3D Earth Model&lt;/strong&gt;<br>&lt;small&gt;Ming Qian, Tianjian Ouyang, Mingchao Sun, Zijian Wang, Jincheng Xiong, Jiarong Han, Yongchang Zhang, Jiawei Zhang, Xu Wang, Yu Liu, Luyang Tang, Fei Yu, Zengye Ge, Mengmeng Du, Yuan Liu, Nianfei Fan, Song Wang, Yingliang Peng, Chunxue Jia, Yang Liu, Shiying Zeng, Haozhe Shi, Junnan Lai, Hongyu Pan, Zheng Wu, Ning Guo, Mu Xu, Hang Zhang&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Embodied AI&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;3D Scene Generation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Simulation Sandbox&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;3D Gaussian Splatting&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-high&quot;&gt;15&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 1 / arXiv:2606.09967&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.09967&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;8&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;7&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 3 very closely: it builds a new generative 3D Earth simulation sandbox for embodied AI, with a simulator-style angle and downstream closed-loop UAV navigation use.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;We present ABot-Earth 0.5, a generative 3D framework designed to synthesize vast, seamless 3D environments from ubiquitous, geospatially referenced satellite imagery. To achieve this, we propose a novel generative model formulated directly with the 3D Gaussian Splatting (3DGS) representation. The model is trained on a diverse corpus of existing real-world urban reconstructions, learning to generate realistic geometry and textures. At inference, it synthesizes novel 3D scenes conditioned solely on satellite imagery at a scalable rate of under 10 minutes per square kilometer, while demonstrating exceptional realism. The framework is designed for accessibility, with integrated hierarchical level-of-detail (LOD) structures that permit real-time, interactive visualization on web-based map engines. This high-fidelity simulation sandbox effectively mitigates the sim-to-real domain gap, enabling critical downstream Embodied AI applications like closed-loop UAV navigation. By providing an ultra-low-cost and high-efficiency solution, ABot-Earth 0.5 significantly lowers the technical and financial barriers to large-scale 3D reconstruction and empowers the future of global digital earth visualization.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link3&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;4&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;LIBERO-Occ: Evaluating and Improving Vision-Language-Action Models under Scene-Induced Occlusion via Viewpoint Imagination&lt;/strong&gt;<br>&lt;small&gt;Taishan Li, Jiwen Zhang, Siyuan Wang, Xuanjing Huang, Zhongyu Wei&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Embodied AI&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision-Language-Action Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Benchmark &amp;amp; Evaluation&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;12&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 4 / arXiv:2606.10862&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10862&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;7&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 3 very closely: it introduces a new embodied-AI benchmark for occlusion in manipulation and proposes a new VLA method, Viewpoint Imagination, for partially observable scenes.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Vision-Language-Action (VLA) models achieve strong performance on standard manipulation benchmarks, but most evaluations assume that task-relevant objects are fully visible. This assumption often fails in realistic settings, where occlusion makes manipulation partially observable. In this paper, we study \textit{scene-induced occlusion} as a fundamental challenge for VLA models and introduce \textbf{LIBERO-Occ}, an occlusion-oriented extension of LIBERO. Experiments show that state-of-the-art VLAs suffer substantial performance degradation under occlusion. To address this issue, we propose \textbf{Viewpoint Imagination (VIM)}, which generates a complementary view from an occluded primary observation and conditions action prediction on both observed and imagined evidence. VIM improves robustness across task suites, occlusion types, and severity levels without requiring additional cameras at deployment time, suggesting that viewpoint imagination is an promising mechanism for perception completion in partially observable manipulation. Our benchmark and corresponding code are available at: \href{https://github.com/litsh/Libero-Occ}{https://github.com/litsh/Libero-Occ}.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Multimodal Foundation Models&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link1&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;2&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Kwai Keye-VL-2.0 Technical Report&lt;/strong&gt;<br>&lt;small&gt;Kwai Keye Team, Bin Wen, Changyi Liu, Chengru Song, Chongling Rao, Guowang Zhang, Han Li, Haonan Fan, Hengrui Ju, Jiankang Chen, Jiapeng Chen, Jiawei Yuan, Kaixuan Yang, Kaiyu Jiang, Kun Gai, Lingzhi Zhou, Na Nie, Sen Na, Tianke Zhang, Tingting Gao, Xuanyu Zheng, Yulong Chen, Fan Yang, Haixuan Gao, Lele Yang, Mingqiao Liu, Muxi Diao, Qi Zhang, Qile Su, Wei Chen, Wentao Hong, Xingyu Lu, Yancheng Long, Yankai Yang, Yingxin Li, Yiyang Fan, Yu Xia, Yuzhe Chen, Ziliang Lai, Chuan Yi, Haonan Jia, Tianming Liang, Weixin Xu, Xiaoxiao Ma, Yang Tian, Yufei Han, Feng Han, Hang Li, Jing Wang, Jinghui Jia, Junmin Chen, Junyu Shi, Ruilin Zhang&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multimodal Foundation Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Long-Video Understanding&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Agentic AI&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Sparse Attention&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-high&quot;&gt;15&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 2 / arXiv:2606.10651&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10651&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;9&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 2 very closely: this is a new multimodal foundation model/MLLM technical report with long-video understanding and agentic capabilities.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;We introduce Kwai Keye-VL-2.0-30B-A3B, an open-source Mixture-of-Experts (MoE) multimodal foundation model designed to advance long-video understanding and agentic intelligence. To address the challenges of ultra-long contexts, information redundancy, and prohibitive computational costs inherent in hour-level videos, Keye-VL-2.0 is the first to adapt DeepSeek Sparse Attention (DSA) to GQA-based multimodal architectures, enabling lossless 256K context processing while capturing critical frames and long-range temporal dependencies. This architecture is underpinned by a highly optimized training and inference infrastructure, including scalable video I/O, heterogeneous ViT-LM parallelism, and custom DSA kernels that significantly maximize throughput and minimize computational overhead. Furthermore, to overcome the algorithmic dilemma of catastrophic forgetting during multi-task alignment, we introduce Cross-Modal Multi-Teacher On-Policy Distillation (MOPD) paired with Context-RL and Video-RL. By distilling dense token-level teacher feedback from on-policy rollouts back into the MoE backbone, which activates only 3B parameters, Keye-VL-2.0 natively empowers advanced agent collaboration across Code, Tool, and Search scenarios with multimodal self-correction. Extensive evaluations across video understanding, temporal grounding, reasoning, STEM, and agent benchmarks demonstrate that Keye-VL-2.0-30B-A3B achieves state-of-the-art performance among models of similar scale, particularly excelling in fine-grained temporal localization on TimeLens and long-video comprehension on Video-MME-v2 and LongVideoBench. We release our model checkpoints to accelerate community progress toward scalable and robust multimodal agentic applications.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Vision-Language Generation&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link2&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;3&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Vector Map as Language: Toward Unified Remote Sensing Vector Mapping&lt;/strong&gt;<br>&lt;small&gt;Yinglong Yan, Yunkai Yang, Haoyi Wang, Wei Fu, Linshan Wu, Honghu Pan, Shaobo Xia, Shanghang Zhang, Hao Chen, Leyuan Fang&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision-Language Generation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Remote Sensing&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Structured Prediction&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;12&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 3 / arXiv:2606.10701&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10701&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;7&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4 and partly criterion 2: it proposes a language-formatted unified vector-mapping framework with a new benchmark, using a vision-language generation approach for remote sensing mapping.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Remote sensing vector mapping aims to generate structured maps of geospatial entities, such as buildings, roads, and water bodies, from remote sensing imagery. In practice, vector maps usually contain multiple category layers and heterogeneous entity structures, requiring a unified model for diverse mapping needs. However, existing methods typically represent vector objects as polygons or graphs, making them suitable only for specific categories: polygons poorly capture topological relations, while graphs often blur instance boundaries. We observe that language, as a natural medium for human communication, offers a flexible and expressive representation that can accommodate heterogeneous map elements, including geometry, semantics, and topolog. Motivated by this insight, we propose Vector Map as Language (VecLang), a unified paradigm that reformulates multiclass vector mapping as structured text generation. VecLang encodes the common elements of different geospatial entities into a GeoJSON-like vector language, enabling cross-category modeling within a shared textual format. To generate this language reliably, we design a progressive vision-language mapping framework that first localizes vectorization units and then generates structured map elements. We further introduce Hierarchical Vector Language Optimization, which uses reinforcement learning to improve syntax validity, content fidelity, and map executability. We also build VecMap-Bench with 54K images and 800K instances, supporting training and evaluation across standard and generalization settings. Extensive experiments demonstrate that VecLang handles both single-class and multiclass vector mapping while achieving strong cross-dataset and open-vocabulary generalization. The model and dataset are publicly available at https://github.com/yyyyll0ss/VecLang.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Image-Based Planning&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link4&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;5&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;FlexPath: Learned Semantic Path Priors for Image-Based Planning&lt;/strong&gt;<br>&lt;small&gt;Taehyoung Kim, Tim Schoenbrod, David Eckel, Henri Mee{\ss}&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Image-Based Planning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Spatial Reasoning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Path Planning&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;11&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 5 / arXiv:2606.10167&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10167&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 1 reasonably well: it proposes a new method for image-based planning with learned semantic path priors and objective-level adaptation, which is relevant to spatial understanding for embodied agents.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Recent learning-based path planners use neural networks to process visual map representations and approximate heuristics for classical search algorithms, yielding near-optimal paths with reduced search effort. However, these methods are tied to the shortest-path objective implicit in their supervision, which limits their flexibility to accommodate alternative criteria. We introduce FlexPath, a two-stage framework that decouples feasibility from preference. In Stage 1, we use imitation learning to acquire a task-independent spatial prior over feasible paths from visual map inputs. In Stage 2, differentiable Path Shape Objectives (PSOs) adapt this prior toward task-specific criteria without relearning path structure, requiring only efficient objective-level adaptation. A single pretrained model can be adapted to multiple objectives. For shortest-path planning, FlexPath reduces search effort on TMP by 14.3% compared to the state-of-the-art TransPath, while also finding lower-cost paths on average and demonstrating strong zero-shot generalization across three unseen domains. For obstacle clearance with minimum clearance distance 2, it achieves 96.8% full obstacle avoidance while maintaining low search cost. The framework further extends to semantic-aware avoidance and waypoint guidance via objective-level adaptation, and remains compatible with classical planners at inference time. Data and code are available at https://github.com/FraunhoferIVI/FlexPath.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;4D Gaussian Splatting&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link5&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;6&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Envision4D: Envisioning Visual Futures via Feed-forward 4D Gaussian Splatting for Autonomous Driving&lt;/strong&gt;<br>&lt;small&gt;Qi Song, Yifei He, Chi Zhang, Zheng Fu, Xuhe Zhao, Mengmeng Yang, Kun Jiang, Rui Huang, Diange Yang&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;4D Gaussian Splatting&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Autonomous Driving&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Future View Synthesis&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;11&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 6 / arXiv:2606.10656&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10656&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4: it is a vision foundation-model-style method for dynamic scene forecasting using feed-forward 4D Gaussian splatting, with a new self-supervised framework for autonomous driving.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Forecasting the future evolution of dynamic scenes is crucial in autonomous driving. However, existing feed-forward paradigms are primarily designed for interpolation. When extended to future extrapolation, they suffer from ghosting artifacts under large displacements and are constrained by simplified motion assumptions or strict future priors. To overcome these challenges, we propose Envision4D, a fully self-supervised feed-forward framework for pose-free future extrapolation. Specifically, we introduce a Future Pose Prediction module that infers future camera parameters via an iterative denoising process. Furthermore, to capture non-linear dynamics, we propose In-layer Temporal Attention and employ Conditioned Motion Lifting, which transforms the highly uncertain extrapolation process into robust relational mappings. Finally, a Progressive Training Strategy is utilized to stabilize unsupervised motion learning against error accumulation. Extensive experiments demonstrate that Envision4D achieves state-of-the-art performance, significantly outperforming existing methods in future view synthesis.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Generative Modeling&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link6&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;7&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Few-step Generative Models as Lossy Compression&lt;/strong&gt;<br>&lt;small&gt;Fuma Kimishima, Jinjia Zhou&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Generative Modeling&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Lossy Compression&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Diffusion Models&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.LG&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 7 / arXiv:2606.10450&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10450&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; No close match to the listed criteria; it is mainly a generative-models-as-compression paper, which is adjacent to your general interest but not one of the target criteria.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;DiffC provides a principled way to reuse pre-trained diffusion models for lossy compression, but its encoding and decoding procedures remain slow because they require many discretized forward and reverse steps. We study whether few-step generative models -- Rectified Flow, Consistency Trajectory Models (CTM), and MeanFlow -- can be cast as codecs within the same reverse channel coding (RCC) framework. The main challenge is that RCC requires posterior and shared distribution parameters, whereas these models do not explicitly parameterize intermediate conditional distributions. For Rectified Flow and MeanFlow, we use the equivalence between velocity parameterization and diffusion-style denoising parameterization to derive the quantities required by RCC. For CTM, which is distilled from EDM, we adopt the EDM noise parameterization together with local Gaussian approximations of the sender and shared distributions at intermediate states. This yields a proof-of-concept probabilistic formulation that enables compression with pre-trained few-step generative models without retraining. On low-resolution benchmarks, the resulting codecs reduce encoding and decoding time and improve realism in the low-bit-rate regime.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Vision Foundation Models&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link7&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;8&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Vision-Assisted Foundation Model for Solving Multi-Task Vehicle Routing Problems&lt;/strong&gt;<br>&lt;small&gt;Shuangchun Gui, Zhiguang Cao, Wen Song, Yew-Soon Ong&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision Foundation Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Combinatorial Optimization&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vehicle Routing&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 8 / arXiv:2606.10431&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10431&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4 loosely: it uses a vision-assisted foundation-model approach for multi-task vehicle routing, but this is more of an optimization application than a vision foundation model contribution.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Multi-task vehicle routing problems play a critical role in enhancing efficiency across various industries and service sectors. These problems consist of multiple variants that optimize routing costs while meeting diverse customer constraints. Existing multi-task VRP solvers solely utilize a graph-based modality, limiting their ability to address variants with multiple constraints. As a format to represent complex semantics, vision modality shows great potential for encoding diverse VRP constraints. This motivates us to learn patch-level semantics from the vision images, and then integrate them into a graph-based model to solve various VRP variants simultaneously. However, directly applying this approach to multi-task VRPs presents three challenges: 1) existing VRP images lack constraint representations, which are essential for multi-task VRPs, 2) the fixed receptive field of individual patches cannot effectively accommodate varying requirements across tasks, and 3) imbalanced pixel distribution among constraints may cause the model to overlook constraints with fewer pixels. In this paper, we propose a vision-assisted foundation model (VaFM) to address these challenges. In the vision modality, input images tailored to all constraints are encoded by a convolutional neural network. The obtained patch embeddings are fused with graph-based nodes to generate solutions, with an auxiliary task designed to address the pixel-imbalanced issue. The performance of VaFM is evaluated across 16 different VRP variants. The experimental results demonstrate the superiority of VaFM over state-of-the-art methods, especially for variants with complex constraints.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Vision-Language Models&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link8&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;9&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Improving Adversarial Transferability on Vision-Language Pre-training Models via Surrogate-Specific Bias Correction&lt;/strong&gt;<br>&lt;small&gt;Lijia Yu, Jiuxin Cao, Yuchen Qiang, Changhao Chen, Yifei Huang, Bo Liu&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision-Language Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Adversarial Transfer&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Robustness&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CR&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 9 / arXiv:2606.10571&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10571&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 2 only indirectly: it studies adversarial transfer on vision-language pretraining models, but it is primarily a robustness/attack paper rather than a new VLLM/MLLM architecture.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Adversarial examples reveal vulnerabilities in Vision-Language Pre-training (VLP) models and provide insights for improving robustness. A key property is cross-model transferability, which enables transfer-based black-box attacks. However, existing attacks often rely heavily on the surrogate model, causing cross-model performance drops. One reason is that adversarial optimization may follow surrogate model responses more than input semantics, making the update direction effective on the surrogate but less transferable to unseen targets. We refer to this dependency as surrogate-specific bias. Motivated by this observation, DeBias-Attack improves transferability by correcting surrogate-specific bias in adversarial optimization directions. It maintains two perturbation branches. The main branch optimizes a perturbation on the original image and obtains the adversarial gradient used to disrupt image-text alignment. The reference branch optimizes a perturbation on a weak-semantic image constructed from the dataset mean image with small Gaussian noise resampled at each iteration. Since this weak-semantic image contains little clear visual content, its optimization reflects surrogate responses more than image semantics, and its reference gradient estimates surrogate-specific bias. DeBias-Attack removes the aligned projection of the main gradient on the reference gradient before updating the adversarial image, then performs context-aware text substitution using the updated adversarial image. DeBias-Attack is the first transfer-based VLP attack that corrects surrogate-specific bias through gradient correction. Experiments show strong performance across VLP models, downstream tasks, and open-source and closed-source multimodal large language models.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Remote Sensing&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
+<p>&lt;details class=&quot;paper-row&quot; id=&quot;link9&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;10&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Spatially Selective Self-Training for Unsupervised Building Change Detection&lt;/strong&gt;<br>&lt;small&gt;Wafaa I. M. Hussin, Zhi Lu, Anas M. I. Mohammed, Xiang Zhou, Ratiba A. H. Abubaker, Zhenming Peng&lt;/small&gt;</p>
+<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Remote Sensing&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Change Detection&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Self-Training&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 10 / arXiv:2606.10775&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.10775&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
+<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
+<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4 only loosely: it uses a spatially selective self-training method with foundation-model-style pseudo supervision for remote sensing change detection, but it is not a core vision foundation model paper.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Unsupervised building change detection aims to learn building-change masks from unlabeled bi-temporal remote sensing images. Existing label-free methods often follow a discrepancy-to-mask paradigm, directly using temporal differences, frozen foundation-model responses, prompt-based outputs, or post-processing results as final change maps. Although these strategies provide annotation-free cues, they do not learn a task-specific building-change detector and remain vulnerable to the gap between generic temporal discrepancies and building-defined structural changes. In practice, such discrepancies are often noisy and task-irrelevant, as appearance shifts, registration errors, and non-building modifications can produce strong but misleading responses. To address this problem, we propose SST-CD, a spatially selective self-training framework that reformulates fully label-free building change detection as end-to-end detector learning under noisy pseudo supervision.   SST-CD uses temporal discrepancies as candidate pseudo labels and trains the detector only on spatially reliable pixels, whose reliability is estimated by a local consistency criterion that filters inconsistent regions from supervision. To further stabilize noisy self-training, a lightweight feature adapter recalibrates bi-temporal features, while a prototype-based decoder produces compact change and no-change representations. Experiments on LEVIR-CD, WHU-CD, and DSIFN-CD show that SST-CD achieves F1 scores of 83.08\%, 91.69\%, and 86.60\%, respectively, outperforming existing unsupervised and label-free baselines. Code will be made publicly available.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
+<p>&lt;/details&gt;</p>
+<p>&lt;/nav&gt;</p>
+<p>&lt;section class=&quot;archive-block&quot;&gt;<br>&lt;h2&gt;Past ArXiv&lt;/h2&gt;<br>&lt;div class=&quot;archive-links&quot;&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-09.html&quot;&gt;<br>&lt;span&gt;June 09, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-08.html&quot;&gt;<br>&lt;span&gt;June 08, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-06.html&quot;&gt;<br>&lt;span&gt;June 06, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-05.html&quot;&gt;<br>&lt;span&gt;June 05, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-04.html&quot;&gt;<br>&lt;span&gt;June 04, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-03.html&quot;&gt;<br>&lt;span&gt;June 03, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-02.html&quot;&gt;<br>&lt;span&gt;June 02, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-01.html&quot;&gt;<br>&lt;span&gt;June 01, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-29.html&quot;&gt;<br>&lt;span&gt;May 29, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-28.html&quot;&gt;<br>&lt;span&gt;May 28, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-27.html&quot;&gt;<br>&lt;span&gt;May 27, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-26.html&quot;&gt;<br>&lt;span&gt;May 26, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-25.html&quot;&gt;<br>&lt;span&gt;May 25, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-22.html&quot;&gt;<br>&lt;span&gt;May 22, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-21.html&quot;&gt;<br>&lt;span&gt;May 21, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-20.html&quot;&gt;<br>&lt;span&gt;May 20, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-19.html&quot;&gt;<br>&lt;span&gt;May 19, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-18.html&quot;&gt;<br>&lt;span&gt;May 18, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-16.html&quot;&gt;<br>&lt;span&gt;May 16, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-15.html&quot;&gt;<br>&lt;span&gt;May 15, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-14.html&quot;&gt;<br>&lt;span&gt;May 14, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
+<p>&lt;/div&gt;<br>&lt;/section&gt;</p>
+<p>&lt;section class=&quot;prompt-block&quot;&gt;<br>&lt;h2&gt;Paper selection prompt&lt;/h2&gt;<br>&lt;pre&gt; 1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
+<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.&lt;/pre&gt;<br>&lt;/section&gt;<br>&lt;/main&gt;</p>
+    </article>
+
+  </main>
+</body>
+</html>
