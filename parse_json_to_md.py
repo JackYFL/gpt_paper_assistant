@@ -1109,6 +1109,60 @@ details:not([open]) > .topic-heading::before {
 """
 
 
+def render_markdown_paper(paper_entry: dict, idx: int) -> str:
+    arxiv_id = paper_entry["arxiv_id"]
+    arxiv_url = f"https://arxiv.org/abs/{arxiv_id}"
+    abstract = clean_abstract(paper_entry["abstract"])
+    authors = ", ".join(paper_entry["authors"])
+    title = paper_entry["title"]
+
+    paper_string = f'## {idx}. [{title}]({arxiv_url}) <a id="link{idx}"></a>\n'
+    paper_string += f"**ArXiv ID:** {arxiv_id}\n"
+    paper_string += f"**Authors:** {authors}\n\n"
+    paper_string += f"**Abstract:** {abstract}\n\n"
+    if "COMMENT" in paper_entry:
+        paper_string += f"**Comment:** {paper_entry['COMMENT']}\n"
+    if "RELEVANCE" in paper_entry and "NOVELTY" in paper_entry:
+        paper_string += f"**Relevance:** {paper_entry['RELEVANCE']}\n"
+        paper_string += f"**Novelty:** {paper_entry['NOVELTY']}\n"
+    return paper_string + "\n---\n"
+
+
+def render_markdown_digest(papers_dict, output_date=None) -> str:
+    """Plain-markdown digest used for the dated archive sources and the email
+    attachment. The `## N. [title](url)` layout is what `write_archive_pages`
+    parses back into archive pages, so keep it in sync with
+    `parse_archive_markdown_papers`."""
+    output_date = output_date or datetime.today()
+    with open("configs/paper_topics.txt", "r") as f:
+        criterion = f.read()
+
+    header = (
+        "# Personalized Daily ArXiv Papers "
+        + output_date.strftime("%m/%d/%Y")
+        + f"\nTotal relevant papers: {len(papers_dict)}\n\n"
+        + "Paper selection prompt and criteria at the bottom\n\n"
+        + "Table of contents with paper titles:\n\n"
+    )
+    toc = "\n".join(
+        f"{i}. [{paper['title']}](#link{i})\n"
+        f"**Authors:** {', '.join(paper['authors'])}\n"
+        for i, paper in enumerate(papers_dict.values())
+    )
+    papers = "\n".join(
+        render_markdown_paper(paper, i)
+        for i, paper in enumerate(papers_dict.values())
+    )
+    return (
+        header
+        + toc
+        + "\n---\n"
+        + papers
+        + "\n\n---\n\n"
+        + f"## Paper selection prompt\n{criterion}"
+    )
+
+
 def render_md_string(papers_dict, output_date=None):
     with open("configs/paper_topics.txt", "r") as f:
         criterion = f.read()
@@ -1223,7 +1277,7 @@ if __name__ == "__main__":
         smtp_port = 587
         attachment_path = f"out/output_{today_str}.md"
         with open(attachment_path, "w") as f:
-            f.write(render_md_string(output))
+            f.write(render_markdown_digest(output))
 
         send_email(
             sender_email,

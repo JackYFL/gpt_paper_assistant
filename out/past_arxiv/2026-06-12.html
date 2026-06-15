@@ -632,244 +632,596 @@ details:not([open]) > .topic-heading::before {
     </section>
     <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
 
-    <article class="archive-content">
-      <p>&lt;style&gt;<br>@import url(&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;display=swap&quot;);</p>
-<p>:root {<br>color-scheme: light dark;<br>--paper-bg: #f6f7f4;<br>--ink: #1f2a2e;<br>--muted: #647071;<br>--line: #d9dfda;<br>--panel: #ffffff;<br>--accent: #276e6a;<br>--accent-2: #a63d40;<br>--soft: #e6efe8;<br>--soft-2: #f4e8df;<br>--tint: #f8fbf9;<br>--cream: #fbfaf7;<br>--shadow: 0 10px 24px rgba(31, 42, 46, 0.08);<br>--serif: Newsreader, &quot;Iowan Old Style&quot;, Georgia, serif;<br>}</p>
-<p>@media (prefers-color-scheme: dark) {<br>:root {<br>--paper-bg: #14181a;<br>--ink: #e7ecea;<br>--muted: #9aa7a5;<br>--line: #2c3537;<br>--panel: #1c2225;<br>--accent: #7cc7c0;<br>--accent-2: #e29a9c;<br>--soft: #21302e;<br>--soft-2: #34272a;<br>--tint: #1e2629;<br>--cream: #20262a;<br>--shadow: 0 10px 24px rgba(0, 0, 0, 0.35);<br>}<br>}</p>
-<p>html {<br>scroll-behavior: smooth;<br>}</p>
-<p>::selection {<br>background: var(--soft);<br>}</p>
-<p>body {<br>margin: 0;<br>background: var(--paper-bg);<br>color: var(--ink);<br>font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,<br>BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;<br>}</p>
-<p>a {<br>color: inherit;<br>text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);<br>text-underline-offset: 0.18em;<br>}</p>
-<p>.daily-arxiv {<br>max-width: 1180px;<br>margin: 0 auto;<br>padding: 40px 20px 72px;<br>}</p>
-<p>.daily-arxiv::before {<br>content: &quot;&quot;;<br>display: block;<br>height: 4px;<br>border-radius: 999px;<br>background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);<br>}</p>
-<p>.hero {<br>display: grid;<br>grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);<br>gap: 28px;<br>align-items: end;<br>padding: 42px 0 30px;<br>border-bottom: 1px solid var(--line);<br>}</p>
-<p>.eyebrow, .paper-kicker {<br>margin: 0 0 10px;<br>color: var(--accent);<br>font-size: 0.78rem;<br>font-weight: 800;<br>letter-spacing: 0;<br>text-transform: uppercase;<br>}</p>
-<p>.hero h1 {<br>max-width: 820px;<br>margin: 0;<br>font-family: var(--serif);<br>font-size: clamp(2.2rem, 7vw, 5.8rem);<br>font-weight: 600;<br>line-height: 1;<br>letter-spacing: -0.015em;<br>}</p>
-<p>.hero-copy {<br>max-width: 760px;<br>margin: 18px 0 0;<br>color: var(--muted);<br>font-size: 1.06rem;<br>}</p>
-<p>.metrics {<br>display: grid;<br>grid-template-columns: repeat(2, minmax(0, 1fr));<br>gap: 10px;<br>}</p>
-<p>.archive-hero .metrics {<br>grid-template-columns: minmax(220px, 1fr);<br>min-width: 220px;<br>}</p>
-<p>.metric {<br>min-height: 88px;<br>padding: 16px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
-<p>.metric span {<br>display: block;<br>color: var(--muted);<br>font-size: 0.8rem;<br>font-weight: 700;<br>}</p>
-<p>.metric strong {<br>display: block;<br>margin-top: 8px;<br>font-family: var(--serif);<br>font-size: 1.8rem;<br>line-height: 1;<br>overflow-wrap: anywhere;<br>}</p>
-<p>.section-title {<br>margin: 34px 0 14px;<br>font-family: var(--serif);<br>font-size: 1.6rem;<br>font-weight: 600;<br>}</p>
-<p>.category-groups {<br>display: grid;<br>gap: 24px;<br>}</p>
-<p>.category-section,<br>.topic-section {<br>scroll-margin-top: 18px;<br>}</p>
-<p>.category-heading,<br>.topic-heading {<br>display: flex;<br>align-items: baseline;<br>gap: 10px;<br>margin: 0 0 10px;<br>cursor: pointer;<br>list-style: none;<br>user-select: none;<br>}</p>
-<p>.category-heading::-webkit-details-marker,<br>.topic-heading::-webkit-details-marker {<br>display: none;<br>}</p>
-<p>.category-heading::before,<br>.topic-heading::before {<br>content: &quot;▾&quot;;<br>color: var(--accent);<br>font-size: 0.9rem;<br>line-height: 1;<br>transform: rotate(0deg);<br>transition: transform 140ms ease;<br>}</p>
-<p>details:not([open]) &gt; .category-heading::before,<br>details:not([open]) &gt; .topic-heading::before {<br>transform: rotate(-90deg);<br>}</p>
-<p>.category-heading h3 {<br>color: var(--ink);<br>font-size: 1rem;<br>margin: 0;<br>}</p>
-<p>.category-heading span {<br>color: var(--muted);<br>font-size: 0.86rem;<br>font-weight: 700;<br>}</p>
-<p>.topic-section {<br>display: grid;<br>gap: 10px;<br>margin-top: 14px;<br>}</p>
-<p>.topic-section h4 {<br>margin: 0;<br>color: var(--accent-2);<br>font-size: 0.9rem;<br>font-weight: 900;<br>}</p>
-<p>.topic-heading {<br>color: var(--accent-2);<br>font-size: 0.9rem;<br>font-weight: 900;<br>}</p>
-<p>.topic-heading::before {<br>color: var(--accent-2);<br>}</p>
-<p>.queue {<br>display: grid;<br>gap: 10px;<br>}</p>
-<p>.paper-row {<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>overflow: hidden;<br>transition: border-color 150ms ease, box-shadow 150ms ease;<br>}</p>
-<p>.paper-row:hover {<br>border-color: color-mix(in srgb, var(--accent) 55%, var(--line));<br>box-shadow: var(--shadow);<br>}</p>
-<p>.paper-row[open] {<br>border-color: color-mix(in srgb, var(--accent) 45%, var(--line));<br>box-shadow: inset 3px 0 0 var(--accent), var(--shadow);<br>}</p>
-<p>.paper-row-summary {<br>display: grid;<br>grid-template-columns: 36px minmax(0, 1fr) auto 14px;<br>gap: 12px;<br>align-items: start;<br>min-height: 74px;<br>padding: 14px;<br>cursor: pointer;<br>list-style: none;<br>user-select: none;<br>transition: background 140ms ease;<br>}</p>
-<p>.paper-row-summary:hover {<br>background: var(--tint);<br>}</p>
-<p>.paper-row-summary:focus-visible,<br>.category-heading:focus-visible,<br>.topic-heading:focus-visible {<br>outline: 2px solid var(--accent);<br>outline-offset: 2px;<br>}</p>
-<p>.paper-row-summary::-webkit-details-marker {<br>display: none;<br>}</p>
-<p>.paper-row-summary::after {<br>content: &quot;▾&quot;;<br>grid-column: 4;<br>grid-row: 1;<br>justify-self: end;<br>margin-top: 5px;<br>color: var(--muted);<br>font-size: 0.85rem;<br>line-height: 1;<br>transform: rotate(0deg);<br>transition: transform 140ms ease;<br>}</p>
-<p>.paper-row:not([open]) &gt; .paper-row-summary::after {<br>transform: rotate(-90deg);<br>}</p>
-<p>.queue-index {<br>display: grid;<br>width: 36px;<br>height: 36px;<br>place-items: center;<br>border-radius: 50%;<br>background: var(--soft);<br>color: var(--accent);<br>font-weight: 800;<br>transition: background 140ms ease, color 140ms ease;<br>}</p>
-<p>.paper-row[open] .queue-index {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
-<p>.paper-row-copy strong {<br>display: block;<br>line-height: 1.28;<br>}</p>
-<p>.paper-row-copy small {<br>display: block;<br>margin-top: 7px;<br>color: var(--muted);<br>line-height: 1.35;<br>}</p>
-<p>.paper-row-detail {<br>padding: 0 18px 18px 62px;<br>border-top: 1px solid var(--line);<br>}</p>
-<p>.paper-row[open] .paper-row-detail {<br>animation: detail-reveal 200ms ease;<br>}</p>
-<p>@keyframes detail-reveal {<br>from {<br>opacity: 0;<br>transform: translateY(-4px);<br>}<br>to {<br>opacity: 1;<br>transform: none;<br>}<br>}</p>
-<p>.paper-row-meta {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 10px;<br>align-items: center;<br>justify-content: space-between;<br>padding-top: 16px;<br>color: var(--muted);<br>font-size: 0.82rem;<br>font-weight: 800;<br>text-transform: uppercase;<br>}</p>
-<p>.category-tags,<br>.topic-tags {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 6px;<br>margin-top: 10px;<br>}</p>
-<p>.category-tag {<br>padding: 4px 8px;<br>border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);<br>border-radius: 999px;<br>background: var(--tint);<br>color: var(--accent);<br>font-size: 0.76rem;<br>font-weight: 800;<br>line-height: 1;<br>}</p>
-<p>.topic-tag {<br>padding: 4px 8px;<br>border-radius: 999px;<br>background: var(--soft-2);<br>color: var(--accent-2);<br>font-size: 0.76rem;<br>font-weight: 800;<br>line-height: 1;<br>}</p>
-<p>.score-pill {<br>min-width: 38px;<br>padding: 5px 8px;<br>border-radius: 999px;<br>background: var(--soft-2);<br>color: var(--accent-2);<br>font-size: 0.84rem;<br>font-weight: 800;<br>text-align: center;<br>}</p>
-<p>.score-pill.score-high {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
-<p>.score-pill.score-low {<br>border: 1px solid var(--line);<br>background: transparent;<br>color: var(--muted);<br>}</p>
-<p>.paper-action {<br>flex: 0 0 auto;<br>align-self: start;<br>padding: 8px 12px;<br>border: 1px solid var(--accent);<br>border-radius: 999px;<br>color: var(--accent);<br>font-size: 0.88rem;<br>font-weight: 800;<br>text-decoration: none;<br>transition: background 140ms ease, color 140ms ease;<br>}</p>
-<p>.paper-action:hover {<br>background: var(--accent);<br>color: var(--panel);<br>}</p>
-<p>.authors, .comment, .abstract {<br>margin: 14px 0 0;<br>}</p>
-<p>.authors {<br>color: var(--muted);<br>}</p>
-<p>.paper-scores {<br>display: flex;<br>flex-wrap: wrap;<br>gap: 8px;<br>margin-top: 16px;<br>}</p>
-<p>.paper-scores span {<br>padding: 6px 10px;<br>border-radius: 999px;<br>background: var(--soft);<br>color: var(--accent);<br>font-weight: 700;<br>}</p>
-<p>.abstract {<br>max-width: 78ch;<br>line-height: 1.7;<br>}</p>
-<p>.comment {<br>padding: 12px 14px;<br>border-left: 4px solid var(--accent);<br>border-radius: 0 8px 8px 0;<br>background: var(--tint);<br>}</p>
-<p>.prompt-block {<br>margin-top: 30px;<br>padding: 22px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--cream);<br>}</p>
-<p>.prompt-block pre {<br>overflow-x: auto;<br>white-space: pre-wrap;<br>}</p>
-<p>.archive-block {<br>margin-top: 30px;<br>padding: 22px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
-<p>.archive-block h2 {<br>margin: 0;<br>}</p>
-<p>.archive-block p,<br>.archive-nav {<br>color: var(--muted);<br>}</p>
-<p>.archive-links {<br>display: grid;<br>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));<br>gap: 10px;<br>margin-top: 14px;<br>}</p>
-<p>.archive-link {<br>display: block;<br>padding: 12px 14px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--cream);<br>text-decoration: none;<br>transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;<br>}</p>
-<p>.archive-link:hover {<br>border-color: color-mix(in srgb, var(--accent) 55%, var(--line));<br>box-shadow: var(--shadow);<br>transform: translateY(-1px);<br>}</p>
-<p>.archive-link span {<br>display: block;<br>font-weight: 900;<br>}</p>
-<p>.archive-link small {<br>display: block;<br>margin-top: 4px;<br>color: var(--muted);<br>}</p>
-<p>.archive-summary {<br>display: grid;<br>grid-template-columns: repeat(3, minmax(0, 1fr));<br>gap: 10px;<br>margin-top: 24px;<br>}</p>
-<p>.archive-content {<br>padding: 24px;<br>border: 1px solid var(--line);<br>border-radius: 8px;<br>background: var(--panel);<br>}</p>
-<p>.archive-block h2,<br>.prompt-block h2,<br>.archive-content h1,<br>.archive-content h2 {<br>font-family: var(--serif);<br>font-weight: 600;<br>line-height: 1.2;<br>}</p>
-<p>.archive-content h2 {<br>margin-top: 26px;<br>}</p>
-<p>@media (prefers-reduced-motion: reduce) {<br>html {<br>scroll-behavior: auto;<br>}</p>
-<p>* {<br>transition: none !important;<br>animation: none !important;<br>}<br>}</p>
-<p>@media (max-width: 760px) {<br>.daily-arxiv {<br>padding: 24px 14px 56px;<br>}</p>
-<p>.hero {<br>grid-template-columns: 1fr;<br>padding-top: 20px;<br>}</p>
-<p>.metrics {<br>grid-template-columns: 1fr 1fr;<br>}</p>
-<p>.archive-summary {<br>grid-template-columns: 1fr;<br>}</p>
-<p>.queue {<br>grid-template-columns: 1fr;<br>}</p>
-<p>.paper-action {<br>display: inline-block;<br>}</p>
-<p>.paper-row-summary {<br>grid-template-columns: 32px minmax(0, 1fr) auto 14px;<br>gap: 10px;<br>padding: 12px;<br>}</p>
-<p>.paper-row-detail {<br>padding: 0 14px 16px;<br>}<br>}<br>&lt;/style&gt;</p>
-<p>&lt;main class=&quot;daily-arxiv&quot;&gt;<br>&lt;section class=&quot;hero&quot;&gt;<br>&lt;div&gt;<br>&lt;p class=&quot;eyebrow&quot;&gt;Daily ArXiv / June 12, 2026&lt;/p&gt;<br>&lt;h1&gt;Personalized paper radar&lt;/h1&gt;<br>&lt;p class=&quot;hero-copy&quot;&gt;<br>A focused reading queue selected from today&#x27;s ArXiv feed, ranked by topic fit,<br>novelty, and configured author matches.<br>&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;div class=&quot;metrics&quot;&gt;</p>
-<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Relevant papers&lt;/span&gt;<br>&lt;strong&gt;14&lt;/strong&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Top score&lt;/span&gt;<br>&lt;strong&gt;13&lt;/strong&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Average score&lt;/span&gt;<br>&lt;strong&gt;10.0&lt;/strong&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;metric&quot;&gt;<br>&lt;span&gt;Source&lt;/span&gt;<br>&lt;strong&gt;ArXiv&lt;/strong&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/section&gt;</p>
-<p>&lt;h2 class=&quot;section-title&quot; id=&quot;paper-content&quot;&gt;Reading Queue&lt;/h2&gt;<br>&lt;nav class=&quot;category-groups&quot; aria-label=&quot;selected papers by category&quot;&gt;</p>
-<p>&lt;details class=&quot;category-section&quot; open&gt;<br>&lt;summary class=&quot;category-heading&quot;&gt;<br>&lt;h3&gt;cs.CV&lt;/h3&gt;<br>&lt;span&gt;10 papers&lt;/span&gt;<br>&lt;/summary&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Spatial Reasoning&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link0&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;1&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning&lt;/strong&gt;<br>&lt;small&gt;Seokju Cho, Ryo Hachiuma, Abhishek Badki, Hang Su, Byung-Kwan Lee, Chan Hee Song, Sifei Liu, Subhashree Radhakrishnan, Seungryong Kim, Yu-Chiang Frank Wang, Min-Hung Chen&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Spatial Reasoning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;VLM Agents&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Tool Use&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;13&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 1 / arXiv:2606.13673&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13673&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;7&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 1 very closely: it proposes a new action interface for agentic spatial reasoning, specifically targeting open-ended 3D/4D spatial understanding.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge for vision-language models (VLMs). Tool-augmented agents attempt to address this by augmenting VLMs with specialist perception modules, yet their effectiveness is bounded by the action interface through which those tools are invoked. In this work, we study how the design of this interface shapes the agent&amp;#x27;s capacity for open-ended spatial reasoning. Existing spatial agents either employ single-pass code execution, which commits to a full analysis strategy before any intermediate result is observed, or rely on a structured tool-call interface that often offers less flexibility for freely composing operations or tailoring the analysis to each task. Both designs offer limited flexibility for open-ended, complex 3D/4D spatial reasoning. We therefore propose SpatialClaw, a training-free framework for spatial reasoning that adopts code as the action interface. SpatialClaw maintains a stateful Python kernel pre-loaded with input frames and a suite of perception and geometry primitives, letting a VLM-backed agent write one executable cell per step conditioned on all prior outputs, enabling the agent to flexibly compose and manipulate perception results and adapt its analysis to both intermediate text and visual observations and the demands of each problem. Evaluated across 20 spatial reasoning benchmarks spanning a broad range of static and dynamic 3D/4D spatial reasoning tasks, SpatialClaw achieves 59.9% average accuracy, outperforming the recent spatial agent by +11.2 points, with consistent gains across six VLM backbones from two model families without any benchmark- or model-specific adaptation.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Unified Multimodal Models&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link1&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;2&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers&lt;/strong&gt;<br>&lt;small&gt;Guozhen Zhang, Xuerui Qiu, Yutao Cui, Tianhui Song, Changlin Li, Junzhe Li, Tao Huang, Xiao Zhang, Yang Li, Jianbing Wu, Miles Yang, Zhao Zhong, Liefeng Bo, Limin Wang&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Unified Multimodal Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Visual Tokenization&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Video Generation&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;13&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 2 / arXiv:2606.13289&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13289&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;7&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 2 and criterion 4: it introduces a unified multimodal model with holistic visual tokenizers for image/video understanding and generation.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Holistic visual tokenizers are fundamental to unified multimodal models (UMMs) as they map diverse visual inputs into a unified representation space. In this paper, we present HYDRA-X, the first UMM that unifies image and video tokenization within a single Vision Transformer (ViT). Our design is driven by two core challenges: efficiently injecting spatiotemporal reconstruction capability into a native ViT, and embedding image- and video-level semantic awareness into the latent space. To address the first, comprehensive ablations reveal two key findings: (1) frame-level causal temporal attention suffices for visual reconstruction, whereas full spatiotemporal attention degrades it; and (2) hierarchical temporal compression substantially outperforms single-step alternatives. To tackle the second, we propose a lightweight decompressor that upsamples temporally compressed features under joint image-video teacher supervision, thereby enforcing complementary semantic structures within the compact latent space. Building on this holistic tokenizer, we further propose a principled improvement of the editing pipeline: source-target interaction should occur at the latent level inside the tokenizer rather than at the semantic level inside the LLM, substantially improving editing consistency and accelerating convergence. Instantiated at the 7B dense model, HYDRA-X achieves strong performance across image and video understanding and generation tasks, paving the way for future unified-tokenizer UMMs.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Visual Reasoning&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link3&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;4&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Language-Guided Abstraction for Visual Reasoning&lt;/strong&gt;<br>&lt;small&gt;Xu-Jing Ye, Yuan-Gen Wang, Ruping Wang&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Visual Reasoning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Language-Guided Learning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;ARC&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;11&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 4 / arXiv:2606.12847&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12847&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 1: it proposes a new method for visual reasoning that injects language-guided abstraction into an ARC-style setting.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;The Abstraction and Reasoning Corpus (ARC) is viewed as a critical avenue to Artificial General Intelligence (AGI), as it enables models to learn abstract transformation rules from few-shot examples and then generalize to new tasks. However, prevalent ARC methodology is either pure language or vision-only (i.e., VARC). The former depends heavily on LLMs, consuming billions of parameters. The latter often struggles to capture high-level semantics, leading to overfitting on pixel-level patterns. To bridge this gap, we propose L-VARC, a novel framework that enhances visual reasoning via a language-guided Learning Using Privileged Information (LUPI) branch. Specifically, we design a Semantic Compression Module by feeding a unified, task-agnostic prompt into DeepSeek-V3. In this way, the raw LARC (a crowd-sourced language description dataset) can be substantially refined and structured, fitting with the context length constraint of standard text encoders (e.g., CLIP). Moreover, we design a Cross-Attention Projector to align visual features with semantic embeddings, aiming to guide the training of the ARC model. Notably, the LUPI branch is taken in the training process and will be discarded during inference, thereby yielding a lightweight model with a mere 18 million parameters. Extensive experiments demonstrate that our L-VARC effectively leverages linguistic priors to boost visual reasoning and outperforms state-of-the-art. Ablation studies further confirm the contribution of the two new designs towards the L-VARC framework. The code is available at https://github.com/GZHU-DVL/L-VARC.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Vision Foundation Models&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link5&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;6&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;HairPort: In-context 3D-aware Hair Import and Transfer for Images&lt;/strong&gt;<br>&lt;small&gt;Alireza Heidari, Amirhossein Alimohammadi, Wallace Michel Pinto Lira, Adi Bar-Lev, Ali Mahdavi-Amiri&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision Foundation Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Image Editing&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Generative Modeling&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.GR&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;11&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 6 / arXiv:2606.12562&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12562&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4: vision foundation models are used for 3D-aware hairstyle import/transfer, with a new bald-conversion dataset and a generative pipeline.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Transferring hairstyles between images is an important but challenging task in computer graphics, computer vision, and visual effects. It enables users to explore new looks without physically altering their hair, with applications in virtual try-on systems, augmented reality, and entertainment. Most prior works operate best under small pose gaps, and they fall short under large viewpoint and scale differences, where missing hair content must be synthesized rather than transferred. We propose HairPort, a 3D-aware hairstyle transfer framework that attempts to solve these issues by explicitly separating hair removal from transfer and enforcing geometric consistency before synthesis. We introduce a Bald Converter, which produces realistic bald versions of faces through LoRA-based in-context adaptation of FLUX.1 Kontext. To train our Bald Converter, we introduce a new dataset, Baldy, containing 6,000 paired bald and original images across diverse identities and conditions. We also use a 3D-Aware Transfer Pipeline that reconstructs and re-renders the reference hairstyle from the target viewpoint before compositing it onto the source image. Being 3D aware, our method supports large pose and scale discrepancies between the source and target. Finally, a conditional flow-matching generator synthesizes the transferred result from the bald source and geometry-aligned reference guidance. Together, our method enables accurate, pose-consistent, and identity-preserving hairstyle transfer, outperforming existing methods both qualitatively and quantitatively.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link9&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;10&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Visual Place Recognition in Forests with Depth-Aware Distillation&lt;/strong&gt;<br>&lt;small&gt;Walter Nedov, Saimunur Rahman, Kavindie Katuwandeniya, David Hall, Kaushik Roy, Peyman Moghadam&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Vision Foundation Models&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Place Recognition&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Depth Distillation&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.RO&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;9&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 10 / arXiv:2606.13206&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13206&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;4&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4: it applies a vision foundation model (DINOv2) to visual place recognition with depth-aware distillation.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Visual place recognition in natural forest environments remains challenging due to repetitive vegetation, weak structural cues, and significant appearance variation across traversals. To address this limitation, this paper proposes a lightweight depth-aware distillation framework that injects geometric cues into a DINOv2-based place recognition model, while maintaining its pre-trained descriptor space. Evaluated on the recent WildCross benchmark, the proposed approach yields gains over an appearance-only counterpart, providing robustness to appearance variations. These results demonstrate the importance of depth as a strong complementary modality for place recognition in natural environments and identify depth-aware distillation as a promising direction for more robust forest perception.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Multimodal LLMs&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link6&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;7&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;GRIP: Feedback-Guided Prompt Retrieval for Large Multimodal Models&lt;/strong&gt;<br>&lt;small&gt;Garvita Allabadi, Matteo Sodano, Roberto Estev\~ao, Yuxiong Wang, Vikram Adve, Emre Kiciman, Ranveer Chandra&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multimodal LLMs&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;In-Context Learning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Retrieval&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;10&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 7 / arXiv:2606.12744&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12744&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 2: it is about large multimodal models and a new retrieval method for multimodal in-context learning.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;In-Context Learning (ICL) has become a powerful mechanism for adapting Large Language Models (LLMs) to new tasks without fine-tuning. Extending this concept to Large Multimodal Models (LMMs), Multimodal In-Context Learning (M-ICL) relies on retrieving relevant examples, such as images, captions, or question-answer pairs, to guide predictions across tasks like classification, captioning, and visual question answering (VQA). Most existing approaches select in-context examples based on feature-space similarity, assuming that semantically similar samples provide the most useful context. However, our systematic analysis reveals that this assumption does not always hold: visually similar examples are not necessarily those that most effectively enhance in-context learning performance.   To address this, we propose the Guided Retrieval of In-context Prompts (GRIP), a learnable vision-only retrieval framework that leverages feedback from LMMs to identify examples that truly improve model predictions. GRIP learns to distinguish beneficial from detrimental in-context examples through contrastive training, refining retrieval beyond pure similarity. Across three multimodal tasks, namely classification, captioning, and VQA, GRIP improves consistently over similarity-based retrieval on Qwen2.5-VL-7B, with its strongest gains in classification on Idefics2-8B. Moreover, we demonstrate that retrievers trained with feedback from one open LMM can be transferred to other models without retraining, including closed-source GPT-4o and Gemini, enabling scalable and cost-efficient deployment of M-ICL. Code will be published upon acceptance.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Object-Centric Learning&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link10&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;11&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Dual-State Slot Attention: Decoupling Appearance and Identity for Video Object-Centric Learning&lt;/strong&gt;<br>&lt;small&gt;Sieu Tran, Duc Nguyen, Hao Vo, Khoa Vo, Ngan Le&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Object-Centric Learning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Video Segmentation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Self-Supervised Learning&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 11 / arXiv:2606.12601&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12601&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; No close match to the four criteria; it is a video object-centric learning method, which is adjacent to vision but not specifically one of the requested categories.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Unsupervised video object-centric learning aims to decompose dynamic scenes into persistent, object-level representations without supervision. However, existing slot-based methods struggle to maintain stable object identity in challenging settings such as rapid motion and partial occlusion. First, they typically encode both the per-frame appearance of an object and its identity across frames in a single slot vector, creating an objective conflict that leads to slot swapping: reconstruction requires sensitivity to transient visual changes, whereas temporal consistency requires invariance to them. Second, the token renormalization used in Slot Attention can amplify weakly attending slots, allowing them to absorb tokens from other objects and destabilize slot-to-object correspondence.   We propose Dual-State Slot Attention (DSSA), a fully self-supervised framework that addresses these limitations by separating appearance from identity and by reducing spurious updates from weakly matching slots. DSSA decomposes each slot into a local state for per-frame appearance and an identity state for temporally stable object information, thereby aligning reconstruction and temporal consistency with separate representations. The identity state is updated through a learned recurrent transition that acts as a temporal filter on the local state, while competition-modulated aggregation (CMA) down-weights updates from weakly matching slots and prevents them from absorbing tokens from other objects. Experiments on MOVi-C, MOVi-D, and YouTube-VIS demonstrate that DSSA consistently improves segmentation quality and temporal consistency over prior methods, while also yielding stronger downstream object recognition and video dynamics prediction. Code and models will be made publicly available upon acceptance.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Event Cameras&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link11&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;12&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;DIMOS: Disentangling Instance-level Moving Object Segmentation&lt;/strong&gt;<br>&lt;small&gt;Hongxiang Huang, Hongwei Ren, Xiaopeng Lin, Yulong Huang, Zeke Xie, Bojun Cheng&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Event Cameras&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Moving Object Segmentation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multimodal Fusion&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 12 / arXiv:2606.12826&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12826&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 1 only indirectly: it is a multimodal motion-segmentation method with event cameras, but not embodied spatial intelligence or VLLMs.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Moving instance segmentation (MIS) attracts increasing attention due to its broad applications in traffic surveillance, autonomous driving, and animal tracking. Event cameras record asynchronous brightness changes, providing high temporal resolution and dynamic range, which makes them highly sensitive to motion information. By fusing event and image features, motion cues from events can complement spatial details from images, enhancing the performance of MIS. However, current multimodal MIS methods still struggle to segment small moving instances, as event cameras often yield sparse features under limited resolution. Moreover, event features entangle appearance attributes with motion cues, which further restricts effective cross-modal fusion. To address these challenges, we first propose a dual-disentangling feature extraction framework that separates and extracts appearance and motion information within both image and event modalities, thereby improving feature density. Subsequently, a multi-granularity cross-modal alignment is introduced to align distributionally and semantically consistent features across modalities, enabling more effective fusion with rich spatial and temporal details. The experiment results demonstrate that our method achieves state-of-the-art performance in multimodal MIS, especially for small instances under challenging conditions such as fast motion and low-light settings.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Grounded Learning&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link12&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;13&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Objects Before Words: Object-First Inductive Biases for Grounding Language in Child-View Video&lt;/strong&gt;<br>&lt;small&gt;Sathira Silva, Abrham Kahsay Gebreselasie, Muhammad Umer Sheikh, Kartik Kuckreja, Daniel Harari, Muhammad Haris Khan&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Grounded Learning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Object-Centric Vision&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Contrastive Learning&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;8&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 13 / arXiv:2606.12985&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.12985&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4 loosely: it uses object-centric visual representations for grounded language learning from child-view video, but it is not a VLLM/MLLM or embodied benchmark.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Learning grounded word meaning from natural experience requires resolving two ambiguities in infant-view recordings: when the named referent appears and where it is in a cluttered frame. In SAYCam-style data, caregiver speech is sparse and weakly synchronized with egocentric video, so single-frame contrastive pairing yields noisy positives in which the intended object is absent or entangled with distractors. We propose BabyMind, an object-first bias for child-view contrastive learning under sparse, noisy supervision. BabyMind extracts candidate object embeddings using an offline mask-based region interface, links candidates across a short utterance-centered window into lightweight object files via tracking, and aligns utterances to bags of object files with a prototype-space multiple-instance contrastive objective. Track-coherence and global-object agreement regularizers stabilize learning and transfer object-file structure into the global frame embedding used at evaluation. On SAYCam-S, BabyMind improves Labeled-S 15 forced-choice accuracy by +2.6 points over CVCL and yields consistent gains on in-vocabulary out-of-distribution benchmarks. Code is available at https://github.com/sathiiii/BabyMind.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Surveillance Vision&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link13&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;14&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Revisiting Vehicle Color Recognition in Long-Tailed Surveillance Scenarios&lt;/strong&gt;<br>&lt;small&gt;Vin\&amp;#x27;icius Orr\&amp;#x27;u, Bruno H. Foggiatto, Gabriel E. Lima, David Menotti, Rayson Laroca&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Surveillance Vision&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Long-Tailed Recognition&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Synthetic Data&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.CV&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;7&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 14 / arXiv:2606.13625&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13625&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;3&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;4&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 4 only weakly: it applies vision models and generative augmentation to a surveillance recognition problem, but it is a narrow application rather than a foundation-model contribution.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Vehicle color recognition is an important cue for vehicle identification in surveillance systems, especially when license plates are illegible due to low resolution, occlusion, motion blur, or poor illumination. However, real-world vehicle color distributions are highly imbalanced, making overall accuracy insufficient to assess performance on rare but operationally relevant colors. This paper presents a comprehensive study of vehicle color recognition under severe class imbalance using UFPR-VeSV, a challenging real-world surveillance dataset. We investigate synthetic minority-class augmentation through two off-the-shelf generative strategies: text-conditioned image generation with RunDiffusion/JuggernautXL and image-conditioned color editing with Gemini 2.0 Flash. The curated synthetic data are combined with modern visual representations, loss reweighting, learning-rate scheduling, color-safe augmentation, foreground-aware preprocessing, and ensemble fusion. The bestperforming approach achieves 94.6% micro accuracy and 79.7% macro accuracy, improving macro accuracy by 8.2 percentage points over recent literature. A manual error analysis further shows that many remaining failures are visually ambiguous even for human annotators, highlighting the practical limits of color-based vehicle identification in unconstrained surveillance imagery. The generated images and source code are publicly available at https://github.com/viniciusorru/vcr-synthetic&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;category-section&quot; open&gt;<br>&lt;summary class=&quot;category-heading&quot;&gt;<br>&lt;h3&gt;cs.AI&lt;/h3&gt;<br>&lt;span&gt;4 papers&lt;/span&gt;<br>&lt;/summary&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Multimodal LLMs&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link2&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;3&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Reasoning for Mobile User Experience with Multimodal LLMs: Task, Benchmark, and Approach&lt;/strong&gt;<br>&lt;small&gt;Ruichao Mao, Zhou Fang, Teng Guo, Hao Yang, Yaping Li, Shaohua Peng, Maji Huang, Xiaoyu Lin, Shuoyang Liu, Xuepeng Li, Yuyu Zhang, Hai Rao&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multimodal LLMs&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Benchmark &amp;amp; Evaluation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;UI Reasoning&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;12&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 3 / arXiv:2606.13192&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13192&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 2 and criterion 3: it introduces a new MLLM-based system plus a benchmark for UI/UX reasoning from screenshots.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;User experience (UX) centered on usability, perceived consistency, and functional clarity is fundamental to real-world user interfaces (UI). The application of   multimodal large language models (MLLMs) in the field of user interfaces is evolving rapidly, such as visual element grounding, graphical user interface (GUI)   agents, and design-to-code generation. However, research efforts on evaluating UX based on UI screenshots are still immature. To address this, we propose UXBench,   a novel multimodal benchmark consisting of 2,000 VQA data samples designed to assess MLLMs&amp;#x27; ability to perform UI-based reasoning. UXBench includes 8 tasks based   on real-world UI screenshots that require fine-grained diagnosis of UX issues across layout relationships, visual hierarchy, and content consistency. Our   extensive evaluation of mainstream MLLMs shows that they remain fundamentally limited in their capacity for UI-based reasoning. The results underscore the need   for further advancements in this area. To bridge this gap, we propose UI-UX, an MLLM based on Qwen3-VL-4B-Thinking foundation model and enhanced via reinforcement   learning with two key innovations: a reward routing mechanism that dynamically balances perceptual understanding and logical reasoning during inference, and an   asymmetric transition reward that suppresses redundant or insufficient reasoning steps. Experiments demonstrate that UI-UX achieves state-of-the-art (SOTA)   performance on UXBench, attaining an accuracy of 0.7963 -- surpassing Claude-4.5-Sonnet&amp;#x27;s 0.6550 -- while exhibiting strong generalization across diverse UI tasks   and maintaining low inference latency.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Benchmark &amp;amp; Evaluation&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link4&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;5&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;TerraBench: Can Agents Reason Over Heterogeneous Earth-System Data?&lt;/strong&gt;<br>&lt;small&gt;Dat Tien Nguyen, Thao Nguyen, Fadillah Adamsyah Maani, Huy M. Le, Muhammad Umer Sheikh, Numan Saeed, Muhammad Haris Khan, Salman Khan&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Benchmark &amp;amp; Evaluation&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Agentic Reasoning&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Earth-System AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;11&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 5 / arXiv:2606.13148&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13148&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 3 very closely: this is a new embodied/agentic benchmark for simulator-grounded Earth-system reasoning with tool use and execution traces.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Climate and environmental decision-making increasingly requires reasoning across heterogeneous inputs, including gridded physical data, satellite imagery, geospatial context, and simulator outputs. Weather and climate foundation models can forecast well, but do not reason interactively in language, while large language models (LLMs) reason in language but cannot operate directly on high-dimensional Earth-system data. As a result, real scientific workflows in Earth-science remain underserved. We introduce TerraBench, a benchmark for grounded Earth-science reasoning, built on TerraAgent, a ReAct-style executable framework that interleaves reasoning, tool calls, and observations to couple LLM planning with scientific tools for environmental retrieval, geospatial processing, simulation, and artifact-backed computation. TerraBench unifies analysis of Earth observation imagery, gridded data, GIS reasoning and simulation in a single executable interface, whereas prior benchmarks isolate these capabilities into narrow individual tasks. It is also the first in this space to pair process-level tool-use metrics with tolerance-aware numeric scoring. The benchmark comprises 403 extensive agentic tasks across three tracks (Fundamentals, Simulator-Grounded, and Document-Grounded Verification) and eight application domains with 24,500 verified execution steps. These results indicate that reliable Earth-science agents must go beyond tool access to coordinate heterogeneous workflows, parameterize tools precisely, and preserve artifact provenance.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Knowledge Graphs&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link7&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;8&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;Agents-K1: Towards Agent-native Knowledge Orchestration&lt;/strong&gt;<br>&lt;small&gt;Zongsheng Cao, Bihao Zhan, Jinxin Shi, Jiong Wang, Fangchen Yu, Zhijie Zhong, Zijie Guo, Tianshuo Peng, Zhuo Liu, Yi Xie, Xiang Zhuang, Yue Fan, Runmin Ma, Shiyang Feng, Xiangchao Yan, Anran Liu, Peng Ye, Wenlong Zhang, Shufei Zhang, Chunfeng Song, Fenghua Ling, Jie Zhou, Liang He, Bo Zhang, Lei Bai&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Knowledge Graphs&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Scientific Agents&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multimodal Information Extraction&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-mid&quot;&gt;10&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 8 / arXiv:2606.13669&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13669&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;4&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;6&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 3: it builds a new agent-native scientific knowledge graph pipeline and multimodal parser, which is a novel benchmark/infrastructure-style contribution.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Current LLM-based research agents have advanced through agent orchestration, yet largely overlook scientific knowledge orchestration. Existing works often reduce papers to abstracts, surface mentions, and flat \texttt{cites} edges, omitting key entities, claims, evidence, mechanisms, and method lineages essential for scientific reasoning. To this end, we introduce \textbf{Agents-K1}, an end-to-end knowledge orchestration pipeline that converts raw documents into agent-native scientific knowledge graphs. Agents-K1 integrates three components under a unifying theoretical foundation: a multimodal parser whose five-module schema captures entities, multimodal evidence, citations, and typed inter-entity relations across the full paper rather than abstracts alone; a 4B information-extraction backbone trained with GRPO under a rule-based reward; and a graphanything CLI, a tri-source agent interface that unifies web search, multimodal graph retrieval, and cross-document traversal. On top of this, we process 2.46 million scientific papers across six subjects to produce \textbf{Scholar-KG}, of which we release a one-million-paper subset, and the full Scholar-KG is accessible via the SCP link below. The same pipeline can be extended to general-domain corpora and to schema-conformant data synthesis. Extensive experiments demonstrate that Agents-K1 achieves superior performance in scientific information extraction, knowledge graph construction, and multi-hop scientific reasoning.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;details class=&quot;topic-section&quot; open&gt;<br>&lt;summary class=&quot;topic-heading&quot;&gt;Fact Verification&lt;/summary&gt;<br>&lt;div class=&quot;queue&quot;&gt;</p>
-<p>&lt;details class=&quot;paper-row&quot; id=&quot;link8&quot;&gt;<br>&lt;summary class=&quot;paper-row-summary&quot;&gt;<br>&lt;span class=&quot;queue-index&quot;&gt;9&lt;/span&gt;<br>&lt;span class=&quot;paper-row-copy&quot;&gt;<br>&lt;strong&gt;From Verdict to Process: Agentic Reinforcement Learning for Multi-Stage Fact Verification&lt;/strong&gt;<br>&lt;small&gt;Rongxin Yang, Shenghong He, Siyuan Zhu, Chao Yu&lt;/small&gt;</p>
-<p>&lt;div class=&quot;topic-tags&quot; aria-label=&quot;fine-grained topic tags&quot;&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Fact Verification&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Agentic RL&lt;/span&gt;<br>&lt;span class=&quot;topic-tag&quot;&gt;Multi-Stage Reasoning&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;category-tags&quot; aria-label=&quot;arXiv categories&quot;&gt;<br>&lt;span class=&quot;category-tag&quot;&gt;cs.AI&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;/span&gt;<br>&lt;span class=&quot;score-pill score-low&quot;&gt;9&lt;/span&gt;<br>&lt;/summary&gt;<br>&lt;div class=&quot;paper-row-detail&quot;&gt;<br>&lt;div class=&quot;paper-row-meta&quot;&gt;<br>&lt;span&gt;Paper 9 / arXiv:2606.13262&lt;/span&gt;<br>&lt;a class=&quot;paper-action&quot; href=&quot;https://arxiv.org/abs/2606.13262&quot;&gt;Open arXiv&lt;/a&gt;<br>&lt;/div&gt;</p>
-<p>&lt;div class=&quot;paper-scores&quot; aria-label=&quot;model scores&quot;&gt;<br>&lt;span&gt;Relevance &lt;strong&gt;4&lt;/strong&gt;&lt;/span&gt;<br>&lt;span&gt;Novelty &lt;strong&gt;5&lt;/strong&gt;&lt;/span&gt;<br>&lt;/div&gt;</p>
-<p>&lt;p class=&quot;comment&quot;&gt;&lt;strong&gt;Why selected:&lt;/strong&gt; Matches criterion 3: it introduces a new agentic reinforcement learning method for multi-stage fact verification, focusing on process-level optimization rather than a standard verifier.&lt;/p&gt;<br>&lt;p class=&quot;abstract&quot;&gt;Recent approaches combining Large Language Models (LLMs) with retrieval-augmented reasoning have shown promise for automated fact verification. To process complex claims, these verification pipelines typically execute multi-stage workflows that coordinate tightly coupled modules, including claim decomposition, evidence gathering, and verdict prediction. However, existing methods optimize individual stages in isolation or rely on fixed heuristics, which limits adaptive coordination among stages and can lead to suboptimal outcomes. In this work, we propose ProFact, an agentic reinforcement learning framework for end-to-end optimization of multi-stage fact verification trajectories. ProFact trains a unified policy to coordinate claim decomposition, evidence seeking, answer generation, and verdict prediction. To address the sparse and delayed supervision provided by final veracity labels, ProFact introduces process-aware rewards that provide stage-level learning signals throughout the verification process. Empirical evaluation shows that ProFact consistently outperforms strong baselines in both verification performance and inference efficiency. These results highlight the effectiveness of process-aware trajectory optimization for multi-stage fact verification.&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/details&gt;</p>
-<p>&lt;/details&gt;</p>
-<p>&lt;/nav&gt;</p>
-<p>&lt;section class=&quot;archive-block&quot;&gt;<br>&lt;h2&gt;Past ArXiv&lt;/h2&gt;<br>&lt;div class=&quot;archive-links&quot;&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-11.html&quot;&gt;<br>&lt;span&gt;June 11, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-10.html&quot;&gt;<br>&lt;span&gt;June 10, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-09.html&quot;&gt;<br>&lt;span&gt;June 09, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-08.html&quot;&gt;<br>&lt;span&gt;June 08, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-06.html&quot;&gt;<br>&lt;span&gt;June 06, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-05.html&quot;&gt;<br>&lt;span&gt;June 05, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-04.html&quot;&gt;<br>&lt;span&gt;June 04, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-03.html&quot;&gt;<br>&lt;span&gt;June 03, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-02.html&quot;&gt;<br>&lt;span&gt;June 02, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-06-01.html&quot;&gt;<br>&lt;span&gt;June 01, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-29.html&quot;&gt;<br>&lt;span&gt;May 29, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-28.html&quot;&gt;<br>&lt;span&gt;May 28, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-27.html&quot;&gt;<br>&lt;span&gt;May 27, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-26.html&quot;&gt;<br>&lt;span&gt;May 26, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-25.html&quot;&gt;<br>&lt;span&gt;May 25, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-22.html&quot;&gt;<br>&lt;span&gt;May 22, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-21.html&quot;&gt;<br>&lt;span&gt;May 21, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-20.html&quot;&gt;<br>&lt;span&gt;May 20, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-19.html&quot;&gt;<br>&lt;span&gt;May 19, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-18.html&quot;&gt;<br>&lt;span&gt;May 18, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-16.html&quot;&gt;<br>&lt;span&gt;May 16, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-15.html&quot;&gt;<br>&lt;span&gt;May 15, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;a class=&quot;archive-link&quot; href=&quot;past_arxiv/2026-05-14.html&quot;&gt;<br>&lt;span&gt;May 14, 2026&lt;/span&gt;<br>&lt;/a&gt;</p>
-<p>&lt;/div&gt;<br>&lt;/section&gt;</p>
-<p>&lt;section class=&quot;prompt-block&quot;&gt;<br>&lt;h2&gt;Paper selection prompt&lt;/h2&gt;<br>&lt;pre&gt; 1. New methodological improvements to spatial understanding, spatial intelligence on embodied agents;<br>2. Shows new VLLMs (visual large language models) or MLLMs (multi-modal large language models)<br>3. Embodied AI papers on buliding new benchmark (simulator related) or new methods. These papers should focus on novel angles that previous work ignored.<br>4. Vision foundation models related and its applications.</p>
-<p>In suggesting papers to your friend, remember that he enjoys papers on computer vision and machine learning, and generative modeling in multi-modal learning.<br>Your friend also likes learning about surprising empirical or insightful results in vision-language models or embodied AI, as well as clever statistical tricks.&lt;/pre&gt;<br>&lt;/section&gt;<br>&lt;/main&gt;</p>
-    </article>
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>14 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning</strong>
+          <small>Seokju Cho, Ryo Hachiuma, Abhishek Badki, Hang Su, Byung-Kwan Lee, Chan Hee Song, Sifei Liu, Subhashree Radhakrishnan, Seungryong Kim, Yu-Chiang Frank Wang, Min-Hung Chen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2606.13673</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13673">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 very closely: it proposes a new action interface for agentic spatial reasoning, specifically targeting open-ended 3D/4D spatial understanding.</p>
+        <p class="abstract">Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge for vision-language models (VLMs). Tool-augmented agents attempt to address this by augmenting VLMs with specialist perception modules, yet their effectiveness is bounded by the action interface through which those tools are invoked. In this work, we study how the design of this interface shapes the agent&#x27;s capacity for open-ended spatial reasoning. Existing spatial agents either employ single-pass code execution, which commits to a full analysis strategy before any intermediate result is observed, or rely on a structured tool-call interface that often offers less flexibility for freely composing operations or tailoring the analysis to each task. Both designs offer limited flexibility for open-ended, complex 3D/4D spatial reasoning. We therefore propose SpatialClaw, a training-free framework for spatial reasoning that adopts code as the action interface. SpatialClaw maintains a stateful Python kernel pre-loaded with input frames and a suite of perception and geometry primitives, letting a VLM-backed agent write one executable cell per step conditioned on all prior outputs, enabling the agent to flexibly compose and manipulate perception results and adapt its analysis to both intermediate text and visual observations and the demands of each problem. Evaluated across 20 spatial reasoning benchmarks spanning a broad range of static and dynamic 3D/4D spatial reasoning tasks, SpatialClaw achieves 59.9% average accuracy, outperforming the recent spatial agent by +11.2 points, with consistent gains across six VLM backbones from two model families without any benchmark- or model-specific adaptation.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>TerraBench: Can Agents Reason Over Heterogeneous Earth-System Data?</strong>
+          <small>Dat Tien Nguyen, Thao Nguyen, Fadillah Adamsyah Maani, Huy M. Le, Muhammad Umer Sheikh, Numan Saeed, Muhammad Haris Khan, Salman Khan</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2606.13148</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13148">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: this is a new embodied/agentic benchmark for simulator-grounded Earth-system reasoning with tool use and execution traces.</p>
+        <p class="abstract">Climate and environmental decision-making increasingly requires reasoning across heterogeneous inputs, including gridded physical data, satellite imagery, geospatial context, and simulator outputs. Weather and climate foundation models can forecast well, but do not reason interactively in language, while large language models (LLMs) reason in language but cannot operate directly on high-dimensional Earth-system data. As a result, real scientific workflows in Earth-science remain underserved. We introduce TerraBench, a benchmark for grounded Earth-science reasoning, built on TerraAgent, a ReAct-style executable framework that interleaves reasoning, tool calls, and observations to couple LLM planning with scientific tools for environmental retrieval, geospatial processing, simulation, and artifact-backed computation. TerraBench unifies analysis of Earth observation imagery, gridded data, GIS reasoning and simulation in a single executable interface, whereas prior benchmarks isolate these capabilities into narrow individual tasks. It is also the first in this space to pair process-level tool-use metrics with tolerance-aware numeric scoring. The benchmark comprises 403 extensive agentic tasks across three tracks (Fundamentals, Simulator-Grounded, and Document-Grounded Verification) and eight application domains with 24,500 verified execution steps. These results indicate that reliable Earth-science agents must go beyond tool access to coordinate heterogeneous workflows, parameterize tools precisely, and preserve artifact provenance.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>DIMOS: Disentangling Instance-level Moving Object Segmentation</strong>
+          <small>Hongxiang Huang, Hongwei Ren, Xiaopeng Lin, Yulong Huang, Zeke Xie, Bojun Cheng</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2606.12826</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12826">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 only indirectly: it is a multimodal motion-segmentation method with event cameras, but not embodied spatial intelligence or VLLMs.</p>
+        <p class="abstract">Moving instance segmentation (MIS) attracts increasing attention due to its broad applications in traffic surveillance, autonomous driving, and animal tracking. Event cameras record asynchronous brightness changes, providing high temporal resolution and dynamic range, which makes them highly sensitive to motion information. By fusing event and image features, motion cues from events can complement spatial details from images, enhancing the performance of MIS. However, current multimodal MIS methods still struggle to segment small moving instances, as event cameras often yield sparse features under limited resolution. Moreover, event features entangle appearance attributes with motion cues, which further restricts effective cross-modal fusion. To address these challenges, we first propose a dual-disentangling feature extraction framework that separates and extracts appearance and motion information within both image and event modalities, thereby improving feature density. Subsequently, a multi-granularity cross-modal alignment is introduced to align distributionally and semantically consistent features across modalities, enabling more effective fusion with rich spatial and temporal details. The experiment results demonstrate that our method achieves state-of-the-art performance in multimodal MIS, especially for small instances under challenging conditions such as fast motion and low-light settings.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers</strong>
+          <small>Guozhen Zhang, Xuerui Qiu, Yutao Cui, Tianhui Song, Changlin Li, Junzhe Li, Tao Huang, Xiao Zhang, Yang Li, Jianbing Wu, Miles Yang, Zhao Zhong, Liefeng Bo, Limin Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2606.13289</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13289">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and criterion 4: it introduces a unified multimodal model with holistic visual tokenizers for image/video understanding and generation.</p>
+        <p class="abstract">Holistic visual tokenizers are fundamental to unified multimodal models (UMMs) as they map diverse visual inputs into a unified representation space. In this paper, we present HYDRA-X, the first UMM that unifies image and video tokenization within a single Vision Transformer (ViT). Our design is driven by two core challenges: efficiently injecting spatiotemporal reconstruction capability into a native ViT, and embedding image- and video-level semantic awareness into the latent space. To address the first, comprehensive ablations reveal two key findings: (1) frame-level causal temporal attention suffices for visual reconstruction, whereas full spatiotemporal attention degrades it; and (2) hierarchical temporal compression substantially outperforms single-step alternatives. To tackle the second, we propose a lightweight decompressor that upsamples temporally compressed features under joint image-video teacher supervision, thereby enforcing complementary semantic structures within the compact latent space. Building on this holistic tokenizer, we further propose a principled improvement of the editing pipeline: source-target interaction should occur at the latent level inside the tokenizer rather than at the semantic level inside the LLM, substantially improving editing consistency and accelerating convergence. Instantiated at the 7B dense model, HYDRA-X achieves strong performance across image and video understanding and generation tasks, paving the way for future unified-tokenizer UMMs.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>Reasoning for Mobile User Experience with Multimodal LLMs: Task, Benchmark, and Approach</strong>
+          <small>Ruichao Mao, Zhou Fang, Teng Guo, Hao Yang, Yaping Li, Shaohua Peng, Maji Huang, Xiaoyu Lin, Shuoyang Liu, Xuepeng Li, Yuyu Zhang, Hai Rao</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2606.13192</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13192">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and criterion 3: it introduces a new MLLM-based system plus a benchmark for UI/UX reasoning from screenshots.</p>
+        <p class="abstract">User experience (UX) centered on usability, perceived consistency, and functional clarity is fundamental to real-world user interfaces (UI). The application of multimodal large language models (MLLMs) in the field of user interfaces is evolving rapidly, such as visual element grounding, graphical user interface (GUI) agents, and design-to-code generation. However, research efforts on evaluating UX based on UI screenshots are still immature. To address this, we propose UXBench, a novel multimodal benchmark consisting of 2,000 VQA data samples designed to assess MLLMs&#x27; ability to perform UI-based reasoning. UXBench includes 8 tasks based on real-world UI screenshots that require fine-grained diagnosis of UX issues across layout relationships, visual hierarchy, and content consistency. Our extensive evaluation of mainstream MLLMs shows that they remain fundamentally limited in their capacity for UI-based reasoning. The results underscore the need for further advancements in this area. To bridge this gap, we propose UI-UX, an MLLM based on Qwen3-VL-4B-Thinking foundation model and enhanced via reinforcement learning with two key innovations: a reward routing mechanism that dynamically balances perceptual understanding and logical reasoning during inference, and an asymmetric transition reward that suppresses redundant or insufficient reasoning steps. Experiments demonstrate that UI-UX achieves state-of-the-art (SOTA) performance on UXBench, attaining an accuracy of 0.7963 -- surpassing Claude-4.5-Sonnet&#x27;s 0.6550 -- while exhibiting strong generalization across diverse UI tasks and maintaining low inference latency.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link6">
+      <summary class="paper-row-summary">
+        <span class="queue-index">7</span>
+        <span class="paper-row-copy">
+          <strong>GRIP: Feedback-Guided Prompt Retrieval for Large Multimodal Models</strong>
+          <small>Garvita Allabadi, Matteo Sodano, Roberto Estev\~ao, Yuxiong Wang, Vikram Adve, Emre Kiciman, Ranveer Chandra</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 7 / arXiv:2606.12744</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12744">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: it is about large multimodal models and a new retrieval method for multimodal in-context learning.</p>
+        <p class="abstract">In-Context Learning (ICL) has become a powerful mechanism for adapting Large Language Models (LLMs) to new tasks without fine-tuning. Extending this concept to Large Multimodal Models (LMMs), Multimodal In-Context Learning (M-ICL) relies on retrieving relevant examples, such as images, captions, or question-answer pairs, to guide predictions across tasks like classification, captioning, and visual question answering (VQA). Most existing approaches select in-context examples based on feature-space similarity, assuming that semantically similar samples provide the most useful context. However, our systematic analysis reveals that this assumption does not always hold: visually similar examples are not necessarily those that most effectively enhance in-context learning performance. To address this, we propose the Guided Retrieval of In-context Prompts (GRIP), a learnable vision-only retrieval framework that leverages feedback from LMMs to identify examples that truly improve model predictions. GRIP learns to distinguish beneficial from detrimental in-context examples through contrastive training, refining retrieval beyond pure similarity. Across three multimodal tasks, namely classification, captioning, and VQA, GRIP improves consistently over similarity-based retrieval on Qwen2.5-VL-7B, with its strongest gains in classification on Idefics2-8B. Moreover, we demonstrate that retrievers trained with feedback from one open LMM can be transferred to other models without retraining, including closed-source GPT-4o and Gemini, enabling scalable and cost-efficient deployment of M-ICL. Code will be published upon acceptance.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link7">
+      <summary class="paper-row-summary">
+        <span class="queue-index">8</span>
+        <span class="paper-row-copy">
+          <strong>Agents-K1: Towards Agent-native Knowledge Orchestration</strong>
+          <small>Zongsheng Cao, Bihao Zhan, Jinxin Shi, Jiong Wang, Fangchen Yu, Zhijie Zhong, Zijie Guo, Tianshuo Peng, Zhuo Liu, Yi Xie, Xiang Zhuang, Yue Fan, Runmin Ma, Shiyang Feng, Xiangchao Yan, Anran Liu, Peng Ye, Wenlong Zhang, Shufei Zhang, Chunfeng Song, Fenghua Ling, Jie Zhou, Liang He, Bo Zhang, Lei Bai</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2606.13669</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13669">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: it builds a new agent-native scientific knowledge graph pipeline and multimodal parser, which is a novel benchmark/infrastructure-style contribution.</p>
+        <p class="abstract">Current LLM-based research agents have advanced through agent orchestration, yet largely overlook scientific knowledge orchestration. Existing works often reduce papers to abstracts, surface mentions, and flat \texttt{cites} edges, omitting key entities, claims, evidence, mechanisms, and method lineages essential for scientific reasoning. To this end, we introduce \textbf{Agents-K1}, an end-to-end knowledge orchestration pipeline that converts raw documents into agent-native scientific knowledge graphs. Agents-K1 integrates three components under a unifying theoretical foundation: a multimodal parser whose five-module schema captures entities, multimodal evidence, citations, and typed inter-entity relations across the full paper rather than abstracts alone; a 4B information-extraction backbone trained with GRPO under a rule-based reward; and a graphanything CLI, a tri-source agent interface that unifies web search, multimodal graph retrieval, and cross-document traversal. On top of this, we process 2.46 million scientific papers across six subjects to produce \textbf{Scholar-KG}, of which we release a one-million-paper subset, and the full Scholar-KG is accessible via the SCP link below. The same pipeline can be extended to general-domain corpora and to schema-conformant data synthesis. Extensive experiments demonstrate that Agents-K1 achieves superior performance in scientific information extraction, knowledge graph construction, and multi-hop scientific reasoning.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>Language-Guided Abstraction for Visual Reasoning</strong>
+          <small>Xu-Jing Ye, Yuan-Gen Wang, Ruping Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2606.12847</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12847">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1: it proposes a new method for visual reasoning that injects language-guided abstraction into an ARC-style setting.</p>
+        <p class="abstract">The Abstraction and Reasoning Corpus (ARC) is viewed as a critical avenue to Artificial General Intelligence (AGI), as it enables models to learn abstract transformation rules from few-shot examples and then generalize to new tasks. However, prevalent ARC methodology is either pure language or vision-only (i.e., VARC). The former depends heavily on LLMs, consuming billions of parameters. The latter often struggles to capture high-level semantics, leading to overfitting on pixel-level patterns. To bridge this gap, we propose L-VARC, a novel framework that enhances visual reasoning via a language-guided Learning Using Privileged Information (LUPI) branch. Specifically, we design a Semantic Compression Module by feeding a unified, task-agnostic prompt into DeepSeek-V3. In this way, the raw LARC (a crowd-sourced language description dataset) can be substantially refined and structured, fitting with the context length constraint of standard text encoders (e.g., CLIP). Moreover, we design a Cross-Attention Projector to align visual features with semantic embeddings, aiming to guide the training of the ARC model. Notably, the LUPI branch is taken in the training process and will be discarded during inference, thereby yielding a lightweight model with a mere 18 million parameters. Extensive experiments demonstrate that our L-VARC effectively leverages linguistic priors to boost visual reasoning and outperforms state-of-the-art. Ablation studies further confirm the contribution of the two new designs towards the L-VARC framework. The code is available at https://github.com/GZHU-DVL/L-VARC.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>HairPort: In-context 3D-aware Hair Import and Transfer for Images</strong>
+          <small>Alireza Heidari, Amirhossein Alimohammadi, Wallace Michel Pinto Lira, Adi Bar-Lev, Ali Mahdavi-Amiri</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2606.12562</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12562">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: vision foundation models are used for 3D-aware hairstyle import/transfer, with a new bald-conversion dataset and a generative pipeline.</p>
+        <p class="abstract">Transferring hairstyles between images is an important but challenging task in computer graphics, computer vision, and visual effects. It enables users to explore new looks without physically altering their hair, with applications in virtual try-on systems, augmented reality, and entertainment. Most prior works operate best under small pose gaps, and they fall short under large viewpoint and scale differences, where missing hair content must be synthesized rather than transferred. We propose HairPort, a 3D-aware hairstyle transfer framework that attempts to solve these issues by explicitly separating hair removal from transfer and enforcing geometric consistency before synthesis. We introduce a Bald Converter, which produces realistic bald versions of faces through LoRA-based in-context adaptation of FLUX.1 Kontext. To train our Bald Converter, we introduce a new dataset, Baldy, containing 6,000 paired bald and original images across diverse identities and conditions. We also use a 3D-Aware Transfer Pipeline that reconstructs and re-renders the reference hairstyle from the target viewpoint before compositing it onto the source image. Being 3D aware, our method supports large pose and scale discrepancies between the source and target. Finally, a conditional flow-matching generator synthesizes the transferred result from the bald source and geometry-aligned reference guidance. Together, our method enables accurate, pose-consistent, and identity-preserving hairstyle transfer, outperforming existing methods both qualitatively and quantitatively.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>From Verdict to Process: Agentic Reinforcement Learning for Multi-Stage Fact Verification</strong>
+          <small>Rongxin Yang, Shenghong He, Siyuan Zhu, Chao Yu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2606.13262</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13262">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: it introduces a new agentic reinforcement learning method for multi-stage fact verification, focusing on process-level optimization rather than a standard verifier.</p>
+        <p class="abstract">Recent approaches combining Large Language Models (LLMs) with retrieval-augmented reasoning have shown promise for automated fact verification. To process complex claims, these verification pipelines typically execute multi-stage workflows that coordinate tightly coupled modules, including claim decomposition, evidence gathering, and verdict prediction. However, existing methods optimize individual stages in isolation or rely on fixed heuristics, which limits adaptive coordination among stages and can lead to suboptimal outcomes. In this work, we propose ProFact, an agentic reinforcement learning framework for end-to-end optimization of multi-stage fact verification trajectories. ProFact trains a unified policy to coordinate claim decomposition, evidence seeking, answer generation, and verdict prediction. To address the sparse and delayed supervision provided by final veracity labels, ProFact introduces process-aware rewards that provide stage-level learning signals throughout the verification process. Empirical evaluation shows that ProFact consistently outperforms strong baselines in both verification performance and inference efficiency. These results highlight the effectiveness of process-aware trajectory optimization for multi-stage fact verification.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>Visual Place Recognition in Forests with Depth-Aware Distillation</strong>
+          <small>Walter Nedov, Saimunur Rahman, Kavindie Katuwandeniya, David Hall, Kaushik Roy, Peyman Moghadam</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 10 / arXiv:2606.13206</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13206">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it applies a vision foundation model (DINOv2) to visual place recognition with depth-aware distillation.</p>
+        <p class="abstract">Visual place recognition in natural forest environments remains challenging due to repetitive vegetation, weak structural cues, and significant appearance variation across traversals. To address this limitation, this paper proposes a lightweight depth-aware distillation framework that injects geometric cues into a DINOv2-based place recognition model, while maintaining its pre-trained descriptor space. Evaluated on the recent WildCross benchmark, the proposed approach yields gains over an appearance-only counterpart, providing robustness to appearance variations. These results demonstrate the importance of depth as a strong complementary modality for place recognition in natural environments and identify depth-aware distillation as a promising direction for more robust forest perception.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link12">
+      <summary class="paper-row-summary">
+        <span class="queue-index">13</span>
+        <span class="paper-row-copy">
+          <strong>Objects Before Words: Object-First Inductive Biases for Grounding Language in Child-View Video</strong>
+          <small>Sathira Silva, Abrham Kahsay Gebreselasie, Muhammad Umer Sheikh, Kartik Kuckreja, Daniel Harari, Muhammad Haris Khan</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 13 / arXiv:2606.12985</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12985">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 loosely: it uses object-centric visual representations for grounded language learning from child-view video, but it is not a VLLM/MLLM or embodied benchmark.</p>
+        <p class="abstract">Learning grounded word meaning from natural experience requires resolving two ambiguities in infant-view recordings: when the named referent appears and where it is in a cluttered frame. In SAYCam-style data, caregiver speech is sparse and weakly synchronized with egocentric video, so single-frame contrastive pairing yields noisy positives in which the intended object is absent or entangled with distractors. We propose BabyMind, an object-first bias for child-view contrastive learning under sparse, noisy supervision. BabyMind extracts candidate object embeddings using an offline mask-based region interface, links candidates across a short utterance-centered window into lightweight object files via tracking, and aligns utterances to bags of object files with a prototype-space multiple-instance contrastive objective. Track-coherence and global-object agreement regularizers stabilize learning and transfer object-file structure into the global frame embedding used at evaluation. On SAYCam-S, BabyMind improves Labeled-S 15 forced-choice accuracy by +2.6 points over CVCL and yields consistent gains on in-vocabulary out-of-distribution benchmarks. Code is available at https://github.com/sathiiii/BabyMind.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>Revisiting Vehicle Color Recognition in Long-Tailed Surveillance Scenarios</strong>
+          <small>Vin\&#x27;icius Orr\&#x27;u, Bruno H. Foggiatto, Gabriel E. Lima, David Menotti, Rayson Laroca</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">7</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2606.13625</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.13625">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 only weakly: it applies vision models and generative augmentation to a surveillance recognition problem, but it is a narrow application rather than a foundation-model contribution.</p>
+        <p class="abstract">Vehicle color recognition is an important cue for vehicle identification in surveillance systems, especially when license plates are illegible due to low resolution, occlusion, motion blur, or poor illumination. However, real-world vehicle color distributions are highly imbalanced, making overall accuracy insufficient to assess performance on rare but operationally relevant colors. This paper presents a comprehensive study of vehicle color recognition under severe class imbalance using UFPR-VeSV, a challenging real-world surveillance dataset. We investigate synthetic minority-class augmentation through two off-the-shelf generative strategies: text-conditioned image generation with RunDiffusion/JuggernautXL and image-conditioned color editing with Gemini 2.0 Flash. The curated synthetic data are combined with modern visual representations, loss reweighting, learning-rate scheduling, color-safe augmentation, foreground-aware preprocessing, and ensemble fusion. The bestperforming approach achieves 94.6% micro accuracy and 79.7% macro accuracy, improving macro accuracy by 8.2 percentage points over recent literature. A manual error analysis further shows that many remaining failures are visually ambiguous even for human annotators, highlighting the practical limits of color-based vehicle identification in unconstrained surveillance imagery. The generated images and source code are publicly available at https://github.com/viniciusorru/vcr-synthetic</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Interpretability</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link10">
+      <summary class="paper-row-summary">
+        <span class="queue-index">11</span>
+        <span class="paper-row-copy">
+          <strong>Dual-State Slot Attention: Decoupling Appearance and Identity for Video Object-Centric Learning</strong>
+          <small>Sieu Tran, Duc Nguyen, Hao Vo, Khoa Vo, Ngan Le</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 11 / arXiv:2606.12601</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2606.12601">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No close match to the four criteria; it is a video object-centric learning method, which is adjacent to vision but not specifically one of the requested categories.</p>
+        <p class="abstract">Unsupervised video object-centric learning aims to decompose dynamic scenes into persistent, object-level representations without supervision. However, existing slot-based methods struggle to maintain stable object identity in challenging settings such as rapid motion and partial occlusion. First, they typically encode both the per-frame appearance of an object and its identity across frames in a single slot vector, creating an objective conflict that leads to slot swapping: reconstruction requires sensitivity to transient visual changes, whereas temporal consistency requires invariance to them. Second, the token renormalization used in Slot Attention can amplify weakly attending slots, allowing them to absorb tokens from other objects and destabilize slot-to-object correspondence. We propose Dual-State Slot Attention (DSSA), a fully self-supervised framework that addresses these limitations by separating appearance from identity and by reducing spurious updates from weakly matching slots. DSSA decomposes each slot into a local state for per-frame appearance and an identity state for temporally stable object information, thereby aligning reconstruction and temporal consistency with separate representations. The identity state is updated through a learned recurrent transition that acts as a temporal filter on the local state, while competition-modulated aggregation (CMA) down-weights updates from weakly matching slots and prevents them from absorbing tokens from other objects. Experiments on MOVi-C, MOVi-D, and YouTube-VIS demonstrate that DSSA consistently improves segmentation quality and temporal consistency over prior methods, while also yielding stronger downstream object recognition and video dynamics prediction. Code and models will be made publicly available upon acceptance.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>14</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>13</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>10.0</strong>
+    </div>
+
+    </section>
 
   </main>
 </body>

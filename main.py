@@ -13,7 +13,12 @@ from tqdm import tqdm
 
 from arxiv_scraper import get_papers_from_arxiv_rss_api
 from filter_papers import filter_by_author, filter_by_gpt
-from parse_json_to_md import render_html_string, render_md_string, write_archive_pages
+from parse_json_to_md import (
+    render_html_string,
+    render_md_string,
+    render_markdown_digest,
+    write_archive_pages,
+)
 from push_to_slack import push_to_slack
 from arxiv_scraper import EnhancedJSONEncoder
 
@@ -260,7 +265,7 @@ if __name__ == "__main__":
         today_str = datetime.today().strftime("%Y_%m%d")
         attachment_path = f"out/output_{today_str}.md"
         with open(attachment_path, "w") as f:
-            f.write(render_md_string(selected_papers))
+            f.write(render_markdown_digest(selected_papers))
 
         # only push to slack for non-empty dicts
         if config["OUTPUT"].getboolean("push_to_slack"):
