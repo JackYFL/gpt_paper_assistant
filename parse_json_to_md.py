@@ -2,8 +2,10 @@ import configparser
 import glob
 import html
 import json
+import math
 import os
 import re
+from collections import Counter
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -21,6 +23,35 @@ def strip_trailing_whitespace(value: str) -> str:
 
 
 ARCHIVE_DIR = "past_arxiv"
+
+
+WORD_CLOUD_RE = re.compile(r"[a-zA-Z][a-zA-Z'-]{2,}")
+
+# Generic English + academic filler words that carry no topical signal.
+WORD_CLOUD_STOPWORDS = {
+    "the", "and", "for", "are", "but", "not", "you", "all", "can", "her",
+    "was", "one", "our", "out", "has", "have", "had", "his", "they", "this",
+    "that", "with", "from", "their", "these", "those", "such", "than", "then",
+    "them", "been", "being", "into", "over", "under", "also", "more", "most",
+    "much", "many", "some", "any", "each", "other", "which", "while", "where",
+    "when", "what", "who", "whom", "whose", "how", "why", "via", "per", "use",
+    "used", "using", "uses", "based", "show", "shows", "shown", "showing",
+    "propose", "proposed", "proposes", "present", "presents", "presented",
+    "introduce", "introduces", "introduced", "result", "results", "method",
+    "methods", "approach", "approaches", "paper", "papers", "work", "works",
+    "task", "tasks", "however", "thus", "therefore", "moreover", "furthermore",
+    "between", "across", "within", "without", "among", "given", "due", "both",
+    "two", "three", "first", "second", "new", "novel", "various", "different",
+    "several", "existing", "compared", "comparison", "achieve", "achieves",
+    "achieved", "achieving", "demonstrate", "demonstrates", "demonstrated",
+    "leverage", "leverages", "leveraging", "enable", "enables", "enabling",
+    "provide", "provides", "provided", "study", "studies", "studied", "able",
+    "well", "high", "low", "large", "small", "good", "better", "best", "may",
+    "we", "it", "its", "by", "to", "of", "in", "on", "as", "an", "or", "is",
+    "be", "at", "do", "does", "set", "non", "etc", "e.g", "i.e",
+}
+
+ABSTRACT_FIELD_KEYS = ("abstract", "Abstract", "ABSTRACT")
 
 
 TOPIC_TAG_RULES = [
@@ -980,6 +1011,67 @@ details:not([open]) > .topic-heading::before {
   white-space: pre-wrap;
 }
 
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  line-height: 1.2;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  cursor: default;
+  transition: transform 140ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px);
+}
+
+.cloud-hot {
+  color: var(--accent-2);
+}
+
+.cloud-mid {
+  color: var(--accent);
+}
+
+.cloud-cool {
+  color: var(--muted);
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
 .archive-block {
   margin-top: 30px;
   padding: 22px;
@@ -1163,6 +1255,81 @@ def render_markdown_digest(papers_dict, output_date=None) -> str:
     )
 
 
+def _paper_abstract(paper: dict) -> str:
+    for key in ABSTRACT_FIELD_KEYS:
+        if paper.get(key):
+            return clean_abstract(paper[key])
+    return ""
+
+
+def abstract_word_counts(papers: list[dict]) -> Counter:
+    counts = Counter()
+    for paper in papers:
+        for word in WORD_CLOUD_RE.findall(_paper_abstract(paper).lower()):
+            word = word.strip("'-")
+            if len(word) < 3 or word in WORD_CLOUD_STOPWORDS:
+                continue
+            counts[word] += 1
+    return counts
+
+
+def render_word_cloud(papers: list[dict], max_words: int = 45) -> str:
+    # take the most frequent words, then show them alphabetically so the big and
+    # small ones interleave into a cloud (deterministic, unlike a shuffle)
+    cloud = sorted(abstract_word_counts(papers).most_common(max_words))
+    if not cloud:
+        return '<p class="cloud-empty">No abstracts available yet.</p>'
+
+    counts = [count for _, count in cloud]
+    lo, hi = math.sqrt(min(counts)), math.sqrt(max(counts))
+    span = hi - lo
+    words = []
+    for word, count in cloud:
+        weight = 0.5 if span == 0 else (math.sqrt(count) - lo) / span
+        size = 0.85 + weight * 1.6
+        tier = (
+            "cloud-hot"
+            if weight > 0.66
+            else "cloud-mid"
+            if weight > 0.33
+            else "cloud-cool"
+        )
+        words.append(
+            f'<span class="cloud-word {tier}" style="font-size:{size:.2f}rem"'
+            f' title="{count} mentions">{esc(word)}</span>'
+        )
+    return f'<div class="word-cloud">{"".join(words)}</div>'
+
+
+def collect_recent_papers(output_date=None) -> list[dict]:
+    papers = []
+    for _archive_date, path in get_recent_archive_entries(output_date):
+        try:
+            markdown_text = Path(path).read_text()
+        except OSError:
+            continue
+        papers.extend(parse_archive_markdown_papers(markdown_text).values())
+    return papers
+
+
+def render_word_cloud_section(papers_dict, output_date=None) -> str:
+    today_papers = list(papers_dict.values())
+    month_papers = today_papers + collect_recent_papers(output_date)
+    return f"""
+  <h2 class="section-title">Abstract word clouds</h2>
+  <div class="cloud-grid">
+    <article class="cloud-card">
+      <h3>Today</h3>
+      {render_word_cloud(today_papers)}
+    </article>
+    <article class="cloud-card">
+      <h3>Past month</h3>
+      {render_word_cloud(month_papers, max_words=60)}
+    </article>
+  </div>
+"""
+
+
 def render_md_string(papers_dict, output_date=None):
     with open("configs/paper_topics.txt", "r") as f:
         criterion = f.read()
@@ -1201,6 +1368,8 @@ def render_md_string(papers_dict, output_date=None):
       {render_metric("Source", "ArXiv")}
     </div>
   </section>
+
+  {render_word_cloud_section(papers_dict, output_date)}
 
   <h2 class="section-title" id="paper-content">Reading Queue</h2>
   <nav class="category-groups" aria-label="selected papers by category">
