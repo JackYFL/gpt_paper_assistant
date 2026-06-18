@@ -125,7 +125,9 @@ WORD_CLOUD_GENERIC_TERMS = {
     "aimed", "seek", "seeks", "tackle", "tackles", "solve", "solves",
     "solved", "handle", "handles",
     # generic / over-broad technical nouns
-    "image", "images", "code", "codes",
+    "image", "images", "code", "codes", "text", "texts", "prediction",
+    "predictions", "large-scale", "small-scale", "limited", "limitation",
+    "limitations", "global", "local", "diverse", "context", "contexts",
     # url / repository boilerplate from "code available at ..." sentences
     "https", "http", "github", "gitlab", "arxiv", "html", "doi",
 }
@@ -1339,11 +1341,24 @@ def _paper_abstract(paper: dict) -> str:
     return ""
 
 
+def _singularize(word: str) -> str:
+    # lightweight plural folding so e.g. agent/agents count as one word
+    if "-" in word or len(word) <= 3:
+        return word
+    if word.endswith("ies") and len(word) > 4:
+        return word[:-3] + "y"
+    if word.endswith(("ches", "shes", "sses", "xes", "zes")) and len(word) > 4:
+        return word[:-2]
+    if word.endswith("s") and not word.endswith(("ss", "us", "is")):
+        return word[:-1]
+    return word
+
+
 def abstract_word_counts(papers: list[dict]) -> Counter:
     counts = Counter()
     for paper in papers:
         for word in WORD_CLOUD_RE.findall(_paper_abstract(paper).lower()):
-            word = word.strip("'-")
+            word = _singularize(word.strip("'-"))
             if len(word) < 4 or word in WORD_CLOUD_SKIP:
                 continue
             counts[word] += 1
