@@ -51,6 +51,56 @@ WORD_CLOUD_STOPWORDS = {
     "be", "at", "do", "does", "set", "non", "etc", "e.g", "i.e",
 }
 
+# Generic ML/research terms that appear in almost every abstract, so they drown
+# out the words that actually distinguish each day's topics.
+WORD_CLOUD_GENERIC_TERMS = {
+    "model", "models", "modeling", "modelling",
+    "framework", "frameworks", "performance",
+    "data", "dataset", "datasets", "benchmark", "benchmarks",
+    "evaluation", "evaluate", "evaluated", "evaluating",
+    "experiment", "experiments", "experimental", "experimentally",
+    "baseline", "baselines", "accuracy", "metric", "metrics",
+    "training", "train", "trained", "trains",
+    "learning", "learn", "learned", "learns",
+    "network", "networks", "system", "systems",
+    "algorithm", "algorithms", "problem", "problems",
+    "application", "applications", "analysis", "analyses",
+    "feature", "features", "function", "functions", "functional",
+    "parameter", "parameters", "output", "outputs", "input", "inputs",
+    "sample", "samples", "sampling", "setting", "settings",
+    "scenario", "scenarios", "representation", "representations",
+    "information", "process", "processes", "processing",
+    "design", "designs", "designed", "state", "states",
+    "number", "value", "values", "level", "levels",
+    "type", "types", "case", "cases", "scale", "scales",
+    "size", "sizes", "rate", "rates", "score", "scores",
+    "test", "tests", "testing", "validation", "module", "modules",
+    "component", "components", "objective", "objectives",
+    "strategy", "strategies", "capability", "capabilities",
+    "ability", "abilities", "challenge", "challenges",
+    "improvement", "improvements", "improve", "improves", "improved",
+    "effectiveness", "efficiency", "efficient", "quality",
+    "quantitative", "qualitative", "empirical", "empirically",
+    "significantly", "significant", "extensive", "respectively",
+    "general", "specific", "overall", "potential", "effective",
+    # common adverbs / connectives that slip past the short stoplist
+    "through", "further", "often", "only", "toward", "towards", "address",
+    "addresses", "addressed", "addressing", "available", "become", "becomes",
+    "make", "makes", "making", "allow", "allows", "including", "include",
+    "includes", "included", "particular", "particularly", "especially",
+    "recent", "recently", "prior", "current", "currently", "main", "simple",
+    "simply", "directly", "fully", "highly", "widely", "largely", "mainly",
+    "typically", "generally", "commonly", "finally", "additionally",
+    "specifically", "namely", "moreover", "whether", "either", "neither",
+    "single", "strong", "remains", "remain", "explicit", "explicitly",
+    "implicit", "leading", "leads", "lead", "respective",
+    "state-of-the-art", "sota",
+    # url / repository boilerplate from "code available at ..." sentences
+    "https", "http", "github", "gitlab", "arxiv", "html", "doi",
+}
+
+WORD_CLOUD_SKIP = WORD_CLOUD_STOPWORDS | WORD_CLOUD_GENERIC_TERMS
+
 ABSTRACT_FIELD_KEYS = ("abstract", "Abstract", "ABSTRACT")
 
 
@@ -1020,11 +1070,13 @@ details:not([open]) > .topic-heading::before {
 .cloud-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 18px 20px;
+  gap: 14px;
+  padding: 22px 24px 26px;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
 }
 
 .cloud-card h3 {
@@ -1032,44 +1084,38 @@ details:not([open]) > .topic-heading::before {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .word-cloud {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 12px;
-  line-height: 1.2;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
 }
 
 .cloud-word {
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   cursor: default;
-  transition: transform 140ms ease;
+  transition: transform 160ms ease, opacity 160ms ease;
 }
 
 .cloud-word:hover {
-  transform: translateY(-2px);
-}
-
-.cloud-hot {
-  color: var(--accent-2);
-}
-
-.cloud-mid {
-  color: var(--accent);
-}
-
-.cloud-cool {
-  color: var(--muted);
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
 }
 
 .cloud-empty {
   margin: 0;
   color: var(--muted);
+  text-align: center;
 }
 
 .archive-block {
@@ -1267,7 +1313,7 @@ def abstract_word_counts(papers: list[dict]) -> Counter:
     for paper in papers:
         for word in WORD_CLOUD_RE.findall(_paper_abstract(paper).lower()):
             word = word.strip("'-")
-            if len(word) < 3 or word in WORD_CLOUD_STOPWORDS:
+            if len(word) < 4 or word in WORD_CLOUD_SKIP:
                 continue
             counts[word] += 1
     return counts
@@ -1286,16 +1332,17 @@ def render_word_cloud(papers: list[dict], max_words: int = 45) -> str:
     words = []
     for word, count in cloud:
         weight = 0.5 if span == 0 else (math.sqrt(count) - lo) / span
-        size = 0.85 + weight * 1.6
-        tier = (
-            "cloud-hot"
-            if weight > 0.66
-            else "cloud-mid"
-            if weight > 0.33
-            else "cloud-cool"
+        size = 0.82 + weight * 1.95
+        # smooth, theme-aware colour ramp from accent (rare) to accent-2 (frequent)
+        mix = round(weight * 100)
+        opacity = round(0.5 + 0.5 * weight, 2)
+        style = (
+            f"font-size:{size:.2f}rem;"
+            f"opacity:{opacity};"
+            f"color:color-mix(in srgb, var(--accent-2) {mix}%, var(--accent))"
         )
         words.append(
-            f'<span class="cloud-word {tier}" style="font-size:{size:.2f}rem"'
+            f'<span class="cloud-word" style="{style}"'
             f' title="{count} mentions">{esc(word)}</span>'
         )
     return f'<div class="word-cloud">{"".join(words)}</div>'
