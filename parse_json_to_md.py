@@ -128,6 +128,9 @@ WORD_CLOUD_GENERIC_TERMS = {
     "image", "images", "code", "codes", "text", "texts", "prediction",
     "predictions", "large-scale", "small-scale", "limited", "limitation",
     "limitations", "global", "local", "diverse", "context", "contexts",
+    "rely", "relies", "relied", "relying", "time", "times", "tool", "tools",
+    "human", "humans", "complex", "complexity", "signal", "signals", "gain",
+    "gains", "degradation", "degradations", "degrade", "degraded",
     # url / repository boilerplate from "code available at ..." sentences
     "https", "http", "github", "gitlab", "arxiv", "html", "doi",
 }
