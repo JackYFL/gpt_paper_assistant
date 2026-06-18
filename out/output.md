@@ -473,6 +473,67 @@ details:not([open]) > .topic-heading::before {
   white-space: pre-wrap;
 }
 
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  line-height: 1.2;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  cursor: default;
+  transition: transform 140ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px);
+}
+
+.cloud-hot {
+  color: var(--accent-2);
+}
+
+.cloud-mid {
+  color: var(--accent);
+}
+
+.cloud-cool {
+  color: var(--muted);
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
 .archive-block {
   margin-top: 30px;
   padding: 22px;
@@ -638,6 +699,20 @@ details:not([open]) > .topic-heading::before {
 
     </div>
   </section>
+
+
+  <h2 class="section-title">Abstract word clouds</h2>
+  <div class="cloud-grid">
+    <article class="cloud-card">
+      <h3>Today</h3>
+      <div class="word-cloud"><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">address</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">architecture</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">benchmark</span><span class="cloud-word cloud-cool" style="font-size:1.34rem" title="10 mentions">counting</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">dataset</span><span class="cloud-word cloud-mid" style="font-size:1.54rem" title="12 mentions">driving</span><span class="cloud-word cloud-cool" style="font-size:1.34rem" title="10 mentions">evaluation</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">experiments</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">expert</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">explicit</span><span class="cloud-word cloud-mid" style="font-size:1.64rem" title="13 mentions">framework</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">further</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">generation</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">geometry</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">github</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">https</span><span class="cloud-word cloud-hot" style="font-size:1.91rem" title="16 mentions">image</span><span class="cloud-word cloud-cool" style="font-size:1.34rem" title="10 mentions">images</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">interaction</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">learning</span><span class="cloud-word cloud-mid" style="font-size:1.73rem" title="14 mentions">memory</span><span class="cloud-word cloud-hot" style="font-size:2.45rem" title="23 mentions">model</span><span class="cloud-word cloud-hot" style="font-size:2.07rem" title="18 mentions">models</span><span class="cloud-word cloud-cool" style="font-size:1.34rem" title="10 mentions">object</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">observations</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">often</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">only</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">pathology</span><span class="cloud-word cloud-cool" style="font-size:1.23rem" title="9 mentions">performance</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">policy</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">quality</span><span class="cloud-word cloud-mid" style="font-size:1.54rem" title="12 mentions">reasoning</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">reconstruction</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">restoration</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">simpe</span><span class="cloud-word cloud-cool" style="font-size:1.23rem" title="9 mentions">single</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">spatial</span><span class="cloud-word cloud-mid" style="font-size:1.54rem" title="12 mentions">states</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="6 mentions">tokens</span><span class="cloud-word cloud-mid" style="font-size:1.73rem" title="14 mentions">tooc</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">trained</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="7 mentions">trajectories</span><span class="cloud-word cloud-mid" style="font-size:1.44rem" title="11 mentions">video</span><span class="cloud-word cloud-hot" style="font-size:2.30rem" title="21 mentions">visual</span><span class="cloud-word cloud-cool" style="font-size:1.11rem" title="8 mentions">world</span></div>
+    </article>
+    <article class="cloud-card">
+      <h3>Past month</h3>
+      <div class="word-cloud"><span class="cloud-word cloud-cool" style="font-size:0.90rem" title="122 mentions">accuracy</span><span class="cloud-word cloud-cool" style="font-size:1.12rem" title="172 mentions">address</span><span class="cloud-word cloud-cool" style="font-size:0.97rem" title="137 mentions">agent</span><span class="cloud-word cloud-cool" style="font-size:1.17rem" title="186 mentions">agents</span><span class="cloud-word cloud-cool" style="font-size:0.93rem" title="128 mentions">alignment</span><span class="cloud-word cloud-cool" style="font-size:0.87rem" title="115 mentions">attention</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="139 mentions">available</span><span class="cloud-word cloud-cool" style="font-size:1.27rem" title="211 mentions">benchmark</span><span class="cloud-word cloud-cool" style="font-size:1.26rem" title="208 mentions">benchmarks</span><span class="cloud-word cloud-cool" style="font-size:1.07rem" title="161 mentions">code</span><span class="cloud-word cloud-mid" style="font-size:1.40rem" title="251 mentions">data</span><span class="cloud-word cloud-cool" style="font-size:0.97rem" title="137 mentions">dataset</span><span class="cloud-word cloud-cool" style="font-size:0.87rem" title="116 mentions">datasets</span><span class="cloud-word cloud-cool" style="font-size:0.88rem" title="117 mentions">diffusion</span><span class="cloud-word cloud-cool" style="font-size:1.16rem" title="183 mentions">evaluation</span><span class="cloud-word cloud-cool" style="font-size:1.10rem" title="168 mentions">evidence</span><span class="cloud-word cloud-mid" style="font-size:1.48rem" title="274 mentions">experiments</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="111 mentions">explicit</span><span class="cloud-word cloud-cool" style="font-size:1.02rem" title="149 mentions">extensive</span><span class="cloud-word cloud-cool" style="font-size:0.90rem" title="121 mentions">features</span><span class="cloud-word cloud-cool" style="font-size:0.89rem" title="119 mentions">fine-grained</span><span class="cloud-word cloud-mid" style="font-size:1.74rem" title="363 mentions">framework</span><span class="cloud-word cloud-cool" style="font-size:1.15rem" title="180 mentions">further</span><span class="cloud-word cloud-cool" style="font-size:0.85rem" title="112 mentions">gap</span><span class="cloud-word cloud-mid" style="font-size:1.55rem" title="297 mentions">generation</span><span class="cloud-word cloud-cool" style="font-size:0.99rem" title="142 mentions">github</span><span class="cloud-word cloud-cool" style="font-size:1.05rem" title="154 mentions">https</span><span class="cloud-word cloud-cool" style="font-size:0.86rem" title="113 mentions">human</span><span class="cloud-word cloud-mid" style="font-size:1.40rem" title="249 mentions">image</span><span class="cloud-word cloud-cool" style="font-size:1.05rem" title="154 mentions">images</span><span class="cloud-word cloud-cool" style="font-size:1.02rem" title="148 mentions">improves</span><span class="cloud-word cloud-cool" style="font-size:0.96rem" title="135 mentions">inference</span><span class="cloud-word cloud-cool" style="font-size:0.88rem" title="117 mentions">information</span><span class="cloud-word cloud-cool" style="font-size:1.18rem" title="188 mentions">language</span><span class="cloud-word cloud-cool" style="font-size:1.32rem" title="227 mentions">learning</span><span class="cloud-word cloud-cool" style="font-size:1.14rem" title="177 mentions">memory</span><span class="cloud-word cloud-hot" style="font-size:2.02rem" title="472 mentions">model</span><span class="cloud-word cloud-hot" style="font-size:2.45rem" title="668 mentions">models</span><span class="cloud-word cloud-cool" style="font-size:1.31rem" title="223 mentions">multimodal</span><span class="cloud-word cloud-cool" style="font-size:0.88rem" title="118 mentions">object</span><span class="cloud-word cloud-cool" style="font-size:1.12rem" title="172 mentions">often</span><span class="cloud-word cloud-cool" style="font-size:1.03rem" title="151 mentions">only</span><span class="cloud-word cloud-cool" style="font-size:0.89rem" title="119 mentions">optimization</span><span class="cloud-word cloud-mid" style="font-size:1.47rem" title="270 mentions">performance</span><span class="cloud-word cloud-cool" style="font-size:1.03rem" title="150 mentions">quality</span><span class="cloud-word cloud-hot" style="font-size:1.94rem" title="439 mentions">reasoning</span><span class="cloud-word cloud-cool" style="font-size:0.89rem" title="119 mentions">remains</span><span class="cloud-word cloud-cool" style="font-size:0.92rem" title="125 mentions">scene</span><span class="cloud-word cloud-cool" style="font-size:1.19rem" title="191 mentions">semantic</span><span class="cloud-word cloud-cool" style="font-size:1.22rem" title="197 mentions">spatial</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="138 mentions">state-of-the-art</span><span class="cloud-word cloud-cool" style="font-size:0.90rem" title="122 mentions">strong</span><span class="cloud-word cloud-cool" style="font-size:1.09rem" title="164 mentions">temporal</span><span class="cloud-word cloud-cool" style="font-size:1.22rem" title="198 mentions">through</span><span class="cloud-word cloud-cool" style="font-size:0.94rem" title="130 mentions">tokens</span><span class="cloud-word cloud-mid" style="font-size:1.43rem" title="260 mentions">training</span><span class="cloud-word cloud-cool" style="font-size:0.98rem" title="138 mentions">understanding</span><span class="cloud-word cloud-mid" style="font-size:1.65rem" title="331 mentions">video</span><span class="cloud-word cloud-hot" style="font-size:2.08rem" title="497 mentions">visual</span><span class="cloud-word cloud-cool" style="font-size:0.94rem" title="130 mentions">yet</span></div>
+    </article>
+  </div>
+
 
   <h2 class="section-title" id="paper-content">Reading Queue</h2>
   <nav class="category-groups" aria-label="selected papers by category">
