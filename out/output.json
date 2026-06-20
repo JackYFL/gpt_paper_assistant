@@ -1,442 +1,118 @@
 {
-    "2606.20545": {
+    "2606.19980": {
         "authors": [
-            "Jinpeng Lu",
-            "Dexu Zhu",
-            "Haoyuan Shi",
-            "Linghan Cai",
-            "Guo Tang",
-            "Yinda Chen",
-            "Jie Cao",
-            "Duyu Tang",
-            "Yi Zhang",
-            "Yong Dai",
-            "Xiaozhu Ju"
+            "Wenli Xiao",
+            "Jia Xie",
+            "Tonghe Zhang",
+            "Haotian Lin",
+            "Letian \"Max\" Fu",
+            "Haoru Xue",
+            "Jalen Lu",
+            "Yi Yang",
+            "Cunxi Dai",
+            "Zi Wang",
+            "Jimmy Wu",
+            "Guanzhi Wang",
+            "S. Shankar Sastry",
+            "Ken Goldberg",
+            "Linxi \"Jim\" Fan",
+            "Yuke Zhu",
+            "Guanya Shi"
         ],
-        "title": "Current World Models Lack a Persistent State Core",
-        "abstract": "arXiv:2606.20545v1 Announce Type: new  Abstract: World models are increasingly regarded as a decisive step toward artificial general intelligence, yet modeling the physical world demands more than rendering convincing frames on demand: it requires an internal world state that keeps evolving over time, decoupled from observation, so that objects endure and events run to their conclusions whether or not a camera is watching, much as the moon holds to its orbit when no one is looking. This requirement is a blind spot of existing benchmarks, which reward surface properties such as fidelity, motion, and camera controllability while never asking whether a generated world keeps evolving once it is unobserved. We introduce \\textbf{WRBench}, the first systematic diagnostic benchmark that treats camera motion as an intervention on observability and resolves evaluation into a human-calibrated chain that asks whether the camera executes the requested interaction, whether the scene stays continuous and identifiable while in view, and whether a returning target remains consistent with the event that was set in motion. Across 9{,}600 videos from 23 models spanning four control paradigms, one finding proves stubborn: current systems maintain the observed world as a tracking shot, resuming a returning target in the state at which it was abandoned rather than advancing the event while it went unseen. Because this failure recurs across control paradigms, model families, and increments of scale, robust world-state evolution does not follow from cleaner imagery, tighter control, richer geometric priors, or sheer parameter count We therefore argue that the stability of the physical state kernel and the consistency of worldlines under viewpoint intervention should become first-class objectives of world-model design, so that a world model captures how the world will unfold rather than how the next frame appears.",
-        "arxiv_id": "2606.20545",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.20545",
-        "COMMENT": "Matches criterion 3 closely: it introduces a new benchmark for world-model evaluation centered on persistent state and unobserved evolution, which is a novel angle previous work often ignored.",
-        "RELEVANCE": 8,
-        "NOVELTY": 9,
-        "TAGS": [
-            "World Models",
-            "Benchmark & Evaluation",
-            "Temporal Consistency"
-        ]
-    },
-    "2606.20092": {
-        "authors": [
-            "Ganlin Yang",
-            "Zhangzheng Tu",
-            "Yuqiang Yang",
-            "Sitong Mao",
-            "Junyi Dong",
-            "Tianxing Chen",
-            "Jiaqi Peng",
-            "Jing Xiong",
-            "Jiafei Cao",
-            "Jifeng Dai",
-            "Wengang Zhou",
-            "Yao Mu",
-            "Tai Wang"
-        ],
-        "title": "EventVLA: Event-Driven Visual Evidence Memory for Long-Horizon Vision-Language-Action Policies",
-        "abstract": "arXiv:2606.20092v1 Announce Type: new  Abstract: Memory remains a critical bottleneck for long-horizon robotic manipulation, as standard Vision-Language-Action (VLA) policies often fail when task-relevant cues become occluded or unobservable over time. While existing memory-augmented methods utilize historical context, they either suffer from severe information bottlenecks, incur high latency via decoupled dual systems, or rely on unselective buffers that accumulate massive visual redundancies. To address these limitations, we introduce EventVLA, an end-to-end framework founded on the concept of sparse visual evidence memory that comprises two core components: foundational visual anchors to retain initial and short-term contexts, and a dynamic Keyframe Evidence Memory (KEM) module. Specifically, KEM directly predicts future keyframe probabilities from the VLA's latent embeddings to autonomously capture and store sparse, task-critical visual events. This foresight-driven mechanism empowers the policy to dynamically evaluate the future causal utility of current observations, preserving transient visual evidence before it becomes unobservable. Furthermore, we propose RoboTwin-MeM, a diagnostic benchmark specifically designed to evaluate non-Markovian manipulation tasks with interactive visual evidence. Extensive evaluations show that across 17 memory-requiring simulation tasks and 4 real-world bimanual tasks, EventVLA achieves an average success rate improvement of +40% over state-of-the-art memory-augmented VLAs.",
-        "arxiv_id": "2606.20092",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.20092",
-        "COMMENT": "Matches criterion 3 very closely: an embodied AI / VLA method with a new memory benchmark for long-horizon manipulation and a novel event-driven visual evidence memory module.",
-        "RELEVANCE": 9,
-        "NOVELTY": 8,
-        "TAGS": [
-            "Embodied AI",
-            "Vision-Language-Action",
-            "Memory Benchmark"
-        ]
-    },
-    "2606.20515": {
-        "authors": [
-            "Yalun Dai",
-            "Hao Li",
-            "Shulin Tian",
-            "Runmao Yao",
-            "Yuhao Dong",
-            "Fangzhou Hong",
-            "Zhaoxi Chen",
-            "Fangfu Liu",
-            "Baoliang Tian",
-            "Dingwen Zhang",
-            "Tao Wang",
-            "Kim-Hui Yap",
-            "Ziwei Liu"
-        ],
-        "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
-        "abstract": "arXiv:2606.20515v1 Announce Type: new  Abstract: Real-world spatial intelligence requires reasoning over a continuous and evolving 3D world, yet existing VLMs and tool-augmented agents largely remain tied to static, stateless inference from isolated visual observations. We introduce \\textbf{\\textsc{S-Agent}}, a spatial tool-use agentic paradigm for understanding and reasoning over continuous multi-view images and videos. By formulating spatial reasoning as spatio-temporal evidence accumulation rather than isolated frame-level prediction, \\textsc{S-Agent} reshapes spatial perception into scene-centric understanding beyond frame-centric recognition. Specifically, \\textsc{S-Agent} casts the VLM as a semantic planner that decides what evidence is needed, while a hierarchy of spatial tools and experts grounds objects in 2D, lifts them into 3D geometric evidence, and aggregates this evidence into high-level spatial knowledge (\\textit{e.g.}, counting, measurement, orientation, and relative position). Additionally, a temporal memory mechanism, including Scene Memory for maintaining the evolving scene state and Agent Memory for accumulating reasoning context, enables evidence integration across frames and reasoning steps. Comprehensive experiments on multi-view and video spatial reasoning benchmarks show that \\textsc{S-Agent} consistently improves both open-source and closed-source VLMs in a training-free manner. Beyond inference-time augmentation, supervised fine-tuning (SFT) on \\textsc{S-Agent}-generated spatial trajectories \\textsc{S-300K} yields \\textsc{S-Agent-8B}, a compact spatial agent that significantly surpasses similar-scale baselines (e.g., Qwen3-VL-8B) and performs comparably to advanced closed-source models (e.g., GPT-5.4 and Gemini 3).",
-        "arxiv_id": "2606.20515",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.20515",
-        "COMMENT": "Matches criterion 1 very closely: it is explicitly about improving spatial intelligence and spatial reasoning for embodied-style agents via spatial tool use, 3D grounding, and temporal memory.",
-        "RELEVANCE": 9,
-        "NOVELTY": 8,
-        "TAGS": [
-            "Spatial Reasoning",
-            "Vision-Language Agents",
-            "3D Grounding"
-        ]
-    },
-    "2606.20045": {
-        "authors": [
-            "Fanfu Xue",
-            "En Yu",
-            "Yantian Shen",
-            "Zhikun Hu",
-            "Hongjun Wang",
-            "Yang Yang",
-            "Xindi Wang",
-            "Jiande Sun"
-        ],
-        "title": "See-and-Reach: Precise Vision-Language Navigation for UAVs within the Field of View",
-        "abstract": "arXiv:2606.20045v1 Announce Type: new  Abstract: UAV Vision-Language Navigation (UAV-VLN) is typically formulated as a holistic search-and-reach problem, where long-range target discovery and final target approach are optimized and evaluated jointly. This formulation makes it difficult to assess a critical capability of aerial embodied agents, namely whether a UAV can accurately ground a visible target and translate vision-language evidence into precise 3D motion once the target enters its field of view. To address this limitation, we introduce UAV-VLN-FOV, a target-visible navigation task that isolates the see-and-reach stage and enables a more diagnostic evaluation of terminal reaching ability. We further propose 3DG-VLN, a vision-language waypoint prediction framework guided by dynamic 3D direction cues to enhance fine-grained visual grounding and spatial direction alignment for precise target reaching. Specifically, 3DG-VLN adaptively processes high-resolution front-view and downward-view observations to preserve fine-grained visual and geometric details for target grounding. It also updates the target-relative direction online during closed-loop navigation, allowing the agent to maintain spatial alignment with the target and reduce accumulated direction drift. To support this task, we construct a dedicated high-resolution benchmark which contains 2,717 trajectories with target-oriented high-level instructions, high-resolution front-view and downward-view egocentric observations, and continuous 3D waypoint annotations. Experiments show that 3DG-VLN outperforms competitive UAV-VLN baselines, achieving a 13.82\\% improvement in success rate. Real-world trials further demonstrate the potential of 3DG-VLN for practical see-and-reach navigation. The source code and benchmark are available at https://github.com/xuefanfu/3DG-VLN.",
-        "arxiv_id": "2606.20045",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2606.20045",
-        "COMMENT": "Matches criterion 3 closely: embodied AI navigation for UAVs with a new simulator/benchmark-style task focused on the target-visible see-and-reach stage and precise spatial grounding.",
-        "RELEVANCE": 8,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Embodied AI",
-            "Vision-Language Navigation",
-            "UAV Navigation"
-        ]
-    },
-    "2606.19776": {
-        "authors": [
-            "Jianing Li",
-            "Zhou Fang",
-            "Yijiang Liu",
-            "Li Du"
-        ],
-        "title": "Occ-VLM: Occupancy Grounded Vision Language Model for Indoor Scene Understanding",
-        "abstract": "arXiv:2606.19776v1 Announce Type: new  Abstract: Recently, vision-language models (VLMs) have made significant progress in 3D scene understanding, driving advances in applications such as embodied intelligence and robotic vision. However, existing approaches typically either rely directly on explicit 3D inputs (e.g., point clouds or RGB-D sequences), or introduce an additional 3D geometry encoder to derive 3D-aware visual tokens from 2D images. Such designs structurally decouple 3D geometric perception from the rich 2D semantics learned via vision-language pre-training, hindering the development of a unified 3D vision-language representation. In this work, we propose Occ-VLM, a novel framework for 3D scene understanding that operates purely on posed RGB images and employs a single 2D vision encoder. Specifically, Occ-VLM reconstructs 3D scene occupancy as an auxiliary geometric prior, which is utilized to spatially associate foreground 2D tokens with 3D space. These tokens are then decoded by a Large Language Model (LLM) for unified scene understanding. Extensive experiments demonstrate that Occ-VLM achieves both accurate geometric perception and robust vision-language reasoning: it attains state-of-the-art performance on multi-view occupancy prediction, while performing on par with 3D-input VLMs on 3D Visual Question Answering (VQA) and 3D dense captioning benchmarks.",
-        "arxiv_id": "2606.19776",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.19776",
-        "COMMENT": "Matches criterion 2 and criterion 3 closely: a VLM for indoor 3D scene understanding that uses occupancy as a geometric prior for unified 2D/3D reasoning in embodied settings.",
-        "RELEVANCE": 8,
-        "NOVELTY": 7,
-        "TAGS": [
-            "3D Vision-Language",
-            "Occupancy Prediction",
-            "Indoor Scene Understanding"
-        ]
-    },
-    "2606.19531": {
-        "authors": [
-            "Yuyang Zhang",
-            "Wenyao Zhang",
-            "Zekun Qi",
-            "He Zhang",
-            "Haitao Lin",
-            "Jingbo Zhang",
-            "Yao Mu",
-            "Xiaokang Yang",
-            "Wenjun Zeng",
-            "Xin Jin"
-        ],
-        "title": "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
-        "abstract": "arXiv:2606.19531v1 Announce Type: new  Abstract: World Action Models (WAMs) commonly rely on video generation to bridge visual world modeling and robot control. However, video-based WAMs face three coupled limitations: dense multi-frame future tokens make inference costly, full video prediction spends capacity on action-irrelevant temporal and appearance details, and long-horizon future imagination may introduce errors that mislead action prediction. These issues raise a simple question: Does world action model really need video generation? We propose ImageWAM, a simple WAM framework that repurposes pretrained image editing models for robot action prediction. In contrast to video generation, image editing provides a better-matched prior: it only needs to model a target-frame transformation, focuses on action-relevant current-to-target visual differences, and grounds task instructions to localized visual changes through edit pretraining. In practice, ImageWAM does not decode the target frame at inference time; instead, it conditions a flow-matching action expert on the KV caches produced by image-editing denoising, using them as a compact world-action context. ImageWAM outperforms standard VLA baselines and matching competitive WAMs without additional policy pretraining across different simulator and real-world experiments. It also reduces FLOPs to 1/6 and latency to 1/4 of video-based WAMs. Attention analysis further shows that editing caches focus on task-relevant change regions, supporting image editing as an effective alternative to video-based world-action modeling.",
-        "arxiv_id": "2606.19531",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.RO"
-        ],
-        "ARXIVID": "2606.19531",
-        "COMMENT": "Matches criterion 3 very closely: embodied AI / world action model method for simulator and real-world robot control.",
-        "RELEVANCE": 9,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Embodied AI",
-            "World Models",
-            "Robot Policy Learning"
-        ]
-    },
-    "2606.19584": {
-        "authors": [
-            "Chengzhi Mao",
-            "Xudong Lin",
-            "Wen-Sheng Chu"
-        ],
-        "title": "Language-Instructed Vision Embeddings for Controllable and Generalizable Perception",
-        "abstract": "arXiv:2606.19584v1 Announce Type: new  Abstract: Vision foundation models are typically trained as static feature extractors, placing the burden of task adaptation onto large downstream models. We propose an alternative paradigm: instead of solely feeding visual features into language models, we use language itself to dynamically guide the vision encoder. Our method, Language-Instructed Vision Embeddings (LIVE), leverages language as high-level guidance to produce task-centric embeddings at inference time, removing the need for task-specific retraining. This enables the encoder to focus on contextually relevant aspects of the input, yielding more controllable and generalizable representations. Empirically, LIVE reduces visual hallucinations (+34 points on MMVP), surpasses vision-language models with orders of magnitude more parameters on visual question answering, and generalizes to unseen instructions and tasks -- offering a direct path toward adaptive, instruction-driven visual intelligence.",
-        "arxiv_id": "2606.19584",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.19584",
-        "COMMENT": "Matches criterion 4 closely: it is about a vision foundation model being controlled by language to produce task-centric embeddings and more adaptive perception.",
-        "RELEVANCE": 7,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Vision Foundation Models",
-            "Controllable Perception",
-            "Vision-Language Guidance"
-        ]
-    },
-    "2606.19944": {
-        "authors": [
-            "Yifeng Wu",
-            "Huimin Huang",
-            "Ruiluo Wu",
-            "Chunyi Lin",
-            "Guanhua Chen",
-            "Xian Wu",
-            "Wang Song",
-            "Ruize Han"
-        ],
-        "title": "Timage: A Generative Text-in-Image Paradigm for Fine-Tuning Vision-Language Models",
-        "abstract": "arXiv:2606.19944v1 Announce Type: new  Abstract: Multimodal Large Language Models (MLLMs) often lose track of the right image regions during fine-grained spatial reasoning, because a textual query rarely carries any explicit geometric anchor into the pixel domain. Prevailing remedies either rewire the model's weights or pad the prompt with verbose instructions, yet neither reliably pins the language to the correct visual coordinates without eroding the backbone's general competence. We introduce Timage, a paradigm that recasts multimodal understanding as an alignment problem solved at the input: the query is drawn, as a typeset overlay, onto the image itself. The placement and appearance of this overlay are produced by a Constrained Schr\\\"odinger Bridge (cSB), an entropic optimal-transport sampler that factorizes layout synthesis into two coupled stochastic stages. The first stage, Region Search, transports noise toward query-aligned image zones while obeying a hard occlusion barrier that protects salient foreground content; the second stage, Appearance Shaping, sizes the glyphs through an ``ink-budget'' regularizer so that the rendered text stays legible and visually balanced. The resulting overlay behaves as an explicit attention beacon that channels the model's focus along spatial semantics. On the VMCBench suite, Timage paired with a modest 7B backbone clearly overtakes far larger proprietary systems as well as parameter-tuned baselines. The study positions deliberate input reconstruction as a powerful, architecture-neutral lever for strengthening multimodal reasoning.",
-        "arxiv_id": "2606.19944",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.19944",
-        "COMMENT": "Matches criterion 2 very closely: a new MLLM fine-tuning paradigm for spatial grounding.",
-        "RELEVANCE": 8,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Vision-Language Models",
-            "Spatial Grounding",
-            "Multimodal Fine-Tuning"
-        ]
-    },
-    "2606.20274": {
-        "authors": [
-            "Shihao Ji",
-            "HongXi Li",
-            "Zihui Song",
-            "Mingyu Li"
-        ],
-        "title": "Lagrange: An Open-Vocabulary, Energy-Based Sparse Framework for Generalized End-to-End Driving",
-        "abstract": "arXiv:2606.20274v1 Announce Type: new  Abstract: Scaling end-to-end autonomous driving to complex, open-world environments requires perceptual models that generalize to anomalous scenarios and planners that produce kinematically valid trajectories. Existing paradigms face a distinct dichotomy between representational efficiency and generalization capacity. Dense models (e.g., occupancy networks), while geometrically robust, incur critical computational bottlenecks and struggle with high-level semantic reasoning. Conversely, sparse, query-based planners are efficient but reliant on closed-set definitions, rendering them vulnerable to out-of-distribution (OOD) events. Although recent Vision-Language-Action (VLA) models offer open-vocabulary reasoning, their autoregressive, discrete token generation fundamentally conflicts with the continuous, high-frequency control requirements of vehicle dynamics. To address this, we propose Lagrange, an open-vocabulary, computationally sparse driving framework based on Masked Latent Fields (MLF). Rather than relying on dense volumetric reconstructions or closed-set query mechanisms, Lagrange exploits Vision-Language Models (VLMs) to encode class-agnostic object proposals into continuous semantic visual tokens. We introduce an intent-driven masked cross-attention module that temporally filters irrelevant entities, decoding the attended tokens into an implicit continuous energy field defined over spatial coordinates. By framing decision-making as a Lagrangian action minimization problem spanning this energy field, we enforce strict compliance with vehicle kinematics while executing collision avoidance. Extensive offline evaluations on both standard (nuScenes) and long-tail (CODA) benchmarks demonstrate that Lagrange establishes a promising framework for robust, interpretable, and kinematically feasible open-world autonomy.",
-        "arxiv_id": "2606.20274",
+        "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+        "abstract": "arXiv:2606.19980v1 Announce Type: new  Abstract: Achieving dexterous robotic manipulation in the real world heavily relies on human supervision and algorithm engineering, which becomes a central bottleneck in the pursuit of general physical intelligence. Although emerging coding agents can generate code to automate algorithm search, their successes remain largely confined in digital environments. We conjecture that the missing abstraction to automate robotics research is a repeatable feedback loop for real-world policy improvement: reset the scene, execute a policy, verify the outcome, and refine the next iteration. To bridge this gap, we introduce ENPIRE, a harness framework for coding agents that instantiates this physical feedback routine with four core modules: an Environment module (EN) for automatic reset and verification, a Policy Improvement module (PI) that launches policy refinement, a Rollout module (R) to evaluate policies with one or multiple physical robots operating in parallel, and an Evolution module (E) in which coding agents analyze logs, consult literature, improve training infrastructure and algorithm code to address failure modes. This closed-loop system transforms real-world manipulation learning into a controllable optimization procedure, minimizing human effort while allowing fair ablations across training recipe and agent variants. Powered by ENPIRE, frontier coding agents can autonomously train a policy to achieve a 99% success rate on challenging, dexterous manipulation tasks, such as organizing a pin box, fastening a zip tie, and tool use, a process that further accelerates when we dispatch an agent team on a robot fleet. Our results suggest a practical and scalable path toward deploying coding agents to autonomously advancing robotics in the physical world.",
+        "arxiv_id": "2606.19980",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2606.20274",
-        "COMMENT": "Matches criterion 3 strongly: embodied AI / autonomous driving method with open-vocabulary reasoning and control.",
-        "RELEVANCE": 7,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Autonomous Driving",
-            "Vision-Language-Action",
-            "Embodied AI"
-        ]
-    },
-    "2606.20244": {
-        "authors": [
-            "Bo Yin",
-            "Xiaobin Hu",
-            "Chengming Xu",
-            "Ruolin Shen",
-            "Mo Yang",
-            "Jiangning Zhang",
-            "Peng-Tao Jiang",
-            "Cheng Tan",
-            "Shuicheng YAN"
-        ],
-        "title": "SPOT-E: Test-Time Entropy Shaping with Visual Spotlights for Frozen VLMs",
-        "abstract": "arXiv:2606.20244v1 Announce Type: new  Abstract: Vision-language models (VLMs) often underperform on evidence intensive tasks because decisive visual evidence are small, localized, and easy to overlook, leading to failures in evidence readout even when high-level reasoning is intact. Prior inference-time visual interventions can improve grounding without retraining, but they are largely open-loop and lack a mechanism to verify whether highlighted evidence is actually used. We study answer-span prediction entropy as a model-internal feedback signal and show that naive entropy minimization is ambiguous, since low entropy may arise from evidence-grounded confidence or shortcut collapse. To resolve this ambiguity, we introduce low-entropy anchors and an entropy-shaping objective that reduces answer uncertainty while preserving baseline high-confidence tokens. We instantiate this principle in SPOT-E, a plug-and-play test-time method that produces question-conditioned spotlights, optimized per instance via light-weight tuning based on Group Relative Policy Optimization (GRPO). Across all benchmarks and different VLM families, SPOT-E yields consistent gains and improved robustness under visual corruptions. Code is publicly available at: \\url{https://github.com/YinBo0927/SPOT-E}",
-        "arxiv_id": "2606.20244",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2606.20244",
-        "COMMENT": "Matches criterion 2 closely: a test-time method for frozen VLMs that manipulates visual evidence with entropy shaping and spotlight generation.",
-        "RELEVANCE": 6,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Vision-Language Models",
-            "Test-Time Adaptation",
-            "Visual Grounding"
-        ]
-    },
-    "2606.19849": {
-        "authors": [
-            "Yang Tan",
-            "Junlong Tong",
-            "Linan Yue",
-            "Hao Wu",
-            "Pengfei Fang",
-            "Xiaoyu Shen"
-        ],
-        "title": "ViCoStream: Streaming VideoLLMs Can Run Beyond 100 FPS with Stage-Wise Coordinated Inference",
-        "abstract": "arXiv:2606.19849v1 Announce Type: new  Abstract: Streaming VideoLLMs must continuously process incoming video while maintaining low query latency, making both video-ingestion throughput and query-time responsiveness critical for real-time deployment. Existing methods largely focus on accelerating individual modules, such as visual encoding, token pruning, or KV-cache compression, but provide limited insight into whether the resulting system can sustain real-time streaming performance. We formulate streaming VideoLLM inference as a coordinated pipeline spanning visual preprocessing, visual encoding, token dropping, and LLM prefilling/decoding. Building on this formulation, we propose ViCoStream (Video Coordinated Streaming), a stage-wise coordinated streaming framework that combines chunk-wise execution, CUDA-stream overlap, visual token control, bounded visual attention, and query-side retrieval to bound per-chunk computation and memory costs. We further provide a systematic study of bottleneck migration, revealing how chunk size, token retention, attention locality, and retrieval scope shape the throughput-accuracy trade-off. Experiments with Qwen2.5-VL-3B/7B-Instruct across multiple streaming benchmarks show that ViCoStream achieves 134 FPS video throughput and less than 50 ms TTFT on a single A100 GPU while maintaining accuracy close to full-history baselines.",
-        "arxiv_id": "2606.19849",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.19849",
-        "COMMENT": "Matches criterion 2 closely: it introduces a new streaming VideoLLM inference framework and reports a concrete high-throughput/low-latency system result for real-time multimodal deployment.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "VideoLLMs",
-            "Streaming Inference",
-            "Multimodal Systems",
-            "Real-time Deployment"
-        ]
-    },
-    "2606.19835": {
-        "authors": [
-            "Roberto Pellerito",
-            "Daniel Gehrig",
-            "Shintaro Shiba",
-            "Davide Scaramuzza"
-        ],
-        "title": "Neural Events: Discrete Asynchronous Autoencoders for Event-Based Vision",
-        "abstract": "arXiv:2606.19835v1 Announce Type: new  Abstract: Event cameras capture dynamic scenes with exceptional temporal fidelity by representing them as a continuous stream of microsecond resolution \\textit{events}. Each individual event, however, only carries minimal semantic value, merely signaling a localized brightness change. To derive meaningful signals, downstream algorithms need to quickly integrate cues from a potentially massive torrent of low-information events. Current architectures, however, are easily overwhelmed, struggling to balance capturing fine-grained temporal dynamics and maintaining a manageable data throughput. This paper proposes a framework to re-tokenize event streams into a small set of highly informative \\textit{neural events}, each representing a local spatio-temporal context window with a discrete learnable code. Every time this code flips, a neural event is triggered, yielding a highly compressed data stream. We demonstrate that, across object detection and classification, networks trained on neural events are on par or surpass the performance of state-of-the-art approaches while reducing the event rate by a factor of 2.0.",
-        "arxiv_id": "2606.19835",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.19835",
-        "COMMENT": "Matches criterion 4: vision foundation models / application to event-based vision.",
-        "RELEVANCE": 6,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Event-Based Vision",
-            "Representation Learning",
-            "Vision Foundation Models"
-        ]
-    },
-    "2606.20536": {
-        "authors": [
-            "Nicolas Dufour",
-            "Alexei A. Efros",
-            "Patrick P\\'erez"
-        ],
-        "title": "The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation",
-        "abstract": "arXiv:2606.20536v1 Announce Type: new  Abstract: The Frechet Inception Distance (FID) is the de facto arbiter of image generation, yet most papers report just a single number from a single trained model using a single sampling seed. How reproducible is that number if we retrain the model, or merely resample from it? In this paper, we treat FID as a random variable on a two-axis panel of training and generation seeds, and measure its variance directly on several hundred SiT networks trained on class-conditional ImageNet 256x256. We report surprising findings: (a) Retraining the model using the same recipe with a different seed moves FID 3.2x more (in Inception feature space) than redrawing samples from a fixed network. (b) That gap is driven by three factors: random initialisation, data ordering, and the per-step Gaussian noise of the flow-matching loss. (c) Increasing compute or model size barely tightens the spread, holding the FID coefficient of variation (CoV) inside a 1-2% band. (d) Per-cell classifier-free-guidance tuning halves the spread but reshuffles which seeds work best, and a lucky training seed reaches the same FID with up to 2x less compute than an unlucky one. Based on these findings, we recommend a new FID evaluation protocol: evaluate under per-cell optimal guidance, treat any FID gap below the empirically measured ~1.3% CoV as inconclusive, and report an error bar over several training seeds rather than a single FID number.",
-        "arxiv_id": "2606.20536",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.20536",
-        "COMMENT": "No close match to criteria 1-4; however, it is a strong fit for the friend\u2019s interest in generative-model evaluation and clever statistical analysis, with surprising empirical findings about FID variability.",
-        "RELEVANCE": 3,
+        "ARXIVID": "2606.19980",
+        "COMMENT": "Matches criterion 3 very closely: an embodied AI paper proposing a new real-world robot policy self-improvement framework with a closed-loop physical feedback harness.",
+        "RELEVANCE": 9,
         "NOVELTY": 7,
         "TAGS": [
-            "Generative Modeling",
-            "Evaluation Protocols",
-            "FID",
-            "Statistical Variance"
+            "Embodied AI",
+            "Robot Learning",
+            "Self-Improvement Loop",
+            "Real-World Manipulation"
         ]
     },
-    "2606.19932": {
+    "2606.19990": {
         "authors": [
-            "Jindi Lv",
-            "Aoyu Li",
-            "Yuhao Zhou",
-            "Zheng Zhu",
-            "Xiaofeng Wang",
-            "Qing Ye",
-            "Yueqi Duan",
-            "Wentao Feng",
-            "Jiancheng Lv"
+            "Pu Li",
+            "Zhigang Lin",
+            "Qiang Wu",
+            "Yongxuan Lv",
+            "Fei Wang",
+            "Shan You"
         ],
-        "title": "Spatial-Aware Reduction Framework: Towards Efficient and Faithful Visual State Space Models",
-        "abstract": "arXiv:2606.19932v1 Announce Type: new  Abstract: Mamba demonstrates strong efficiency in modeling long visual sequences. However, when token reduction is applied to structurally enhanced Mamba variants, these models exhibit a severe performance collapse. We attribute this degradation to the spatially agnostic nature of existing reduction methods, which violate the two-dimensional structural premise required by the selective scanning mechanism. In this work, we propose STORM, a spatial-aware token reduction framework designed to maintain structural integrity throughout the compression process. STORM reformulates reduction into a structured operation on spatial units, enforcing localized constraints to maintain both grid topology and neighborhood coherence. As a plug-and-play module, STORM equips existing reduction pipelines with explicit spatial awareness without any training. Empirical results demonstrate that STORM achieves state-of-the-art pruning accuracy across diverse vision Mamba backbones under training-free settings. Notably, STORM delivers a substantial accuracy recovery on VMamba, outperforming prior methods by up to 63.3\\% in top-1 accuracy. Meanwhile, STORM incurs only a 1.0\\% accuracy drop on PlainMamba, achieving performance comparable to ViT.",
-        "arxiv_id": "2606.19932",
-        "primary_category": "cs.CV",
+        "title": "Reward as An Agent for Embodied World Models",
+        "abstract": "arXiv:2606.19990v1 Announce Type: new  Abstract: While RL has become a promising tool for refining world models, existing methods largely rely on conservative rollouts near the training distribution, limiting exploration, behavioral diversity, and richer dynamic discovery. In this work, we challenge this conservative paradigm. We argue that the core limitation is not exploration itself, but the lack of reliable verification strategies to support broader exploration. Without reliable verification, expanded exploration becomes highly susceptible to reward hacking, where policies exploit imperfect rewards without achieving genuine improvement. To evaluate this motivation, we instantiate our method in embodied world models, where physical plausibility, and task completion provide a rigorous testbed for scalable RL under complex dynamics. On the verification side, we introduce Reward as an Agent, an agentic reward framework that actively evaluates generated behaviors to provide robust reward signals and mitigate reward hacking under distribution shifts. On the exploration side, we introduce Dynamic-Aware Rollout Diversification through DynDiff-GRPO, which explicitly expands action-space exploration to diversify trajectories, broaden state-action coverage, and encourage richer embodied behaviors beyond conservative rollout regimes. By unifying Reward as an Agent with DynDiff-GRPO, we enable RL on a more reliable reward foundation with substantially diversified sampling, effectively mitigating reward hacking while yielding significant accuracy gains across multiple open-source world models, thereby demonstrating that broader exploration can scale successfully when grounded in robust verification.",
+        "arxiv_id": "2606.19990",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV",
             "cs.AI"
         ],
-        "ARXIVID": "2606.19932",
-        "COMMENT": "Matches criterion 4 moderately well: a vision foundation model architecture/application paper focused on efficient visual state space models.",
-        "RELEVANCE": 5,
+        "ARXIVID": "2606.19990",
+        "COMMENT": "Matches criterion 3 closely: an embodied-world-model paper introducing a new verification mechanism and exploration strategy aimed at overcoming reward hacking in open-source world models.",
+        "RELEVANCE": 8,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Embodied World Models",
+            "Reward Modeling",
+            "Exploration",
+            "Reward Hacking"
+        ]
+    },
+    "2606.19494": {
+        "authors": [
+            "Apurba Pokharel",
+            "Ram Dantu"
+        ],
+        "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
+        "abstract": "arXiv:2606.19494v1 Announce Type: new  Abstract: Multi-agent LLM deliberation, where agents exchange and revise answers over several rounds, is increasingly used to improve reasoning and accuracy, yet how and why it works is rarely modelled. Such deliberation mirrors how humans reach decisions. As social animals we are pulled both by the group, the herd effect that classical opinion-dynamics models such as DeGroot and Friedkin--Johnsen capture, and by our own internal belief, which they do not. We model multi-agent deliberation as a closed-loop dynamical system in which each agent carries a hidden internal belief, its anchor, that continually pulls its opinion regardless of its neighbours. We show this anchor can be recovered from the deliberation alone, and that it explains a behaviour classical consensus rules forbid: an agent's confidence in the correct answer can climb past where any agent started, escaping the space (convexhull) formed by the initial beliefs. Checking whether the recovered anchor also predicts held-out runs (generalizes) gives a simple test for when a model is truly driven bysuch an anchor. Across three open-weight model families this is a spectrum, not all-or-nothing. All anchors' influence are about equally strongly, but they differ in where the anchor sits, and only when it sits far from the initial opinions does deliberation escape the hull and need the full closed-loop model.",
+        "arxiv_id": "2606.19494",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2606.19494",
+        "COMMENT": "Partial fit to criterion 3 only in the general multi-agent deliberation sense, but it is not an embodied AI or simulator-related benchmark/method.",
+        "RELEVANCE": 3,
         "NOVELTY": 5,
         "TAGS": [
-            "Vision State Space Models",
-            "Token Pruning",
-            "Efficient Vision Models"
+            "Multi-Agent LLMs",
+            "Deliberation",
+            "Opinion Dynamics",
+            "Interpretability"
         ]
     },
-    "2606.19950": {
+    "2606.19893": {
         "authors": [
-            "Yuetian Du",
-            "Yucheng Wang",
-            "Ming Kong",
-            "Tian Liang",
-            "Qiang Long",
-            "Bingdi Chen",
-            "Qiang Zhu"
+            "Wei Yu",
+            "Suxing Liu",
+            "Minjie Yu",
+            "Jiahao Wang",
+            "Zhijian Zheng",
+            "Haocheng Deng",
+            "Bing Li"
         ],
-        "title": "Confidence Calibration for Multimodal LLMs: An Empirical Study through Medical VQA",
-        "abstract": "arXiv:2606.19950v1 Announce Type: new  Abstract: Multimodal Large Language Models (MLLMs) show great potential in medical tasks, but their elicited confidence often misaligns with actual accuracy, potentially leading to misdiagnosis or overlooking correct advice. This study presents the first comprehensive analysis of the relationship between accuracy and confidence in medical MLLMs. It proposes a novel method that combines Multi-Strategy Fusion-Based Interrogation (MS-FBI) with auxiliary expert LLM assessment, aiming to improve confidence calibration in Medical Visual Question Answering (VQA). Experiments demonstrate that our method reduces the Expected Calibration Error (ECE) by an average of 40\\% across three Medical VQA datasets, significantly enhancing MLLMs' reliability. The findings highlight the importance of domain-specific calibration for MLLMs in healthcare, offering a more trustworthy solution for AI-assisted diagnosis.",
-        "arxiv_id": "2606.19950",
-        "primary_category": "cs.CV",
+        "title": "MetaResearcher: Scaling Deep Research via Self-Reflective Reinforcement Learning in Adversarial Virtual Environments",
+        "abstract": "arXiv:2606.19893v1 Announce Type: new  Abstract: Deep research agents have demonstrated remarkable capabilities in autonomous information gathering and synthesis, yet their training remains constrained by the static nature of simulated environments, the limits of fact-retrieval-only task designs, and the inefficiency of outcome-based reinforcement learning. In this work, we propose MetaResearcher, a novel framework that scales deep research agent training across four synergistic dimensions. First, we introduce an Evolving Virtual World that injects temporal dynamics and adversarial misinformation into the training environment, forcing agents to develop source credibility assessment and temporal conflict resolution skills. Second, we design Discovery-Oriented Tasks -- including hypothesis generation and contradiction resolution -- that transcend simple fact retrieval and push agents toward genuine research behaviors. Third, we propose a Self-Reflective Meta-Reward mechanism within the GRPO framework that jointly optimizes for answer correctness, search path efficiency, reflection depth, and tool call diversity, directly addressing the repetitive action loop problem observed in prior work. Fourth, we introduce a Heterogeneous Multi-Agent Swarm architecture comprising specialized Scout, Filter, and Synthesizer models that learn collaborative research strategies through coordinated reinforcement learning. Built upon the LiteResearcher infrastructure, MetaResearcher requires zero marginal API cost for training while targeting substantial improvements in both benchmark performance (GAIA, Xbench-DS) and epistemic robustness under adversarial conditions. We present the complete framework design, training methodology, and planned experimental validation.",
+        "arxiv_id": "2606.19893",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV",
             "cs.AI"
         ],
-        "ARXIVID": "2606.19950",
-        "COMMENT": "Matches criterion 2 only loosely: MLLM confidence calibration in medical VQA, but it is more evaluation/calibration than a new model family.",
-        "RELEVANCE": 4,
-        "NOVELTY": 4,
+        "ARXIVID": "2606.19893",
+        "COMMENT": "Partial fit to criterion 3 only in the broad agent-training sense, but it is about deep research agents rather than embodied AI or simulator-based benchmarks.",
+        "RELEVANCE": 3,
+        "NOVELTY": 5,
         "TAGS": [
-            "Multimodal LLMs",
-            "Calibration",
-            "Medical VQA"
-        ]
-    },
-    "2606.20130": {
-        "authors": [
-            "Xuesong Wang"
-        ],
-        "title": "SAM3 Self-Distillation for Fine-Grained GOOSE 2D Semantic Segmentation",
-        "abstract": "arXiv:2606.20130v1 Announce Type: new  Abstract: We describe our 4th-place entry to the ICRA 2026 GOOSE 2D Fine-Grained Semantic Segmentation Challenge, which reached a composite mean Intersection-over-Union (mIoU) of 69.73% on the official 1,815-image test set. Our model adapts the image encoder of a recent visual foundation model, Segment Anything Model 3 (SAM3), with a lightweight decoder. Beyond this, we contribute two techniques and one empirical finding: (i) a self-distillation scheme that re-uses SAM3 itself, prompted with ground-truth boxes, as a teacher on the classes where it outperforms our own model; (ii) an image-level multi-scale test-time augmentation scheme that restores multi-scale inference for a fixed-input-size model by rescaling the image rather than the model input; and (iii) the finding that an aggressive photometric distortion from a winning 2025 GOOSE 2D entry, transplanted onto our pipeline, is its single largest source of improvement.",
-        "arxiv_id": "2606.20130",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2606.20130",
-        "COMMENT": "Matches criterion 4 only loosely: it applies a vision foundation model (SAM3) to fine-grained semantic segmentation, but it is mainly a challenge entry and not a new general method.",
-        "RELEVANCE": 4,
-        "NOVELTY": 3,
-        "TAGS": [
-            "Vision Foundation Models",
-            "Semantic Segmentation",
-            "Test-Time Augmentation"
+            "LLM Agents",
+            "Adversarial Environments",
+            "RL Training",
+            "Self-Reflection"
         ]
     }
 }
