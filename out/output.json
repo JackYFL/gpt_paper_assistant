@@ -1,118 +1,374 @@
 {
-    "2606.19980": {
+    "2606.24759": {
         "authors": [
-            "Wenli Xiao",
-            "Jia Xie",
-            "Tonghe Zhang",
-            "Haotian Lin",
-            "Letian \"Max\" Fu",
-            "Haoru Xue",
-            "Jalen Lu",
+            "Xiaowei Gao",
+            "Pengxiang Li",
+            "Yitai Cheng",
+            "Ruihan Xu",
+            "James Haworth",
+            "Stephen Law",
+            "Yun Ye"
+        ],
+        "title": "UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving",
+        "abstract": "arXiv:2606.24759v1 Announce Type: new  Abstract: Recent multimodal large language models (MLLMs) have shown strong potential for autonomous driving scene understanding, yet existing methods still face a fundamental trade-off between temporal reasoning and spatial precision. Models that rely on single-frame or low-resolution inputs often miss small, distant, or partially occluded hazards, while language-centric driving models frequently provide limited grounded evidence for their explanations. To address this gap, we propose UniDrive, a unified visual-language and grounding framework for interpretable risk understanding in autonomous driving. UniDrive combines a temporal reasoning branch that models scene dynamics from multi-frame visual input with a high-resolution perception branch that preserves fine-grained spatial details from the latest frame. The two branches are integrated through a gated cross-attention fusion module, enabling dynamic context to be aligned with precise spatial evidence. Based on the fused representation, UniDrive jointly generates natural-language risk descriptions and grounded bounding-box outputs for risk objects. Experiments on the DRAMA-Reasoning benchmark show that UniDrive outperforms representative image-based and video-based baselines in both captioning and risk-object grounding. In particular, UniDrive achieves the best overall performance on the validation split and demonstrates clear advantages in small-object localization, zero-shot generalization to NuScenes and BDD100K, and human-rated interpretability and trustworthiness. These results suggest that explicitly combining temporal semantics and high-resolution perception provides a stronger foundation for interpretable and safety-oriented autonomous driving systems. The code is available at https://github.com/pixeli99/unidrive-dev.",
+        "arxiv_id": "2606.24759",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "ARXIVID": "2606.24759",
+        "COMMENT": "Matches criterion 1 and criterion 3 closely: it is a grounded multimodal framework for autonomous driving that combines temporal reasoning with precise spatial evidence.",
+        "RELEVANCE": 7,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Autonomous Driving",
+            "Grounded Vision-Language",
+            "Spatial Reasoning"
+        ]
+    },
+    "2606.24564": {
+        "authors": [
+            "Zhenyang Li",
+            "Lutao Jiang",
+            "Yizhou Zhao",
+            "Ying-Cong Chen",
+            "Xin Wang",
+            "Weikai Chen",
+            "Yifan Peng"
+        ],
+        "title": "PatternGSL: A Structured Specification Language for Template-Free and Simulation-Ready 3D Garments",
+        "abstract": "arXiv:2606.24564v1 Announce Type: new  Abstract: Reconstructing realistic, physically plausible garments from a single image remains a fundamental challenge. Template-free methods capture surface geometry but lack explicit sewing structure for simulation; while programmatic systems are simulation-ready but constrained by predefined templates. This reveals a fundamental representation gap between geometric reconstruction and structured garment construction. We present PatternGSL, a structured garment representation in the form of a template-free and learnable specification language that encodes complete sewing patterns, including panel boundaries, parameterized seams, and explicit stitch topology, in a compact and standardized form. PatternGSL preserves the physical rigor of pattern-based models while removing template dependence, elevating sewing structure as a first-class target for generative modeling. We further propose a vision-language framework that predicts PatternGSL specifications directly from a single image and decodes them into garments using lightweight deterministic validity handling, without optimization-based refinement or manual cleanup. In addition, we introduce PatternGSLData, the first large-scale image-to-GSL paired dataset comprising 300K samples with complete sewing pattern annotations, enabling supervised VLM training for structured garment reconstruction. Experiments demonstrate improved pattern accuracy over prior baselines, explicit sewing-structure recovery, reliable cloth simulation, and pattern-level editing through the same deterministic decoding pipeline. Code and data-processing scripts will be released at https://github.com/PatternGSL/PatternGSL.",
+        "arxiv_id": "2606.24564",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24564",
+        "COMMENT": "Matches criterion 3 and also criterion 2 somewhat closely: it proposes a new simulation-ready structured garment representation and a VLM pipeline for predicting it.",
+        "RELEVANCE": 6,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Vision-Language Modeling",
+            "3D Garments",
+            "Simulation-Ready Representation"
+        ]
+    },
+    "2606.24138": {
+        "authors": [
+            "Tongyan Hua",
+            "Dongli Wu",
+            "Jinjing Zhu",
+            "Yinrui Ren",
+            "Zhongcheng Hong",
+            "Ying-Cong Chen",
+            "Hui Xiong",
+            "Wufan Zhao"
+        ],
+        "title": "Sat2City v2: Native 3D City Asset Generation from a Single Satellite Image",
+        "abstract": "arXiv:2606.24138v1 Announce Type: new  Abstract: Generating explicit 3D city assets from a single satellite image is important for digital twins, urban simulation, and geospatial intelligence. Unlike satellite-to-street-view synthesis, the task requires a reusable textured mesh with plausible geometry and controllable appearance rather than a 3D proxy optimized only for rendering a small set of images or videos. The ICCV Sat2City framework made a first step by conditioning cascaded sparse-voxel latent diffusion on satellite-derived height maps, but its appearance was random, its training data were synthetic, and its task-specific VAE did not scale well to noisy real-world reconstructions. We present Sat2City v2, a journal extension that adapts a pretrained native structured-latent 3D foundation model to weakly aligned satellite images and textured meshes. We build a real-world dataset with 16,241 satellite-mesh pairs across 24 regions in 9 cities. Instead of learning a 3D representation from noisy city meshes, Sat2City v2 encodes each mesh into a pretrained native 3D latent space, fine-tunes a satellite-conditioned geometry flow, and uses the decoded shape to anchor satellite-conditioned texturing. This retains Sat2City's geometry-to-appearance cascade while enabling appearance-controllable generation from the satellite input. Experiments on metric-scale DSM reconstruction and generative city-asset benchmarks for geometry and appearance show that Sat2City v2 achieves the best overall performance among evaluated baselines. Overall, Sat2City v2 advances satellite-to-city generation from rendering-oriented 3D proxies to explicit textured mesh assets, supported by, to the best of our knowledge, the first documented satellite-mesh paired dataset collected from matched geographic crops for this asset-level task. Project page: https://ai4city-hkust.github.io/Sat2City-v2/",
+        "arxiv_id": "2606.24138",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24138",
+        "COMMENT": "Matches criteria 3 and 4 closely: it builds a new satellite-mesh paired dataset and proposes a 3D city asset generation method from satellite imagery, with a foundation-model angle.",
+        "RELEVANCE": 6,
+        "NOVELTY": 7,
+        "TAGS": [
+            "3D Generation",
+            "Geospatial AI",
+            "Foundation Models"
+        ]
+    },
+    "2606.24477": {
+        "authors": [
+            "Yixuan Li",
+            "Guangzhi Sun",
+            "Yudong Yang",
+            "Wei Li",
+            "Zejun MA",
+            "Chao Zhang"
+        ],
+        "title": "video-SALMONN-R$^3$: Learning to ReWatch, ReAsk, and ReAnswer for Efficient Video Understanding",
+        "abstract": "arXiv:2606.24477v1 Announce Type: new  Abstract: Video large language models (LLMs) are often constrained by computation and memory budgets, leading them to use reduced frame rates and spatial resolutions, which may cause them to miss critical information for question answering (QA). A practical and efficient solution is a two-stage paradigm: first perform coarse video understanding to localize relevant segments, and then re-watch these segments at higher temporal or spatial fidelity. In this paper, we present video-SALMONN-R$^3$, the first end-to-end video-LLM that enables re-watch through reinforcement learning without relying on chain-of-thought (CoT) cold-start. This design removes the need for costly CoT data annotations and avoids CoT-based supervised fine-tuning (SFT), which can otherwise degrade the pretrained video understanding abilities. To address the mismatch between the reasoning-first behavior induced by re-watch and the answer-first tendency of pretrained video-LLMs, we propose a re-answer strategy, in which the model first produces a direct answer in the first watch and then refines it after re-watching. Finally, to improve question adherence during re-watching, we propose a re-ask mechanism that re-injects the query when revisiting localized segments. Experimental results show that video-SALMONN-R$^3$ consistently outperforms both the base model and the QA-SFT baseline, while surpassing prior re-watch-based approaches with significantly lower computational cost. Code, models, and data will be publicly released upon acceptance.",
+        "arxiv_id": "2606.24477",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.AI",
+            "cs.SD"
+        ],
+        "ARXIVID": "2606.24477",
+        "COMMENT": "Matches criterion 3 closely: a new method for efficient video understanding in video-LLMs using re-watch/re-ask/re-answer, with a novel training strategy.",
+        "RELEVANCE": 6,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Video LLM",
+            "Efficient Inference",
+            "Reinforcement Learning"
+        ]
+    },
+    "2606.24726": {
+        "authors": [
+            "Sheng Xia",
+            "Zhengqin Lai",
+            "Tianxiang Jiang",
+            "Kanghui Tian",
+            "Shoujun Zhou",
+            "Bin Li",
+            "Yi Wang"
+        ],
+        "title": "SER: Learning to Ground Video Reasoning with Semantic Evidence Rewards",
+        "abstract": "arXiv:2606.24726v1 Announce Type: new  Abstract: Video MLLMs often struggle with fine-grained spatio-temporal reasoning, sometimes generating correct answers based on irrelevant frames or objects. Although outputting spatio-temporal evidence during reasoning is a promising direction, existing RL frameworks typically rely on geometry-only (IoU) rewards, which can be sensitive to boundary perturbations and overlook semantic alignment. To address this, we propose Semantic Evidence Reward (SER), which reformulates spatio-temporal evidence grounding as a constrained verification task. Instead of computing pixel-level overlap, SER uses a referee VLM as a local checker to evaluate model-generated evidence claims across two dimensions: relevance and localization quality, combined with a temporal penalty. This design reduces the reliance on dense box annotations and enables training directly on standard video QA data. On the V-STAR benchmark, SER achieves 49.6% mLGM, improving by 3.0 points over the strong evidence-grounded baseline Open-o3-Video, demonstrating its potential in enhancing both answer accuracy and evidence grounding.",
+        "arxiv_id": "2606.24726",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24726",
+        "COMMENT": "Matches criterion 3 very closely: it is an embodied/video reasoning method that improves spatio-temporal evidence grounding with a new reward design for video MLLMs.",
+        "RELEVANCE": 6,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Video MLLM",
+            "Evidence Grounding",
+            "Reinforcement Learning"
+        ]
+    },
+    "2606.24484": {
+        "authors": [
+            "Xingsong Ye",
+            "Yongkun Du",
+            "Jiaxin Zhang",
+            "Haojie Zhang",
+            "Chong Sun",
+            "Chen Li",
+            "Jing Lyu",
+            "Zhineng Chen"
+        ],
+        "title": "Advancing WordArt-Oriented Scene Text Recognition: Datasets and Methods",
+        "abstract": "arXiv:2606.24484v1 Announce Type: new  Abstract: WordArt (artistic text) features highly customized fonts, textures, and layouts, making WordArt-oriented scene TExt Recognition (WATER) substantially more challenging than general Scene Text Recognition (STR). Existing STR datasets and methods, typically built around regular scene text and fixed-template inputs, struggle to scale to WATER. Thus, we aim to advance this task from both data and model perspectives. On the data side, we construct a 2M synthetic dataset, WATER-S, with the scale improved by hundreds of times compared to existing artistic text data. WATER-S consists of two complementary subsets. One rendered by an upgraded rendering pipeline (SynthWordArt), which provides highly accurate and controllable synthetic WordArt data. The other is generated by combining Qwen3-VL for prompt mining and Z-Image for image synthesis, which improves the coverage of realistic and diverse data. On the model side, we propose WATERec. It adopts an visual encoder supporting arbitrary-shaped inputs and an autoregressive decoder to model complex layouts, structurally breaking the bottleneck of fixed-template STR on WordArt. Experiments show that this architecture outperforms prior STR methods, achieving state-of-the-art performance on irregular texts such as WordArt. Together with WATER-R, carefully reorganized from existing real STR data, our strong baseline with the new synthetic data and model design reaches 90.40% accuracy on WordArt-Bench, surpassing both general-purpose and OCR-specialized vision-language models by a large margin. Code and data are available at https://github.com/YesianRohn/WATER.",
+        "arxiv_id": "2606.24484",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24484",
+        "COMMENT": "Matches criterion 2 and criterion 4 closely: it introduces a new vision-language method and large-scale synthetic dataset for WordArt-oriented text recognition.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Vision Foundation Models",
+            "Scene Text Recognition",
+            "Synthetic Data"
+        ]
+    },
+    "2606.24449": {
+        "authors": [
+            "Mohamad Alansari",
+            "Yonathan Michael",
+            "Hasan AlMarzouqi",
+            "Muzammal Naseer",
+            "Naoufel Werghi",
+            "Sajid Javed"
+        ],
+        "title": "SENTRY: SAM2-Enhanced Neighbor-Aware and Temporally Reasoned Memory for Visual Tracking",
+        "abstract": "arXiv:2606.24449v1 Announce Type: new  Abstract: We revisit the memory update mechanism in SAM2-based visual object tracking and identify confidence-only mask selection as the dominant cause of drift under occlusion, rapid motion, and distractors. We introduce SENTRY, a training-free, plug-and-play, refine-before-write module that validates each memory update for short-horizon temporal consistency before committing it. SENTRY aggregates diverse segmentation hypotheses per frame, backtracks them into short tracklets, and uses neighbor-aware cycle-consistent matching against recent trajectories to favor temporally and geometrically consistent masks. It leaves the base architecture untouched, replacing confidence-driven writes with consistency-validated ones. For fair evaluation, we re-evaluate major open-source SAM2-based trackers across all available scales and datasets, filling gaps in prior reports. Integrated into five strong baselines, SENTRY delivers consistent gains across nine benchmarks, achieving new zero-shot SOTA on LaSOT, LaSOT_ext, GOT-10k, VOT20, VOT22, and DiDi. Despite these checks, the SAM2-L version runs at 32.8 FPS on an A100, and across compatible hosts adds only about 0.4--0.6 GB VRAM. Our results provide the first unified all-scale evaluation of SAM2-based trackers and show that enforcing temporal validity at write time stabilizes memory-augmented tracking without retraining.",
+        "arxiv_id": "2606.24449",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24449",
+        "COMMENT": "Matches criterion 1 closely: it improves memory update and temporal reasoning for visual object tracking, which is a spatial understanding problem for embodied/interactive perception.",
+        "RELEVANCE": 5,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Visual Tracking",
+            "Temporal Reasoning",
+            "Memory Modules"
+        ]
+    },
+    "2606.24774": {
+        "authors": [
+            "Zhihao Zhu",
+            "Hongyi Tang",
             "Yi Yang",
-            "Cunxi Dai",
-            "Zi Wang",
-            "Jimmy Wu",
-            "Guanzhi Wang",
-            "S. Shankar Sastry",
-            "Ken Goldberg",
-            "Linxi \"Jim\" Fan",
-            "Yuke Zhu",
-            "Guanya Shi"
+            "Ahmed Abbasi"
         ],
-        "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
-        "abstract": "arXiv:2606.19980v1 Announce Type: new  Abstract: Achieving dexterous robotic manipulation in the real world heavily relies on human supervision and algorithm engineering, which becomes a central bottleneck in the pursuit of general physical intelligence. Although emerging coding agents can generate code to automate algorithm search, their successes remain largely confined in digital environments. We conjecture that the missing abstraction to automate robotics research is a repeatable feedback loop for real-world policy improvement: reset the scene, execute a policy, verify the outcome, and refine the next iteration. To bridge this gap, we introduce ENPIRE, a harness framework for coding agents that instantiates this physical feedback routine with four core modules: an Environment module (EN) for automatic reset and verification, a Policy Improvement module (PI) that launches policy refinement, a Rollout module (R) to evaluate policies with one or multiple physical robots operating in parallel, and an Evolution module (E) in which coding agents analyze logs, consult literature, improve training infrastructure and algorithm code to address failure modes. This closed-loop system transforms real-world manipulation learning into a controllable optimization procedure, minimizing human effort while allowing fair ablations across training recipe and agent variants. Powered by ENPIRE, frontier coding agents can autonomously train a policy to achieve a 99% success rate on challenging, dexterous manipulation tasks, such as organizing a pin box, fastening a zip tie, and tool use, a process that further accelerates when we dispatch an agent team on a robot fleet. Our results suggest a practical and scalable path toward deploying coding agents to autonomously advancing robotics in the physical world.",
-        "arxiv_id": "2606.19980",
-        "primary_category": "cs.AI",
+        "title": "Revealing Training Data Exposure in Vision Language Large Models via Parameter Gradients",
+        "abstract": "arXiv:2606.24774v1 Announce Type: new  Abstract: Vision-Language Large Models (VLLMs) trained on massive crawled corpora raise pressing copyright and data-provenance concerns. These concerns are particularly acute in healthcare, where patient medical images paired with clinical reports demand rigorous privacy safeguards. However, existing training data detection methods either fail in cross-modal scenarios or rely on superficial output signals with insufficient discriminative power. We introduce GradAudit, a gradient-based auditing framework that examines internal optimization dynamics rather than treating VLLMs as black boxes. Our approach builds on a key observation: model parameters converge to regions where gradients on training samples become stable and well-aligned, whereas gradients on non-training samples remain noisy and inconsistent. By analyzing these gradient signatures, GradAudit achieves strong separability and detects genuine image-text associations learned during training, not merely individual modality membership. Empirically, across both medical and general-domain datasets, GradAudit substantially outperforms state-of-the-art baselines in both pretraining and fine-tuning VLLMs. In a case study employing copyrighted content, we show that existing training data detection methods not only underestimate the extent of unauthorized data usage, but that this underestimation becomes more pronounced as models become more recent and more advanced.",
+        "arxiv_id": "2606.24774",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI"
+            "cs.CV"
         ],
-        "ARXIVID": "2606.19980",
-        "COMMENT": "Matches criterion 3 very closely: an embodied AI paper proposing a new real-world robot policy self-improvement framework with a closed-loop physical feedback harness.",
-        "RELEVANCE": 9,
-        "NOVELTY": 7,
+        "ARXIVID": "2606.24774",
+        "COMMENT": "No close match to criteria 1-4; this is a training-data auditing/forensics paper for VLLMs, relevant to VLMs but not a new model or embodied/spatial method.",
+        "RELEVANCE": 3,
+        "NOVELTY": 6,
         "TAGS": [
-            "Embodied AI",
-            "Robot Learning",
-            "Self-Improvement Loop",
-            "Real-World Manipulation"
+            "VLM Forensics",
+            "Data Provenance",
+            "Model Auditing"
         ]
     },
-    "2606.19990": {
+    "2606.24112": {
         "authors": [
-            "Pu Li",
-            "Zhigang Lin",
-            "Qiang Wu",
-            "Yongxuan Lv",
-            "Fei Wang",
-            "Shan You"
+            "Chenhao Dang",
+            "Dantong Zhu",
+            "Jun Yang",
+            "Conghui He",
+            "Weijia Li"
         ],
-        "title": "Reward as An Agent for Embodied World Models",
-        "abstract": "arXiv:2606.19990v1 Announce Type: new  Abstract: While RL has become a promising tool for refining world models, existing methods largely rely on conservative rollouts near the training distribution, limiting exploration, behavioral diversity, and richer dynamic discovery. In this work, we challenge this conservative paradigm. We argue that the core limitation is not exploration itself, but the lack of reliable verification strategies to support broader exploration. Without reliable verification, expanded exploration becomes highly susceptible to reward hacking, where policies exploit imperfect rewards without achieving genuine improvement. To evaluate this motivation, we instantiate our method in embodied world models, where physical plausibility, and task completion provide a rigorous testbed for scalable RL under complex dynamics. On the verification side, we introduce Reward as an Agent, an agentic reward framework that actively evaluates generated behaviors to provide robust reward signals and mitigate reward hacking under distribution shifts. On the exploration side, we introduce Dynamic-Aware Rollout Diversification through DynDiff-GRPO, which explicitly expands action-space exploration to diversify trajectories, broaden state-action coverage, and encourage richer embodied behaviors beyond conservative rollout regimes. By unifying Reward as an Agent with DynDiff-GRPO, we enable RL on a more reliable reward foundation with substantially diversified sampling, effectively mitigating reward hacking while yielding significant accuracy gains across multiple open-source world models, thereby demonstrating that broader exploration can scale successfully when grounded in robust verification.",
-        "arxiv_id": "2606.19990",
+        "title": "ReMMD: Realistic Multilingual Multi-Image Agentic Verification for Multimodal Misinformation Detection",
+        "abstract": "arXiv:2606.24112v1 Announce Type: new  Abstract: Multimodal misinformation detection is increasingly important because viral posts now combine long multilingual narratives, several images, mixed provenance, and subtle text--image framing errors. Existing benchmarks and methods remain poorly matched to this setting: they usually isolate short captions, single images, binary labels, or one manipulation source, while agentic verification remains costly under realistic evidence search. We present ReMMD, a realistic multilingual multi-image agentic verification framework for multimodal misinformation detection. ReMMD includes ReMMDBench, a real-world multimodal misinformation detection benchmark with 500 samples, 2,756 images, five monolingual languages, two cross-lingual settings, three text-length tiers, multi-image posts, five-way veracity labels, eight distortion labels, evidence provenance, and rationales. It also includes ReMMD-Agent, a persistent-memory verifier that decomposes posts into atomic points, builds a reusable evidence set, and predicts structured L1/L2/L3 outputs. Across proprietary systems, open LVLMs, MMD-Agent, and T2-Agent, ReMMD-Agent obtains the best five-way veracity performance, with 41.80% accuracy and 39.12% macro-F1 using GPT-5.2, while reducing cost by 17.5% relative to MMD-Agent and 79.9% relative to T2-Agent. The project is available at https://dang-ai.github.io/ReMMD.",
+        "arxiv_id": "2606.24112",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2606.19990",
-        "COMMENT": "Matches criterion 3 closely: an embodied-world-model paper introducing a new verification mechanism and exploration strategy aimed at overcoming reward hacking in open-source world models.",
-        "RELEVANCE": 8,
-        "NOVELTY": 7,
+        "ARXIVID": "2606.24112",
+        "COMMENT": "Matches criterion 3 loosely: it introduces a new multimodal misinformation benchmark and an agentic verifier, but it is not embodied AI or a vision foundation model paper.",
+        "RELEVANCE": 3,
+        "NOVELTY": 6,
         "TAGS": [
-            "Embodied World Models",
-            "Reward Modeling",
-            "Exploration",
-            "Reward Hacking"
+            "Multimodal Verification",
+            "Benchmark & Evaluation",
+            "Agentic Reasoning"
         ]
     },
-    "2606.19494": {
+    "2606.24196": {
         "authors": [
-            "Apurba Pokharel",
-            "Ram Dantu"
+            "Hengji Zhou",
+            "Yufeng Liu",
+            "Ye Liu",
+            "Yong Xu",
+            "Lianghao Xia",
+            "Liqiang Nie"
         ],
-        "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
-        "abstract": "arXiv:2606.19494v1 Announce Type: new  Abstract: Multi-agent LLM deliberation, where agents exchange and revise answers over several rounds, is increasingly used to improve reasoning and accuracy, yet how and why it works is rarely modelled. Such deliberation mirrors how humans reach decisions. As social animals we are pulled both by the group, the herd effect that classical opinion-dynamics models such as DeGroot and Friedkin--Johnsen capture, and by our own internal belief, which they do not. We model multi-agent deliberation as a closed-loop dynamical system in which each agent carries a hidden internal belief, its anchor, that continually pulls its opinion regardless of its neighbours. We show this anchor can be recovered from the deliberation alone, and that it explains a behaviour classical consensus rules forbid: an agent's confidence in the correct answer can climb past where any agent started, escaping the space (convexhull) formed by the initial beliefs. Checking whether the recovered anchor also predicts held-out runs (generalizes) gives a simple test for when a model is truly driven bysuch an anchor. Across three open-weight model families this is a spectrum, not all-or-nothing. All anchors' influence are about equally strongly, but they differ in where the anchor sits, and only when it sits far from the initial opinions does deliberation escape the hull and need the full closed-loop model.",
-        "arxiv_id": "2606.19494",
+        "title": "Navigating User Behavior toward Personalized Multimodal Generation",
+        "abstract": "arXiv:2606.24196v1 Announce Type: new  Abstract: Modern AIGC pipelines deliver high-fidelity images and videos but presuppose a well-formed creation instruction, while end users rarely articulate visual details, leaving generators misaligned with user demand. We study personalized content generation, which turns a user's interaction history into an executable instruction for downstream synthesis, and identify two obstacles: behavior must be encoded in a form legible to language reasoning, and the model must acquire instruction-writing skill absent from both pretraining and behavior data. We propose NaviGen, which represents each item with a dual identifier coupling a collaborative code and a textual code as a behavioral substrate and a semantic bridge in one token stream. On this representation, a two-stage SFT+RL pipeline first distills preference reasoning and instruction writing from evolutionarily searched supervision, then aligns generation with user intent through hierarchical and self-consistent rewards. Experiments across product, game, and short-video domains show that NaviGen improves personalized image and video generation, strengthens next-item prediction, and yields more specific, relevant, and visually generatable instructions. Our code is anonymously released at: https://github.com/iLearn-Lab/NaviGen.",
+        "arxiv_id": "2606.24196",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2606.19494",
-        "COMMENT": "Partial fit to criterion 3 only in the general multi-agent deliberation sense, but it is not an embodied AI or simulator-related benchmark/method.",
+        "ARXIVID": "2606.24196",
+        "COMMENT": "No close match to criteria 1-4; this is about personalized multimodal generation from user behavior, which is related to generative multimodal learning but not one of the specified focuses.",
+        "RELEVANCE": 3,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Personalized Generation",
+            "Multimodal Learning",
+            "Recommendation"
+        ]
+    },
+    "2606.24120": {
+        "authors": [
+            "Vladyslav Polushko",
+            "Tilman Bucher",
+            "Ronald R\\\"osch",
+            "Thomas M\\\"arz",
+            "Markus Rauhut",
+            "Andreas Weinmann"
+        ],
+        "title": "Flood Mapping from RGB imagery using a Vision Foundation Model",
+        "abstract": "arXiv:2606.24120v1 Announce Type: new  Abstract: Timely, high-resolution maps of flood extent around settlements are essential for emergency response and damage assessment. We consider airborne RGB imagery for flood mapping as it can be collected rapidly at low cost. To produce flood maps, deep learning models for water segmentation are often used. CNN based and small vision transformer models are used. However, they need much data for adaptation to a change of scenery, i.e., another flooding event. Vision foundation models or large vision transformers are known to generalize across domains. Recently, foundation models for Earth observation became available. They are pretrained on satellite data, whose spatial resolution, viewing geometry, and radiometry differ from nadir RGB imagery. Thus, adaptation is required. We investigate how a satellite-pretrained Earth observation foundation model can be adapted to centimeter-scale floodwater mapping from RGB imagery. Specifically, we fine-tune a model we call Prithvi-2.0-UPN consisting of the Prithvi-EO-2.0-600M Vision Transformer combined with a UPerNet decoder for binary water segmentation on two RGB datasets (BlessemFlood21, NeuenahrFlood). In a first experiment we observe that Prithvi-2.0-UPN reaches state-of-the-art results on BlessemFlood21 and NeuenahrFlood, when trained on their datasets. In a second experiment we show that Prithvi-2.0-UPN performs better than state-of-the-art baseline models for transfer to a new flood event (trained on BlessemFlood21, tested on NeuenahrFlood) in a zero-shot setting. However, the performance indicates room for improvement. In this respect, we investigate in a third experiment how performance improves when further fine-tuning the models with small shares of NeuenahrFlood training data: Prithvi-2.0-UPN improves the fastest and reaches almost the performance level when fully trained on NeuenahrFlood, indicating transfer capabilities.",
+        "arxiv_id": "2606.24120",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "eess.IV"
+        ],
+        "ARXIVID": "2606.24120",
+        "COMMENT": "Matches criterion 4 closely: it adapts a vision foundation model for flood mapping from RGB imagery and studies transfer/generalization across flood events.",
+        "RELEVANCE": 5,
+        "NOVELTY": 4,
+        "TAGS": [
+            "Vision Foundation Model",
+            "Remote Sensing",
+            "Flood Segmentation"
+        ]
+    },
+    "2606.24282": {
+        "authors": [
+            "Yinuo Zhang",
+            "Guangshun Wei",
+            "Yuanfeng Zhou",
+            "Yiran Shen"
+        ],
+        "title": "UniRED: Unified RGB-D Video Frame Interpolation with Event Guidance",
+        "abstract": "arXiv:2606.24282v1 Announce Type: new  Abstract: High frame-rate RGB-D videos are crucial for a variety of downstream tasks, including motion analysis, dynamic scene understanding, and 3D reconstruction. However, due to hardware and sensing constraints, practical RGB-D cameras are typically limited to low frame rates, making it difficult to capture rapid scene dynamics. Existing video interpolation methods have achieved strong performance on RGB data, but they are not readily applicable to RGB-D scenarios, where they often yield blurry boundaries, visible artifacts, and degraded geometric consistency. Furthermore, motion estimation from only two boundary frames is inherently under-constrained in complex dynamic scenes. Event cameras, by contrast, provide asynchronous measurements with ultra-high temporal resolution, offering dense motion cues. In this paper, we propose a unified multimodal framework for RGB-D video interpolation that jointly exploits RGB appearance, depth geometry, and event-based temporal cues. Specifically, it first extracts and fuses RGB, depth and event cues, then estimates bidirectional flow with motion basis refinement for RGB and Z-axial refinement for depth, and finally synthesizes the target RGB-D frame via bidirectional warping and soft blending. In addition, we construct a new RGB-D-Event dataset to alleviate the scarcity of tri-modal training data. Extensive experiments on a public benchmark and the proposed dataset demonstrate that our method achieves superior photometric fidelity for RGB interpolation and stronger geometric accuracy for depth interpolation than existing approaches.",
+        "arxiv_id": "2606.24282",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24282",
+        "COMMENT": "No very close match to criteria 1-4; it is a multimodal video interpolation method with a new RGB-D-Event dataset, which is adjacent to vision foundations but not a direct fit.",
         "RELEVANCE": 3,
         "NOVELTY": 5,
         "TAGS": [
-            "Multi-Agent LLMs",
-            "Deliberation",
-            "Opinion Dynamics",
-            "Interpretability"
+            "Video Interpolation",
+            "RGB-D",
+            "Event Cameras"
         ]
     },
-    "2606.19893": {
+    "2606.23763": {
         "authors": [
-            "Wei Yu",
-            "Suxing Liu",
-            "Minjie Yu",
-            "Jiahao Wang",
-            "Zhijian Zheng",
-            "Haocheng Deng",
-            "Bing Li"
+            "Yiyang Chen",
+            "Yixin Tan",
+            "Binrui Shen"
         ],
-        "title": "MetaResearcher: Scaling Deep Research via Self-Reflective Reinforcement Learning in Adversarial Virtual Environments",
-        "abstract": "arXiv:2606.19893v1 Announce Type: new  Abstract: Deep research agents have demonstrated remarkable capabilities in autonomous information gathering and synthesis, yet their training remains constrained by the static nature of simulated environments, the limits of fact-retrieval-only task designs, and the inefficiency of outcome-based reinforcement learning. In this work, we propose MetaResearcher, a novel framework that scales deep research agent training across four synergistic dimensions. First, we introduce an Evolving Virtual World that injects temporal dynamics and adversarial misinformation into the training environment, forcing agents to develop source credibility assessment and temporal conflict resolution skills. Second, we design Discovery-Oriented Tasks -- including hypothesis generation and contradiction resolution -- that transcend simple fact retrieval and push agents toward genuine research behaviors. Third, we propose a Self-Reflective Meta-Reward mechanism within the GRPO framework that jointly optimizes for answer correctness, search path efficiency, reflection depth, and tool call diversity, directly addressing the repetitive action loop problem observed in prior work. Fourth, we introduce a Heterogeneous Multi-Agent Swarm architecture comprising specialized Scout, Filter, and Synthesizer models that learn collaborative research strategies through coordinated reinforcement learning. Built upon the LiteResearcher infrastructure, MetaResearcher requires zero marginal API cost for training while targeting substantial improvements in both benchmark performance (GAIA, Xbench-DS) and epistemic robustness under adversarial conditions. We present the complete framework design, training methodology, and planned experimental validation.",
-        "arxiv_id": "2606.19893",
-        "primary_category": "cs.AI",
+        "title": "Listening makes Vision Clear for VLMs",
+        "abstract": "arXiv:2606.23763v1 Announce Type: new  Abstract: Recent work typically assesses vision--language consistency using attention distributions of answer-side tokens. However, we observe that highest attention regions are not always consistent with the intended semantic token. This probably stems from decoding drift, where language priors from previously generated answer tokens accumulate and mismatch with visual attention. Besides the priors from previous answer tokens, we find that structural tokens, e.g., modality boundary markers, may encompass the entire context and generate high attention to areas unrelated to the target. To avoid these distortions and provide consistency evaluation for large VLMs, we adopt prompt-side semantics and propose Prompt-Vision Token Activation Map (PV-TAM). PV-TAM further incorporates a filter to remove systematic bias induced by modality boundary markers. Unlike traditional methods that evaluate overlap solely through masks while ignoring activation intensity, our metrics leverage the peak distribution of attention to measure the alignment between prompts and visual regions. In experiments, PV-TAM consistently improves both attention-based and IoU-style localization metrics over answer-side baselines on various datasets.",
+        "arxiv_id": "2606.23763",
+        "primary_category": "cs.CV",
         "categories": [
+            "cs.CV",
             "cs.AI"
         ],
-        "ARXIVID": "2606.19893",
-        "COMMENT": "Partial fit to criterion 3 only in the broad agent-training sense, but it is about deep research agents rather than embodied AI or simulator-based benchmarks.",
+        "ARXIVID": "2606.23763",
+        "COMMENT": "Matches criterion 2 weakly: it studies VLM attention/activation maps and introduces a consistency evaluation method, but it is not a new VLLM/MLLM model.",
+        "RELEVANCE": 4,
+        "NOVELTY": 4,
+        "TAGS": [
+            "Vision-Language Reasoning",
+            "Interpretability",
+            "Attention Analysis"
+        ]
+    },
+    "2606.24225": {
+        "authors": [
+            "Chirui Chang",
+            "Xiaoyang Lyu",
+            "Yi-Hua Huang",
+            "Haoru Tan",
+            "Shizhen Zhao",
+            "Yikang Ding",
+            "Jianmin Bao",
+            "Xin Tao",
+            "Pengfei Wan",
+            "Xiaojuan Qi"
+        ],
+        "title": "Geometry-Instructed Video Editing",
+        "abstract": "arXiv:2606.24225v1 Announce Type: new  Abstract: Object-level geometric edits, including translating, rotating, scaling, duplicating, or removing an object, are routine operations in digital content creation (DCC) workflows, yet they remain unreliable in generative video editing. The key challenge lies in specifying the target object's 3D state change unambiguously across viewpoint and time, while consistently updating geometry-dependent secondary effects such as shadows and reflections. We introduce GIVE, a geometry-instructed video editing framework that represents edits through a unified object-state formulation. Two video-aligned geometry streams describe the target object before and after editing: a depth-box encoding coarse 3D placement and extent, and an orientation-box providing an appearance-agnostic orientation cue. Together, these streams provide a compact pre/post geometric specification for object-state transitions. To provide paired supervision for learning these edits, we build a scalable graphics-engine pipeline that executes object-level edit programs and renders controlled before/after pairs, isolating the intended geometric edit while keeping secondary effects consistent with the transformation. Experimental results demonstrate that GIVE produces faithful geometric edits with temporal coherence and consistent secondary effects across operators in a unified framework, and shows promising transfer to in-the-wild videos. Project page: https://geometry-instructed-video-editing.github.io/give/",
+        "arxiv_id": "2606.24225",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2606.24225",
+        "COMMENT": "Matches criterion 3 loosely: it is a new method for geometry-aware video editing, but it is not an embodied AI benchmark/simulator paper and not a VLLM/MLLM paper.",
         "RELEVANCE": 3,
         "NOVELTY": 5,
         "TAGS": [
-            "LLM Agents",
-            "Adversarial Environments",
-            "RL Training",
-            "Self-Reflection"
+            "Video Editing",
+            "Geometry Conditioning",
+            "Generative Modeling"
         ]
     }
 }
