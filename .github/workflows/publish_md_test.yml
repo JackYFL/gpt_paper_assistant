@@ -16,16 +16,19 @@ on:
       - completed
 
 
-permissions: write-all
+permissions:
+  actions: read
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    outputs:
-      file-exists: ${{steps.file-check.outputs.file_exists}}
     steps:
     - uses: actions/checkout@v4
     - name: Use repository output on push
@@ -74,7 +77,7 @@ jobs:
       with:
        token: ${{ secrets.GITHUB_TOKEN }}
        file: output.md
-    - name: Archive artifact with fixed permissions
+    - name: Fix dist permissions
       if: steps.check_files.outputs.files_exists == 'true'
       shell: sh
       run: |
@@ -82,20 +85,11 @@ jobs:
         chmod -c -R +rX dist | while read line; do
           echo "::warning title=Invalid file permissions automatically fixed::$line"
         done
-        echo "Archiving dist directory..."
-        tar --dereference --hard-dereference \
-            --directory "dist" \
-            -cvf "$RUNNER_TEMP/artifact.tar" \
-            --exclude=.git --exclude=.github \
-            .
-        echo "Archive created at $RUNNER_TEMP/artifact.tar"
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-pages-artifact@v5
       if: steps.check_files.outputs.files_exists == 'true'
       with:
-        # path: dist
-        path: ${{ runner.temp }}/artifact.tar
-        name: github-pages
-    - uses: actions/deploy-pages@v4
+        path: dist
+    - uses: actions/deploy-pages@v5
       if: steps.check_files.outputs.files_exists == 'true'
       id: deployment
     
