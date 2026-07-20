@@ -661,7 +661,7 @@ details:not([open]) > .topic-heading::before {
 <main class="daily-arxiv">
   <section class="hero">
     <div>
-      <p class="eyebrow">Daily ArXiv / July 18, 2026</p>
+      <p class="eyebrow">Daily ArXiv / July 20, 2026</p>
       <h1>Personalized paper radar</h1>
       <p class="hero-copy">
         A focused reading queue selected from today's ArXiv feed, ranked by topic fit,
@@ -672,19 +672,19 @@ details:not([open]) > .topic-heading::before {
 
     <div class="metric">
       <span>Relevant papers</span>
-      <strong>10</strong>
+      <strong>15</strong>
     </div>
 
 
     <div class="metric">
       <span>Top score</span>
-      <strong>14</strong>
+      <strong>15</strong>
     </div>
 
 
     <div class="metric">
       <span>Average score</span>
-      <strong>10.6</strong>
+      <strong>11.6</strong>
     </div>
 
 
@@ -701,11 +701,11 @@ details:not([open]) > .topic-heading::before {
   <div class="cloud-grid">
     <article class="cloud-card">
       <h3>Today</h3>
-      <div class="word-cloud"><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">action</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="26 mentions">agent</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">ball</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">brain</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">cgsreg</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">counterfactual</span><span class="cloud-word" style="font-size:1.11rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="5 mentions">danger</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">decision</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">domain</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">dreamerv</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">driver</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">dynamic</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">emotion</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">failure</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">five</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">grounded</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">group</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">in-cabin</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">increasingly</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">interaction</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">intervention</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">knowledge</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">language</span><span class="cloud-word" style="font-size:1.11rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="5 mentions">mbrl</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="7 mentions">multimodal</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">physical</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">policy</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">pong</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">prism</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">question</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">real-world</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">reasoning</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">recognition</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">reinforcement</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">retrieval</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">rollout</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">safety</span><span class="cloud-word" style="font-size:1.11rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="5 mentions">science</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">search</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">spatial</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="4 mentions">support</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">trajectory</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="3 mentions">unified</span><span class="cloud-word" style="font-size:1.45rem;opacity:0.66;color:color-mix(in srgb, var(--accent-2) 33%, var(--accent))" title="8 mentions">visual</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="6 mentions">world</span></div>
+      <div class="word-cloud"><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">action</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">assessment</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">capture</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">challenging</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">consistency</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">construct</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">critical</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">device</span><span class="cloud-word" style="font-size:1.90rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 56%, var(--accent))" title="7 mentions">estimation</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">event</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">evolution</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">expert</span><span class="cloud-word" style="font-size:1.90rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 56%, var(--accent))" title="7 mentions">geometric</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">language</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">long-term</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">meme</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">merging</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">mllm</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">mobile</span><span class="cloud-word" style="font-size:1.90rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 56%, var(--accent))" title="7 mentions">motion</span><span class="cloud-word" style="font-size:2.21rem;opacity:0.86;color:color-mix(in srgb, var(--accent-2) 71%, var(--accent))" title="8 mentions">multiple</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">natural</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">object</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">perception</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">point</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">pose</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">preserve</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">query</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">real-time</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">reasoning</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">recognition</span><span class="cloud-word" style="font-size:2.50rem;opacity:0.93;color:color-mix(in srgb, var(--accent-2) 86%, var(--accent))" title="9 mentions">reconstruction</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">reduce</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">reduction</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">region</span><span class="cloud-word" style="font-size:1.90rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 56%, var(--accent))" title="7 mentions">risk</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">safety</span><span class="cloud-word" style="font-size:2.50rem;opacity:0.93;color:color-mix(in srgb, var(--accent-2) 86%, var(--accent))" title="9 mentions">semantic</span><span class="cloud-word" style="font-size:2.21rem;opacity:0.86;color:color-mix(in srgb, var(--accent-2) 71%, var(--accent))" title="8 mentions">temporal</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="10 mentions">token</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">tracking</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">trajectory</span><span class="cloud-word" style="font-size:1.57rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="6 mentions">unified</span><span class="cloud-word" style="font-size:2.21rem;opacity:0.86;color:color-mix(in srgb, var(--accent-2) 71%, var(--accent))" title="8 mentions">visual</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="5 mentions">zero-shot</span></div>
     </article>
     <article class="cloud-card">
       <h3>Past month</h3>
-      <div class="word-cloud"><span class="cloud-word" style="font-size:1.27rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 23%, var(--accent))" title="98 mentions">action</span><span class="cloud-word" style="font-size:1.64rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="144 mentions">agent</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="76 mentions">alignment</span><span class="cloud-word" style="font-size:0.92rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="63 mentions">camera</span><span class="cloud-word" style="font-size:0.92rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="63 mentions">consistency</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="54 mentions">control</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="58 mentions">dense</span><span class="cloud-word" style="font-size:1.01rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="71 mentions">detection</span><span class="cloud-word" style="font-size:0.92rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="63 mentions">diffusion</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="69 mentions">domain</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="65 mentions">driving</span><span class="cloud-word" style="font-size:1.41rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="114 mentions">dynamic</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="58 mentions">environment</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="76 mentions">event</span><span class="cloud-word" style="font-size:1.18rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 18%, var(--accent))" title="88 mentions">evidence</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="77 mentions">fine-grained</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="70 mentions">foundation</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="60 mentions">frame</span><span class="cloud-word" style="font-size:2.04rem;opacity:0.81;color:color-mix(in srgb, var(--accent-2) 63%, var(--accent))" title="203 mentions">generation</span><span class="cloud-word" style="font-size:0.97rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="67 mentions">geometric</span><span class="cloud-word" style="font-size:0.92rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="63 mentions">geometry</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="66 mentions">inference</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="73 mentions">interaction</span><span class="cloud-word" style="font-size:1.40rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="113 mentions">language</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="59 mentions">latent</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="55 mentions">mechanism</span><span class="cloud-word" style="font-size:1.16rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="86 mentions">memory</span><span class="cloud-word" style="font-size:1.37rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 28%, var(--accent))" title="109 mentions">motion</span><span class="cloud-word" style="font-size:1.62rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 41%, var(--accent))" title="141 mentions">multimodal</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="54 mentions">multiple</span><span class="cloud-word" style="font-size:1.62rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 41%, var(--accent))" title="141 mentions">object</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="57 mentions">paradigm</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="62 mentions">perception</span><span class="cloud-word" style="font-size:0.94rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="64 mentions">physical</span><span class="cloud-word" style="font-size:1.21rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="91 mentions">pipeline</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="57 mentions">policy</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="55 mentions">pose</span><span class="cloud-word" style="font-size:1.12rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="82 mentions">real-world</span><span class="cloud-word" style="font-size:1.87rem;opacity:0.77;color:color-mix(in srgb, var(--accent-2) 54%, var(--accent))" title="177 mentions">reasoning</span><span class="cloud-word" style="font-size:1.21rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="91 mentions">reconstruction</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="65 mentions">region</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="59 mentions">reward</span><span class="cloud-word" style="font-size:1.68rem;opacity:0.72;color:color-mix(in srgb, var(--accent-2) 44%, var(--accent))" title="149 mentions">scene</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="61 mentions">segmentation</span><span class="cloud-word" style="font-size:1.74rem;opacity:0.73;color:color-mix(in srgb, var(--accent-2) 47%, var(--accent))" title="157 mentions">semantic</span><span class="cloud-word" style="font-size:1.04rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="74 mentions">space</span><span class="cloud-word" style="font-size:1.63rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="143 mentions">spatial</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="58 mentions">support</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="70 mentions">target</span><span class="cloud-word" style="font-size:1.25rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 22%, var(--accent))" title="96 mentions">temporal</span><span class="cloud-word" style="font-size:1.42rem;opacity:0.66;color:color-mix(in srgb, var(--accent-2) 31%, var(--accent))" title="116 mentions">token</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="77 mentions">trajectory</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 20%, var(--accent))" title="92 mentions">understanding</span><span class="cloud-word" style="font-size:1.11rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="81 mentions">unified</span><span class="cloud-word" style="font-size:2.49rem;opacity:0.93;color:color-mix(in srgb, var(--accent-2) 86%, var(--accent))" title="283 mentions">video</span><span class="cloud-word" style="font-size:0.84rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="56 mentions">view</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="62 mentions">vision</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="77 mentions">vision-language</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="338 mentions">visual</span><span class="cloud-word" style="font-size:1.34rem;opacity:0.63;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="106 mentions">world</span></div>
+      <div class="word-cloud"><span class="cloud-word" style="font-size:1.26rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 22%, var(--accent))" title="89 mentions">action</span><span class="cloud-word" style="font-size:1.71rem;opacity:0.73;color:color-mix(in srgb, var(--accent-2) 46%, var(--accent))" title="140 mentions">agent</span><span class="cloud-word" style="font-size:1.08rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="72 mentions">alignment</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="52 mentions">attention</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="62 mentions">camera</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="53 mentions">concept</span><span class="cloud-word" style="font-size:1.01rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="66 mentions">consistency</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">dense</span><span class="cloud-word" style="font-size:1.08rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="72 mentions">detection</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="58 mentions">diffusion</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="64 mentions">domain</span><span class="cloud-word" style="font-size:1.41rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="105 mentions">dynamic</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">environment</span><span class="cloud-word" style="font-size:1.08rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="72 mentions">event</span><span class="cloud-word" style="font-size:1.17rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 18%, var(--accent))" title="81 mentions">evidence</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="71 mentions">fine-grained</span><span class="cloud-word" style="font-size:1.01rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="66 mentions">foundation</span><span class="cloud-word" style="font-size:2.09rem;opacity:0.83;color:color-mix(in srgb, var(--accent-2) 65%, var(--accent))" title="191 mentions">generation</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="68 mentions">geometric</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="58 mentions">geometry</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="65 mentions">inference</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="56 mentions">interaction</span><span class="cloud-word" style="font-size:1.46rem;opacity:0.66;color:color-mix(in srgb, var(--accent-2) 33%, var(--accent))" title="110 mentions">language</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="53 mentions">latent</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="54 mentions">mechanism</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="67 mentions">memory</span><span class="cloud-word" style="font-size:1.47rem;opacity:0.67;color:color-mix(in srgb, var(--accent-2) 33%, var(--accent))" title="111 mentions">motion</span><span class="cloud-word" style="font-size:1.64rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="131 mentions">multimodal</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">multiple</span><span class="cloud-word" style="font-size:1.56rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 38%, var(--accent))" title="121 mentions">object</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="55 mentions">paradigm</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="62 mentions">perception</span><span class="cloud-word" style="font-size:0.94rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="60 mentions">physical</span><span class="cloud-word" style="font-size:1.26rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 22%, var(--accent))" title="89 mentions">pipeline</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">pose</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="52 mentions">query</span><span class="cloud-word" style="font-size:1.20rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="83 mentions">real-world</span><span class="cloud-word" style="font-size:1.85rem;opacity:0.76;color:color-mix(in srgb, var(--accent-2) 53%, var(--accent))" title="157 mentions">reasoning</span><span class="cloud-word" style="font-size:1.26rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 22%, var(--accent))" title="89 mentions">reconstruction</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">region</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="52 mentions">reward</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="51 mentions">robust</span><span class="cloud-word" style="font-size:1.75rem;opacity:0.74;color:color-mix(in srgb, var(--accent-2) 48%, var(--accent))" title="145 mentions">scene</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="61 mentions">segmentation</span><span class="cloud-word" style="font-size:1.87rem;opacity:0.77;color:color-mix(in srgb, var(--accent-2) 54%, var(--accent))" title="160 mentions">semantic</span><span class="cloud-word" style="font-size:1.05rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="70 mentions">space</span><span class="cloud-word" style="font-size:1.61rem;opacity:0.7;color:color-mix(in srgb, var(--accent-2) 40%, var(--accent))" title="127 mentions">spatial</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="55 mentions">support</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="68 mentions">target</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="99 mentions">temporal</span><span class="cloud-word" style="font-size:1.37rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 28%, var(--accent))" title="101 mentions">token</span><span class="cloud-word" style="font-size:0.97rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="63 mentions">trajectory</span><span class="cloud-word" style="font-size:1.24rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="87 mentions">understanding</span><span class="cloud-word" style="font-size:1.18rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="82 mentions">unified</span><span class="cloud-word" style="font-size:2.58rem;opacity:0.95;color:color-mix(in srgb, var(--accent-2) 90%, var(--accent))" title="268 mentions">video</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="53 mentions">view</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="56 mentions">vision</span><span class="cloud-word" style="font-size:1.04rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="69 mentions">vision-language</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="302 mentions">visual</span><span class="cloud-word" style="font-size:1.31rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 25%, var(--accent))" title="94 mentions">world</span></div>
     </article>
   </div>
 
@@ -715,32 +715,114 @@ details:not([open]) > .topic-heading::before {
 
     <details class="category-section" open>
       <summary class="category-heading">
-        <h3>cs.AI</h3>
-        <span>10 papers</span>
+        <h3>cs.CV</h3>
+        <span>13 papers</span>
       </summary>
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Vision-Language Models</summary>
+      <summary class="topic-heading">Vision-Language Model</summary>
       <div class="queue">
 
     <details class="paper-row" id="link0">
       <summary class="paper-row-summary">
         <span class="queue-index">1</span>
         <span class="paper-row-copy">
-          <strong>SportD: Can VLMs Physically Strategize?</strong>
-          <small>Jasin Cekinmez, Addison J. Wu, Haotian Xia, Akshaya Bharadhwaj, Anay Putty, Anirudh Ravishankar, Jaewoong Lee, Jinglin Xiao, Kyumin Andrew Shim, Mishika Ahuja, Nisarga Patil, Leo Liu, Zhuohan Liu, Weining Shen</small>
+          <strong>GeoChrono: Benchmarking and Rethinking Long-Term Temporal Understanding in Remote Sensing</strong>
+          <small>Yujie Li, Jiancheng Pan, Zhiwei Wei, Jiuniu Wang, Mugen Peng, Wenjia Xu</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Vision-Language Models</span>
+      <span class="topic-tag">Vision-Language Model</span>
+<span class="topic-tag">Remote Sensing</span>
 <span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">Sports Understanding</span>
-<span class="topic-tag">Strategic Reasoning</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-<span class="category-tag">cs.CV</span>
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">15</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2607.15768</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15768">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: this is a remote-sensing MLLM benchmark plus a new model for long-term temporal and spatio-temporal understanding.</p>
+        <p class="abstract">Remote sensing offers an unparalleled vantage point for observing the Earth&#x27;s long-term surface evolution, yet it demands that a model not only perceive land cover at isolated moments, but also track changes, memorize evolution histories, and reason across time and space. However, existing studies lack a systematic evaluation that dissects these distinct competencies. To fill this gap, we introduce ChronoBench, a multidimensional benchmark that decomposes this task into four progressive cognitive levels (i.e., Land Cover Perception, Temporal Recognition, Long-Term Memory, and Spatio-Temporal Reasoning). The ChronoBench comprises 12 sub-tasks and 17,689 rigorously validated QA (Question-Answer) pairs. Extensive evaluations reveal that mainstream MLLMs fall drastically behind human experts, with Long-Term Memory emerging as the most critical bottleneck. Motivated by this finding, we further propose GeoChrono, an MLLM with enhanced capabilities for tracing, memorizing, and reasoning about long-term geographic evolution. Leveraging the physical prior that geographic parcels remain spatially fixed while their semantics evolve, we design a Temporal Trajectory Encoder~(TempEnc) that constructs per-location temporal trajectories for dedicated land cover evolution modeling, and we introduce a Coarse-to-Fine Token Compressor~(C2FComp) that adaptively preserves dynamic regions while compressing the static background. To support training, we also construct ChronoInstruct, a 104K-sample instruction-tuning dataset spanning all competency levels for training. GeoChrono achieves state-of-the-art performance on ChronoBench, surpassing the leading commercial MLLMs by over 20%, while C2FComp reduces visual tokens by over 56% while retaining GeoChrono&#x27;s 94.6% performance. The code and data will be available at https://github.com/IntelliSensing/GeoChrono</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>When Can Test-Time Adaptation Help Zero-Shot CT Vision-Language Models?</strong>
+          <small>Ailar Mahdizadeh, Puria Azadi Moghadam, Xiangteng He, Leonid Sigal</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Model</span>
+<span class="topic-tag">Test-Time Adaptation</span>
+<span class="topic-tag">Medical Imaging</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2607.15556</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15556">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and somewhat criterion 4: it studies test-time adaptation for zero-shot 3D CT vision-language models and proposes a cardinality-aware method.</p>
+        <p class="abstract">3D CT vision-language models (VLMs) classify abnormalities from text prompts in a zero-shot manner, enabling cross-institution deployment where labels are scarce and clinical tasks shift faster than supervised models can be retrained. A real CT scan, however, typically contains several co-occurring abnormalities, and the reliability of zero-shot multi-label prediction under distribution shift remains poorly understood. Test-time adaptation (TTA) updates a model on unlabeled target scans without source data or target annotations, yet existing TTA methods target multi-class softmax prediction on natural images or 2D medical segmentation, and none addresses unsupervised multi-label adaptation for zero-shot 3D CT VLMs. We study when TTA helps zero-shot 3D CT VLMs. A controlled diagnostic analysis shows that TTA is conditional: the volumetric input must preserve the encoder&#x27;s depth structure, and the base representation must transfer to the target cohort, with depth reduction alone lowering internal AUROC by more than 0.12. We then focus on the regime where the base model already separates present from absent abnormalities. We introduce CARVE (Cardinality-Aware Retained-View Entropy), the first TTA method for this setting. CARVE estimates a sample-specific positive-label cardinality $\hat{k}$, optimizes a top-$\hat{k}$ objective to preserve co-occurring abnormalities, and performs memory-efficient multi-view adaptation by scoring weak 3D views without gradients before updating on a retained subset. Across contrastive CT-CLIP and anatomy-aware fVLM, CARVE provides the most consistent improvements across multi-label, three-class, and binary CT tasks when the base model is already discriminative. These results establish multi-label TTA for zero-shot 3D CT VLMs as a distinct problem and CARVE as a cardinality-aware solution.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLMs</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>Reasoning-Guided Part-Level Visual Grounding via Reinforcement Learning</strong>
+          <small>Kazi Sajeed Mehrab, Hani Alomari, Najibul Haque Sarker, Chia-Wei Tang, Zaber Ibn Abdul Hakim, Anuj Karpatne, Chris Thomas</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLMs</span>
+<span class="topic-tag">Referring Grounding</span>
+<span class="topic-tag">Reinforcement Learning</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
     </div>
 
         </span>
@@ -748,17 +830,17 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 1 / arXiv:2607.14616</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14616">Open arXiv</a>
+          <span>Paper 2 / arXiv:2607.15374</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15374">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>8</strong></span>
-          <span>Novelty <strong>6</strong></span>
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>7</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and 3 very closely: it benchmarks frontier VLMs on strategic physical decision-making in soccer and provides a value-grounded evaluation setting.</p>
-        <p class="abstract">Vision--language models have become increasingly capable of interpreting visual scenes, but it remains unclear whether they can use information to make strategically effective decisions. We investigate this question in soccer, where models observe the seconds preceding an on-ball decision and must choose whether to shoot or pass to a specific teammate. Unlike conventional visual-understanding tasks, soccer enables decisions to be evaluated quantitatively by estimating the value of every available action. We introduce SportD, a benchmark comprising 478 on-ball decisions from the 2022 FIFA World Cup. Each model choice is evaluated against a possession-value model that estimates the action that most increases the attacking team&#x27;s probability of scoring, allowing us to measure both optimal-action accuracy and the value forfeited by suboptimal decisions. Across three frontier VLMs, the best selects the highest-valued action on 31.4% of events, compared with 38.9% for the professional players, and all models incur significantly greater regret. Further analysis reveals a systematic preference for lower-variance and lower-reward actions: VLMs shoot less often and select substantially less progressive passes than either the optimal policy or the real players. The models also reproduce the player&#x27;s specific action above chance even when that action is suboptimal, suggesting partial imitation of familiar play patterns rather than consistent evaluation of counterfactual alternatives. SportD provides a value-grounded testbed for measuring physical strategic reasoning in VLMs.</p>
+        <p class="comment"><strong>Why selected:</strong> Criterion 2 matches closely: this is a new MLLM-based reasoning-guided grounding method with hierarchical coarse-to-fine localization and RL training.</p>
+        <p class="abstract">Multimodal large language models (MLLMs) ground whole objects well from free-form language queries, but they struggle when the query names a part rather than the object. We trace this to a missing object-part hierarchy, since parts are localized in the same single step used for objects. We propose Object-Part Hierarchical Reflective Grounding (OP-HRG), a coarse-to-fine reasoning-guided grounding strategy that first localizes the parent object and then the part within it. A self-check then reflects on the result, with an extension to re-encode the predicted crop to inspect the region it is correcting. We introduce a part-aware GRPO framework to train our pipeline with stage-wise rewards. A 4B model trained this way outperforms 7B grounding LLMs and SAM3 across PascalPart, PartImageNet, and InstructPart, and transfers to reasoning segmentation.</p>
       </div>
     </details>
 
@@ -770,43 +852,44 @@ details:not([open]) > .topic-heading::before {
       <summary class="topic-heading">Embodied AI</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link1">
+    <details class="paper-row" id="link3">
       <summary class="paper-row-summary">
-        <span class="queue-index">2</span>
+        <span class="queue-index">4</span>
         <span class="paper-row-copy">
-          <strong>DialogueVPR: Towards Conversational Visual Place Recognition</strong>
-          <small>Yukun Song, Changwei Wang, Xingtian Pei, Shibiao Xu, Wenhao Xu, Shunpeng Chen, Yu Zhang, Ke Zhang, Rongtao Xu, Xuxiang Feng, Pengyang Wang</small>
+          <strong>EgoExoMoCap: Distributed Ego-Exo Human Motion Capture</strong>
+          <small>Jiaxi Jiang, Bharat Lal Bhatnagar, Nan Yang, Lingni Ma, Sebastian Starke, Robin Kips, Nadine Bertsch, Christian Holz, Federica Bogo</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
       <span class="topic-tag">Embodied AI</span>
-<span class="topic-tag">Visual Place Recognition</span>
-<span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">Dialogue Reasoning</span>
+<span class="topic-tag">Motion Capture</span>
+<span class="topic-tag">Egocentric Vision</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-<span class="category-tag">cs.CL</span>
-<span class="category-tag">cs.CV</span>
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
+<span class="category-tag">cs.GR</span>
+<span class="category-tag">cs.HC</span>
+<span class="category-tag">cs.RO</span>
     </div>
 
         </span>
-        <span class="score-pill score-high">14</span>
+        <span class="score-pill score-mid">13</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 2 / arXiv:2607.14115</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14115">Open arXiv</a>
+          <span>Paper 4 / arXiv:2607.15868</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15868">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>8</strong></span>
-          <span>Novelty <strong>6</strong></span>
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it introduces a new embodied/geospatial benchmark (DlgQuest-Cities) and a new dialogue-driven place recognition method.</p>
-        <p class="abstract">Inspired by how humans communicate spatial information, language-guided geo-localization has gained significant traction for its intuitive and practical value. Despite this progress, most methods still rely on a static, one-shot retrieval paradigm, which fails to handle the ambiguity and incompleteness inherent in real-world natural language descriptions. We propose a paradigm shift to reasoning retrieval and introduce Dialogue Place Recognition (DlgPR), which casts localization as an interactive, dialogue-driven reasoning process. To support this new task, we present DlgQuest-Cities, the first large-scale dialogue-based benchmark for place recognition, and a unified reasoning framework that couples a cross-modal multi-level retriever with an intelligent questioner, DQ-pilot. DQ-pilot is trained in a curriculum: supervised fine-tuning on a curated DQ-cities-20k subset followed by reinforcement refinement on a harder DQ-cities-10k split via GRPO. Two task-aligned metrics guide learning: a Discriminative Difficulty Index (DDI) for curriculum sampling and a Positional Retrieval Gain (PRG) reward that directly measures retrieval improvement induced by a question. Experiments show this reasoning-based approach significantly outperforms baselines. The code and model are available at https://github.com/Graysonggg/DlgPR.</p>
+        <p class="comment"><strong>Why selected:</strong> Criterion 3 matches closely: this is an embodied-AI-relevant motion capture method with a novel distributed ego-exo setup and a new in-the-wild capture paradigm.</p>
+        <p class="abstract">Human motion capture from head-mounted devices (HMDs) offers a scalable way to acquire real-world human motion and interaction data, which is crucial for applications in embodied AI and VR/AR. Existing approaches focus on either egocentric body tracking, estimating the motion of the subject wearing the device, or exocentric tracking, capturing the movements of people in the wearer&#x27;s surroundings. So far, these two paradigms have largely been explored in isolation. In this paper, we propose a novel distributed framework that jointly leverages ego- and exocentric multi-modal signals for human motion estimation from HMDs. Unlike traditional motion capture systems requiring bulky multi-camera setups or obtrusive mocap suits, our approach, EgoExoMoCap, is as simple as two (or more) people, each wearing a pair of smart glasses. The method leverages head (plus potentially wrist) tracking signals for accurate estimation of global motion in the 3D world and combines context-aware image features based on DINOv3 to achieve robustness in the presence of noise and occlusions. Extensive experiments on two in-the-wild datasets show that our approach can robustly reconstruct motion even in challenging scenarios.</p>
       </div>
     </details>
 
@@ -815,26 +898,25 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">World Models</summary>
+      <summary class="topic-heading">3D Gaussian Splatting</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link2">
+    <details class="paper-row" id="link4">
       <summary class="paper-row-summary">
-        <span class="queue-index">3</span>
+        <span class="queue-index">5</span>
         <span class="paper-row-copy">
-          <strong>Concept-Guided Spatial Regularization for World Models in Atari Pong</strong>
-          <small>Yukuan Lu, Zaishuo Xia, Weyl Lu, Yubei Chen</small>
+          <strong>E3DGS: Unified Geometric-Photometric Equivariance for 3D Gaussian Splatting via Color-as-Geometry Embedding</strong>
+          <small>Chankyo Kim, Maani Ghaffari</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">World Models</span>
-<span class="topic-tag">Spatial Representation</span>
-<span class="topic-tag">Model-Based RL</span>
-<span class="topic-tag">Vision Foundation Models</span>
+      <span class="topic-tag">3D Gaussian Splatting</span>
+<span class="topic-tag">Equivariant Vision</span>
+<span class="topic-tag">World Modeling</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
+      <span class="category-tag">cs.CV</span>
 <span class="category-tag">cs.LG</span>
     </div>
 
@@ -843,8 +925,53 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 3 / arXiv:2607.15142</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.15142">Open arXiv</a>
+          <span>Paper 5 / arXiv:2607.15536</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15536">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: a vision foundation model-style geometric formulation for 3D Gaussian Splatting with equivariance and action-conditioned world modeling applications.</p>
+        <p class="abstract">3D Gaussian Splatting (3DGS) captures scenes by coupling explicit geometry (position, covariance) with view-dependent photometry (Spherical Harmonics). However, building $\mathrm{SE}(3)$-equivariant architectures on these primitives presents a fundamental representation bottleneck. Color has been treated as a signal rather than a geometric entity, making it nontrivial to unify symmetry across geometry and appearance as the camera frame changes. While translations are handled by relative coordinates, rotations act heterogeneously across attributes: $\mu\mapsto R\mu$, $\Sigma\mapsto R\Sigma R^\top$, and $f_\ell\mapsto D^\ell(R)f_\ell$. This mismatch complicates strict equivariance, leading existing methods to either discard or flatten SH coefficients, thereby breaking symmetry. We propose a unified solution rooted in representation theory: for SH degrees $\ell\le2$, photometry is algebraically isomorphic to a rank-2 geometric tensor. We prove that the Wigner-$D$ action on these SH coefficients can be exactly reformulated as the conjugation action on $3\times3$ matrices. Leveraging this, we introduce the Unified Matrix Embedding, a lifting that maps all Gaussian attributes into a unified carrier space, $\mathfrak{gl}(3)$. Building on the &quot;Color-as-Geometry&quot; formulation, we present E3DGS, a rigid-body ($\mathrm{SE}(3)$) equivariant architecture that processes 3D Gaussians without Clebsch-Gordan tensor products. Evaluations on object vision and action-conditioned Gaussian world modeling demonstrate that our unified approach yields strong robustness under camera-frame changes and improved data efficiency.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Geo-localization</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>Trajectory-aware Cross-view Geo-localization with Sequential Observations</strong>
+          <small>Tianyi Gao, Jiayu Lin, Danielle Beaulieu, Nathan Jacobs</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Geo-localization</span>
+<span class="topic-tag">Spatial Reasoning</span>
+<span class="topic-tag">Multimodal Benchmark</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2607.15491</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15491">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -852,8 +979,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: it studies visual world models, diagnoses failure modes, and proposes a spatial regularization method for world-model learning.</p>
-        <p class="abstract">World models are usually evaluated as components of model-based reinforcement learning (MBRL) systems, while the world models themselves are rarely studied in isolation.   We examine five representative visual world-model agents in Atari Pong: DreamerV3, DIAMOND, TWISTER, Simulus, and STORM. After reproducing their training pipelines and matching the reported agent performance, we freeze the learned world models and evaluate them with a closed-loop rollout diagnostic: a policy trained separately from the corresponding MBRL agent interacts with each frozen model, and the generated video trajectories are inspected for visual and dynamical errors. Across all five models, the rollouts contain clear failures, including ball disappearance, incorrect ball motion, and invalid ball-paddle interactions.   Beyond visual trajectories, we further evaluate them with pixel-space zero-shot MBRL, where a new policy is trained entirely inside a frozen world model and then evaluated in the real environment. Across all five models, the resulting policies substantially underperform those produced by the corresponding original MBRL training pipelines. The gap is particularly large for DreamerV3, whose mean return drops from -5.5 to -20.9, near the minimum Pong return of -21.   We hypothesize that insufficient modeling of task-critical concepts, such as the ball in Pong, may contribute to these failures. We therefore propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary pixel reconstruction loss applied to segmented concept regions. Experiments show that CGSReg improves both closed-loop rollouts and pixel-space zero-shot MBRL in DreamerV3, DIAMOND, and TWISTER. Its effects vary across the remaining models and evaluation metrics, indicating that CGSReg alone does not address all world-model bottlenecks.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and 3 closely: it introduces trajectory-aware cross-view geo-localization and a new dataset/framework for sequential observations with spatially-aware representations.</p>
+        <p class="abstract">Cross-view geo-localization matches ground-level observations against geo-tagged satellite imagery. Recent methods show that sequential queries such as video clips yield richer spatiotemporal cues than single images, yet they overlook a complementary sequential modality: route descriptions -- which capture the same trajectory at a higher level of abstraction and are often the only input available (e.g., a user directing an autonomous vehicle to a pickup point). To bridge this gap, we introduce SeqGeo-VL, a dataset of $\sim$39K video-text-satellite triplets, and TrajLoc, a unified framework capable of processing both video clips and route descriptions. By leveraging both dense visual and abstract linguistic semantics, TrajLoc enables these modalities to mutually reinforce cross-view matching. We further propose TrajMod, a lightweight module that conditions query embeddings on trajectory geometry, yielding spatially-aware representations. Experiments show that TrajLoc achieves substantial gains over state-of-the-art methods on both video and text geo-localization. The project page is available at https://humblegamer.github.io/trajloc/.</p>
       </div>
     </details>
 
@@ -862,26 +989,27 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Embodied AI Safety</summary>
+      <summary class="topic-heading">Semantic Communication</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link3">
+    <details class="paper-row" id="link6">
       <summary class="paper-row-summary">
-        <span class="queue-index">4</span>
+        <span class="queue-index">7</span>
         <span class="paper-row-copy">
-          <strong>When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space</strong>
-          <small>Weimeng Wang, Ziqiang Wang, Zihang Zhan, Chuanpu Fu, Qi Li, Ke Xu</small>
+          <strong>Toward Semantic Communication for Real-time Mobile 3D Reconstruction</strong>
+          <small>Fangzhou Zhao, Yao Sun, Xuesong Liu, Runze Cheng, Shang Kai, Yi Sun</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Embodied AI Safety</span>
-<span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">LLM Interpretability</span>
+      <span class="topic-tag">Semantic Communication</span>
+<span class="topic-tag">3D Reconstruction</span>
+<span class="topic-tag">Pose Estimation</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-<span class="category-tag">cs.CR</span>
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.MA</span>
+<span class="category-tag">cs.MM</span>
     </div>
 
         </span>
@@ -889,8 +1017,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 4 / arXiv:2607.15218</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.15218">Open arXiv</a>
+          <span>Paper 7 / arXiv:2607.16128</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.16128">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -898,8 +1026,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 closely: it introduces a new benchmark for physical danger in embodied agents and a method targeting safety beyond text-level moderation.</p>
-        <p class="abstract">Large language models (LLMs) increasingly serve as high-level planners for embodied agents, where linguistically benign instructions can become unsafe once grounded in the physical world. We study whether this physically grounded danger is the same safety problem as ordinary text-level content danger. Through hidden-state direction analysis and random-split null tests, we show that content danger (CD) and physical danger (PD) form separable signals in LLM representations across Qwen2.5-3B/7B/14B/32B, Phi-3.5 and SmolLM2. Building on the CD/PD separability, we propose PRISM, a single-layer L2-regularized logistic probe over full hidden states. PRISM achieves 86.2--87.7\% accuracy on SafeAgentBench with 11.7--13.7\% FPR, while same-scale LLM judges over-block safe tasks at 24.7--39.0\% FPR. We further introduce PhysicalSafetyBench-1K (PSB-1K), a contrastive benchmark of 1{,}000 physical-risk pairs without direct harm keywords, to test whether methods detect physically grounded danger rather than explicit unsafe wording. On PSB-1K, PRISM reaches 99.6\% accuracy and 0.7\% FPR, whereas a Qwen2.5-3B judge rejects 67.8\% of safe tasks. PRISM also replicates on SafeText and EARBench, supporting hidden-state probing as a representation-level method for physical safety beyond text moderation.</p>
+        <p class="comment"><strong>Why selected:</strong> Criterion 3 matches closely: it is a new method for real-time mobile 3D reconstruction with semantic communication and confidence-guided geometry estimation, a novel embodied/robotics-relevant angle that prior work often ignores.</p>
+        <p class="abstract">Real-time mobile 3D reconstruction is fundamental to many emerging applications such as autonomous navigation and digital twin construction, where a moving platform continuously captures an image stream and transmit to a computing server for scene understanding. Unlike offline reconstruction, camera poses and scene geometry are estimated on-the-fly during acquisition, making multi-view consistency a real-time requirement and rendering geometric estimation highly sensitive to communication-induced distortions. Semantic communication (SemCom) transmits compact semantic information, offering a promising way to preserve task-critical data over unreliable links. However, existing designs are optimized at the image or single-view level and without providing explicit reliability information for geometric estimation, limiting their applicability to real-time mobile 3D reconstruction. In this context, we propose a SemCom framework for real-time mobile 3D reconstruction. The framework includes a semantic transceiver that outputs a reconstructed image alongside a pixel-wise confidence map, quantifying the reliability of each region. We further introduce a confidence-guided geometric estimation method, incorporating confidence into RANSAC-based pose initialization and bundle adjustment to reduce the influence of unreliable regions and enhance robustness under noisy channels. Simulations show that, compared to existing SemCom and traditional seperate source and channel coding, our framework maintains high image quality while significantly improving pose estimation accuracy and 3D structural consistency.</p>
       </div>
     </details>
 
@@ -908,26 +1036,71 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">GUI Agents</summary>
+      <summary class="topic-heading">Medical Vision-Language Models</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link4">
+    <details class="paper-row" id="link7">
       <summary class="paper-row-summary">
-        <span class="queue-index">5</span>
+        <span class="queue-index">8</span>
         <span class="paper-row-copy">
-          <strong>Plover: Steering GUI Agents through Plan-Centric Interaction</strong>
-          <small>Madhumitha Venkatesan, Shicheng Wen, Jiajing Guo, Jorge Piazentin Ono, Liu Ren, Dongyu Liu</small>
+          <strong>Model Merging for Medical LVLMs: A Benchmark and a Winner-Take-All Approach</strong>
+          <small>Lichao Mou, Shilan Zhang, Chunlei Li, Bingcong Yan, Jingliang Hu, Yilei Shi, Shengwu Xiong, Xiao Xiang Zhu, Lei Li, Yaxiong Chen</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">GUI Agents</span>
-<span class="topic-tag">Agent Planning</span>
-<span class="topic-tag">Human-in-the-Loop</span>
-<span class="topic-tag">Multimodal Interaction</span>
+      <span class="topic-tag">Medical Vision-Language Models</span>
+<span class="topic-tag">Model Merging</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2607.15661</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15661">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and 4 closely: it is a benchmark and method for merging medical LVLMs, directly about vision-language models.</p>
+        <p class="abstract">Large vision-language models (LVLMs) can be adapted to specialized medical imaging tasks via parameter-efficient fine-tuning approaches such as low-rank adaptation (LoRA), leading to a growing ecosystem of expert models tailored to specific imaging modalities and clinical scenarios. However, deploying multiple expert LVLMs in practice incurs substantial computational and operational overhead. Model merging provides a promising solution by consolidating multiple experts into a single model without retraining, yet it remains largely unexplored in the medical domain. In this work, we present the first systematic study of model merging for medical LVLMs. We introduce MergeMedBench, a comprehensive benchmark spanning eight imaging modalities and diverse clinical task types, comprising 16 LoRA fine-tuned models built upon two mainstream architectures. We conduct an extensive evaluation of existing merging methods and further propose winner-take-all, a simple and hyperparameter-free approach that retains only the most dominant parameters across expert models. By preserving the critical parameters that govern model behavior and discarding weaker ones, our method avoids the information dilution inherent in averaging- or alignment-based strategies. Despite its simplicity, winner-take-all consistently outperforms existing approaches, offering both a new perspective on LoRA merging and a strong practical baseline for future research.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Event Cameras</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera via Spatial-Temporal Feature Aggregation</strong>
+          <small>Jian Huang, Haotian Shen, Xinhao Lou, Chengrui Dong, Wenpu Li, Peidong Liu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Event Cameras</span>
+<span class="topic-tag">3D Reconstruction</span>
+<span class="topic-tag">Self-Supervised Learning</span>
+<span class="topic-tag">Embodied Perception</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
     </div>
 
         </span>
@@ -935,8 +1108,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 5 / arXiv:2607.15193</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.15193">Open arXiv</a>
+          <span>Paper 10 / arXiv:2607.15727</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15727">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -944,8 +1117,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: this is a new method for GUI agents, focusing on plan-centric interaction and repair of execution failures in a vision-based agent setting.</p>
-        <p class="abstract">Graphical user interface (GUI) automation remains challenging in real-world environments, where dynamic layouts, unexpected dialogs, and evolving interface states can cause autonomous agents to drift from user intent. Recent vision-based multimodal agents improve flexibility by operating directly over screenshots and natural language instructions, but planning and adaptation often remain internal, limiting users&#x27; ability to inspect, supervise, or correct system behavior. We present Plover, a plan-centric vision-based GUI automation system that externalizes task plans and replanning as persistent, inspectable, and revisable artifacts. Through a planner--executor architecture, Plover supports explicit supervision of evolving execution, localized correction through editable plans, natural-language guidance, and screenshot-grounded interventions, while preserving prior progress during repair. A formative study with six participants informed the interaction design. We then evaluate Plover through benchmark failure-case repair and scenario-based workflow analyses. Our results show that many autonomous GUI-agent failures are structurally repairable when plans remain visible and interventions are localized, and that explicit replanning helps make GUI automation more transparent, controllable, and adaptable.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it is an embodied-perception/3D reconstruction method with a new event-camera reconstruction framework and a self-supervised pretraining strategy for a previously underexplored sensor setting.</p>
+        <p class="abstract">Robust 3D reconstruction is essential for robotics and embodied perception. Recent feed-forward approaches such as DUSt3R have demonstrated impressive progress in dense 3D reconstruction from RGB images, achieving global geometric consistency and strong generalization. However, extending such dense 3D reconstruction to event cameras remains challenging due to their asynchronous, sparse, and highly dynamic nature, as well as the lack of large-scale, well-labeled datasets. In this work, we introduce Event3R, a feed-forward framework that directly maps asynchronous event streams to globally consistent 3D point clouds. Event3R represents incoming events as spatial-temporal voxels, enabling time-aware feature integration through a temporal attention module that enhances the module&#x27;s temporal feature learning. To further strengthen temporal representation learning and reduce reliance on labeled data, we propose a Masked Bin Modeling (MBM) strategy for self-supervised pre-training, enabling robust temporal representation learning with minimal labeled data, and retain it as an auxiliary fine-tuning objective. In addition, contrastive alignment and consistency regularization losses are incorporated during fine-tuning to reinforce structural correspondence and temporal coherence across views. Extensive experiments on both synthetic and real-world benchmarks demonstrate that Event3R achieves robust, temporally consistent, and globally aligned 3D reconstructions, significantly outperforming existing event-based methods.</p>
       </div>
     </details>
 
@@ -954,43 +1127,43 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Vision Foundation Models</summary>
+      <summary class="topic-heading">Visual Place Recognition</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link5">
+    <details class="paper-row" id="link10">
       <summary class="paper-row-summary">
-        <span class="queue-index">6</span>
+        <span class="queue-index">11</span>
         <span class="paper-row-copy">
-          <strong>VLT: A Vision-Language-Time Series Multimodal Foundation Model for Industrial Intelligence</strong>
-          <small>Haiteng Wang, Jingheng Yan, Xiaokang Wang, Lei Ren</small>
+          <strong>Are All Tokens Necessary for Visual Place Recognition? An Empirical Study of Token Reduction for Efficient Inference</strong>
+          <small>Tong Jin, Yunpeng Liu, Shuyu Hu, Qinghua Zhang, Ruize Han, Song Wang, Feng Lu</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Vision Foundation Models</span>
-<span class="topic-tag">Multimodal Foundation Model</span>
-<span class="topic-tag">Time-Series Reasoning</span>
+      <span class="topic-tag">Visual Place Recognition</span>
+<span class="topic-tag">Token Pruning</span>
+<span class="topic-tag">Efficiency Benchmark</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
+      <span class="category-tag">cs.CV</span>
     </div>
 
         </span>
-        <span class="score-pill score-mid">10</span>
+        <span class="score-pill score-mid">11</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 6 / arXiv:2607.14510</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14510">Open arXiv</a>
+          <span>Paper 11 / arXiv:2607.15563</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15563">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
+          <span>Relevance <strong>6</strong></span>
           <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: it proposes a multimodal foundation model using vision plus time-series plus text, with an application-oriented foundation-model angle.</p>
-        <p class="abstract">Industrial time series serve as the foundation for Prognostics and Health Management (PHM) to ensure the reliability and safety of industrial equipment such as aero-engines. However, existing approaches are typically limited to single-modality modeling, which restricts their generalization in complex scenarios. Although recent advances in large language models (LLMs) provide new opportunities for multimodal learning, bridging continuous time-series signals and discrete textual semantics remains an open challenge. To this end, we propose VLT, a multimodal foundation model that jointly models time-series, frequency-spectrum visual representations, and textual knowledge. A key insight is to utilize the frequency spectrum as a visual bridge to connect continuous temporal signals with discrete semantics. Specifically, a Time-aware Mixture-of-Experts (Time-MoE) is designed to capture heterogeneous temporal dynamics, while a Frequency-Text Augmented Learner enables joint modeling of spectral and semantic features within a shared representation space. Furthermore, a time-centric gradient alignment mechanism is introduced to mitigate cross-modal optimization conflicts via gradient normalization and reliability-aware dynamic reweighting. Extensive experiments on multiple industrial datasets demonstrate that VLT outperforms state-of-the-art methods, achieving superior robustness and generalization under few-shot, noisy, and incomplete-modality settings.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: a benchmark study on token reduction for visual place recognition using vision transformer foundation models, with practical efficiency insights.</p>
+        <p class="abstract">Recent visual place recognition (VPR) methods based on vision transformers, particularly foundation models, have achieved remarkable recognition performance. However, these models process all visual tokens throughout the entire network, resulting in substantial computational overhead, which hinders their deployment in real-time and resource-constrained scenarios. A natural question thus arises: are all visual tokens necessary for VPR? To answer this question, we present the first systematic benchmark of token reduction for efficient visual place recognition. Our benchmark comprehensively evaluates representative token pruning, token merging, and hybrid pruning-merging methods across multiple state-of-the-art VPR models and diverse benchmark datasets covering urban, suburban, and natural environments. We further investigate token reduction from multiple perspectives, including recognition performance under different reduction configurations, computational complexity, inference speed, qualitative visualization, and deployment efficiency on edge devices. Through extensive experiments and in-depth analysis, our benchmark reveals multiple important characteristics of token reduction in VPR and provides several practical insights into the trade-offs between accuracy and inference efficiency. For example, token reduction can reduce computational cost by up to 29\% and improve throughput by up to 44\%, while incurring less than 1\% degradation in recognition accuracy. Overall, this work establishes a comprehensive foundation for future research on token-efficient VPR and efficient visual retrieval systems. Our codes and models will be available at https://github.com/Tong-Jin01/TokenReduction4VPR</p>
       </div>
     </details>
 
@@ -999,25 +1172,25 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <summary class="topic-heading">Bundle Adjustment</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link6">
+    <details class="paper-row" id="link11">
       <summary class="paper-row-summary">
-        <span class="queue-index">7</span>
+        <span class="queue-index">12</span>
         <span class="paper-row-copy">
-          <strong>InCarEmo: A Multimodal Dataset for In-Cabin Emotion Recognition and Driver State Monitoring</strong>
-          <small>Hao Yang, Yanyan Zhao, Kewei Zhao, Hongbo Zhang, Tian Zheng, Yusheng Liu, Xing Fu, Bichen Wang, Yu Zhang, Hao He, Zhen Wu, Xuda Zhi, Yongbo Huang, Bing Qin</small>
+          <strong>CSS-BA: Gate-Guided Column Space Search for Bundle Adjustment</strong>
+          <small>Ayano Kaneda, Takafumi Taketomi, Shugo Yamaguchi, Shigeo Morishima</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">Multimodal Emotion Recognition</span>
-<span class="topic-tag">Driver Monitoring</span>
+      <span class="topic-tag">Bundle Adjustment</span>
+<span class="topic-tag">3D Vision</span>
+<span class="topic-tag">Optimization</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
+      <span class="category-tag">cs.CV</span>
     </div>
 
         </span>
@@ -1025,56 +1198,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 7 / arXiv:2607.14683</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14683">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
-          <span>Novelty <strong>4</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 only: it introduces a new embodied-simulation-style benchmark for in-cabin multimodal emotion and driver state monitoring with novel multimodal settings.</p>
-        <p class="abstract">Understanding driver emotion and state is critical for the next generation of intelligent in-cabin systems that ensure safety and enhance human-vehicle interaction. However, existing public datasets for in-cabin affective computing are largely limited to visual modalities and rarely include conversational information, making it difficult to capture the linguistic and interactive cues underlying driver emotion. To address these gaps, we introduce InCarEmo, a multimodal dataset for in-cabin emotion recognition and driver state monitoring. InCarEmo integrates RGB and infrared video, in-cabin audio, and dialogue text collected from scripted in-cabin scenarios designed to simulate realistic driver behaviors, covering diverse lighting conditions and driving contexts. The dataset supports three primary tasks: 1) multimodal emotion recognition, 2) fatigue detection, and 3) distraction monitoring. In addition to the original Chinese data, we construct an auxiliary English benchmark to support preliminary cross-lingual evaluation. We provide a unified benchmark with extensive baseline results across unimodal and multimodal methods, including analyses under modality-missing and noise conditions. Experimental results demonstrate the benefits of multimodal fusion and reveal remaining challenges under real-world noise and low-light conditions. By releasing InCarEmo, we aim to establish a comprehensive foundation for robust, interpretable, and human-centric in-cabin affective understanding, promoting safer and more empathetic driver-vehicle interaction.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Tool Use</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link7">
-      <summary class="paper-row-summary">
-        <span class="queue-index">8</span>
-        <span class="paper-row-copy">
-          <strong>ToolAnchor: Anchoring Counterfactual Context to Boost Agentic Tool-use Capability</strong>
-          <small>Weiting Liu, Jieyi Bi, Wanqi Zhou, Jianfeng Feng, Yining Ma, Ai Han, Wenlian Lu</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Tool Use</span>
-<span class="topic-tag">Agentic RL</span>
-<span class="topic-tag">Visual Search</span>
-<span class="topic-tag">Post-Training</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-<span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.LG</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-low">9</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 8 / arXiv:2607.14145</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14145">Open arXiv</a>
+          <span>Paper 12 / arXiv:2607.15652</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15652">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -1082,8 +1207,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 loosely through tool-use adaptation on visual search tasks, but it is primarily an LLM agent/tool-use paper rather than a spatial or embodied AI method.</p>
-        <p class="abstract">Tool-augmented large language model agents excel at long-horizon tasks, yet they are typically post-trained on fixed toolsets. When tasks demand new tools, these agents struggle to incorporate them effectively, and retraining from scratch is often impractical. We identify the core obstacle in such toolset expansion problem as behavioral inertia: the tendency of agents to fall back on familiar tools and established reasoning patterns despite having access to new ones. We demonstrate that injecting counterfactual anchor contexts at critical decision points can break this inertia, recovering failed trajectories by eliciting suppressed agent capabilities. To scale this insight, we propose ToolAnchor, a framework that uses teacher models to hypothesize these counterfactual contexts, verifies them via student rollouts, and internalizes the successful interventions through agentic post-training. Extensive evaluations across general AI assistant (GAIA), textual search (BrowseComp), and visual search (VDR-Bench) tasks demonstrate that ToolAnchor consistently exhibits competitive performance under expanded toolsets. Our work bridges the gap between static post-training and dynamic adaptation, charting a new path for scalable agentic reinforcement learning.</p>
+        <p class="comment"><strong>Why selected:</strong> Criterion 3 matches loosely: it is a new solver-side bundle-adjustment method for weak-geometry reconstruction, but it is not a benchmark or embodied-AI-specific paper.</p>
+        <p class="abstract">Bundle adjustment (BA) remains a critical refinement module for image-based 3D reconstruction and continues to improve geometric accuracy even in learning-based pipelines. However, in low-parallax and near-rotational regimes, classical Schur-based Levenberg--Marquardt (LM) often becomes ill-conditioned and yields unreliable pose and calibration estimates. We propose Gate-Guided CSS-BA, a solver-side modification of Schur-LM that preserves the classical BA objective and trust-region framework while constraining each update to a geometrically informed low-dimensional subspace. By integrating Column Space Search (CSS) with geometry-aware gating, the method stabilizes the Schur-LM update without altering the estimation problem. In contrast to keyframe or state-selection approaches, all camera and point parameters remain in the optimization problem; only the update direction is restricted. The method serves as a drop-in replacement for existing BA pipelines. Experiments on both generic and challenging weak-geometry scenarios show more stable optimization, improved relative pose accuracy, and competitive calibration behavior while maintaining reprojection quality.</p>
       </div>
     </details>
 
@@ -1092,45 +1217,43 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Spatial Search</summary>
+      <summary class="topic-heading">Image Generation</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link8">
+    <details class="paper-row" id="link12">
       <summary class="paper-row-summary">
-        <span class="queue-index">9</span>
+        <span class="queue-index">13</span>
         <span class="paper-row-copy">
-          <strong>Collaborative Spatial Learning with Multi-LLM Agents in Networked Social Experiments</strong>
-          <small>Hao He, Chris J. Kuhlman, Xinwei Deng</small>
+          <strong>StructGen: Disambiguating Multi-Reference Image Generation via Structured Context Modeling</strong>
+          <small>Jianing Peng, Mengyu Wang, Henghui Ding, Zixiang Li, Ting Liu, Xiaochao Qu, Luoqi Liu, Yao Zhao, Yunchao Wei</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Spatial Search</span>
-<span class="topic-tag">Multi-Agent LLMs</span>
-<span class="topic-tag">Collective Behavior</span>
-<span class="topic-tag">Exploration-Exploitation</span>
+      <span class="topic-tag">Image Generation</span>
+<span class="topic-tag">Multimodal Conditioning</span>
+<span class="topic-tag">Data-Efficient Training</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-<span class="category-tag">cs.SI</span>
+      <span class="category-tag">cs.CV</span>
     </div>
 
         </span>
-        <span class="score-pill score-low">7</span>
+        <span class="score-pill score-low">9</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 9 / arXiv:2607.14574</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.14574">Open arXiv</a>
+          <span>Paper 13 / arXiv:2607.15619</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15619">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>4</strong></span>
+          <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 weakly: it studies collaborative spatial search and exploration/exploitation behavior, but not embodied agents or spatial intelligence methods in the usual vision/robotics sense.</p>
-        <p class="abstract">Collective problem solving often requires that group members consider the tradeoff between exploitation of known solutions and exploration for new ones, where information of known solutions can be disseminated among individual members through communication networks. The Mason--Watts experiment (PNAS 2012) showed that human groups in shorter-path networks outperform those in longer-path networks on a two-dimensional search task. In this work, we focus on the investigation of such network-efficiency effects in the setting of a group of large language model (LLM) agents. Specifically, we consider groups of sixteen LLM agents playing the Mason--Watts experiment on the eight Mason--Watts network topologies. Moreover, we develop mechanistic Bayesian optimization agents such that the performance of LLM agents can be compared with both the mechanistic agents and the human experimental data. Our computational experiments indicate that the LLM agents show a significant network-efficiency effect when instructed to randomize their first-round choices, but not under the default initialization. In this experiment, adding a one-sentence first-round randomization instruction improves collective payoff by more than three times the estimated payoff difference across the eight network topologies. Also, the Bayesian optimization agents obtain higher payoffs than the evaluated LLM agents on this spatial search task. We further compare the agents&#x27; exploration--exploitation behavior, copying, and spatial diversity.</p>
+        <p class="comment"><strong>Why selected:</strong> No close match to the requested criteria; this is multi-reference image generation with structured conditioning, which fits generative multimodal learning but not the specific criteria listed.</p>
+        <p class="abstract">Multi-reference image generation aims to synthesize images by integrating attributes from multiple reference images under textual instructions. As the number of references increases, the task necessitates complex semantic comprehension, such as correctly associating attributes with the intended subjects and planing out coherent spatial arrangement between subjects and their environments. Existing approaches, which rely solely on natural language instruction, often fail to capture these complex intentions precisely, leading to semantic misalignment and inconsistent generation. We identify two key factors behind these limitations: natural language instructions are often verbose and ambiguous, and high-quality multi-reference data is scarce. To address these issues, we propose StructGen, which employs a structured, dictionary-like format to encode multiple reference images, thereby enabling explicit and unambiguous specification of generation intentions. To support this design, we construct a structured dataset based on high-quality real images and develop a corresponding training framework, along with a dedicated benchmark for challenging multi-reference scenarios. Extensive experiments on both public benchmarks and our proposed benchmark demonstrate that StructGen consistently outperforms existing methods on both semantic alignment and detailed reference-generation consistency, especially under complex instructions with multiple references. The code is available at \href{https://jianingpeng0382.github.io/StructGen/}{https://jianingpeng0382.github.io/StructGen/}.</p>
       </div>
     </details>
 
@@ -1139,21 +1262,75 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Multi-Agent Systems</summary>
+      <summary class="topic-heading">Sensor Fusion</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link9">
+    <details class="paper-row" id="link14">
       <summary class="paper-row-summary">
-        <span class="queue-index">10</span>
+        <span class="queue-index">15</span>
         <span class="paper-row-copy">
-          <strong>BrainPilot: Automating Brain Discovery with Agentic Research</strong>
-          <small>Haoxuan Li, Tianci Gao, Jianhe Li, Yang Fan, Runze Shi, Weiran Wang, Tianxiang Zhao, Zezhao Wu, Xiaoyang Jiang, Qihui Zhang, Jia Li, Xiao Xiao, Kai Du, Xiaoxuan Jia, Chao Xie, Lu Mi</small>
+          <strong>CLIFE: Camera-LiDAR Fusion Framework for Edge-Deployable Roadside VRU Perception</strong>
+          <small>Tam Bang, Hoang H. Nguyen, Lei Cheng, Lihao Guo, Siyang Cao, Hussam Abubakr, Tianya Zhang, Austin Harris, Mina Sartipi</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Multi-Agent Systems</span>
-<span class="topic-tag">Scientific AI</span>
-<span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">Research Automation</span>
+      <span class="topic-tag">Sensor Fusion</span>
+<span class="topic-tag">Edge Perception</span>
+<span class="topic-tag">Autonomous Driving</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.SY</span>
+<span class="category-tag">eess.SY</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 15 / arXiv:2607.16154</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.16154">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 loosely: an embodied/perception-adjacent multi-sensor fusion system for roadside VRU perception, but it is more deployment-focused than a novel embodied AI benchmark or method.</p>
+        <p class="abstract">Reliable roadside perception of vulnerable road users (VRUs) remains challenging under occlusions, variable lighting, and diverse weather conditions, particularly under strict edge-computing and latency constraints. Existing multi-sensor fusion systems rely on cloud or server-grade infrastructure, creating a deployment gap at real-world intersections. We present CLIFE, an edge-native camera-LiDAR fusion framework that integrates targetless online calibration and lightweight late-fusion tracking entirely on a single embedded device, without cloud offloading. CLIFE adaptively refines camera-LiDAR alignment on demand and performs multi-sensor fusion and track association with O(N log N) per-frame cost. We deploy CLIFE across 12 signalized intersections in Chattanooga and conduct an in-depth evaluation at a representative intersection using synchronized camera-LiDAR data that spans diverse daytime, nighttime, and weather conditions. Our experiments demonstrate that the fusion architecture substantially enhances the perceptual range and robustness of the individual sensors under varied environmental and traffic conditions. The late-fusion core operates at 53.2 FPS on the Jetson AGX Thor, ensuring high throughput for real-time intersection-scale applications. By centering perception at the edge, CLIFE provides a deployable foundation for downstream safety applications, while reducing bandwidth and calibration overhead for agencies operating multi-intersection corridors.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>cs.AI</h3>
+        <span>2 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Embodied AI</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction</strong>
+          <small>Xue Yu, Bo Yuan, Pengshuai Yang, Kailin Zhao, Hong Hu, Junlan Feng</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Embodied AI</span>
+<span class="topic-tag">GUI Agents</span>
+<span class="topic-tag">World Models</span>
     </div>
 
 
@@ -1162,21 +1339,66 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill score-low">7</span>
+        <span class="score-pill score-high">14</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 10 / arXiv:2607.15079</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2607.15079">Open arXiv</a>
+          <span>Paper 3 / arXiv:2607.15550</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15550">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Criterion 1 matches closely: this proposes a new safety framework for mobile GUI agents using a learned world model for pre-execution risk assessment, which is an embodied-agent method with spatial/state prediction.</p>
+        <p class="abstract">Mobile graphical user interface (GUI) agents have demonstrated remarkable capabilities in automating complex tasks, yet they introduce critical safety risks where a single erroneous action can lead to irreversible consequences. Existing safety mechanisms are primarily reactive, lacking the ability to assess risks before execution. In this paper, we introduce SeerGuard, a consequence-aware safety framework designed to mitigate these risks through pre-execution instruction-level screening and action-level risk assessment. Specifically, the action-level assessment analyzes agent-proposed actions within current GUI states, anticipating likely outcomes to identify risks before they are executed. To enable these capabilities, we construct a unified safety-augmented world model (SAWM) via multi-task learning, integrating semantic next-state prediction with safety risk assessment. Extensive experiments demonstrate that SeerGuard generalizes effectively across diverse mobile GUI agents. On Qwen3-VL-8B-Instruct, it increases the safety-utility score from $0.191$ to $0.596$ at $\omega=0.8$ and reduces the risk-cost score from $0.347$ to $0.130$ at $\alpha=0.8$. Further analyses on our SAWM validate the effectiveness of the instruction-level screening, alongside the capability of action risk assessment and next-state prediction.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>Beyond a Joke: Multi-Angle Reasoning for Detecting and Explaining Harmful Humor in Memes</strong>
+          <small>Shanhong Liu, Pai Chet Ng, De Wen Soh, Malika Meghjani, Konstantinos N. Plataniotis</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Meme Understanding</span>
+<span class="topic-tag">Explainable Multimodal Classification</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2607.15442</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.15442">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 only loosely: it is an agentic research system with a new benchmark, but the domain is brain science rather than embodied AI or vision-language.</p>
-        <p class="abstract">Understanding the brain increasingly depends on integrating evidence across scales, modalities, and disciplines. Addressing a single research question therefore requires a coordinated sequence of operations, from surveying prior work to executing analyses and interpreting results in light of domain knowledge. AI agents promise to accelerate this process, but current agents lack domain expertise in brain science, may fabricate claims, drift during multi-step reasoning, and offer few defined points for expert intervention. These failures are especially costly in brain science, where conclusions feed into downstream scientific claims and depend on laboratory-specific expertise and careful human judgment. We present \textbf{BrainPilot} a \textbf{fully open-source} multi-agent system that accelerates brain science research with traceable logs and agent-verified results. A principal investigator (PI) agent coordinates specialist agents grounded in curated domain knowledge: a unified brain science knowledge base containing 7{,}233 indexed items and a skill library of 72 reusable methodology units across seven research domains. Every major step is recorded in the Graph of Trace, an auditable record that links subgoals, tool use, evidence, and claims and allows researchers to follow and inspect the workflow. An Auditor agent further integrates fabrication checking into the workflow. For evaluation, we run three brain science tasks from Agents&#x27; Last Exam, introduce our own benchmark, \textbf{BrainPilotBench-v0}, and present additional end-to-end case studies. Across these evaluations, BrainPilot with an open-source backbone model attains performance comparable to state-of-the-art agent framework with less costs.</p>
+        <p class="comment"><strong>Why selected:</strong> No close match to the requested criteria; this is a VLM-based meme understanding/explanation paper, but it is not about embodied AI, benchmark building for embodied agents, or vision foundation model applications in the sense of the criteria.</p>
+        <p class="abstract">Internet memes intertwine visual cues, textual content, and cultural context, making them particularly challenging to interpret in scenarios where humor, sarcasm, and harmful intent coexist. These complexities highlight the need for explainable meme understanding systems that can provide reliable and structured reasoning to support both accurate classification and human interpretability. However, existing multimodal classifiers either overlook these interdependencies or provide only limited interpretability. In this paper, we introduce MAR-12, a novel framework that leverages Vision Language Models (VLMs) for meme detection and understanding in settings where humorous and hateful elements may coexist. The framework first interprets each meme through twelve structured perspectives derived from humor and hate theories. It then applies a role-aware soft-gated attention mechanism to learn how much each perspective should contribute, followed by a prototype-based classifier for the final prediction. Finally, explanations are synthesized using both perspective-specific reasoning and learned attention weights, ensuring transparent and context-grounded justifications. We evaluate MAR-12 on the PrideMM and Memotion datasets, where it achieves up to 80.3% accuracy for humor detection and 75.9% accuracy for hate detection, outperforming state-of-the-art approaches. Furthermore, both human and GPT-4-based evaluations confirm that MAR-12 produces coherent and persuasive explanations, particularly for memes in which humorous and harmful cues co-occur.</p>
       </div>
     </details>
 
@@ -1191,6 +1413,11 @@ details:not([open]) > .topic-heading::before {
   <section class="archive-block">
     <h2>Past ArXiv</h2>
     <div class="archive-links">
+
+        <a class="archive-link" href="past_arxiv/2026-07-18.html">
+          <span>July 18, 2026</span>
+        </a>
+
 
         <a class="archive-link" href="past_arxiv/2026-07-17.html">
           <span>July 17, 2026</span>
@@ -1284,16 +1511,6 @@ details:not([open]) > .topic-heading::before {
 
         <a class="archive-link" href="past_arxiv/2026-06-19.html">
           <span>June 19, 2026</span>
-        </a>
-
-
-        <a class="archive-link" href="past_arxiv/2026-06-18.html">
-          <span>June 18, 2026</span>
-        </a>
-
-
-        <a class="archive-link" href="past_arxiv/2026-06-17.html">
-          <span>June 17, 2026</span>
         </a>
 
     </div>
