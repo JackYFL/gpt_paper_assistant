@@ -1,574 +1,353 @@
 {
-    "2607.24904": {
+    "2607.25487": {
         "authors": [
-            "Senqiao Yang",
-            "Kaichen Zhang",
-            "Zhaoyang Jia",
-            "Jinghao Guo",
-            "Yifei Shen",
-            "Xinjie Zhang",
-            "Xiaoyi Zhang",
-            "Haoqing Wang",
-            "Xiao Li",
-            "Peng Zhang",
-            "Xiang An",
-            "Yin Xie",
-            "Zhening Liu",
-            "Xun Guo",
-            "Jiahao Li",
-            "Shicheng Zheng",
-            "Jinglu Wang",
-            "Zongyu Guo",
-            "Wenxuan Xie",
-            "Zihan Zheng",
-            "Yuxuan Luo",
-            "Bin Li",
-            "Yan Lu"
+            "Minhyeok Lee",
+            "Chiyoung Kim",
+            "Chanhoe Gu",
+            "Seongrok Kim",
+            "Sanghyuk Roy Choi",
+            "Donghwan Hwang",
+            "Donghun Ryu",
+            "Seokhyun Kim"
         ],
-        "title": "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
-        "abstract": "arXiv:2607.24904v1 Announce Type: new  Abstract: Standard vision-language models (VLMs) suffer from Moravec's paradox: they excel at complex offline visual reasoning but struggle with simple streaming perception tasks and process them inefficiently. We present Mage-VL, an efficient codec-native streaming foundation model for real-time multimodal understanding and interaction. At its core, our custom tokenizer, Mage-ViT, replaces uniform frame sampling by selectively encoding dynamic, entropy-rich regions using motion vectors and residual energy across sparse anchor (I) and predicted (P) frames. Operating at a 16 x 16 patch level, this reduces visual token consumption by over 75% while preserving spatiotemporal context. Trained from scratch on approximately 560M unlabeled images and 100M unlabeled video frames, Mage-ViT matches or outperforms flagship encoders trained on billions of image-text pairs. We establish AI4AI data pipelines encompassing prompt-code joint optimization for multimodal captioning and AI-driven performance diagnosis to guide training recipes. Furthermore, through a bio-inspired dual-system architecture - a lightweight System 1 event gate and a causal System 2 decoder - Mage-VL enables proactive streaming perception. Extensive evaluations show that Mage-VL-4B matches Qwen3-VL-4B on static tasks while achieving strong gains in video understanding and 2D/3D spatial reasoning, with up to a 3.5x wall-clock inference speedup, and comprehensively surpasses the 15B Phi-4-reasoning-vision baseline. Beyond model artifacts, we deliver seven key empirical findings covering pre-training data efficiency, variable-resolution scaling, codec system acceleration, VideoQA SFT redundancy, motion-spatial synergy, AI4AI data pipelines, and Zero-Vision SFT for multimodal RL.",
-        "arxiv_id": "2607.24904",
+        "title": "CoTinyVLA: Chain-of-Thought Distillation for a Sub-Billion-Parameter Vision-Language-Action Model",
+        "abstract": "arXiv:2607.25487v1 Announce Type: new  Abstract: Vision-Language-Action (VLA) models translate natural-language commands into robot action sequences, but leading systems on the LIBERO-Plus robustness benchmark use three- to seven-billion-parameter backbones whose memory demands can exceed embedded robotic budgets. We present CoTinyVLA, a 0.9B-parameter action model on a Qwen3.5-0.8B backbone that obtains that robustness by structuring supervision instead of enlarging the model. Three components target different axes of the problem: dual-view temporal input of 16 history frames per step with textual camera and time markers; hierarchical chain-of-thought (CoT) distillation from a 35B teacher into an episode-level Plan and a chunk-level Think span over task phase, gripper state and next subaction; and paraphrase augmentation expanding 40 base commands into 800 variants. On LIBERO-Plus, spanning 10,030 perturbed tasks across seven perturbation dimensions, CoTinyVLA reaches 90.8% on Spatial, 87.3% on Object, 86.6% on Goal and 80.7% on Long, leading the strongest 7B baseline on all four suites by 4.7, 2.8, 15.9 and 3.0 points, with every margin interval excluding zero. The gains concentrate on the hardest axes of the benchmark: across the eleven published baselines none exceeds 53.2% on Robot Initial States in any suite, whereas CoTinyVLA reaches 73.6% on Goal against 39.9% for the strongest baseline. Ablations show the three components to be separable by perturbation axis, and at a matched image budget how frames are divided between the two cameras and across time accounts for 8.6 points on its own. Closed-loop inference peaks at 2.25 GiB of allocated GPU memory, and paired interventions show the episode Plan to be load-bearing: replacing it with an empty or contradictory span costs 40 to 45 points of success. Structured supervision thus lets a 0.9B backbone exceed all of them. Code: https://github.com/BrainJellyPie/CoTinyVLA",
+        "arxiv_id": "2607.25487",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI",
+            "cs.CV"
+        ],
+        "ARXIVID": "2607.25487",
+        "COMMENT": "Matches criterion 3 very closely: it is an embodied AI/VLA paper proposing a small model with chain-of-thought distillation and robustness-oriented supervision.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Vision-Language-Action",
+            "Imitation Learning",
+            "Chain-of-Thought Distillation"
+        ]
+    },
+    "2607.27205": {
+        "authors": [
+            "Hengyi Xie",
+            "Chenfei Yao",
+            "Xianjin Wu",
+            "Xuanyang Xi",
+            "Yiping Tang",
+            "Di Xu",
+            "Yingying Zhu",
+            "Dingkang Liang",
+            "Xiang Bai",
+            "Han Ding"
+        ],
+        "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
+        "abstract": "arXiv:2607.27205v1 Announce Type: new  Abstract: Vision-language-action (VLA) models commonly adopt an LLM-centric $V \\to L \\to A$ pathway, where visual observations are projected into the representation space of a large language model before being decoded into robot actions. Although effective, this design incurs substantial computation and memory overhead at every policy invocation. In this work, we introduce TurboVLA, a new VLA paradigm that reformulates the conventional $V \\to L \\to A$ pathway as a direct $V + L \\to A$ mapping. Instead of using a large language model as the central interface between perception and action, TurboVLA independently encodes visual observations and language instructions, directly exchanges information between them through lightweight bidirectional vision-language interaction, and predicts continuous action chunks with a compact decoder. This simple design constructs task-conditioned representations directly from visual and linguistic features, significantly reducing the computational and memory costs of VLA inference. On LIBERO, TurboVLA achieves 97.7% average success with only 0.2B parameters, 31.2 ms inference latency, and 0.9 GB inference VRAM on a consumer-grade RTX 4090, matching or outperforming substantially larger VLA policies. These results establish TurboVLA as a simple and effective alternative to the prevailing LLM-centric VLA paradigm, offering a new perspective on how vision, language, and action can be connected for efficient robotic manipulation. Code is available at https://github.com/H-EmbodVis/TurboVLA.",
+        "arxiv_id": "2607.27205",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV",
-            "cs.CL"
+            "cs.RO"
         ],
-        "ARXIVID": "2607.24904",
-        "COMMENT": "Matches criteria 2 and 4: it proposes a new multimodal foundation model for streaming video/3D spatial reasoning, with efficiency-focused architecture and empirical findings.",
+        "ARXIVID": "2607.27205",
+        "COMMENT": "Matches criterion 3 very closely: it proposes a new real-time vision-language-action model for embodied robot manipulation with a new low-latency design.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Vision-Language-Action",
+            "Robot Manipulation",
+            "Efficient Inference"
+        ]
+    },
+    "2607.26913": {
+        "authors": [
+            "Weile Gong",
+            "Zijian Lu",
+            "Mingcai Chen",
+            "Yiping Zuo",
+            "Xin He",
+            "Weibei Fan"
+        ],
+        "title": "Prior Directions: Why GUI Grounding Gets Locked in the Past",
+        "abstract": "arXiv:2607.26913v1 Announce Type: new  Abstract: Vision-language models often use descriptions of earlier visual states to make decisions about the current scene. When the scene changes, stale language can redirect an otherwise correct visual judgment toward an outdated answer. We study this failure as visual lock-in in a controlled grounding setting where only the verbalized prior varies. Across models, stronger lock-in accompanies smaller changes in the model representation before the final answer. This reversal suggests that lock-in depends not on how far this representation moves, but on how that movement is organized. In models that are harder to correct, prior-induced changes concentrate along a compact set of directions that repeatedly appear across examples. We call these recurrent axes the Prior Directions. They recur on held-out examples, while a descriptive four-model comparison associates greater concentration with stronger lock-in. Controlled interventions show that removing the component aligned with the Prior Directions restores visual grounding, whereas removing an equally large orthogonal component has little effect. Prior control thus arises when prior-induced changes form a coherent and reusable pattern in the representation used to produce the answer. This account explains why the same prior remains revisable in one model yet becomes dominant in another.",
+        "arxiv_id": "2607.26913",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2607.26913",
+        "COMMENT": "Matches criterion 1 very closely: it studies a failure mode in GUI grounding for vision-language models and proposes an interpretability-style intervention to restore visual grounding.",
         "RELEVANCE": 8,
         "NOVELTY": 7,
         "TAGS": [
-            "Multimodal Foundation Models",
-            "Streaming Video Understanding",
-            "3D Spatial Reasoning"
+            "Vision-Language Grounding",
+            "Model Interpretability",
+            "GUI Reasoning"
         ]
     },
-    "2607.25527": {
+    "2607.27069": {
         "authors": [
-            "Weiming Zhuang",
-            "Jiabo Huang",
-            "Jingtao Li",
-            "Zhizhong Li",
-            "Chen Chen",
-            "Sina Sajadmanesh",
-            "Lingjuan Lyu"
+            "Feixiang Liu",
+            "Qiang Qiu",
+            "Lanbo Sun",
+            "Nan Wei",
+            "Huawei Shen",
+            "Xueqi Cheng"
         ],
-        "title": "Argus-Unified: Towards A Compact and Economical Unified Model for Image Understanding and Generation",
-        "abstract": "arXiv:2607.25527v1 Announce Type: new  Abstract: Unifying visual understanding and generation in one model holds immense promise, but remains challenging and expensive due to heavy compute and data demands and conflicts between the visual features needed for these two capabilities. To address these challenges, we present Argus-Unified, a compact, effective and unified multimodal model built with low demand on computation and data. Instead of aligning modalities from scratch, Argus-Unified effectively leverages pretrained vision-language models (VLMs) that provide strong multimodal priors. Specifically, we introduce hybrid visual tokens that preserve continuous tokens for understanding while learning discrete tokens for generation from a frozen unified vision encoder. Our training pipeline includes two stages: the first stage learns a quantizer and image decoder on top of the frozen vision encoder, the second stage trains the LLM initialized from a pretrained VLM for the unified multimodal modeling. Using by far the least amount of data (15.6M) and the lowest cost (~$2,000), we demonstrate that unified multimodal models can be trained economically while achieving strong performance in both understanding and generation. Notably, our model attains state-of-the-art multimodal understanding on GQA, POPE, and VQAv2, and competitive generation quality compared to models with dedicated vision encoders (e.g., Janus, Janus-Pro), all at ~10x lower cost and with ~5x less data. We envision Argus-Unified as a useful baseline that lowers the development barrier for unified models.",
-        "arxiv_id": "2607.25527",
+        "title": "Visual Credit Audit for Multimodal Spatial Reasoning",
+        "abstract": "arXiv:2607.27069v1 Announce Type: new  Abstract: Closed yes/no spatial benchmarks can reward a correct answer even when the image adds little support beyond no-image contexts. Under a fixed forced-choice interface, Visual Credit Audit (VCA) separates two estimands: whether the benchmark image gives the model's declared decision more support than text-only and blank controls, and whether the model responds to relation-specific visual evidence. The first audit is training- and label-free and does not require an answer flip. Applying labels yields dependence-credited correctness (D-CC); on correct items, it equals same-control gold-aligned positive gain, while prediction alignment extends the audit to errors. Across four open MLLMs and two spatial benchmarks, 12.73-26.25% of decisions are correct yet uncredited. Matched same-split image permutation reduces D-CC by 21.25-47.80 points, with every paired 95% interval above zero. Fixed-pixel relation contrasts and a 3x3 evidence-source factorial show why null controls cannot identify relation response. Among controlled correct-but-uncredited agreement decisions, response to relation reversal spans 81.57-100.00%, while 32.11% pooled change answer. Independently audited outcomes on 108 geometry-compatible edits provide a bounded natural-image correspondence check. VCA thereby decomposes benchmark success into correctness, additional image support, and relation-consistent response.",
+        "arxiv_id": "2607.27069",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV",
             "cs.AI"
         ],
-        "ARXIVID": "2607.25527",
-        "COMMENT": "Matches criterion 2 very closely: this is a new unified multimodal model for image understanding and generation, i.e. an MLLM/VLM-style system.",
-        "RELEVANCE": 8,
+        "ARXIVID": "2607.27069",
+        "COMMENT": "Matches criterion 1: a methodological improvement for multimodal spatial reasoning, with a careful visual-credit audit of when images actually help.",
+        "RELEVANCE": 7,
         "NOVELTY": 7,
         "TAGS": [
-            "Unified Multimodal Model",
-            "Vision-Language Modeling",
-            "Image Generation"
+            "Spatial Reasoning",
+            "Multimodal Evaluation",
+            "Statistical Audit"
         ]
     },
-    "2607.25788": {
+    "2607.25656": {
         "authors": [
-            "Zhongwei Chen",
-            "Hai-jun Rong",
-            "Tao Zhang",
-            "Xianfeng Nie",
-            "Xiangbao Zhang",
-            "Guoqi Li",
-            "Zhao-Xu Yang"
+            "Zhenzhen Ren",
+            "Jiyan He",
+            "Xinpeng Zhang",
+            "Zhenxing Qian",
+            "Ke Han",
+            "Shuxin Zheng",
+            "GuoBiao Li",
+            "Xiaoqing Zhang"
         ],
-        "title": "GeoMFD: Continual Drone-View Geo-Localization with Geometry-Aware Adapter and Margin-Field Distillation",
-        "abstract": "arXiv:2607.25788v1 Announce Type: new  Abstract: Existing drone-view geo-localization (DVGL) methods are mainly developed under a static training paradigm, where models are optimized for fixed environments with all training data available in advance. However, this paradigm is difficult to extend to real-world deployment, where drones may encounter diverse environments and require multiple environment-specific models, resulting in additional storage and model-selection costs. Directly adapting a single model to new environments also risks distorting previously learned cross-view embedding geometry and causing forgetting. To address these challenges, we formalize the continual drone-view geo-localization (C-DVGL) setting and propose GeoMFD, a geometry-aware continual adaptation method for DVGL. GeoMFD combines a cold-start bootstrapping strategy (CBS), a geometry-aware adapter (Geo-Adapter), and margin-field distillation (MFD) to balance adaptation and cross-view geometry preservation. CBS initializes a stable embedding space, Geo-Adapter enables environment adaptation through controlled residual corrections, and MFD preserves similarity margins between positive pairs and hard negatives to alleviate cross-view geometry forgetting. Extensive experiments demonstrate that GeoMFD effectively mitigates forgetting and achieves competitive performance with environment-specific DVGL methods using a single continuously updated model.",
-        "arxiv_id": "2607.25788",
-        "primary_category": "cs.CV",
+        "title": "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+        "abstract": "arXiv:2607.25656v1 Announce Type: new  Abstract: Complex tasks often decompose into parallelizable yet interdependent subtasks, making orchestration critical to the performance of multi-agent systems (MAS). Existing evaluations typically rely on end-to-end execution, which conflates orchestration-plan quality with worker capabilities, tool reliability, and environmental noise. Moreover, the time and token costs of real execution grow rapidly with workflow scale, making systematic evaluation expensive. We present OrchBench, a simulation-based benchmark for evaluating multi-agent orchestration plans in isolation. Starting from real-world tasks, OrchBench constructs directed acyclic graphs (DAGs) that encode task dependencies, with controlled sizes and degrees of parallelism. Given a DAG, a per-agent context limit, and an agent budget, the evaluated planner assigns subtasks to agents and specifies cross-agent information transfers and their retention ratios. A deterministic simulator evaluates the resulting plan without invoking worker agents and returns interpretable measures of result quality, makespan, and token cost. The simulated scores produced by OrchBench correlate strongly with quality scores from Claude Code executions, achieving a Pearson correlation of \\(r=0.816\\), while requiring only \\(1.3\\%\\) of the tokens and \\(10.3\\%\\) of the wall-clock time. Across diverse planners and workflow scales, we find that preserving task-critical information is more important than simply increasing the number of agents, and the benefits of parallelism diminish as coordination failures accumulate. These results establish OrchBench as an efficient and interpretable benchmark for comparing and diagnosing multi-agent orchestration plans.",
+        "arxiv_id": "2607.25656",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV"
+            "cs.AI"
         ],
-        "ARXIVID": "2607.25788",
-        "COMMENT": "Matches criterion 1 and 3 closely: continual drone-view geo-localization with geometry-aware adaptation, targeting spatial reasoning under changing environments.",
+        "ARXIVID": "2607.25656",
+        "COMMENT": "Matches criterion 3 closely: it introduces a new simulation-based benchmark for evaluating multi-agent orchestration plans in isolation.",
         "RELEVANCE": 7,
-        "NOVELTY": 5,
+        "NOVELTY": 7,
         "TAGS": [
-            "Continual Learning",
-            "Drone Geo-localization",
-            "Geometry-Aware Learning",
-            "Cross-View Retrieval"
-        ]
-    },
-    "2607.25778": {
-        "authors": [
-            "Songtianhao Xu",
-            "Zhongwei Chen",
-            "Zhao-Xu Yang",
-            "Weifeng Wang"
-        ],
-        "title": "A Unified Benchmark and Modality-Adaptive Network for Day-and-Night Drone-View Geo-Localization",
-        "abstract": "arXiv:2607.25778v1 Announce Type: new  Abstract: Most existing drone-view geo-localization (DVGL) benchmarks contain drone imagery captured under a single illumination condition and lack geographically aligned visible drone images, infrared drone images, and satellite images from the same locations. To evaluate the generalization capability of DVGL methods under challenging illumination conditions, some methods train models on a visible benchmark and test them on an independent infrared benchmark. This protocol essentially constitutes transfer between datasets, which makes it difficult to systematically evaluate DVGL across daytime and nighttime conditions within a unified benchmark. To address this limitation, we construct IRCHN,a real-world DVGL benchmark designed for localization across different illumination conditions. IRCHN contains 26,460 images collected from 8,820 geographic locations across four representative scene categories, including farmland, coastline, forest, and urban areas. Each location provides one visible drone image, one infrared drone image, and one corresponding satellite image, which enables unified evaluation of DVGL methods across different illumination conditions and sensing modalities. We further propose the Modality-Adaptive State-Space Transport Relation Network (MASTR-Net), a DVGL framework tailored to localization under varying illumination conditions. MASTR-Net integrates modality-adaptive feature enhancement, bidirectional selective state-space relation modeling, and soft optimal transport relation alignment to jointly reduce modality gaps and view-induced structural discrepancies. Extensive experiments demonstrate that MASTR-Net outperforms existing state-of-the-art methods on IRCHN for localization under varying illumination conditions and achieves competitive performance on two infrared benchmarks, IR-VL328 and CVGL-RGBT. Code: https://github.com/SongtianhaoXu/MASTR-Net",
-        "arxiv_id": "2607.25778",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2607.25778",
-        "COMMENT": "Matches criterion 1 and 3 quite closely: it is a spatial understanding / geo-localization method with a new unified benchmark for day-night and multi-modal drone-view localization.",
-        "RELEVANCE": 7,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Drone Geo-localization",
             "Benchmark & Evaluation",
-            "Modality Adaptation",
-            "Spatial Representation"
+            "Multi-Agent Systems",
+            "Deterministic Simulation"
         ]
     },
-    "2607.25948": {
+    "2607.26947": {
         "authors": [
-            "Mingqiao Ye",
-            "Zhaochong An",
-            "Zhitong Gao",
-            "Xian Liu",
-            "Fran\\c{c}ois Fleuret",
-            "Chuan Li",
-            "Amir Zadeh",
-            "Serge Belongie",
-            "Afshin Dehghan",
-            "Jesse Allardice",
-            "David Mizrahi",
-            "O\\u{g}uzhan Fatih Kar",
-            "Roman Bachmann",
-            "Amir Zamir"
+            "Duzhen Zhang",
+            "Yahan Yu",
+            "Qiaoyi Su",
+            "Jiahua Dong",
+            "Tielin Zhang"
         ],
-        "title": "MODUS: Decoder-Only Any-to-Any Modeling of Diverse Modalities",
-        "abstract": "arXiv:2607.25948v1 Announce Type: new  Abstract: Any-to-any models predict any modality from any combination of others within a single network, a formulation used in multimodal vision and vision-language models, and increasingly in scientific domains such as ecology and astronomy. Existing any-to-any models are typically trained from scratch using encoder-decoder or diffusion architectures, impacting their performance and preventing them from using strong pre-trained decoder-only models as a prior. In this work, we investigate decoder-only any-to-any multimodal modeling, which treats all modalities symmetrically and supports arbitrary modalities as inputs and outputs without modality-specific heads, losses, or task pipelines. Because every modality is both an input and an output of the same model, the resulting model, named Modus, can support a range of applications, such as chained generation through intermediate modalities or cross-modal self-verification by scoring the model's own outputs with another generated modality. Modus demonstrates strong out-of-the-box performance and is competitive with specialist and multitask baselines using a single model across various benchmarks. All materials are open-sourced at https://modus-multimodal.epfl.ch/.",
-        "arxiv_id": "2607.25948",
+        "title": "Progressive Multimodal Alignment for Continual Instruction Tuning",
+        "abstract": "arXiv:2607.26947v1 Announce Type: new  Abstract: Multimodal Large Language Models (MLLMs) rely on a projector to align visual representations with the language embedding space, making it central to cross-modal understanding. In Multimodal Continual Instruction Tuning (MCIT), however, shifting visual distributions and evolving instruction semantics cause this shared projector to drift, leading to projector-level forgetting, an issue largely overlooked by methods that focus primarily on the LLM backbone. We introduce Progressive Multimodal Alignment (PMA), a framework that enables the projector to adapt continually while preserving previously learned alignment. PMA detects multimodal distribution shifts via a lightweight representation descriptor and progressively expands projector experts only when needed. An expandable router integrates expert outputs based on multimodal features, while the original pretrained projector is retained as a stable alignment anchor. This progressive mechanism balances stability and plasticity with sub-linear parameter growth and serves as a method-agnostic add-on to existing MCIT approaches. Extensive experiments on two recent MCIT benchmarks demonstrate that mitigating projector-level forgetting yields consistent gains over prior state-of-the-art methods when combined with PMA. Moreover, PMA scales across diverse MLLM backbones, demonstrating robust and broadly applicable MCIT performance.",
+        "arxiv_id": "2607.26947",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV",
-            "cs.AI",
-            "cs.LG"
+            "cs.AI"
         ],
-        "ARXIVID": "2607.25948",
-        "COMMENT": "Matches criterion 2 closely: a new general any-to-any multimodal model built around a decoder-only architecture.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Multimodal Learning",
-            "Any-to-Any Modeling",
-            "Decoder-Only Models",
-            "Foundation Models"
-        ]
-    },
-    "2607.26037": {
-        "authors": [
-            "Jiacong Xu",
-            "Hanwen Jiang",
-            "Zhixin Shu",
-            "Kalyan Sunkavalli",
-            "Vishal M. Patel",
-            "Yiqun Mei"
-        ],
-        "title": "Wonder: Video World Model Done Better",
-        "abstract": "arXiv:2607.26037v1 Announce Type: new  Abstract: We present Wonder, a general-purpose video world model for real-time, camera-controllable world exploration. Given an image or a conditional video, Wonder constructs a playable world where users can navigate interactively by moving the camera, discovering unseen regions, and revisiting previously observed areas in real time and over a long-term horizon. Achieving this capability requires a system-level co-design of control method, memory mechanism, and training strategy. We introduce a novel camera conditioning with a dense coordinate field whose renderings provide spatially aligned motion and orientation cues, allowing the model to interpret camera motion directly as visual evidence. To support fast and precise memory retrieval over a growing generation context, we propose an efficient sparse attention-based memory mechanism, enabling the model to selectively attend to a small set of relevant context tokens at inference time, regardless of actual context length. We further develop several techniques to rectify the self-forcing-style distillation pipeline, improving the student model's ability to respect control signals, as well as maintaining diverse generation modes and long-term memory from the teacher. Together, these components enable Wonder to synthesize diverse, minute-scale videos at 16 FPS while preserving coherent geometry, appearance, and dynamics across long rollouts. Beyond image-to-video generation, Wonder naturally supports video-conditioned generation, allowing existing dynamic scenes to be re-shot in real time.",
-        "arxiv_id": "2607.26037",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.GR"
-        ],
-        "ARXIVID": "2607.26037",
-        "COMMENT": "Matches criterion 4 closely: a vision foundation / world-model style video generation system with camera-controllable exploration and memory.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Video World Models",
-            "Vision Foundation Models",
-            "Controllable Generation",
-            "Long-Range Memory"
-        ]
-    },
-    "2607.25993": {
-        "authors": [
-            "Fengxiang Wang",
-            "Jiangnan Huang",
-            "Mingshuo Chen",
-            "Yueying Li",
-            "Yang Shi",
-            "Junwei Luo",
-            "Haoyu Wang",
-            "Yansheng Li",
-            "Jing Zhang",
-            "Haiyan Zhao",
-            "Wenjing Yang"
-        ],
-        "title": "Beyond Zooming: Learning Multi-Tool Visual Reasoning for Ultra-High-Resolution Remote Sensing",
-        "abstract": "arXiv:2607.25993v1 Announce Type: new  Abstract: Ultra-high-resolution (UHR) remote-sensing (RS) imagery provides fine-grained Earth-observation evidence over city-scale scenes, but poses a fundamental challenge for multimodal large language models (MLLMs): task-relevant evidence is often sparse, local, and spatially dispersed across extremely large visual contexts. A natural solution is to equip MLLMs with zoom-in tools for active local inspection. However, through a pilot study on XLRS-Bench, we find that zoom-in is only partially effective: it resolves easy and medium-level tasks with locally recoverable evidence, but saturates on hard cases requiring global search, multi-region comparison, path planning, or dispersed-evidence reasoning. Motivated by this finding, we move beyond single-tool zoom-in and introduce GeoMTVR, a large-scale Geospatial Multi-Tool Visual Reasoning dataset built from wide-area satellite imagery. GeoMTVR contains 13K UHR VQA samples with interleaved reasoning trajectories, diverse visual tool calls, and returned visual observations, enabling models to learn question decomposition, tool selection, regional inspection, object-level grounding, auxiliary visual reasoning, and cross-tool evidence integration. Beyond supervised fine-tuning, we propose a tool-attention-focused reinforcement learning algorithm that concentrates optimization on critical tool-use decisions, including when to invoke tools, which tool to select, where to apply it, and how to interpret tool outputs. By combining SFT on GeoMTVR with our RL algorithm, we develop GeoLens, a multi-tool visual reasoning MLLM for UHR RS. Experiments show that GeoLens consistently outperforms direct reasoning and single-tool zoom-in baselines, achieving stronger accuracy, better evidence grounding, and more efficient tool-use trajectories.",
-        "arxiv_id": "2607.25993",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2607.25993",
-        "COMMENT": "Matches criterion 3 very closely: an embodied-style visual reasoning benchmark plus a new MLLM method with multi-tool visual reasoning for ultra-high-resolution imagery.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Vision-Language Reasoning",
-            "Benchmark & Evaluation",
-            "Tool Use",
-            "Remote Sensing"
-        ]
-    },
-    "2607.25314": {
-        "authors": [
-            "Aysan Aghazadeh",
-            "Sina Malakouti",
-            "Adriana Kovashka"
-        ],
-        "title": "Sense it with your eyes: Sensation Generation and Understanding for Advertisements",
-        "abstract": "arXiv:2607.25314v1 Announce Type: new  Abstract: Sensory advertising evokes human senses through visual cues, enabling audiences to mentally simulate experiences and increasing persuasive impact. Despite the recent increase in using AI in generating and understanding creative and persuasive content, how advertisements visually evoke sensations remains largely unexplored. In this work, we introduce the first study of understanding, evaluating, and generating sensory ads. We introduce the Sensory Ad dataset, and define sensation classification tasks (SenseClass) to benchmark LLMs and MLLMs. We further propose SenseScore, an automated evaluation metric for sensation evocation achieving strong agreement with human judgments. Finally, we introduce the Sensory Ad Generation (SenseGen) task and propose SAGA, a multi-agent framework that improves message image alignment, sensory evocation, and persuasion. Our work establishes a foundation for sensory-aware visual persuasion.",
-        "arxiv_id": "2607.25314",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2607.25314",
-        "COMMENT": "Matches criterion 2 and 4 closely: it introduces MLLM-based benchmarking and generation for sensory advertisements, with a new dataset, metric, and generation framework.",
-        "RELEVANCE": 6,
-        "NOVELTY": 5,
+        "ARXIVID": "2607.26947",
+        "COMMENT": "Matches criterion 2: a new MLLM training method that tackles continual multimodal instruction tuning and projector-level forgetting.",
+        "RELEVANCE": 7,
+        "NOVELTY": 6,
         "TAGS": [
             "Multimodal LLM",
-            "Benchmark & Evaluation",
-            "Visual Persuasion",
-            "Generative Modeling"
+            "Continual Learning",
+            "Instruction Tuning"
         ]
     },
-    "2607.25125": {
+    "2607.26754": {
         "authors": [
-            "Ce Zhang",
-            "Jinxi He",
-            "Katia Sycara",
-            "Yaqi Xie"
+            "Zijun Lin",
+            "Zeqing Wang",
+            "Cheston Tan",
+            "Bihan Wen",
+            "Yeying Jin"
         ],
-        "title": "LENS: Adaptive Spatio-Temporal Zooming for Keyframe Sampling in Long-Form Videos",
-        "abstract": "arXiv:2607.25125v1 Announce Type: new  Abstract: Despite rapid progress in Multi-modal Large Language Models (MLLMs), understanding long-form videos is still bottlenecked by limited context windows. While recent keyframe sampling methods attempt to mitigate this by distilling video inputs into a compact set of query-relevant frames, navigating the vast spatio-temporal search space remains challenging, as spatial detail and temporal coverage often conflict. To address this, we introduce LENS, a training-free keyframe sampling framework that dynamically decides when to zoom in for fine-grained details and when to zoom out for broader context based on the text query. Concretely, LENS adaptively allocates a limited frame budget between spatial zoom-ins, which highlight query-relevant regions within individual frames, and temporal zoom-outs, which expand the temporal scope through multi-frame aggregation, enabling the model to reason across multiple granularities while capturing both high-fidelity details and long-range context. Across diverse long-form video benchmarks, LENS consistently outperforms prior state-of-the-art keyframe sampling methods and delivers substantial gains over uniform sampling, improving Video-MME accuracy from 53.3% to 60.7% with Qwen2.5-VL.Code is available at https://github.com/zhangce01/LENS.",
-        "arxiv_id": "2607.25125",
+        "title": "StatePlay: State-Aware Game World Models for Mechanics-Consistent Generation",
+        "abstract": "arXiv:2607.26754v1 Announce Type: new  Abstract: Recent game world models can generate visually realistic and interactive environments conditioned on player actions. However, games are not defined by pixels alone; they are governed by explicit mechanics, namely state-dependent rules that control health reduction, skill activation, and game termination. These mechanics depend on precise internal states, such as health points, skill meters, and timers, which are tightly coupled with visual observations and determine how gameplay evolves. Without modeling these state dynamics, existing game world models may generate visually plausible rollouts but violate the underlying game rules. In this paper, we propose StatePlay, a novel state-aware game world model that jointly predicts visual content and game states to promote mechanics-consistent generation. StatePlay adopts a mixture-of-transformers (MoT)-style architecture that preserves specialized visual and state representations while enabling cross-modal interaction, allowing predicted states to guide frame generation. Each branch is further optimized with a distinct objective suited to its modality. Experiments show that StatePlay achieves an average normalized L1 distance below 0.06 for state prediction. Furthermore, compared with models without explicit state modeling, our method improves mechanics fidelity in generated game rollouts by 18.6%. Overall, our work highlights the importance of state-aware game world modeling and advances beyond pixel-level realism toward complete and mechanically faithful game generation.",
+        "arxiv_id": "2607.26754",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2607.25125",
-        "COMMENT": "Matches criterion 2: it is a new MLLM-oriented method for long-form video understanding with adaptive spatial zooming over temporal context.",
+        "ARXIVID": "2607.26754",
+        "COMMENT": "Matches criterion 3: a new embodied/simulator-related world model that explicitly models game state for mechanics-consistent generation.",
         "RELEVANCE": 6,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Multimodal LLMs",
-            "Long-Form Video Understanding",
-            "Keyframe Sampling"
-        ]
-    },
-    "2607.24856": {
-        "authors": [
-            "Wenping Yin",
-            "Ziqi Liu",
-            "Naixia Mou",
-            "Weijia Li",
-            "Danfeng Hong",
-            "Hao Li"
-        ],
-        "title": "DisasterTD: Disaster Toponym Disambiguation Using Multimodal LLMs and Cross-View Geolocalization",
-        "abstract": "arXiv:2607.24856v1 Announce Type: new  Abstract: Social media imagery (SMI) provides timely and fine-grained ground perspectives that are valuable for situational awareness and emergency response. Unlike satellite or aerial imagery, SMI can capture disaster impacts and ground-level conditions in a timely manner. However, geographic references in SMI are often vague or ambiguous, making accurate geolocalization challenging. To address this issue, we propose DisasterTD, a disaster toponym disambiguation framework that integrates multimodal large language model (MLLMs)-based semantic reasoning with cross-view geolocalization. First, MLLMs extract toponyms and generate candidate geolocations from noisy textual inputs. Then, cross-view matching between SMI, remote sensing imagery (RSI), and optionally street-view imagery (SVI) is used to verify and refine these candidate results. We evaluate DisasterTD on the Hurricane Harvey dataset, where SMI is augmented with collected RSI and SVI to construct a cross-view benchmark for disaster geolocalization. The dataset is divided into four categories based on toponym clarity and ambiguity, allowing a fine-grained performance analysis across scenarios. Results show that DisasterTD consistently outperforms MLLM-only and cross-view-only baselines without disambiguation, achieving geolocalization accuracies of 71.62% within 1000 m, 62.36% within 500 m, 57.99% within 250 m, 52.09% within 100 m, and 47.01% within 50 m, while reducing the mean and median errors to 11.33 km and 0.68 km, respectively. The largest improvements appear in ambiguous toponyms, where semantic reasoning with cross-view evidence reduces candidate dispersion and errors. These findings demonstrate the effectiveness of integrating MLLM-based candidate generation with cross-view verification for fine-grained disaster geolocalization.",
-        "arxiv_id": "2607.24856",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2607.24856",
-        "COMMENT": "Matches criterion 3: it builds a new cross-view benchmark for disaster geolocalization and uses MLLMs with cross-view verification in an embodied/geospatial setting.",
-        "RELEVANCE": 6,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Multimodal LLMs",
-            "Geolocalization",
-            "Benchmark & Evaluation"
-        ]
-    },
-    "2607.25904": {
-        "authors": [
-            "Chenrui Shi",
-            "Yuwei Wu",
-            "Yang Liu",
-            "Ruining Feng",
-            "Zirui Shang",
-            "Zhi Gao",
-            "Lifeng Fan",
-            "Che Sun"
-        ],
-        "title": "Interactive Reward Agent: GUI Task Evaluation via Environment-State Verification",
-        "abstract": "arXiv:2607.25904v1 Announce Type: new  Abstract: Graphical user interface task evaluation aims to determine whether a GUI agent has successfully completed a user instruction. Automated GUI task evaluation has received increasing attention because the evaluation results can serve as reward signals for both test-time scaling and post-training. However, reliable GUI task evaluation remains challenging because the judgments often require access to environment states, such as system configurations, file data, and application settings, beyond the screenshots of execution trajectories. In this paper, we propose an interactive reward agent (IRA) based on a propose-then-verify framework to acquire and verify evidence from the post-execution environment. Given a task instruction and a GUI environment after the GUI agent execution, IRA first proposes the task completion conditions and then verifies them by invoking system tools, application tools, and GUI tools. This design combines evidence from both visible interfaces and the environment state in an interactive process. We further introduce GUI-RewardBench, a benchmark of 321 GUI task trajectories spanning 10 Ubuntu desktop application categories. Experiments show that IRA achieves 86.9% accuracy on GUI-RewardBench, outperforming existing evaluator baselines. We further apply IRA to reinforcement learning of GUI agents, achieving a 34.0% OSWorld success rate, which demonstrates that IRA can provide effective reward signals for training GUI agents.",
-        "arxiv_id": "2607.25904",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2607.25904",
-        "COMMENT": "Matches criterion 3 partially: it builds a benchmark and evaluation method for GUI agents, but it is more about desktop automation than embodied AI in the usual simulator/spatial-intelligence sense.",
-        "RELEVANCE": 5,
         "NOVELTY": 6,
         "TAGS": [
-            "GUI Agents",
-            "Benchmark & Evaluation",
-            "Reward Modeling"
-        ]
-    },
-    "2607.25467": {
-        "authors": [
-            "Hong Chen",
-            "Kang Chen",
-            "Yuxuan Fan",
-            "Bo Wang",
-            "Yubo Gao",
-            "Yuanlin Chu",
-            "Xuming Hu"
-        ],
-        "title": "Seen, Said, or Forgotten? A Causal Audit of Visual KV Memory Across Dialog Turns",
-        "abstract": "arXiv:2607.25467v1 Announce Type: new  Abstract: Stateful multimodal assistants encode an image once but may answer questions about it many turns later. Attention-guided visual-KV eviction assumes that evidence irrelevant now will remain dispensable, although future questions are unknown. We ask when a visual fact is actually safe to forget and introduce the Causal Visual Memory Audit (CVMA), a paired single-prefill framework that tests what later answers lose when a visual region, the whole image, or prior assistant text becomes unavailable. On VisDial and ConvBench, current attention can rank future-useful regions worse than random even though a diagnostic marginal-utility control shows substantial selection headroom. Aggregate scores hide this failure when later turns do not need vision; controlled and stock-generated histories reveal a second escape route, in which assistant-text KV replaces image KV for facts already stated but not reliably for unstated facts. In the tested stacks, safe forgetting is supported by low future visual dependence or fact-specific verbalization---not by low current attention.",
-        "arxiv_id": "2607.25467",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2607.25467",
-        "COMMENT": "Matches criterion 2 only indirectly: it studies multimodal assistant visual memory across dialog turns, which is relevant to VLLM behavior and diagnostics.",
-        "RELEVANCE": 4,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Multimodal Assistants",
-            "Visual Memory",
-            "Benchmark & Evaluation",
-            "Causal Analysis"
-        ]
-    },
-    "2607.25239": {
-        "authors": [
-            "Xiangqun Zhang",
-            "Likai Wang",
-            "Zekun Qian",
-            "Ruize Han",
-            "Wei Feng"
-        ],
-        "title": "CD-RMOT-Bench: Benchmarking the Cross-Domain Referring Multi-Object Tracking",
-        "abstract": "arXiv:2607.25239v1 Announce Type: new  Abstract: Referring multi-object tracking (RMOT) extends tracking from category-driven perception to language-guided understanding by grounding object trajectories in natural-language expressions. Despite recent progress, existing RMOT studies are largely conducted under in-domain settings, leaving the robustness of language-conditioned tracking under inevitable visual domain shifts unexplored. In this paper, we study Cross-Domain Referring Multi-Object Tracking (CD-RMOT), a new and challenging problem that evaluates whether an RMOT model trained on a labeled source domain can reliably follow natural-language expressions in an unlabeled target domain with different visual conditions. To support systematic study, we construct CD-RMOT-Bench, a unified benchmark that combines real clear-domain referring tracking data, aligned digital-twin variants, and real adverse-domain videos. CD-RMOT-Bench enables both controlled weather/viewpoint shift analysis and realistic synthetic-real transfer evaluation under a shared RMOT protocol. Further, we provide a Query-Centric Adaptation (QCA) framework, designed to stabilize the query space that bridges visual trajectories and referring expressions. Extensive experiments reveal that domain shifts severely degrade RMOT performance, where the failure is not merely caused by object detection errors but more critically by unstable expression-conditioned temporal association and target selection. QCA establishes a strong baseline, while CD-RMOT-Bench opens a new direction for robust language-guided tracking across visual domains.",
-        "arxiv_id": "2607.25239",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2607.25239",
-        "COMMENT": "Matches criterion 3 closely: it builds a new benchmark for cross-domain referring multi-object tracking and studies robust language-guided tracking.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
+            "World Models",
             "Embodied AI",
-            "Referring Tracking",
-            "Benchmark & Evaluation",
-            "Domain Generalization"
+            "Game Simulation"
         ]
     },
-    "2607.26041": {
+    "2607.24770": {
         "authors": [
-            "Abhishek Pillai",
-            "Samir Kumar Nayak",
-            "Yuan Chen"
+            "Azizul Zahid",
+            "Subrata Biswas",
+            "Bashima Islam",
+            "Sai Swaminathan"
         ],
-        "title": "Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?",
-        "abstract": "arXiv:2607.26041v1 Announce Type: new  Abstract: Computer-use agents (CUAs) increasingly act through desktop GUIs to complete long-horizon tasks. Current benchmarks primarily measure end-task success or single-frame grounding. Neither isolates whether a model can reconstruct the causal, task-relevant transition produced by an action- crucial for rejecting stale observations, verifying progress, and recovering from failure. This is difficult because inference, remote input, app rendering, and screenshot capture are asynchronous: the next observation may be delayed, occluded, transient, or unrelated, then misread as progress and carried into subsequent planning. We introduce Desktop-Delta Bench (DDB), an offline step-level benchmark with 2,013 human-verified instances from novel, multi-app Linux trajectories across ~15 applications and 50 task domains. DDB trajectories targets 3 failure dimensions- state verification, source tracking, and context-aware control- through 2 complementary tasks: 463 3-frame temporal-ordering instances, including 105 with a cross-trajectory decoy, and 1,550 before-after pairs labeled from 5 actions + its payload. We evaluate 8 closed and open-source model families across 32 ordering and 16 single-action settings, observing consistent gaps. Ordering remains unsaturated: best non-decoy and decoy exact-match rates are 65.1% and 65.7%. Task context improves decoy identification by 6.9 percentage points but reduces non-decoy exact match by 2.2 points; error analysis reveals systematic copying of the presented A-B-C order. Single-action results show that inferring the action family is harder than locating it: click F1 is 0.96 vs, 0.76 for drag, while recognized drags are generally localized well. DDB, thus, complements end-to-end benchmarks by filling the missing diagnostic layer between GUI grounding and final task success, enabling targeted improvements to desktop CUA verification, reliability, and recovery.",
-        "arxiv_id": "2607.26041",
+        "title": "ProcAgent: An Agentic Framework for Procedural Task Guidance on Edge with Human-in-the-Loop",
+        "abstract": "arXiv:2607.24770v1 Announce Type: new  Abstract: Procedural tasks such as furniture assembly and home repair impose substantial cognitive demands because users must interpret instructions, track task progress, reason about spatial state, and recover from errors while performing physical actions. Prior multimodal assistants have shown promise for procedural guidance, but most rely on cloud inference and fixed always-on perception, making them poorly suited to privacy-sensitive, latency-critical domestic settings. We present ProcAgent, a fully on-device, agentic, vision-based procedural assistant for real-time adaptive guidances on a single NVIDIA Jetson AGX Orin. ProcAgent uses a propose-and-verify architecture that combines low-latency continuous perception, a symbolic task graph, on-demand vision-language verification, and an LLM-based interaction agent. The system continuously proposes user progress, invokes expensive visual reasoning only when ambiguity or likely deviation arises, and supports both reactive question answering and proactive intervention with human-in-the- loop confirmation. We evaluate ProcAgent along four dimensions: perception accuracy, reasoning, task-level performance, and user experience. Despite running entirely on-device, the system maintains responsive interaction, resolving text-only queries in approximately 2 seconds and visually grounded queries in approximately 8 seconds. In a user study with 10 participants completing assembly tasks, ProcAgent receives positive ratings for comprehensibility, actionability, and privacy comfort. These results show that adaptive procedural assistance can be achieved entirely on edge hardware without sacrificing usability.",
+        "arxiv_id": "2607.24770",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI",
-            "cs.CV"
+            "cs.HC"
         ],
-        "ARXIVID": "2607.26041",
-        "COMMENT": "Matches criterion 3 closely: a new benchmark for computer-use / GUI agents focused on desktop transitions and causal state verification.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Embodied AI",
-            "GUI Agents",
-            "Benchmark & Evaluation",
-            "Temporal Reasoning"
-        ]
-    },
-    "2607.25815": {
-        "authors": [
-            "Luqi Gong",
-            "Rui Xu",
-            "Yue Chen",
-            "Chao Li",
-            "Jingqi Hong",
-            "Xuefeng Zhao"
-        ],
-        "title": "Freq-RemoteVAR: Next-Frequency Autoregressive Modeling for Remote Sensing Change Detection",
-        "abstract": "arXiv:2607.25815v1 Announce Type: new  Abstract: Remote sensing change detection aims to identify land-cover changes from bi-temporal images. Most existing methods follow a one-shot dense prediction paradigm, directly regressing a change mask from fused features. However, such approaches overlook the intrinsic frequency characteristics of change patterns. We propose Freq-RemoteVAR, a frequency autoregressive framework that reformulates change detection as a structured generation problem in the frequency domain. Instead of predicting the change mask in a single step, we introduce a next-frequency prediction paradigm, where change information is progressively generated from coarse to fine. We design a frequency-aware mask tokenization strategy that decomposes change supervision into multi-frequency token targets via Fourier transformation and quantization. We develop a Frequency VAR Transformer, which performs causal autoregressive modeling over frequency tokens. The model starts from learned mask queries and progressively predicts frequency-level tokens conditioned on previously generated tokens and bi-temporal image features, effectively capturing long-range dependencies across frequency scales. We introduce Scale-Aligned RoPE Cross Attention (SRCA) module, which aligns frequency-domain mask queries with spatial-domain bi-temporal features under a unified coordinate system, enhancing spatial-frequency consistency during generation. We propose a Change-quality Control module that adaptively modulates the generation process through dynamic normalization, attention biasing, and spatial offset adjustment, thereby suppressing pseudo-change responses and improving robustness. Extensive experiments on CDD, GZ-CD, and LEVIR-CD demonstrate that Freq-RemoteVAR consistently outperforms existing methods, particularly in challenging scenarios with complex appearance variations and noisy disturbances.",
-        "arxiv_id": "2607.25815",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2607.25815",
-        "COMMENT": "Matches criterion 3 very closely: a new method for remote-sensing change detection with a structured generation formulation and frequency-domain modeling.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Remote Sensing",
-            "Change Detection",
-            "Frequency Modeling"
-        ]
-    },
-    "2607.25275": {
-        "authors": [
-            "Zhenning Shi",
-            "Chen Xu",
-            "Junhao Zhang",
-            "Kefei Zhang",
-            "Linjie Liu",
-            "Zhedong Zheng",
-            "Tao Li"
-        ],
-        "title": "ScaleResfusion: Residual Rectified Flow based on Residual Vector Field",
-        "abstract": "arXiv:2607.25275v1 Announce Type: new  Abstract: Real-world Image Restoration (Real-IR) aims to recover high-quality (HQ) images from complex and unknown degradations. Although recent diffusion-based methods have substantially improved perceptual quality, their current designs leave two key challenges unresolved. Methods that start from Gaussian noise are slow and often less faithful to the degraded input. Residual-based methods usually train from scratch, which makes it hard to exploit modern pre-trained generative priors. In this paper, we present ScaleResfusion, a scalable diffusion framework for real-world image restoration built on pre-trained text-to-image rectified-flow models. The core of our method is Residual Rectified Flow, which introduces the residual term R into Standard Rectified Flow. Instead of starting from pure noise, it uses a residual transport path that starts from noisy low-quality (LQ) images and admits an exact acceleration point. By learning the residual vector field, Residual Rectified Flow keeps the output distribution and linear diffusion process consistent with the pre-trained rectified-flow models. This makes parameter-efficient fine-tuning possible at scale. We further introduce a knowledge-distillation pipeline to reduce sampling cost while maintaining restoration quality. Extensive experiments on multiple real-world restoration tasks show that ScaleResfusion achieves state-of-the-art performance with much higher efficiency. These results suggest a practical and scalable way to adapt large pre-trained diffusion models to real-world image restoration. Our code and models are available at https://github.com/YukinoshitaLove/ScaleResfusion.",
-        "arxiv_id": "2607.25275",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2607.25275",
-        "COMMENT": "Matches criterion 4: it leverages pre-trained generative priors for real-world image restoration via a new rectified-flow formulation and distillation pipeline.",
-        "RELEVANCE": 5,
+        "ARXIVID": "2607.24770",
+        "COMMENT": "Matches criterion 3: a new embodied-AI method for procedural task guidance with human-in-the-loop on edge hardware.",
+        "RELEVANCE": 6,
         "NOVELTY": 5,
         "TAGS": [
-            "Image Restoration",
-            "Rectified Flow",
-            "Generative Modeling"
+            "Embodied AI",
+            "Human-in-the-Loop",
+            "Vision-Language Agent"
         ]
     },
-    "2607.26004": {
+    "2607.26735": {
         "authors": [
-            "Neta Shaul",
-            "Chao Liu",
-            "Arash Vahdat",
-            "Julius Berner"
+            "Xiaolong Liu",
+            "Junjian Li",
+            "Yuan Xiao",
+            "Jiaqi Deng",
+            "Dayong Ye",
+            "Tianqing Zhu",
+            "Huan Huo"
         ],
-        "title": "Parallel Decoding Distillation for Fast Image and Video Generation",
-        "abstract": "arXiv:2607.26004v1 Announce Type: new  Abstract: Generation in video diffusion or flow models is computationally expensive due to the slow and iterative sampling process. Current state-of-the-art (SOTA) acceleration methods heavily rely on variational score distillation (VSD) and adversarial losses to distill diffusion models into few-step generators. Albeit achieving high-quality video generation, these training losses are notoriously hard to optimize and suffer from mode collapse, leading to loss of video diversity and lack of motion. In this paper, we introduce Parallel Decoding Distillation (PDD), a simplified and scalable trajectory-based distillation method for fast inference of diffusion and flow matching models. Our architecture and training procedure are compatible with any pre-trained model and support sampling with a varying number of function evaluations (NFE). PDD accelerates generation by predicting multiple denoising steps per network evaluation. Conceptually, it learns a representation of the mean velocity without regressing its derivative using JVPs or finite-difference approximations. Our method achieves SOTA performance with 4-8 NFE on LTX-2.3 Text-to-Video/Audio, Wan 14B Text-to-Video, and Qwen-Image Text-to-Image. Moreover, PDD presents a significant improvement in generated video diversity.",
-        "arxiv_id": "2607.26004",
+        "title": "Dual Inversion for Text-to-Image Diffusion Models: From Both Prompt and Noise Perspectives",
+        "abstract": "arXiv:2607.26735v1 Announce Type: new  Abstract: Prompt inversion, as a typical reverse engineering technique, enables text-to-image (T2I) diffusion models to generate the desired target images without extensive prompt engineering. However, existing prompt inversion methods suffer from significant limitations: (1) gradient-based methods are unstable and uninterpretable, often resulting in generated images with severe artifacts; (2) gradient-free methods yield human-readable prompts but still fail to preserve visual fidelity due to the lack of fine-grained detail alignment. We contend that the limitations stem from treating prompt inversion as a sufficient condition for reverse engineering, ignoring the critical role of the latent noise that encodes structural information. Consequently, we propose Dualin (Dual inversion), a two-stage method that jointly recovers both the semantic prompt and latent noise of the target image. In the first stage, we integrate vision-language model, CLIP and large language model to invert a faithful, human-interpretable hard prompt. In the second stage, unconditional DDIM inversion reconstructs the exact latent noise of the target image, guaranteeing the consistency at the structural information level. Theoretically, we prove that the inverted noise enables flexible image editing without re-optimization. Extensive experiments on diverse datasets demonstrate that Dualin simultaneously generates high-quality inverted prompts and achieves state-of-the-art image fidelity. Additionally, Dualin can establish a robust foundation for the precise and controllable image editing.",
+        "arxiv_id": "2607.26735",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV",
-            "cs.LG"
+            "cs.AI",
+            "cs.MM"
         ],
-        "ARXIVID": "2607.26004",
-        "COMMENT": "Matches criterion 4: it is a vision/video generative modeling paper with a new distillation method for fast image and video generation.",
+        "ARXIVID": "2607.26735",
+        "COMMENT": "Matches criterion 4 loosely: it combines a vision-language model with diffusion inversion for text-to-image editing, but it is not a foundation-model paper in the usual sense.",
+        "RELEVANCE": 4,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Text-to-Image",
+            "Diffusion Inversion",
+            "Image Editing"
+        ]
+    },
+    "2607.26818": {
+        "authors": [
+            "Yanbo Ding",
+            "Zhizhi Guo",
+            "Quanyue Song",
+            "Yishan He",
+            "Zhixiang He",
+            "Yongxiang Li",
+            "Yali Wang"
+        ],
+        "title": "Ripple: Real-Time Streaming Audio-Video Generation With Cross-Modal Recurrent Memory",
+        "abstract": "arXiv:2607.26818v1 Announce Type: new  Abstract: Audio-video generative models achieve impressive quality but suffer from high latency, making them unsuitable for real-time applications. Although several streaming audio-video generation methods have been proposed, they remain costly and fail to support long-form generation. To address this, we propose \\textbf{Ripple}, a real-time joint audio-video generation system with a cross-modal recurrent memory mechanism. To enable efficient streaming inference while preserving long-term context, Ripple combines a fixed-length sliding-window attention with modality-specific memory states that continuously summarize audio and video context. Cross-modal memory interaction is further introduced to enhance audio-visual synchronization. To learn this memory-augmented model effectively, we devise a three-stage training recipe: (1) adapting a bidirectional audio-video teacher to block-wise causal attention with simulated memory, (2) optimizing the memory construction and interaction pipeline through end-to-end distillation, and (3) applying online reinforcement post-training tailored for streaming audio-video generation. As a result, Ripple achieves ~28 FPS at 480P resolution, over faster than the teacher, while capable of coherent long-form generation. Extensive experiments on both short-video and long-video benchmarks demonstrate our superior performance over existing offline and online joint audio-video generation methods.",
+        "arxiv_id": "2607.26818",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2607.26818",
+        "COMMENT": "Matches criterion 4 loosely: a multimodal generative model for real-time audio-video generation, but the connection to vision foundation models is indirect.",
+        "RELEVANCE": 4,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Multimodal Generation",
+            "Audio-Video Synthesis",
+            "Streaming Inference"
+        ]
+    },
+    "2607.27110": {
+        "authors": [
+            "Jiatong Li",
+            "Leo Liang",
+            "Linghe Kong",
+            "Yulun Zhang"
+        ],
+        "title": "FreqForcing: Autoregressive Long Video Generation via Spectral Self-Anchoring",
+        "abstract": "arXiv:2607.27110v1 Announce Type: new  Abstract: Autoregressive video diffusion models enable real-time streaming video generation. However, errors introduced during self-rollout accumulate over long horizons, manifesting as color drift, motion stagnation, and eventual visual collapse. In this paper, we characterize this phenomenon from a frequency-domain perspective: error accumulation appears as a pronounced energy drift in the low-frequency bands. We further investigate the effectiveness of attention sink in the frequency domain, and find that it improves the video quality by alleviating the spectral energy drift to some extent, but cannot fully resolve it. Motivated by the above analysis, we propose FreqForcing, a training-free framework that addresses error accumulation in long-video generation via Spectral Self-Anchoring (SSA). The proposed SSA leverages the low-frequency components of anchor attention to maintain long-horizon visual stability, while preserving dynamic motion through the high-frequency components of local attention. Our FreqForcing extends Self-Forcing pretrained on 5s clips to two-minute generation, achieving 24x extrapolation. Extensive experiments show that FreqForcing outperforms existing training-free methods quantitatively and qualitatively while remaining competitive with representative training-based approaches.",
+        "arxiv_id": "2607.27110",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2607.27110",
+        "COMMENT": "Matches criterion 4 loosely: it is a generative video model paper with a new training-free stabilization method, but it is not specifically about vision foundation models or embodied AI.",
         "RELEVANCE": 4,
         "NOVELTY": 6,
         "TAGS": [
             "Video Generation",
-            "Diffusion Distillation",
-            "Generative Modeling"
+            "Autoregressive Models",
+            "Frequency-Domain Methods"
         ]
     },
-    "2607.25669": {
+    "2607.26023": {
         "authors": [
-            "Haoyang Huang",
-            "Wenjie Huang",
-            "Tianqi Xu",
-            "Hongyaoxing Gu",
-            "Kang Tan",
-            "Yikai Fu",
-            "Yuhao Shen",
-            "Tianyu Liu",
-            "Baolin Zhang",
-            "Jun Zhang",
-            "Xinyi Hu",
-            "Jun Dai",
-            "Shuang Ge",
-            "Lei Chen",
-            "Yue Li",
-            "Mingchen Wang",
-            "Meng Zhang"
+            "Ankang Yang",
+            "Jitao Zhao",
+            "Di Jin",
+            "Yuxiao Huang",
+            "Dongxiao He"
         ],
-        "title": "OmniDelta: Skill-Driven Budget Allocation for Token Compression in OmniLLMs",
-        "abstract": "arXiv:2607.25669v1 Announce Type: new  Abstract: Emerging Omni-modal Large Language Models (OmniLLMs) enable unified understanding of text, audio, and video, but their long audio-video token sequences introduce substantial memory and inference costs. Existing compression methods mainly focus on selecting important tokens under fixed budgets, leaving the preceding budget-allocation problem underexplored. We show that direct query-to-audio/video similarity is unreliable for inter-modal budget allocation, and that uniform intra-modal budgets can miss key evidence while retaining redundant content. To address these limitations, we propose OmniDelta, a training-free, skill-driven framework that couples intent-aware inter-modal allocation with content-aware intra-modal allocation. OmniDelta first constructs audio and video skill pools to shift the fixed retained-token budget according to query demand, then reallocates modality budgets over audio segments and video frames using local complexity and temporal redundancy. The resulting local budgets can be combined with existing pruning strategies, preserving the total retained-token ratio while changing where the budget is spent. Experiments on four audio-video benchmarks with two Qwen2.5-Omni models show that OmniDelta establishes a new accuracy-efficiency Pareto frontier across pruning ratios. At 25% token retention on Qwen2.5-Omni-7B, OmniDelta reduces GPU memory by 22.0% and achieves a 1.64x end-to-end speedup over full-token inference.",
-        "arxiv_id": "2607.25669",
+        "title": "CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer",
+        "abstract": "arXiv:2607.26023v1 Announce Type: new  Abstract: Graph foundation models (GFMs) have emerged as a promising paradigm for transferring knowledge across graph domains and tasks. Real-world graphs associate nodes with text, images, and other modalities, making multimodal graphs essential for representing complex entities and relations. Moreover, collecting labels and adapting models for every new graph domain is costly and often infeasible, motivating zero-shot transfer. Unfortunately, zero-shot transfer on multimodal graphs remains underexplored. Existing GNN-based graph foundation models typically require downstream adaptation, whereas LLM-based graph methods mainly address unimodal graphs or tasks within a single domain. This setting presents two key challenges. First, models must generalize knowledge from individual modalities while capturing transferable cross-modal relations. Second, without target-domain fine-tuning, node representations remain entangled with domain-specific structures and modality-specific characteristics, obscuring shared concepts in unseen domains. To address these challenges, we propose CHARM, a multimodal graph foundation model with hierarchical context modeling for zero-shot transfer. CHARM replaces isolated raw nodes with hierarchical graph contexts that capture multimodal semantics and cross-modal relations. These contexts map domain-specific node patterns to shared high-level concepts, reducing reliance on target-domain supervision or adaptation. A modality-aware graph context encoder integrates multimodal information with graph structure and converts the resulting representations into graph tokens for a large language model . Experiments show consistent improvements on zero-shot multimodal graph tasks.",
+        "arxiv_id": "2607.26023",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2607.25669",
-        "COMMENT": "Matches criterion 2 loosely: this is an OmniLLM token-compression method for audio-video models, but it is not a new VLLM/MLLM architecture itself.",
+        "ARXIVID": "2607.26023",
+        "COMMENT": "Matches criterion 4: a multimodal graph foundation model with zero-shot transfer across modalities.",
         "RELEVANCE": 4,
-        "NOVELTY": 6,
+        "NOVELTY": 5,
         "TAGS": [
-            "Multimodal Efficiency",
-            "Token Compression",
-            "Audio-Video Models"
+            "Multimodal Graph Foundation Model",
+            "Zero-Shot Transfer",
+            "Graph Learning"
         ]
     },
-    "2607.25794": {
+    "2607.26097": {
         "authors": [
-            "Jui-Feng Chi",
-            "Wei-Lun Chu",
-            "Bruce Coburn",
-            "Jinge Ma",
-            "Fengqing Zhu"
+            "Tianci Wu",
+            "Siqi Cao",
+            "Guangming Zhu",
+            "Jiang Lu",
+            "Siyuan Wang",
+            "Longfei Zhang",
+            "Jincai Huang",
+            "Jun Sheng",
+            "Liang Zhang"
         ],
-        "title": "Fine-Grained Food Image Understanding via Target-Aware Data Alignment",
-        "abstract": "arXiv:2607.25794v1 Announce Type: new  Abstract: Fine-grained food visual--semantic understanding requires models to capture subtle distinctions across ingredients, cooking methods, doneness, color, texture, and plate composition. Although CLIP-style vision-language models provide a natural framework for this task, their effectiveness is limited when training relies on heterogeneous web-collected image--text pairs. Such data often exhibit a web-to-target domain gap and cross-modal misalignment, where images differ from the target distribution and captions are noisy, multilingual, or weakly grounded in visual content. We propose a data-centric multimodal alignment method for fine-grained food description and recognition. Our method first performs target-aware data selection to identify visually relevant training subsets, then applies VLM-based caption refinement to generate visually grounded, target-style descriptions. Using these curated image--caption pairs, we train complementary CLIP-style retrieval experts and further combine their decisions through a hierarchical VLM-assisted multi-expert decision-level fusion strategy that invokes the VLM only when experts disagree. Experiments show that our data refinement strategy significantly improves retrieval performance over naive web supervision, with VLM-based caption refinement alone yielding an average performance gain of approximately 19%. Our full method also achieves more than twice the retrieval score of pure VLM-based retrieval while remaining substantially more efficient.",
-        "arxiv_id": "2607.25794",
+        "title": "Knowledge-guided Disentanglement with Atomic Actions for Action Recognition",
+        "abstract": "arXiv:2607.26097v1 Announce Type: new  Abstract: Action recognition in complex scenes often involves multiple concurrent fine-grained actions, making it challenging to model internal action structures. Most existing methods rely on holistic representations, which are insufficient for capturing subtle interactions and fine-grained semantics. While recent prompt-based approaches introduce disentanglement, they lack explicit semantic guidance, and methods based solely on visual or structured cues remain coarse-grained. In this paper, we propose Knowledge-guided Disentanglement with Atomic Actions (KDA), which leverages fine-grained semantic knowledge to enhance action representations and enable more precise disentanglement. Specifically, we use Large Language Models (LLMs) to decompose action labels into atomic actions, providing explicit spatial-temporal semantics. A Knowledge Injection Module (KIM) first integrates atomic action knowledge into video features. Based on this enhanced representation, a Knowledge Disentanglement Module (KDM) further disentangles atomic action knowledge to produce more precise semantic guidance for action disentanglement. A Knowledge Disentanglement Loss (KD Loss) is introduced to encourage clearer disentanglement of knowledge components within KDM. Extensive experiments demonstrate that KDA improves feature discriminability and achieves state-of-the-art performance on multi-label action recognition benchmarks. Moreover, KIM and KDM can be readily integrated into other methods, demonstrating strong generality.",
+        "arxiv_id": "2607.26097",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2607.25794",
-        "COMMENT": "Matches criterion 4: it applies vision-language models to fine-grained food understanding with target-aware alignment and VLM-assisted data refinement.",
-        "RELEVANCE": 5,
-        "NOVELTY": 4,
-        "TAGS": [
-            "Vision-Language Learning",
-            "Data Curation",
-            "Fine-Grained Recognition"
-        ]
-    },
-    "2607.25947": {
-        "authors": [
-            "Frank Nie",
-            "Ethan B Liu",
-            "Yuan Zhu",
-            "Wei Fan",
-            "Jindong Han"
-        ],
-        "title": "A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series",
-        "abstract": "arXiv:2607.25947v1 Announce Type: new  Abstract: Question answering (QA) over irregular clinical time series (ICTS) plays a pivotal role in a wide range of healthcare applications. Although recent multimodal time-series large language models (LLMs) have shown considerable promise in general-purpose time-series QA, they remain poorly equipped to model the sparsity, asynchrony, and irregular sampling patterns of clinical observations. To fill this gap, we propose ClinPRISM, a cost-effective multimodal LLM reasoning framework for question answering over ICTS data. First, we devise an irregularity-aware multi-scale encoder to capture sparse clinical evidence at diverse temporal scales. Then, we propose a temporal evidence distiller to integrate representations across these scales and compress them into a small number of LLM-compatible tokens. Moreover, we introduce a progressive alignment strategy that sequentially aligns the irregular trajectories with the LLM's textual embedding space. To facilitate training, we construct 30,000 clinical time series paired with multi-scale descriptions, together with 41,000 instruction-tuning instances spanning 11 tasks. Using a 4-billion-parameter LLM backbone, ClinPRISM achieves state-of-the-art performance on the held-out evaluation benchmark while using only 16 time-series tokens and achieving an average inference latency of 0.15 seconds per question.",
-        "arxiv_id": "2607.25947",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI",
-            "cs.CL"
-        ],
-        "ARXIVID": "2607.25947",
-        "COMMENT": "No close match to the listed criteria; it is a multimodal LLM for irregular clinical time-series QA, which is outside the spatial/embodied vision focus.",
+        "ARXIVID": "2607.26097",
+        "COMMENT": "Only a weak fit to criterion 1/4: it uses LLM-derived atomic actions for action recognition, but it is not really embodied AI or a vision foundation model method.",
         "RELEVANCE": 3,
         "NOVELTY": 5,
         "TAGS": [
-            "Multimodal LLM",
-            "Clinical Time Series",
-            "Question Answering"
+            "Action Recognition",
+            "LLM-guided Semantics",
+            "Disentanglement"
         ]
     }
 }
