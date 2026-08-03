@@ -1,0 +1,1608 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / July 31, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  cursor: default;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / July 31, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>07/31/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>22 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Embodied Interaction</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>EgoGenesis: Egocentric World-Action Modeling with Online Anchored Projective Memory and Action-3D RoPE</strong>
+          <small>Zexuan Yan, Yuzhou Wu, Yue Ma, Zonghang He, Kaibo Yin, Xiaobing Tu, Yinggui Wang, Jinkui Ren, Xiantao Zhang, Shijian Wang, Jinghong Liu, Linfeng Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">17</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2607.28243</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28243">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>9</strong></span>
+          <span>Novelty <strong>8</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: embodied AI method for generating egocentric manipulation video data with geometry-aware memory and action encoding.</p>
+        <p class="abstract">Egocentric video offers rich manipulation experience for embodied AI, yet collecting diverse egocentric data across scenes, objects, motions, and embodiments remains costly. We present \method, an egocentric world-action simulator that synthesizes controllable, high-quality manipulation videos to expand scarce real-world training data. \method{} builds on a pretrained video generation prior and introduces two geometry-aware conditioning mechanisms. Online Anchored Projective Memory (OAPM) preserves a first-frame 3D scene anchor while periodically refreshing a recent state during autoregressive generation. Action-3D Rotary Position Embedding (A3D-RoPE) encodes end-effector motion with camera-aware 3D rotary coordinates, injecting action geometry into skeleton-to-video cross-attention for precise control. Together, these components improve visual fidelity, geometric stability, and action alignment in long egocentric rollouts. Moreover, augmenting 400 real trajectories with 400 \method-generated trajectories improves out-of-distribution real-robot success from 77\% to 84\% on single-arm tasks and from 53\% to 70\% on dual-arm tasks, demonstrating that the synthesized data substantially improve downstream WAM generalization.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>ObjectStream: Latent Objects as Memory Anchors for Streaming Video Understanding</strong>
+          <small>Mingkang Dong, Muxin Pu, Jie Li, Bohan Guo, Songruo Chen, Bin Ren, Xu Zheng, Chen Zhao, Tianwen Qian, Mohamed Elhoseiny, Yuqian Fu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2607.28312</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28312">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and also fits criterion 4: a new training-free memory organization method for streaming video understanding using latent object anchors.</p>
+        <p class="abstract">Streaming video understanding requires models to continuously retain useful visual evidence before future questions are known. Existing approaches primarily manage the growing visual context according to token importance, temporal redundancy, or segment-level relevance, but rarely organize evidence around objects that persist and evolve over time. Thus, in this paper, we introduce ObjectStream, a training-free framework that treats latent objects as memory anchors for streaming video understanding. ObjectStream induces spatially coherent latent objects directly from frozen Video-LLM representations, links them across frames into persistent anchors, and maintains their histories under a bounded memory budget, without requiring external object detectors or segmentation models. Built on these anchors, ObjectStream preserves three complementary forms of evidence: persistent object histories, transient object changes, and recent visual context. This design enables existing Video Large Language Models (Video-LLMs) to reason over object identities, interactions, and state changes while leaving the underlying model unchanged. Extensive experiments on online streaming and offline long-video benchmarks demonstrate both effectiveness and efficiency. In online streaming evaluation, ObjectStream improves Qwen2.5-VL-7B by 10.0 points on OVO-Bench Real-Time Visual Perception, while reducing peak GPU mem-ory and TTFT by approximately 50%. On offline long-video benchmarks, it surpasses the full-token baseline while discarding 82.5% of visual tokens. These results highlight latent objects as a practical and effective organizing principle for compact streaming video memory.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>FaithEyes: Towards Faithful Tool Use via Multi-Agent Process-Image Verification</strong>
+          <small>Haoqing Wang, Xingrun Xing, Wei Xia, Ziheng Li, Yehui Tang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2607.28225</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28225">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 very closely: it is a VLM/VLLM paper focused on faithful tool use and process-image verification.</p>
+        <p class="abstract">Agentic vision-language models (VLMs), which interleave textual reasoning with explicit tool calls such as cropping and code-based image manipulation, have emerged as a compelling paradigm for reliable and interpretable multimodal reasoning. However, recent studies have revealed that such models often use tools unfaithfully. Many process images are irrelevant to the question (e.g., the tool crops the wrong region or misses the queried target), yet the call still receives full credit and the model still answers correctly. Such decorative or misaligned tool calls waste computation and reveal that the model leans on prior knowledge or the original image rather than the evidence it retrieves. This may stem from two limitations of prevailing methods: the tool reward fails to distinguish useful from useless calls, and tool feedback carries no signal of usefulness. To this end, we introduce FaithEyes, a multi-agent self-judging framework. Concretely, we use a VLM to judge whether each process image helps answer the question. The judgement is injected into the reasoning context as part of the tool observation to help subsequent reasoning, and meanwhile is used to scale the tool reward by the helpful-tool ratio to suppress reward hacking. To keep judgement available at evaluation and thus ensure train-test consistency, we further design a multi-agent framework where the model itself serves as a subagent to judge the tool calls from main agent, eliminating any dependence on an external model at inference. Training via a two-stage SFT + RL pipeline on adapted open-source data, FaithEyes attains competitive or superior accuracy across visual perception and reasoning benchmarks, while markedly improving tool faithfulness. The homepage is at https://github.com/Mosi-AI/FaithEyes.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link12">
+      <summary class="paper-row-summary">
+        <span class="queue-index">13</span>
+        <span class="paper-row-copy">
+          <strong>VisualRouter: Query-Grounded Visual Sampling for Long Video Understanding</strong>
+          <small>Haiyue Zhang, Yi Bin, Xun Jiang, Zeyu Ma, Duo Peng, Guoqing Wang, Yang Yang, Heng Tao Shen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Time-Series LLM</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 13 / arXiv:2607.28463</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28463">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: a training-free visual sampling method for long-video understanding in LVLMs, aimed at better query-grounded frame selection.</p>
+        <p class="abstract">Large vision-language models (LVLMs) have achieved significant progress in video understanding, yet understanding long videos remains challenging due to the large number of visual tokens and limited context windows. Visual sampling provides a practical solution by selecting an informative subset of frames. However, existing methods typically either rely on relevance-aware sampling, leading to redundant frame selection and insufficient temporal coverage, or adopt a fixed sampling strategy regardless of query type. In this paper, we propose VisualRouter, a training-free and plug-and-play framework for query-grounded visual sampling. VisualRouter first classifies each query as either global or local and then applies the corresponding sampling strategy. For global queries, it employs a relevance-coverage hybrid strategy that preserves temporal coverage while retaining query-relevant visual evidence. For local queries, it adopts an event-aware frame selection strategy that performs event partitioning, segment-level frame allocation, and intra-event frame selection, jointly balancing relevance, coverage, and diversity with a limited number of input frames. Experiments show that VisualRouter consistently improves multiple LVLMs over uniform sampling, achieving gains of 5.2%, 7.7%, and 11.6% on Video-MME, LongVideoBench, and MLVU with Qwen2.5-VL-7B, and outperforming existing training-free visual sampling methods under the same setting.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link15">
+      <summary class="paper-row-summary">
+        <span class="queue-index">16</span>
+        <span class="paper-row-copy">
+          <strong>Calibrate Before Reason: Robust Visual Token Reduction against Semantic Drift in VLMs</strong>
+          <small>Jiasheng Li, Zhong Ji, Yan Zhang, Huihui Li</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 16 / arXiv:2607.27700</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27700">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 partially: it is a VLM efficiency method for visual token reduction, with a clever calibration trick rather than a new model capability.</p>
+        <p class="abstract">Large Vision-Language Models (VLMs) suffer from prohibitive inference overhead due to long sequences of visual tokens. However, existing visual token reduction methods mainly improve efficiency by pruning or compressing redundant tokens without examining whether the resulting representation remains semantically consistent with the original representation. Mapping the original N-token visual sequence to K tokens may discard, dilute, or misassign critical visual cues, triggering severe semantic drift that deviates the VLM&#x27;s understanding. In this paper, we first introduce the principle of &#x27;Calibrate Before Reason&#x27; to visual token reduction and propose CaRe, a training-free robust framework that calibrates compact visual representations before reasoning to preserve semantic fidelity in VLMs. CaRe consists of two mutually complementary modules: 1) Perturbation-Robust Calibration Anchoring, which identifies calibration anchors with stable model-side influence under multi-directional perturbations; 2) Confidence-Gated Token Calibration, which extracts reliable calibration signals from unselected tokens and injects them into anchors. Extensive evaluations across diverse VLM architectures and benchmarks verify that CaRe outperforms state-of-the-art token reduction baselines. While pruning 94.4% of visual tokens, our method retains 96.4% of the original full-token performance, delivering up to 2.30 times faster end-to-end inference speed relative to unpruned vanilla models.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link20">
+      <summary class="paper-row-summary">
+        <span class="queue-index">21</span>
+        <span class="paper-row-copy">
+          <strong>MIND: Multimodal Intent-Driven Network via Diffusion Transformers for Medical Image Fusion</strong>
+          <small>Yunzhan Fu, Xiangyu Shen, Yifei Sun, Yuhan Chen, Jian Wu, Hongxia Xu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 21 / arXiv:2607.28565</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28565">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: vision foundation-model-style multimodal reasoning is used for medical image fusion, with intent-driven fusion texts guiding the model.</p>
+        <p class="abstract">Medical image fusion aims to integrate complementary information from diverse imaging modalities to support clinical diagnosis. Existing methods typically apply uniform fusion rules globally, lacking a deep understanding of diagnostic intents and pathological structures. To address these limitations, we propose MIND, a Multimodal Intent-Driven Network via Diffusion Transformers (DiTs) for medical image fusion. Specifically, we utilize BioMedGPT to generate intent-driven fusion texts from source images, guiding the fusion process with pathology-aware diagnostic intents. To combat the loss of 2D spatial continuity caused by 1D sequence flattening in DiTs, we design a Multi-scale Latent Adapter. This module explicitly extracts source image features before serialization, injecting them into the network via strict dimensional alignment to effectively supplement image features. To resolve the semantic shift caused by decoupling image outputs from diagnostic intents, we design a medical semantic consistency loss. This loss ensures deep semantic locking between fused images and fusion texts while maintaining the stability of the underlying physical manifold reconstruction. Comprehensive experiments on the Harvard, BraTS, and GFP datasets reveal that MIND delivers superior fusion quality, significantly improves downstream brain tumor segmentation accuracy, and enables flexible interactive fusion, holding significant promise for intent-driven intelligent clinical decision support systems.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>Thinking Once Is Enough: Intermediate-Layer Evidence Routing for High-Resolution VQA</strong>
+          <small>Zhongkuan Mao, Xianjie Liu, Tianyu Meng, Yidong Wang, Wenzhuo Zhao, Ronghao Xian, Yao Jiang, Fei Shen, Junfeng Fang, Yong Dai, Yi Zhang, Keren Fu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2607.27830</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27830">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 very closely: a training-free method for improving high-resolution VQA in VLLMs/MLLMs by routing intermediate-layer evidence.</p>
+        <p class="abstract">High-resolution visual question answering (HR-VQA) is often treated as a problem of insufficient evidence acquisition, where failing multimodal large language models must inspect images again through cropping, re-encoding, or multi-round search. We show that this view is incomplete: in many cases, fine-grained evidence has already survived visual encoding and become identifiable and influential within an intermediate-layer routing window, but is later diluted before answer generation. We propose Thinking-Once, a \textbf{training-free, single-visual-pass} evidence-routing method that reconstructs question-conditioned attention at this window, preserves core entity tokens and compact background context, and routes this evidence to later layers without extra visual encoding. Across five base models, Thinking-Once consistently improves or matches the corresponding base setting, increasing the average scores on V$^*$Bench, HRBench-4K, and HRBench-8K by \textit{+3.1}, \textit{+3.0}, and \textit{+2.7} points while reducing the average peak memory by about 4,GB. On Qwen2.5-VL-7B, it improves the three benchmarks by \textit{+9.9}, \textit{+4.6}, and \textit{+5.5} points, raising the cross-benchmark mean from 72.5 to 79.1. With the ZwZ-8B base model, Thinking-Once reaches a mean score of 82.7. Against 11 open-source HR-VQA baselines, it obtains the best or tied-best score on all three benchmark averages and the best overall mean; for example, compared with DeepScan, it reduces V$^*$Bench inference time by \textbf{97.2\%} while improving the cross-benchmark mean from 77.8 to 79.1. These results show that HR-VQA can be improved by routing already encoded evidence rather than repeatedly acquiring new visual inputs. Code is available in the appendix.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link7">
+      <summary class="paper-row-summary">
+        <span class="queue-index">8</span>
+        <span class="paper-row-copy">
+          <strong>CaM-Wolf: Causal-Aware Multimodal Agents for Social Deduction Games</strong>
+          <small>Zheng Zhang, Nanjie Yao, Jiarui He, Deheng Ye, Peilin Zhao, Hao Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2607.26393</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.26393">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and criterion 3 closely: a new multimodal agent for social deduction games, combining video perception with causal reasoning in an embodied/social interaction setting.</p>
+        <p class="abstract">Social deduction games (SDGs) such as Werewolf have become challenging testbeds for AI agents. These games require complex social skills such as reasoning, deception, and collaboration. While recent advances in large language models (LLMs) have driven significant progress in SDG agents, current approaches are predominantly text-based, overlooking the multimodal nature that is fundamental to human social interaction. To bridge this gap, we introduce CaM-Wolf, the first SDG agent that integrates multimodal perception and generation. CaM-Wolf processes video inputs from other players, employs a causal-aware Reasoner trained via reinforcement learning to establish logical chains between observable behaviors and hidden roles, and presents itself through an animated avatar. Our experiments and user study show that CaM-Wolf achieves superior agent gameplay performance and enhances the quality of human-AI interaction. This work represents a significant advancement towards creating more human-like AI agents capable of participating in nuanced social dynamics. Our code is available at https://3dagentworld.github.io/avatar_wolf.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>VAD: Attributing Visual Evidence for Target Reconstruction in Multimodal On-Policy Distillation</strong>
+          <small>Kangning Zhang, Yixing Li, Shuai Shao, Qingyao Li, Zhengxi Lu, Zhiyuan Yao, Jianghao Lin, Wenxiang Jiao, Yuan Lu, Weiwen Liu, Weinan Zhang, Yong Yu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 10 / arXiv:2607.28590</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28590">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: it proposes a multimodal on-policy distillation method with counterfactual visual attribution for target reconstruction.</p>
+        <p class="abstract">Multimodal on-policy distillation (OPD) transfers fine-grained visual knowledge by supervising student-generated trajectories with a privileged-view teacher. Yet its next-token corrections are source-mixed, combining visual signals with linguistic priors and teacher-specific effects. The key challenge is to estimate which corrections are supported by visual evidence, not merely where or how strongly to distill. We introduce Visual Attribution Distillation (VAD), a counterfactual target-reconstruction algorithm that estimates the visually attributable part of a teacher correction. At each student-generated prefix, VAD evaluates the same fixed teacher with the relevant evidence present and removed. The corresponding change in centered log-probabilities defines ut, a signed proxy for the visual evidence direction that estimates how revealing the evidence supports or refutes candidate tokens. VAD projects the original correction onto this proxy to obtain an intervention-aligned component and a proxy-unexplained residual, then reconstructs a student-anchored target from the former. During training, this reconstructed target supplies the primary supervision signal, while the privileged teacher contributes a weak regularizer. Across six fine-grained visual benchmarks at 4B and 9B scales, VAD outperforms direct privileged-view distillation and visual-advantage weighting. Token- level and controlled-target analyses show that the proxy-aligned component is enriched in task-relevant visual corrections and yields stronger target shifts, especially when evidence refutes a mistaken answer. These results support counterfactual target reconstruction as an effective alternative to source-mixed supervision.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link10">
+      <summary class="paper-row-summary">
+        <span class="queue-index">11</span>
+        <span class="paper-row-copy">
+          <strong>LoMeVQA: A Comprehensive Benchmark for Longitudinal Medical VQA</strong>
+          <small>Zhilin Wu, Zhangkai Ni, Chengmei Yang, Longzhen Yang, Yihang Liu, Ying Wen, Lianghua He</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 11 / arXiv:2607.27806</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27806">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it builds a new embodied-style multimodal benchmark for longitudinal medical VQA, with a novel temporal reasoning angle that prior work largely ignored.</p>
+        <p class="abstract">In clinical practice, patients often undergo multiple imaging examinations over successive visits, yielding longitudinal data. Modeling such temporal information is crucial for reliable assessment of disease progression and treatment response. However, despite the rapid advancement of multimodal large language models (MLLMs), longitudinal medical visual reasoning remains largely underexplored. To fill this gap, we propose LoMeVQA, a comprehensive benchmark consisting of 206K longitudinal visual question answering (VQA) pairs for temporal medical image analysis. LoMeVQA covers five tasks: progress classification, progress description, progress report generation, differential region grounding, and differential region description. To construct the dataset, we develop an automated pipeline that (1) organizes patient records chronologically, (2) extracts clinically meaningful entities via a medical knowledge graph, and (3) models their temporal evolution to guide large language models in generating high-quality longitudinal VQA pairs. Extensive evaluations demonstrate that both general-purpose and medical-domain MLLMs perform poorly on LoMeVQA, revealing substantial limitations in temporal reasoning. To address these limitations, we introduce MedLong-8B, which achieves state-of-the-art performance across all tasks. Beyond benchmarking, we conduct detailed analyses that uncover key failure modes and shed light on how to improve longitudinal medical visual reasoning. Our data is available at: https://github.com/pepperbubble/LoMeVQA</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>Beacon: Knowing When and How to Perform Agentic Visual Reasoning</strong>
+          <small>Qixun Wang, Yang Shi, Letian Cheng, Zhuoran Zhang, Yan He, Yuqi Tang, Qi Zhang, Xinlei Yu, Ruizhe Chen, Tianrun Xu, Yuanxing Zhang, Pengfei Wan, Haotian Wang, Xianghua Ying</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2607.28595</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28595">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: it studies agentic visual reasoning for MLLMs and proposes a method for deciding when to use tools and how to use them effectively.</p>
+        <p class="abstract">The fundamental goal of agentic visual reasoning is to improve the success rate of multimodal large language models (MLLMs) on complex tasks, rather than merely equipping them with a sophisticated yet inefficient reasoning paradigm. In this work, we rethink agentic visual reasoning through two key dimensions of tool use: Mode Adaptiveness (MA) and Tool Effect (TE). Mode Adaptiveness characterizes whether an MLLM can recognize when tools are truly necessary and invoke them accordingly, thereby avoiding unnecessary computational overhead while improving performance on challenging problems that require tool assistance. Tool Effect characterizes the actual impact of tool use: tools should extend the model&#x27;s capabilities on problems unsolvable through text-only reasoning, while avoiding additional errors on problems that the model can already solve without tools. We conduct a comprehensive analysis to quantify these two properties and empirically reveal that existing agentic visual reasoning models exhibit limited Mode Adaptiveness, while the gains produced by tool use on hard examples are largely offset by the harm introduced on easy examples that the models can already solve. Motivated by these observations, we propose Beacon, a novel agentic visual reasoning model that achieves stronger overall performance, improved Mode Adaptiveness, and genuine tool-induced performance gains. At the core of Beacon are the Necessity-Aware Adaptive Reward and the Hint-Guided Capability Expansion mechanism in the reinforcement learning stage, which respectively encourage adaptive tool invocation based on task necessity and strengthen the model&#x27;s tool-use capability on the most challenging problems. Extensive experiments across diverse benchmarks demonstrate the strong overall performance of Beacon and its substantial improvements in both Mode Adaptiveness and Tool Effect.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link14">
+      <summary class="paper-row-summary">
+        <span class="queue-index">15</span>
+        <span class="paper-row-copy">
+          <strong>Capturing Token Tendencies for Training-Free Token Pruning in Multimodal Large Language Models</strong>
+          <small>Jie Ma, Zhike Qiu, Jie Gao, Jiayi Ji, Qian Chen, Xiaoshuai Sun, Rongrong Ji</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 15 / arXiv:2607.28341</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28341">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: a new training-free token pruning method for MLLMs that models token-importance dynamics across layers.</p>
+        <p class="abstract">While visual token pruning is essential for efficient Multimodal Large Language Models (MLLMs), existing training-free methods suffer from a critical limitation: they rely on static, instantaneous heuristics to perform irreversible filtering. This approach ignores the hierarchical nature of MLLMs, where token importance often evolves dynamically rather than remaining fixed across layers. Consequently, tokens essential for deep-layer reasoning are often prematurely discarded by shallow-layer estimates. To address this, we propose Trend-aware Pruning, a novel framework that elevates pruning from a local snapshot decision to a temporal trajectory modeling problem. Instead of relying on isolated scores, our method captures the momentum of attention flow. This enables a dynamic rectification mechanism that selectively reactivates &quot;late-blooming&quot; tokens, those initially undervalued but exhibiting rising semantic importance, thereby preventing the loss of critical visual cues. Extensive experiments demonstrate that our approach achieves a superior efficiency-performance trade-off across diverse multimodal tasks. Notably, it reduces visual tokens by over 77.8%, retaining only approximately 23 tokens in the final layer while maintaining competitive performance, offering a robust and reversible solution for high-efficiency multimodal inference.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link17">
+      <summary class="paper-row-summary">
+        <span class="queue-index">18</span>
+        <span class="paper-row-copy">
+          <strong>FiRE: Enhancing MLLMs with Fine-Grained Context Learning for Complex Image Retrieval</strong>
+          <small>Bohan Hou, Haoqiang Lin, Xuemeng Song, Haokun Wen, Meng Liu, Yupeng Hu, Xiangyu Zhao</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 18 / arXiv:2607.27959</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27959">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: it is an MLLM-based method for image retrieval, with fine-grained multimodal dataset construction and a two-stage fine-tuning strategy.</p>
+        <p class="abstract">Due to their strong generalizable multimodal processing and reasoning capabilities, Multimodal Large Language Models (MLLMs) have demonstrated significant potential as universal image retrievers, effectively addressing diverse real-world image retrieval tasks. Nevertheless, pioneering studies, while promising, overlook the potential of fine-grained context modeling and disentangled fine-tuning objectives in enhancing MLLMs&#x27; retrieval performance, particularly for complex tasks such as long-text-to-image retrieval, visual dialog retrieval, and composed image retrieval (CIR). Therefore, in this work, we propose an automated fine-grained multimodal quintuple dataset construction pipeline and a novel two-stage fine-grained multimodal fine-tuning strategy. The dataset generation pipeline produces a comprehensive CIR dataset with fine-grained image captions and modification text, facilitating fine-grained context modeling. Beyond the previously entangled fine-tuning paradigm, our approach separates the fine-tuning process into two distinct stages: (1) fine-grained context reasoning-oriented fine-tuning and (2) fine-grained retrieval-oriented fine-tuning. These stages aim to sequentially enhance the model&#x27;s context understanding and query-target alignment capabilities, thereby improving retrieval performance. Extensive experiments across five datasets encompassing diverse and complex image retrieval tasks demonstrate the remarkable superiority of our method over existing approaches in zero-shot retrieval settings, even with a more lightweight MLLM backbone compared to those methods.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>RefCaptioner: Multi-Reference Image-Grounded Video Captioning</strong>
+          <small>Tengfei Liu, Yang Shi, Yuran Wang, Xiaohan Zhang, Yuqing Wen, Yuqi Tang, Qixun Wang, Zhuoran Zhang, Xuanyu Zhu, Weihong Lin, Xinlei Yu, Yujie Wei, Xinwei Long, Fengxiang Wang, Xinlong Chen, Yue Ding, Jialu Chen, Haotian Wang, Yuanxing Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2607.28509</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28509">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 and criterion 4: introduces a new benchmark plus a method for multi-reference image-grounded video captioning.</p>
+        <p class="abstract">Existing video captioning models generate natural descriptions of video content but cannot explicitly ground local visual elements to multiple reference images. We introduce multi-reference image-grounded video captioning, a new task requiring factual video descriptions with phrase-level reference grounding, and propose RefCaptioner, a two-stage post-training framework for this task. RefCaptioner combines mixed-data SFT with Hierarchical Coverage-Discounted GRPO to jointly improve reference selection, phrase-level binding, distractor rejection, and cross-reference consistency while preserving general video-captioning ability. To support training, we construct a corpus containing $20,000$ videos and 171,354 reference images. We further introduce MRVBench, a benchmark for evaluating caption factuality and multi-reference grounding on both real-world and AI-generated videos. Experiments show that RefCaptioner achieves the best overall performance among the open-source models while remaining competitive on standard video captioning benchmarks. Human evaluation further confirms that its captions are preferred by annotators and enable more source-faithful video reconstruction with both open-source and proprietary video generators.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System</strong>
+          <small>Haodong Li, Tianfei Ren, Xiaoxiao Ma, Chunmei Qing, Zhen Fang, Sipeng He, Ziyu Guo, Haoyu Wu, Juanxi Tian, Yihang Zou, Ruichuan An, Dongzhi Jiang, Boxue Yang, Ji Xie, Xu Huang, Wenhao Yan, Jialv Zou, Zhengrong Yue, Yaxin Luo, Xiaotong Li, Yuzhu Wang, Junyan Ye, Jinjing Zhao, Zehui Chen, Lin Chen, Renye Yan, Feng Zhao, Pheng-Ann Heng</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2607.27380</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27380">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: a generative video method that uses executable code as an intermediate representation for physically consistent video generation.</p>
+        <p class="abstract">Text-to-video models have achieved remarkable visual quality, yet they still struggle to generate physically consistent dynamics because the temporal evolution of a scene must be inferred implicitly from a highly compressed text prompt. Existing chain-of-thought approaches introduce intermediate plans or visual states, but these representations are typically non-executable or temporally sparse, limiting their ability to instantiate and control the complete spatiotemporal process. To address this limitation, we introduce VideoCoCo, an agentic dual-engine framework in which executable Blender code serves as a process-level chain of thought. Given a text prompt, a coding agent synthesizes a Blender program that explicitly specifies the scene and its temporal evolution. The executable simulation engine runs the program to produce a deterministic spatiotemporal draft, which is subsequently transformed into a photorealistic video by a generative video engine through draft-conditioned editing. This decomposition separates process-level reasoning from high-fidelity visual realization. To adapt the video editor to simulated drafts, we construct VideoCoCo-3K, a curated dataset of draft-instruction-target triplets. VideoCoCo improves the OmniWeaving baseline from 0.475 to 0.558 on PhyGenBench and from 52.18 to 77.88 on VBench-2.0, achieving the best average score on both benchmarks. These results demonstrate that executable code provides an effective, controllable, and inspectable intermediate representation for physically consistent video generation.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link6">
+      <summary class="paper-row-summary">
+        <span class="queue-index">7</span>
+        <span class="paper-row-copy">
+          <strong>PhiZero: A World Model Built Around Physical Language</strong>
+          <small>Shuyao Shang, Yuqi Wang, Ruopeng Gao, Xu Chen, Tieniu Tan, Lue Fan, Zhaoxiang Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 7 / arXiv:2607.28624</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28624">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 and partly criterion 1: it is a world-model/simulation paper with explicit physical-language reasoning for future dynamics.</p>
+        <p class="abstract">We introduce PhiZero, a physical world model built around physical language, a compact discrete representation of world-state transitions. Existing physical world models typically predict future videos directly in pixel space, leaving the underlying world dynamics implicit within high-dimensional visual predictors. Motivated by humans&#x27; ability to abstract predictive structure from visual experience and organize it in natural language for explicit reasoning, we learn physical language from in-the-wild videos through self-supervision and use it to explicitly reason about how the physical world evolves. Accordingly, PhiZero adopts a reason-then-render paradigm: it first infers future world evolution as a physical-language sequence and then renders the inferred transitions into videos. Extensive experiments across generation and understanding benchmarks validate the ability of PhiZero to model physically coherent world evolution. We further show its potential for realistic and interactive world modeling, fine-grained action-conditioned simulation, and zero-shot motion transfer.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>EEG-EditBench: Probing Visual Information in EEG-Image Retrieval Models with Controlled Image Edits</strong>
+          <small>Kaifan Zhang, Lihuo He, Yuqi Ji, Junjie Ke, Lukun Wu, Tianhao You, Xinbo Gao</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2607.27857</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27857">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: it builds a new benchmark, EEG-EditBench, to probe what visual information EEG-image retrieval models actually preserve under controlled edits.</p>
+        <p class="abstract">Recent EEG-to-image retrieval models have achieved strong performance in identifying viewed images from semantically diverse candidates. Yet such success does not reveal what visual information supports the match. A model may readily identify a cheetah among tools, plants, and vehicles, but can it still distinguish the viewed cheetah from the same scene with the cheetah replaced by a dog? Motivated by this question, we introduce EEG-EditBench, a diagnostic benchmark that examines this question through controlled edits of object identity, attributes, background, and object presence. Built from the 200 THINGS-EEG2 test images, EEG-EditBench contains 2,137 quality-controlled edits and evaluates eight representative EEG visual decoding models. Our results show that strong standard retrieval does not consistently transfer to edit-based evaluation, with fine-grained attribute changes presenting the greatest challenge. EEG-EditBench reveals model behavior hidden by aggregate retrieval accuracy and provides a controlled basis for studying what visual information EEG-image models preserve. The code and complete dataset are publicly available.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link16">
+      <summary class="paper-row-summary">
+        <span class="queue-index">17</span>
+        <span class="paper-row-copy">
+          <strong>Temporal Concentration from Rollout Errors: Implicit Preference Optimization for Text-to-Video Diffusion</strong>
+          <small>Henglin Liu, Fangyuan Kong, Jing Wang, Yizhou Lin, Nisha Huang, Chang Liu, Xintao Wang, Pengfei Wan, Kun Gai, Xiu Li</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 17 / arXiv:2607.28058</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28058">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: a post-training method for text-to-video diffusion models, with a clever preference-optimization trick for temporal coherence.</p>
+        <p class="abstract">Recent advances in preference alignment for diffusion-based video generation, particularly via Direct Preference Optimization (DPO), have significantly improved visual quality. However, temporally sparse artifacts such as motion collapse, object flickering, and color oversaturation remain a major barrier to perceptual realism. Existing methods struggle with these issues due to two key limitations: (1) the preference attribution bottleneck, where offline human annotations are costly and fail to accurately capture learning dynamics, while online reward signals are rollout-aware but often unstable and biased; and (2) temporal credit misallocation, where uniformly applied supervision cannot effectively target the brief segments in which artifacts occur. To address these challenges, we propose concentrated Implicit Preference Optimization (cIPO), a post-training framework for video diffusion models. cIPO derives implicit preference signals directly from the denoising process: given a real video, the model adds forward noise and reconstructs it via iterative denoising, treating the original as the preferred sample and the reconstruction as the dispreferred one. This formulation captures inference-time errors without requiring human annotations or external reward models. Moreover, frame-level discrepancies between original and reconstructed videos reveal when failures occur. cIPO leverages this by computing temporal reconstruction errors and concentrating optimization on high-error segments, enabling more precise correction of failure-prone regions. Extensive experiments demonstrate that cIPO consistently enhances video authenticity and temporal coherence across multiple datasets, highlighting the effectiveness and efficiency of implicit preference with temporally concentrated optimization.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link19">
+      <summary class="paper-row-summary">
+        <span class="queue-index">20</span>
+        <span class="paper-row-copy">
+          <strong>Rethinking Self-Evolution: A Constrained Exploration-Exploitation Process for Mitigating Skill Overfitting</strong>
+          <small>Hongqiang Lin, Chao Liu, Xiaofan Bai, Xuan Jin, Yuhong Li, Nenggan Zheng, Xipeng Cao</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 20 / arXiv:2607.26643</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.26643">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 in the sense of a new agent skill-learning method, but it is not strongly embodied or vision-centric.</p>
+        <p class="abstract">Enabling large language model (LLM) agents to accumulate and reuse experience from past interactions remains a central challenge in real-world applications. A promising solution is to treat skills as trainable states and optimize them in the same way as model parameters in neural network training. However, data-driven skill optimization is prone to overfitting to the limited trajectories collected from real environments. Overexploiting these trajectories overfits the current batch, while unconstrained exploration causes regression on previously solved cases. This tension motivates a constrained search view of skill self-evolution, governed by an exploration--exploitation trade-off. We propose SkillBoost, a three-stage framework that mitigates both risks: structured exploitation localizes observed failures to editable skill components, prior-guided exploration draws on prior knowledge in the LLM to generate diverse repair candidates, and verified acceptance commits a candidate only when it improves performance within a regression bound. Experiments across 23 model--benchmark configurations show that SkillBoost achieves state-of-the-art performance while mitigating overfitting, outperforming both human-crafted and LLM-generated skills. Transfer experiments further show that optimized skills can be reused by other agents on similar tasks.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link21">
+      <summary class="paper-row-summary">
+        <span class="queue-index">22</span>
+        <span class="paper-row-copy">
+          <strong>BladeYOLO: Wind Turbine Blade Defect Detection with Limited Annotations and Weak-Saliency Awareness</strong>
+          <small>Yabin Xu, Fangtao Zhang, Fan Wang, Zhan Wang, Honghua Chen, Mingqiang Wei, Haoran Xie, Sam Kwong</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">6</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 22 / arXiv:2607.28065</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28065">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>3</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 partially: it uses DINOv3 pre-trained vision features for defect detection, which is more an application of vision foundation models than a core methodological advance.</p>
+        <p class="abstract">Wind turbine blade defect detection remains highly challenging in real-world inspection scenarios due to limited on-site data and the subtle visual characteristics of defects. In practice, blade defects are often small-scale, low-contrast, and difficult to distinguish from complex backgrounds, which significantly limits the robustness of existing detectors. To address these challenges, we propose BladeYOLO, a defect detection framework for wind turbine blades. Specifically, we integrate a Vision Transformer (ViT) backbone initialized with DINOv3 self-supervised pre-trained weights into YOLOv12-L, enabling the transfer of large-scale generic visual priors to blade defect detection and improving feature representation under limited training annotations. To enhance the perception of subtle defects, we further develop a Mamba-guided Weak-Defect Enhancement module, which consists of a Detail-Enhanced Multi-scale Branch for preserving high-frequency structural cues and a Cross-Mamba module for progressively propagating high-level semantic guidance to shallow features. In addition, we introduce a lightweight Style-Injector module that captures environment-related style information via Fourier decomposition and injects it into selected ViT self-attention layers, thereby improving robustness against environment-induced appearance variations. Extensive experiments demonstrate that BladeYOLO achieves superior performance on the WTBlade-Defect dataset, with additional annotation-budget experiments showing its favorable performance under reduced training annotations. Evaluation on the public Wind Surface Defect dataset further provides supportive evidence for the cross-dataset robustness of BladeYOLO. In particular, on this public dataset, BladeYOLO outperforms the best competing method by 3.5\% in mAP$_{50}$ and 2.5\% in mAP$_{50-95}$.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Generative Modeling</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>ROAD: Reciprocal-Objective Alignment of Discriminative Semantics for 3D Shape Generation</strong>
+          <small>Xiao Luo, Mingyang Du, Xin Zhou, Tianrui Feng, Xiwu Chen, Xiaofan Li, Jiangning Zhang, Dingkang Liang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2607.28581</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.28581">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: it leverages a discriminative 3D foundation model to improve 3D shape generation with a new alignment method.</p>
+        <p class="abstract">High-fidelity 3D generation predominantly relies on scaling model capacity and data, which incurs prohibitive computational costs. This paradigm typically requires learning geometry from scratch and overlooks the rich semantic and structural priors already encapsulated in discriminative 3D foundation models. We contend that leveraging the profound understanding of the 3D world possessed by these discriminative models can significantly reduce generative cost. To this end, we propose ROAD, a framework that reduces the training cost of 3D generation by transferring these rich discriminative priors into diffusion transformers. To address the inherent semantic-structural heterogeneity between generative and discriminative latents, we introduce a reciprocal-objective alignment strategy. This method synergizes Holistic Semantic Condensing to enforce global semantic coherence and Structural Optimal Alignment, which is formulated as a bipartite matching problem to rigorously align microscopic geometric details between disparate latent spaces. The 3D foundation model is only used for training-time supervision of alignment and is not used at inference, incurring no additional inference cost. Compared with the industrial baseline Step1X-3D, the proposed ROAD achieves highly competitive generation performance with only 1.5% of the training data and significantly reduces training costs, effectively reducing the computational overhead of high-fidelity 3D generation. Code is available at https://github.com/H-EmbodVis/ROAD.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Interpretability</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link18">
+      <summary class="paper-row-summary">
+        <span class="queue-index">19</span>
+        <span class="paper-row-copy">
+          <strong>Learning Color Grading, No Photo Sharing: Federated Aesthetic Preference Learning for Personalized Image Enhancement</strong>
+          <small>Chuanzhi Xu, Ziyuan Tao, Jean Julien KNell, Yanrong Chen, Haolan Guo, Xuanhua Yin, Adnan Mahmood, Weidong Cai</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 19 / arXiv:2607.27659</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2607.27659">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it is about vision foundation-model-style personalization for image enhancement, though the application is fairly narrow.</p>
+        <p class="abstract">Personalized image enhancement should reflect individual aesthetic taste, yet learning such preferences commonly depends on private photos and ratings that are unsuitable for centralized collection. The task must infer preference from sparse, heterogeneous feedback and translate it into natural-looking color transformations on resource-constrained user devices. We introduce FedPAIE, a federated personalized aesthetic image enhancement framework for user-adaptive color grading without centralizing raw photos or ratings. FedPAIE trains a lightweight dual-cue aesthetic scorer, calibrates it into a personalized scorer on a small local support set, and freezes it to guide regularized adaptation of a lightweight CLUT enhancer from unpaired local photographs. Fidelity constraints and an excess-gap penalty regularize scorer-guided adaptation to limit proxy-score over-optimization while preserving content and natural appearance. Training remains lightweight throughout the pipeline: scorer learning updates at most 0.787M parameters, enhancer adaptation updates 0.265M, and inference retains only a 0.293M-parameter personalized enhancer. Experiments on MIT-Adobe FiveK and Flickr-AES demonstrate effective open-world personalization and a favorable balance between user preference and image fidelity. FedPAIE thus connects decentralized preference learning with efficient personalized image transformation without requiring paired user retouches.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>22</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>17</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>10.8</strong>
+    </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
