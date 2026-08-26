@@ -1,507 +1,365 @@
 {
-    "2608.21690": {
+    "2608.24212": {
         "authors": [
-            "Yin Lin",
-            "Elaine Ang",
-            "Erkang Zhu",
-            "Bolin Ding",
-            "Jingren Zhou"
+            "Yumeng He",
+            "Yichen Song",
+            "Xiaotian Yang",
+            "Weijia Zhang",
+            "Zanwei Zhou",
+            "Junru Gong",
+            "Xiaokang Yang",
+            "Yunbo Wang"
         ],
-        "title": "Context as an Environment: Programmatic Context Management for Long-Horizon Agents",
-        "abstract": "arXiv:2608.21690v1 Announce Type: new  Abstract: LLM agents increasingly take on long-running tasks whose history grows far beyond a single model context window. Existing approaches compress earlier interactions or extract selected information into fixed memory representations, committing to what to preserve before future needs are known. We present Scroll, a context manager that treats each agent session as an executable Session Environment. The environment is backed by an append-only Event Log and a sandboxed, persistent Python kernel. The kernel maintains a typed namespace across model calls, allowing tool outputs, retrieved history, and derived state to be bound to variables rather than serialized into the prompt at each call. Model-written code searches, materializes, and transforms session state through exec; only explicitly printed projections enter the model's working view for the next call. Context management thus becomes a programming task that inherits the improving coding abilities of LLMs, while the Event Log preserves lossless historical ground truth. As the working view approaches its budget, stale spans are evicted but remain recoverable: an eviction index keeps compact landmarks tied to exact Event Log addresses, so that the agent navigates directly to evicted regions instead of searching the full log. With Qwen3.8-Max as the backbone, Scroll achieves 94.8% on LongMemEval_S; 73.1% on BEAM_10M, surpassing the best published memory system by 5.1 points; and 86.7% on LOCA_256K, exceeding the best published long-horizon agent by 37.4 points.",
-        "arxiv_id": "2608.21690",
+        "title": "NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation",
+        "abstract": "arXiv:2608.24212v1 Announce Type: new  Abstract: The advancement of Embodied AI necessitates high-quality simulation assets that faithfully mirror the real world. However, transforming raw visual observations into simulation-ready scenes remains challenging due to the lack of physical grounding and scene-level interactivity in current image-to-URDF methods. We propose NeoWorld-Pro, a framework that reformulates monocular scene reconstruction as procedural programming for interactive 3D environments. Leveraging the zero-shot reasoning and code synthesis capabilities of MLLMs, NeoWorld-Pro converts a single RGB image into executable programs specifying object geometry, articulation, and physical properties. A physics-in-the-loop mechanism then iteratively refines the generated programs by validating their execution in a physics engine, enforcing physically plausible articulations, valid object compositions and interactions, and accurate spatial relationships. Experiments show that NeoWorld-Pro outperforms open-loop and prior monocular reconstruction methods, while enabling complex downstream tasks such as stable stacking and fine-grained manipulation.",
+        "arxiv_id": "2608.24212",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2608.24212",
+        "COMMENT": "Matches criterion 3 closely: it builds embodied-simulation assets from monocular images using MLLMs and a physics-in-the-loop reconstruction/programming pipeline.",
+        "RELEVANCE": 5,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Embodied AI",
+            "Simulation Assets",
+            "MLLMs"
+        ]
+    },
+    "2608.23864": {
+        "authors": [
+            "Junqiu Yu",
+            "Pandeng Li",
+            "Yikai Wang",
+            "Jiaxing Zhao",
+            "Yujie Wei",
+            "Kaixun Jiang",
+            "Quanhao Li",
+            "Hongtao Yu",
+            "Zhihang Liu",
+            "Zhaohe Liao",
+            "Junjie Zhou",
+            "Yun Zheng",
+            "Yu Liu",
+            "Yanwei Fu"
+        ],
+        "title": "AffineTok: Semantic Affine Consistency for Diffusion-Friendly Visual Tokenizer",
+        "abstract": "arXiv:2608.23864v1 Announce Type: new  Abstract: Visual tokenizers increasingly inject semantic supervision into latent spaces to make downstream diffusion easier. Yet how these semantics should be organized to facilitate denoising remains underexplored. In this paper, we define the semantic recovery objective: the denoising process should recover the semantic content of the clean image from noisy latent, and a good tokenizer should make it easier. Existing approaches train a projector to predict the semantics directly from the noisy latent. We argue that this predicts the average of clean-image semantics, whereas what really needs to be aligned is the semantics of averaged clean latents. More importantly, we demonstrate that the semantic recovery error orthogonally decomposes into the error of the optimal semantic prediction directly from the noisy latent and the error between these two predictions. We therefore identify their consistency as the missing requirement and call it Semantic Affine Consistency (SAC). To examine whether this overlooked requirement is closely related to downstream generation, we introduce M_SAC, a tokenizer-side proxy for SAC. Across the evaluated tokenizers and diffusion model scales, M_SAC closely tracks generation quality, reaching a Pearson correlation of 0.960 with SiT-XL gFID, thereby motivating SAC-guided tokenizer training. We then introduce AffineTok, which promotes SAC through two complementary, training-only components. Global Semantic Coordination Token (GSCT) coordinates the semantic organization of clean latents, keeping semantic averaging meaningful, while Posterior-Mean Semantic Alignment (PMSA) predicts posterior-mean latents from noisy inputs and supervises their semantics. On ImageNet 256, compared with the baseline, AffineTok reduces gFID by 26% at 20 epochs and, with continued training, achieves a new state-of-the-art gFID of 1.21 without classifier-free guidance and 1.10 with guidance.",
+        "arxiv_id": "2608.23864",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2608.23864",
+        "COMMENT": "Matches criterion 4 closely: it is a vision foundation model component for diffusion-friendly visual tokenization, with a new tokenizer training objective and strong generation results.",
+        "RELEVANCE": 5,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Vision Foundation Models",
+            "Visual Tokenization",
+            "Diffusion Modeling"
+        ]
+    },
+    "2608.24099": {
+        "authors": [
+            "Guo Gan",
+            "Yilun Zhao",
+            "Cong Chen",
+            "Jinbiao Wei",
+            "Tingyu Song",
+            "Zheyuan Yang",
+            "Lin Fu",
+            "Hong Zhou"
+        ],
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "abstract": "arXiv:2608.24099v1 Announce Type: new  Abstract: GUI agents often encounter dynamic anomalies when deployed on Android devices, from unexpected pop-ups to action misuse, yet existing benchmarks lack systematic evaluation of agent robustness against runtime anomalies. We introduce AnTrap, a comprehensive benchmark that injects dynamic perturbations into agent execution trajectories. We propose a taxonomy organizing real-world anomalies into four layers (State, Thinking, Action and Round) with ten fine-grained subcategories, and develop a construction pipeline that preserves task solvability while introducing realistic adversarial conditions. Evaluating 16 leading GUI models, we reveal universal vulnerability to dynamic anomalies, with even the strongest models suffering significant performance degradation. Furthermore, we conduct GRPO training in both original and adversarial environments to validate our benchmark, separating environment-learnable anomalies from reasoning-bottlenecked ones. Our findings show that while single-step traps at state and action layers are largely addressable through adversarial reinforcement learning, deep contextual traps, like state deadlock, expose intrinsic limitations that cannot be resolved by training in environments with traps alone.",
+        "arxiv_id": "2608.24099",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2608.21690",
-        "COMMENT": "Matches criterion 3 closely: it proposes a new long-horizon agent context-management method with an environment/simulator-like execution model.",
+        "ARXIVID": "2608.24099",
+        "COMMENT": "Matches criterion 3 closely: it builds a benchmark for Android GUI agents under dynamic adversarial runtime anomalies, a novel embodied/interactive evaluation angle.",
         "RELEVANCE": 5,
-        "NOVELTY": 7,
+        "NOVELTY": 6,
         "TAGS": [
-            "Long-Horizon Agents",
-            "Memory Management",
-            "Program Synthesis"
+            "GUI Agents",
+            "Benchmark & Evaluation",
+            "Adversarial Environments"
         ]
     },
-    "2608.23486": {
+    "2608.23978": {
         "authors": [
-            "Yiren Lu",
-            "Xin Ye",
-            "Jiaming Liu",
-            "Jin Yao",
-            "Yi-chung Chen",
-            "Liam Merino",
-            "Dhruva Dixith Kurra",
-            "Min Cai",
-            "Tom Lampo",
-            "Yu Yin",
-            "Danhua Guo",
-            "Burhan Yaman"
+            "Zhengxiang Wang",
+            "Owen Rambow"
         ],
-        "title": "GeoWAM: Visual Geometry World Action Models for Autonomous Driving",
-        "abstract": "arXiv:2608.23486v1 Announce Type: new  Abstract: World action models (WAMs) have recently gained increasing attention as a framework for jointly modeling scene evolution and ego actions in autonomous driving. Most existing WAMs learn scene dynamics in pixel space by combining a video-generation backbone for future-observation prediction with an action head for ego-trajectory prediction. Pixels, however, provide only an indirect representation of these dynamics: they entangle geometry and motion with appearance, texture, and illumination, forcing the model to infer three-dimensional transformations from two-dimensional observations. We argue that geometry, represented by point clouds, offers a more natural state space for driving because it explicitly captures spatial structure and the rigid and non-rigid transformations that govern scene evolution while directly aligning with the space in which driving actions are executed. Building on this insight, we introduce \\textbf{GeoWAM}, a visual geometry world action model for autonomous driving. Rather than predicting future images, GeoWAM is pretrained to forecast future scene geometry, yielding representations that jointly encode spatial structure and temporal evolution. A geometry-conditioned action head then leverages these learned geometric dynamics to predict future ego trajectories. Extensive open-loop and closed-loop evaluations show that visual geometry world modeling yields substantially stronger driving policies than image-based alternatives, establishing future-geometry prediction as an effective pretraining objective for autonomous driving.",
-        "arxiv_id": "2608.23486",
+        "title": "When Seeing Is Not Enough: Benchmarking Interactive Visual Grounding in LVLMs",
+        "abstract": "arXiv:2608.23978v1 Announce Type: new  Abstract: Visual grounding is typically evaluated as a one-shot mapping from an informative referring expression to a visual target. This formulation misses a central property of real-world reference: target information is often incomplete, ambiguous, and established through interaction. We introduce a controlled evaluation framework for interactive visual grounding in large vision-language models (LVLMs), varying how much target information is provided upfront and how much must be acquired through dialogue. Across four human-grounded visual contexts and four interaction protocols, current LVLMs perform significantly below task-level human baselines. Interaction can help when follow-up questions refine or repair an initial target description. Performance is lowest when no initial description is provided and target information must be acquired through questions, indicating that proactive question-driven grounding remains difficult. LVLMs are also poorly calibrated, often reporting confidence that exceeds their empirical accuracy. Follow-up studies confirm these patterns across varied description sources (human versus AI), reasoning efforts, repeated interactions, description providers, and visual contexts. Overall, interactive visual grounding remains an important challenge, requiring visual matching, information seeking and synthesis.",
+        "arxiv_id": "2608.23978",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI",
+            "cs.CV"
+        ],
+        "ARXIVID": "2608.23978",
+        "COMMENT": "Matches criterion 2 closely: it benchmarks interactive visual grounding in LVLMs, focusing on dialogue-based acquisition of missing visual target information.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Vision-Language Models",
+            "Interactive Grounding",
+            "Benchmark & Evaluation"
+        ]
+    },
+    "2608.24366": {
+        "authors": [
+            "Weizhi Tao",
+            "Zengwang Jin",
+            "Xiao Wang",
+            "Hailong Huang"
+        ],
+        "title": "Variance-Guided Spatial Attention Fusion for Robust End-to-End Driving under Asymmetric Sensor Degradation",
+        "abstract": "arXiv:2608.24366v1 Announce Type: new  Abstract: End-to-end multimodal driving has progressed rapidly by fusing camera and LiDAR streams. Existing pipelines remain fragile under asymmetric sensor degradation, where either an entire modality or only a localized region is corrupted while other regions remain useful. The key difficulty is not simply to add an uncertainty head, but to obtain dense reliability supervision, calibrate this reliability against physical fault severity, and use it before unreliable features bias the planner. We propose Variance-Guided Spatial Attention Fusion (VG-SAF), in which dense heteroscedastic reliability estimates act as interpretable spatial gates. The framework couples three components. First, a physically grounded augmentor simulates representative camera and LiDAR failures and emits a continuous spatial mask, providing dense supervision without additional annotation. Second, modality-specific experts predict per-pixel reliability scales through cross-branch dense distillation in log space, enforcing a monotone severity-to-scale response. Third, calibrated reliability maps drive a hybrid attention mechanism that suppresses unreliable cells with a local spatial gate and arbitrates between modalities through a cross-modal trust softmax. A Laplace uncertainty head emits a systemic waypoint uncertainty scale that signals severe or combined sensor degradation, including severities outside the training ranges. On the CARLA Longest6 benchmark, VG-SAF consistently improves closed-loop robustness over the baselines across camera-only, LiDAR-only, and joint degradation regimes, as measured by driving score, route completion, and infraction score.",
+        "arxiv_id": "2608.24366",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV",
             "cs.RO"
         ],
-        "ARXIVID": "2608.23486",
-        "COMMENT": "Matches criterion 3: embodied/autonomous driving world-action modeling with a novel geometry-based state space and future-geometry prediction.",
+        "ARXIVID": "2608.24366",
+        "COMMENT": "Matches criterion 1 closely: it proposes a spatially aware fusion method for robust embodied driving under sensor degradation, with dense reliability maps and calibrated spatial attention.",
         "RELEVANCE": 5,
-        "NOVELTY": 7,
+        "NOVELTY": 6,
         "TAGS": [
-            "Autonomous Driving",
+            "Embodied Driving",
+            "Spatial Attention Fusion",
+            "Sensor Degradation"
+        ]
+    },
+    "2608.24855": {
+        "authors": [
+            "Hsiang-Wei Huang",
+            "Jianxu Shangguan",
+            "Junbin Lu",
+            "Jenq-Neng Hwang"
+        ],
+        "title": "LeFlow: Generative Latent Flow Planning for World Models",
+        "abstract": "arXiv:2608.24855v1 Announce Type: new  Abstract: Latent world models are inherently strong encoders that transform image pixel to latent embedding, yet existing world models still rely on online trajectory optimization for action planning: for every state-goal pair, an iterative optimizer is run from scratch to search for optimal action sequences, treating the world model as a black-box simulator. This approach pays the full iterative optimization cost anew at every replanning step and reuses no planning experience across queries. In this work, we ask whether planning itself can be amortized once a latent world model has been learned. We present LeFlow, which learns a reusable latent trajectory prior operating directly in the latent dynamics space from the world model. LeFlow recasts planning as conditional latent trajectory generation: a rectified-flow model imagines a future latent path between the current and goal embeddings, an inverse dynamics decoder turns latent transitions into action chunks, and the frozen world model verifies each candidate by autoregressive rollout. Across four major goal-conditioned pixel-control benchmarks, LeFlow replaces iterative action-space optimization with amortized latent planning and fixed-budget rollout selection, achieving consistent success-rate gains with an order-of-magnitude reduction in planning time. Our results argue that latent world models should support not only prediction but reusable planning priors. Our code is available at https://github.com/hsiangwei0903/LeFlow.",
+        "arxiv_id": "2608.24855",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2608.24855",
+        "COMMENT": "Close match to criterion 3: it proposes a new planning method for world models in goal-conditioned pixel-control/embodied settings.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
             "World Models",
-            "Geometry Forecasting",
+            "Latent Planning",
             "Embodied AI"
         ]
     },
-    "2608.22039": {
+    "2608.24015": {
         "authors": [
-            "Sara Sabour",
-            "Linyi Jin",
-            "Richard Tucker",
-            "Amir Hertz",
-            "Marcus Brubaker",
-            "Saurabh Saxena",
-            "Junhwa Hur",
-            "Andrea Tagliasacchi",
-            "Deqing Sun",
-            "David J. Fleet",
-            "Richard Szeliski",
-            "Noah Snavely"
+            "Yijie Ma",
+            "Chaoyue Niu",
+            "Fan Wu",
+            "Guihai Chen"
         ],
-        "title": "ORBIT++: Benchmarking SfM in the Wild with 360{\\deg} Video",
-        "abstract": "arXiv:2608.22039v1 Announce Type: new  Abstract: Structure-from-Motion (SfM) is a cornerstone of 3D perception, yet current methods often fail when applied to complex videos involving challenging camera motions or dynamic scenes. Compounding the problem, the field lacks reliable ground-truth benchmarks for such difficult scenarios, making it hard to gauge real-world progress or to pinpoint where improvements are most needed. To address this gap, we introduce a new benchmark for evaluating camera pose estimation. Our key insight is to leverage online panoramic 360{\\deg} video as a source of data from which to construct challenging clips, while still enabling robust ground-truth trajectory recovery. The panoramic nature of these videos provides richer visual context for tracking camera motion, even when parts of the view are affected by blur, motion, or dynamic objects. After tracking camera motion across full 360{\\deg} videos, we crop and reproject selected portions to generate perspective-view clips that serve as our benchmark, called ORBIT. Experiments show that COLMAP, as well as recent optimization-based and feed-forward SfM methods struggle to accurately estimate camera poses on our benchmark. Hence, ORBIT provides a valuable testbed where researchers can meaningfully measure progress on truly challenging, real-world SfM problems.",
-        "arxiv_id": "2608.22039",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.22039",
-        "COMMENT": "Matches criterion 3 closely: it introduces a new real-world SfM benchmark built from 360\u00b0 video with difficult camera motion and dynamic scenes.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "SfM Benchmark",
-            "3D Perception",
-            "360\u00b0 Video"
-        ]
-    },
-    "2608.22883": {
-        "authors": [
-            "Hengjie Zhu",
-            "Dayan Wu",
-            "Zihao Zhang",
-            "Xinze Liu",
-            "Jingxuan Yu",
-            "Peng Fu",
-            "Zheng Lin",
-            "Weiping Wang",
-            "Ding Wang"
-        ],
-        "title": "FOVEA: Focused On-Demand Visual Evidence Adaptation for Cache-Friendly Multimodal Speculative Decoding",
-        "abstract": "arXiv:2608.22883v1 Announce Type: new  Abstract: Multimodal speculative decoding accelerates vision-language models by allowing a lightweight draft model to propose candidate tokens for parallel verification by a larger target model. Existing methods typically condition the drafter on a fixed visual interface, such as a predefined visual-token budget or a static compressed representation. However, our controlled visual-budget analysis shows that visual demand varies substantially across tasks and decoding stages, which means more visual input is not always beneficial. Actually, insufficient evidence may weaken visual grounding, while excessive context adds overhead and may disrupt drafting. We propose FOVEA (Focused On-demand Visual Evidence Adaptation), a cache-friendly approach that builds a reusable visual memory and dynamically retrieves a bounded subset for a draft state. A cumulative-mass rule determines both how many and which entries are selected. The selected entries are aggregated into a visual readout and fused with the current draft hidden state through a lightweight gated residual correction. Rather than inserting visual tokens into the autoregressive context, the correction modifies only the representation passed to the language-model head. Experiments across multiple vision-language backbones and multimodal benchmarks show that FOVEA improves draft acceptance and end-to-end decoding speed, achieving up to $2.13\\times$ speedup over autoregressive decoding. These results demonstrate that state-conditioned evidence retrieval is an effective alternative to reusing a fixed visual representation throughout multimodal generation.",
-        "arxiv_id": "2608.22883",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.22883",
-        "COMMENT": "Matches criterion 2 very closely: it is a multimodal speculative decoding method for vision-language models.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Vision-Language Models",
-            "Speculative Decoding",
-            "Caching & Retrieval"
-        ]
-    },
-    "2608.21748": {
-        "authors": [
-            "Xuanhua Yin",
-            "Shunqi Mao",
-            "Wei Guo",
-            "Chuanzhi Xu",
-            "Weidong Cai"
-        ],
-        "title": "Calibrate What You SHIP: Post-Selection Risk Control for Verifier-Guided Text-to-Image Generation",
-        "abstract": "arXiv:2608.21748v1 Announce Type: new  Abstract: Verifier-guided text-to-image systems increasingly use test-time search to select, refine, or stop among multiple candidates, yet release thresholds are often calibrated on individual images. This creates a candidate-to-policy calibration mismatch: search changes both which prompts receive an output and which candidate is released, so candidate-level risk control need not imply control of released-output risk. We formalize this estimand shift through prompt reweighting and within-prompt selection, and introduce SHIP, Selection-aware Held-out calibration of Inference Policies. SHIP runs or replays the complete deployed policy on held-out prompts, evaluates the image it actually releases using an independent target judge, and selects the most permissive threshold whose risk upper bound satisfies a prescribed budget. For replayable policies with a prespecified threshold grid, simultaneous confidence control provides finite-sample validity. Experiments across fixed, sequential, and adaptive T2I inference procedures show that policy-level calibration recovers lower-risk operating points while exposing policy-dependent tradeoffs among risk, coverage, and compute. On GenEval2 with FLUX at N=16, a pooled-candidate threshold yields released risk 0.310, whereas SHIP reduces it to 0.162. Across 200 cached-stream splits, the fixed-grid certificate has no target crossing. Reliable inference-time scaling therefore requires calibrating the output distribution induced by the complete deployed policy.",
-        "arxiv_id": "2608.21748",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.21748",
-        "COMMENT": "Matches criterion 4: post-selection risk control for verifier-guided text-to-image generation, a clever calibration trick for generative multimodal inference.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Text-to-Image",
-            "Risk Control",
-            "Calibration",
-            "Inference-Time Selection"
-        ]
-    },
-    "2608.22183": {
-        "authors": [
-            "Yani Guan",
-            "Dengpan Dong",
-            "Shuang Luo",
-            "Zi Wei",
-            "Joah Han",
-            "Dan Hannah",
-            "Yumin Zhang",
-            "Qichao Hu",
-            "Kang Xu"
-        ],
-        "title": "VERDICT: Agreement Beats Pixel-Space Verification in Real-Document OCSR",
-        "abstract": "arXiv:2608.22183v1 Announce Type: new  Abstract: Optical Chemical Structure Recognition (OCSR) converts 2D molecular depictions in the published literature into SMILES, and is increasingly important for constructing large-scale chemical training datasets. Automation at that scale requires identifying unreliable predictions in the absence of ground truth. Three families of label-free signals were compared on $263$ ACS journal depictions with verified ground truth: model confidence, re-rendering similarity, and agreement among recognizers. Pixel-space re-rendering performed little better than chance (AUROC $0.547$, $95\\%$ CI $[0.465,0.629]$), and an oracle-tuned threshold on it reduced correct labels per image from $0.745$ to $0.205$. Agreement among four architecturally distinct recognizers instead reached an AUROC of $0.916$ ($[0.880,0.952]$). The two-of-four rule accepted $81.7\\%$ of images at $88.8\\%$ precision, the three-of-four rule $52.1\\%$ at $98.5\\%$. The same pattern held on CLEF-IP, UOB, and USPTO. This distinction is obscured on synthetic benchmarks, where re-rendered predictions naturally resemble their inputs. A substance filter removed $2{,}193$ false agreements on wildcards and R-group fragments, after which the three-of-four rule rejected all $68$ generic depictions. VERDICT was then applied to PMC Open Access, producing $6{,}146$ structure labels for $4{,}833$ molecules; chemist adjudication of $400$ released labels in two independent samples yielded precisions of $0.995$ for the three-of-four tier and $0.958$ for the two-of-four tier. VERDICT therefore enables validated labels for multimodal molecular databases linking structure images, machine-readable representations, and source-publication information. In SES AI's Molecular Universe platform, VERDICT further serves as an image-based interface for searching and retrieving molecular records.",
-        "arxiv_id": "2608.22183",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.IR",
-            "cs.LG"
-        ],
-        "ARXIVID": "2608.22183",
-        "COMMENT": "Matches criterion 4: vision foundation model / multimodal recognition application for document OCSR with strong empirical finding that agreement beats pixel-space verification.",
-        "RELEVANCE": 4,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Document AI",
-            "Optical Chemical Structure Recognition",
-            "Model Agreement",
-            "Benchmark Evaluation"
-        ]
-    },
-    "2608.21784": {
-        "authors": [
-            "Xuanhua Yin",
-            "Chuanzhi Xu",
-            "Shunqi Mao",
-            "Wei Guo",
-            "Weidong Cai"
-        ],
-        "title": "DefaultShift: Auditing Semantic Default Shift in Accelerated Text-to-Image Models",
-        "abstract": "arXiv:2608.21784v1 Announce Type: new  Abstract: Few-step text-to-image models increasingly replace slower generators, yet acceleration can silently change distributions over unspecified attributes even when individual outputs remain plausible and aligned. We call these distributions semantic defaults and their change under replacement semantic default shift. Existing quality, preference, and diversity evaluations do not test whether a replacement preserves its reference model's semantic defaults. We introduce DefaultShift, a paired audit that labels repeated samples with closed semantic vocabularies, measures probability-mass movement, and separates interpretable ranking from confirmatory cross-fit inference. Across 14 reference and replacement pairs, adjusted color discrepancies range from 0.054 to 0.303 with recipe-specific directions. A 1,000-image human audit reproduces the ordering. We further introduce DefaultShift-Select, an offline calibration method that reduces human-measured shift by 10.3 percent to 35.1 percent across Turbo, DMD2, and FLUX without material quality loss. Under balanced evaluation, selected data recover 4.3 accuracy points and 7.5 worst-group points over uncalibrated replacement data. DefaultShift makes semantic preservation under acceleration measurable and actionable.",
-        "arxiv_id": "2608.21784",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.21784",
-        "COMMENT": "Matches criterion 4: evaluates and calibrates accelerated text-to-image models by auditing semantic default shift in generative vision models.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Text-to-Image",
-            "Generative Model Evaluation",
-            "Distribution Shift",
-            "Calibration"
-        ]
-    },
-    "2608.23410": {
-        "authors": [
-            "Federico Stella",
-            "Fei Jiang",
-            "Zhongshi Jiang",
-            "Zohar Barzelay",
-            "Emanuel Garbin",
-            "Amin Jourabloo",
-            "Liuhao Ge"
-        ],
-        "title": "Photorealistic Novel View Synthesis of Human Faces using Next-Scale Transformers",
-        "abstract": "arXiv:2608.23410v1 Announce Type: new  Abstract: Photorealistic novel view synthesis of people remains challenging at high spatial resolutions and across multiple target cameras, where preserving identity, fine appearance details, and geometric coherence is critical. We build on the next-scale autoregressive paradigm and adapt it for human-centric view synthesis by enabling higher image resolutions, multi-view outputs and stronger cross-view consistency in a single forward pass. We train on a synthetic dataset of human faces spanning diverse identities and apparel. Contrary to diffusion models, this paradigm does not need 2D pre-training and, thanks to its next-scale architecture, it benefits from lower-resolution, general-purpose pre-trainings, with the full-sized purpose-specific images being used only in the last training stages. This enables our architecture to converge with a smaller amount of purpose-specific training data, allowing us to use a smaller but more realistic training dataset. The resulting model produces sharp and realistic views, with the option to synthesize multiple novel viewpoints simultaneously for improved agreement across views. Empirically, we observe gains in perceptual fidelity and cross-view coherence on human subjects, demonstrating that next-scale autoregression is an effective backbone for scalable, multi-output human view synthesis. We also couple our pipeline with an existing transformer-based model for pixel-aligned 3D gaussian lifting from multi-view facial inputs, resulting in accurate and photorealistic 3D models of human faces.",
-        "arxiv_id": "2608.23410",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.LG"
-        ],
-        "ARXIVID": "2608.23410",
-        "COMMENT": "Matches criterion 4: uses a next-scale transformer generative backbone for photorealistic novel view synthesis of human faces, plus 3D gaussian lifting.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Novel View Synthesis",
-            "Generative Modeling",
-            "3D Reconstruction",
-            "Human Faces"
-        ]
-    },
-    "2608.21937": {
-        "authors": [
-            "Lecheng Xu",
-            "Feifei Shao",
-            "Ouyangzi Ye",
-            "Zhen Wang",
-            "Lin Li",
-            "Kexin Li",
-            "Zhao Wang",
-            "Changqin Huang"
-        ],
-        "title": "C$^2$Path: Class-Conditional Pathway Decoupling for Vision-Language Incremental Object Detection",
-        "abstract": "arXiv:2608.21937v1 Announce Type: new  Abstract: Incremental Object Detection (IOD) aims to enable detectors to continuously learn novel categories while preserving previously acquired knowledge. However, existing methods suffer from two forms of \\textbf{class knowledge coupling}: class boundary erosion induced by shared parameter updates and class representation entanglement arising from mixed feature encoding. We argue that effective incremental learning requires class-specific computational pathways that enable isolated parameter updates and separated class-wise injection. To this end, we propose \\textbf{C$^2$Path}, a class-conditional pathway decoupling framework for vision-language incremental object detection that leverages token-level class cues to establish dedicated and updatable computational pathways for different categories. Specifically, C$^2$Path introduces a category expert library and a class-conditional decoupling module. The expert library consists of learnable low-rank computational nodes that capture category-specific knowledge, while the decoupling module generates class-aware routing signals to dynamically compose \\textit{ClassLoRA} adapters from these experts, thereby forming class-specific computational pathways for isolated updates and separated injection across categories. Extensive experiments on COCO 2017 under multiple incremental learning settings demonstrate that C$^2$Path consistently outperforms state-of-the-art methods, providing an effective and scalable solution for continual category expansion in vision-language detectors.",
-        "arxiv_id": "2608.21937",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.21937",
-        "COMMENT": "Matches criterion 2 and also criterion 3: a vision-language incremental object detection method with class-conditional pathways and LoRA routing.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Vision-Language Detection",
-            "Continual Learning",
-            "Parameter-Efficient Tuning",
-            "Incremental Object Detection"
-        ]
-    },
-    "2608.23318": {
-        "authors": [
-            "Zixuan Wang",
-            "Yanrui Miao",
-            "Zhengxi Lu",
-            "Teng Pan",
-            "Yiwen Qiu",
-            "Hongxing Li",
-            "Peng Qiu",
-            "Ruiqing Zhang",
-            "Yongliang Shen"
-        ],
-        "title": "Agent-G$^2$: Gaussian Guidance for Agentic Reinforcement Learning",
-        "abstract": "arXiv:2608.23318v1 Announce Type: new  Abstract: Hint-based reinforcement learning addresses reward sparsity in long-horizon agentic tasks by retaining a prefix of an expert trajectory before each rollout, letting the policy explore from a state closer to success. Its effectiveness hinges on the guidance depth: how much of the trajectory to keep. Existing methods treat this depth as a deterministic scalar. Scheduled approaches share one value across samples and ignore per-task heterogeneity; per-sample probing estimates it separately at the cost of extra rollouts. We find that useful guidance occupies a band of depths whose informativeness profile is approximately Gaussian around the band center, rather than concentrating at a single optimal point. We propose Agent-G$^2$, a Gaussian guidance framework that draws the depth per task from a Gaussian whose center and spread are estimated online from rollouts already collected for policy optimization, requiring no probe rollouts or learned depth predictor. The center combines a global baseline with per-cluster difficulty, and the spread tracks within-cluster variance. We evaluate Agent-G$^2$ on ALFWorld and WebShop on Qwen2.5-1.5B / 7B-Instruct. Agent-G$^2$ outperforms the strongest hint-based, hint-free, and Aux-RL baselines on ALFWorld by 2.3 / 3.9 / 7.4 points at under one-third the rollout cost of per-sample probing.",
-        "arxiv_id": "2608.23318",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI",
-            "cs.CL"
-        ],
-        "ARXIVID": "2608.23318",
-        "COMMENT": "Matches criterion 3: embodied AI method for long-horizon agentic tasks in ALFWorld/WebShop, with a novel statistical guidance rule for rollout depth.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Embodied AI",
-            "Reinforcement Learning",
-            "Long-Horizon Agents",
-            "Statistical Guidance"
-        ]
-    },
-    "2608.21659": {
-        "authors": [
-            "Jin Zhou",
-            "Hongliang Yang",
-            "Pengfei Xu",
-            "Hui Huang"
-        ],
-        "title": "SketchFlow: Zero-Shot Vector Sketch Generation via GMM Prior Flow in CLIP Latent Space",
-        "abstract": "arXiv:2608.21659v1 Announce Type: new  Abstract: Vector sketches remain one of the most concise and immediate mediums for abstract human expression. However, generating high-quality vector strokes that exhibit human-like drawing styles remains an open challenge due to the severe scarcity of fine-grained, high-quality text-to-sketch paired data. Existing text-conditioned generation methods often rely on unstable, time-consuming optimization or struggle to generalize to unseen categories in a zero-shot manner. To address these limitations, we present SketchFlow, a novel generative framework rooted in Optimal Transport (OT) theory and flow matching. By leveraging pre-trained CLIP models to bypass labor-intensive image-level text annotations, we formulate cross-modal alignment as a continuous mapping problem directly within the CLIP latent space. To bridge the inevitable modality gap between discrete text concepts and continuous sketch features, we first inject noise into discrete category embeddings to construct a continuous Gaussian Mixture Model (GMM) prior. We then utilize an Optimal Transport Conditional Flow Matching (OT-CFM) model to learn a deterministic vector field mapping from this continuous GMM prior to the target sketch feature distribution. Finally, a Hybrid Diffusion Decoder, fusing 1D U-Net and Transformer architectures, is designed to decode these features into fast and high-fidelity stroke trajectories. Extensive experiments demonstrate that SketchFlow substantially outperforms existing baselines in visual quality and adherence to natural human drawing styles. Furthermore, our geometry-preserving framework demonstrates promising local zero-shot synthesis for prompts beyond the QuickDraw training vocabulary, including unseen concept labels and semantic modifiers, while enabling smooth, continuous semantic interpolation between distinct concepts. Source code is available at: https://github.com/QiuHong-1202/SketchFlow.",
-        "arxiv_id": "2608.21659",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.21659",
-        "COMMENT": "Matches criterion 4 moderately well: it uses CLIP latent space and flow matching for zero-shot sketch generation, a vision foundation model application with generative modeling.",
-        "RELEVANCE": 4,
-        "NOVELTY": 6,
-        "TAGS": [
-            "CLIP",
-            "Sketch Generation",
-            "Flow Matching"
-        ]
-    },
-    "2608.23417": {
-        "authors": [
-            "Hengjun Wang",
-            "Shuyue Wei",
-            "Boyi Liu",
-            "Jun Yang",
-            "Yongxin Tong"
-        ],
-        "title": "SkillAlchemy: Open-World Agent Skill Creation",
-        "abstract": "arXiv:2608.23417v1 Announce Type: new  Abstract: Agent skills are reusable procedural artifacts that extend language agents with specialized workflows, tool conventions, and domain behaviors at inference time. However, creating reliable skills still depends largely on human authorship, model priors, or execution traces. These sources are often unavailable for unfamiliar tasks, suggesting the need to create skills from open-world materials. In this paper, we study open-world skill creation: given an underspecified skill brief and a source-access specification, a creator must discover behavior-relevant requirements omitted by the brief and determine how broadly each source-derived procedure is justified. We propose SkillAlchemy, an admission-centered framework for source-grounded skill creation. SkillAlchemy identifies implicit requirements through contrastive evidence, admits candidate procedures based on evidence-supported scope, and compiles the admitted content into a grammar-guided skill package. Extensive experiments across 87 SkillsBench v1.1 tasks demonstrate that SkillAlchemy improves pass rate over no-skill execution by 19.9 percentage points and the strongest automated baseline by 8.6 percentage points, while achieving performance comparable to human-curated skills.",
-        "arxiv_id": "2608.23417",
+        "title": "Reflection with Action-Induced Visual Differences for Desktop GUI Agents",
+        "abstract": "arXiv:2608.24015v1 Announce Type: new  Abstract: The Planner-Operator-Reflector (POR) framework is widely used in GUI agents to maintain objective alignment in complex tasks through modular collaboration. However, desktop GUIs introduce a key challenge: large, dense interfaces often exhibit subtle or scattered state changes, placing most of the burden on the reflector, which must compare pre- and post-action screens, while the planner and operator reason over a single state. Existing reflectors collapse change detection and outcome verification into one step, leaving evidence implicit and yielding weakly grounded decisions. To address this limitation, we propose Evidence-First Reflection (EFR), a two-stage reflector that explicitly decouples action-induced visual differences extraction from outcome verification. EFR identifies the action location and candidate changed regions with Set-of-Marks annotations, describes and filters action-relevant changes, and makes the final judgment from the cleaned evidence. This evidence-reasoning decoupled design makes reflection better grounded in screen transitions, while reducing both visual search complexity and reasoning burden. Experiments on OSWorld-Verified and WindowsAgentArena demonstrate that EFR improves reflector accuracy by 7.11%, yielding average end-to-end task success gains of 5.94% and 4.95% on the two benchmarks, respectively.",
+        "arxiv_id": "2608.24015",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2608.23417",
-        "COMMENT": "Matches criterion 3 moderately well: it proposes a new method for open-world agent skill creation, though it is not specifically embodied AI.",
-        "RELEVANCE": 4,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Agent Skills",
-            "Tool Use",
-            "Programmatic Agents"
-        ]
-    },
-    "2608.22370": {
-        "authors": [
-            "Yihua Shao",
-            "Jia Li",
-            "Siyu Chen",
-            "Xinyu Luo",
-            "Yang Liu",
-            "Kecheng Chen",
-            "Xinwei Long",
-            "Lingyu Zhu",
-            "Fanhu Zeng",
-            "Maolin Wang",
-            "Ziyang Yan",
-            "Jingcai Guo",
-            "Hao Tang",
-            "Nicu Sebe",
-            "Zhenyi Wang"
-        ],
-        "title": "LiST: Local-Simplex Test-Time LoRA Fusion",
-        "abstract": "arXiv:2608.22370v1 Announce Type: new  Abstract: Task-specific LoRA adapters offer a modular way to specialize large language and vision-language models. However, existing adapter composition methods are mostly static and cannot adapt to individual test inputs. To address these issues, we propose \\textbf{LiST}, a label-free test-time LoRA fusion framework that converts an existing LoRA bank into a target-conditioned local simplex and searches sample-specific fusion weights at inference time. LiST builds joint task representations from LoRA parameter anchors and prompt-level behavior vectors, retrieves neighboring adapters as a local search space, and performs branch-preserving fusion without updating the backbone or adapters. Candidate weights are selected by a prompt-level energy with prior, geometric, and stochastic-consistency constraints, and are deployed only when they pass a safe acceptance rule. Otherwise, LiST falls back to a target-conditioned prior. Experiments on multimodal and language benchmarks show that LiST outperforms static LoRA merging and conventional test-time adaptation baselines, while preserving task-specific adapter utility and improving robustness on unseen tasks.",
-        "arxiv_id": "2608.22370",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.22370",
-        "COMMENT": "Matches criterion 2 closely: it is a test-time fusion method for LoRA-adapted vision-language and multimodal models.",
+        "ARXIVID": "2608.24015",
+        "COMMENT": "Matches criterion 3 closely: it introduces a new method for desktop GUI agents that reasons over action-induced visual differences, which is an embodied-agent style interaction setting.",
         "RELEVANCE": 5,
         "NOVELTY": 5,
         "TAGS": [
-            "LoRA Fusion",
-            "Test-Time Adaptation",
-            "Multimodal Models"
+            "GUI Agents",
+            "Visual Reflection",
+            "Embodied Interaction"
         ]
     },
-    "2608.22313": {
+    "2608.24674": {
         "authors": [
-            "Cheng Chen",
-            "Yifan Zhao",
-            "Jia Li"
+            "Xiaoda Yang",
+            "Yuxiang Liu",
+            "Kaiwen Zheng",
+            "Yuan Liu",
+            "Yibo Lai",
+            "Shengpeng Ji",
+            "Kai Jiang",
+            "Jianfei Chen",
+            "Xiaobin Hu",
+            "Shuicheng Yan",
+            "Jintao Zhang",
+            "Jun Zhu",
+            "Zhou Zhao"
         ],
-        "title": "Adapting Dense Vision-Language Relationships for Multi-label Classification with Partial Label",
-        "abstract": "arXiv:2608.22313v1 Announce Type: new  Abstract: Learning multi-label image classification with incomplete annotations is a challenging task that has been widely studied for its superior trade-off between high efficiency and less labor consumption on large-scale datasets. Predominant methods rely on strong prior assumptions to recover the missing semantics from partial annotations. However, these statistic priors suffer from unstable semantic mistakes and thus lead to catastrophic overfitting. Toward this end, we propose a Language-driven Dense Semantic Adaptor (LDSA) that excavates prior-adaptive relationships from multimodal pretrained CLIP models. In our approach, the densely contrastive adaptor is first proposed to construct dense visual contrastive constraints, transferring the task-specific knowledge to visual domains. We then propose a language-driven interactive decoder with the help of class-specific prompt tuning, which adapts language proxies with visual domains. With the collaborative learning of proposed modules, experimental results demonstrate our proposed LDSA achieves a new state of the art on public multi-label classification benchmarks, and interpretable analyses reveal that our LDSA discovers implicit semantic relationships with the prior-adaptive learning scheme.",
-        "arxiv_id": "2608.22313",
+        "title": "TurboT2VA: Fast Large-Scale Text-to-Video-Audio Generation via Score-Regularized Consistency Distillation",
+        "abstract": "arXiv:2608.24674v1 Announce Type: new  Abstract: Joint text-to-video-audio generation produces synchronized visual and acoustic content, but the long sampling trajectories and heterogeneous multimodal computation of large models make inference prohibitively expensive. We present TurboT2VA, a distillation and inference framework for accelerating a 19B-parameter joint video-audio model. Large-scale T2VA distillation is challenged by modality-imbalanced optimization, the difficulty of continuous-time consistency training at scale, and the quality--diversity trade-off. TurboT2VA addresses these issues with per-modality normalization and a progressive curriculum comprising discrete consistency warm-up, continuous consistency refinement, and joint consistency--distribution matching. The curriculum first establishes a stable, diverse generation trajectory and only then introduces distribution-level refinement. On LTX-2, four-step distillation reduces generator latency from 50.52s to 2.51s at the standard evaluation resolution of 512$\\times$768, achieving a 20.1$\\times$ speedup while maintaining strong visual quality, audio fidelity, diversity, and video-audio synchronization. We further develop an architecture-aware inference stack that combines guarded W8A8 and fused operators, padded-text compaction, and modality-aware sparse attention while preserving dense cross-modal and text-conditioning paths. Under the high-resolution deployment setting at 1024$\\times$1792, the complete stack reduces generator latency from 318.74s to 5.83s on one NVIDIA H20, achieving a 54.67$\\times$ generator-only speedup. Inference code and generation demos are available at https://github.com/thu-ml/TurboDiffusion/tree/main/turbot2va.",
+        "arxiv_id": "2608.24674",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2608.22313",
-        "COMMENT": "Matches criterion 4: CLIP-based dense vision-language adaptation for partial-label multi-label classification, a vision foundation model application.",
-        "RELEVANCE": 5,
-        "NOVELTY": 4,
-        "TAGS": [
-            "CLIP",
-            "Multi-Label Classification",
-            "Partial Labels",
-            "Dense Vision-Language Learning"
-        ]
-    },
-    "2608.21761": {
-        "authors": [
-            "Changyu Lee",
-            "Yeonsoo Park",
-            "Abdullah Alfarrarjeh",
-            "Seon Ho Kim"
-        ],
-        "title": "What Does CLIP Learn for Regional Geolocalization? Probing Visual Cues and Scene Configuration After Adaptation",
-        "abstract": "arXiv:2608.21761v1 Announce Type: new  Abstract: Large collections of street-view imagery provide rich visual information about urban environments, but extracting fine-grained geographic information from such data remains challenging. In particular, fine-grained regional geolocalization is challenging because nearby areas often share coarse geographic cues. We study regional geolocalization within a metropolitan area and ask whether pretrained CLIP features are sufficient for regional discrimination, and what visual information supports performance after adaptation. Using 9,085 street-view images from eight Greater Los Angeles regions, we compare zero-shot CLIP, frozen-encoder readouts, partial encoder updating, Low-Rank Adaptation (LoRA), and full fine-tuning. Frozen readouts remain near the 39.03% zero-shot accuracy, whereas encoder adaptation achieves 75.94-82.10%. Full fine-tuning also reduces the mean distance to the predicted region center from 12.30 km to 3.86 km. We probe these gains through semantic cue removal, appearance reduction using edge maps and blur, and scene-configuration disruption using patch scrambling. Adapted models achieve higher edge and blur accuracy and switch 42.92-45.56% of predictions after scrambling, compared with 10.79-14.60% for frozen methods. However, adaptation does not improve the fraction of performance retained after appearance reduction, while vegetation and sky remain influential. A Caltech101 control further shows that scrambling sensitivity is not unique to geolocalization. Overall, encoder adaptation substantially improves nearby-region discrimination and is associated with greater sensitivity to intact scene configuration, without evidence that coarse structure alone becomes sufficient for prediction. These conclusions concern viewpoint variation near known locations rather than geographically disjoint generalization.",
-        "arxiv_id": "2608.21761",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI",
-            "cs.CE",
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.21761",
-        "COMMENT": "Matches criterion 4 moderately well: it studies adapted CLIP features and visual cues for geolocalization, which is a vision foundation model application.",
+        "ARXIVID": "2608.24674",
+        "COMMENT": "Partial match to criterion 4: it is a large-scale multimodal generative model for text-to-video-audio, which is related to vision foundation models and multimodal generation applications.",
         "RELEVANCE": 4,
-        "NOVELTY": 4,
+        "NOVELTY": 6,
         "TAGS": [
-            "CLIP",
-            "Geolocalization",
-            "Representation Probing"
+            "Video Generation",
+            "Multimodal Generation",
+            "Consistency Distillation"
         ]
     },
-    "2608.23234": {
+    "2608.24174": {
         "authors": [
-            "Liangtao Shi",
-            "Jinxia Xie",
-            "Xiantao Hu",
-            "Ting Liu"
+            "Tao Xiong",
+            "Xavier Hu",
+            "Wenkai Wang",
+            "Qinzhuo Wu",
+            "Changqiao Wu",
+            "Pengzhi Gao",
+            "Wei Liu",
+            "Jian Luan",
+            "Shengyu Zhang"
         ],
-        "title": "MLLM-Assisted Audio VOS: A 3rd Place Report for the MeViS-Audio Track, 8th LSVOS Challenge",
-        "abstract": "arXiv:2608.23234v1 Announce Type: new  Abstract: In this technical report, we present a training-free framework for audio-guided video object segmentation, which integrates Multimodal Large Language Models (MLLMs) with SAM-based segmentation models. We decompose the task into several stages and identify suitable foundation models for each stage. Without introducing additional model training or task-specific fine-tuning, our approach leverages the strong multimodal reasoning capabilities of MLLMs to model text-visual correspondence and employs SAM-based models for accurate object mask generation. The proposed framework demonstrates the effectiveness of leveraging foundation models for audio-guided video segmentation and achieves competitive performance in the MeViS-Audio Track of the 8th LSVOS Challenge.",
-        "arxiv_id": "2608.23234",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2608.23234",
-        "COMMENT": "Matches criterion 2: an MLLM-assisted audio-guided video object segmentation pipeline that combines foundation models for multimodal reasoning and SAM-based masks.",
-        "RELEVANCE": 5,
-        "NOVELTY": 3,
-        "TAGS": [
-            "MLLM",
-            "Video Object Segmentation",
-            "Audio-Visual Reasoning",
-            "Foundation Models"
-        ]
-    },
-    "2608.22237": {
-        "authors": [
-            "Zedong Liu",
-            "Jiaan Wu",
-            "Xinyang Ma",
-            "Le Xu",
-            "Kai Wang",
-            "Yuanchao Hu",
-            "Dingwen Tao",
-            "Guangming Tan"
-        ],
-        "title": "Read Less, Solve More: Token-Efficient Sparse Reading for AI Agents",
-        "abstract": "arXiv:2608.22237v1 Announce Type: new  Abstract: Long-horizon agents increasingly rely on repeated access to external artifacts, yet current reading interfaces often expose entire objects even when only sparse evidence is needed. This over-reading increases token and latency costs and can dilute task-relevant evidence, while existing context-reduction methods mainly intervene after broad content has already entered the trajectory. We present SparseRead, a training-free, model-transparent reading layer that controls content admission before unnecessary evidence reaches the model context. SparseRead combines a regime-aware Read Gate, extensible Reader Backends, and a stateful protocol for bounded, source-anchored evidence acquisition with explicit refinement, verification, stopping, and fallback. Across six frontier models, including Claude Opus 5, and five workload scenarios, SparseRead reduces token volume by up to 92.9% and wall time by up to 89.0%, while preserving or improving task quality. Its consistent gains across three agent frameworks further demonstrate broad portability.",
-        "arxiv_id": "2608.22237",
+        "title": "Task-Adaptive Rubrics for GUI Reward Modeling",
+        "abstract": "arXiv:2608.24174v1 Announce Type: new  Abstract: Recent studies on GUI agents have increasingly focused on outcome reward modeling, which assigns outcome rewards by judging whether an executed trajectory satisfies the success criteria implied by the user instruction. Existing GUI reward verifiers, however, often under-specify how these criteria should be constructed for each task instance. Whether using generic rubric structures or implicit model reasoning, their judging criteria are not sufficiently task-adaptive: they can transfer checks across tasks, overlook concrete constraints in the current instruction, or become overly strict by enforcing unstated requirements. To address this limitation, we propose AdaptRubric, a Coarse-to-Fine Rubrics Framework that constructs task-adaptive judging criteria through a category-level coarse stage and an instance-level fine stage. AdaptRubric performs category-level coarse rubric retrieval by routing the instruction to a GUI task family and retrieving reusable task-family criteria, then conducts instance-level fine rubric generation to surface compact cues for concrete values, scopes, and constraints in the current instruction. Across offline reward evaluation and online reinforcement learning optimization, AdaptRubric consistently outperforms prior reward agents, improving F1 by 3.6 points over the baseline average under a matched image budget and yielding a 4.23-point task-success gain.",
+        "arxiv_id": "2608.24174",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2608.22237",
-        "COMMENT": "No very close match to criteria 1-4; it is related to agent efficiency and context management, but not specifically to spatial understanding, new VLLMs/MLLMs, embodied AI benchmarks/methods, or vision foundation models.",
-        "RELEVANCE": 3,
-        "NOVELTY": 4,
+        "ARXIVID": "2608.24174",
+        "COMMENT": "Close match to criterion 3: it targets GUI agents with a new reward-modeling framework for task-adaptive judging criteria, which is an embodied-agent method.",
+        "RELEVANCE": 5,
+        "NOVELTY": 5,
         "TAGS": [
-            "Agent Efficiency",
-            "Context Reduction",
-            "Long-Horizon Agents"
+            "GUI Agents",
+            "Reward Modeling",
+            "Evaluation Rubrics"
         ]
     },
-    "2608.23503": {
+    "2608.24759": {
         "authors": [
-            "Thanh-Khoi Nguyen",
-            "Thanh-Nhan Vo",
-            "Trong-Thuan Nguyen",
-            "Minh-Triet Tran"
+            "Feyza Yavuz",
+            "Mert B\\\"ulent Sar{\\i}y{\\i}ld{\\i}z",
+            "Diane Larlus"
         ],
-        "title": "Action-Aligned Retrieval with Pairwise Multimodal Reranking for Text-Based Person Anomaly Search",
-        "abstract": "arXiv:2608.23503v1 Announce Type: new  Abstract: Text-based person anomaly search requires distinguishing individuals based on fine-grained, context-dependent behaviors rather than mere appearance. Existing methods struggle to capture these context-conditioned actions, frequently relying on isolated skeletal geometry, discarding raw query details during reformulation, or utilizing absolute pointwise scoring for multimodal verification. To address these limitations, we propose \\textbf{ActPair}, a unified three-stage coarse-to-fine framework that combines action-aligned retrieval with pairwise multimodal reranking to bridge the pose-semantic gap. First, we fine-tune a vision-language model (VLM) with an action-aligned multi-task objective that encourages the representations to encode action-discriminative semantics. Second, we perform parallel late-fusion retrieval using the original query and a large language model (LLM)-generated context-grounded rewrite, retaining complementary details from both semantic views. Finally, we propose an efficient off-the-shelf reranking module that leverages a pivot-promote algorithm to perform direct pairwise visual comparisons, mitigating residual spatial and compositional ambiguities without the prohibitive inference costs of exhaustive evaluation. Extensive experiments demonstrate that our framework achieves the best results among the compared methods on the Pedestrian Anomaly Behavior (PAB) public test and transfers effectively to an unseen, non-anomaly-specific dataset.",
-        "arxiv_id": "2608.23503",
+        "title": "IDeaL: Data-Free Multi-Teacher Distillation via Improved Dead Leaves",
+        "abstract": "arXiv:2608.24759v1 Announce Type: new  Abstract: Multi-teacher distillation has emerged as a way to combine complementary teacher models into a single student model that exhibits the strengths of all its teachers. The student is trained to mimic the output of the teachers on a set of images, typically the union of the individual teacher's training sets, assuming this data is available. In this paper, we question that assumption and explore alternative options. We first study how far one can go when distilling from teachers fed with different types of noise. Then, we show that information contained in the teachers can be leveraged to tailor the noise for multi-teacher distillation: we propose a method that, thanks to decorrelation losses at both patch and image levels, generates teacher-specific, improved samples optimized for data-free distillation. Experiments show that our most effective samples, IDeaL, lead to strong students that successfully capture complementary information from the teachers, yielding surprisingly competitive results that substantially narrow the gap with students distilled from real images. Moreover, given a limited budget of 1K images for distillation, students distilled using our IDeaL samples match or surpass the performance of those distilled using a 1K-image subset of ImageNet.",
+        "arxiv_id": "2608.24759",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2608.23503",
-        "COMMENT": "Matches criterion 3 in a broader sense: action-aware retrieval and multimodal reranking for person anomaly search, but it is more application-focused than core embodied AI.",
+        "ARXIVID": "2608.24759",
+        "COMMENT": "No direct match to the listed criteria; this is a data-free multi-teacher distillation method, interesting for clever statistical tricks but not specifically spatial, embodied, VLLM/MLLM, or vision-foundation-model focused.",
         "RELEVANCE": 3,
-        "NOVELTY": 4,
+        "NOVELTY": 6,
         "TAGS": [
-            "Vision-Language Retrieval",
-            "Anomaly Search",
-            "Multimodal Reranking",
-            "Action Recognition"
+            "Knowledge Distillation",
+            "Data-Free Learning",
+            "Generative Sampling"
+        ]
+    },
+    "2608.24130": {
+        "authors": [
+            "Duong Nguyen-Ngoc Tran",
+            "Ngoc Doan-Minh Huynh",
+            "Cu Quoc Le",
+            "Hoang-Khang Nguyen",
+            "Long Hoang Pham",
+            "Huy-Hung Nguyen",
+            "Quoc Pham-Nam Ho",
+            "Trinh Le Ba Khanh",
+            "Chi Dai Tran",
+            "Duong Khac Vu",
+            "Son Hong Phan",
+            "Hyung-Min Jeon",
+            "Jae Wook Jeon"
+        ],
+        "title": "Syn2RealTrack: Bridging the Gap Between Synthetic and Real-World Datasets for Online Multi-View Multi-Target Tracking",
+        "abstract": "arXiv:2608.24130v1 Announce Type: new  Abstract: Multi-camera 3D perception systems for warehouse scenes are trained largely on synthetic data and evaluated on physically captured environments. The resulting synthetic-to-real gap, which corrupts ground-plane localization and cross-camera identity association, is usually treated as one deficiency for a single domain-adaptation module to absorb; we argue instead that it enters the pipeline at three separable points: the camera calibration, the object shape prior, and the assumption that the object census is known, each admitting a different local remedy. Our online pipeline, Syn2RealTrack, follows this decomposition: lens distortion is recovered from images alone under a calibration that provides none, detections are fused across views by a visibility-weighted part-based descriptor that abstains on occluded parts rather than guessing, person height is measured in closed form from calibration instead of copied from a synthetic prior, and a closed-world cardinality prior is paired with a causal filter that removes the phantom boxes the prior manufactures. The system therefore adapts by reallocating trust between geometry and appearance without retraining a feature extractor. On the AI City Challenge 2026 Track~1 evaluation server it reaches a 3D Higher Order Tracking Accuracy (HOTA) of 52.0118%. The code will be released at https://github.com/SKKUAutoLab/aic26_mc3dp",
+        "arxiv_id": "2608.24130",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "ARXIVID": "2608.24130",
+        "COMMENT": "Close to criterion 3 in spirit: it is an embodied multi-view tracking system for warehouse scenes, with a new synthetic-to-real adaptation pipeline and simulator-to-real angle.",
+        "RELEVANCE": 4,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Embodied Perception",
+            "Multi-View Tracking",
+            "Synthetic-to-Real Adaptation"
+        ]
+    },
+    "2608.24585": {
+        "authors": [
+            "Andrea Di Nezza",
+            "Mihir Patel",
+            "Fabio Fagnani",
+            "Sara Bernardini"
+        ],
+        "title": "Pivot-and-Station Multi-Agent Path Finding: Solvability, Complexity, and Algorithms",
+        "abstract": "arXiv:2608.24585v1 Announce Type: new  Abstract: Automated high-density storage systems (warehouses, robotic parking, plant logistics, etc.) require fleets of agents to move through scarce task-critical resources and then park without obstructing future operations. We introduce Pivot-and-Station Multi-Agent Path Finding (PS-MAPF), a MAPF variant in which a subset of tasked agents must each visit one of a set of interchangeable pivots (e.g., workstations) before the entire fleet terminates at anonymous stations, one agent per station. We characterize solvability completely: every instance on a 2-edge-connected graph is solvable, and, on arbitrary connected graphs, a structural effective-distance measure relative to the number of unoccupied vertices gives a necessary and sufficient condition. We prove that minimizing station-makespan or station-flowtime is NP-hard already with a single pivot. We present three algorithms, a complete baseline, a SAT-based optimal solver, and Pivot-Prioritized Planning (PPP), the last solving 74-89% of benchmark instances with makespan and flowtime orders of magnitude below the baseline.",
+        "arxiv_id": "2608.24585",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2608.24585",
+        "COMMENT": "No close match to criteria 1-4; this is a theoretical/algorithmic MAPF paper, which is adjacent to robotics but not clearly about embodied spatial intelligence methods or a new embodied benchmark.",
+        "RELEVANCE": 3,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Multi-Agent Path Finding",
+            "Combinatorial Optimization",
+            "Robotics"
+        ]
+    },
+    "2608.24154": {
+        "authors": [
+            "Long Hoang Pham",
+            "Quoc Pham-Nam Ho",
+            "Huy-Hung Nguyen",
+            "Duong Nguyen-Ngoc Tran",
+            "Ngoc Doan-Minh Huynh",
+            "Cu Quoc Le",
+            "Hoang-Khang Nguyen",
+            "Hyung-Min Jeon",
+            "Chi Dai Tran",
+            "Son Hong Phan",
+            "Duong Khac Vu",
+            "Trinh Le Ba Khanh",
+            "Jae Wook Jeon"
+        ],
+        "title": "Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection",
+        "abstract": "arXiv:2608.24154v1 Announce Type: new  Abstract: Real-world deployment of traffic surveillance systems is bottlenecked by geographic domain shift, in which models trained in one city underperform when applied to an unseen target city. Conventional domain adaptation relies on hyperparameter-sensitive architectures or direct profiling of target data. Both are fundamentally precluded in privacy-conscious ecosystems that require completely blind training and evaluation loops. In this setting, we explore the effects of pre-training and augmentation in addressing the domain shift problem. Specifically, we propose a new modular training pipeline for object detection structured around two core orthogonal pillars: (1) a multi-dataset pre-training strategy featuring a class-agnostic objectness distillation to decouple structural vehicle geometry from semantic taxonomies, and (2) a domain-resilient augmentation stream featuring a novel Grayworld transformation that forces global attention heads to strip volatile chromatic shortcuts in favor of robust shape priors. When evaluated with the real-time transformer-based detector RF-DETR, our framework bridges cross-city distribution gaps while using limited GPU memory (16GB). Our optimized variants, RF-DETR-HR and RF-DETR-Grayworld, deliver a substantial empirical gain of +24.29 over the baseline, achieving 1st place (47.53 mAP) on the AI City Challenge Track 6 leaderboard. Code and data are available at: \\href{https://github.com/SKKUAutoLab/aic26_cross_city}{SKKUAutoLab/aic26\\_cross\\_city}.",
+        "arxiv_id": "2608.24154",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.AI"
+        ],
+        "ARXIVID": "2608.24154",
+        "COMMENT": "No direct match to the criteria; this is a cross-city object detection/domain generalization paper, relevant to computer vision but not specifically the requested categories.",
+        "RELEVANCE": 3,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Object Detection",
+            "Domain Generalization",
+            "Traffic Surveillance"
         ]
     }
 }
