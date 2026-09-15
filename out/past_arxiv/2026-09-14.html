@@ -1,0 +1,1335 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / September 14, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  cursor: default;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / September 14, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>09/14/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>15 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>UniPart: Towards Zero-shot Language-Grounded 3D Part Segmentation for Embodied Interaction</strong>
+          <small>Xinqiang Yu, Zekun qi, Jiawei He, Wenyao Zhang, Xuchuan Chen, Guaocai Yao, Li Yi, Zhaoxiang Zhang, He Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2609.12898</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12898">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: embodied interaction with zero-shot language-grounded 3D part segmentation and a large-scale 3D part dataset for robotic grasping.</p>
+        <p class="abstract">Fine-grained robotic manipulation depends on understanding parts, not only whole objects. Existing 3D foundation models tend to be either generalized but object-aware, or part-aware but limited to closed-set taxonomies, which weakens zero-shot transfer. We study text-conditioned 3D part segmentation, where a free-form phrase selects a functional part on point cloud. We introduce UniPart, a feed-forward cross-modal 3D Transformer that conditions CLIP text embedding. To scale supervision, we build LangPart-1M with 160K+ Objaverse assets and 8M text to part pairs using multi-view consistent part generation. We further manually label a high-quality subset, LangPart-4K, for fine-tuning and evaluation. UniPart achieves strong zero-shot results on open-vocabulary part benchmarks and transfers to language-conditioned part grasping in real world.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>Earth-Agent-Pro: Towards Real-World Full-Chain Earth Observation with Agents</strong>
+          <small>Zhutao Lv, Chenhao Dang, Yi Feng, Yanpei Gong, Xiaolei Wang, Junyan Ye, Conghui He, Weijia Li</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2609.12533</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12533">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it builds a new embodied/agentic Earth-observation benchmark with open-world execution and tool-using agents.</p>
+        <p class="abstract">Real-world Earth observation (EO) agents must translate high-level scientific questions into executable workflows to acquire observations, prepare data, perform domain computations, and derive conclusions from runtime evidence. Existing EO agents typically start from supplied observations, while benchmarks typically provide prepared inputs or candidate answers, leaving full-chain open-world EO execution largely untested. We present Earth-Agent-Pro, an execution-adaptive Plan-and-Execute framework using expert-authored skills to constrain planning and runtime tool use. Workflow-centered structured memory records planned steps, accepted evidence, and their dependencies, enabling repair of only the affected workflow suffix when runtime evidence invalidates a step. Separate large language model adapters use sequence-level supervised fine-tuning for planner workflow composition and node-level group relative policy optimization with locally verifiable rewards for executor tool-argument grounding. Earth-Bench-Pro instantiates 248 expert-curated task cores as 744 questions under three matched regimes. Its 248 Open-World Execution questions span RGB imagery, spectral observations, and remote sensing products, pairing high-level requests with runtime data requirements, executable trajectories, and open-ended answers grounded in execution evidence. With a shared GPT-5 backbone, Earth-Agent-Pro achieves 66.13% LLM-as-Judge accuracy, exceeding ReAct by 20.95 points in this metric and 24.44 points in Tools-In-Order. Joint adapter tuning raises Qwen3.5-9B LLM-as-Judge accuracy from 38.31% to 50.00%, an 11.69-point gain over the untuned configuration. Planning-only evaluation and execution with the reference workflow show that the adapters improve workflow composition and argument grounding, respectively. Code and datasets will be released soon.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link7">
+      <summary class="paper-row-summary">
+        <span class="queue-index">8</span>
+        <span class="paper-row-copy">
+          <strong>Fast and Faithful: Principled Conditional Flow Matching for Inverse Problems</strong>
+          <small>Shirin Shoushtari, Edward P. Chandler, Xiao Shi, Ulugbek S. Kamilov</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2609.12953</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12953">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to the listed criteria; it is a principled conditional flow-matching method for inverse problems, strong on statistical methodology but not one of the target categories.</p>
+        <p class="abstract">Flow matching approaches to imaging inverse problems commonly incorporate measurements in two ways. Conditioning-based approaches supply measurement-derived information as a network input, often through concatenation, while inference-guided approaches combine an unconditional velocity field with a separate data-consistency update. In these common formulations, the forward model is not explicitly enforced within the learned conditional velocity field. We propose a principled parametrization of the measurement-conditional velocity field to solve inverse problems. Under linear interpolation, we express the conditional velocity $v(x_t,t,y)$ in terms of the posterior mean $E[x_1 | x_t,y]$, and characterize that mean as the unique minimizer of a variational objective whose data-consistency term is explicit. We further prove that the velocity field defines a probability flow from the source distribution to the measurement-conditioned posterior. Splitting the variational objective yields a conditional velocity parameterization with operator-dependent data-consistency updates, which we train end-to-end under the flow-matching objective, with no additional guidance at inference. Our method achieves state-of-the-art PSNR with $50\times$ fewer function evaluations than the strongest flow baseline. Varying the sampling steps provides test-time control over the distortion-perception trade-off without retraining.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>NOVA-GS: Noise-Aware View-Consistent Gaussian Splatting for Low-Light Novel View Synthesis</strong>
+          <small>Shaurya Pavan A, Vemunuri Divya Madhuri, Yash Pradeep Gawande, Kaushik Mitra</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2609.12682</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12682">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: 3D Gaussian splatting / novel view synthesis with a foundation-model-style feed-forward initializer and low-light robustness, relevant to vision foundation model applications.</p>
+        <p class="abstract">Reconstructing 3D scenes under real-world low-light conditions remains challenging due to severe sensor noise, low signal-to-noise ratios, and degraded photometric consistency, which destabilize geometry estimation and novel view synthesis. Existing approaches often rely on well-lit reference data for reliable Structure-from-Motion (SfM) initialization under degraded inputs or apply per-view enhancement methods that introduce cross-view inconsistencies. To address these limitations, we propose \textbf{NOVA-GS}, a unified noise-aware framework for low-light 3D Gaussian Splatting that subsumes enhancement, denoising, and geometry optimization within a single process. Our method leverages VGGT-based feed-forward estimation to obtain robust camera poses and geometry directly from degraded inputs, eliminating the need for SfM. Building on this initialization, NOVA-GS integrates three coupled components: a structure-aware enhancement module for exposure correction, a self-supervised denoising module with blind-spot masking for pseudo-supervision, and a consistency-driven Gaussian Splatting optimization enforcing cross-view geometric coherence. We further introduce a noise-guided spherical harmonic regularization to suppress view-dependent artifacts in noisy regions. Extensive experiments on diverse real-world low-light datasets demonstrate improved geometric fidelity, color consistency, and robustness without requiring paired supervision or well-lit references. https://shaurya2524.github.io/nova-gs/</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>OphBiWSSD: Scaling Temporal Action Localization in Ophthalmic Surgeries with Bidirectional Weight-tied State Space Duality</strong>
+          <small>Yang Liu, Qionghong Ma, Joongwon Chae, Lihui Luo, Yibing Shen, Yulin Zhuo, Yingting Zhu, Jiashu Chang, Xiaoyun Zhong, Dongmei Yu, Peter E. Lobie, Peiwu Qin, Chengming Yang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 10 / arXiv:2609.12409</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12409">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: embodied/surgical intelligence with a new temporal action localization method for ophthalmic surgery, focusing on long-range temporal structure.</p>
+        <p class="abstract">High-frequency surgical maneuvers in ophthalmology necessitate high-fidelity temporal modeling, yet characterizing long-range procedural dependencies remains computationally prohibitive for attention-based architectures. Existing models often require aggressive temporal downsampling, which compromises the detection of fine-grained action boundaries and instrument-tissue interactions. To address these scalability constraints, we present OphBiWSSD, a framework that reformulates surgical temporal action localization leveraging Bidirectional State Space Duality. By employing a weight-tied selective scan mechanism that incorporates both preceding and succeeding surgical contexts, our approach facilitates the global synthesis of non-causal temporal cues with linear complexity. This streamlined architecture is well-suited to capture the bidirectional dependencies present in ophthalmic workflows, effectively bridging the gap between local boundary precision and long-range procedural context without incurring the quadratic memory overhead of traditional Transformers. Extensive experiments on the OphNet benchmark demonstrate that OphBiWSSD achieves state-of-the-art temporal localization performance, with mean Average Precisions of 44.42% on phases and 43.08% on operations, surpassing the baselines by 6.80% and 6.66%, respectively. Empirical validation indicates that our approach ensures precise temporal localization and offers a computationally viable pathway for deploying surgical intelligence systems in clinical environments. The code is publicly available at https://github.com/yo3nglau/OphBiWSSD.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>UniMo: Unifying Human and Animal Motion Generation</strong>
+          <small>Zeyu Zhang, Zhiyuan Zhang, Siheng Wang, Yiran Wang, Danning Li, Ian Reid, Richard Hartley</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2609.12342</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12342">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to the listed criteria; it is mainly a motion generation paper, though it is relevant to multimodal generative modeling.</p>
+        <p class="abstract">The conditional generation of 3D motion has emerged as a key research topic due to its wide applicability across robotics, AR/VR, gaming, and content creation. However, extending recent advances in text-driven human motion generation to the animal domain remains challenging due to two core limitations. First, animals exhibit highly diverse skeletal topologies, unlike the standard human structure, making unified modeling across species difficult and leading to inefficient per-species models. Second, existing animal motion datasets suffer from limited scale and annotation quality, constraining model performance. To address these challenges, we propose UniMo, a unified point cloud-based motion generation framework that bypasses topological discrepancies by converting parametric skeletons into unparametric representations, further enhanced by dynamic sampling that allocates more points to active joints. Additionally, we present UniML3D, a large-scale motion-language dataset spanning both human and animal categories, containing 145,907 motion sequences and 433,388 captions-over 102x larger than existing animal datasets. Our method achieves state-of-the-art results on UniML3D and three public benchmarks including HumanML3D, KIT-ML, and AnimalML3D, demonstrating the feasibility and effectiveness of unified human-animal motion generation. Website: https://steve-zeyu-zhang.github.io/UniMo.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>QuPAINT: Physics-Aware Multimodal Reasoning for Quantum Material Characterization</strong>
+          <small>Sankalp Pandey, Xuan-Bac Nguyen, Hoang-Quan Nguyen, Tim Faltermeier, Nicholas Borys, Hugh Churchill, Khoa Luu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2609.12202</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12202">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and criterion 4 closely: a new physics-aware multimodal reasoning framework with an instruction dataset and a real-world benchmark for quantum material characterization.</p>
+        <p class="abstract">Characterizing two-dimensional (2D) quantum materials by optical microscopy requires localizing exfoliated flakes and determining their layer thickness from subtle optical contrast and interference color to select suitable flakes for device fabrication. However, models face synthetic-to-real domain shifts and variation across materials, substrates, laboratories, and imaging conditions. We present QuPAINT, a physics-aware multimodal framework for transferable quantum flake characterization. The Synthetic Materials Framework (Synthia) generates diverse synthetic microscopy images while preserving layer-dependent optical behavior. Using these images, we construct QMat-Instruct, a multimodal instruction dataset with image-specific reasoning traces generated from verified annotations and constrained to observable optical cues. QuPAINT integrates these signals through Physics-Informed Attention (PIA), which injects substrate-relative optical priors into the visual representation to support grounded multimodal reasoning. For evaluation, we introduce QF-Bench, to our knowledge, the largest real-world benchmark for this problem, spanning diverse microscopy and substrate conditions. Using its verified annotations, we study counting, visual grounding, reasoning quality, confidence calibration, and transfer to an unseen material. QuPAINT-8B substantially outperforms prior methods and establishes state-of-the-art performance for both general and monolayer flake detection. Additional experiments show that image-grounded supervision improves strict spatial grounding and confidence calibration while preserving robust general flake detection on the unseen material.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>DementiaCare-Bench: A Modality-Validated Video Benchmark</strong>
+          <small>Afrouz Sheikholeslami, Yuankai Qi, Xuyun Zhang, Luping Zhou, Amin Beheshti, Quan Z. Sheng, Ming-Hsuan Yang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2609.12929</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12929">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 very closely, and also criterion 2: a modality-validated video benchmark for VLMs with ordered-frame dependence analysis, plus a lightweight VLM fine-tune.</p>
+        <p class="abstract">Dementia affects an estimated 57 million people worldwide, and for most families the hardest part of care is not memory loss but the behavioral and psychological symptoms of dementia (BPSD): agitation, wandering, resistance to care, sundowning. Understanding these symptoms requires more than recognizing the behavior itself; it also requires knowing what happened beforehand. The same behavior may call for a different response depending on its trigger. Video-language models (VLMs) could potentially support caregivers, yet no existing benchmark evaluates this capability. To fill this gap, we present DementiaCare-Bench: 56 professionally produced caregiver training videos segmented into 94 clips across nine BPSD categories, with 2023 questions generated by a multi-agent pipeline that grounds every clinical claim in a verbatim transcript span. Each question is then probed under four visual conditions and labelled by the least it requires, so its visual demand is measured rather than assumed. Measurement contradicts intent: we wrote 77.7% of the questions to require ordered frames, and 34.8% do. Across 12 current VLMs the pattern is uniform. The best reach 85% overall, but that average is carried by questions a language model can answer from clinical knowledge alone; accuracy falls by 17 points on average on questions that require the ordered clip, and a leading open model scores at chance on judging whether a caregiver&#x27;s response was appropriate. A lightweight LoRA fine-tune, DemCare-VLM, moves video dependence from -3.3 to +4.5 points, so what the benchmark exposes can be repaired and not only measured.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>Online Video Agent Harness for Long Video Understanding</strong>
+          <small>Sen Yang, Boqiang Duan, Jing Yang, Weihao Bo, Jie Liu, Boyuan Tong, Ze Feng, Wenkang Zhang, Jingdong Wang, Hua Wu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2609.12818</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12818">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and 2 closely: it proposes a new agentic video understanding harness for long-video reasoning, i.e. a new multimodal large model system with tool-using reasoning.</p>
+        <p class="abstract">Long video understanding often behaves like a visual needle-in-a-haystack problem: query-relevant evidence is sparsely distributed across long temporal spans, while packing dense frames into a single VLM context incurs \textit{context rot} and high cost. Existing video agents often rely on query-agnostic offline preprocessing or ad hoc tool sets, which can miss query-specific details and waste computation. In this work, we present VideoXAgent, a purely online video-agent harness for long video understanding that starts from the given video file and user query, plans and decomposes the task, invokes specialized expert tools on demand, and aggregates multimodal evidence to produce a final answer while resolving conflicts among observations. To support this on-demand invocation, we design a suite of heterogeneous expert tools guided by a data-driven taxonomy of atomic capabilities, spanning scripts, VLMs, and domain models (e.g., detection, OCR, ASR, face recognition). The harness further enforces objective evidence prompting and budget-aware control to curb hallucination and non-termination. Across Video-MME-Long, LongVideoBench-Long, LVBench, and MINERVA, VideoXAgent is competitive with frontier LMMs and video agents under a smaller context footprint---about 50k tokens of agent context per sample, even on hour-long videos. In particular, on complex video-reasoning benchmarks such as MINERVA, it matches this level while using only about 15\% of the context of a 1,024-frame dense-packing baseline. Notably, the harness remains effective with a visually weak or even text-only orchestrator, suggesting that strong long-video understanding can emerge from progressive agentic evidence seeking rather than from packing the full video into a single context. Project page: https://go-agent-x.github.io/video_agent_harness/</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>AquaCubeAI-Powered Monitoring Turbidity on-board {\Phi}sat-2</strong>
+          <small>Pietro Di Stasio, Francesca Razzano, Elisa Liparulo, Gabriele Meoni, Nicolas Long\&#x27;ep\&#x27;e, Deodato Tapete, Paolo Gamba, Gilda Schirinzi, Silvia Liberata Ullo</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2609.12744</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12744">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 moderately: it applies lightweight ML on-board for satellite multispectral sensing, which is vision-model deployment in an Earth-observation setting.</p>
+        <p class="abstract">Timely monitoring of coastal water quality is critical for environmental protection, yet conventional satellite workflows rely on downlink and ground processing, introducing latency that can limit responsiveness to rapidly evolving turbidity events. To address this limitation, we propose AquaCubeAI, a lightweight machine-learning approach for onboard estimation of coastal water turbidity from {\Phi}sat-2 multispectral imagery. By shifting inference from the ground segment to the satellite, AquaCubeAI aims to enable lower-latency, more responsive, and more operationally useful turbidity monitoring under the strict compute and bandwidth constraints of spaceborne platforms. The model is trained on simulated {\Phi}sat-2 acquisitions spatially aligned with Copernicus Marine Service (CMEMS) High-Resolution Ocean Color (HR-OC) turbidity products over selected localized coastal sites spanning four European marine macro-regions. To provide a realistic evaluation of generalization in the presence of spatial correlation, we adopt a spatial block splitting protocol that mitigates data leakage between training and evaluation subsets. The main contributions of this work are: (i) a scalable dataset generation pipeline pairing simulated {\Phi}sat-2 multispectral patches with CMEMS HR-OC turbidity labels across selected localized European coastal sites; (ii) a compact Multi-Layer Perceptron (MLP)-based turbidity regressor trained under a leakage-aware geospatial split and tailored to embedded constraints; and (iii) a reformulation for dense spatial prediction via parameter sharing, enabling turbidity mapping and simple threshold-based anomaly masks for onboard decision logic. Embedded deployment on an Intel Myriad Vision Processing Unit (VPU) further confirms the feasibility of low-power hardware and supports low-latency inference from multispectral inputs.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Generative Modeling</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>VideoTok4D: A 4D-Aware Video Tokenizer for Compact World Representation</strong>
+          <small>Xinyi Chen, Hanxin Zhu, Xijun Wang, Xingrui Wang, Sen Liang, Xin Li, Zhibo Chen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2609.12874</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12874">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 strongly: a 4D-aware video tokenizer for compact world representation, plus generative modeling for 4D scene generation.</p>
+        <p class="abstract">Video tokenizers have emerged as a cornerstone of modern video modeling, underpinning progress in compression, reconstruction and generation by mapping high-dimensional visual signals into compact latent spaces. However, despite this progress, current tokenization paradigms largely remain within the 2D visual domain, treating videos as image sequences rather than observations of an underlying dynamic 3D world. Consequently, the learned tokens inherit this observation-centric bias, limiting their capacity to compactly represent real-world 4D scenes. To mitigate this issue, we propose VideoTok4D, a novel 4D-aware video tokenizer for compact world representation. Specifically, our approach comprises three key designs: 1) a spatiotemporal disentanglement strategy that factorizes videos into static and dynamic tokens for holistic world modeling; 2) a track-aware dynamic attention mechanism that aggregates trajectory-aligned cues to promote cross-view motion consistency; and 3) Co4DGen, a diffusion prior learned over the resulting VideoTok4D token space for efficient 4D scene generation. Extensive experiments have demonstrated that our proposed method achieves state-of-the-art performance while requiring up to 4 orders of magnitude less storage than dense 4D representations. Moreover, the compact token space substantially shortens diffusion sequences, enabling efficient generation.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link10">
+      <summary class="paper-row-summary">
+        <span class="queue-index">11</span>
+        <span class="paper-row-copy">
+          <strong>Balancing Emotional Alignment and Semantic Consistency in Image Generation via Reinforcement Learning with Valence-Arousal Anchoring</strong>
+          <small>Jisheng Dang, Zhenxuan Wang, Bin Li, Ronghao Lin, Bin Hu, Tat-Seng Chua</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 11 / arXiv:2609.12830</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12830">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to the listed criteria; it is a generative image synthesis method with reinforcement learning for emotion control, relevant mainly to multimodal generative modeling.</p>
+        <p class="abstract">Continuous emotion control in text-to-image generation requires a model to improve affective alignment without changing the objects, layout, or scene described by the prompt. Existing supervised emotion-injection methods often optimize feature-space proxies and may therefore exhibit emotion-semantic drift, in which stronger emotional conditioning is accompanied by unintended content changes. We address this problem with a flow-matching image-generation framework that combines continuous valence-arousal (VA) conditioning, Group Relative Policy Optimization (GRPO), and a neutral semantic anchor. The deterministic probability-flow ODE is converted into a marginal-preserving SDE, yielding non-degenerate transition densities for trajectory sampling and policy-ratio estimation. A frozen CLIP-based VA regressor supplies a terminal reward measuring the distance between the predicted and target VA coordinates, while an image generated from the same prompt under zero VA conditioning provides a feature-space reference for semantic preservation. A reduced denoising schedule is used for online RL sampling, whereas the original schedule is retained at inference. Experiments on 3,300 prompt-emotion combinations show substantially lower valence and arousal errors than the VA-conditioned baseline and an improved CLIPScore relative to EmotiCrafter, with a measurable trade-off in reference-free image quality. The results support anchor-regularized Flow-GRPO as a practical approach to balancing emotional alignment and semantic consistency in continuous-affect image synthesis.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Interpretability</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link6">
+      <summary class="paper-row-summary">
+        <span class="queue-index">7</span>
+        <span class="paper-row-copy">
+          <strong>MGAvatar: Mesh-Bound Gaussians for Head Avatar Geometry and Appearance Modeling</strong>
+          <small>Lei Shi, Sen Peng, Zhiyang Deng, Zhonggui Chen, Xiaohu Guo, Baorong Yang, Xiao Dong</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 7 / arXiv:2609.12850</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12850">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it is a vision-based generative modeling paper for head avatars with Gaussian-mesh hybrid representation and appearance/geometry modeling.</p>
+        <p class="abstract">Accurate head modeling requires a stable yet expressive geometric representation. Existing Gaussian-based head avatars commonly rely on parametric templates (e.g., FLAME) for Gaussian initialization and deformation, but these templates lack personalized priors and struggle to represent structures such as hair and clothing. To address this issue, we propose MGAvatar, a Gaussian-mesh hybrid representation that jointly models geometry and appearance through two Gaussian-mesh binding modes. Specifically, we introduce vertex-bound Gaussians and constrain their learnable parameters, enabling progressive mesh deformation to represent complex head geometry, while a pose-dependent offset module accounts for non-rigid deformations. Once geometry is stabilized, MGAvatar switches to face-bound Gaussians for appearance modeling. To improve appearance consistency across novel poses and viewpoints, we introduce a view-conditioned neural color field that alleviates artifacts caused by independently optimized Gaussian colors. In addition, we design a Gaussian offset network to predict Gaussian offset maps in the observation space, providing greater flexibility for face-bound Gaussians to capture dynamic facial textures. Extensive experiments on multi-view and monocular videos show that MGAvatar outperforms existing methods in rendering quality, producing high-fidelity head avatars with rich texture details.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link12">
+      <summary class="paper-row-summary">
+        <span class="queue-index">13</span>
+        <span class="paper-row-copy">
+          <strong>RoES: Rotational Equivariant Selective-frequency Fusion for Multimodal Images</strong>
+          <small>Jiabao Wang, Wenjian Liu, Yaoming Cai, Gengyu Zhang, Boyan Zhao, Zijia Zhang, Yao Ding, Xiaobo Liu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 13 / arXiv:2609.12497</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12497">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to the listed criteria; it is a multimodal image fusion paper, relevant to vision but not specifically a vision foundation model or embodied AI benchmark/method.</p>
+        <p class="abstract">Infrared-visible image fusion facilitates robust multimodal perception by integrating complementary textural nuances from visible sensors with thermal signatures from infrared systems. Due to the task&#x27;s inherently ill-posed nature, existing methods heavily rely on structural priors but typically enforce rotation equivariance uniformly across all features. Such a holistic approach overlooks a critical distinction where low-frequency shared structures strictly adhere to equivariant constraints while high-frequency modality-specific details require greater flexibility to preserve unique information. To bridge this gap, we propose RoES, a Rotational Equivariant Selective-frequency fusion network. Instead of employing static decomposition, we introduce a trainable rotation-enhanced updater/predictor module to dynamically decouple low- and high-frequency components. The resulting representations are then processed through a dual-branch fusion module tailored for spectral consistency. Specifically, a rotation-equivariant Mamba is employed to capture long-range structural dependencies in the low-frequency domain, while a polar spectral attention-based Dual-Fourier block refines high-frequency details under explicit low-frequency guidance. Extensive experiments demonstrate that RoES consistently achieves state-of-the-art performance in both fusion quality and downstream object detection, establishing a robust solution for multimodal fusion by reconciling frequency-selective features with equivariant constraints. The source code is available at https://github.com/BryceLosky/RoES-Fusion.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link14">
+      <summary class="paper-row-summary">
+        <span class="queue-index">15</span>
+        <span class="paper-row-copy">
+          <strong>LGFN: Lightweight Gated RGB-Polarization Fusion with Modality-Availability Conditioning for Camouflaged Object Detection</strong>
+          <small>Zhuangfan Huang, Xiaosong Li, Yang Liu, Tao Ye, Haishu Tan</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">7</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 15 / arXiv:2609.12798</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.12798">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 at the application level: multimodal fusion with polarization cues for camouflaged object detection, though it is not a foundation model paper.</p>
+        <p class="abstract">Camouflaged object detection (COD) is an important engineering task in intelligent optical perception, but it remains challenging when targets closely resemble their surroundings. Polarization imaging provides complementary physical cues, whereas existing methods typically assume fixed multimodal input configurations and entangle intra-polarization coordination with interaction between red-green-blue (RGB) and polarization representations. We propose LGFN, a lightweight gated RGB-polarization fusion framework supporting separately optimized RGB-only and polarization-assisted configurations. A deterministic Modality Router selects the appropriate configuration according to polarization availability. In the multimodal configuration, an availability-conditioned Modality Gate calibrates the available polarization branches; the Gated Polarization Hub coordinates learned degree of linear polarization (DoLP) and angle of polarization (AoP) representations with explicit polarization cues; and RGB-Polarization Cross Fusion introduces the coordinated representation into the RGB hierarchy through controlled residual interaction. The multimodal configuration requires neither sample-dependent statistics nor handcrafted quality descriptors during inference. On the complete 230-image PCOD_1200 test set, the RGB-only configuration achieves a mean absolute error of 0.0090, a Dice score of 0.8806, and an intersection over union of 0.8144, obtaining the best results on all six metrics among the evaluated RGB-based methods. Under a common local reevaluation protocol, the multimodal configuration outperforms PolarNet and IPNet on all six metrics. Relative to IPNet, it reduces the parameter count, floating-point operations, and latency by 53.1%, 73.6%, and 63.0%, respectively.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>15</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>13</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>10.3</strong>
+    </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
