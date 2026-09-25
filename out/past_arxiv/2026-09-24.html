@@ -1,0 +1,1645 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / September 24, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  cursor: default;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / September 24, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>09/24/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>23 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>VIVAS: Vitalizing Visual Perception in VLM Pre-training via Vision-language Unified Autoregressive Supervision</strong>
+          <small>Zhehan Kan, Yubo Zhu, Xinghua Jiang, Zhixiang Wei, Shifeng Liu, Wei Tong, Sheng Zhong, Qingmin Liao, Wenming Yang, Xin Li, Yinsong Liu, Deqiang Jiang, Xing Sun</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">16</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2609.27948</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27948">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>9</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Very close to criterion 2 and also relevant to criterion 4: it proposes a new VLM pretraining framework with unified vision-language autoregressive supervision.</p>
+        <p class="abstract">While Vision-Language Models (VLMs) demonstrate strong capabilities, they continue to suffer from a critical limitation: insufficient fine-grained visual perception, which fundamentally limits their multimodal understanding. We attribute this bottleneck to text-dominant optimization biases during pre-training, which encourage the model to overlook fine-grained visual details, thereby limiting the capability of multimodal understanding. We investigate that overcoming this bottleneck requires two key elements: (1) a unified token space paradigm that ensures stable training dynamics, and (2) a modality-aligned dense visual supervision signal enriched with both structural granularity and semantic information to capture critical visual representations. Based on these insights, we propose VIVAS, a framework built upon the unified token space paradigm, which introduces a dense-structural-semantic vision tokenizer, which expands the textual vocabulary into a unified vision-language vocabulary by incorporating a visual vocabulary. During pretraining, VIVAS performs vision-language unified autoregressive supervision over both visual details and linguistic content, thereby enhancing visual perception to improve multimodal understanding. Trained end-to-end on 12.4T tokens, VIVAS achieves state-of-the-art performance across 7 tasks and 39 multimodal benchmarks.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>AWM-VLA: AlignedWorld Modeling for Efficient and Explainable Vision-Language-Action Policies</strong>
+          <small>An Lanji, Dawei Liu, Jin Li, Haoran Xu, Mei Chen, Yu Tian</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2609.27753</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27753">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and 3 very closely: it proposes a new method for spatial/world modeling inside a vision-language-action policy for embodied manipulation, with object-centric future alignment for better long-horizon control and interpretability.</p>
+        <p class="abstract">Vision-language-action (VLA) models have become a powerful paradigm for generalist robotic manipulation, yet they are often reactive: the policy maps the current observation directly to an action chunk without reasoning about the long-term consequences of its decisions. Prior attempts to endow policies with world models either reconstruct future frames in pixel space---expensive and dominated by task-irrelevant detail---or decouple the world model from the policy, weakening control. We present AWM-VLA, a unified framework that embeds aligned world modeling directly inside a diffusion-transformer policy. Following the Future Latent REpresentation Alignment (FLARE) principle, we add learnable future tokens whose intermediate activations are aligned with vision-language embeddings of future observations, enabling the policy to anticipate long-term consequences while generating actions. We extend this paradigm in two ways. First, we introduce an object-centric decoupled alignment objective that predicts future object-level semantics alongside the global future embedding, improving both interpretability and multi-instruction generalization. Second, we balance the global and object-centric alignment terms against the action flow-matching loss through a principled weighting, yielding a controllable accuracy--interpretability trade-off. On RoboCasa and humanoid tabletop manipulation benchmarks, AWM-VLA outperforms prior VLA and world-model baselines by up to 21% in success rate, improves generalization to novel objects and instructions, and produces object-centric rationales that are preferred by human raters in 83 of cases. Our approach adds only a few learnable tokens to the policy and is compatible with any diffusion or flow-matching policy, making aligned world modeling an inexpensive, broadly applicable component of generalist manipulation.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link6">
+      <summary class="paper-row-summary">
+        <span class="queue-index">7</span>
+        <span class="paper-row-copy">
+          <strong>Depth-Guided Contrastive Learning for 2D Representations with 3D Spatial Awareness</strong>
+          <small>Liang Zeng, Maarten Vergauwen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 7 / arXiv:2609.28159</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.28159">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Very close to criterion 1: it proposes a method for injecting 3D spatial awareness into 2D representation learning.</p>
+        <p class="abstract">Standard contrastive learning frameworks are mainly designed from a semantic perspective, yet learning 2D visual representations that preserve 3D spatial structure is also important for scene understanding. In this work, we propose Depth-Guided Contrastive Learning (DGCL), a simple auxiliary objective that injects 3D spatial awareness into 2D contrastive representation learning. Our key idea is to use depth to convert local 3D proximity into contrastive similarity: pixels that are closer in 3D space are encouraged to have more similar representations than pixels that are farther apart. Instead of relying on absolute depth values, DGCL formulates supervision through relative 3D distance comparisons among randomly sampled pixels, making the objective invariant to depth scale, efficient to compute, and easy to integrate into existing contrastive frameworks. Experiments across different datasets and models show that DGCL consistently improves 2D representation learning and benefits semantic downstream tasks by stronger spatial and geometric understanding. The code is available on https://github.com/LeungTsang/DGCL.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link7">
+      <summary class="paper-row-summary">
+        <span class="queue-index">8</span>
+        <span class="paper-row-copy">
+          <strong>Gender Bias in Vision-Language In-Context Learning</strong>
+          <small>Tong Xiang, Noa Garcia, Yuta Nakashima</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2609.27682</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27682">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: it studies gender bias in vision-language in-context learning, with a specific empirical finding about how demonstrations steer bias and a synthetic-image mitigation trick.</p>
+        <p class="abstract">In-context learning (ICL) enables large vision-language models (LVLMs) to perform tasks by following patterns from in-context examples, yet its potential to amplify societal biases remains underexplored. We systematically investigate how ICL influences gender bias in LVLMs through VL-BICLE, an evaluation framework comprising six ICL settings, three tasks, and four datasets. Our experiments on six LVLMs reveal that gendered ICL demonstrations act as a directional force, shifting model bias toward the demonstrated gender through a cross-gender mechanism that disproportionately degrades performance on the opposite gender. This effect appears in image captioning and pronoun prediction but not in visual question answering, indicating that gendered ICL influences bias only when the task output involves gendered language. Similarity-based retrieval methods inherit the training pool&#x27;s gender imbalance and offer no debiasing advantage, while standard quality metrics remain blind to these bias shifts. To mitigate this bias, we replace real in-context images with synthetic ones from stable diffusion models while keeping captions unchanged. This simple intervention reduces gender bias without degrading caption quality.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>A generalizable structural brain MRI foundation model built through dual-priority federated pretraining</strong>
+          <small>Zhen Yu, Yang Liu, Xiahai Zhuang, Qingchao Chen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2609.27611</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27611">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it is a structural brain MRI foundation model with a federated pretraining recipe, clearly within the vision foundation model application space.</p>
+        <p class="abstract">Foundation models hold promise for generalizable analysis of structural brain magnetic resonance imaging (MRI) across development, aging and disease. However, existing models are typically built through centralized pretraining on pooled data, despite privacy and governance constraints. Such pooling optimization can overemphasize cohort size and overlook complementary information from smaller, specialized cohorts. Here we present BrainFedFM, a structural brain MRI foundation model federatively pretrained on 164,707 three-dimensional scans drawn from diverse real-world data distributions and organized across 42 federated sites. BrainFedFM uses dual-priority federated pretraining, coupling spatial-priority masking at each site with site-priority aggregation at the server to emphasize informative anatomical regions locally and prioritize site contributions globally. Across 20 downstream datasets spanning 17 classification, regression and segmentation tasks, BrainFedFM achieved the state-of-the-art performance (mean rank 1.68, 50\% gain) across seven models, including four centralized foundation models, while showing particularly consistent advantages in classification and regression and robustness across underrepresented populations. These findings demonstrate the generalizability of BrainFedFM and highlight federated pretraining as a practical strategy for developing neuroimaging foundation models from distributed data without pooling raw images.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>FFM-CP: Cross-Backbone Fusion of Vision-Language Foundation Models for Few-Shot Computational Pathology</strong>
+          <small>Anh-Tien Nguyen, Trung DQ. Dang, Nghiem Tuong Diep, Bui Ngoc Han Nguyen, Tan-Ha Mai, Miriam Cindy Maurer, Phuong Hoa Nguyen, Thi Thuy Uyen Nguyen, Youngjun Park, Daniel Sonntag, Duy Minh Ho Nguyen, Anne-Christin Hauschild</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 10 / arXiv:2609.27710</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27710">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it is a vision-language foundation-model application for few-shot computational pathology, using cross-backbone fusion of pretrained multimodal representations.</p>
+        <p class="abstract">Pathology vision-language foundation models vary in performance across diseases and tasks, with no single model consistently performing best. The high cost of expert pathology annotation can also limit the labeled data available for task-specific adaptation. Combining complementary pretrained representations is a potential approach to these limitations, yet learning an effective fusion from few labeled examples remains challenging. We introduce Few-shot Fusion Foundation Models of Computational Pathology (FFM-CP), which is a framework that combines multiple pathology vision-language models in the few-shot learning setting. The framework first aligns heterogeneous representations using a closed-form Orthogonal Procrustes transformation estimated from corresponding support images. This alignment preserves within-model feature geometry without training an additional alignment network. Within the aligned space, a unified graph enables information exchange across backbones by jointly refining support-image features and visual and textual class prototypes. These refined representations support complementary text-prototype and case-retrieval branches that capture semantic class knowledge and within-class visual variation, respectively. Each branch learns to combine predictions from all ordered backbone pairs, allowing queries encoded by one model to draw on evidence represented by another. We evaluate three backbone combinations on six histopathology datasets at 4, 8, and 16 shots per class. FFM-CP achieves higher mean macro-F1 than the strongest individually adapted member of each fused set in 50 of 54 comparisons. These findings suggest that combining complementary pretrained representations can improve histopathological classification when annotations are limited.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link10">
+      <summary class="paper-row-summary">
+        <span class="queue-index">11</span>
+        <span class="paper-row-copy">
+          <strong>Fusion-Aware Direct 3D Gaussian Generation with Structured Patch Latent Flows</strong>
+          <small>Yizhao Wang, Jingbo Wang, Guantao Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 11 / arXiv:2609.27779</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27779">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to criteria 1-4, but it is relevant to generative modeling in vision through direct 3D Gaussian generation.</p>
+        <p class="abstract">Class-guided 3D object generation is important for intelligent content creation, virtual environments, and digital asset design. Although 3D Gaussian Splatting (3DGS) offers an explicit and render-efficient representation, directly generating 3D Gaussian objects is difficult because Gaussian primitives are unordered, variable-sized, locally dense, and highly sensitive to rendering. Existing 3DGS generation methods usually depend on multi-view synthesis, reconstruction, or lifted 2D priors, fusing information mainly from observed views rather than modeling the intrinsic structural distribution of 3D Gaussian objects. This paper proposes a fusion-aware hierarchical Gaussian patch representation for direct class-guided 3DGS generation with rectified flow. Irregular Gaussian sets are decomposed into canonical local patches and encoded as structured tokens. The resulting hierarchical latent space fuses global class semantics, patch-level geometry and appearance, spatial correspondence, and rendering-sensitive cues. On this basis, we design a structure-aware rectified flow model with patch-position conditioning, global-local coupled velocity prediction, and density-aware velocity weighting, enabling direct latent generation of class-conditioned 3DGS objects within seconds. A render-feedback fusion strategy further aligns latent flow learning with decoded multi-view rendering quality. Experiments show that the proposed method generates 3D Gaussian objects with more coherent geometry, sharper local details, and better multi-view consistency than baseline latent generative models. Ablation studies confirm the contributions of hierarchical information fusion, global-local coupling, density-aware supervision, and render-feedback learning while preserving practical sampling efficiency overall.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>EmbodiedMemory-Bench: Benchmarking Embodied Memory for Long-Horizon Embodied Tasks</strong>
+          <small>Lizhou Liang, Xinyu Zhong, Miao Pan, Xiaohe Zhou, Xuanyu Liu, Qinfeng Li, Peng Li, Jintao Chen, Xuhong Zhang, Wenqi Zhang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2609.28236</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.28236">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 closely: this introduces a benchmark for embodied memory in long-horizon embodied tasks, plus a memory system and policy baseline.</p>
+        <p class="abstract">Long-horizon embodied interaction requires agents to retain and continually update information about the environment as they observe, act, and encounter change. Yet current agents struggle to maintain such memory reliably. Our analysis traces this limitation to four key deficiencies: weak fine-grained visual memory, unreliable dynamic world-state tracking, failing to record world state revealed by interaction outcomes, and limited generalization from prior experience. However, existing benchmarks do not directly assess these memory capabilities during long-horizon embodied interaction. To address this gap, we introduce EmbodiedMemory-Bench (EMem-Bench), comprising 2,554 interactive episodes across four task families. EMem-Bench requires agents to build and update memory from interaction history, then use it to complete a later task by acting in the environment. We further present Embodied-Memorizer (EMem), an external memory system that organizes embodied experience into spatial, event, and scene memories. We also train EMem-8B, an 8B policy that manages and uses these memories. We evaluate a diverse range of open-source and proprietary MLLMs and representative multimodal memory systems. Results show that current models remain weak and uneven across the four challenges. Under matched backbones, EMem achieves the best overall performance among the evaluated memory systems and improves both open-source and proprietary models, while EMem-8B further improves over its backbone. Project page: https://zju-omniai.github.io/EmbodiedMemoryBench/</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link12">
+      <summary class="paper-row-summary">
+        <span class="queue-index">13</span>
+        <span class="paper-row-copy">
+          <strong>AgroBench: A Reproducible Multimodal Benchmark for Weakly Supervised Crop Yield Learning from County Statistics and Pixel Observations</strong>
+          <small>Udaiveer Singh, Rajiv Ranjan, Shashank Tamaskar, Dharmendra Saraswat</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 13 / arXiv:2609.26809</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.26809">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it presents a reproducible multimodal benchmark for weakly supervised crop-yield learning from satellite and climatic data, a foundation-model-friendly geospatial application.</p>
+        <p class="abstract">Reliable agricultural yield statistics are typically reported at coarse administrative scales, whereas modern geospatial machine learning methods require spatially explicit, pixel level supervision. This mismatch has limited the development of large-scale benchmarks for crop yield learning using multimodal Earth observation data. A reproducible benchmark, AgroBench, is presented for transforming publicly available U.S. county level crop yield statistics into weakly supervised pixel-level crop time series. Each crop pixel time series is paired with a county-level yield value as a weak supervisory signal rather than a directly measured pixel-level yield label. Our geospatial data generation pipeline integrates USDA crop yield statistics with crop-specific land cover masks, Sentinel 2 multispectral imagery, Sentinel-1 synthetic aperture radar observations, climatic variables, and terrain information to produce temporally aligned multimodal sequences describing individual crop pixels throughout the growing season. The resulting benchmark contains over 13 million observations from 788,654 unique crop pixels spanning 5,107 county year combinations across eight growing seasons (2017 to 2024) for five major U.S. crops. To facilitate standardized evaluation, we establish a crop yield prediction benchmark using a Leave-One-Year-Out evaluation protocol and provide baseline results using representative machine learning models. By releasing the complete data generation pipeline, benchmark dataset, and evaluation protocol, AgroBench provides a reproducible foundation for future research in weakly supervised learning, multimodal remote sensing, spatiotemporal modeling, and geospatial foundation models for agriculture.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>PBLH Estimation from Satellite Radiances via a Dual-Encoder Transformer</strong>
+          <small>Lorenzo Innocenti, Luca Catalano, Edoardo Arnaudo, Claudio Rossi, Salvatore Larosa, Domenico Cimini, Paolo Garza</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2609.28286</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.28286">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it builds a dual-encoder Transformer for satellite-radiance PBLH estimation and includes a benchmark plus explainability analysis on multimodal Earth observation data.</p>
+        <p class="abstract">Estimating the Planetary Boundary Layer Height (PBLH) from satellite observations is a challenging regression problem due to the indirect relationship between top-of-atmosphere radiances and near-surface atmospheric structure. Progress has been limited both by the lack of architectures capable of handling the multimodal, spatially incomplete nature of satellite overpasses, and by the scarcity of suitable datasets. In this paper, we build upon the large-scale dataset pairing MetOp radiances with ERA5 PBLH labels that we introduced in our previous work, making three contributions. First, we establish a benchmark across eight approaches spanning pixel-wise regression, swath-wise sequence models, and convolutional and Transformer models operating on the full orbital passage. Second, we quantify what the resulting model actually relies on, using grouped Shapley decomposition over the input blocks. Third, we present the best-performing architecture found: a dual-encoder Transformer whose masked-input handling lets it operate in all weather conditions. The proposed model achieves MAE = 155.8 m on the held-out global test set, outperforming all baselines on every evaluation subset. On 30 out-of-distribution granules acquired on two days overlapping the TEAMx observational campaign, it achieves MAE = 165.3 m, outperforming a pixel-wise baseline trained on the same data (MAE = 197 m).</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link20">
+      <summary class="paper-row-summary">
+        <span class="queue-index">21</span>
+        <span class="paper-row-copy">
+          <strong>nnFoundation: 3D Foundation Models for Radiology</strong>
+          <small>Constantin Ulrich Harsy, Tassilo Wald, Karol Gotkowski, Yannick Kirchhoff, Marcel Knopp, Maximilian Rokuss, Elisa Stegmeier, Philipp Schader, Dasha Trofimova, Raphael Stock, Kim-Celine Kahl, Stephen Schaumann, Selen Erkan, David Zimmerer, Stefan Denner, Moritz Langenberg, Sebastian Ziegler, Katharina Eckstein, Maximilian Fischer, Jonathan Suprijadi, B\&#x27;alint Kov\&#x27;acs, Benjamin Hamm, Anand Deshpande, Dimitrios Bounias, Nico Disch, Shuhan Xiao, Jessica K\&quot;achele, Jan Sellner, Rajesh Baidya, Jeremias Traub, Lars Kr\&quot;amer, Maximilian Zenk, Tim R\&quot;adsch, Stefan Dvoretskii, Robin Peretzke, Jonathan Deissler, Alexandra Ertl, Partha Ghosh, Kris Dreher, Stefan Dinkelacker, Annika Reinke, Evangelia Christodoulou, Numan Saeed, Yoland Savriama, Santiago Estrada, David K\&quot;ugler, Laura Alexandra Daza Barragan, Cristina Isabel Gonzalez Osorio, Jan Peeken, Michael Baumgartner, Marvin Teichmann, Guillaume Chabin, Matthias Kirchler, Valentin Koch, for the ALFA study, Markus Hohenhaus, Dimitri Koslov, Nina Decker, Mohammad Yaqub, Arnd Heuser, Martin Reuter, Julia A. Schnabel, Tobias Heimann, Florin Ghesu, Paul Brachmann, Claus P. Heu{\ss}el, Alexander Radbruch, Gianluca Brugnara, Aditya Rastogi, Martha Foltyn-Dumitru, Heinz-Peter Schlemmer, Ignaz Reicht, Julius C. Holzschuh, Michael Bach, Bram Stieltjes, Kai Schlamp, Lena Maier-Hein, Marco Nolden, Ralf Floca, Paul F. J\&quot;ager, Philipp Vollmuth, Fabian Isensee, Klaus H. Maier-Hein</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 21 / arXiv:2609.26924</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.26924">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: it is a 3D foundation model paper, albeit for radiology rather than natural vision, with broad downstream applications.</p>
+        <p class="abstract">Radiological artificial intelligence has advanced rapidly, yet most systems remain narrowly task-specific, data-intensive, and fragile under domain shift. Foundation models promise more transferable and data-efficient solutions, but existing approaches are limited in scale, evaluated narrowly, and often assume that a single pretrained model can support diverse downstream tasks. Here we present nnFoundation, complementary convolutional and transformer-based 3D radiological foundation models. Developed within the Human Radiome Project (THRP), nnFoundation is trained on 2.1 million CT, MRI, and PET image volumes from 125 institutional and public datasets. We evaluate them across 108 tasks spanning segmentation, detection, classification, report generation, and image retrieval, including evaluations under domain shift, by external partners and in low-data and low-compute regimes. Across all task types, our convolution- and transformer-based nnFoundation models consistently outperform both prior 3D foundation models and training from scratch, establishing state-of-the-art performance for radiological imaging. However, performance follows a consistent task-dependent structure: the convolutional nnFoundation model dominates spatially localized tasks, whereas the transformer-based nnFoundation model excels in tasks requiring global semantic reasoning and in frozen-feature settings. Dynamically aligning the foundation model topology with the dataset characteristics post-hoc further improves transfer across heterogeneous 3D settings. These results show that transferable 3D radiological performance is governed not by a single universal model, but by the interplay of scalable pretraining, complementary architectures, and dataset-aware adaptation. We release nnFoundation models integrated into nnU-Net and nnDetection, enabling immediate application across established radiology workflows.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link21">
+      <summary class="paper-row-summary">
+        <span class="queue-index">22</span>
+        <span class="paper-row-copy">
+          <strong>Geometry-Conditioned Visual Place Recognition in Natural Environments</strong>
+          <small>Walter Nedov, Saimunur Rahman, Kavindie Katuwandeniya, David Hall, Kaushik Roy, Peyman Moghadam</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 22 / arXiv:2609.27370</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27370">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: it uses a Vision Foundation Model with geometric conditioning for visual place recognition, a clear vision-foundation-model application.</p>
+        <p class="abstract">Visual Place Recognition (VPR) in natural environments remains challenging due to repetitive vegetation, sparse distinctive landmarks, and substantial appearance and viewpoint variation across traversals. While visual observations of the same place can change considerably, their underlying spatial structure is often more persistent. We exploit this complementary geometric consistency through Depth-Aware Distillation (DAD), which conditions the token representations of a pretrained Vision Foundation Model (VFM) on geometry inferred by a Geometric Foundation Model (GFM), without any depth sensor. Rather than treating geometry as an additional input modality, DAD projects image-aligned depth into the VFM token space and selectively modulates visual representations through channel-wise geometric conditioning. A two-stage teacher-guided learning strategy first anchors the geometry-conditioned representation to the pretrained appearance space, before refining it for place discrimination. Evaluated on the WildCross benchmark, DAD improves average inter-sequence Recall@1 from 61.41% to 66.37% and Recall@5 from 65.86% to 72.49% over a matched appearance-only baseline, with the largest gains under reverse traversal and long-term appearance variation. These results show that GFM-derived geometry can provide a persistent structural prior for VPR when visual appearance becomes unreliable.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms</strong>
+          <small>Xinjie Shen, Wei Fan, Xudong Guo, Jianhong Tu, Yang Su, Chuqiao Kuang, Yinger Zhang, Dayiheng Liu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">15</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2609.27321</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27321">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>8</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Close to criterion 3: it creates new agentic RL environments from solved mechanisms, which is a simulator-like environment generation angle with new training substrate.</p>
+        <p class="abstract">Language-model agents increasingly face long-horizon tasks with evolving state, interdependent decisions, and delayed outcomes. Scaling their training requires diverse agentic environments, dependable outcome signals, and low extension cost. Existing generation pipelines commonly construct an environment before defining its outcome rule or annotating its trajectories, leaving dynamics and evaluation to be aligned post hoc. VHD-Play reverses this dependency by sampling and solving a mathematical model before a corpus-grounded setter renders its decision process as stateful tools. The executable dynamics and trajectory-scoring reference are inherited from the same solved model. The pipeline produces 3,300 diverse agentic environments at a cost of a few cents each. Training Qwen3.6-35B-A3B on three families raises its mean agentic score from 0.204 to 0.815 in a five-family diagnostic. Gains also appear on held-out instances from all three training families and eight unseen mechanism families, then extend beyond the generated substrate to external benchmarks for general function calling, travel planning, and 365-day e-commerce. On E-Commerce Bench, the trained checkpoint completes every run without bankruptcy and exceeds Qwen3.7-Max. We compare written-out problems with stateful versions that reveal or hide their parameters. The comparison shows that most of the learnable gap lies in stateful interaction rather than underlying problem solving. A frozen 35B setter realizes larger environments, and scale-matched training retains gains as mechanism size and horizon grow, indicating the potential for an evolving training substrate.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>A Hierarchy-Aware Video-Language Model Evaluation and Hyperbolic Baseline for Surgery</strong>
+          <small>Ana Manzano Rodr\&#x27;iguez, Pascal Mettes, Marlies P. Schijven, Cees G. M. Snoek</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2609.27139</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27139">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and 3: it introduces a hierarchy-aware video-language benchmark for surgical understanding and a hyperbolic video-language baseline that models procedure hierarchies.</p>
+        <p class="abstract">Surgical procedures follow a phase-to-step hierarchy, yet the video-language models used to recognize them are evaluated with flat per-level metrics that ignore cross-level coherence and error structure. In this paper we make two contributions to address this problem, (i) we introduce SurgHiBench, the first hierarchy-aware evaluation suite for surgical video understanding, with three tasks measuring recognition, consistency, and severity across granularity levels. We evaluate a general-purpose CLIP model, a Euclidean surgical model, and, as second contribution: (ii) HyperSurg, a new hyperbolic model that enforces phase-step containment via entailment cones, across four (existing) datasets spanning three procedure types. The suite reveals that two models with the same accuracy can produce predictions of very different error severity, ranging from sibling confusions within the correct phase to unrelated cross-phase predictions. Hyperbolic geometry shifts predictions toward the correct procedural neighborhood, and these gains scale with the tree-likeness of each dataset&#x27;s annotation hierarchy, providing a principled indicator when hierarchy-aware geometry helps.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>SGDet3D++: Geometry-Grounded Semantics for 4D Radar and Camera 3D Object Detection</strong>
+          <small>Xiaokai Bai, Zhenyu Fan, Lianqing Zheng, Songkai Wang, Si-Yuan Cao, Hui-liang Shen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">Time-Series LLM</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2609.27671</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27671">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1: it proposes a new method for geometry-grounded multimodal 3D object detection with explicit hypothesis-conditioned evidence grounding, a spatial understanding improvement for radar-camera perception.</p>
+        <p class="abstract">4D radar complements dense image semantics with long-range geometry and radial motion, but existing radar--camera detectors largely solve \emph{where} to align the modalities while leaving \emph{whether} a piece of evidence supports an evolving object hypothesis implicit. An image token may describe an occluder, a nearby radar return may belong to another object, and a pose-aligned memory slot may carry incompatible motion. We formulate \emph{hypothesis-conditioned evidence grounding}, which separates candidate access from evidence use: semantic, geometric, or temporal evidence is filtered or conditioned by the evolving 3D state before updating the corresponding query. \sgdetpp{} instantiates this principle through Anchor-Grounded Semantic Retrieval (AGR), which conditions deformable image retrieval on pooled anchor-consistent radar support; Geometry-Consistent Anchor Refinement (GCR), which attentively aggregates individual associated returns; and Doppler-Verified Correspondence (DVC), which replaces history only when current radial motion contradicts it. \sgdetpp{} improves the strongest compared method by 3.82 mAP and 6.82 ODS on OmniHD-Scenes and by 6.82 mAP and 9.22 NDS on ManTruckScenes, while also leading the listed methods in the TJ4DRadSet test comparison. Mechanism-targeted evaluations show that AGR improves strict AP in every projected-occlusion bin, the yaw-aligned box gate raises target-return purity from 29.95\% to 58.87\%, and DVC preserves 96.11\% of motion-consistent history while retaining 75.90\% contradiction recall. Code will be released.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>PASTABench: Proactive Assessment of Sequential Trajectories for Agent Safety</strong>
+          <small>Jiapeng Sun, Yujin Zhou, Han Zhu, Pengcheng Wen, Jiayi Zhou, Sirui Han, Yike Guo</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2609.28197</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.28197">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: it introduces a new benchmark for proactive safety monitoring of multi-turn agent trajectories, with a novel timing-oriented evaluation angle that goes beyond standard post-hoc safety checks.</p>
+        <p class="abstract">As Large Language Models (LLMs) evolve into autonomous agents that alter real-world states, ensuring operational safety across multi-step workflows has become a critical challenge. While recent work has moved beyond single-turn evaluation toward multi-turn paradigms, key limitations persist: step-level methods treat actions in isolation, missing how risks accumulate, while trajectory-level evaluations operate post-hoc, offering no opportunity for timely intervention. To address these limitations, we formalize Decoupled Proactive Safety Monitoring along three dimensions: whether to intervene, when to intervene, and what the risk is. We introduce PASTABench, a benchmark of 1,139 multi-turn trajectories spanning 5 risk categories and 13 subcategories. We further propose the Optimal Intervention Window (OIW), anchored by annotated Earliest-Signal and Trigger turns, to quantify intervention timeliness. Evaluation of 16 LLMs reveals that proactive intervention remains largely unsolved, with the best model achieving only 40.74% optimal-timing interventions. Fine-grained diagnosis further uncovers pervasive lexical overfitting: competitive safety scores of smaller models mask keyword hypersensitivity rather than genuine risk comprehension, as their proactive capability largely collapses once hazard vocabulary is neutralized.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link17">
+      <summary class="paper-row-summary">
+        <span class="queue-index">18</span>
+        <span class="paper-row-copy">
+          <strong>A Systematic Evaluation of Infrastructure-Based Radar System for Highway Traffic Monitoring</strong>
+          <small>Tianheng Zhu, Woei-chyi Chang, Alamss Riaz, Sogand Hasanzadeh, Yiheng Feng</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 18 / arXiv:2609.27143</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27143">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: it creates a new dual-modality dataset and systematic evaluation setup for infrastructure-based radar traffic monitoring, focusing on a deployment setting that is often under-evaluated.</p>
+        <p class="abstract">Infrastructure-based radar systems offer robust and long-range solutions for traffic monitoring, yet their detection and tracking performance under real-world conditions remains insufficiently evaluated. This study introduces DRaT (Drone and Radar Trajectories), a dual-modality dataset of naturalistic vehicle trajectories collected at a highway merging segment in Fort Worth, Texas, to systematically assess radar sensing performance against drone-derived ground truth. The performance is evaluated at three levels: individual vehicle detection, trajectory tracking, and macroscopic traffic parameter estimation. For individual vehicle detection, the radar achieves an overall precision of 78% and a recall of 57%, with degraded performance under congested traffic conditions and at longer distances. At the trajectory level, the radar demonstrates reasonably strong tracking performance (IDF1 = 0.699), maintaining reliable vehicle identities when tracks are successfully established. For macroscopic traffic flow metrics, the radar accurately estimates space-mean speed (MAPE &lt; 4%) but underestimates density and volume by approximately 23% due to missed detections. The paper also discusses practical deployment considerations and potential downstream applications of roadside radar sensing systems. To support reproducible research on infrastructure-based sensing systems, we have open-sourced the DRaT dataset on Zenodo: https://zenodo.org/records/20171110.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Time-Series LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link14">
+      <summary class="paper-row-summary">
+        <span class="queue-index">15</span>
+        <span class="paper-row-copy">
+          <strong>RoadOcc Learns When to Persist, Transport, or Refresh Memory for Roadside Occupancy Prediction</strong>
+          <small>Xiaokai Bai, Lei Yang, Songkai Wang, Lianqing Zheng, Si-Yuan Cao, Hui-liang Shen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Time-Series LLM</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 15 / arXiv:2609.27677</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27677">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 closely: it proposes a new method for spatial/temporal reasoning in roadside occupancy prediction with explicit memory routing and motion compensation.</p>
+        <p class="abstract">Fixed roadside cameras repeatedly observe a stable scene overlaid by sparse moving traffic. Temporal memory can recover weak observations, but reusing moving evidence at stale locations can corrupt occupancy predictions. Motion compensation addresses displacement, while reliance on the resulting history remains a separate learning problem. We introduce RoadOcc, which learns soft routing among fixed-coordinate history (\emph{Persist}), velocity-addressed history (\emph{Transport}), and current evidence (\emph{Refresh}). Motion state and class-consistent historical support supervise these source choices. Dynamic-aware cross-attention (DCA) updates candidate locations, multi-scale voxel velocity estimation (VVE) constructs transport addresses from multi-scale current--history correspondence, and velocity-guided dynamic sparse fusion (VDSF) combines routed evidence under fixed sparse-token budgets. On InfraOcc, RoadOcc reaches 65.29 mIoU and 32.37 dynamic mIoU, gains of 4.44 and 4.71 over STCOcc. Controlled address experiments show that VVE raises dynamic mIoU by 0.87 over fixed-coordinate reading. Across three seeds, supervised P/T/R adds 1.40 dynamic points over motion-corrected retrieval, while removing Refresh costs 0.32 points. Results from two transfer models, Occ3D-nuScenes, and longer intervals provide additional support. Code will be released.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Embodied Interaction</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link15">
+      <summary class="paper-row-summary">
+        <span class="queue-index">16</span>
+        <span class="paper-row-copy">
+          <strong>Track2Art: Motion-Centric Articulated Object Model Recovery from 2D Point Trackers</strong>
+          <small>Xiaotong Li, Yixiong Jing, Junsheng Ding, Weihang Li, Benjamin Busam, Guangming Wang, Brian Sheil</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 16 / arXiv:2609.27675</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27675">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 closely: embodied/robotic manipulation via motion-centric articulated object recovery, with a novel angle centered on 2D point tracking and kinematic structure.</p>
+        <p class="abstract">Understanding articulated objects is fundamental for robotic interaction, requiring accurate rigid-part discovery and the recovery of their kinematic relations. Existing approaches often treat articulation as a by-product of reconstructed geometry or recover it through per-instance optimization. We instead build on the hypothesis that articulation is directly observable from persistent motion: points on the same rigid part move coherently, while relative motion between parts reveals their kinematic constraints. We present Track2Art, a motion-centric framework for recovering structured articulated objects from RGB-D interaction videos. Track2Art lifts tracked image points into persistent 3D trajectories and combines pretrained tracking features, visual descriptors, and explicit trajectory geometry. These representations are grouped into a variable number of rigid-part hypotheses and subsequently used to recover directed kinematic relations, joint types, and joint geometry through rotation-equivariant learned--analytic reasoning. On the aligned 20-object PartNet-Mobility suite, Track2Art achieves 0.695 Point IoU and 0.410 end-to-end J@20, while requiring neither ground-truth part counts nor test-time optimization.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link16">
+      <summary class="paper-row-summary">
+        <span class="queue-index">17</span>
+        <span class="paper-row-copy">
+          <strong>MultiVENT-Raw: A Benchmark for Retrieval and Reasoning over Raw Videos</strong>
+          <small>Reno Kriz, David Etter, Alexander Martin, Cameron Carpenter, Debashish Chakraborty, Hannah Recknor, Reihaneh Iranmanesh, Matthew Maciejewski, Kenton Murray, Eugene Yang, Benjamin Van Durme, Aaron Steven White, Andrew Yates, William Walden</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 17 / arXiv:2609.28437</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.28437">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 closely: this is a new benchmark for retrieval and reasoning over raw videos, with challenging multimodal evaluation and generation tasks.</p>
+        <p class="abstract">Online information is increasingly consumed in video format. Much of this comes in the form of *raw video*: continuous footage taken on a cell phone, with a hand-held camera, or via CCTV, which is then directly uploaded to social media platforms and content sharing services. Whereas professional or even amateur-edited footage tends to feature scripted speech, chyrons, graphics, and metadata that help contextualize its subject matter, raw video typically contains none of these things, making it a much more challenging medium for information retrieval and machine understanding. To facilitate progress in this domain, we release MultiVENT-Raw, a multilingual collection of nearly 120,000 primarily raw videos (over 5,300 total hours), paired with 130 events and 222 event-centric queries, along with human-annotated video relevance judgments and human-extracted key facts for relevant videos. MultiVENT-Raw supports both a retrieval task---to identify videos in the collection relevant to a query event---and a generation task---to summarize event-related videos into a coherent report for a target user. We benchmark strong baselines on MultiVENT-Raw, showing both tasks to be challenging even for some of the latest multimodal models.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link18">
+      <summary class="paper-row-summary">
+        <span class="queue-index">19</span>
+        <span class="paper-row-copy">
+          <strong>Learning What to Activate: Combinatorial Capability Allocation for Long-Horizon Multimodal Agents</strong>
+          <small>Wenhao Yuan, Chenchen Lin, Jian Chen, Jinfeng Xu, Shuo Yang, Edith Cheuk-Han Ngai</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 19 / arXiv:2609.27869</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27869">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match to criteria 1-4; it is a multimodal agent allocation method, but not specifically embodied AI, a new benchmark, or a VLM foundation model.</p>
+        <p class="abstract">Long-horizon multimodal agents rely on specialized capabilities for perception, retrieval, reasoning, verification, and execution. Existing designs typically activate a fixed capability set or invoke a predefined workflow, incurring substantial computational overhead while failing to accommodate stage-dependent capability demands. In this paper, we study the \textit{combinatorial capability allocation} problem for long-horizon multimodal agent systems, where the system selects a cost-sensitive subset of specialized capabilities at each interaction stage, which is nontrivial since capability values depend on the selected subset, while previous allocations alter the states encountered by subsequent decisions. We introduce \textsc{CoCA}, an on-policy learning framework that recovers a deployable capability-subset policy from sparse conditional comparisons. On states visited by the student policy, the stronger teacher compares the marginal net values of candidate capabilities, conditioned on the currently selected subset. Then, we adopt a conditional utility model to transform such comparisons into an autoregressive capability-subset policy, avoiding explicit enumeration. We further introduce dual-level on-policy distillation to address distribution mismatch both across environment states and within the partial subsets encountered during set construction. Finally, trajectory-level reinforcement learning refines the distilled policy toward task success, activation cost, and allocation stability. At inference time, allocation is performed solely by the lightweight student policy without teacher queries or online updates. Experiments on long-horizon multimodal environments and controlled capability-demand shifts demonstrate the superiority of our method over the state-of-the-art baseline methods.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link19">
+      <summary class="paper-row-summary">
+        <span class="queue-index">20</span>
+        <span class="paper-row-copy">
+          <strong>Same evidence, different judgments: Evidence noncommutative in vision/speech-text conflicts</strong>
+          <small>Zhuoyun Li, Boxuan Wang, Xiaowei Huang, Yi Dong</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 20 / arXiv:2609.26986</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.26986">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Closest to criterion 2 in the sense of probing VLM/MLLM behavior, but it is mainly an evaluation/analysis paper rather than a new model.</p>
+        <p class="abstract">For multimodal large language models, when images or speech conflict with accompanying text, measured text reliance can entangle modality preference with evidence position. Earlier studies of text bias often used a fixed evidence order or moved task instructions with the evidence, leaving the contribution of order unclear. In this paper, we use a paired comparison that keeps the instructions and evidence content fixed and swaps only the positions of the two sources to quantify this potential influence. Across vision and speech models, placing an image or recording after conflicting text consistently shifts answers toward its content. We also revisit previous studies and analyze why their experimental settings can lead to misleading conclusions. These findings reveal cross-modal evidence noncommutativity: the same evidence can lead to different judgments when its order changes, and placing perceptual evidence later can increase the model&#x27;s reliance on its content.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">General ML</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link22">
+      <summary class="paper-row-summary">
+        <span class="queue-index">23</span>
+        <span class="paper-row-copy">
+          <strong>TopoGS: Topology-Aware Anchor Feature Aggregation for Large-Scale 3D Gaussian Splatting</strong>
+          <small>Wei Zhang, Shiqiang Gong, Shengkai Yu, Zeyu Wang, Clement Mallet, Zhitong Xiong, Qi Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">General ML</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 23 / arXiv:2609.27868</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2609.27868">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 moderately well: it is a 3D rendering / 3D scene representation paper leveraging topology-aware feature aggregation, relevant to vision foundation-style 3D applications.</p>
+        <p class="abstract">Octree-based 3D Gaussian Splatting organizes anchors into multi-level hierarchies for level-of-detail rendering, but features at different levels are typically optimized independently, leaving the octree topology underused during feature learning. We observe that uniform cross-level aggregation produces asymmetric effects: fine-level anchors benefit from coarse context, whereas coarse-level anchors require selective information from their descendants. We therefore propose TopoGS, a topology-aware anchor feature aggregation framework with two lightweight components. Hierarchical Anchor Coupling establishes bidirectional cross-level gradient pathways by fusing per-level context triplets with a residual MLP. Structure-Aware Containment Aggregation uses octree containment and hash-based matching to distinguish anchors with valid parent-child relations from isolated anchors, then applies soft weighting to accommodate varying topological sparsity. Experiments on ten scenes from Mill19, UrbanScene3D, Tanks &amp; Temples, MatrixCity, and WHU show consistent improvements over state-of-the-art methods. TopoGS achieves average PSNR gains of 2.13, 1.78, and 0.29 dB over the strongest reported baseline on aerial, ground-level, and synthetic-cartographic scenes, respectively, while rendering faster and using less memory. Code is available at https://github.com/WZ-CS/TopoGS.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>23</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>16</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>11.0</strong>
+    </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
