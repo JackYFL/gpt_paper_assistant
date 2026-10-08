@@ -661,7 +661,7 @@ details:not([open]) > .topic-heading::before {
 <main class="daily-arxiv">
   <section class="hero">
     <div>
-      <p class="eyebrow">Daily ArXiv / October 07, 2026</p>
+      <p class="eyebrow">Daily ArXiv / October 08, 2026</p>
       <h1>Personalized paper radar</h1>
       <p class="hero-copy">
         A focused reading queue selected from today's ArXiv feed, ranked by topic fit,
@@ -672,19 +672,19 @@ details:not([open]) > .topic-heading::before {
 
     <div class="metric">
       <span>Relevant papers</span>
-      <strong>15</strong>
+      <strong>14</strong>
     </div>
 
 
     <div class="metric">
       <span>Top score</span>
-      <strong>15</strong>
+      <strong>13</strong>
     </div>
 
 
     <div class="metric">
       <span>Average score</span>
-      <strong>11.3</strong>
+      <strong>10.6</strong>
     </div>
 
 
@@ -701,11 +701,11 @@ details:not([open]) > .topic-heading::before {
   <div class="cloud-grid">
     <article class="cloud-card">
       <h3>Today</h3>
-      <div class="word-cloud"><span class="cloud-word" style="font-size:1.98rem;opacity:0.8;color:color-mix(in srgb, var(--accent-2) 60%, var(--accent))" title="13 mentions">agent</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">attention</span><span class="cloud-word" style="font-size:1.29rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="7 mentions">chart</span><span class="cloud-word" style="font-size:1.54rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="9 mentions">chunk</span><span class="cloud-word" style="font-size:1.29rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="7 mentions">color</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">comm</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">communication</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">complementary</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">consistency</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">construction</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">content</span><span class="cloud-word" style="font-size:1.54rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="9 mentions">control</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">cost</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">diffusion</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">distribution</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">domain</span><span class="cloud-word" style="font-size:2.18rem;opacity:0.85;color:color-mix(in srgb, var(--accent-2) 70%, var(--accent))" title="15 mentions">dynamic</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">evidence</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">fixed</span><span class="cloud-word" style="font-size:1.88rem;opacity:0.77;color:color-mix(in srgb, var(--accent-2) 54%, var(--accent))" title="12 mentions">generation</span><span class="cloud-word" style="font-size:1.66rem;opacity:0.72;color:color-mix(in srgb, var(--accent-2) 43%, var(--accent))" title="10 mentions">interaction</span><span class="cloud-word" style="font-size:1.54rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="9 mentions">latent</span><span class="cloud-word" style="font-size:1.54rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="9 mentions">motion</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">multimodal</span><span class="cloud-word" style="font-size:2.36rem;opacity:0.89;color:color-mix(in srgb, var(--accent-2) 79%, var(--accent))" title="17 mentions">physical</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">prompt</span><span class="cloud-word" style="font-size:1.66rem;opacity:0.72;color:color-mix(in srgb, var(--accent-2) 43%, var(--accent))" title="10 mentions">reasoning</span><span class="cloud-word" style="font-size:2.45rem;opacity:0.92;color:color-mix(in srgb, var(--accent-2) 83%, var(--accent))" title="18 mentions">reference</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">reliable</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">sensor</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">shift</span><span class="cloud-word" style="font-size:1.42rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 31%, var(--accent))" title="8 mentions">simulation</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">solver</span><span class="cloud-word" style="font-size:1.29rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="7 mentions">sparse</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">spatial</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">step</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">target</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">targeted</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">textbf</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">token</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="5 mentions">understanding</span><span class="cloud-word" style="font-size:1.29rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="7 mentions">verification</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="22 mentions">video</span><span class="cloud-word" style="font-size:1.15rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="6 mentions">visual</span><span class="cloud-word" style="font-size:1.77rem;opacity:0.74;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="11 mentions">world</span></div>
+      <div class="word-cloud"><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">alignment</span><span class="cloud-word" style="font-size:1.50rem;opacity:0.68;color:color-mix(in srgb, var(--accent-2) 35%, var(--accent))" title="8 mentions">anatomical</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="7 mentions">controlled</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">counterfactual</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">delta</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">diagnosis</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">evidence</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">fail</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">failure</span><span class="cloud-word" style="font-size:1.91rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 56%, var(--accent))" title="11 mentions">generation</span><span class="cloud-word" style="font-size:1.65rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="9 mentions">geometric</span><span class="cloud-word" style="font-size:1.65rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="9 mentions">grounding</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="7 mentions">instruction</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">interpretation</span><span class="cloud-word" style="font-size:1.19rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="6 mentions">intervention</span><span class="cloud-word" style="font-size:1.19rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="6 mentions">label</span><span class="cloud-word" style="font-size:1.65rem;opacity:0.71;color:color-mix(in srgb, var(--accent-2) 42%, var(--accent))" title="9 mentions">language</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">lesion</span><span class="cloud-word" style="font-size:1.78rem;opacity:0.75;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="10 mentions">medical</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">multiple</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">normal</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">object</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="7 mentions">pairing</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">panoramic</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">pathological</span><span class="cloud-word" style="font-size:1.78rem;opacity:0.75;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="10 mentions">phenotype</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">phenotypic</span><span class="cloud-word" style="font-size:2.15rem;opacity:0.84;color:color-mix(in srgb, var(--accent-2) 68%, var(--accent))" title="13 mentions">reasoning</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">region</span><span class="cloud-word" style="font-size:1.19rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="6 mentions">relational</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">relationship</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">same</span><span class="cloud-word" style="font-size:1.50rem;opacity:0.68;color:color-mix(in srgb, var(--accent-2) 35%, var(--accent))" title="8 mentions">scene</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">space</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">student</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">supervision</span><span class="cloud-word" style="font-size:2.26rem;opacity:0.87;color:color-mix(in srgb, var(--accent-2) 74%, var(--accent))" title="14 mentions">support</span><span class="cloud-word" style="font-size:1.50rem;opacity:0.68;color:color-mix(in srgb, var(--accent-2) 35%, var(--accent))" title="8 mentions">target</span><span class="cloud-word" style="font-size:1.19rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="6 mentions">teacher</span><span class="cloud-word" style="font-size:1.19rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="6 mentions">textbf</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="5 mentions">textit</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">trajectory</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="4 mentions">understanding</span><span class="cloud-word" style="font-size:1.35rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 27%, var(--accent))" title="7 mentions">video</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="19 mentions">visual</span></div>
     </article>
     <article class="cloud-card">
       <h3>Past month</h3>
-      <div class="word-cloud"><span class="cloud-word" style="font-size:1.80rem;opacity:0.75;color:color-mix(in srgb, var(--accent-2) 50%, var(--accent))" title="129 mentions">action</span><span class="cloud-word" style="font-size:1.93rem;opacity:0.79;color:color-mix(in srgb, var(--accent-2) 57%, var(--accent))" title="143 mentions">agent</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="54 mentions">annotation</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="50 mentions">camera</span><span class="cloud-word" style="font-size:0.84rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="51 mentions">challenging</span><span class="cloud-word" style="font-size:0.84rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="51 mentions">change</span><span class="cloud-word" style="font-size:0.93rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="57 mentions">consistency</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="50 mentions">content</span><span class="cloud-word" style="font-size:1.09rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 14%, var(--accent))" title="68 mentions">control</span><span class="cloud-word" style="font-size:0.84rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="51 mentions">cost</span><span class="cloud-word" style="font-size:0.94rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="58 mentions">dense</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="56 mentions">detection</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="52 mentions">domain</span><span class="cloud-word" style="font-size:1.48rem;opacity:0.67;color:color-mix(in srgb, var(--accent-2) 34%, var(--accent))" title="99 mentions">dynamic</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="61 mentions">environment</span><span class="cloud-word" style="font-size:1.98rem;opacity:0.8;color:color-mix(in srgb, var(--accent-2) 60%, var(--accent))" title="148 mentions">evidence</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="59 mentions">foundation</span><span class="cloud-word" style="font-size:2.31rem;opacity:0.88;color:color-mix(in srgb, var(--accent-2) 76%, var(--accent))" title="185 mentions">generation</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="53 mentions">geometric</span><span class="cloud-word" style="font-size:1.14rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 17%, var(--accent))" title="72 mentions">geometry</span><span class="cloud-word" style="font-size:1.10rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 14%, var(--accent))" title="69 mentions">inference</span><span class="cloud-word" style="font-size:1.59rem;opacity:0.7;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="109 mentions">interaction</span><span class="cloud-word" style="font-size:1.26rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 23%, var(--accent))" title="81 mentions">language</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="54 mentions">latent</span><span class="cloud-word" style="font-size:1.30rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="84 mentions">memory</span><span class="cloud-word" style="font-size:1.44rem;opacity:0.66;color:color-mix(in srgb, var(--accent-2) 32%, var(--accent))" title="96 mentions">motion</span><span class="cloud-word" style="font-size:1.78rem;opacity:0.75;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="127 mentions">multimodal</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="61 mentions">multiple</span><span class="cloud-word" style="font-size:1.70rem;opacity:0.72;color:color-mix(in srgb, var(--accent-2) 45%, var(--accent))" title="119 mentions">object</span><span class="cloud-word" style="font-size:1.41rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="93 mentions">observation</span><span class="cloud-word" style="font-size:0.99rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="61 mentions">perception</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="59 mentions">physical</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="54 mentions">pipeline</span><span class="cloud-word" style="font-size:1.26rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 23%, var(--accent))" title="81 mentions">point</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="64 mentions">policy</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="52 mentions">produce</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="52 mentions">query</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="62 mentions">question</span><span class="cloud-word" style="font-size:1.90rem;opacity:0.78;color:color-mix(in srgb, var(--accent-2) 55%, var(--accent))" title="139 mentions">reasoning</span><span class="cloud-word" style="font-size:0.90rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="55 mentions">reconstruction</span><span class="cloud-word" style="font-size:0.93rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="57 mentions">reference</span><span class="cloud-word" style="font-size:0.84rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="51 mentions">region</span><span class="cloud-word" style="font-size:0.93rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="57 mentions">same</span><span class="cloud-word" style="font-size:1.77rem;opacity:0.74;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="126 mentions">scene</span><span class="cloud-word" style="font-size:1.87rem;opacity:0.77;color:color-mix(in srgb, var(--accent-2) 54%, var(--accent))" title="136 mentions">semantic</span><span class="cloud-word" style="font-size:0.87rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="53 mentions">source</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="64 mentions">space</span><span class="cloud-word" style="font-size:1.56rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 38%, var(--accent))" title="106 mentions">spatial</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="67 mentions">supervision</span><span class="cloud-word" style="font-size:1.29rem;opacity:0.62;color:color-mix(in srgb, var(--accent-2) 24%, var(--accent))" title="83 mentions">support</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="62 mentions">target</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="67 mentions">temporal</span><span class="cloud-word" style="font-size:1.22rem;opacity:0.6;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="78 mentions">token</span><span class="cloud-word" style="font-size:1.48rem;opacity:0.67;color:color-mix(in srgb, var(--accent-2) 34%, var(--accent))" title="99 mentions">trajectory</span><span class="cloud-word" style="font-size:1.17rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 18%, var(--accent))" title="74 mentions">understanding</span><span class="cloud-word" style="font-size:0.97rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="60 mentions">unified</span><span class="cloud-word" style="font-size:2.52rem;opacity:0.94;color:color-mix(in srgb, var(--accent-2) 87%, var(--accent))" title="211 mentions">video</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="50 mentions">vision-language</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="244 mentions">visual</span><span class="cloud-word" style="font-size:1.59rem;opacity:0.7;color:color-mix(in srgb, var(--accent-2) 39%, var(--accent))" title="109 mentions">world</span></div>
+      <div class="word-cloud"><span class="cloud-word" style="font-size:1.74rem;opacity:0.74;color:color-mix(in srgb, var(--accent-2) 47%, var(--accent))" title="131 mentions">action</span><span class="cloud-word" style="font-size:1.87rem;opacity:0.77;color:color-mix(in srgb, var(--accent-2) 54%, var(--accent))" title="145 mentions">agent</span><span class="cloud-word" style="font-size:0.82rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 0%, var(--accent))" title="51 mentions">alignment</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="54 mentions">annotation</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="52 mentions">camera</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="54 mentions">change</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="60 mentions">consistency</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="68 mentions">control</span><span class="cloud-word" style="font-size:0.94rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 6%, var(--accent))" title="59 mentions">dense</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">detection</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="53 mentions">domain</span><span class="cloud-word" style="font-size:1.42rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 31%, var(--accent))" title="99 mentions">dynamic</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="62 mentions">environment</span><span class="cloud-word" style="font-size:1.94rem;opacity:0.79;color:color-mix(in srgb, var(--accent-2) 58%, var(--accent))" title="153 mentions">evidence</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="60 mentions">foundation</span><span class="cloud-word" style="font-size:2.29rem;opacity:0.88;color:color-mix(in srgb, var(--accent-2) 76%, var(--accent))" title="196 mentions">generation</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="62 mentions">geometric</span><span class="cloud-word" style="font-size:1.13rem;opacity:0.58;color:color-mix(in srgb, var(--accent-2) 16%, var(--accent))" title="74 mentions">geometry</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="56 mentions">grounding</span><span class="cloud-word" style="font-size:1.07rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="69 mentions">inference</span><span class="cloud-word" style="font-size:1.54rem;opacity:0.68;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="110 mentions">interaction</span><span class="cloud-word" style="font-size:1.32rem;opacity:0.63;color:color-mix(in srgb, var(--accent-2) 26%, var(--accent))" title="90 mentions">language</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="56 mentions">latent</span><span class="cloud-word" style="font-size:1.27rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 23%, var(--accent))" title="85 mentions">memory</span><span class="cloud-word" style="font-size:1.40rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="97 mentions">motion</span><span class="cloud-word" style="font-size:1.74rem;opacity:0.73;color:color-mix(in srgb, var(--accent-2) 47%, var(--accent))" title="130 mentions">multimodal</span><span class="cloud-word" style="font-size:1.03rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 11%, var(--accent))" title="66 mentions">multiple</span><span class="cloud-word" style="font-size:1.68rem;opacity:0.72;color:color-mix(in srgb, var(--accent-2) 44%, var(--accent))" title="124 mentions">object</span><span class="cloud-word" style="font-size:1.36rem;opacity:0.64;color:color-mix(in srgb, var(--accent-2) 28%, var(--accent))" title="93 mentions">observation</span><span class="cloud-word" style="font-size:0.98rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 8%, var(--accent))" title="62 mentions">perception</span><span class="cloud-word" style="font-size:0.95rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="60 mentions">physical</span><span class="cloud-word" style="font-size:0.89rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="56 mentions">pipeline</span><span class="cloud-word" style="font-size:1.23rem;opacity:0.61;color:color-mix(in srgb, var(--accent-2) 21%, var(--accent))" title="82 mentions">point</span><span class="cloud-word" style="font-size:1.00rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 9%, var(--accent))" title="64 mentions">policy</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="53 mentions">produce</span><span class="cloud-word" style="font-size:0.86rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="54 mentions">query</span><span class="cloud-word" style="font-size:1.02rem;opacity:0.55;color:color-mix(in srgb, var(--accent-2) 10%, var(--accent))" title="65 mentions">question</span><span class="cloud-word" style="font-size:1.93rem;opacity:0.79;color:color-mix(in srgb, var(--accent-2) 57%, var(--accent))" title="152 mentions">reasoning</span><span class="cloud-word" style="font-size:0.92rem;opacity:0.53;color:color-mix(in srgb, var(--accent-2) 5%, var(--accent))" title="58 mentions">reconstruction</span><span class="cloud-word" style="font-size:0.91rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 4%, var(--accent))" title="57 mentions">reference</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="55 mentions">region</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="61 mentions">same</span><span class="cloud-word" style="font-size:1.77rem;opacity:0.74;color:color-mix(in srgb, var(--accent-2) 49%, var(--accent))" title="134 mentions">scene</span><span class="cloud-word" style="font-size:1.82rem;opacity:0.76;color:color-mix(in srgb, var(--accent-2) 51%, var(--accent))" title="139 mentions">semantic</span><span class="cloud-word" style="font-size:0.88rem;opacity:0.52;color:color-mix(in srgb, var(--accent-2) 3%, var(--accent))" title="55 mentions">source</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="68 mentions">space</span><span class="cloud-word" style="font-size:1.53rem;opacity:0.68;color:color-mix(in srgb, var(--accent-2) 36%, var(--accent))" title="109 mentions">spatial</span><span class="cloud-word" style="font-size:1.11rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 15%, var(--accent))" title="72 mentions">supervision</span><span class="cloud-word" style="font-size:1.40rem;opacity:0.65;color:color-mix(in srgb, var(--accent-2) 30%, var(--accent))" title="97 mentions">support</span><span class="cloud-word" style="font-size:1.08rem;opacity:0.57;color:color-mix(in srgb, var(--accent-2) 13%, var(--accent))" title="70 mentions">target</span><span class="cloud-word" style="font-size:1.06rem;opacity:0.56;color:color-mix(in srgb, var(--accent-2) 12%, var(--accent))" title="68 mentions">temporal</span><span class="cloud-word" style="font-size:1.18rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="78 mentions">token</span><span class="cloud-word" style="font-size:1.47rem;opacity:0.67;color:color-mix(in srgb, var(--accent-2) 33%, var(--accent))" title="103 mentions">trajectory</span><span class="cloud-word" style="font-size:1.18rem;opacity:0.59;color:color-mix(in srgb, var(--accent-2) 19%, var(--accent))" title="78 mentions">understanding</span><span class="cloud-word" style="font-size:0.96rem;opacity:0.54;color:color-mix(in srgb, var(--accent-2) 7%, var(--accent))" title="61 mentions">unified</span><span class="cloud-word" style="font-size:2.46rem;opacity:0.92;color:color-mix(in srgb, var(--accent-2) 84%, var(--accent))" title="218 mentions">video</span><span class="cloud-word" style="font-size:0.83rem;opacity:0.5;color:color-mix(in srgb, var(--accent-2) 1%, var(--accent))" title="52 mentions">view</span><span class="cloud-word" style="font-size:0.85rem;opacity:0.51;color:color-mix(in srgb, var(--accent-2) 2%, var(--accent))" title="53 mentions">vision-language</span><span class="cloud-word" style="font-size:2.77rem;opacity:1.0;color:color-mix(in srgb, var(--accent-2) 100%, var(--accent))" title="263 mentions">visual</span><span class="cloud-word" style="font-size:1.55rem;opacity:0.69;color:color-mix(in srgb, var(--accent-2) 37%, var(--accent))" title="111 mentions">world</span></div>
     </article>
   </div>
 
@@ -727,59 +727,14 @@ details:not([open]) > .topic-heading::before {
       <summary class="paper-row-summary">
         <span class="queue-index">1</span>
         <span class="paper-row-copy">
-          <strong>R2RI: A Multi-View Event and RGB Dataset for Robot-to-Robot Interaction</strong>
-          <small>Gabriele Magrini, Riccardo Catalini, Federico Becattini, Guido Borghi, Pietro Pala, Roberto Vezzani, Lorenzo Seidenari</small>
+          <strong>SPW-Nav: A Streaming Panoramic World Model for Language-Guided Navigation</strong>
+          <small>Yunheng Liu, Ziqi Cai, Siqi Yang, Yimu Wang, Minggui Teng, Jiaming Tan, Shuchen Weng, Erwin Wu, Kaipeng Zhang, Boxin Shi</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
       <span class="topic-tag">Embodied AI</span>
-<span class="topic-tag">Robotics Benchmark</span>
-<span class="topic-tag">Egocentric Vision</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.RO</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-high">15</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 1 / arXiv:2610.07117</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07117">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>8</strong></span>
-          <span>Novelty <strong>7</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Strong match to criterion 3: a new embodied-AI benchmark/dataset for robot-to-robot interaction with egocentric and exocentric views, including event and RGB modalities.</p>
-        <p class="abstract">Understanding and modeling interactions between autonomous agents is a fundamental challenge in robotics, with broad implications for collaborative systems, social robotics, and human-robot coexistence. Although the study of robot interactions has emerged as a compelling research direction, progress has been severely hampered by the absence of large-scale benchmarks. In this paper, we introduce Robot-to-Robot Interaction (R2RI), the first dataset specifically designed to address the Robot-Robot Interaction (RRI) task. R2RI consists of different humanoid robots and realistic interactions modeled on real human social behaviors. Complementary viewpoints are available, \textit{i.e.}, an egocentric perspective from each robot&#x27;s onboard sensors, and an exocentric perspective from external fixed cameras, thus enabling rich spatial and contextual understanding of the interaction dynamics. The dataset comprises more than $6.5$M frames and $\approx5000$ videos at $120$ fps, including Event and RGB domains. We investigate pros and cons of each domain, comparing state-of-the-art approaches for a number of key sensing and interaction based tasks. We publicly release the dataset and its annotations for all tasks and modalities at https://github.com/MagriniGabriele/R2RI.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Embodied World Models</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link2">
-      <summary class="paper-row-summary">
-        <span class="queue-index">3</span>
-        <span class="paper-row-copy">
-          <strong>Artemis: Geometry-Grounded Multi-Agent Driving World Models with Shared 3D State and Progressive Memory Update</strong>
-          <small>Sitian Shen, Jiuming Liu, Mengmeng Liu, Yian Wang, Michael Ying Yang, Francesco Nex, Hao Cheng, Daniele De Martini, Ayush Tewari, Per Ola Kristensson</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Embodied World Models</span>
-<span class="topic-tag">Driving Simulation</span>
-<span class="topic-tag">3D Geometry</span>
+<span class="topic-tag">World Models</span>
+<span class="topic-tag">Panoramic Video Generation</span>
+<span class="topic-tag">Language-Guided Navigation</span>
     </div>
 
 
@@ -792,8 +747,54 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 3 / arXiv:2610.07031</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07031">Open arXiv</a>
+          <span>Paper 1 / arXiv:2610.08941</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.08941">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and 3 very closely: it proposes a new method for language-guided panoramic navigation and an embodied world model with a new panorama/video dataset.</p>
+        <p class="abstract">Language-guided panoramic video generation benefits various downstream applications, such as interactive 3D scene exploration, virtual reality experiences, and embodied agent training. Existing panoramic generators follow predefined trajectories, and interactive world models act through low-level actions in perspective views. We propose SPW-Nav, a streaming panoramic world model that understands movement instructions and streams one minute of 2K 360-degree video in real time from a single panorama. SPW-Nav interprets each instruction in the previously generated panorama as camera motion. Spherical rotation decoupling applies rotation exactly on the sphere, pose-aligned conditioning keeps translation inputs bounded over long streams, and a multi-term memory with a few-step generator continues the scene as instructions change. We also build SPW-NavSet, panoramic videos with camera trajectories and verified instructions. Driven by language, SPW-Nav outperforms prior panoramic generators in camera-following accuracy and video quality, and supports on-the-fly instruction switching.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language-Action</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>Explicit Geometric Chain-of-Thought for Vision-Language-Action in Autonomous Driving</strong>
+          <small>Xingtai Gui, Yucheng Zhou, Dongqian Guo, Jiahao Gong, Feiyang Tan, Jianbing Shen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language-Action</span>
+<span class="topic-tag">Autonomous Driving</span>
+<span class="topic-tag">Geometric Reasoning</span>
+<span class="topic-tag">Grounding Dataset</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2610.10390</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10390">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -801,8 +802,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>7</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: a new embodied driving world-model method with explicit 3D state, multi-agent geometry grounding, and a new CARLA-based dataset.</p>
-        <p class="abstract">Recent video world models have witnessed the paradigm shift from single-agent to multi-agent involvements, which can reveal more complicated dynamics and cross-agent interaction in the real world. However, existing approaches commonly adopt implicit inter-agent communications via cross attention, which lack explicit geometry constraints and unified 3D state, thereby leading to poor multi-view consistency and struggling with recovering out-of-sight agents. In addition, most of them assume a static background, failing to represent uncontrolled background dynamics. To address these problems, we propose Artemis: a geometry-grounded multi-agent world model with explicit memory sharing. An explicit 3D world map is reconstructed from multi-agent observations to enforce a unified 3D state across agents, offering high cross-view consistency. Specifically, an action-guided geometric injection module is developed to simultaneously render decomposed foreground-background control maps, which are then injected into a diffusion transformer through a designed GeoAdapter block. Compared to previous methods assuming static-only background, our GeoAdapter can also distinguish uncontrolled non-agent dynamics, which are conditioned on their own multi-frame history positions to provide consistent motion cues. Keyframes selected from progressive video rollouts are used to progressively update the reconstructed 3D world maps. To effectively capture complex dynamic patterns, we curate a novel dataset sampled from the CARLA simulator called MA-CARLA. Extensive experiments demonstrate the superiority of our proposed method in terms of visual fidelity and cross-view consistency in the generated videos. In addition, our Artemis can support simultaneous multi-modal rollouts with both 2D video and 3D point map maintenance, scale to scenarios beyond two agents and multi-camera setting.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 and 3 very closely: it is an embodied VLA driving method with explicit geometric chain-of-thought and a new planning-grounding dataset.</p>
+        <p class="abstract">Vision-language-action~(VLA) models have emerged as a promising paradigm for autonomous driving. However, existing VLA models still suffer from a fundamental mismatch: driving actions require precise 3D geometric cues, while visual-language understanding and reasoning are largely conducted in a 2D semantic space. In this paper, we propose GeoCoTDrive, an explicit geometric chain-of-thought framework that grounds geometry in a planning-oriented manner. GeoCoTDrive follows a think with 2D first, drive with dedicated 3D priors paradigm. It first grounds 2D regions corresponding to decision-critical cues, and then retrieves localized 3D priors by sampling features from a geometric foundation model within the grounded regions. These localized geometric features are interleaved into the autoregressive context to support the trajectory generation. To supervise this process, we introduce planning-relevant grounding, a new region-level grounding task that focuses on local spatial cues directly affecting ego planning decisions, and construct the PlanningGrounding dataset to endow VLAs with planning-oriented grounding capability. Experiments across multiple end-to-end autonomous driving benchmarks show that GeoCoTDrive consistently improves safety-critical planning performance, demonstrating the effectiveness of the explicit geometric chain-of-thought process for VLA-based planning.</p>
       </div>
     </details>
 
@@ -811,26 +812,26 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Neural Simulation</summary>
+      <summary class="topic-heading">Medical VLMs</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link4">
+    <details class="paper-row" id="link2">
       <summary class="paper-row-summary">
-        <span class="queue-index">5</span>
+        <span class="queue-index">3</span>
         <span class="paper-row-copy">
-          <strong>PhysLDM: Latent Diffusion for High-Fidelity Deformable Simulation</strong>
-          <small>Yu Zhang, Xudong Xu, Xingang Pan</small>
+          <strong>$\Delta$Representation: Geometry Supervised Representation Learning of Phenotypes via Counterfactual Reasoning for Medical VLMs</strong>
+          <small>Hao Wang, Qiwei Zeng, Jinghao Lin, Shuchang Ye, Yuezhe Yang, Yige Peng, Haoyuan Che, Jinman Kim, Lei Bi</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Neural Simulation</span>
-<span class="topic-tag">Latent Diffusion</span>
-<span class="topic-tag">Deformable Physics</span>
+      <span class="topic-tag">Medical VLMs</span>
+<span class="topic-tag">Counterfactual Reasoning</span>
+<span class="topic-tag">Grounding</span>
+<span class="topic-tag">Representation Learning</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.GR</span>
     </div>
 
         </span>
@@ -838,39 +839,32 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 5 / arXiv:2610.07609</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07609">Open arXiv</a>
+          <span>Paper 3 / arXiv:2610.10286</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10286">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>4</strong></span>
-          <span>Novelty <strong>8</strong></span>
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>7</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Partial match to criterion 3 via physical simulation, and to criterion 4 only loosely through generative modeling; it is mainly a neural simulation / latent-diffusion paper rather than vision foundation models.</p>
-        <p class="abstract">Neural simulation of high-fidelity deformable bodies is a foundational challenge in computer graphics and physical AI. Long-horizon prediction for high-resolution 3D volumetric meshes is hard: autoregressive methods are susceptible to error accumulation, while direct multi-frame prediction at native resolution is computationally prohibitive. This motivates a compact spatiotemporal latent representation, which is largely unexplored for mesh-based volumetric physics. Meanwhile, it remains unclear whether deterministic regression or generative diffusion is the more appropriate predictive paradigm. To address these coupled challenges, we introduce PhysLDM, a unified latent-diffusion paradigm for one-shot volumetric deformable simulation. Its core is a holistic spatiotemporal VAE that avoids the &quot;staircase&quot; artifacts of standard temporal compression (as in common video VAEs), achieving ~2.48 mm reconstruction precision on meter-scale scenes at up to 78x token compression. Based on this reliable latent space, we systematically compare regression and diffusion methods. Our experiments uncover a key modeling insight: complex deformable dynamics are often chaotic, and in this regime deterministic regression tends to produce non-physical averages, whereas diffusion better models their distribution. Accordingly, we employ a latent diffusion model that effectively learns from the chaotic data to generate physically plausible trajectories. Trained purely kinematically on an Objaverse-scale dataset, a single PhysLDM generalizes zero-shot to unseen OOD datasets (GSO and Toys4K). Its differentiability further enables efficient solution of inverse problems and higher-order design optimization. To our knowledge, PhysLDM is the first high-fidelity spatiotemporal autoencoder and latent-diffusion paradigm for volumetric deformable dynamics, offering a scalable and robust approach to neural simulation.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and 1 well: a medical VLM method that uses counterfactual reasoning plus geometry-supervised representations for lesion grounding and phenotype structure.</p>
+        <p class="abstract">Medical vision-language models (VLMs) have shown increasing potential for radiological image interpretation. Medical VLMs encode radiological images into visual representations that capture both anatomical and phenotypic information for diagnosis. Existing approaches improve pathological phenotype representations through semantic-guided representation alignment. However, pathological phenotypes arise as lesion-specific visual changes superimposed on underlying normal anatomy. Such semantic alignment approaches fail to model the phenotype-specific increment relative to the corresponding normal anatomical representation. To address this gap, we propose \textbf{$\Delta$Representation}, a visual phenotype representation learning framework based on counterfactual reasoning for medical VLMs. It comprises \textbf{BaseAnatomy}, a geometry-supervised representation learning module, and \textbf{$\Delta$Phenotype}, a counterfactual incremental representation learning module. BaseAnatomy provides fine-grained geometric supervision through spatial relationships across and within anatomical structures. $\Delta$Phenotype computes the representation increment between lesion representations and their corresponding normal anatomical representations, and supervises increments associated with the same phenotype to cluster in the representation space. Experiments on \textit{ReXGroundingCT} and \textit{LIDC-IDRI} demonstrate that $\Delta$Representation effectively structures pathological phenotype representations and improves lesion grounding and phenotype characterization accuracy in medical VLMs. Code is available at https://anonymous.4open.science/r/deltarep-CF6D.</p>
       </div>
     </details>
 
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Spatial Understanding</summary>
-      <div class="queue">
 
     <details class="paper-row" id="link5">
       <summary class="paper-row-summary">
         <span class="queue-index">6</span>
         <span class="paper-row-copy">
-          <strong>Structure-aware Keypoint Localization for Videofluoroscopic Swallowing Study</strong>
-          <small>Kai Zhou, Chuanshen Chen, Runhao Zeng, Meng Dai, Yifan Yang, Jinwu Hu, Daiyuan Li, Mingkui Tan, Fei Liu</small>
+          <strong>Geometry-Supervised Visual Representation Learning for Multi-Phenotype Lesion Interpretation in Medical VLMs</strong>
+          <small>Hao Wang, Qiwei Zeng, Shuchang Ye, Jinghao Lin, Yuezhe Yang, Yige Peng, Jinman Kim, Lei Bi</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Spatial Understanding</span>
-<span class="topic-tag">Keypoint Localization</span>
-<span class="topic-tag">Semi-Supervised Learning</span>
+      <span class="topic-tag">Medical VLMs</span>
+<span class="topic-tag">Representation Learning</span>
+<span class="topic-tag">Grounding &amp; Evidence Aggregation</span>
     </div>
 
 
@@ -883,8 +877,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 6 / arXiv:2610.07726</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07726">Open arXiv</a>
+          <span>Paper 6 / arXiv:2610.10238</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10238">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -892,8 +886,101 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Close match to criterion 1: it proposes a structure-aware method for spatial keypoint localization, though in a medical X-ray setting rather than embodied agents.</p>
-        <p class="abstract">Videofluoroscopic Swallowing Study (VFSS) is one of the gold standard for diagnosing swallowing disorders, providing dynamic X-ray imaging of the swallowing process. Automated kinematic analysis in VFSS relies fundamentally on precise anatomical keypoint localization. However, existing studies focus on limited keypoints (e.g., cervical vertebrae or the hyoid) and overlook critical regions such as the soft palate, while annotating only active swallowing segments and ignoring abundant non-swallowing data, resulting in poor data efficiency. Moreover, leveraging this unlabeled data via standard semi-supervised learning is suboptimal, as generic methods are prone to spatial bias. In medical X-rays with fixed layouts, models tend to memorize absolute coordinates rather than understanding anatomical structures. To tackle these challenges, we introduce VFSSKep, a novel dataset that extends annotations to the soft palate and incorporates large-scale unlabeled data. We further propose S$^3$KL, a Structure-aware Semi-Supervised Keypoint Localization framework designed to overcome spatial bias. It integrates a Structure-Aware Learning strategy to extract high-resolution structural cues for structure-aware representation learning, and a Structural Representation Consistency Learning strategy with block shuffling to enforce invariant structural recognition. Experiments show our method achieves state-of-the-art semi-supervised performance, even with unlabeled and 25% labeled data surpassing fully supervised learning with 100% labeled data. Code and data will be made publicly available at: https://github.com/kaai520/S3KL.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: a medical VLM with geometry-supervised visual representation learning and anatomy-guided evidence aggregation.</p>
+        <p class="abstract">Medical vision-language models (VLMs) have shown increasing potential for clinical image interpretation. However, these models still struggle to interpret multi-phenotype lesions whose diagnosis requires the joint assessment of multiple pathological phenotypes. Existing vision-language alignment methods produce visual representations that fail to preserve anatomical hierarchies and relationships among phenotypic subclasses. This stems from their reliance on semantic supervision, which lacks geometric constraints to preserve these relationships in the visual embedding space. Moreover, the sparsity of lesion-related anatomical and phenotypic representations makes it difficult for medical VLMs to capture important diagnostic evidence. To address these limitations, we propose \textbf{PureVision}, a geometry-supervised visual representation learning framework for multi-phenotype lesion interpretation in medical VLMs. It combines a geometry-supervised representation learning module, \textbf{PureEyes}, and an anatomy-guided evidence aggregation module, \textbf{PureNeurons}. PureEyes provides geometric supervision through ideal spatial distributions that encode anatomical hierarchies and phenotypic subclass relationships. PureNeurons projects visual representations into the learned latent space, using their positions to selectively aggregate lesion-specific anatomical and phenotypic evidence. Experiments on \textit{LIDC-IDRI}, \textit{CBIS-DDSM}, and \textit{3DReasonKnee} demonstrate that PureVision improves lesion grounding and phenotype characterization in visual question answering and radiology report generation. Code is available at: https://anonymous.4open.science/r/purevision-06C2.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Referring Expression Segmentation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation</strong>
+          <small>Yuchen Li, Shaoyang Zhou, Yiran Wang, Ruiyi Deng, Haoyu Wang, Ziru Wei, Zhen Zhao, Luping Zhou</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Referring Expression Segmentation</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Grounding</span>
+<span class="topic-tag">Spatial Reasoning</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2610.09478</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.09478">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 and is also a strong benchmark paper: a diagnostic benchmark for referring expression segmentation, with instance-level reasoning and identity-aware metrics.</p>
+        <p class="abstract">Referring Expression Segmentation (RES) links natural-language descriptions to pixel-level object masks. Yet standard evaluation provides limited insight into instance-level referential reasoning: it does not systematically distinguish referential logics, test target preservation across valid grounding paths, or separate target-selection from mask-generation errors. We introduce InstanceBench, an instance-centered diagnostic benchmark comprising 6,194 images, 9,264 target instances, and 25,077 human-verified expressions. Each target-centric expression set (TCES) fixes the image and target mask while pairing a minimal expression with a same-target variant that uses another valid cue or grounding path. A compact referential-logic taxonomy spans direct target evidence, same-class selection, relational and compositional grounding, and exclusion, while logic-critical construction suppresses simpler shortcuts. Identity-aware metrics measure target retention and set-level success while separating selection from mask-generation errors. Across 22 native-mask RES checkpoints from 18 model families, the strongest checkpoint reaches 67.1% mIoU but only 59.6% All@0.7. Controlled interventions confirm language sensitivity, while failure decomposition identifies target selection rather than mask decoding as the main bottleneck. On a controlled training subset, matched supervision improves identity-aware performance, showing that the diagnosed capability responds to targeted supervision. Collectively, InstanceBench supports a measure-diagnose-improve cycle: measuring target consistency across grounding paths, localizing failure sources, and evaluating targeted interventions.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Physical Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>Do Vision Models Learn Physical Constraints or Rendering Shortcuts? A Counterfactual Benchmark for Grounded Physical Consistency</strong>
+          <small>M. Moein Esfahani, Sepehr Salem, Mohammed Alser, Vince Calhoun</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Physical Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Vision-Language Models</span>
+<span class="topic-tag">Image Editing</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2610.09205</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.09205">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it is an embodied/physical-scene benchmark for diagnosing physical consistency in edited images, with simulator-generated controlled violations.</p>
+        <p class="abstract">Modern image editing models can satisfy a text instruction while breaking the physics of the edited scene. A new object may cast no shadow, a mirror may fail to reflect visible geometry, or an object may float above a surface that should support it. We study physical plausibility diagnosis, detecting whether an edited image violates scene physics, naming the violation type, localizing the affected region, and explaining the failure in language. We introduce a counterfactual benchmark whose controlled synthetic component uses Mitsuba~3 to generate 5,500 images from 500 scene families. Each family contains one clean image and ten matched violations involving shadows, reflection, support, surface response, and occlusion. The renderer pipeline provides category labels, affected-region masks and boxes, scene metadata, and explanation targets. We use LLaVA-1.5-7B, Qwen2.5-VL-7B, and InternVL3.5-8B as diagnostic baselines rather than proposed methods. On a 1,650-image synthetic test set, the adapted baselines reach 64.0--67.8\% category macro-F1 on standard held-out scenes. For LLaVA-1.5-7B, category macro-F1 falls from 64.0\% on the standard split to 40.8\% under intervention shift. This gap shows that high in-distribution accuracy partly reflects cues tied to rendering and counterfactual construction.</p>
       </div>
     </details>
 
@@ -905,23 +992,22 @@ details:not([open]) > .topic-heading::before {
       <summary class="topic-heading">Vision Foundation Models</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link7">
+    <details class="paper-row" id="link6">
       <summary class="paper-row-summary">
-        <span class="queue-index">8</span>
+        <span class="queue-index">7</span>
         <span class="paper-row-copy">
-          <strong>On Color Alignment in VAE Latent Spaces and Its Applications</strong>
-          <small>Julian D. Santamaria, Kai Wang, Jes\&#x27;us Malo, Javier Vazquez-Corral, Alexandra G\&#x27;omez-Villa</small>
+          <strong>When to Unpair: Regulating Pairing Dependence in Medical Visual In-Context Learning</strong>
+          <small>Cheng Wan, Chenjun Li, Qingyu Zhao</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
       <span class="topic-tag">Vision Foundation Models</span>
-<span class="topic-tag">VAE Latent Space</span>
-<span class="topic-tag">Image Editing &amp; Control</span>
+<span class="topic-tag">Medical Imaging</span>
+<span class="topic-tag">In-Context Learning</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.LG</span>
     </div>
 
         </span>
@@ -929,8 +1015,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 8 / arXiv:2610.07072</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07072">Open arXiv</a>
+          <span>Paper 7 / arXiv:2610.10335</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10335">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -938,8 +1024,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 very closely: analyzes a latent-space property of VAEs used in text-to-image foundation models and turns it into practical control applications.</p>
-        <p class="abstract">Variational autoencoders (VAEs) are a key part of modern text-to-image models, which generate images within their latent space. VAEs are known to disentangle the main factors of variation in the data, and color is known to be one of the most structured of these in natural images: decorrelating it yields one luminance axis and two opponent-color axes. Color should therefore be expected to emerge as a distinct factor in the VAE latent space. Yet how these latent spaces represent color remains largely unexplored. In this work, we show that the VAEs of text-to-image models share a color subspace aligned with brightness and opponent-colors. Through a linear approximation of the encoder and targeted latent steering, we find this subspace consistently across a broad range of VAEs, from SD1.5 to FLUX.2 and Z-Image. Building on this characterization, we propose three applications: ColorTuning, which achieves state-of-the-art in precise numerical color generation on the fine-grained CSS3/X11 system of GenColorBench, saturation control, to adjust the global chromatic intensity, and color transfer, to change the palette to match a reference. The code and models are publicly available at https://julian075.github.io/Color_Subspace/</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 very closely: this is a medical vision foundation model / visual in-context learning paper with a new training strategy that fixes a specific failure mode.</p>
+        <p class="abstract">Visual in-context learning (ICL), well suited to label-scarce medical imaging, uses support image-label pairs to demonstrate input-output mappings, while the labels collectively indicate the requested task. We diagnose dependence on individual pairings with a test-time derangement that reassigns every support label to another support image while preserving the query, support images, and label multiset. The resulting pairing gap, defined as shuffled-minus-matched performance, shows that all four released models depend on the pairing, to widely varying degrees. Further analysis of a paired-trained model reveals support-associated spurious regions and lesion-size biases even with real, unaltered supports, alongside sensitivity to mis-registered support labels. To regulate this dependence, we introduce a late unpairing curriculum (LUC), which starts with matched training and then applies random unpairing, replacing each support label with that of another support in the same episode. LUC nearly closes the pairing gap on two backbones while maintaining or improving matched-support performance across all evaluated task types, with gains extending to held-out tasks and cross-dataset episodes. It also mitigates these failure modes. On BraTS whole-tumor segmentation, matched-support DSC rises from 0.733 to 0.857 while the gap shrinks from -0.184 to -0.008. In a released model, brief fine-tuning with random unpairing reduces the gap. A reversed curriculum that places the same number of unpairing epochs at the start of training leaves a large gap. This shows that pairing dependence is shaped by the order of training and not only by the amount of unpaired training.</p>
       </div>
     </details>
 
@@ -948,43 +1034,45 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Video World Models</summary>
+      <summary class="topic-heading">MLLM Evaluation</summary>
       <div class="queue">
 
     <details class="paper-row" id="link8">
       <summary class="paper-row-summary">
         <span class="queue-index">9</span>
         <span class="paper-row-copy">
-          <strong>World Models&#x27; Last Exam in Physics</strong>
-          <small>Mingju Gao, Qingle Liu, Yuzhao Peng, Xinjie Lin, Ziming Qin, Zheng Jiang, Wenyi Li, Calvin Xiao, Youjie Zheng, Kaisen Yang, Qinhuai Na</small>
+          <strong>From Pixel to Coding: Evaluating the Figure Reproduction Capabilities of MLLMs</strong>
+          <small>Zijian Chen, Zhengyu Chen, Bohan Liang, Lirong Deng, Yushuo Zheng, Yanwei Jiang, Qi Jia, Kaiwei Zhang, Wenjun Zhang, Guangtao Zhai</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Video World Models</span>
-<span class="topic-tag">Physics Consistency</span>
+      <span class="topic-tag">MLLM Evaluation</span>
+<span class="topic-tag">Visual Code Generation</span>
+<span class="topic-tag">Figure Understanding</span>
 <span class="topic-tag">Benchmark &amp; Evaluation</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
+<span class="category-tag">cs.AI</span>
     </div>
 
         </span>
-        <span class="score-pill score-mid">11</span>
+        <span class="score-pill score-mid">10</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 9 / arXiv:2610.08791</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08791">Open arXiv</a>
+          <span>Paper 9 / arXiv:2610.10066</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10066">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>5</strong></span>
-          <span>Novelty <strong>6</strong></span>
+          <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: a new benchmark for evaluating physical consistency in video world models, focused on measurable physical properties rather than reference-video similarity.</p>
-        <p class="abstract">Video world models can produce visually convincing yet physically inconsistent sequences, raising concerns about their reliability for prediction and planning in embodied AI systems. Existing evaluations often rely on model-based judgments or reference videos, while direct physical tests largely focus on mechanics. We introduce World Models&#x27; Last Exam in Physics, a measurement-based benchmark for evaluating physical consistency in video world models. The benchmark comprises 40 controlled tasks spanning mechanics, optics, fluids, thermal and phase-change phenomena, electromagnetism, and surface tension. Each task pairs an initial image and a generation prompt with predefined physical criteria, enabling interpretable tests of observable physical relationships without requiring reference videos. Its evaluator combines task-observability screening with task-specific quantitative physical measurements. Experiments on eight video generation models across 1,280 videos reveal persistent physical inconsistencies and substantial variation across tasks, with the best model achieving an overall score of 57.76 out of 100. Evaluation on synthetic videos with known physical relationships provides evidence for the validity of the measurement module under controlled conditions. The evaluator also achieves higher agreement with human judgments than a direct vision-language model baseline in both within-task rankings and pairwise comparisons. By combining coverage across physical domains with scores grounded in measurable evidence and explicit measurement limitations, the benchmark provides an interpretable basis for diagnosing physical inconsistencies and tracking progress toward physically consistent video world models.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 and 4 moderately well: it evaluates MLLMs on figure reproduction, probing unified multimodal understanding and generation.</p>
+        <p class="abstract">Multimodal Large Language Models (MLLMs) have demonstrated impressive capabilities in both visual understanding and code generation. However, existing benchmarks typically evaluate these two modalities in isolation, lacking a dedicated assessment of their unification, i.e., how a model can perceive complex visual structures and synthesize them into precise, executable code. Moreover, current visual code generation benchmarks often rely on simplified layouts within single programming environments, falling short of evaluating true unified multimodal reasoning. To bridge this gap, we propose FigCodeBench, a comprehensive framework for rigorously evaluating MLLMs on figure reproduction, integrating multimodal comprehension and generation. We first design a systematic dataset construction pipeline, resulting in a total of 6,194 instances that cover 7 functional categories and 4 types of programming languages. We further categorize figure reproduction into three tiers with visual and code complexity modeling, specifically targeting complex structural reasoning, varying aspect ratios, and dense geometric constraints. We introduce a multi-dimensional evaluation protocol, encompassing visual fidelity and syntactic isomorphism, that aligns highly with the Mean Machine Opinion Score (MMOS) and human preferences. Based on our framework, we conducted extensive experiments on 24 widely used proprietary and open-source MLLMs (e.g., Gemini 3.1 Pro, GPT-5.4, and Kimi-K2.5), where we observed a universal, non-linear performance cliff across different programming languages and difficulty scenarios for all models, and gained several insights, such as the significant metric decline in rigid declarative languages.</p>
       </div>
     </details>
 
@@ -993,65 +1081,20 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Interactive Video World Models</summary>
+      <summary class="topic-heading">Medical AI</summary>
       <div class="queue">
 
     <details class="paper-row" id="link10">
       <summary class="paper-row-summary">
         <span class="queue-index">11</span>
         <span class="paper-row-copy">
-          <strong>CtrlCache: Accelerating Interactive Video World Models with Control-Aware Caching</strong>
-          <small>Shangye Song, Dong Gong, Hong Jia, Yun Sing Koh, Xinyu Zhang</small>
+          <strong>Beyond Explanation: Debugging Medical Imaging Models via Concept Intervention</strong>
+          <small>Samrajya Thapa, Daniel J. Quest, Timothy L. Kline, Carrie L. Langstraat, Emanuel C. Trabuco, Wei Le</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Interactive Video World Models</span>
-<span class="topic-tag">Efficiency &amp; Caching</span>
-<span class="topic-tag">Embodied Simulation</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-mid">11</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 11 / arXiv:2610.08777</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08777">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
-          <span>Novelty <strong>6</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: a new method for interactive video world models with control-aware caching, explicitly aimed at efficient embodied/simulator-like rollout generation.</p>
-        <p class="abstract">Interactive video world models need to generate each video chunk efficiently while responding faithfully to user controls. Many systems use chunk-wise autoregressive generation with few-step denoising, but each chunk still requires several costly denoising iterations. Training-free caching can reduce this cost, yet existing policies make reuse decisions primarily from model-internal denoising dynamics and do not explicitly account for control transitions. Actually, interactive generation explicitly exposes a signal they do not use: the controls for a chunk arrive before it is denoised, so a schedule derived from them costs no forward pass. To this end, we analyze adjacent chunks under different control regimes and find that structural similarity drops around action changes, while low-frequency structure remains more persistent than high-frequency detail. Motivated by these observations, we propose CtrlCache, a training-free control-aware caching framework that adapts computation to the current control sequence. Specifically, the action-aware scheduling and refresh policy detects action changes across and within chunks, and labels each chunk as initial, transition, turning, or steady state. At one selected interior denoising step, initial and transition chunks retain full computation, while turning and steady chunks reuse the transformer residual from the most recent fully computed step in the same chunk. To exploit the persistence of low-frequency structure during steady interaction, we further introduce a frequency-mixed history prior guidance that incorporates complementary information from the preceding clean latent without an additional DiT forward pass. Evaluated on Matrix-Game 2.0 and LingBot-World v1/v2, CtrlCache achieves 1.21x to 1.41x DiT-backbone speedups without model retraining while improving WBench Overall scores over original inference across all three models.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Image Generation</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link11">
-      <summary class="paper-row-summary">
-        <span class="queue-index">12</span>
-        <span class="paper-row-copy">
-          <strong>RefRoute: Decoupling Conditioning Cost from References via Compact Residual Conditioning and Spatial Routing</strong>
-          <small>Wanning He, Yuyao Zhang, Yu-Wing Tai</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Image Generation</span>
-<span class="topic-tag">Reference Conditioning</span>
-<span class="topic-tag">Benchmark &amp; Evaluation</span>
+      <span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Concept Bottleneck Models</span>
+<span class="topic-tag">Model Debugging</span>
     </div>
 
 
@@ -1065,8 +1108,8 @@ details:not([open]) > .topic-heading::before {
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 12 / arXiv:2610.07720</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07720">Open arXiv</a>
+          <span>Paper 11 / arXiv:2610.09031</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.09031">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
@@ -1074,8 +1117,8 @@ details:not([open]) > .topic-heading::before {
           <span>Novelty <strong>5</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it is a diffusion/vision-model application for scalable multi-reference image generation, with a new benchmark and routing-based method.</p>
-        <p class="abstract">Multi-reference image generation requires preserving the appearance of multiple subjects while composing them into a coherent scene. However, existing diffusion transformers commonly encode references as dense visual token grids and jointly process them with global attention, making conditioning increasingly expensive as the number and resolution of references grow. We present RefRoute, a framework that addresses both reference representation cost and attention overhead through two complementary mechanisms. Compact residual conditioning combines low-resolution latent tokens with lightweight residual features extracted from full-resolution pixels, reducing reference token counts while retaining fine-grained appearance cues. Condition routing and attention routing align reference tokens with their assigned target regions and restrict cross-reference interactions, while allowing selective reference access beyond region boundaries for scene integration. We further introduce RefRoute-Data for training many-reference generation models and ManyRef100, a benchmark spanning human, object, and mixed compositions with 10-17 references. After many-reference fine-tuning, RefRoute achieves an overall Weighted-Ref-VIEScore of 36.06 on ManyRef100, compared with 8.88 for FLUX.2-Klein-9B. Separate inference-cost evaluations show substantially slower latency growth as the reference count increases: at 16 references, our 50-step and 4-step configurations achieve $18.3\times$ and $14.2\times$ speedups over their corresponding FLUX baselines, respectively. These results establish compact reference representations and spatially routed attention as an effective approach to scalable many-reference image generation.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 closely: concept bottleneck intervention for medical imaging models, with a plug-and-play debugging/refinement framework around a vision foundation model encoder.</p>
+        <p class="abstract">Medical imaging models often operate as black boxes, limiting interpretability and systematic debugging. We introduce an easy-to-use, plug-and-play framework for concept-based interpretation and model refinement. By aligning a single-modality encoder to BioMedCLIP, we construct a Concept Bottleneck Model (CBM) that enables concept-level interventions. These interventions allow us to isolate causal versus spuriously correlated concepts, validate insights with domain experts, and generate counterfactual samples for targeted fine-tuning. We evaluate our framework on a Mayo Clinic ultrasound dataset and the CheXpert 5x200 chest X-ray dataset. Results demonstrate that concept intervention enables reliable model diagnosis while maintaining, and occasionally improving predictive performance via guided fine-tuning. Our findings highlight the practical value of this framework for controlled, interpretable refinement of clinical deep learning models.</p>
       </div>
     </details>
 
@@ -1087,132 +1130,85 @@ details:not([open]) > .topic-heading::before {
       <summary class="topic-heading">Video Generation</summary>
       <div class="queue">
 
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>SGF+: Decoupling Gradient Flows for Autoregressive Video Generation</strong>
+          <small>Zihan Su, Junhao Zhuang, Yaowei Li, Siwen Lu, Haoran Li, Lingen Li, Haoyu Wu, Weiyang Jin, Songchun Zhang, Haoyang Huang, Chun Yuan, Zeyue Xue, Nan Duan</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Video Generation</span>
+<span class="topic-tag">Autoregressive Modeling</span>
+<span class="topic-tag">Temporal Consistency</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.CV</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2610.10429</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.10429">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No direct match to the listed criteria; it is a video generation method, relevant to generative modeling but not specifically a listed vision foundation model or embodied AI target.</p>
+        <p class="abstract">Autoregressive video generation requires denoising the current frames while writing their key-value representations as context for future predictions. However, these two roles typically share parameters, and we find that their gradients exhibit distinct patterns and systematic negative alignment, hindering the joint optimization of visual quality and temporal consistency. We introduce Self Gradient Forcing Plus (SGF+), which assigns separate parameters to context writing and denoising while preserving their interaction through causal attention. Both roles are jointly optimized using the original generation objective without auxiliary losses, with context writing supervised through its contribution to future predictions. This simple change improves visual quality and long-horizon consistency over the evaluated baselines in both framewise and chunkwise generation, without additional video training data or a longer training horizon. Trained on only 5s rollouts, SGF+ supports continuous generation for up to 24 hours without long-video fine-tuning. These results highlight role-specific parameterization as an effective design principle for high-quality autoregressive video generation and native long-horizon extrapolation.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Medical Anomaly Detection</summary>
+      <div class="queue">
+
     <details class="paper-row" id="link12">
       <summary class="paper-row-summary">
         <span class="queue-index">13</span>
         <span class="paper-row-copy">
-          <strong>Diverse Motion Customization via Control-based Dynamic Optimization</strong>
-          <small>Youngyoon Choi, Kihyun Kim, Jeongwoo Shin, Joonseok Lee</small>
+          <strong>Quasi-Binarized Autoencoders: An Architecture-Independent Information Bottleneck for Medical Image Anomaly Detection</strong>
+          <small>Shouhei Hanaoka, Takahiro Nakao, Atsushi Takamatsu, Takeharu Yoshikawa, Osamu Abe</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Video Generation</span>
-<span class="topic-tag">Motion Customization</span>
-<span class="topic-tag">Generative Modeling</span>
+      <span class="topic-tag">Medical Anomaly Detection</span>
+<span class="topic-tag">Autoencoders</span>
+<span class="topic-tag">Information Bottleneck</span>
     </div>
 
 
     <div class="category-tags" aria-label="arXiv categories">
       <span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.AI</span>
     </div>
 
         </span>
-        <span class="score-pill score-mid">10</span>
+        <span class="score-pill score-low">9</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 13 / arXiv:2610.07911</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07911">Open arXiv</a>
+          <span>Paper 13 / arXiv:2610.09670</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.09670">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
           <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>7</strong></span>
+          <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Partial match to criterion 4 through video generative modeling, but it is not a vision foundation model paper and does not target embodied AI or spatial intelligence.</p>
-        <p class="abstract">Despite recent advances in video generation, motion customization remains challenging due to content leakage, where appearance attributes from the reference video unintentionally propagate into the generated output. We identify this issue as a consequence of the generative process collapsing toward the reference video, which arises from formulating the learning objective as a direct regression on the reference. To address this, we propose Control-based Motion Customization (CMC), a principled training framework that is structurally robust to content leakage. Our key idea is to steer generative dynamics toward desired motion while avoiding collapse toward the reference video, which we formalize using Stochastic Optimal Control (SOC). Under this formulation, customized videos acquire the target motion yet remain within the pre-trained model&#x27;s prompt-conditional distribution, where appearance is determined by the text prompt rather than the reference video. Furthermore, to improve efficiency, we tailor the SOC formulation to motion customization by eliminating the need for an explicit reward and introducing a timestep-adaptive motion cost that focuses only on early generative stages, accelerating training by 2.5 times. Extensive experiments demonstrate that CMC effectively mitigates content leakage and achieves competitive motion fidelity while preserving the diversity of the base model across diverse scenarios.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Cooperative Perception</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link13">
-      <summary class="paper-row-summary">
-        <span class="queue-index">14</span>
-        <span class="paper-row-copy">
-          <strong>Sparse2comm: Towards Robust Cooperative 3D Object Detection</strong>
-          <small>Lei Yang, Boqi Li, Chunmian Lin, Li Wang, Ziying Song, Shaoqing Xu, Heye Huang, Haibao Yu, Chen Lv</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Cooperative Perception</span>
-<span class="topic-tag">3D Object Detection</span>
-<span class="topic-tag">Robust Sensor Fusion</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-mid">10</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 14 / arXiv:2610.08573</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08573">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
-          <span>Novelty <strong>5</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: a new cooperative 3D perception method for autonomous driving, with robustness to communication degradation and spatial misalignment.</p>
-        <p class="abstract">Cooperative perception improves autonomous driving by sharing complementary observations among vehicles and roadside infrastructure for 3D object detection. However, practical deployment is constrained by limited bandwidth and unreliable cooperation, where packet loss, transmission delay, and spatial misalignment jointly degrade the cooperative feature stream. Existing methods often reduce communication cost or compensate for one degradation type, leaving coupled disturbances insufficiently addressed. To address this problem, we propose Sparse2comm, a bandwidth-efficient and robust cooperative 3D object detection framework that treats unreliable cooperation as progressive restoration over degraded cooperative features. Sparse Feature Encoding first encodes communication as randomly mask-sampled foreground features transmitted by collaborating agents, from which the ego vehicle reconstructs dense semantic representations. This sparse-to-dense mechanism learns to infer missing object-centric content from sparse observations, enabling ultra-low-bandwidth communication and packet-loss recovery within the same representation. On the semantically restored features, Latency-Aware Alignment predicts motion flow to compensate delayed messages, and Self-Calibrating Fusion estimates residual spatial offsets in a self-supervised manner before adaptive cross-agent fusion. Sparse2comm therefore restores semantic completeness, temporal consistency, and spatial alignment in an ordered pipeline. Extensive experiments on DAIR-V2X, OpenV2V, and V2V4Real show that Sparse2comm maintains competitive clean accuracy and consistently improves robustness under individual and mixed real-world degradations. Compared with the selective feature communication baseline Where2comm, Sparse2comm improves mixed-setting AP@0.5/AP@0.7 by +20.15/+11.79, +12.66/+11.07, and +15.36/+12.61 on the three datasets, respectively.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Test-Time Adaptation</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link14">
-      <summary class="paper-row-summary">
-        <span class="queue-index">15</span>
-        <span class="paper-row-copy">
-          <strong>Test-Time Adaptation of Quantized ViTs via Single-Pass Quantizer-Aligned Recalibration</strong>
-          <small>Hyeongheon Cha, Young D. Kwon, Sung-Ju Lee</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Test-Time Adaptation</span>
-<span class="topic-tag">Model Quantization</span>
-<span class="topic-tag">Vision Transformers</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.CV</span>
-<span class="category-tag">cs.AI</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-low">7</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 15 / arXiv:2610.08358</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08358">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>3</strong></span>
-          <span>Novelty <strong>4</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Partial fit to criterion 4 only in the sense that it targets quantized ViTs, but it is primarily a test-time adaptation method rather than a vision foundation model application paper.</p>
-        <p class="abstract">Post-training quantization is a standard route to fitting vision transformers (ViTs) into edge compute and memory budgets, yet quantized models become especially brittle under distribution shift. Test-time adaptation (TTA) addresses such shifts without labels, but most existing approaches are poorly aligned with the constraints of quantized inference. Prevailing TTA methods recover accuracy through backpropagation, while backprop-free methods often still incur overhead from extra forward passes or parameter updates, and lightweight feature- or logit-level methods recover only part of the loss. Across these approaches, a quantization-specific failure mode that amplifies the drop is not directly targeted: under shift, activations occupy frozen quantizers&#x27; calibrated ranges differently, distorting their code distribution. We propose Quantizer-Aligned Recalibration (QuAR), a single-pass TTA method tailored to quantized ViTs that neither backpropagates nor updates any model parameters. QuAR recalibrates activations at the input to a frozen quantizer, mapping the test stream&#x27;s running per-channel statistics back toward the source calibration. On ImageNet-C with ViT-B, QuAR achieves the highest mean accuracy among state-of-the-art backprop-free TTA methods at 3-, 4-, 6- and 8-bit weight/activation precision, outperforming the strongest baseline by 2.28 points at 8 bits and 4.00 at 3 bits, with 46% lower latency and a memory overhead of only 0.17 MB (0.01% of peak inference memory). Analysis and diagnostics trace the gain to a reduced per-channel mismatch at these quantizers, which restores the code distribution the baselines leave unchanged or distort further. A single fixed configuration remains ahead across continual streams, non-i.i.d. label shift, seven out-of-distribution suites, and three other backbones.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 partially: an architecture-independent bottleneck for medical anomaly detection, but it is not a vision foundation model paper in the usual sense.</p>
+        <p class="abstract">Unsupervised anomaly detection, which learns only from normal images, is a central task in medical image analysis and remains an open problem. Reconstruction-based methods pass an image through an encoder-decoder network trained on normal data and detect anomalies from the residual between the image and its reconstruction. This works only if the information passed from the encoder to the decoder is limited; otherwise the network learns an identity mapping and reconstructs anomalies too. This limit is usually imposed through architectural choices, tuned per dataset, that cannot be stated in bits. We introduce the quasi-binarizing (QB) layer, which squashes each latent element into [0, 1] and adds Laplace noise of scale 1/epsilon. Each element is then epsilon-locally differentially private, and the mutual information between an image and its reconstruction is bounded by a quantity that depends only on epsilon and the number of QB elements, whatever the encoder and decoder. Placing a QB layer on every encoder-decoder path, including all skip connections, we build QBAE, a seven-level attention U-Net with 32,768 QB elements. On the seven datasets of the MedIAnomaly benchmark, QBAE with one architecture and one configuration reaches a mean image-level AUROC of 0.828, the highest among methods that do not adapt to each dataset, and the best reported results on BraTS2021 (AUROC 0.911, pixel-level AP 0.838). The noise is kept at test time, so that every reconstruction satisfies the bound. Without input corruption, the bottleneck alone prevents identity collapse (mean AUROC 0.805 vs. 0.590). Code is available at https://github.com/hanaokalog/MedIAnomalyQB.</p>
       </div>
     </details>
 
@@ -1225,114 +1221,25 @@ details:not([open]) > .topic-heading::before {
     <details class="category-section" open>
       <summary class="category-heading">
         <h3>cs.AI</h3>
-        <span>4 papers</span>
+        <span>3 papers</span>
       </summary>
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">MLLMs</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link1">
-      <summary class="paper-row-summary">
-        <span class="queue-index">2</span>
-        <span class="paper-row-copy">
-          <strong>ChartBmkAgent: Harness-Governed Multi-Agent Construction of Chart QA Benchmarks from Sparse Error-Taxonomy Specifications</strong>
-          <small>Langxi Huang, Pingping Zhang, Lanyun Zhu, Chunyang Jiang, Jiawei Shao, Haocheng Yuan, Peilin Chen</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">MLLMs</span>
-<span class="topic-tag">Benchmark Construction</span>
-<span class="topic-tag">Chart QA</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-high">14</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 2 / arXiv:2610.08106</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08106">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>7</strong></span>
-          <span>Novelty <strong>7</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Strong match to criterion 2: it targets MLLMs and builds a new benchmark-construction pipeline for chart QA diagnostics.</p>
-        <p class="abstract">Multimodal large language models (MLLMs) advance rapidly, while conventional benchmark development lags behind, delaying investigation of newly observed capability gaps. Such investigation requires an expressive task format and an on-demand construction process: information-rich charts make chart question answering (Chart QA) suitable for probing coupled perception and reasoning. Automated Chart QA construction is intended to shorten the benchmark-development cycle by turning identified gaps into targeted samples on demand. Current methods, however, commonly separate target guidance from scratch generation: target-guided systems often require prepared data, charts, or templates, while scratch-generation systems primarily ensure artifact validity, without explicitly controlling whether newly synthesized requirements and content remain aligned with an externally specified diagnostic target. We introduce ChartBmkAgent, which turns an identified capability gap into targeted diagnostic evidence by constructing complete Chart QA samples from sparse error-taxonomy specifications. Throughout construction, a central harness governs specialized agents, requires stage-specific evidence of alignment with the original error category, and records the basis for each acceptance decision. On 300 taxonomy-wide samples, MLLM accuracies ranged from 32.7% to 84.3% with distinct category profiles, showing that generated samples reveal capability differences. Across three source-model comparisons, targeted follow-ups scored 50.0% versus 82.2% on matched controls ($p=8.96\times10^{-6}$); all six cross-model comparisons had the same direction, demonstrating targeted validation and diagnostic-data generation. Multiple evaluator models assessed whether each sample tested its specified error category; 86.4% met this criterion, providing empirical evidence of target preservation.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
-
-    <details class="topic-section" open>
-      <summary class="topic-heading">Embodied AI Benchmark</summary>
-      <div class="queue">
-
-    <details class="paper-row" id="link3">
-      <summary class="paper-row-summary">
-        <span class="queue-index">4</span>
-        <span class="paper-row-copy">
-          <strong>WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?</strong>
-          <small>Siru Jiang, Yongzhe Lyu, Shuo Lu, Yubin Wang, Yuxiang Zhang, Yue Liao, Bin Wang, Jian Liang, Tieniu Tan</small>
-
-    <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Embodied AI Benchmark</span>
-<span class="topic-tag">Physics Simulation</span>
-<span class="topic-tag">Agentic Code Generation</span>
-    </div>
-
-
-    <div class="category-tags" aria-label="arXiv categories">
-      <span class="category-tag">cs.AI</span>
-    </div>
-
-        </span>
-        <span class="score-pill score-mid">13</span>
-      </summary>
-      <div class="paper-row-detail">
-        <div class="paper-row-meta">
-          <span>Paper 4 / arXiv:2610.08720</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.08720">Open arXiv</a>
-        </div>
-
-        <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>6</strong></span>
-          <span>Novelty <strong>7</strong></span>
-        </div>
-
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: a new embodied/simulation-oriented benchmark for solver generation in physical dynamics, targeting a novel angle largely ignored by prior work.</p>
-        <p class="abstract">LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time. Building such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored. To this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete. Specifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics. Experiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively. WorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver.</p>
-      </div>
-    </details>
-
-      </div>
-    </details>
-
 
     <details class="topic-section" open>
       <summary class="topic-heading">Vision-Language Models</summary>
       <div class="queue">
 
-    <details class="paper-row" id="link6">
+    <details class="paper-row" id="link7">
       <summary class="paper-row-summary">
-        <span class="queue-index">7</span>
+        <span class="queue-index">8</span>
         <span class="paper-row-copy">
-          <strong>When to Rethink: Learning Multi-Perspective Self-Verification for Vision-Language Models</strong>
-          <small>Ziquan Zhu, Hanruo Zhu, Si-Yuan Lu, Morris Yu-Chao Huang, Yicheng Lin, Wei Han, Tianlong Chen, Mingyuan Wu, Hanchao Yu, Gaojie Jin, Lu Liu, Bo Sun, Tianjin Huang</small>
+          <strong>Matching Object or Relation? Tracing Abstract Reasoning Inside VLMs</strong>
+          <small>Gouki Minegishi, Hiroki Furuta, Takeshi Kojima, Yusuke Iwasawa, Yutaka Matsuo</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
       <span class="topic-tag">Vision-Language Models</span>
-<span class="topic-tag">Self-Verification</span>
-<span class="topic-tag">Multimodal Reasoning</span>
+<span class="topic-tag">Interpretability</span>
+<span class="topic-tag">Abstract Reasoning</span>
+<span class="topic-tag">Mechanistic Analysis</span>
     </div>
 
 
@@ -1341,21 +1248,21 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill score-mid">11</span>
+        <span class="score-pill score-mid">10</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
-          <span>Paper 7 / arXiv:2610.07018</span>
-          <a class="paper-action" href="https://arxiv.org/abs/2610.07018">Open arXiv</a>
+          <span>Paper 8 / arXiv:2610.07646</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.07646">Open arXiv</a>
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
+          <span>Relevance <strong>4</strong></span>
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 2: a new vision-language model self-verification framework with multi-perspective rethinking for more reliable multimodal reasoning.</p>
-        <p class="abstract">Vision-language models (VLMs) have achieved strong performance in multimodal reasoning, yet they remain prone to generating plausible but incorrect answers. Self-verification offers a practical way to improve answer reliability without relying on external judges, but existing methods typically depend on a single verification criterion or fixed prompt, resulting in incomplete and unstable reliability estimates. We first systematically analyze how verifier capability and prompt design affect verification performance. Our findings show that stronger verifiers provide more reliable judgments, while verification performance is highly sensitive to prompt choice, with no single prompt consistently dominating across tasks. Guided by these findings, we propose \texttt{MOTIVE}, a \textbf{M}ulti-View Self-Verificati\textbf{O}n wi\textbf{T}h Rel\textbf{I}ability-Guided Selecti\textbf{VE} Rethinking framework for reliable multimodal reasoning. \texttt{MOTIVE} evaluates each candidate answer from complementary verification perspectives and learns a correctness-aligned reliability score through correctness-grounded multi-view verification learning. During inference, this score governs an accept-or-rethink decision, allowing reliable answers to be returned directly while uncertain ones trigger history-guided rethinking. Extensive experiments across diverse multimodal benchmarks and VLM backbones demonstrate that \texttt{MOTIVE} consistently outperforms strong self-verification and self-correction baselines. Further results show that reliable verification improves accept-or-rethink decisions and reduces unnecessary reasoning turns, enabling more reliable and efficient self-verification without an external judge.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 moderately well: this is a vision-language-model interpretability paper with mechanistic analysis of abstract reasoning circuits.</p>
+        <p class="abstract">Vision Language Models (VLMs) excel on visual benchmarks but fail systematically on tasks requiring abstract reasoning. Existing benchmarks document this failure but cannot say \emph{why} it happens or which cognitive capability is missing. We close this gap by adopting the Relational Match-to-Sample (RMTS) paradigm from comparative and developmental psychology and pairing it with a mechanistic analysis of the model&#x27;s internals. On a parametrically controlled stimulus set evaluated across frontier API models (GPT, Claude, Gemini) and three open-source families (Qwen3.5, Gemma-4, InternVL3), we identify four levers that shift VLMs toward the relational match---capability tier, model scale, the number of objects per scene, and the absence of per-object stimulus noise---together producing a developmental-like trajectory that mirrors the human \emph{relational shift}. Opening up the model, a per-layer representational similarity analysis and a causal mediation analysis reveal that VLM abstract reasoning is implemented by two competing circuits: an early circuit that organises images by their surface object features, and a late circuit that organises them by their abstract relation. Extending the analysis to ARC-AGI-1, we find that ablating the relational heads identified on RMTS degrades performance more than ablating random heads, indicating that the relational circuit is recruited beyond our controlled stimuli. We hope this mechanism-level view serves as a step toward understanding how abstract reasoning is implemented in VLMs.</p>
       </div>
     </details>
 
@@ -1364,7 +1271,7 @@ details:not([open]) > .topic-heading::before {
 
 
     <details class="topic-section" open>
-      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <summary class="topic-heading">Visual Reasoning</summary>
       <div class="queue">
 
     <details class="paper-row" id="link9">
@@ -1375,9 +1282,9 @@ details:not([open]) > .topic-heading::before {
           <small>Bach Nguyen, Zhaonan Li, Mau Son Nguyen, Sanika Chavan, Nilay Kumar, Hong Anh Nguyen, Khoa Vo, Ben Zhou</small>
 
     <div class="topic-tags" aria-label="fine-grained topic tags">
-      <span class="topic-tag">Benchmark &amp; Evaluation</span>
-<span class="topic-tag">Active Visual Reasoning</span>
-<span class="topic-tag">Noisy VLMs</span>
+      <span class="topic-tag">Visual Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Noisy Perception</span>
     </div>
 
 
@@ -1386,7 +1293,7 @@ details:not([open]) > .topic-heading::before {
     </div>
 
         </span>
-        <span class="score-pill score-mid">11</span>
+        <span class="score-pill score-mid">10</span>
       </summary>
       <div class="paper-row-detail">
         <div class="paper-row-meta">
@@ -1395,12 +1302,58 @@ details:not([open]) > .topic-heading::before {
         </div>
 
         <div class="paper-scores" aria-label="model scores">
-          <span>Relevance <strong>5</strong></span>
+          <span>Relevance <strong>4</strong></span>
           <span>Novelty <strong>6</strong></span>
         </div>
 
-        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: introduces a new benchmark for active visual reasoning under noisy evidence, with a simulator-like sensor setup for studying uncertainty-aware reasoning.</p>
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 partially: it is a benchmark for active visual reasoning with noisy VLM feedback, but not an embodied simulator benchmark specifically.</p>
         <p class="abstract">Real-world reasoning rarely reduces to static question answering: agents must actively gather information from tools and sensors that are often noisy and unreliable. Yet most existing active reasoning benchmarks assume that environmental feedback is trustworthy, or introduce noise without exposing an explicit, calibrated uncertainty signal, leaving open how LLMs should reason when the evidence itself is uncertain. We introduce VisualNoiseQA, a novel benchmark for active reasoning under noisy visual feedback. A text-only LLM must solve VQA problems by iteratively querying a fixed, off-the-shelf VLM treated as a stochastic visual sensor. For each query, we draw multiple samples and expose an empirical uncertainty signal via self-consistency, enabling the reasoner to probe from different angles and decide what to ask next and when to stop. Our construction is automatic and scalable: starting from diverse VQA sources and two noisy VLMs, we retain only questions where the sensor is inconsistent yet human-solvable. We evaluate multiple LLM reasoners on 1,000 instances spanning perception, chart understanding, and knowledge-intensive reasoning. VisualNoiseQA thus provides a controlled playground to study how different LLMs exploit uncertainty signals for robust reasoning.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">LLM Alignment</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>Sherpa: Teaching LLMs to Teach Adaptively</strong>
+          <small>Weixian Xu, Yanzhe Zhang, Zora Zhiruo Wang, Changyu Chen, Diyi Yang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">LLM Alignment</span>
+<span class="topic-tag">Multi-Agent RL</span>
+<span class="topic-tag">Adaptive Tutoring</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">cs.AI</span>
+<span class="category-tag">cs.CL</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2610.08778</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2610.08778">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 only loosely: it is about training LLMs as adaptive teachers, not a new VLLM/MLLM, but it is an interesting multi-turn RL method for instruction following and simulated learner adaptation.</p>
+        <p class="abstract">Large language models (LLMs) have become increasingly capable problem solvers, but being able to solve a problem is not the same as being able to teach it. Existing approaches to training LLMs as teachers rely on demonstrations, preference data, or predefined pedagogical criteria that specify what good teaching looks like. However, these signals are often not grounded in individual student learning outcomes, where effective teaching strategies can vary substantially across learners. To address this, we introduce Sherpa, a multi-turn reinforcement learning framework that instantiates multiple student archetypes with LLMs conditioned on distinct learning preferences and trains a teacher model to adapt its instruction by directly maximizing their learning outcomes. Teacher LLMs trained with Sherpa improve instructed students&#x27; performance across all archetypes by an average of 20.5 percentage points. Under MathTutorBench&#x27;s evaluation, Sherpa raises the overall pedagogy score from 52.5% to 79.2%, indicating better teaching responses. Our human studies show that the trained teacher is preferred over the base model in 79.6% of pairwise comparisons. Together, Sherpa trains LLM teachers to adapt to diverse simulated students and become better aligned with human teachers, paving the road towards AI tutors teaching real students.</p>
       </div>
     </details>
 
@@ -1415,6 +1368,11 @@ details:not([open]) > .topic-heading::before {
   <section class="archive-block">
     <h2>Past ArXiv</h2>
     <div class="archive-links">
+
+        <a class="archive-link" href="past_arxiv/2026-10-07.html">
+          <span>October 07, 2026</span>
+        </a>
+
 
         <a class="archive-link" href="past_arxiv/2026-10-05.html">
           <span>October 05, 2026</span>
