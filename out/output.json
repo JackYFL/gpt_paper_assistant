@@ -1,133 +1,288 @@
 {
-    "2610.13098": {
+    "2610.17540": {
         "authors": [
-            "Yingbo Ma",
-            "Kuangshi Ai",
-            "Gordon Dai",
-            "Chenglong Yu",
-            "Chaoli Wang",
-            "Hua Shen"
+            "Jack Lu",
+            "Yurong You",
+            "Boyi Li",
+            "Yulong Cao",
+            "Thomas Tian",
+            "Chaowei Xiao",
+            "Xiangyu Chen",
+            "Wenjie Luo",
+            "Boris Ivanovic",
+            "Marco Pavone",
+            "Yan Wang"
         ],
-        "title": "VETR: Execution-Grounded Self-Improving Agent for Symbolic Graphics Reasoning",
-        "abstract": "arXiv:2610.13098v1 Announce Type: new  Abstract: Visual agents for symbolic graphics reasoning depend on executable world representations, yet continued improvement remains bottlenecked by ambiguous supervision from final renders. Recent agentic systems refine scenes through repeated interaction, but they lack mechanisms to recursively extract actionable evidence from execution traces, overlooking which proposed symbolic edits survived, disappeared, or interfered during program execution. To address this, we propose VETR (Verified Execution Trajectories for Refinement), a framework that enables agentic recursive self-improvement over executable world representations for symbolic graphics reasoning. Within each task, VETR retains aligned program/render records with bounded runtime observations and introduces an execution refiner that compiles observed writes and state changes into constrained alternative programs. The refiner validates their endpoints and preservation conditions against captured runtime state; the ordinary visual verifier then assesses goal relevance. Repair construction makes no additional language-model calls, but can require additional executions. Evaluations on BlenderGym (280 tasks) and BlenderBench (27 released tasks) with GPT-5.6-luna and Qwen3.8-27B show that VETR consistently outperforms existing refinement strategies, including BlenderAlchemy and VIGA. Controlled ablations evaluate the contributions of execution refinement and role-asymmetric evidence organization under fixed generator-interaction caps.",
-        "arxiv_id": "2610.13098",
+        "title": "TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency",
+        "abstract": "arXiv:2610.17540v1 Announce Type: new  Abstract: Textual reasoning before acting has improved vision-language-action (VLA) models, but at the cost of latency: every action conditioned on the reasoning text must wait for autoregressive decoding. We show that actions do not need to wait for or condition on the generated reasoning to benefit from it, because the reasoning supervision already improves the backbone representation. We introduce TacitVLA, a reasoning VLA whose action expert never attends to the reasoning it generates for the current call. On long-horizon tasks where the reasoning text also serves as episodic memory, it can generate each entry during action execution rather than before acting. We evaluate it in a controlled study on four benchmarks spanning manipulation and autonomous driving, memory and non-memory tasks: RoboMME, RMBench, LIBERO, and PhysicalAI-AV. On all four, TacitVLA matches the performance of its explicit-reasoning counterpart at up to 3.4x lower latency, and matches the latency of the same architecture trained without reasoning at up to +17.1% success. In absolute terms, it surpasses the best previously published results on the RoboMME Counting suite (82.7% vs. 66.8%) and RMBench (77.5% vs. 56.5%), and reaches 72.9% on LIBERO-Plus and a 52.5% scene score on the public split of the PhysicalAI-AV closed-loop driving challenge. Project page: https://tacitvla.github.io.",
+        "arxiv_id": "2610.17540",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI",
+            "cs.RO"
+        ],
+        "ARXIVID": "2610.17540",
+        "COMMENT": "Matches criterion 1 closely: it proposes a new VLA method for embodied agents that removes reasoning latency while preserving performance on manipulation and driving tasks.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Vision-Language-Action",
+            "Embodied AI",
+            "Reasoning Efficiency",
+            "Long-Horizon Control"
+        ]
+    },
+    "2610.19502": {
+        "authors": [
+            "Yuanyuan Gao",
+            "Zhirui Liu",
+            "Yuning Gong",
+            "Yifei Liu",
+            "Yifan Zhan",
+            "Kuixuan Jiao",
+            "Xiaolong Zhou",
+            "Yifan Yang",
+            "Hongjie Zhang",
+            "Xue Yang",
+            "Dan Xu",
+            "Zhihang Zhong"
+        ],
+        "title": "Holi-Spatial 360: Generative Reconstruction from Sparse Panoramas for Spatial Rendering and Intelligence",
+        "abstract": "arXiv:2610.19502v1 Announce Type: new  Abstract: Spatial intelligence requires scalable 3D environments that are both photorealistic and semantically grounded, yet existing indoor datasets are dominated by room-scale captures and costly LiDAR acquisition. Online real-estate platforms offer abundant panoramas of diverse multi-room homes, but sparse viewpoints and texture-poor regions make reconstruction severely under-constrained. We introduce Holi-Spatial 360, a generative reconstruction and data curation framework for converting these panoramas into annotated multi-room 3D environments. Because reconstruction quality bounds subsequent generation, our Correspondence-Guided Geometric Optimization converts feed-forward reconstruction priors into reliable cross-view constraints and builds a coherent 3D Gaussian Splatting representation as 3D spatial memory. Adapted single-image and video priors then restore appearance and complete continuous trajectories while preserving observed content. The reconstructed scenes support arbitrary RGB-D rendering and an automated curation pipeline that combines end-to-end 3D grounding with VLM-based verification. Holi360 contains over 1K multi-room 3DGS scenes, more than 100K instance annotations, and 2M spatial question-answer pairs. We also introduce the Holi360 benchmark to evaluate the spatial understanding of VLMs in real-world, multi-room indoor environments. Experiments demonstrate superior reconstruction and curation quality under sparse panoramic inputs, while fine-tuning VLMs on Holi360 substantially improves spatial reasoning capabilities.",
+        "arxiv_id": "2610.19502",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2610.19502",
+        "COMMENT": "Strong match to criteria 1 and 3: the paper targets spatial understanding/spatial intelligence with a new multi-room indoor benchmark (Holi360) and a reconstruction-to-grounding pipeline for embodied/spatial reasoning.",
+        "RELEVANCE": 9,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Spatial Reasoning",
+            "3D Reconstruction",
+            "Benchmark & Evaluation",
+            "Vision-Language Models"
+        ]
+    },
+    "2610.14146": {
+        "authors": [
+            "Zongxia Li",
+            "Zhongzhi Li",
+            "Yucheng Shi",
+            "Ruhan Wang",
+            "Junyao Yang",
+            "Chengsong Huang",
+            "Zhichao Liu",
+            "Xiyang Wu",
+            "Anhao Li",
+            "Yue Yu",
+            "Ergan Shang",
+            "Fuxiao Liu",
+            "Tong Zheng",
+            "Ninghao Liu",
+            "Lichao Sun",
+            "Haitao Mi",
+            "Leowei Liang"
+        ],
+        "title": "Long-Horizon-Terminal-Bench 2.0: Automating Diverse Task Construction and Measuring Sustained Agent Progress",
+        "abstract": "arXiv:2610.14146v1 Announce Type: new  Abstract: Long-horizon terminal benchmarks measure whether an agent can sustain progress through extended workflows with process rewards, not only whether its final state passes a binary check. We present Long-Horizon-Terminal-Bench 2.0 (LHTB 2.0), an extension of Long-Horizon-Terminal-Bench that preserves its 46 original tasks while correcting task and evaluation-infrastructure defects and extending 31 tasks. LHTB 2.0 contains 77 tasks across 13 domains and eight task types. The extended tasks are produced through a systematic reconstruction-task pipeline. We start from a working scientific or engineering artifact, then use a parameterized reference implementation to generate multiple scenarios, reveal six as behavioral evidence, hold out three for evaluation, and use dense progress ladders to reward partial progress while preventing memorization of public outputs. We also extend the evaluation horizon from 90 minutes to three hours and record verifier checkpoints every 30 minutes, enabling direct measurement of sustained progress within a run. Across 1,145 scored model-task runs from 15 frontier models, GPT-6-astra leads with dense mean reward 0.69 and 37 tasks at R at least 0.95, followed by GPT-5.6-sol with dense mean reward 0.67 and 32 tasks at the same threshold. On the 30 reconstruction tasks, binary verifier scores average 0.221, whereas dense ladder scores average 0.653, showing that outcome-only evaluation discards substantial intermediate progress. LHTB 2.0 provides a broader, hardened, and process-aware testbed for studying reliable agent execution over hours.",
+        "arxiv_id": "2610.14146",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2610.13098",
-        "COMMENT": "Matches criterion 3 very closely: an embodied/agentic method paper with a simulator-like benchmark setup (BlenderGym/BlenderBench) and a new execution-grounded refinement approach for symbolic graphics reasoning.",
+        "ARXIVID": "2610.14146",
+        "COMMENT": "Matches criterion 3 closely: it introduces a new long-horizon agent benchmark with process-aware evaluation and task construction for sustained progress.",
         "RELEVANCE": 8,
         "NOVELTY": 6,
         "TAGS": [
             "Embodied AI",
-            "Agentic Self-Improvement",
-            "Simulator Benchmark"
+            "Agent Benchmark",
+            "Long-Horizon Tasks",
+            "Evaluation"
         ]
     },
-    "2610.13058": {
+    "2610.19063": {
         "authors": [
-            "Ziang Ye",
-            "Wentao Shi",
-            "Lei Chen",
-            "Zhengzhou Cai",
-            "Yu Wang",
-            "Zhiyuan Yao",
-            "Zihan Wang",
-            "Xierui Song",
-            "Fuli Feng",
-            "Yixin Cao"
+            "Nan Zhou",
+            "Jianxiong Gao",
+            "Qiuyu Wang",
+            "Wen Wang",
+            "Jiahao Wang",
+            "Yufeng Yuan",
+            "Shuaiting Li",
+            "Hao Ouyang",
+            "Yujun Shen",
+            "Weiming Lu",
+            "Jun Xiao",
+            "Yueting Zhuang",
+            "Yongliang Shen"
         ],
-        "title": "Travel Back To Move Forward: Retrospective Exploration and Evolving for Long Horizon Agents",
-        "abstract": "arXiv:2610.13058v1 Announce Type: new  Abstract: Large language model agents increasingly operate in long-horizon environments where early mistakes can trigger cascading failures and trap agents in dead-end trajectories. Agents must therefore be able to proactively recover from such states and turn their exploratory experience into guidance for subsequent decisions. We introduce ReTRAIL, a framework that enables agents to rewind the environment to earlier states while preserving valid progress and carrying forward knowledge learned from abandoned exploration. The environment state moves backward while the agent's knowledge continues to move forward. ReTRAIL trains a shared policy with two complementary signals: State-Anchored GRPO compares alternative continuations from revisited states to improve execution, while a branch-advancement reward guides reflection through the progress of subsequent exploration. Experiments across four interactive benchmark MineSweeper, Sokoban, ALFWorld and ScienceWorld show that simply adding a rewind primitive provides limited benefit and can even degrade performance. In contrast, ReTRAIL enables agents to rewind from unproductive states and use insights from abandoned branches to guide subsequent exploration. These results demonstrate the value of coupling environment rewinding with experience reuse within an ongoing task for long-horizon task solving. The code is available at https://github.com/whi497/ReTRAIL.",
-        "arxiv_id": "2610.13058",
-        "primary_category": "cs.AI",
+        "title": "WorldMemBench: A Comprehensive Benchmark for Memory of Video World Models",
+        "abstract": "arXiv:2610.19063v1 Announce Type: new  Abstract: As video models enable longer and more realistic interactive experiences, maintaining a world consistent with its history becomes essential. This requires both preserving previously observed content and ensuring coherent world evolution over time. World memory is a critical capability to evaluate alongside visual fidelity and video duration. We introduce WorldMemBench, a benchmark for systematically evaluating world memory in video world models. Across 260 test cases, it assesses static memory through the retention of human identity and appearance, object appearance and geometry, and environmental content and geometry, and dynamic memory through event progression and state persistence. Using controlled camera departures and multi-revisit trajectories, the benchmark evaluates static content against fixed initial references and dynamic events against expected state transitions. It combines appearance and geometry metrics with event-specific assessments, and reports video quality and camera-following accuracy as complementary diagnostics. Evaluation of nine representative models shows that strong static retention does not imply reliable dynamic state evolution, while repeated revisits reveal memory degradation beyond the first return. Human studies support the alignment between our automatic evaluations and human judgments. WorldMemBench provides a systematic testbed for diagnosing memory failures and guiding the development of persistent, temporally coherent video worlds.",
+        "arxiv_id": "2610.19063",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI",
-            "cs.CL"
+            "cs.CV"
         ],
-        "ARXIVID": "2610.13058",
-        "COMMENT": "Matches criterion 3 very closely: a new embodied/interactive agent method for long-horizon environments with rewind/recovery and simulator-style benchmarks.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Embodied AI",
-            "Long-Horizon Agents",
-            "Interactive Benchmarks"
-        ]
-    },
-    "2610.12914": {
-        "authors": [
-            "Xule Gao",
-            "Xi Wang",
-            "Zehua Zang",
-            "Rui Wang",
-            "Changwen Zheng",
-            "Chuxiong Sun"
-        ],
-        "title": "OGPO: Offline Goal-conditioned Policy Optimization for Recoverable Vision-Language-Action Models",
-        "abstract": "arXiv:2610.12914v1 Announce Type: new  Abstract: Vision-language-action (VLA) models have shown strong promise in robotic manipulation, yet their post-training still predominantly relies on trajectory-level supervised imitation over robot demonstrations. While effective for learning feasible actions, this paradigm supervises policies to reproduce expert actions at each step, biasing them toward demonstration-specific action paths and providing limited guidance for recovering toward task-progress states once execution deviates from demonstrated trajectories. To address this limitation, we propose OGPO, an Offline Goal-conditioned Policy Optimization framework for recoverable VLA post-training. Instead of treating offline demonstrations merely as step-wise action labels, OGPO adaptively relabels trajectories with semantic key states and constructs goal-conditioned process rewards to optimize the policy for reaching these task-progress states. In this way, OGPO shifts VLA post-training from trajectory-level action imitation to key-state reachability learning, enabling policies to acquire a more robust ability to complete goal states from feasible off-demonstration states without requiring additional online interaction. Experiments on LIBERO and MetaWorld show that OGPO consistently improves VLA policy performance over standard supervised fine-tuning. Moreover, evaluations on LIBERO-Plus and our proposed LIBERO-ReAct, a mid-execution perturbation benchmark, further demonstrate that OGPO achieves stronger robustness and goal-directed recoverability under distribution shifts and recoverable off-demonstration states.",
-        "arxiv_id": "2610.12914",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.12914",
-        "COMMENT": "Matches criterion 3 very closely: a new embodied VLA post-training method for recoverability, with a simulator/benchmark angle via LIBERO-ReAct and perturbation robustness.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Embodied AI",
-            "Vision-Language-Action",
-            "Offline RL"
-        ]
-    },
-    "2610.12781": {
-        "authors": [
-            "Julien Kordes",
-            "Reuben Dorent"
-        ],
-        "title": "Representation Alignment from a Few Paired Data via Distilled Optimal Transport",
-        "abstract": "arXiv:2610.12781v1 Announce Type: new  Abstract: Aligning two independently pretrained unimodal encoders typically demands millions of paired examples. In this paper, we study the regime where only $N \\sim 100$--$500$ pairs are available, while unpaired data on either side is abundant. Our method expresses every representation by its similarities to the $N$ paired anchors, which places both modalities in a common coordinate system; matches the two point clouds with a single entropic optimal transport problem solved over the entire pool, whose marginal constraints counteract the hubness that defeats nearest-neighbor matching; and distills the resulting plan into two lightweight encoders, so that the correspondence becomes inductive. We additionally put this marginal constraint in relation with the one-step hub corrections of the bilingual lexicon induction literature. Pairing is required only for the anchors: the unpaired collections may be drawn independently from the two marginals, so that no item outside the anchor set needs to have both of its modalities observed. We evaluate on image-text and molecule-text alignment, where our method outperforms existing approaches at the same anchor budget on Flickr30k, MS-COCO and ChEBI-20.",
-        "arxiv_id": "2610.12781",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.12781",
-        "COMMENT": "No very close match to the four criteria; it is most aligned only with criterion 4 in a loose sense because it studies image-text representation alignment, but it is primarily a general multimodal alignment method rather than a vision foundation model application.",
-        "RELEVANCE": 3,
+        "ARXIVID": "2610.19063",
+        "COMMENT": "Matches criterion 3 very closely: it is a new benchmark for embodied/video world-model memory, focusing on persistent world state across revisits and temporal coherence.",
+        "RELEVANCE": 8,
         "NOVELTY": 6,
         "TAGS": [
-            "Cross-Modal Alignment",
-            "Optimal Transport",
-            "Image-Text Retrieval"
-        ]
-    },
-    "2610.12954": {
-        "authors": [
-            "Jingjing Wei",
-            "Hao Zhao",
-            "Xinke Li",
-            "Linxi Yu",
-            "Xiaosong Gao",
-            "Shanshan Xiao"
-        ],
-        "title": "MathVis: Can AI Reason through Drawing? A Benchmark for Mathematical Figure Generation",
-        "abstract": "arXiv:2610.12954v1 Announce Type: new  Abstract: This paper introduces MathVis, a benchmark designed to evaluate LLMs' ability to visualize frontier mathematical problems and perform diagram-assisted reasoning. The benchmark consists of 512 tasks, each comprising a mathematical statement, a reference diagram, executable TikZ or SVG code, a Gold Intermediate Representation (IR), atomic rubrics, and error codes. Through rigorous evaluation, GPT-6-Astra, Claude Fable 5, and Gemini 3.1 Pro Preview achieve pass@1 scores of 31.25%, 26.56%, and 22.85%, respectively. We found that although the tasks require visualization, LLMs produce outputs dominated by formal languages, symbols, and graphics programs, rather than explicit diagram-mediated reasoning. Furthermore, while the solutions generated by LLMs may contain all the necessary elements, they are often visually confusing to humans. Ultimately, this benchmark aims to visualize mathematical problems and promote research on enabling LLMs to simplify their reasoning via visual diagrams.",
-        "arxiv_id": "2610.12954",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.12954",
-        "COMMENT": "A partial match to criterion 4: it is about visual diagram generation and diagram-assisted reasoning, but it is not really a vision foundation model paper.",
-        "RELEVANCE": 3,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Diagram Reasoning",
             "Benchmark & Evaluation",
-            "Mathematical Visualization"
+            "World Models",
+            "Video Understanding",
+            "Embodied AI"
+        ]
+    },
+    "2610.19102": {
+        "authors": [
+            "Georgios Angelidis",
+            "Aggelos Psiris",
+            "Maria Vakalopoulou",
+            "Georgios Th. Papadopoulos",
+            "Giorgos Sfikas",
+            "Iraklis Varlamis"
+        ],
+        "title": "The Gap Is in the Geometry: A Convergent Meta-Analysis of Multi-Facet Aerial and Remote Sensing Video Understanding",
+        "abstract": "arXiv:2610.19102v1 Announce Type: new  Abstract: Aerial and remote sensing video is increasingly evaluated like web video, by posing multiple-choice questions to multimodal large language models (MLLMs) over sampled frames and reporting accuracy. This paper argues that this recipe measures the wrong aspect, and supports the claim with a convergent meta-analysis of a broad set of published results, organized in four evidence tiers, in which a claim becomes a position only when collected evidence agrees. Parameter scale exhibits a median of +3.4 accuracy points per tenfold increase on aerial benchmarks, far below a human gap of at least 19 points, whereas acquisition conditions control perception, as 315 of 318 evaluations in 19 within-paper contrasts lose accuracy when conditions such as altitude, view, object size or time horizon become harder. No aerial benchmark in the corpus combines video input with per-task human and random baselines, competence collapses from answering to acting in closed-loop navigation, and the same MLLMs score higher on the aerial benchmark than on ground spatial ones, but lower on studies that test cross-view geometry. From these findings the current study derives five falsifiable principles and proposes the AVU-Card, a reporting card for aerial video benchmarks",
+        "arxiv_id": "2610.19102",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2610.19102",
+        "COMMENT": "Matches criterion 1 closely: it analyzes spatial understanding gaps in aerial/remote-sensing video and highlights geometry/viewpoint failures in MLLMs.",
+        "RELEVANCE": 7,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Spatial Understanding",
+            "Aerial Vision",
+            "MLLM Evaluation",
+            "Geometry"
+        ]
+    },
+    "2610.18860": {
+        "authors": [
+            "Xin Gao",
+            "Yifan Yang",
+            "Xin Li",
+            "Pan Wang",
+            "Yan Li",
+            "Muzhao Tian",
+            "Mingxi Cheng",
+            "Bei Liu",
+            "Kai Qiu",
+            "Qi Dai",
+            "Dong Chen",
+            "Yue Dong",
+            "Leandros Tassiulas",
+            "Rex Ying",
+            "Ji Li",
+            "Chong Luo"
+        ],
+        "title": "AesCode: Aesthetic Code Generation with Decoupled Cross-Modal Rewards",
+        "abstract": "arXiv:2610.18860v1 Announce Type: new  Abstract: Generating information-rich visual artifacts such as slides, posters, and dashboards as code is appealing because the outputs are structured, editable, and verifiable. Yet code models cannot see how their choices of layout and color come together on the canvas, often limiting spatial planning and aesthetic quality. Image generators excel at visual design but can misrender requested content, making their outputs unreliable targets for direct reproduction. We therefore introduce AesCode, which generates code grounded in the content prompt while using an image generated from the same prompt as an aesthetic guidance. To do so, AesCode represents the target as a design graph that describes the whole canvas and makes each property attributable. From this graph, we derive complementary cross-modal rewards: deterministic verifiers score properties parsable from code and rendering, while a VLM judge assesses the non-parsable ones with a sample-specific Visual Graph Rubric (VGR) tied to graph elements and relations. We optimize these decoupled rewards through reinforcement learning with per-channel normalization to jointly improve spatial planning, aesthetic quality, and verifiable correctness. To evaluate this setting, we build a benchmark that scores verifiable correctness and visual quality separately, with visual scores highly consistent with human judgments. We find that reference images substantially improve the visual quality of code generated by existing models, and ablations show that AesCode benefits from references both as model input and as a source of visual rewards. Relative to same-scale Qwen3-VL baselines given the same references, AesCode-8B and AesCode-32B improve visual quality by 31.1 and 22.4 percentage points, reaching scores comparable to those of closed-source frontier models such as GPT-5.5 and Claude Opus 4.8.",
+        "arxiv_id": "2610.18860",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.18860",
+        "COMMENT": "Matches criterion 4 closely: it uses a VLM-guided reward scheme for visually grounded code generation and spatial planning in canvas-level design.",
+        "RELEVANCE": 6,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Vision-Language Models",
+            "Generative Design",
+            "Reinforcement Learning",
+            "Spatial Planning"
+        ]
+    },
+    "2610.20220": {
+        "authors": [
+            "Zhuobai Dong",
+            "Junchao Yi",
+            "Hu Jian Guo",
+            "Linjie Li",
+            "Rui Zhao",
+            "Alex Jinpeng Wang"
+        ],
+        "title": "Glance Forcing: Making Bidirectional Diffusion Autoregressive at a Glance",
+        "abstract": "arXiv:2610.20220v1 Announce Type: new  Abstract: Autoregressive generation underlies real-time, causal video synthesis and is the backbone of video world models. Today's dominant approach distills a bidirectional diffusion model into a causal few-step student, but existing pipelines make this conversion prohibitively expensive, requiring offline Probability Flow ODE} (PF-ODE) trajectories that cost tens of thousands of GPU-hours and terabytes of storage. We show it can be made dramatically more efficient. Pushing this efficiency to its extreme, we reduce trajectory supervision to a single sample, the strictest setting possible, and find that it causes severe quality collapse. We trace this to the teacher's trajectory geometry: the high-noise regime, governing semantic layout and motion, and the low-noise regime, governing fine texture exhibit fundamentally different curvature and optimization behavior, so a single monolithic student cannot jointly fit both, causing severe representation interference. Motivated by this, we propose Glance Forcing, a lightweight distillation framework that decouples the denoising trajectory into two complementary slow and fast experts, each guided by a tailored, stage-specific objective, while keeping the pretrained teacher entirely frozen. This decoupling further reveals a general mechanism underlying few-step distillation: PF-ODE distillation mainly straightens the few-step trajectory geometry, while the subsequent distribution-matching stage independently governs distributional quality. Using only one PF-ODE trajectory, Glance Forcing already surpasses the fully-trained state-of-the-art baseline, raising the VBench Total score from 84.04 to 84.22 while cutting trajectory-collection cost from thousands of GPU-hours to about one A100-GPU-hour, with markedly larger gains in dynamic degree, VisionReward, and instruction-following, and consistent preference from human raters over strong baselines.",
+        "arxiv_id": "2610.20220",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2610.20220",
+        "COMMENT": "Moderate match to criterion 4: it advances video generation/world-model-style diffusion distillation, which is adjacent to vision foundation models and generative modeling in multimodal learning.",
+        "RELEVANCE": 4,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Video Generation",
+            "Diffusion Models",
+            "Distillation"
+        ]
+    },
+    "2610.19341": {
+        "authors": [
+            "Zongyu Wu",
+            "Yilong Wang",
+            "Xiaochen Wang",
+            "Minhua Lin",
+            "Yuan Zhong",
+            "Fenglong Ma",
+            "Xiang Zhang",
+            "Suhang Wang"
+        ],
+        "title": "MMKG-R1: Constructing Multimodal Knowledge Graphs via Reinforcement Learning",
+        "abstract": "arXiv:2610.19341v1 Announce Type: new  Abstract: Multimodal knowledge graphs (MMKGs) organize information across different modalities to support multimodal Graph Retrieval-Augmented Generation (RAG), which aims to improve the performance of multimodal large language models (MLLMs). The effectiveness of these multimodal Graph RAG methods largely depends on the quality of the constructed MMKGs. However, most existing methods construct MMKGs without explicit guidance on graph quality, while reinforcement learning (RL)-based methods that rely on final-answer correctness may provide only indirect feedback on MMKG quality. To address these limitations, we propose MMKG-R1, a novel MMKG-quality-driven RL framework for training an MLLM as a multimodal knowledge constructor. To be specific, MMKG-R1 introduces multiple quality-aware rewards to directly evaluate both the quality of information extracted from individual knowledge sources and the quality of the assembled MMKG. These rewards are then used to guide the RL training. Experiments across multiple datasets show that MMKG-R1 constructs MMKGs that improve downstream question-answering accuracy.",
+        "arxiv_id": "2610.19341",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2610.19341",
+        "COMMENT": "Moderate match to criterion 2: it uses an MLLM as a multimodal knowledge constructor and focuses on improving multimodal graph construction for downstream MLLM/RAG systems.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Multimodal LLMs",
+            "Knowledge Graph Construction",
+            "Reinforcement Learning"
+        ]
+    },
+    "2610.20341": {
+        "authors": [
+            "Yongzhen Hu",
+            "Hao Yu",
+            "Jiawei Wang",
+            "Xianming Zeng",
+            "Jianyun Xu",
+            "Xingliang Liu",
+            "Ruizhen Hu",
+            "Xiaowei Zhou",
+            "Hujun Bao",
+            "Sida Peng"
+        ],
+        "title": "InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views",
+        "abstract": "arXiv:2610.20341v1 Announce Type: new  Abstract: Feed-forward Gaussian reconstruction builds 3D scenes directly from input images for novel view rendering, but learning Gaussian attributes from predicted geometry for high-quality rendering under large viewpoint changes remains challenging. We analyze limitations in Gaussian attribute learning and introduce InfiniSplat v2, which improves rendering quality through architectural and training changes. Our method decouples geometry and attribute prediction with a frozen geometry branch, aligns predicted Gaussians using ground-truth camera poses during training, and adopts large-angle target view supervision. Across six datasets, the feed-forward outputs of the same trained model achieve state-of-the-art mean LPIPS and DISTS among the evaluated methods in both pose-conditioned and pose-free settings. In the pose-conditioned setting, mean LPIPS and DISTS decrease by 25.8% and 32.9%, respectively, compared with the strongest evaluated baselines. We further find that opacity learned with only image reconstruction supervision suppresses geometrically inconsistent points. Project page: https://zju3dv.github.io/InfiniSplat2/",
+        "arxiv_id": "2610.20341",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV"
+        ],
+        "ARXIVID": "2610.20341",
+        "COMMENT": "Moderate match to criterion 4: it improves feed-forward 3D Gaussian Splatting reconstruction from arbitrary views, a vision foundation-model-adjacent 3D perception/generation application.",
+        "RELEVANCE": 4,
+        "NOVELTY": 6,
+        "TAGS": [
+            "3D Gaussian Splatting",
+            "Novel View Synthesis",
+            "Feed-Forward Reconstruction"
         ]
     }
 }
