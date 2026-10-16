@@ -1,288 +1,255 @@
 {
-    "2610.17540": {
+    "2610.21190": {
         "authors": [
-            "Jack Lu",
-            "Yurong You",
-            "Boyi Li",
-            "Yulong Cao",
-            "Thomas Tian",
-            "Chaowei Xiao",
-            "Xiangyu Chen",
-            "Wenjie Luo",
-            "Boris Ivanovic",
-            "Marco Pavone",
-            "Yan Wang"
+            "Yuang Liu",
+            "Zhi Zuo",
+            "Zhengkai Zhao",
+            "Lirui Zhang",
+            "Pan Gao",
+            "Hao Feng",
+            "Zhengzhe Liu"
         ],
-        "title": "TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency",
-        "abstract": "arXiv:2610.17540v1 Announce Type: new  Abstract: Textual reasoning before acting has improved vision-language-action (VLA) models, but at the cost of latency: every action conditioned on the reasoning text must wait for autoregressive decoding. We show that actions do not need to wait for or condition on the generated reasoning to benefit from it, because the reasoning supervision already improves the backbone representation. We introduce TacitVLA, a reasoning VLA whose action expert never attends to the reasoning it generates for the current call. On long-horizon tasks where the reasoning text also serves as episodic memory, it can generate each entry during action execution rather than before acting. We evaluate it in a controlled study on four benchmarks spanning manipulation and autonomous driving, memory and non-memory tasks: RoboMME, RMBench, LIBERO, and PhysicalAI-AV. On all four, TacitVLA matches the performance of its explicit-reasoning counterpart at up to 3.4x lower latency, and matches the latency of the same architecture trained without reasoning at up to +17.1% success. In absolute terms, it surpasses the best previously published results on the RoboMME Counting suite (82.7% vs. 66.8%) and RMBench (77.5% vs. 56.5%), and reaches 72.9% on LIBERO-Plus and a 52.5% scene score on the public split of the PhysicalAI-AV closed-loop driving challenge. Project page: https://tacitvla.github.io.",
-        "arxiv_id": "2610.17540",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI",
-            "cs.RO"
-        ],
-        "ARXIVID": "2610.17540",
-        "COMMENT": "Matches criterion 1 closely: it proposes a new VLA method for embodied agents that removes reasoning latency while preserving performance on manipulation and driving tasks.",
-        "RELEVANCE": 9,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Vision-Language-Action",
-            "Embodied AI",
-            "Reasoning Efficiency",
-            "Long-Horizon Control"
-        ]
-    },
-    "2610.19502": {
-        "authors": [
-            "Yuanyuan Gao",
-            "Zhirui Liu",
-            "Yuning Gong",
-            "Yifei Liu",
-            "Yifan Zhan",
-            "Kuixuan Jiao",
-            "Xiaolong Zhou",
-            "Yifan Yang",
-            "Hongjie Zhang",
-            "Xue Yang",
-            "Dan Xu",
-            "Zhihang Zhong"
-        ],
-        "title": "Holi-Spatial 360: Generative Reconstruction from Sparse Panoramas for Spatial Rendering and Intelligence",
-        "abstract": "arXiv:2610.19502v1 Announce Type: new  Abstract: Spatial intelligence requires scalable 3D environments that are both photorealistic and semantically grounded, yet existing indoor datasets are dominated by room-scale captures and costly LiDAR acquisition. Online real-estate platforms offer abundant panoramas of diverse multi-room homes, but sparse viewpoints and texture-poor regions make reconstruction severely under-constrained. We introduce Holi-Spatial 360, a generative reconstruction and data curation framework for converting these panoramas into annotated multi-room 3D environments. Because reconstruction quality bounds subsequent generation, our Correspondence-Guided Geometric Optimization converts feed-forward reconstruction priors into reliable cross-view constraints and builds a coherent 3D Gaussian Splatting representation as 3D spatial memory. Adapted single-image and video priors then restore appearance and complete continuous trajectories while preserving observed content. The reconstructed scenes support arbitrary RGB-D rendering and an automated curation pipeline that combines end-to-end 3D grounding with VLM-based verification. Holi360 contains over 1K multi-room 3DGS scenes, more than 100K instance annotations, and 2M spatial question-answer pairs. We also introduce the Holi360 benchmark to evaluate the spatial understanding of VLMs in real-world, multi-room indoor environments. Experiments demonstrate superior reconstruction and curation quality under sparse panoramic inputs, while fine-tuning VLMs on Holi360 substantially improves spatial reasoning capabilities.",
-        "arxiv_id": "2610.19502",
+        "title": "ControlFlow3D: Distilling Multi-View Knowledge into Latent Flow Matching for Point Cloud Upsampling",
+        "abstract": "arXiv:2610.21190v1 Announce Type: new  Abstract: Point cloud upsampling is essential for 3D applications but remains challenging due to sparse, under-constrained observations. Multi-view images can resolve geometric ambiguity, but existing multi-modal methods do not fully exploit visual cues. We propose ControlFlow3D, a framework that distills knowledge from pretrained foundation models into a lightweight generation network during training, enabling strong performance without multi-view images available at test time. Specifically, our method performs conditional flow matching in a structured latent space defined by a frozen 3D encoder. Multi-view image tokens and 3D latent tokens are jointly clustered into shared prototypes via unsupervised soft KMeans; the resulting prototypes guide the flow trajectory through velocity control and are aligned by a consistency loss that progressively transfers image knowledge into the base network. A Mamba-based geometry decoder then maps latent features to dense coordinates with linear complexity. We also construct ShapeNetPU, a 35K-object multi-modal benchmark that is 31 times larger than prior datasets. Extensive experiments across multiple benchmarks demonstrate the effectiveness of our method and its strong generalization capability.",
+        "arxiv_id": "2610.21190",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2610.19502",
-        "COMMENT": "Strong match to criteria 1 and 3: the paper targets spatial understanding/spatial intelligence with a new multi-room indoor benchmark (Holi360) and a reconstruction-to-grounding pipeline for embodied/spatial reasoning.",
-        "RELEVANCE": 9,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Spatial Reasoning",
-            "3D Reconstruction",
-            "Benchmark & Evaluation",
-            "Vision-Language Models"
-        ]
-    },
-    "2610.14146": {
-        "authors": [
-            "Zongxia Li",
-            "Zhongzhi Li",
-            "Yucheng Shi",
-            "Ruhan Wang",
-            "Junyao Yang",
-            "Chengsong Huang",
-            "Zhichao Liu",
-            "Xiyang Wu",
-            "Anhao Li",
-            "Yue Yu",
-            "Ergan Shang",
-            "Fuxiao Liu",
-            "Tong Zheng",
-            "Ninghao Liu",
-            "Lichao Sun",
-            "Haitao Mi",
-            "Leowei Liang"
-        ],
-        "title": "Long-Horizon-Terminal-Bench 2.0: Automating Diverse Task Construction and Measuring Sustained Agent Progress",
-        "abstract": "arXiv:2610.14146v1 Announce Type: new  Abstract: Long-horizon terminal benchmarks measure whether an agent can sustain progress through extended workflows with process rewards, not only whether its final state passes a binary check. We present Long-Horizon-Terminal-Bench 2.0 (LHTB 2.0), an extension of Long-Horizon-Terminal-Bench that preserves its 46 original tasks while correcting task and evaluation-infrastructure defects and extending 31 tasks. LHTB 2.0 contains 77 tasks across 13 domains and eight task types. The extended tasks are produced through a systematic reconstruction-task pipeline. We start from a working scientific or engineering artifact, then use a parameterized reference implementation to generate multiple scenarios, reveal six as behavioral evidence, hold out three for evaluation, and use dense progress ladders to reward partial progress while preventing memorization of public outputs. We also extend the evaluation horizon from 90 minutes to three hours and record verifier checkpoints every 30 minutes, enabling direct measurement of sustained progress within a run. Across 1,145 scored model-task runs from 15 frontier models, GPT-6-astra leads with dense mean reward 0.69 and 37 tasks at R at least 0.95, followed by GPT-5.6-sol with dense mean reward 0.67 and 32 tasks at the same threshold. On the 30 reconstruction tasks, binary verifier scores average 0.221, whereas dense ladder scores average 0.653, showing that outcome-only evaluation discards substantial intermediate progress. LHTB 2.0 provides a broader, hardened, and process-aware testbed for studying reliable agent execution over hours.",
-        "arxiv_id": "2610.14146",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.14146",
-        "COMMENT": "Matches criterion 3 closely: it introduces a new long-horizon agent benchmark with process-aware evaluation and task construction for sustained progress.",
-        "RELEVANCE": 8,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Embodied AI",
-            "Agent Benchmark",
-            "Long-Horizon Tasks",
-            "Evaluation"
-        ]
-    },
-    "2610.19063": {
-        "authors": [
-            "Nan Zhou",
-            "Jianxiong Gao",
-            "Qiuyu Wang",
-            "Wen Wang",
-            "Jiahao Wang",
-            "Yufeng Yuan",
-            "Shuaiting Li",
-            "Hao Ouyang",
-            "Yujun Shen",
-            "Weiming Lu",
-            "Jun Xiao",
-            "Yueting Zhuang",
-            "Yongliang Shen"
-        ],
-        "title": "WorldMemBench: A Comprehensive Benchmark for Memory of Video World Models",
-        "abstract": "arXiv:2610.19063v1 Announce Type: new  Abstract: As video models enable longer and more realistic interactive experiences, maintaining a world consistent with its history becomes essential. This requires both preserving previously observed content and ensuring coherent world evolution over time. World memory is a critical capability to evaluate alongside visual fidelity and video duration. We introduce WorldMemBench, a benchmark for systematically evaluating world memory in video world models. Across 260 test cases, it assesses static memory through the retention of human identity and appearance, object appearance and geometry, and environmental content and geometry, and dynamic memory through event progression and state persistence. Using controlled camera departures and multi-revisit trajectories, the benchmark evaluates static content against fixed initial references and dynamic events against expected state transitions. It combines appearance and geometry metrics with event-specific assessments, and reports video quality and camera-following accuracy as complementary diagnostics. Evaluation of nine representative models shows that strong static retention does not imply reliable dynamic state evolution, while repeated revisits reveal memory degradation beyond the first return. Human studies support the alignment between our automatic evaluations and human judgments. WorldMemBench provides a systematic testbed for diagnosing memory failures and guiding the development of persistent, temporally coherent video worlds.",
-        "arxiv_id": "2610.19063",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.19063",
-        "COMMENT": "Matches criterion 3 very closely: it is a new benchmark for embodied/video world-model memory, focusing on persistent world state across revisits and temporal coherence.",
-        "RELEVANCE": 8,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Benchmark & Evaluation",
-            "World Models",
-            "Video Understanding",
-            "Embodied AI"
-        ]
-    },
-    "2610.19102": {
-        "authors": [
-            "Georgios Angelidis",
-            "Aggelos Psiris",
-            "Maria Vakalopoulou",
-            "Georgios Th. Papadopoulos",
-            "Giorgos Sfikas",
-            "Iraklis Varlamis"
-        ],
-        "title": "The Gap Is in the Geometry: A Convergent Meta-Analysis of Multi-Facet Aerial and Remote Sensing Video Understanding",
-        "abstract": "arXiv:2610.19102v1 Announce Type: new  Abstract: Aerial and remote sensing video is increasingly evaluated like web video, by posing multiple-choice questions to multimodal large language models (MLLMs) over sampled frames and reporting accuracy. This paper argues that this recipe measures the wrong aspect, and supports the claim with a convergent meta-analysis of a broad set of published results, organized in four evidence tiers, in which a claim becomes a position only when collected evidence agrees. Parameter scale exhibits a median of +3.4 accuracy points per tenfold increase on aerial benchmarks, far below a human gap of at least 19 points, whereas acquisition conditions control perception, as 315 of 318 evaluations in 19 within-paper contrasts lose accuracy when conditions such as altitude, view, object size or time horizon become harder. No aerial benchmark in the corpus combines video input with per-task human and random baselines, competence collapses from answering to acting in closed-loop navigation, and the same MLLMs score higher on the aerial benchmark than on ground spatial ones, but lower on studies that test cross-view geometry. From these findings the current study derives five falsifiable principles and proposes the AVU-Card, a reporting card for aerial video benchmarks",
-        "arxiv_id": "2610.19102",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.19102",
-        "COMMENT": "Matches criterion 1 closely: it analyzes spatial understanding gaps in aerial/remote-sensing video and highlights geometry/viewpoint failures in MLLMs.",
+        "ARXIVID": "2610.21190",
+        "COMMENT": "Matches criterion 4 closely: it uses pretrained foundation models to distill multi-view knowledge for 3D point cloud upsampling and introduces a new multi-modal benchmark.",
         "RELEVANCE": 7,
-        "NOVELTY": 6,
+        "NOVELTY": 7,
         "TAGS": [
-            "Spatial Understanding",
-            "Aerial Vision",
-            "MLLM Evaluation",
-            "Geometry"
+            "3D Vision",
+            "Vision Foundation Models",
+            "Point Cloud Upsampling"
         ]
     },
-    "2610.18860": {
+    "2610.22137": {
         "authors": [
-            "Xin Gao",
-            "Yifan Yang",
-            "Xin Li",
-            "Pan Wang",
-            "Yan Li",
-            "Muzhao Tian",
-            "Mingxi Cheng",
-            "Bei Liu",
-            "Kai Qiu",
-            "Qi Dai",
-            "Dong Chen",
-            "Yue Dong",
-            "Leandros Tassiulas",
-            "Rex Ying",
-            "Ji Li",
-            "Chong Luo"
+            "Ling-Xiang Zhang",
+            "Tao Hu",
+            "Da-Wei Zhou"
         ],
-        "title": "AesCode: Aesthetic Code Generation with Decoupled Cross-Modal Rewards",
-        "abstract": "arXiv:2610.18860v1 Announce Type: new  Abstract: Generating information-rich visual artifacts such as slides, posters, and dashboards as code is appealing because the outputs are structured, editable, and verifiable. Yet code models cannot see how their choices of layout and color come together on the canvas, often limiting spatial planning and aesthetic quality. Image generators excel at visual design but can misrender requested content, making their outputs unreliable targets for direct reproduction. We therefore introduce AesCode, which generates code grounded in the content prompt while using an image generated from the same prompt as an aesthetic guidance. To do so, AesCode represents the target as a design graph that describes the whole canvas and makes each property attributable. From this graph, we derive complementary cross-modal rewards: deterministic verifiers score properties parsable from code and rendering, while a VLM judge assesses the non-parsable ones with a sample-specific Visual Graph Rubric (VGR) tied to graph elements and relations. We optimize these decoupled rewards through reinforcement learning with per-channel normalization to jointly improve spatial planning, aesthetic quality, and verifiable correctness. To evaluate this setting, we build a benchmark that scores verifiable correctness and visual quality separately, with visual scores highly consistent with human judgments. We find that reference images substantially improve the visual quality of code generated by existing models, and ablations show that AesCode benefits from references both as model input and as a source of visual rewards. Relative to same-scale Qwen3-VL baselines given the same references, AesCode-8B and AesCode-32B improve visual quality by 31.1 and 22.4 percentage points, reaching scores comparable to those of closed-source frontier models such as GPT-5.5 and Claude Opus 4.8.",
-        "arxiv_id": "2610.18860",
+        "title": "CART: Compatible Routing for Multimodal Continual Instruction Tuning",
+        "abstract": "arXiv:2610.22137v1 Announce Type: new  Abstract: Multimodal Large Language Models (MLLMs) achieve strong performance through instruction tuning, yet real-world applications often require them to continually acquire new capabilities from sequential tasks, i.e., Multimodal Continual Instruction Tuning (MCIT). In typical MLLMs, a projector is employed to align visual representations with the language model. However, existing methods primarily protect the language model from forgetting while continuously updating the projector across tasks. Such asymmetric adaptation can cause substantial representation drift in the projector, increasing the mismatch between the projector and language model and consequently exacerbating catastrophic forgetting. To address this issue, we propose Compatible Routing (CART), which explicitly coordinates the adaptation of the projector and language model. Specifically, CART maintains task-specific experts for both modules and combines them through weighted mixtures. CART jointly infers their weights by considering both expert relevance and cross-module compatibility, thereby promoting coordinated adaptation between the two modules. To further control model growth, we introduce relevance-guided expert consolidation, which merges experts exhibiting similar relevance profiles across samples within each module. Extensive experiments demonstrate that CART achieves state-of-the-art performance.",
+        "arxiv_id": "2610.22137",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2610.18860",
-        "COMMENT": "Matches criterion 4 closely: it uses a VLM-guided reward scheme for visually grounded code generation and spatial planning in canvas-level design.",
-        "RELEVANCE": 6,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Vision-Language Models",
-            "Generative Design",
-            "Reinforcement Learning",
-            "Spatial Planning"
-        ]
-    },
-    "2610.20220": {
-        "authors": [
-            "Zhuobai Dong",
-            "Junchao Yi",
-            "Hu Jian Guo",
-            "Linjie Li",
-            "Rui Zhao",
-            "Alex Jinpeng Wang"
-        ],
-        "title": "Glance Forcing: Making Bidirectional Diffusion Autoregressive at a Glance",
-        "abstract": "arXiv:2610.20220v1 Announce Type: new  Abstract: Autoregressive generation underlies real-time, causal video synthesis and is the backbone of video world models. Today's dominant approach distills a bidirectional diffusion model into a causal few-step student, but existing pipelines make this conversion prohibitively expensive, requiring offline Probability Flow ODE} (PF-ODE) trajectories that cost tens of thousands of GPU-hours and terabytes of storage. We show it can be made dramatically more efficient. Pushing this efficiency to its extreme, we reduce trajectory supervision to a single sample, the strictest setting possible, and find that it causes severe quality collapse. We trace this to the teacher's trajectory geometry: the high-noise regime, governing semantic layout and motion, and the low-noise regime, governing fine texture exhibit fundamentally different curvature and optimization behavior, so a single monolithic student cannot jointly fit both, causing severe representation interference. Motivated by this, we propose Glance Forcing, a lightweight distillation framework that decouples the denoising trajectory into two complementary slow and fast experts, each guided by a tailored, stage-specific objective, while keeping the pretrained teacher entirely frozen. This decoupling further reveals a general mechanism underlying few-step distillation: PF-ODE distillation mainly straightens the few-step trajectory geometry, while the subsequent distribution-matching stage independently governs distributional quality. Using only one PF-ODE trajectory, Glance Forcing already surpasses the fully-trained state-of-the-art baseline, raising the VBench Total score from 84.04 to 84.22 while cutting trajectory-collection cost from thousands of GPU-hours to about one A100-GPU-hour, with markedly larger gains in dynamic degree, VisionReward, and instruction-following, and consistent preference from human raters over strong baselines.",
-        "arxiv_id": "2610.20220",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.20220",
-        "COMMENT": "Moderate match to criterion 4: it advances video generation/world-model-style diffusion distillation, which is adjacent to vision foundation models and generative modeling in multimodal learning.",
-        "RELEVANCE": 4,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Video Generation",
-            "Diffusion Models",
-            "Distillation"
-        ]
-    },
-    "2610.19341": {
-        "authors": [
-            "Zongyu Wu",
-            "Yilong Wang",
-            "Xiaochen Wang",
-            "Minhua Lin",
-            "Yuan Zhong",
-            "Fenglong Ma",
-            "Xiang Zhang",
-            "Suhang Wang"
-        ],
-        "title": "MMKG-R1: Constructing Multimodal Knowledge Graphs via Reinforcement Learning",
-        "abstract": "arXiv:2610.19341v1 Announce Type: new  Abstract: Multimodal knowledge graphs (MMKGs) organize information across different modalities to support multimodal Graph Retrieval-Augmented Generation (RAG), which aims to improve the performance of multimodal large language models (MLLMs). The effectiveness of these multimodal Graph RAG methods largely depends on the quality of the constructed MMKGs. However, most existing methods construct MMKGs without explicit guidance on graph quality, while reinforcement learning (RL)-based methods that rely on final-answer correctness may provide only indirect feedback on MMKG quality. To address these limitations, we propose MMKG-R1, a novel MMKG-quality-driven RL framework for training an MLLM as a multimodal knowledge constructor. To be specific, MMKG-R1 introduces multiple quality-aware rewards to directly evaluate both the quality of information extracted from individual knowledge sources and the quality of the assembled MMKG. These rewards are then used to guide the RL training. Experiments across multiple datasets show that MMKG-R1 constructs MMKGs that improve downstream question-answering accuracy.",
-        "arxiv_id": "2610.19341",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.19341",
-        "COMMENT": "Moderate match to criterion 2: it uses an MLLM as a multimodal knowledge constructor and focuses on improving multimodal graph construction for downstream MLLM/RAG systems.",
+        "ARXIVID": "2610.22137",
+        "COMMENT": "Matches criterion 2 closely: it proposes a method for multimodal continual instruction tuning of MLLMs, with a new routing strategy for projector/LM coordination.",
         "RELEVANCE": 5,
         "NOVELTY": 6,
         "TAGS": [
             "Multimodal LLMs",
-            "Knowledge Graph Construction",
-            "Reinforcement Learning"
+            "Continual Learning",
+            "Instruction Tuning"
         ]
     },
-    "2610.20341": {
+    "2610.21007": {
         "authors": [
-            "Yongzhen Hu",
-            "Hao Yu",
-            "Jiawei Wang",
-            "Xianming Zeng",
-            "Jianyun Xu",
-            "Xingliang Liu",
-            "Ruizhen Hu",
-            "Xiaowei Zhou",
-            "Hujun Bao",
-            "Sida Peng"
+            "Ziheng Zhang",
+            "Neha Hulkund",
+            "Colin Lee",
+            "Zheda Mai",
+            "Hui Shen",
+            "Ying Ding",
+            "Tanya Berger-Wolf",
+            "Sara Beery",
+            "Wei-Lun Chao",
+            "Jianyang Gu"
         ],
-        "title": "InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views",
-        "abstract": "arXiv:2610.20341v1 Announce Type: new  Abstract: Feed-forward Gaussian reconstruction builds 3D scenes directly from input images for novel view rendering, but learning Gaussian attributes from predicted geometry for high-quality rendering under large viewpoint changes remains challenging. We analyze limitations in Gaussian attribute learning and introduce InfiniSplat v2, which improves rendering quality through architectural and training changes. Our method decouples geometry and attribute prediction with a frozen geometry branch, aligns predicted Gaussians using ground-truth camera poses during training, and adopts large-angle target view supervision. Across six datasets, the feed-forward outputs of the same trained model achieve state-of-the-art mean LPIPS and DISTS among the evaluated methods in both pose-conditioned and pose-free settings. In the pose-conditioned setting, mean LPIPS and DISTS decrease by 25.8% and 32.9%, respectively, compared with the strongest evaluated baselines. We further find that opacity learned with only image reconstruction supervision suppresses geometrically inconsistent points. Project page: https://zju3dv.github.io/InfiniSplat2/",
-        "arxiv_id": "2610.20341",
+        "title": "Mind the Tail: Data Selection Through Sparse Concepts",
+        "abstract": "arXiv:2610.21007v1 Announce Type: new  Abstract: Data selection reallocates training support across visual concepts, including objects, attributes, color, texture, and backgrounds. Different allocation strategies may produce varied downstream model behavior, especially for tail concepts supported by only a few samples. Discarding them can hurt test-time robustness, while overemphasizing samples lying on category boundaries may introduce unstable training signals. This work explicitly investigates this relationship across fine-grained, spurious-correlation, and general image classification, as well as multimodal pretraining. Specifically, we use sparse autoencoders (SAEs) to extract concept activations from individual images. During selection, we accumulate the dataset-level concept support for each added sample. Applying diminishing returns to this distribution down-weights well-represented concepts and shifts the focus to the distribution tail. We then incorporate local support to find samples that reliably strengthen under-supported concepts. Empirical results show consistent improvements over strong data selection baselines across all benchmarks. We also reveal the connection between concepts our method enhances and the induced behavioral changes, including improved robustness against out-of-distribution and spurious contexts. This work establishes concept support, beyond individual sample importance, as a useful principle for data-efficient and robust learning.",
+        "arxiv_id": "2610.21007",
         "primary_category": "cs.CV",
         "categories": [
             "cs.CV"
         ],
-        "ARXIVID": "2610.20341",
-        "COMMENT": "Moderate match to criterion 4: it improves feed-forward 3D Gaussian Splatting reconstruction from arbitrary views, a vision foundation-model-adjacent 3D perception/generation application.",
+        "ARXIVID": "2610.21007",
+        "COMMENT": "Matches criterion 4 moderately well: it uses sparse autoencoders for concept-based data selection in multimodal pretraining and studies vision concept support.",
         "RELEVANCE": 4,
         "NOVELTY": 6,
         "TAGS": [
-            "3D Gaussian Splatting",
-            "Novel View Synthesis",
-            "Feed-Forward Reconstruction"
+            "Vision Foundation Models",
+            "Data Selection",
+            "Sparse Autoencoders"
+        ]
+    },
+    "2610.21760": {
+        "authors": [
+            "Olivia Salamon",
+            "Virginia N. L. Franqueira",
+            "Shujun Li"
+        ],
+        "title": "Beyond Generation: Using Multimodal LLMs as Detectors of LLM-Generated Deepfake Facial Images",
+        "abstract": "arXiv:2610.21760v1 Announce Type: new  Abstract: As image generation models become increasingly capable of producing highly realistic content, traditional forensic techniques are struggling to keep up. This paper investigates whether MLLMs can instead be used as a form of forensic analysis by identifying synthetic media. Specifically, the study aims to determine whether these models detect fake images by recognising physical inconsistencies, or whether they rely on digital artefacts such as embedded watermarks.Six MLLMs: GPT-4o, GPT-5, GPT-5.2, Gemini 2.5, Gemini 3, and Seed 1.6, are benchmarked using a dataset of 400 images. Fifty images are authentic photographs, while the remaining 350 are generated using seven leading image models: Gemini 3, Gemini 2.5, Flux.2 Pro, GPT-Image-1, GPT-Image-1.5, Seedream 4.0, and Seedream 4.5. The evaluation is structured in three stages: single-image classification, pairwise comparison, and a focused \"self-detection\" experiment on Gemini. Several MLLMs achieved a high detection accuracy, with GPT-5.2 reaching a peak of 97.9% in the pairwise experiment, against specific generators and an overall mean pairwise accuracy of 82.5% by identifying structural or physical inconsistencies within images. However, results from the self-detection experiment indicate that the presence of invisible SynthID watermarks leads to a 10% reduction in Gemini's detection accuracy compared to the clean control group. One possible explanation is that SynthID embedding reduces some of the visible artefacts the models rely on for detection.These results imply that MLLMs can detect structural artefacts without relying on watermarks, but performance varies substantially across model generations. The findings from comparison C5 also suggest that SynthID embedding may suppress some of the structural artefacts used during detection.",
+        "arxiv_id": "2610.21760",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.ET"
+        ],
+        "ARXIVID": "2610.21760",
+        "COMMENT": "Matches criterion 2 very closely: it studies MLLMs as detectors of LLM-generated deepfake facial images and evaluates their forensic behavior.",
+        "RELEVANCE": 5,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Multimodal LLMs",
+            "Deepfake Detection",
+            "Visual Forensics"
+        ]
+    },
+    "2610.22155": {
+        "authors": [
+            "Jingyu Tang",
+            "Xu Yang",
+            "Zhehao Zhang",
+            "Zheng Wang",
+            "Qi Cheng",
+            "Haozhe Zhao",
+            "Manling Li",
+            "Wenxuan Li",
+            "Xide Xia",
+            "Jiaxin Pei"
+        ],
+        "title": "Realtime-Bench: Can Frontier Models Solve Real-time Interactive Problems?",
+        "abstract": "arXiv:2610.22155v1 Announce Type: new  Abstract: Real-time interaction requires agents to perceive evolving environments and act under temporal constraints, yet existing evaluations of real-time streaming models focus on conversational quality and streaming perception, leaving effective action under strict temporal constraints untested. We introduce Realtime-Bench, a suite of carefully curated dynamic tasks where delayed actions directly affect success. Under Wall Clock, where environments advance according to actual inference latency, the best success rate reaches only 44% and the best Pass^3 is only 36%, demonstrating that real-time interaction remains challenging. To separate serving latency from models' real-time streaming capability, we compare Wall Clock with Paused Clock, which removes inference delays as an idealized reference, and introduce Token Clock, which advances simulated time according to generated token counts, testing temporal awareness independently of physical serving speed. We find that temporal costs limit success in evolving environments and that higher reasoning effort has mixed effects under time pressure, reflecting a trade-off between decision quality and timely execution. These findings suggest directions for improving real-time multimodal agents, including adaptive reasoning with temporal awareness and continuous perception and action.",
+        "arxiv_id": "2610.22155",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.22155",
+        "COMMENT": "Matches criterion 3 only partially: it is a new benchmark for real-time interactive agents with temporal constraints, but it is not specifically embodied AI or spatial understanding.",
+        "RELEVANCE": 4,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Benchmark & Evaluation",
+            "Real-Time Agents",
+            "Temporal Reasoning"
+        ]
+    },
+    "2610.22350": {
+        "authors": [
+            "Dongxu Yang",
+            "Hongda Yan",
+            "Renxin Wang",
+            "Baoli Zhang",
+            "Haojia Zuo",
+            "Ying Zhao",
+            "Youmin Chen",
+            "Xiaojian Liao",
+            "Congming Gao",
+            "Tianyang Jiang",
+            "Yixiao Chen",
+            "Qing Wang",
+            "Zhiguo Yu",
+            "Xiaqing Li",
+            "Yuhao Zhang",
+            "Jiawen Sun",
+            "Renzhe Xu",
+            "De Mi",
+            "Tiancheng Wu",
+            "Xianya Fu",
+            "Xuanlu Zhao",
+            "Bo Feng",
+            "Meixuan Ren",
+            "Guanming Lin",
+            "Ziheng Zhou",
+            "Xinhua Wang"
+        ],
+        "title": "FDE-Gym: The Last Mile of AI Delivery",
+        "abstract": "arXiv:2610.22350v1 Announce Type: new  Abstract: Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers.",
+        "arxiv_id": "2610.22350",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI",
+            "cs.CL",
+            "cs.SE"
+        ],
+        "ARXIVID": "2610.22350",
+        "COMMENT": "Matches criterion 3 only loosely: it is a new benchmark with simulated customer environments and interactive agents, but it is not embodied AI or spatially grounded.",
+        "RELEVANCE": 4,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Agent Benchmarking",
+            "Interactive Evaluation",
+            "Simulated Environments"
+        ]
+    },
+    "2610.22056": {
+        "authors": [
+            "Xiuhui Zhang",
+            "Ning Gao",
+            "Xingyu Jiang",
+            "Yihui Chen",
+            "Yuheng Pan",
+            "Mohan Zhang",
+            "Yue Deng"
+        ],
+        "title": "Progress Reward Model for Reinforcement Learning via Large Language Models",
+        "abstract": "arXiv:2610.22056v1 Announce Type: new  Abstract: Traditional reinforcement learning (RL) algorithms face significant limitations in handling long-term tasks with sparse rewards. Recent advancements have leveraged large language models (LLMs) to enhance RL by utilizing their world knowledge for task planning and reward generation. However, planning-based approaches often depend on pre-defined skill libraries and fail to optimize low-level control policies, while reward-based methods require extensive human feedback or exhaustive searching due to the complexity of tasks. In this paper, we propose the Progress Reward Model for RL (PRM4RL), a novel framework that integrates task planning and dense reward to enhance RL. For high-level planning, a complex task is decomposed into a series of simple manageable subtasks, with a subtask-oriented, fine-grained progress function designed to monitor task execution progress. For low-level reward generation, inspired by potential-based reward shaping, we use the progress function to construct a Progress Reward Model (PRM), providing theoretically grounded optimality and convergence guarantees, thereby enabling effective policy optimization. Experimental results on robotics control tasks demonstrate that our approach outperforms both LLM-based planning and reward methods, achieving state-of-the-art performance. Code is available at https://github.com/deng-ai-lab/PRM4RL.",
+        "arxiv_id": "2610.22056",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.22056",
+        "COMMENT": "No close match to the listed criteria; this is RL reward shaping for robotics control, but the abstract does not emphasize a novel embodied benchmark or spatial intelligence angle.",
+        "RELEVANCE": 3,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Reinforcement Learning",
+            "Robotics Control",
+            "Reward Shaping"
+        ]
+    },
+    "2610.21539": {
+        "authors": [
+            "Zhiyuan Ma",
+            "Jiabao Wei",
+            "Tianyu Wang",
+            "Hanqing Wang",
+            "Jiadong Pan",
+            "Haowen Xu",
+            "Liangliang Zhao",
+            "Ruixun Liu",
+            "Yuhan Wang",
+            "Yuwei Zhang",
+            "Liang Feng",
+            "Junhao Xiao",
+            "Kaiyan Zhang",
+            "Xuekai Zhu",
+            "Daizong Liu",
+            "Biqing Qi",
+            "Yihao Liu",
+            "Ganqu Cui",
+            "Ning Ding",
+            "Linfeng Zhang",
+            "Jianjun Li",
+            "Kun He",
+            "Xiang Bai",
+            "Bowen Zhou"
+        ],
+        "title": "Reinforcement Learning-driven Diffusion Models: Language, Vision, and Beyond",
+        "abstract": "arXiv:2610.21539v1 Announce Type: new  Abstract: Diffusion models (DMs) have steadily demonstrated outstanding performance in high-fidelity, controllable generation across diverse scenarios, following the \"pretraining-finetuning\" paradigm established in LLMs. Despite these advances, conventional DMs still face critical limitations in sophisticated reasoning, autonomous exploration of generation pathways, and adaptability to complex, human-aligned objectives. Inspired by RLHF's success in LLMs, RL has recently emerged as a pivotal post-training mechanism to iteratively refine DMs through reward-driven trajectory optimization. This paper presents the first comprehensive review of RL-driven DMs and an empirical analysis of how RL reshapes the diffusion process towards experience-centric, goal-directed generation. We propose a novel technical panorama elucidating RL's multifaceted roles in diffusion-based language, multimodal, robotic, and scientific models, with a granular focus on diffusion trajectory optimization and reward engineering. Through extensive experiments on multiple task-specific benchmarks, we systematically evaluate representative methods to intuitively highlight the advantages of different RL post-training strategies. Furthermore, we reveal and dissect three crucial bottlenecks that currently hinder the real-world deployment of RL-driven DMs: reward design fragility, exploration-exploitation trade-off in high-dimensional generation spaces, and training instability under sparse rewards. Based on these perspectives, we provide a principled roadmap for the integration of RL into DMs and outline promising future research directions for robust, interpretable RL-diffusion systems. We also construct a public repository to continuously track the latest developments in this rapidly evolving field: https://github.com/MAIR-Lab-HUST/Awesome-RL-for-Diffusion-Models.",
+        "arxiv_id": "2610.21539",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.21539",
+        "COMMENT": "No close match to the listed criteria; this is a review and empirical overview of RL-driven diffusion models rather than a new VLLM/MLLM, embodied benchmark, or vision foundation model application.",
+        "RELEVANCE": 3,
+        "NOVELTY": 4,
+        "TAGS": [
+            "Diffusion Models",
+            "Reinforcement Learning",
+            "Survey"
         ]
     }
 }
