@@ -1,360 +1,304 @@
 {
-    "2610.37202": {
+    "2610.39302": {
         "authors": [
-            "Yongqi Shan",
-            "Lu Zhang",
-            "Jiazuo Yu",
-            "Yunzhi Zhuge",
-            "Huchuan Lu"
+            "Randall Balestriero",
+            "Yann LeCun"
         ],
-        "title": "3D-SceneQ: Empowering 3D LLM With Query-Guided Adaptive Pruning and Multi-Modal Feature Enhancement",
-        "abstract": "arXiv:2610.37202v1 Announce Type: new  Abstract: Current 3D scene understanding pipelines typically concatenate vast numbers of 3D object tokens with text tokens and feed the resulting sequence to a Large Language Model (LLM). However, existing 3D-LLMs for scene understanding encounter two major limitations: (i) excessive inclusion of task-irrelevant object data, introducing noise that reduces reasoning accuracy and increases hallucinations; and (ii) reliance solely on point cloud data, which inherently lacks the rich semantic information available in complementary 2D modalities, such as color, material properties, texture, and high-level contextual relationships. To address these challenges, we introduce 3D-SceneQ, a 3D LLM that unifies adaptive token pruning with multimodal semantic enrichment, markedly advancing scene understanding, reasoning, and grounding. Specifically, we propose a Query-Guided Adaptive Pruning (QGAP) module that adaptively selects task-relevant objects based on the intended meaning of user instructions, leveraging a learnable latent query to retain critical information while effectively suppressing irrelevant noise. In addition, we introduce a Multi-modal Object-level Feature Enhancement (MOFE) module, which integrates 2D feature embeddings from pre-trained models into 3D representation to enrich object-level semantic information. Evaluations show that 3D-SceneQ outperforms current state-of-the-art methods across multiple benchmarks (e.g., +5.7 CIDEr on Scan2Cap and +17.0 EM@1 on SQA3D), demonstrating its remarkable capabilities in various 3D language reasoning tasks.",
-        "arxiv_id": "2610.37202",
-        "primary_category": "cs.CV",
+        "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
+        "abstract": "arXiv:2610.39302v1 Announce Type: new  Abstract: Whether models trained on different modalities converge to the same representation of the world is central to AI. The Platonic Representation Hypothesis (PRH) conjectures that they do as they scale, but without a proof it offers neither a guarantee nor a recipe. We turn the hypothesis into a theorem. First, we prove a \\emph{Platonic Representation Theorem}: Joint-Embedding Predictive Architectures (JEPAs) trained separately on any number of modalities learn the same representation up to one rotation whenever their positive pairs are two observations of one scene--\\emph{good views}--and their misalignment is bounded otherwise. Second, we show that next-token prediction is a JEPA with \\emph{bad views}, parts of a single document, which explains why language models align with vision only through scale. Third, we validate the theory from 145k captions to the texts of 940M web images, and uncover a scaling law of alignment that predicts unseen runs within seed noise. Good views need 42 times fewer training samples than next-token prediction on the same corpus to reach the same alignment, and a 109M-parameter text JEPA aligns with DINOv2 and CLIP's image encoders better than every language model we evaluated, up to 72B parameters, and than CLIP's text encoder: next-token prediction is a remarkably inefficient route to platonic representations. As a showcase, one rotation turns separately trained encoders into an image captioner (CIDEr .838 on COCO). Even that rotation needs no pair: on the latest pair-free benchmark, our text JEPA beats every zero-shot accuracy reported with language models up to 8B parameters, e.g., 64\\% against at most 56\\% top-5 on ImageNet-100. Positive views, and not scale alone, are thus the lever to build platonic representations.",
+        "arxiv_id": "2610.39302",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.37202",
-        "COMMENT": "Matches criterion 1 and 2 closely: it is a new 3D scene understanding method for a 3D LLM with query-guided pruning and multimodal feature enhancement, directly aimed at spatial reasoning.",
-        "RELEVANCE": 9,
-        "NOVELTY": 8,
-        "TAGS": [
-            "3D Scene Understanding",
-            "3D LLM",
-            "Spatial Reasoning",
-            "Adaptive Pruning"
-        ]
-    },
-    "2610.36729": {
-        "authors": [
-            "Qiaoling Chen",
-            "Jiaxiang Cheng",
-            "Xueqing Deng",
-            "Tiankai Hang",
-            "Ji Hou",
-            "Jiaqi Li",
-            "Yifan Liu",
-            "Tao Lu",
-            "Junshu Tang",
-            "Yu Tang",
-            "Yao Teng",
-            "Yu Tian",
-            "Heng Wang",
-            "Weizhi Wang",
-            "Xiyao Wang",
-            "Xilun Wu",
-            "Mingyu Yang",
-            "Yangbin Yu",
-            "Rui Zhao",
-            "Longjun Cao",
-            "Linghao Chen",
-            "Haoyi Duan",
-            "Jiaming Han",
-            "Mingji Han",
-            "Enhua Jiang",
-            "Shunkai Li",
-            "Yanzhe Liang",
-            "Qinwei Ma",
-            "Cong Wang",
-            "Lei Wang",
-            "Bing Wu",
-            "Ke Xing",
-            "Ray Ying",
-            "Zhentao Yu",
-            "Key Zhang",
-            "Yuan Zhou",
-            "Zhengguang Zhou",
-            "Kai Zou"
-        ],
-        "title": "Hy-Nomas: Towards Free-form Interactive World Generation",
-        "abstract": "arXiv:2610.36729v1 Announce Type: new  Abstract: Interactive world generation requires models to follow successive commands while preserving relevant history and action consequences. We present Hy-Nomas, a video world model with an 8B diffusion backbone that supports free-form text instructions and continuous camera control across multiple interaction turns. It generates variable-length segments conditioned on current inputs and cached history. Our central design aligns structured video captions with action-aware causal attention: descriptive context remains accessible across segments, while action instructions are restricted to their intended temporal windows. A vision-language Prompt Enhancer (PE) translates user requests and multimodal interaction histories into structured conditions for the next segment. A multi-stage curriculum progressively introduces causal generation, text interaction, camera control, and training on model-generated histories, followed by diffusion distillation. In human evaluation, Hy-Nomas shows superior performance over existing world models. We release model weights, code and benchmarks, together with a lightweight adaptation workflow, to support reproducible research on interactive world generation.",
-        "arxiv_id": "2610.36729",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.36729",
-        "COMMENT": "Matches criterion 3 very closely: this is a new embodied/world-model method for free-form interactive world generation with multi-turn instruction following and camera control.",
-        "RELEVANCE": 9,
-        "NOVELTY": 8,
-        "TAGS": [
-            "World Models",
-            "Embodied AI",
-            "Interactive Generation",
-            "Video Diffusion"
-        ]
-    },
-    "2610.36986": {
-        "authors": [
-            "Rinyoichi Takezoe",
-            "Yaqian Li",
-            "Weiren Wang",
-            "Zihao Bo",
-            "Huihong Shi",
-            "Anzhou Hou",
-            "Mo Guang",
-            "Jiale Yan",
-            "Kaiwen Long"
-        ],
-        "title": "LearnPrunerV2: Learnable Progressive Token Pruning for Vision-Language Models",
-        "abstract": "arXiv:2610.36986v1 Announce Type: new  Abstract: Vision-Language Models (VLMs) have demonstrated remarkable multimodal capabilities but suffer from prohibitive computational overhead due to the massive number of visual tokens. While token pruning is a promising solution, existing methods still suffer from two major drawbacks: 1) unreliable pruning criteria that fail to accurately localize task-specific regions due to inherent attention biases or query-agnostic designs, and 2) suboptimal pruning strategies that employ rigid, non-adaptive schedules, overlooking the dynamic evolution of token redundancy across different model depths. To address these challenges, we propose LearnPrunerV2, which extends the previous two-stage heuristic framework (LearnPruner) into a fully learnable architecture. Specifically, we integrate lightweight learnable modules into every layer of the VLM backbone, which estimate token importance by fusing intrinsic visual saliency with extrinsic query relevance captured via a shadow token. By uncovering a consistent staircase redundancy pattern across VLM layers, we further introduce Budget-Deterministic Pruning (BDP) to establish a hardware-friendly schedule with fixed per-layer budgets. Extensive experimental results across various benchmarks and VLMs demonstrate that LearnPrunerV2 consistently outperform previous state-of-the-art methods. Notably, LearnPrunerV2 preserves 99.8% of the original performance when pruning 77.8% of visual tokens on LLaVA-v1.5, achieving a superior accuracy-efficiency trade-off.",
-        "arxiv_id": "2610.36986",
-        "primary_category": "cs.CV",
-        "categories": [
+            "cs.AI",
             "cs.CV",
+            "stat.ML"
+        ],
+        "ARXIVID": "2610.39302",
+        "COMMENT": "Matches criterion 4 very closely: it is a vision foundation-model paper on JEPAs, representation alignment across modalities, and applications to image/text alignment.",
+        "RELEVANCE": 10,
+        "NOVELTY": 9,
+        "TAGS": [
+            "Vision Foundation Models",
+            "JEPA",
+            "Cross-Modal Representation Learning"
+        ]
+    },
+    "2610.39264": {
+        "authors": [
+            "Peitong Duan",
+            "Khashayar Gatmiry",
+            "Jeffrey Nichols",
+            "Samy Bengio",
+            "Emmanuel Abbe"
+        ],
+        "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps",
+        "abstract": "arXiv:2610.39264v1 Announce Type: new  Abstract: While frontier vision-language models demonstrate strong capabilities in user interface (UI) navigation, their high inference costs prohibit everyday use. Conversely, smaller models trained via supervised fine-tuning (SFT) or offline reinforcement learning often memorize static trajectories, leading to brittle execution and an inability to recover from errors. To address these limitations, we propose a novel online reinforcement learning framework that trains UI navigation agents directly on live iOS applications. Our framework decouples the agent into two specialized components: a Planning agent and a UI Grounding model. We rely on an LLM-as-a-Judge to provide comprehensive reward signals, combining dense, step-level feedback to evaluate intermediate progress with a terminal reward for overall task completion. To effectively leverage this dual reward structure, we optimize the agent using Proximal Policy Optimization (PPO) with step-level advantage estimation. Furthermore, we introduce GiGPPO, a novel neighbor-conditioned value estimation method that improves critic stability by leveraging reward signals from visually similar states across concurrent trajectories. To support this online training paradigm at scale, we introduce an efficient infrastructure that orchestrates hundreds of concurrent virtual iOS devices. Evaluations on rigorous benchmarks, including UINavBench, iOSWorld, and AndroidWorld, demonstrate that our online RL trained agents substantially outperform both SFT and terminal-only RL baselines while accelerating training convergence. Notably, our 8B RL agents achieve nearly a sevenfold improvement over the SFT baseline in out-of-distribution generalization to Android environments, while outperforming Gemini-3.5-Flash and tying with Gemini-3.1-Pro on real iOS applications.",
+        "arxiv_id": "2610.39264",
+        "primary_category": "cs.AI",
+        "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2610.36986",
-        "COMMENT": "Matches criterion 2 very closely: a new method for Vision-Language Models focused on progressive token pruning and efficiency.",
+        "ARXIVID": "2610.39264",
+        "COMMENT": "Matches criterion 3 very closely: this is an embodied AI paper on UI navigation with a new online RL method and live-iOS training infrastructure, which is a novel simulator/live-environment angle.",
+        "RELEVANCE": 7,
+        "NOVELTY": 8,
+        "TAGS": [
+            "Embodied AI",
+            "UI Navigation",
+            "Online Reinforcement Learning"
+        ]
+    },
+    "2610.39439": {
+        "authors": [
+            "Haotian Lyu",
+            "Haoyu Wang",
+            "Ru Wang",
+            "Feng Ji",
+            "Ziwen Li",
+            "Jiaxian Guo",
+            "Mingming Gong"
+        ],
+        "title": "Timbre: Reliability-aware harmonic consensus for label-free multimodal test-time rexinforcement learning",
+        "abstract": "arXiv:2610.39439v1 Announce Type: new  Abstract: Label-free test-time reinforcement learning adapts vision--language models using rewards derived from their own predictions. However, misinterpreted visual evidence and sensitivity to textual formulation can produce a consistent but incorrect consensus that majority voting reinforces. Cross-view aggregation can expose such errors, but image and text transformations may themselves degrade task-relevant evidence to different extents. We introduce \\method, a reliability-aware harmonic consensus framework for multimodal test-time reinforcement learning. \\method constructs a $2\\times2$ grid combining original and perturbed images with direct-solving and reframing modes, selects pseudo-labels through weighted harmonic aggregation, and adapts modality-level weights using batch-averaged, temporally smoothed shifts in pseudo-label confidence as a heuristic reliability signal. We formulate consensus as a weighted $\\chi^2$-barycenter problem whose unique minimizer is the normalized weighted harmonic aggregate, without requiring correct-answer invariance. An exact support--dispersion decomposition characterizes when harmonic aggregation preserves or corrects arithmetic rankings, while a sensitivity analysis establishes how modality reweighting changes pairwise ranking margins, informing interpretation of the heuristic updates. Across six benchmarks and three Qwen3-VL model scales, \\method outperforms TTRV in 16 of 18 benchmark--model settings on adaptation instances and 17 of 18 settings on held-out instances under matched estimation and optimization rollout counts. These results demonstrate improved target-task adaptation and transfer to unseen instances without further updates.",
+        "arxiv_id": "2610.39439",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.39439",
+        "COMMENT": "Matches criterion 2 very closely: it is a multimodal test-time adaptation/reinforcement method for VLMs, with explicit multimodal consensus and Qwen3-VL experiments.",
         "RELEVANCE": 8,
-        "NOVELTY": 7,
+        "NOVELTY": 6,
         "TAGS": [
             "Vision-Language Models",
-            "Token Pruning",
-            "Efficiency",
-            "Model Compression"
+            "Test-Time Adaptation",
+            "Multimodal Reinforcement Learning"
         ]
     },
-    "2610.36831": {
+    "2610.40246": {
         "authors": [
-            "Xiaokang Yuan",
-            "Binhui Yao",
-            "Luwei Yang",
-            "Ruimin Chen",
-            "Zeng Wang"
+            "Ankush Kadu",
+            "Athira Gopal",
+            "Niharika Singh",
+            "Arpit Jain",
+            "Aswanth Krishnan"
         ],
-        "title": "Right Click, Wrong Box: Grading GUI Grounding by What a Click Does",
-        "abstract": "arXiv:2610.36831v1 Announce Type: new  Abstract: Leading GUI grounders score 93 to 96% on ScreenSpot-v2, and reported gaps between new and prior models are about a point. At this level the useful question is what the remaining errors are. Benchmarks count a click as correct only inside one annotated box, but interfaces often expose one action through several elements: a duplicated link, the label of a checkbox, the title next to a logo. The box is not wrong. The rule is incomplete. We call a click correct when executing it produces the same outcome as clicking the annotated target. A probe that executes and fingerprints about a thousand clicks per page turns this definition into outcome maps and an execution judge for live web applications, with no new annotation. We execute the predictions of three strong 7--8B grounders on a code forge and an online shop. About one in five and one in three of the clicks that box scoring rejects reach the intended outcome, and the shares remain one in seven and one in three when the instructions are rewritten as natural tasks. A blind audit of 11 models on ScreenSpot-v2 (three 7--8B grounders and eight 3B variants) finds the same effect on web screenshots, with two independent reviewers on a 60-unit subset. The share is highest for the strongest grounders. Training seeds and test-set sampling add noise that more runs and paired intervals control. Box scoring instead under-counts correct clicks, which repetition does not remove, and the audit-based correction of 0.2 to 1.8 points on ScreenSpot-v2 is as large as the gaps the field reports. The correction is needed in evaluation. In our 3B GRPO study, crediting equivalent clicks in the reward gives no stable gain over box rewards across three seeds and four test sets. We release the probe, the outcome maps, the audit and every prediction.",
-        "arxiv_id": "2610.36831",
-        "primary_category": "cs.CV",
+        "title": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
+        "abstract": "arXiv:2610.40246v1 Announce Type: new  Abstract: Computer-use agents built on large language models (LLMs) work in software that can change while they act: an appointment moves, a policy is revised, a record is updated. Testing agents under such changes is harder than it looks. When an agent fails, the cause may be the agent, but it may also be a change that did not fire as intended, an update the agent never received, or a grader that scored the episode wrongly. We introduce EnvOS, a framework for building and certifying environments that change mid-task. Before any agent runs, EnvOS checks that each change fires correctly, that the task remains solvable, and that the grader separates correct from incorrect behavior; after each run, separate code re-checks the verdict from archived evidence. We apply it to stale information, where a value the agent has already seen changes before the agent acts on it. In clinic booking, Claude Opus 5 succeeds on 0/16 tasks when nothing extra is shown, 2/16 when reminded to re-check the source, and 15/16 when the updated value is shown; the gain over the reminder holds after correcting for all tests (p = 0.00293). In insurance-claim approval, Opus 5 re-checks on its own and succeeds on 10/10, whereas Claude Sonnet 5 rises from 1/10 to 9/10 when the current policy is shown again, a gain significant in its pre-registered test but not after correcting for all tests. Whether an agent caught a change thus varied with the model and the interface. We also stress-test the grading itself: on corrupted episodes designed blind from the rules, the EnvOS pipeline accepted none of 26 as clean, and on an externally generated set it caught 25 of 39, against 4 for simple log checks. Because every EnvOS environment is generated from a seed and graded by an audited automatic verifier, the same environments are natural candidates for training agents with reinforcement learning from verifiable rewards.",
+        "arxiv_id": "2610.40246",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV"
+            "cs.AI",
+            "cs.HC"
         ],
-        "ARXIVID": "2610.36831",
-        "COMMENT": "Matches criterion 3 very closely: it proposes a new benchmark/evaluation angle for GUI grounding by judging clicks via outcomes rather than box overlap, which is an embodied-agent-style evaluation issue.",
-        "RELEVANCE": 7,
+        "ARXIVID": "2610.40246",
+        "COMMENT": "Matches criterion 3 very closely: it builds a benchmark/evaluation framework for computer-use agents in changing environments, with a simulator-like task construction and auditing setup.",
+        "RELEVANCE": 6,
         "NOVELTY": 7,
         "TAGS": [
-            "GUI Grounding",
+            "Embodied/Agent Evaluation",
+            "Benchmark Construction",
+            "Computer-Use Agents"
+        ]
+    },
+    "2610.37786": {
+        "authors": [
+            "Tianci Xie",
+            "Zikun Cai",
+            "Chaoyun Zhang",
+            "Pinxue Guo",
+            "Bingxuan Li",
+            "Rui Zheng",
+            "Hang Yan"
+        ],
+        "title": "WebAnything: From the Wild Web to Scalable Agent Environments",
+        "abstract": "arXiv:2610.37786v1 Announce Type: new  Abstract: Web agents require diverse, executable, and resettable website environments for reproducible training and evaluation. Human-assisted mirrors demand per-site engineering, while generative construction can diverge from specified real websites. Capture-and-replay preserves observations, with interaction coverage constrained by captured content and replay capabilities.   We present WebAnything, a fully automated framework that reconstructs source-grounded, reusable Web environments from real URLs without per-site manual implementation or repair after initial setup and authorization. An Explorer-Builder collects browser-observable structures, resources, and interaction outcomes; an independent verifier checks frozen candidates and guides local repair or targeted source recapture.   We construct 244 website artifacts across 14 application domains and 53 categories, supporting 12,984 executed and accepted tasks. Compared with human-assisted WebHarbor, WebAnything achieves higher aggregate scores on three fidelity metrics, with 12 wins, two ties, and no losses in a blind audit. Fine-tuning Qwen3.5-9B on 5,856 interaction trajectories improves REAL success by 9.9 percentage points, Odysseys-Easy Rubric Avg and Task Avg by 6.25 and 6.32 percentage points, and WebArena-Verified Overall success by 13.33 percentage points under the fixed harness. Code: https://github.com/china-qijizhifeng/Web-Anything",
+        "arxiv_id": "2610.37786",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.37786",
+        "COMMENT": "Matches criterion 3 moderately well: it builds scalable web-agent environments, which is an embodied/web-interaction benchmark and simulator-style infrastructure with a novel environment-construction angle.",
+        "RELEVANCE": 5,
+        "NOVELTY": 7,
+        "TAGS": [
+            "Web Agents",
+            "Environment Construction",
+            "Benchmark & Evaluation"
+        ]
+    },
+    "2610.40133": {
+        "authors": [
+            "Shiqi Zhang",
+            "Guochen Zhou",
+            "Zesheng Wei",
+            "Hai Zhao",
+            "Zhisong Zhang"
+        ],
+        "title": "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision",
+        "abstract": "arXiv:2610.40133v1 Announce Type: new  Abstract: Web agents are typically evaluated with goals fully specified before execution and fixed thereafter, whereas real users often revise their requirements during interaction. To study such interactions, we introduce DynaRev, a benchmark of 181 tasks to evaluate web agents under dynamic goal revision. DynaRev uses semantic milestones to deliver revisions at task-defined stages, covers additive revisions, unconditional overrides, and runtime-conditioned overrides, and evaluates correctness, responsiveness, and efficiency through trajectory-grounded evaluation. Five-model evaluations show that agents often satisfy only part of the task requirements, with performance varying across task sources, revision types, and models. Further analyses reveal varied milestone timing, mixed effects of dynamic delivery, and contrasting revision-handling outcomes, with gains from instruction rewriting while preserving browser state and losses from browser resets. DynaRev provides a testbed for studying how web agents adapt to evolving user goals. The code and data are available at https://github.com/zsq259/DynaRev.",
+        "arxiv_id": "2610.40133",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.40133",
+        "COMMENT": "Matches criterion 3 moderately well: it introduces a new benchmark for web agents under dynamic goal revision, focusing on a previously underexplored interaction setting.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Web Agents",
             "Benchmark & Evaluation",
-            "Agent Evaluation",
-            "Web Interaction"
+            "Interactive Planning"
         ]
     },
-    "2610.36838": {
+    "2610.37919": {
         "authors": [
-            "Weihuang Lin",
-            "Xianing Chen",
-            "Zhibin Wang",
-            "Congzhi Zhang",
-            "Yiwei Ma",
-            "Jiayi Ji",
-            "Miao Chen",
-            "Jun Song",
-            "YuCheng",
-            "Bo Zheng",
-            "Xiaoshuai Sun",
-            "Rongrong Ji"
+            "Yusheng Zhao",
+            "Bowei He",
+            "Xue Liu",
+            "Mingxiao Li"
         ],
-        "title": "MVRCap: Towards Comprehensive Video Captioning via Hierarchical Multi-Dimensional Verifiable Rewards",
-        "abstract": "arXiv:2610.36838v1 Announce Type: new  Abstract: Despite significant progress, current models struggle to generate comprehensive video captions, constrained primarily by coarse-grained supervision, which often fails to capture spatial-temporal dynamics and the underlying logical intent. To address this issue, we introduce MVRCap, a novel framework that reformulates video captioning as a reinforcement learning task steered by structured verification. Central to our approach is a Fine-Grained Verifiable Reward mechanism, serving as dense supervision to enforce rigorous visual-semantic alignment. Specifically, we construct this reward system anchored by three complementary pillars: a Hierarchical Concept Coverage Reward utilizing our newly constructed MVRCap-QA dataset to ensure multi-dimensional completeness and semantic depth, a Factuality Verification Reward to enhance factual consistency, and a Conciseness Constraint to maximize semantic density. Furthermore, we curate the high-quality MVRCap-SFT dataset, providing structured annotations across six key dimensions, to serve as a robust foundational initialization for the RL policy in this training pipeline. Extensive experiments demonstrate that MVRCap achieves state-of-the-art performance on authoritative benchmarks including VDC, CAPability, and VC4VG.",
-        "arxiv_id": "2610.36838",
-        "primary_category": "cs.CV",
+        "title": "SciGame: Let Agents Play the Scientific Discovery Games in the Real and Counterfactual World",
+        "abstract": "arXiv:2610.37919v1 Announce Type: new  Abstract: Large language model agents are increasingly used for scientific discovery. However, existing benchmarks mix law inference with programming, score data fitting instead of prediction on unseen inputs, and do not separate empirical evidence from pretrained priors. We introduce SciGame, a controlled benchmark that converts scientific literature into structured scientific cards. Each card yields a pair of Original and dimensionally consistent Counterfactual environments with the same task interface. SciGame contains a Historical collection of canonical laws and a live Temporal collection curated from papers published after model knowledge cutoffs. It evaluates agents in candidate-guided Identification and open-ended Discovery settings. Each setting runs under Prior-only, Fixed, and Adaptive protocols. Experiments on five frontier models yield three findings. First, familiar priors hurt performance once the governing relation is altered. Second, adaptive experimentation helps the strongest models but harms weaker ones under limited budgets. Third, good explanations can hide quantitative failures. Recovering the exact symbolic form remains the main bottleneck, even when agents interpret evidence correctly. Current agents can investigate systems actively, but inducing exact laws in unfamiliar settings remains an open challenge.",
+        "arxiv_id": "2610.37919",
+        "primary_category": "cs.AI",
         "categories": [
-            "cs.CV"
+            "cs.AI",
+            "cs.CL"
         ],
-        "ARXIVID": "2610.36838",
-        "COMMENT": "Matches criterion 4 closely: a vision foundation-model-style video captioning system with reward-based fine-grained supervision and strong application to video understanding.",
-        "RELEVANCE": 6,
+        "ARXIVID": "2610.37919",
+        "COMMENT": "Matches criterion 3 in a broad way: it is a new benchmark/testbed for scientific discovery agents, but it is not embodied AI or a vision-language model paper.",
+        "RELEVANCE": 3,
         "NOVELTY": 7,
         "TAGS": [
-            "Video Captioning",
-            "Reinforcement Learning",
-            "Vision Foundation Models",
-            "Verifiable Rewards"
+            "Scientific Discovery",
+            "Agent Benchmark",
+            "Counterfactual Evaluation"
         ]
     },
-    "2610.37571": {
+    "2610.39247": {
         "authors": [
-            "Chanwoo Park",
-            "Jaywoong Jeong",
-            "Zachary Wojtowicz",
-            "Yubin Kim",
-            "Taekyun Lee",
-            "Kaiqing Zhang",
-            "Asuman Ozdaglar"
+            "Zongqi Wang",
+            "Rui Wang",
+            "Yuchuan Wu",
+            "Hua Yang",
+            "Bingxue Qiu",
+            "Tianle Gu",
+            "Bing Zhao",
+            "Yujiu Yang",
+            "Jieping Ye",
+            "Yongbin Li"
         ],
-        "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
-        "abstract": "arXiv:2610.37571v1 Announce Type: new  Abstract: Many real-world decisions require teams to integrate information distributed across participants. Yet AI agents are still primarily trained and benchmarked in isolation. We introduce TeamGym, an environment for evaluating and training language model-based agents on team decision-making problems constructed from real-world legal, finance, medical, and software engineering corpora. TeamGym introduces a method to identify a minimal set of facts, each element of which is necessary and all of which are collectively sufficient for a correct final decision, which we call pivotal information. This enables TeamGym to both control the distribution of pivotal information and track how well agents identify and integrate pivotal information when making team decisions. Examining 8 language models on 12 source corpora, we find that current AI agents often fail to effectively share information: Distributing pivotal information across participants lowers success rate by 22.9 percentage points on average relative to giving the same information to a single model (a communication gap). We also document that participants do not effectively retrieve decision-relevant information on their own: A team's success rate is lowered by a further 19.9 points when participants must identify and extract pivotal information from source material rather than receiving it directly (a retrieval gap). To help remedy these deficits, we use TeamGym to train policies through reinforcement learning on team decision loss. Across two policy-training experiments, we find that training improves final-decision quality and induces emergent coordination in participation, speaker selection, and communication, even though the reward evaluates only the final decision.",
-        "arxiv_id": "2610.37571",
+        "title": "SocialArena: Evaluating Social Intelligence in Large Language Models",
+        "abstract": "arXiv:2610.39247v1 Announce Type: new  Abstract: We introduce SocialArena, a benchmark for systematically defining and evaluating the social intelligence of large language models (LLMs). Although LLMs are increasingly deployed in socially interactive applications such as mental health counseling, companionship chatbots, and educational tutoring, existing evaluations remain fragmented focusing on isolated capabilities or single scenarios and evaluation reliability is largely unverified. This work makes three main contributions to address these limitations. (1) We first propose a unified three-tier framework that defines social intelligence along three capability dimensions: role-playing ability, mental state reasoning, and behavioral reasoning. To operationalize this definition, we design a role-playing dialogue paradigm with explicit character thinking for evaluation, enabling simultaneous assessment of these capabilities in a manner that mirrors realistic human interactions. (2) To ensure diversity across social scenarios and thereby prevent evaluation conclusions from being confined to specific scenarios, we introduce the U-TRIMF framework, which guides us in synthesizing social contexts with broad coverage. (3) To obtain reliable evaluation, we invest $132.4K to recruit and train human annotators and adopt a human-annotated arena-style protocol, where annotators compare model responses and provide preference labels along with natural-language critiques. We hope that SocialArena can provide valuable insights and guidance for future LLM improvements.",
+        "arxiv_id": "2610.39247",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2610.37571",
-        "COMMENT": "Matches criterion 3 closely: it introduces a new benchmark/environment for team decision-making with distributed information, though it is not embodied AI specifically.",
-        "RELEVANCE": 6,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Multi-Agent Benchmark",
-            "Team Decision-Making",
-            "Distributed Information",
-            "RL Training"
-        ]
-    },
-    "2610.37110": {
-        "authors": [
-            "Wenwu Tang",
-            "Dong Wang",
-            "Yun Cheng",
-            "Olga Saukh"
-        ],
-        "title": "A First-Step Bias Restores Lost Diversity in Diffusion Model Distillation",
-        "abstract": "arXiv:2610.37110v1 Announce Type: new  Abstract: Distribution-matching distillation enables high-quality image generation in only a few denoising steps. However, distilled student models often map different initial noise samples to similar outputs under the same prompt. To locate where diversity is lost, we compare the teacher and student along the sampling trajectory. The largest measured reduction in the response to different initial noises occurs during the first, high-noise step. When we replace the first step with the teacher's corresponding trajectory and leave the final three student steps unchanged, most of the output diversity returns. This suggests that the first step is a key point for restoring diversity. Motivated by this finding, we introduce \\emph{ReSeed}, a post-distillation method that adds a seed-response bias adapter only to the first student step and aligns its velocity with the teacher's first-interval secant velocity. All student weights and later denoising steps remain unchanged. We evaluate ReSeed on three text-to-image models (SD3-Medium, SD3.5-Medium, and FLUX.1-dev) and one text-to-video model (Wan2.1-T2V-1.3B). For a distilled 4-step FLUX.1-dev model, \\emph{ReSeed} requires only $0.00196\\%$ additional trainable parameters relative to the base model and is trained on 8,000 prompt--noise pairs, while keeping the distilled student fully frozen and requiring no target images, perceptual losses, or adversarial losses. It improves DINO diversity by $48.3\\%$ while maintaining competitive visual quality. These results show that substantial diversity can be recovered through a lightweight, data-efficient tuning of only the first denoising step, without finetuning the full student model.",
-        "arxiv_id": "2610.37110",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV",
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.37110",
-        "COMMENT": "Matches criterion 4: it is an application/improvement for diffusion-based generative vision foundation models, specifically improving diversity in distilled text-to-image/text-to-video models.",
-        "RELEVANCE": 5,
+        "ARXIVID": "2610.39247",
+        "COMMENT": "Matches criterion 3 only in a loose sense: it is a new benchmark for social intelligence in LLMs, but it is not embodied AI, spatial intelligence, or a vision-language model paper.",
+        "RELEVANCE": 3,
         "NOVELTY": 6,
         "TAGS": [
-            "Generative Modeling",
-            "Diffusion Distillation",
-            "Vision Foundation Models"
+            "LLM Evaluation",
+            "Social Reasoning",
+            "Benchmark & Evaluation"
         ]
     },
-    "2610.36765": {
+    "2610.40030": {
         "authors": [
-            "Lifan Zheng",
-            "Guotao Chen",
-            "Zhenyang Li",
-            "Shujie Cui",
-            "Qiang Huang",
-            "Fan Liu"
+            "Daniel Strauss",
+            "Nikolaos Sotirakis",
+            "Zhenshan Bing",
+            "Alois Knoll"
         ],
-        "title": "Evaluation-Guided Demonstration Refinement for Vision-Language-Action Policies: The Winning Entry in the MetaFine Open Competition",
-        "abstract": "arXiv:2610.36765v1 Announce Type: new  Abstract: We fine-tuned a separate $\\pi_{0.5}$ policy for each of the five tasks in the MetaFine Open Competition, with a task-specific training mixture and number of actions executed per prediction. Training started from the official demonstrations and expert procedures. Local evaluation exposed recurring grasping, pushing, and insertion failures. We addressed them by revising the demonstrated motions and by adding expert continuations from states the policy reached, while keeping nominal demonstrations in training. Checkpoints were compared on every instruction, so that a gain on one instruction could not hide a loss on another. Our submission, MAI, ranked first overall with a score of 96.66.",
-        "arxiv_id": "2610.36765",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.36765",
-        "COMMENT": "Matches criterion 3 very closely: it is an embodied vision-language-action policy paper for a simulator/competition setting, with a new method for refining demonstrations based on evaluation feedback.",
-        "RELEVANCE": 7,
-        "NOVELTY": 4,
-        "TAGS": [
-            "Embodied AI",
-            "Vision-Language-Action",
-            "Policy Fine-Tuning"
-        ]
-    },
-    "2610.36824": {
-        "authors": [
-            "Ziqi Liao",
-            "Jiaqi Shen",
-            "Yiming Na",
-            "Kedi Lyu",
-            "Shao-Yuan Lo",
-            "Hongxia Xie"
-        ],
-        "title": "Who Knows What - and What Does It Support? Perspective-Bounded Evidence Calibration for Multimodal Theory of Mind",
-        "abstract": "arXiv:2610.36824v1 Announce Type: new  Abstract: Theory of Mind (ToM), the ability to infer others' beliefs, goals, and intentions, is a cornerstone of social intelligence. Multimodal ToM requires inferring an agent's mental state from evidence that is available to that agent, rather than from the complete episode observed by the solver. Existing LLM-based and Bayesian model-based approaches reconstruct global event traces, yet they do not explicitly distinguish objective events from agent-admissible evidence during hypothesis evaluation. Consequently, agent-inaccessible events or semantically misaligned actions and utterances may influence the inferred belief, goal, or social intention, leading to perspective leakage and source or route confusion. We formulate this limitation as an evidence-admissibility problem: evidence should contribute to a mental-state hypothesis only when it is accessible to the relevant agent, preserves its information source, and is diagnostic of the queried mental-state variable. To operationalize this principle, we propose PIP-ToM, an evidence-admissibility interface that constructs agent-specific evidence stores, aligns them with structured mental-state claims, and calibrates model-based hypothesis scores while preserving the underlying Bayesian inference process. PIP-ToM with GPT-4o outperforms existing ToM methods across MuMA-ToM, MMToM-QA, and Hi-ToM, achieving average accuracies of 92.56%, 95.00%, and 95.00%, respectively.",
-        "arxiv_id": "2610.36824",
+        "title": "Cheap Retrieval and Observation Credit Assignment from One Quantity: The Value of Information",
+        "abstract": "arXiv:2610.40030v1 Announce Type: new  Abstract: Memory in reinforcement learning raises two problems. Attention finds the relevant item by scoring the whole store, which is costly for robots under latency and energy limits. When a retrieved memory pays off, credit for acquiring it must cross the whole sequence. We argue that both are governed by one quantity, the value of information, and propose to estimate it from archived rollouts with a learned world model. We obtain that, when read at the observation, it yields a provable lower bound on the optimal value of the acquiring action, which floors its TD target and attributes this floor to the observation that earned it. Read at the decision, it defines the optimal retrieval set. A pilot retrieval system, to be trained and improved with this signal, solves a memory task with reduced context.",
+        "arxiv_id": "2610.40030",
         "primary_category": "cs.AI",
         "categories": [
-            "cs.AI"
+            "cs.AI",
+            "cs.LG"
         ],
-        "ARXIVID": "2610.36824",
-        "COMMENT": "Matches criterion 2: it is a multimodal theory-of-mind system built on top of a VLLM/MLLM-style backbone (GPT-4o) with a new evidence-calibration method for multimodal reasoning.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Multimodal Reasoning",
-            "Theory of Mind",
-            "Vision-Language Models"
-        ]
-    },
-    "2610.36471": {
-        "authors": [
-            "Chiming Duan",
-            "Tong Jia",
-            "Yingxi Chen",
-            "Minghua He",
-            "Lingzhe Zhang",
-            "Ying Li"
-        ],
-        "title": "When to Intervene? An Empirical Study of Errors and Self-Recovery in LLM Agents",
-        "abstract": "arXiv:2610.36471v1 Announce Type: new  Abstract: LLM agents interact with Web services to perform tasks on users' behalf. Errors during these interactions can disrupt execution and prevent task completion, motivating external intervention. However, agents may self-recover through continued execution, raising the question of when to intervene and when to wait for self-recovery. We present an empirical study of errors and self-recovery in LLM agents. We construct ReInBench, a dataset containing 1,259 agent traces and 1,403 error events across computer-use and Web tasks. Our study examines how often and how quickly agents self-recover, how self-recovery relates to subsequent execution and task completion, and whether self-recovery can be predicted when an error occurs. We find that 725 error events self-recover, often within a few steps, with self-recovery performance differing across Execution LLMs. Self-recovery can also help agents recover from subsequent errors of the same type and support overall task completion. Intervention should therefore prioritize errors unlikely to self-recover, while allowing agents to continue when self-recovery is likely. Building on these empirical findings, we propose ReCoF, a method that predicts whether an error will self-recover to inform whether additional intervention is needed. ReCoF achieves an average relative improvement of 9.02% in Macro-F1 over the strongest baseline on ReInBench. Our code and data can be found at https://method-notes.github.io/ReCoF/.",
-        "arxiv_id": "2610.36471",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.36471",
-        "COMMENT": "Matches criterion 3 only loosely: it builds a new benchmark/dataset for LLM agents (ReInBench) and proposes an intervention policy, but it is web/computer-use agent evaluation rather than embodied AI or spatial intelligence.",
+        "ARXIVID": "2610.40030",
+        "COMMENT": "Only a loose fit for criterion 3: it touches memory and retrieval credit assignment for reinforcement learning/robots, but it is not clearly an embodied-AI benchmark or a spatial understanding method.",
         "RELEVANCE": 4,
         "NOVELTY": 5,
         "TAGS": [
-            "LLM Agents",
-            "Benchmark & Evaluation",
-            "Error Recovery"
+            "Reinforcement Learning",
+            "Memory Retrieval",
+            "Credit Assignment"
         ]
     },
-    "2610.36900": {
+    "2610.38568": {
         "authors": [
-            "Chaolang Li",
-            "Jingyu Li",
-            "Zhaocheng Du",
-            "Xuyang Xie",
-            "Gang Wang",
-            "Pengwen Dai"
+            "Yu Liu",
+            "Youxing Li",
+            "Yuedong Tan",
+            "Zhiwei Yang",
+            "Zihan Su",
+            "Hanqi Feng",
+            "Shaojie Zhang",
+            "Libin Liao",
+            "Zihao Wan",
+            "Chenxu Wu",
+            "Cong Cao",
+            "Fangfang Yuan",
+            "Yanbing Liu",
+            "Ziheng Chen",
+            "Pei Fu",
+            "Radu Timofte",
+            "Zongwei Wu",
+            "Nicu Sebe",
+            "Barnabas Poczos",
+            "Jian Luan"
         ],
-        "title": "Natural Hard-Negative Mining from Positives for Instruction-Following Retrieval",
-        "abstract": "arXiv:2610.36900v1 Announce Type: new  Abstract: Instruction-following information retrieval (IFIR) requires retrievers to rank documents by both a query and its instance-specific instructions, yet instruction-conditioned contrastive supervision remains scarce. Existing synthetic methods typically fix a positive passage and generate additional negatives, overlooking the hard-negative potential of the original positive. We propose Natural Hard-Negative Mining (NHNM), which promotes convertible negatives under query-compatible instructions and repurposes original positives as natural instruction hard negatives. Its automated Candidate Cleaning, Reversal Construction, and Geometry Filtering pipeline produces compact, high-contrast supervision aligned with the pretrained retrieval space. Applied to MSMARCO, NHNM yields NHNM-MARCO, an IFIR training set of nearly 7K instances. On InstructIR and FollowIR, models with 568M to 4B parameters fine-tuned on NHNM-MARCO achieve strong instruction-following performance and match or surpass substantially larger retrievers in several settings. Controlled analyses and ablations attribute these gains to natural hard-negative supervision rather than model scale or training-data volume.",
-        "arxiv_id": "2610.36900",
+        "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+        "abstract": "arXiv:2610.38568v1 Announce Type: new  Abstract: Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful. Existing methods often focus on what experience to generate next, while paying less attention to when fresh experience should be introduced. Many also construct training targets through self-consistency or majority voting, making supervision depend on the model's own uncertain predictions. We address these two questions separately: training dynamics determine when to acquire new experience, while the answers to new tasks remain independently checkable. A-RSI monitors reward variation and accuracy in training logs to refresh a task pool when its learning signal declines, without consulting validation or test scores. A static library of model-authored programs produces multimodal questions and derives their reference answers; we specify the task-generation contract, automatically verify chosen properties of the reward and refresh rules, and separately audit the generated answers. The training loop uses no external training examples or human-written answer labels. On the primary eleven-benchmark suite, A-RSI raises the performance average from 57.77 to 61.05 with 800 fresh tasks.",
+        "arxiv_id": "2610.38568",
         "primary_category": "cs.AI",
         "categories": [
             "cs.AI"
         ],
-        "ARXIVID": "2610.36900",
-        "COMMENT": "No very close match; this is retrieval training data construction and hard-negative mining, relevant to multimodal learning only indirectly.",
-        "RELEVANCE": 3,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Information Retrieval",
-            "Hard Negative Mining",
-            "Instruction Following"
-        ]
-    },
-    "2610.36756": {
-        "authors": [
-            "Xi Chen",
-            "Xu Chen",
-            "Xiamgyang Jia",
-            "Wei Wang",
-            "Xu Zhang",
-            "Zhenyuan Shun"
-        ],
-        "title": "Efficient Remote Sensing Image-Text Retrieval via Interaction-Free Recall and Text-Guided Reranking",
-        "abstract": "arXiv:2610.36756v1 Announce Type: new  Abstract: Remote sensing (RS) image-text retrieval plays a critical role in understanding massive RS imagery. However, the dense multi-object distribution and complex backgrounds in RS imagery make it difficult to simultaneously achieve fine-grained cross-modal alignment and efficient retrieval. Existing methods either rely on complex cross-modal interactions that lead to low retrieval efficiency, or depend on large-scale vision-language adaptation, which requires massive data and computational resources. To address these issues, we develop a fast-then-fine (FTF) retrieval framework centered on interaction-free multi-granular recall and parameter-free text-guided cross-modal reranking with the Balanced Text-guided Interaction Block (BTIB). Specifically, interaction-free multi-granular recall pre-computes gallery embeddings and matches them with the corresponding query embedding without full-gallery token-level text-image interaction, while text-guided cross-modal reranking with BTIB refines local semantic correspondence within the top-K candidate set. Furthermore, an inter- and intra-modal loss is designed to jointly optimize cross-modal alignment across multi-granular representations. Extensive experiments on public benchmarks demonstrate that the FTF achieves competitive retrieval accuracy while significantly improving retrieval efficiency compared with existing methods.",
-        "arxiv_id": "2610.36756",
-        "primary_category": "cs.CV",
-        "categories": [
-            "cs.CV"
-        ],
-        "ARXIVID": "2610.36756",
-        "COMMENT": "No very close match; it is a remote sensing retrieval method, which is related to vision-language applications but not one of the specific criteria.",
+        "ARXIVID": "2610.38568",
+        "COMMENT": "No close match to criteria 1-4; this is self-improvement for multimodal models, but it is not specifically a new VLLM/MLLM architecture or a vision foundation model application.",
         "RELEVANCE": 3,
         "NOVELTY": 5,
         "TAGS": [
-            "Remote Sensing",
-            "Image-Text Retrieval",
-            "Cross-Modal Ranking"
+            "Multimodal Learning",
+            "Self-Improvement",
+            "Data Curation"
+        ]
+    },
+    "2610.38391": {
+        "authors": [
+            "Qirui Liu",
+            "Wei Cao",
+            "Yu Mi",
+            "Yichen Sun",
+            "Xuekun Zhang",
+            "Lei Liu",
+            "Yue Shen",
+            "Zhixuan Chu"
+        ],
+        "title": "SCOPE: Selective Critical-Step On-Policy Self-Distillation for Agentic Reinforcement Learning",
+        "abstract": "arXiv:2610.38391v1 Announce Type: new  Abstract: Outcome-based reinforcement learning provides coarse supervision for long-horizon LLM agents: failed trajectories may contain correct steps, while successful trajectories can contain errors. Trajectory-level skills can also shift teacher preferences at unrelated steps, introducing off-target distillation signals. We introduce SCOPE, a framework for Selective Critical-Step On-Policy Self-Distillation. After a supervised warm-up, the policy analyzes its own trajectories, generates step-specific hindsight skills, and distills their guidance only at selected error steps. A bounded signed teacher-student coefficient stabilizes auxiliary updates while preserving positive reinforcement and negative correction. A success-relative pairwise length reward further encourages efficient task completion. Experiments on ALFWorld and WebShop demonstrate consistent improvements across multiple model backbones. With Qwen2.5-3B, SCOPE achieves 97.7% success on ALFWorld and 85.2% on WebShop, outperforming SEED by 5.9 and 6.3 percentage points, respectively. On unseen ALFWorld tasks, SCOPE reaches 89.6% success, improving over GRPO by 23.2 percentage points with 46.7% fewer interactions. Scaling to Qwen3-32B, SCOPE achieves 99.2% success on seen ALFWorld tasks and 94.0% on unseen tasks.",
+        "arxiv_id": "2610.38391",
+        "primary_category": "cs.AI",
+        "categories": [
+            "cs.AI"
+        ],
+        "ARXIVID": "2610.38391",
+        "COMMENT": "No close match to criteria 1-4; this is agentic RL for web/ALFWorld-style tasks, but not a novel embodied spatial method or benchmark.",
+        "RELEVANCE": 3,
+        "NOVELTY": 5,
+        "TAGS": [
+            "Agentic Reinforcement Learning",
+            "Self-Distillation",
+            "Web/Embodied Tasks"
         ]
     }
 }
