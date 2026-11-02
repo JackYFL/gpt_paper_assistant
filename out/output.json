@@ -1,304 +1,142 @@
 {
-    "2610.39302": {
+    "2610.41651": {
         "authors": [
-            "Randall Balestriero",
-            "Yann LeCun"
+            "Hao Yin",
+            "Tianchen Guo",
+            "Heming Du",
+            "Yan Ke",
+            "Yanbin Liu",
+            "Xin Yu"
         ],
-        "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
-        "abstract": "arXiv:2610.39302v1 Announce Type: new  Abstract: Whether models trained on different modalities converge to the same representation of the world is central to AI. The Platonic Representation Hypothesis (PRH) conjectures that they do as they scale, but without a proof it offers neither a guarantee nor a recipe. We turn the hypothesis into a theorem. First, we prove a \\emph{Platonic Representation Theorem}: Joint-Embedding Predictive Architectures (JEPAs) trained separately on any number of modalities learn the same representation up to one rotation whenever their positive pairs are two observations of one scene--\\emph{good views}--and their misalignment is bounded otherwise. Second, we show that next-token prediction is a JEPA with \\emph{bad views}, parts of a single document, which explains why language models align with vision only through scale. Third, we validate the theory from 145k captions to the texts of 940M web images, and uncover a scaling law of alignment that predicts unseen runs within seed noise. Good views need 42 times fewer training samples than next-token prediction on the same corpus to reach the same alignment, and a 109M-parameter text JEPA aligns with DINOv2 and CLIP's image encoders better than every language model we evaluated, up to 72B parameters, and than CLIP's text encoder: next-token prediction is a remarkably inefficient route to platonic representations. As a showcase, one rotation turns separately trained encoders into an image captioner (CIDEr .838 on COCO). Even that rotation needs no pair: on the latest pair-free benchmark, our text JEPA beats every zero-shot accuracy reported with language models up to 8B parameters, e.g., 64\\% against at most 56\\% top-5 on ImageNet-100. Positive views, and not scale alone, are thus the lever to build platonic representations.",
-        "arxiv_id": "2610.39302",
-        "primary_category": "cs.AI",
+        "title": "When Depth Lies: Benchmarking Vision-Language Models on Mirror-Induced RGB-D Ambiguity",
+        "abstract": "arXiv:2610.41651v1 Announce Type: new  Abstract: Vision-language models (VLMs) have made significant progress in spatial reasoning, particularly by integrating RGB images with depth data, which is often assumed to faithfully reflect physical distances. However, mirrors violate this assumption: they distort depth readings while reproducing object appearances, making reflections difficult to distinguish from real objects. As existing benchmarks rarely consider such reflective scenarios, VLM performance in mirror scenes remains largely unexplored. In this work, we introduce a mirror-centric RGB-D dataset from reflective scenes to evaluate the spatial reasoning capabilities of state-of-the-art VLMs in these scenarios. Specifically, we collect 1,011 RGB-D images from 525 real-world scenes, spanning diverse indoor and outdoor environments, six reflective surface types, and both daytime and nighttime conditions. All images are annotated with reflective surface region masks and mask annotations for both directly observed and mirror-reflected objects. Then, we curate a benchmark named MIRA-Bench (Mirror-Induced Reasoning Ambiguity Benchmark), comprising 14,140 QA pairs across eight sub-tasks organized into three cognitive levels: Reflection-aware Perception, Spatial Reasoning, and Scene-level Decision-making. We evaluate state-of-the-art VLMs on MIRA-Bench and find consistent failures across tasks: models misclassify whether objects are directly observed or reflected, fail to match reflected instances to their real-world counterparts, and produce erroneous spatial inferences. Remarkably, providing depth data actually degrades reasoning performance, implying that VLMs cannot identify incorrect depth in mirror scenes. The code and data are available at https://github.com/EvaYin-cloud/MIRA-Bench",
+        "arxiv_id": "2610.41651",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI",
-            "cs.CV",
-            "stat.ML"
+            "cs.CV"
         ],
-        "ARXIVID": "2610.39302",
-        "COMMENT": "Matches criterion 4 very closely: it is a vision foundation-model paper on JEPAs, representation alignment across modalities, and applications to image/text alignment.",
-        "RELEVANCE": 10,
-        "NOVELTY": 9,
-        "TAGS": [
-            "Vision Foundation Models",
-            "JEPA",
-            "Cross-Modal Representation Learning"
-        ]
-    },
-    "2610.39264": {
-        "authors": [
-            "Peitong Duan",
-            "Khashayar Gatmiry",
-            "Jeffrey Nichols",
-            "Samy Bengio",
-            "Emmanuel Abbe"
-        ],
-        "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps",
-        "abstract": "arXiv:2610.39264v1 Announce Type: new  Abstract: While frontier vision-language models demonstrate strong capabilities in user interface (UI) navigation, their high inference costs prohibit everyday use. Conversely, smaller models trained via supervised fine-tuning (SFT) or offline reinforcement learning often memorize static trajectories, leading to brittle execution and an inability to recover from errors. To address these limitations, we propose a novel online reinforcement learning framework that trains UI navigation agents directly on live iOS applications. Our framework decouples the agent into two specialized components: a Planning agent and a UI Grounding model. We rely on an LLM-as-a-Judge to provide comprehensive reward signals, combining dense, step-level feedback to evaluate intermediate progress with a terminal reward for overall task completion. To effectively leverage this dual reward structure, we optimize the agent using Proximal Policy Optimization (PPO) with step-level advantage estimation. Furthermore, we introduce GiGPPO, a novel neighbor-conditioned value estimation method that improves critic stability by leveraging reward signals from visually similar states across concurrent trajectories. To support this online training paradigm at scale, we introduce an efficient infrastructure that orchestrates hundreds of concurrent virtual iOS devices. Evaluations on rigorous benchmarks, including UINavBench, iOSWorld, and AndroidWorld, demonstrate that our online RL trained agents substantially outperform both SFT and terminal-only RL baselines while accelerating training convergence. Notably, our 8B RL agents achieve nearly a sevenfold improvement over the SFT baseline in out-of-distribution generalization to Android environments, while outperforming Gemini-3.5-Flash and tying with Gemini-3.1-Pro on real iOS applications.",
-        "arxiv_id": "2610.39264",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.39264",
-        "COMMENT": "Matches criterion 3 very closely: this is an embodied AI paper on UI navigation with a new online RL method and live-iOS training infrastructure, which is a novel simulator/live-environment angle.",
-        "RELEVANCE": 7,
-        "NOVELTY": 8,
-        "TAGS": [
-            "Embodied AI",
-            "UI Navigation",
-            "Online Reinforcement Learning"
-        ]
-    },
-    "2610.39439": {
-        "authors": [
-            "Haotian Lyu",
-            "Haoyu Wang",
-            "Ru Wang",
-            "Feng Ji",
-            "Ziwen Li",
-            "Jiaxian Guo",
-            "Mingming Gong"
-        ],
-        "title": "Timbre: Reliability-aware harmonic consensus for label-free multimodal test-time rexinforcement learning",
-        "abstract": "arXiv:2610.39439v1 Announce Type: new  Abstract: Label-free test-time reinforcement learning adapts vision--language models using rewards derived from their own predictions. However, misinterpreted visual evidence and sensitivity to textual formulation can produce a consistent but incorrect consensus that majority voting reinforces. Cross-view aggregation can expose such errors, but image and text transformations may themselves degrade task-relevant evidence to different extents. We introduce \\method, a reliability-aware harmonic consensus framework for multimodal test-time reinforcement learning. \\method constructs a $2\\times2$ grid combining original and perturbed images with direct-solving and reframing modes, selects pseudo-labels through weighted harmonic aggregation, and adapts modality-level weights using batch-averaged, temporally smoothed shifts in pseudo-label confidence as a heuristic reliability signal. We formulate consensus as a weighted $\\chi^2$-barycenter problem whose unique minimizer is the normalized weighted harmonic aggregate, without requiring correct-answer invariance. An exact support--dispersion decomposition characterizes when harmonic aggregation preserves or corrects arithmetic rankings, while a sensitivity analysis establishes how modality reweighting changes pairwise ranking margins, informing interpretation of the heuristic updates. Across six benchmarks and three Qwen3-VL model scales, \\method outperforms TTRV in 16 of 18 benchmark--model settings on adaptation instances and 17 of 18 settings on held-out instances under matched estimation and optimization rollout counts. These results demonstrate improved target-task adaptation and transfer to unseen instances without further updates.",
-        "arxiv_id": "2610.39439",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.39439",
-        "COMMENT": "Matches criterion 2 very closely: it is a multimodal test-time adaptation/reinforcement method for VLMs, with explicit multimodal consensus and Qwen3-VL experiments.",
-        "RELEVANCE": 8,
-        "NOVELTY": 6,
+        "ARXIVID": "2610.41651",
+        "COMMENT": "Matches criterion 2 closely: it is a benchmark for vision-language models on mirror-induced RGB-D ambiguity, directly testing spatial reasoning failures in VLMs.",
+        "RELEVANCE": 5,
+        "NOVELTY": 7,
         "TAGS": [
             "Vision-Language Models",
-            "Test-Time Adaptation",
-            "Multimodal Reinforcement Learning"
-        ]
-    },
-    "2610.40246": {
-        "authors": [
-            "Ankush Kadu",
-            "Athira Gopal",
-            "Niharika Singh",
-            "Arpit Jain",
-            "Aswanth Krishnan"
-        ],
-        "title": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
-        "abstract": "arXiv:2610.40246v1 Announce Type: new  Abstract: Computer-use agents built on large language models (LLMs) work in software that can change while they act: an appointment moves, a policy is revised, a record is updated. Testing agents under such changes is harder than it looks. When an agent fails, the cause may be the agent, but it may also be a change that did not fire as intended, an update the agent never received, or a grader that scored the episode wrongly. We introduce EnvOS, a framework for building and certifying environments that change mid-task. Before any agent runs, EnvOS checks that each change fires correctly, that the task remains solvable, and that the grader separates correct from incorrect behavior; after each run, separate code re-checks the verdict from archived evidence. We apply it to stale information, where a value the agent has already seen changes before the agent acts on it. In clinic booking, Claude Opus 5 succeeds on 0/16 tasks when nothing extra is shown, 2/16 when reminded to re-check the source, and 15/16 when the updated value is shown; the gain over the reminder holds after correcting for all tests (p = 0.00293). In insurance-claim approval, Opus 5 re-checks on its own and succeeds on 10/10, whereas Claude Sonnet 5 rises from 1/10 to 9/10 when the current policy is shown again, a gain significant in its pre-registered test but not after correcting for all tests. Whether an agent caught a change thus varied with the model and the interface. We also stress-test the grading itself: on corrupted episodes designed blind from the rules, the EnvOS pipeline accepted none of 26 as clean, and on an externally generated set it caught 25 of 39, against 4 for simple log checks. Because every EnvOS environment is generated from a seed and graded by an audited automatic verifier, the same environments are natural candidates for training agents with reinforcement learning from verifiable rewards.",
-        "arxiv_id": "2610.40246",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI",
-            "cs.HC"
-        ],
-        "ARXIVID": "2610.40246",
-        "COMMENT": "Matches criterion 3 very closely: it builds a benchmark/evaluation framework for computer-use agents in changing environments, with a simulator-like task construction and auditing setup.",
-        "RELEVANCE": 6,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Embodied/Agent Evaluation",
-            "Benchmark Construction",
-            "Computer-Use Agents"
-        ]
-    },
-    "2610.37786": {
-        "authors": [
-            "Tianci Xie",
-            "Zikun Cai",
-            "Chaoyun Zhang",
-            "Pinxue Guo",
-            "Bingxuan Li",
-            "Rui Zheng",
-            "Hang Yan"
-        ],
-        "title": "WebAnything: From the Wild Web to Scalable Agent Environments",
-        "abstract": "arXiv:2610.37786v1 Announce Type: new  Abstract: Web agents require diverse, executable, and resettable website environments for reproducible training and evaluation. Human-assisted mirrors demand per-site engineering, while generative construction can diverge from specified real websites. Capture-and-replay preserves observations, with interaction coverage constrained by captured content and replay capabilities.   We present WebAnything, a fully automated framework that reconstructs source-grounded, reusable Web environments from real URLs without per-site manual implementation or repair after initial setup and authorization. An Explorer-Builder collects browser-observable structures, resources, and interaction outcomes; an independent verifier checks frozen candidates and guides local repair or targeted source recapture.   We construct 244 website artifacts across 14 application domains and 53 categories, supporting 12,984 executed and accepted tasks. Compared with human-assisted WebHarbor, WebAnything achieves higher aggregate scores on three fidelity metrics, with 12 wins, two ties, and no losses in a blind audit. Fine-tuning Qwen3.5-9B on 5,856 interaction trajectories improves REAL success by 9.9 percentage points, Odysseys-Easy Rubric Avg and Task Avg by 6.25 and 6.32 percentage points, and WebArena-Verified Overall success by 13.33 percentage points under the fixed harness. Code: https://github.com/china-qijizhifeng/Web-Anything",
-        "arxiv_id": "2610.37786",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.37786",
-        "COMMENT": "Matches criterion 3 moderately well: it builds scalable web-agent environments, which is an embodied/web-interaction benchmark and simulator-style infrastructure with a novel environment-construction angle.",
-        "RELEVANCE": 5,
-        "NOVELTY": 7,
-        "TAGS": [
-            "Web Agents",
-            "Environment Construction",
-            "Benchmark & Evaluation"
-        ]
-    },
-    "2610.40133": {
-        "authors": [
-            "Shiqi Zhang",
-            "Guochen Zhou",
-            "Zesheng Wei",
-            "Hai Zhao",
-            "Zhisong Zhang"
-        ],
-        "title": "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision",
-        "abstract": "arXiv:2610.40133v1 Announce Type: new  Abstract: Web agents are typically evaluated with goals fully specified before execution and fixed thereafter, whereas real users often revise their requirements during interaction. To study such interactions, we introduce DynaRev, a benchmark of 181 tasks to evaluate web agents under dynamic goal revision. DynaRev uses semantic milestones to deliver revisions at task-defined stages, covers additive revisions, unconditional overrides, and runtime-conditioned overrides, and evaluates correctness, responsiveness, and efficiency through trajectory-grounded evaluation. Five-model evaluations show that agents often satisfy only part of the task requirements, with performance varying across task sources, revision types, and models. Further analyses reveal varied milestone timing, mixed effects of dynamic delivery, and contrasting revision-handling outcomes, with gains from instruction rewriting while preserving browser state and losses from browser resets. DynaRev provides a testbed for studying how web agents adapt to evolving user goals. The code and data are available at https://github.com/zsq259/DynaRev.",
-        "arxiv_id": "2610.40133",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.40133",
-        "COMMENT": "Matches criterion 3 moderately well: it introduces a new benchmark for web agents under dynamic goal revision, focusing on a previously underexplored interaction setting.",
-        "RELEVANCE": 5,
-        "NOVELTY": 6,
-        "TAGS": [
-            "Web Agents",
+            "RGB-D Reasoning",
             "Benchmark & Evaluation",
-            "Interactive Planning"
+            "Spatial Understanding"
         ]
     },
-    "2610.37919": {
+    "2610.42002": {
         "authors": [
-            "Yusheng Zhao",
-            "Bowei He",
-            "Xue Liu",
-            "Mingxiao Li"
+            "Yuqi Li",
+            "Junming Liu",
+            "Bowen Hu",
+            "Ruize Niu",
+            "Huiran Duan",
+            "Yingli Tian",
+            "Hao Wu"
         ],
-        "title": "SciGame: Let Agents Play the Scientific Discovery Games in the Real and Counterfactual World",
-        "abstract": "arXiv:2610.37919v1 Announce Type: new  Abstract: Large language model agents are increasingly used for scientific discovery. However, existing benchmarks mix law inference with programming, score data fitting instead of prediction on unseen inputs, and do not separate empirical evidence from pretrained priors. We introduce SciGame, a controlled benchmark that converts scientific literature into structured scientific cards. Each card yields a pair of Original and dimensionally consistent Counterfactual environments with the same task interface. SciGame contains a Historical collection of canonical laws and a live Temporal collection curated from papers published after model knowledge cutoffs. It evaluates agents in candidate-guided Identification and open-ended Discovery settings. Each setting runs under Prior-only, Fixed, and Adaptive protocols. Experiments on five frontier models yield three findings. First, familiar priors hurt performance once the governing relation is altered. Second, adaptive experimentation helps the strongest models but harms weaker ones under limited budgets. Third, good explanations can hide quantitative failures. Recovering the exact symbolic form remains the main bottleneck, even when agents interpret evidence correctly. Current agents can investigate systems actively, but inducing exact laws in unfamiliar settings remains an open challenge.",
-        "arxiv_id": "2610.37919",
-        "primary_category": "cs.AI",
+        "title": "GeoFlip: Benchmarking Geometry-Sensitive Physics in Video Generation",
+        "abstract": "arXiv:2610.42002v1 Announce Type: new  Abstract: Video generation models synthesize realistic motion, but can they respond correctly to changes in initial geometry? We introduce GeoFlip, a video generation benchmark centered on physical outcome flips induced by geometry. With shared physical settings and textual prompts held fixed, GeoFlip applies controlled interventions to support extent, object placement, and mechanism configuration, constructing paired scenes with contrasting reference events, such as remaining stable versus falling or tipping. These pairs test whether models translate geometric differences in the first frame into correct physical evolution. The benchmark comprises 482 scene pairs and 964 reference videos across six physical categories, with reference outcomes established through procedural scene construction, physics simulation, and numerical validation and verification of physical events. We evaluate 16 models for image to video generation along three dimensions: event correctness, structural integrity, and similarity to reference videos. We examine evaluation consistency with independent vision language judges. On the 442 conditions shared by all models, the highest event correctness averaged across tasks is 27.98%, revealing substantial limitations in physical generation conditioned on geometry. Model strengths vary across physical mechanisms, and the three evaluation dimensions capture distinct capabilities. Typical failures include ignoring geometric changes, generating incorrect object motion, bending rigid objects, and introducing additional components. Rank correlations between judges reach 0.906 for event correctness and 0.929 for structural integrity. By combining controlled geometric interventions, verifiable physical references, and multidimensional evaluation, GeoFlip assesses progress from visual realism toward physical consistency conditioned on geometry.",
+        "arxiv_id": "2610.42002",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI",
-            "cs.CL"
+            "cs.CV"
         ],
-        "ARXIVID": "2610.37919",
-        "COMMENT": "Matches criterion 3 in a broad way: it is a new benchmark/testbed for scientific discovery agents, but it is not embodied AI or a vision-language model paper.",
-        "RELEVANCE": 3,
+        "ARXIVID": "2610.42002",
+        "COMMENT": "Matches criterion 4 and also aligns with the friend\u2019s interest in surprising empirical results: it benchmarks geometry-sensitive physical consistency in video generation models and exposes strong failures.",
+        "RELEVANCE": 5,
         "NOVELTY": 7,
         "TAGS": [
-            "Scientific Discovery",
-            "Agent Benchmark",
-            "Counterfactual Evaluation"
+            "Video Generation",
+            "Benchmark & Evaluation",
+            "Physical Reasoning",
+            "Vision Foundation Models"
         ]
     },
-    "2610.39247": {
+    "2610.41446": {
         "authors": [
-            "Zongqi Wang",
-            "Rui Wang",
-            "Yuchuan Wu",
-            "Hua Yang",
-            "Bingxue Qiu",
-            "Tianle Gu",
-            "Bing Zhao",
-            "Yujiu Yang",
-            "Jieping Ye",
-            "Yongbin Li"
+            "Jiawei Ge",
+            "Wenkang Gong",
+            "Jiuxin Cao",
+            "Bo Liu",
+            "Lei Cui",
+            "Haoran Wang",
+            "Xuelin Zhu",
+            "Biwei Cao",
+            "Chang Liu",
+            "Chen Feng",
+            "Ioannis Patras"
         ],
-        "title": "SocialArena: Evaluating Social Intelligence in Large Language Models",
-        "abstract": "arXiv:2610.39247v1 Announce Type: new  Abstract: We introduce SocialArena, a benchmark for systematically defining and evaluating the social intelligence of large language models (LLMs). Although LLMs are increasingly deployed in socially interactive applications such as mental health counseling, companionship chatbots, and educational tutoring, existing evaluations remain fragmented focusing on isolated capabilities or single scenarios and evaluation reliability is largely unverified. This work makes three main contributions to address these limitations. (1) We first propose a unified three-tier framework that defines social intelligence along three capability dimensions: role-playing ability, mental state reasoning, and behavioral reasoning. To operationalize this definition, we design a role-playing dialogue paradigm with explicit character thinking for evaluation, enabling simultaneous assessment of these capabilities in a manner that mirrors realistic human interactions. (2) To ensure diversity across social scenarios and thereby prevent evaluation conclusions from being confined to specific scenarios, we introduce the U-TRIMF framework, which guides us in synthesizing social contexts with broad coverage. (3) To obtain reliable evaluation, we invest $132.4K to recruit and train human annotators and adopt a human-annotated arena-style protocol, where annotators compare model responses and provide preference labels along with natural-language critiques. We hope that SocialArena can provide valuable insights and guidance for future LLM improvements.",
-        "arxiv_id": "2610.39247",
-        "primary_category": "cs.AI",
+        "title": "Beyond Trial-and-Error: A Geospatial-Guided Active Reasoning Framework for Robust Aerial Vision-and-Language Navigation",
+        "abstract": "arXiv:2610.41446v1 Announce Type: new  Abstract: Aerial Vision-and-Language Navigation (VLN) requires UAVs to locate language-specified goals in large-scale urban environments, where objects often appear small and visually ambiguous from high-altitude viewpoints. Existing methods largely follow a reactive paradigm common in indoor VLN, repeatedly updating navigation states from local observations while underutilizing the geospatial structure that remains stable during navigation. As a result, visually similar distractors can cause a reactive goal search to repeatedly reinforce locally plausible goal hypotheses based on passively accumulated evidence, leading to unreliable localization. To address this, we propose GeoReasoner, a robust framework that shifts the paradigm of Aerial VLN from reactive trial-and-error to geospatial-guided active reasoning. Specifically, GeoReasoner first performs pre-search geospatial reasoning to derive region-level priors and constrain the goal hypothesis space. Building on these, it further conducts hypothesis-driven exploration to actively acquire discriminative evidence and refine competing goal hypotheses. Finally, consistency-aware goal verification adversarially assesses complementary evidence sources before stopping, hence reducing premature or erroneous goal confirmations. Experiments on the real-world CityNav benchmark demonstrate that GeoReasoner sets a new SOTA among zero-shot Aerial VLN methods while competing favorably with supervised approaches.",
+        "arxiv_id": "2610.41446",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI"
+            "cs.CV"
         ],
-        "ARXIVID": "2610.39247",
-        "COMMENT": "Matches criterion 3 only in a loose sense: it is a new benchmark for social intelligence in LLMs, but it is not embodied AI, spatial intelligence, or a vision-language model paper.",
-        "RELEVANCE": 3,
+        "ARXIVID": "2610.41446",
+        "COMMENT": "Matches criterion 1 closely: it proposes a new spatially grounded reasoning method for aerial embodied navigation, shifting from reactive search to geospatial-guided active reasoning.",
+        "RELEVANCE": 5,
         "NOVELTY": 6,
         "TAGS": [
-            "LLM Evaluation",
-            "Social Reasoning",
-            "Benchmark & Evaluation"
+            "Aerial VLN",
+            "Spatial Reasoning",
+            "Active Reasoning",
+            "Embodied AI"
         ]
     },
-    "2610.40030": {
+    "2610.41772": {
         "authors": [
-            "Daniel Strauss",
-            "Nikolaos Sotirakis",
-            "Zhenshan Bing",
-            "Alois Knoll"
+            "Xujun Xie",
+            "Dominik R\\\"o{\\ss}le",
+            "Adithya Mohan",
+            "Daniel Cremers",
+            "Torsten Sch\\\"on"
         ],
-        "title": "Cheap Retrieval and Observation Credit Assignment from One Quantity: The Value of Information",
-        "abstract": "arXiv:2610.40030v1 Announce Type: new  Abstract: Memory in reinforcement learning raises two problems. Attention finds the relevant item by scoring the whole store, which is costly for robots under latency and energy limits. When a retrieved memory pays off, credit for acquiring it must cross the whole sequence. We argue that both are governed by one quantity, the value of information, and propose to estimate it from archived rollouts with a learned world model. We obtain that, when read at the observation, it yields a provable lower bound on the optimal value of the acquiring action, which floors its TD target and attributes this floor to the observation that earned it. Read at the decision, it defines the optimal retrieval set. A pilot retrieval system, to be trained and improved with this signal, solves a memory task with reduced context.",
-        "arxiv_id": "2610.40030",
-        "primary_category": "cs.AI",
+        "title": "WorkIng: A Real-World and Synthetic Highway Work-Zone Benchmark Dataset for Autonomous Navigation",
+        "abstract": "arXiv:2610.41772v1 Announce Type: new  Abstract: Highway work zones are critical edge cases for autonomous vehicles (AVs), combining atypical geometries and jurisdiction-specific regulations that existing benchmarks fail to capture: real-world datasets lack 360{\\deg} multi-modal, full-scene 3D work zone annotation, and no single recorded site can span the layouts and regulatory variants needed for generalizable models. We present WorkIng, a dual-domain benchmark and training resource. WorkIng-Highway provides a 360{\\deg} multi-modal work zone benchmark with synchronized 128-channel LiDAR, six RGB cameras, and RTK-GPS across 32 km, yielding 12,000+ annotated frames and 227,399 tracked 3D bounding boxes. WorkIng-CARLA complements this with procedural simulation spanning 24 regulation-aware scenarios across six canonical topologies and six international traffic standards, populated by 100+ custom 3D assets. Benchmarking representative 3D detection and end-to-end planning architectures shows that real-world data remains the primary performance driver, and that scenario-stratified synthetic augmentation improves architectures across 2D recognition, 3D detection, and trajectory planning. Resources: https://github.com/cvims/WorkIng",
+        "arxiv_id": "2610.41772",
+        "primary_category": "cs.CV",
         "categories": [
-            "cs.AI",
-            "cs.LG"
+            "cs.CV"
         ],
-        "ARXIVID": "2610.40030",
-        "COMMENT": "Only a loose fit for criterion 3: it touches memory and retrieval credit assignment for reinforcement learning/robots, but it is not clearly an embodied-AI benchmark or a spatial understanding method.",
+        "ARXIVID": "2610.41772",
+        "COMMENT": "Matches criterion 3 closely: it is an embodied/autonomous navigation benchmark with a new simulator-based synthetic component and a novel highway work-zone angle that existing benchmarks miss.",
+        "RELEVANCE": 5,
+        "NOVELTY": 6,
+        "TAGS": [
+            "Autonomous Navigation",
+            "Benchmark & Simulation",
+            "3D Detection",
+            "Trajectory Planning"
+        ]
+    },
+    "2610.41602": {
+        "authors": [
+            "Fan Zhu",
+            "Zhisong Xu",
+            "Ziyu Chen",
+            "Zhenjun Zhao",
+            "Takayuki Okatani"
+        ],
+        "title": "DrawSplat: Atlanta World-Guided Implicit Gaussian SLAM for Indoor Reconstruction",
+        "abstract": "arXiv:2610.41602v1 Announce Type: new  Abstract: RGB-D SLAM requires accurate online tracking, high-quality rendering, and geometrically consistent reconstruction. Existing Gaussian SLAM methods mainly optimize Gaussian primitives with photometric, depth, or local frame-to-model constraints, which are often insufficient in indoor scenes with weak textures, large planar structures, noisy depth, and long trajectories. The resulting maps may suffer from pose drift, surface thickness artifacts, noisy normals, and blurred structural boundaries. We propose DrawSplat, an Atlanta World-guided implicit Gaussian SLAM framework for indoor reconstruction. DrawSplat follows a drawing-like process: explicit point-line geometry first sketches the structural layout, and implicit neural Gaussians then fill in high-fidelity appearance and continuous geometric details. It estimates camera poses, sparse geometry, and gravity direction through point-line joint tracking, infers structural planes from tracked lines using the shared-gravity component of the Atlanta World prior, and converts them into differentiable regularization terms on Gaussian centers and normals. To improve compactness and efficiency, DrawSplat further combines an anchor-based implicit neural Gaussian representation with adaptive structural sampling, which allocates Gaussian capacity to structurally informative regions. Experiments on multiple datasets show that DrawSplat achieves robust tracking, high-fidelity rendering, and strong geometric reconstruction among Gaussian-based SLAM systems, while maintaining a practical balance among quality, efficiency, and model size.",
+        "arxiv_id": "2610.41602",
+        "primary_category": "cs.CV",
+        "categories": [
+            "cs.CV",
+            "cs.RO"
+        ],
+        "ARXIVID": "2610.41602",
+        "COMMENT": "Matches criterion 3 and criterion 4 partially: it is a new SLAM method for indoor reconstruction using Gaussian primitives and geometric priors, with clear vision foundation model-style dense mapping relevance.",
         "RELEVANCE": 4,
-        "NOVELTY": 5,
+        "NOVELTY": 6,
         "TAGS": [
-            "Reinforcement Learning",
-            "Memory Retrieval",
-            "Credit Assignment"
-        ]
-    },
-    "2610.38568": {
-        "authors": [
-            "Yu Liu",
-            "Youxing Li",
-            "Yuedong Tan",
-            "Zhiwei Yang",
-            "Zihan Su",
-            "Hanqi Feng",
-            "Shaojie Zhang",
-            "Libin Liao",
-            "Zihao Wan",
-            "Chenxu Wu",
-            "Cong Cao",
-            "Fangfang Yuan",
-            "Yanbing Liu",
-            "Ziheng Chen",
-            "Pei Fu",
-            "Radu Timofte",
-            "Zongwei Wu",
-            "Nicu Sebe",
-            "Barnabas Poczos",
-            "Jian Luan"
-        ],
-        "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
-        "abstract": "arXiv:2610.38568v1 Announce Type: new  Abstract: Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful. Existing methods often focus on what experience to generate next, while paying less attention to when fresh experience should be introduced. Many also construct training targets through self-consistency or majority voting, making supervision depend on the model's own uncertain predictions. We address these two questions separately: training dynamics determine when to acquire new experience, while the answers to new tasks remain independently checkable. A-RSI monitors reward variation and accuracy in training logs to refresh a task pool when its learning signal declines, without consulting validation or test scores. A static library of model-authored programs produces multimodal questions and derives their reference answers; we specify the task-generation contract, automatically verify chosen properties of the reward and refresh rules, and separately audit the generated answers. The training loop uses no external training examples or human-written answer labels. On the primary eleven-benchmark suite, A-RSI raises the performance average from 57.77 to 61.05 with 800 fresh tasks.",
-        "arxiv_id": "2610.38568",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.38568",
-        "COMMENT": "No close match to criteria 1-4; this is self-improvement for multimodal models, but it is not specifically a new VLLM/MLLM architecture or a vision foundation model application.",
-        "RELEVANCE": 3,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Multimodal Learning",
-            "Self-Improvement",
-            "Data Curation"
-        ]
-    },
-    "2610.38391": {
-        "authors": [
-            "Qirui Liu",
-            "Wei Cao",
-            "Yu Mi",
-            "Yichen Sun",
-            "Xuekun Zhang",
-            "Lei Liu",
-            "Yue Shen",
-            "Zhixuan Chu"
-        ],
-        "title": "SCOPE: Selective Critical-Step On-Policy Self-Distillation for Agentic Reinforcement Learning",
-        "abstract": "arXiv:2610.38391v1 Announce Type: new  Abstract: Outcome-based reinforcement learning provides coarse supervision for long-horizon LLM agents: failed trajectories may contain correct steps, while successful trajectories can contain errors. Trajectory-level skills can also shift teacher preferences at unrelated steps, introducing off-target distillation signals. We introduce SCOPE, a framework for Selective Critical-Step On-Policy Self-Distillation. After a supervised warm-up, the policy analyzes its own trajectories, generates step-specific hindsight skills, and distills their guidance only at selected error steps. A bounded signed teacher-student coefficient stabilizes auxiliary updates while preserving positive reinforcement and negative correction. A success-relative pairwise length reward further encourages efficient task completion. Experiments on ALFWorld and WebShop demonstrate consistent improvements across multiple model backbones. With Qwen2.5-3B, SCOPE achieves 97.7% success on ALFWorld and 85.2% on WebShop, outperforming SEED by 5.9 and 6.3 percentage points, respectively. On unseen ALFWorld tasks, SCOPE reaches 89.6% success, improving over GRPO by 23.2 percentage points with 46.7% fewer interactions. Scaling to Qwen3-32B, SCOPE achieves 99.2% success on seen ALFWorld tasks and 94.0% on unseen tasks.",
-        "arxiv_id": "2610.38391",
-        "primary_category": "cs.AI",
-        "categories": [
-            "cs.AI"
-        ],
-        "ARXIVID": "2610.38391",
-        "COMMENT": "No close match to criteria 1-4; this is agentic RL for web/ALFWorld-style tasks, but not a novel embodied spatial method or benchmark.",
-        "RELEVANCE": 3,
-        "NOVELTY": 5,
-        "TAGS": [
-            "Agentic Reinforcement Learning",
-            "Self-Distillation",
-            "Web/Embodied Tasks"
+            "SLAM",
+            "Indoor Reconstruction",
+            "Gaussian Splatting",
+            "Geometric Priors"
         ]
     }
 }
