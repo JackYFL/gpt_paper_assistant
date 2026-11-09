@@ -1,0 +1,976 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / November 06, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  cursor: default;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / November 06, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>11/06/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>6 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>Deformable Contact-Aware 3D Object Placement</strong>
+          <small>Songhe Wang, David Miller, Charles A. Kamhoua</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2611.08005</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08005">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3 very closely: it proposes a new embodied 3D object placement method built around contact and simulation, with a novel drop-to-equilibrium formulation.</p>
+        <p class="abstract">Current language-guided 3D object placement typically predicts a rigid 6-DoF pose, ignoring the physical reality that indoor placements are dictated by contact. Consequently, predicted poses often float, interpenetrate supports, or fail to deform soft surfaces. We propose Deformable Contact-Aware Placement (DCAP), a framework that reframes placement as a drop-to-equilibrium process. Rather than predicting a static pose, DCAP constructs a semantic release state that specifies the drop location, object scale, and deformable components, allowing a coupled rigid-deformable simulator to settle the object under gravity and friction. This explicitly separates semantic intent from physical realization. Evaluated on a benchmark of 2,063 prompt-asset-scene cases, DCAP significantly outperforms static baselines. On standard placements, it improves VLM Physics &amp; Naturalness by 21.2 points and human preference by 26.5 points over the strongest raw rigid baseline, while reducing mean penetration depth by 72.3%. Compared to simulated rollout baselines, DCAP reduces residual speed by 72.1%. Ultimately, our results prove that physically accurate 3D placement requires modeling semantic intent and physical realization as strictly separate processes.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>Where and Why is Grounded Reasoning Useful?</strong>
+          <small>David Yan, Le Xue, Forrest Huang, Qiuyi Zhang, Dustin Tran, Andrew M. Dai, Yinfei Yang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">14</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2611.08485</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08485">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1 very closely: it studies grounded reasoning for spatial understanding and introduces BrickVision as a new benchmark targeting hard spatial references.</p>
+        <p class="abstract">Grounded reasoning, where a model outputs text coordinates of relevant locations in chain-of-thought reasoning, is a common strategy for solving complex visual reasoning problems. However, the benefits and limitations of grounded reasoning are understudied. We study where and why grounded reasoning is most useful. To do so, we introduce a chain-of-thought analysis method to measure how much a model uses its outputted grounding in its thinking trace and perform a detailed ablation study of a grounded reasoning training recipe. We find that grounded reasoning improves counting but shows no significant gain over baselines without coordinate grounding across a wide range of spatial reasoning and perception benchmarks. Using several synthetic tasks, we show that grounded reasoning is most useful when a task requires undescribable references, which are visual concepts that are difficult to describe in language. However, we observe that many existing visual reasoning benchmarks are solvable with only describable text references. To close this gap, we introduce BrickVision, a new benchmark that requires undescribable visual references to solve.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling</strong>
+          <small>Gizem Mert, Szymon P{\l}otka, Pedro R. A. S. Bassi, Wenxuan Li, Zongwei Zhou, Jaros{\l}aw B. \&#x27;Cwik{\l}a, Arkadiusz Sitek, Ewa Szczurek</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2611.08185</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08185">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 very closely: it is a new multimodal vision-language model for 3D medical imaging with hierarchical routing and cross-modal alignment.</p>
+        <p class="abstract">Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context. To our knowledge, MedHiVE is the first framework to route both vision and text tokens through a two-level SMoE hierarchy organized by anatomical scale, coupling this with report-derived anatomy-level contrastive alignment for 3D medical imaging. This replaces the direct region-text alignment of statically pooled features and vision-only hierarchical routing of prior work with dynamic, slot-based cross-modal information flow across anatomical scales. MedHiVE operates via a two-level, learnable token-routing mechanism, where local image and text features are first routed through a local SMoE and then fused by a global SMoE into unified multimodal representations. Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space. Pre-trained on 25,000+ CT scans with anatomical supervision, MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling. The code for MedHiVE is at github.com/szczurek-lab/MedHiVE.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Multimodal LLM</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>A Generative Foundation Model for Multimodal Tokamak Tasks</strong>
+          <small>Yingshuai Ji, Haodong Feng, Guohong Deng, Gelin Bian, Yue Wang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2611.08153</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08153">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match to the listed criteria; it is a multimodal generative foundation model, but for tokamak/fusion data rather than vision or embodied AI.</p>
+        <p class="abstract">Tokamak experiments record diverse measurements, including waveforms, profiles, fields, and scalars, which are used to reconstruct the plasma, forecast its evolution, recover associated control signals, and estimate disruption risk. Most models are built separately for one task and a fixed set of inputs and outputs, and each relies on a prescribed subset of diagnostics rather than structuring the full multimodal observation set to extract global, cross-signal information about the discharge. These limitations motivate a reusable foundation model that adapts to each task&#x27;s input-output schema and models heterogeneous target signals jointly, rather than retraining a separate model for every configuration. In this work, we extend the TokaMark benchmark with two groups of tasks for actuator action inversion and disruption prediction, yielding 20 MAST tasks in six groups with explicit schemas and evaluation protocols. Then, we introduce GenToka, a generative tokamak foundation model that jointly generates schema-selected targets through a shared conditional diffusion Transformer, with signal-specific codecs preserving native time series, profiles, fields, and scalars; foundation pretraining and task-specific adaptation transfer cross-signal structure across all six groups. Evaluation on MAST measurements shows that GenToka reduces macro-average normalized root mean squared error relative to TokaMind by 4.7% on Groups 1-4 and by 17.7% on Group 5, and improves macro-average window-level F1 on Group 6 by 8.4% at a common validation-selected threshold. GenToka provides a reusable, generative, and multimodal pathway for experimental tokamaks, linking plasma-state reconstruction, actuator inference, and disruption warning from shared measurements to support more integrated, data-driven fusion plasma prediction and control research.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>TRiST: Topology-Reinforced Swin Transformer for Medical Image Analysis</strong>
+          <small>Pengfei Gu, Huimin Li, Guangyu Meng, Hao Zheng, Haoteng Tang, Bin Fu, Danny Z. Chen</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2611.07431</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.07431">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match to the listed criteria; it is a medical vision transformer improved with topology-aware features, which is vision-related but not a vision foundation model or embodied AI paper.</p>
+        <p class="abstract">Medical images contain topological patterns, such as connected components and loops, at scales ranging from small lesions to organ boundaries. Although hierarchical Vision Transformers have advanced medical image analysis, they do not explicitly incorporate topology throughout their multiscale representations. We propose Topology-Reinforced Swin Transformer (TRiST), a framework that integrates topological information into feature construction, refinement, and attention. First, a Hierarchical Multi-Scale Topology Representation algorithm computes 2D persistent homology (H0 and H1) independently at four native Swin stages, producing descriptors aligned with each stage&#x27;s token grid rather than downsampling fine-scale topology. Second, a Band-Aware H0/H1 Residual Refinement module uses gated residual networks to process short-, medium-, and long-persistence information separately. Third, a Persistence-Band Progressive Attention Bias converts stage-specific descriptors into learned key-saliency scores that directly modify shifted-window attention logits. We instantiate TRiST as Topo-SwinV2-B for classification and Topo-Swin-UNet for segmentation, preserving the underlying Swin-based backbones. Experiments on five medical image datasets show consistent improvements over Swin-based baselines and competitive performance relative to existing topology-augmented methods.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>Improving Long-Tail Detection via Layout-Instruction Conditioned Diffusion Synthesis</strong>
+          <small>Xinyu Zhang, Xiaodi Wang, Yanpeng Sun, Lingfeng Yang, Jingdong Wang, Lingqiao Liu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2611.07553</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.07553">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match to the listed criteria; it is a generative diffusion method for long-tail detection data synthesis, which is adjacent to vision modeling but not a foundation-model or embodied-AI paper.</p>
+        <p class="abstract">Synthetic data from diffusion models can improve object detection, but long-tail performance is still limited by scarce rare classes and inflexible conditioning (e.g., text-only or layout-only inputs). In this paper, we propose Tail-SD, a layout-instruction conditioned stable diffusion framework that supports text, layouts, or their hybrid, enabling controllable synthesis from boxes, masks, and/or prompts to better cover the long-tail objects. To train a single model across heterogeneous conditions, we introduce a multi-task cross-attention module and multi-task embedding tokens, improving generation quality and diversity. Extensive experiments on COCO and LVIS demonstrate that diffusion synthesis with hybrid conditioning consistently benefits detection, e.g., on LVIS val, it achieves +4.89% / +5.68% rare Box/Mask AP, highlighting strong potential for addressing long-tail challenges.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>6</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>14</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>11.0</strong>
+    </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
