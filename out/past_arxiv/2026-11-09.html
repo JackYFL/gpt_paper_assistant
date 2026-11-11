@@ -1,0 +1,1393 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past ArXiv / November 09, 2026</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap");
+
+:root {
+  color-scheme: light dark;
+  --paper-bg: #f6f7f4;
+  --ink: #1f2a2e;
+  --muted: #647071;
+  --line: #d9dfda;
+  --panel: #ffffff;
+  --accent: #276e6a;
+  --accent-2: #a63d40;
+  --soft: #e6efe8;
+  --soft-2: #f4e8df;
+  --tint: #f8fbf9;
+  --cream: #fbfaf7;
+  --shadow: 0 10px 24px rgba(31, 42, 46, 0.08);
+  --serif: Newsreader, "Iowan Old Style", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #14181a;
+    --ink: #e7ecea;
+    --muted: #9aa7a5;
+    --line: #2c3537;
+    --panel: #1c2225;
+    --accent: #7cc7c0;
+    --accent-2: #e29a9c;
+    --soft: #21302e;
+    --soft-2: #34272a;
+    --tint: #1e2629;
+    --cream: #20262a;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--soft);
+}
+
+body {
+  margin: 0;
+  background: var(--paper-bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.daily-arxiv {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+.daily-arxiv::before {
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 28px;
+  align-items: end;
+  padding: 42px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow, .paper-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 7vw, 5.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.archive-hero .metrics {
+  grid-template-columns: minmax(220px, 1fr);
+  min-width: 220px;
+}
+
+.metric {
+  min-height: 88px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  margin: 34px 0 14px;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.category-section,
+.topic-section {
+  scroll-margin-top: 18px;
+}
+
+.category-heading,
+.topic-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.category-heading::-webkit-details-marker,
+.topic-heading::-webkit-details-marker {
+  display: none;
+}
+
+.category-heading::before,
+.topic-heading::before {
+  content: "▾";
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+details:not([open]) > .category-heading::before,
+details:not([open]) > .topic-heading::before {
+  transform: rotate(-90deg);
+}
+
+.category-heading h3 {
+  color: var(--ink);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.category-heading span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.topic-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.topic-section h4 {
+  margin: 0;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.topic-heading::before {
+  color: var(--accent-2);
+}
+
+.queue {
+  display: grid;
+  gap: 10px;
+}
+
+.paper-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.paper-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.paper-row[open] {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: inset 3px 0 0 var(--accent), var(--shadow);
+}
+
+.paper-row-summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto 14px;
+  gap: 12px;
+  align-items: start;
+  min-height: 74px;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 140ms ease;
+}
+
+.paper-row-summary:hover {
+  background: var(--tint);
+}
+
+.paper-row-summary:focus-visible,
+.category-heading:focus-visible,
+.topic-heading:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.paper-row-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper-row-summary::after {
+  content: "▾";
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.paper-row:not([open]) > .paper-row-summary::after {
+  transform: rotate(-90deg);
+}
+
+.queue-index {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 800;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-row[open] .queue-index {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.paper-row-copy strong {
+  display: block;
+  line-height: 1.28;
+}
+
+.paper-row-copy small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.paper-row-detail {
+  padding: 0 18px 18px 62px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-row[open] .paper-row-detail {
+  animation: detail-reveal 200ms ease;
+}
+
+@keyframes detail-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paper-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.category-tags,
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.category-tag {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.topic-tag {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-pill {
+  min-width: 38px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft-2);
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.score-pill.score-high {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.score-pill.score-low {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+
+.paper-action {
+  flex: 0 0 auto;
+  align-self: start;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.paper-action:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+
+.authors, .comment, .abstract {
+  margin: 14px 0 0;
+}
+
+.authors {
+  color: var(--muted);
+}
+
+.paper-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.paper-scores span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.abstract {
+  max-width: 78ch;
+  line-height: 1.7;
+}
+
+.comment {
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--tint);
+}
+
+.prompt-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.prompt-block pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cloud-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--tint), var(--panel) 70%);
+  box-shadow: var(--shadow);
+}
+
+.cloud-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 16px;
+  padding: 6px 4px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.cloud-word {
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  cursor: default;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.cloud-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1 !important;
+}
+
+.cloud-empty {
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.archive-block {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2 {
+  margin: 0;
+}
+
+.archive-block p,
+.archive-nav {
+  color: var(--muted);
+}
+
+.archive-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.archive-link {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.archive-link:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.archive-link span {
+  display: block;
+  font-weight: 900;
+}
+
+.archive-link small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.archive-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.archive-content {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.archive-block h2,
+.prompt-block h2,
+.archive-content h1,
+.archive-content h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.archive-content h2 {
+  margin-top: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .daily-arxiv {
+    padding: 24px 14px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .queue {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-action {
+    display: inline-block;
+  }
+
+  .paper-row-summary {
+    grid-template-columns: 32px minmax(0, 1fr) auto 14px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .paper-row-detail {
+    padding: 0 14px 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <main class="daily-arxiv">
+    <section class="hero archive-hero">
+      <div>
+        <p class="eyebrow">Past ArXiv / November 09, 2026</p>
+        <h1>Daily archive</h1>
+        <p class="hero-copy">A preserved paper digest from the previous month.</p>
+      </div>
+      <div class="metrics">
+
+    <div class="metric">
+      <span>Archive date</span>
+      <strong>11/09/2026</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Source</span>
+      <strong>ArXiv</strong>
+    </div>
+
+      </div>
+    </section>
+    <p class="archive-nav"><a href="../index.html">Back to current digest</a></p>
+
+    <h2 class="section-title" id="paper-content">Reading Queue</h2>
+    <nav class="category-groups" aria-label="archived papers by category">
+
+    <details class="category-section" open>
+      <summary class="category-heading">
+        <h3>ArXiv</h3>
+        <span>17 papers</span>
+      </summary>
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Vision-Language Reasoning</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link0">
+      <summary class="paper-row-summary">
+        <span class="queue-index">1</span>
+        <span class="paper-row-copy">
+          <strong>HiMEM: Hippocampus-Inspired Memory Consolidation, Pruning, and Composition for Vision-Language-Action Models in 3D Scenes</strong>
+          <small>Boran Zhao, Yanbin Hu, Jun Ye, Zhenxian Hu, Yuxin Zhai, Jin Cui, Pengju Ren</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-high">15</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 1 / arXiv:2611.09355</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09355">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>8</strong></span>
+          <span>Novelty <strong>7</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Strong match to criterion 3: it proposes a new method for embodied AI / Vision-Language-Action models in 3D scenes, with a novel memory consolidation/pruning/composition angle.</p>
+        <p class="abstract">Memory plays a crucial role in long-horizon task execution and cross-task generalization for Vision-Language-Action (VLA) models operating in complex 3D scenes. However, existing VLA memory mechanisms suffer from memory noise, particularly in complex 3D scenes, as stored episodic memories contain extensive redundant details about scene layouts, object configurations, and robot-specific states, which obscure generalizable manipulation principles and hinder cross-task transfer. To address this challenge, we first introduce a hippocampus-inspired memory consolidation mechanism that synthesizes extensive episodic experiences into a compact set of essential semantic memories, enabling VLA models to derive generalizable principles from practical experience. Second, we propose an episodic memory pruning mechanism that removes redundant episodic memories whose contents are captured by consolidated semantic memories, thereby increasing effective memory capacity and improving long-horizon task execution. Finally, to handle complex task scenarios, we develop a flexible memory composition mechanism that jointly leverages multiple episodic and semantic memories to enhance cross-scenario generalization. Experiments on LIBERO, LIBERO-Plus demonstrate the effectiveness of HiMEM across different VLA backbones, improving the average success rate of pi_0 from 91.88% to 98.20% on LIBERO.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link1">
+      <summary class="paper-row-summary">
+        <span class="queue-index">2</span>
+        <span class="paper-row-copy">
+          <strong>AtariBench: Evaluating Spatiotemporal Reasoning of Vision-Language Models in Atari Gameplay</strong>
+          <small>Mingjia Huo, Yao Fu, Bo Chang, Yaqing Wang, Dawei Zhu, Dylan Zhang, Xinyang Yi, Lichan Hong, Ed H. Chi, Hao Zhang, Jiaxi Tang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">13</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 2 / arXiv:2611.08755</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08755">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>7</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Strong match to criterion 3: it is a new benchmark for evaluating spatiotemporal reasoning of vision-language models in dynamic gameplay, with a novel angle on action grounding and sequential decision-making.</p>
+        <p class="abstract">Vision-Language Models (VLMs) have achieved strong performance on static visual understanding benchmarks, yet their ability to act in dynamic environments remains less well understood. We introduce AtariBench, a controlled benchmark that evaluates VLMs across 20 Atari 2600 games, requiring models to make sequential decisions from high-temporal-resolution gameplay streams. By decoupling fast in-game dynamics from wall-clock inference speed, AtariBench focuses on whether models can perceive rapid visual state changes, reason over spatiotemporal dynamics, and ground actions in the current observation. Our experiments reveal substantial limitations in state-of-the-art VLMs: models often fail to infer object motion and direction, exhibit brittle sequential decision-making, and over-rely on textual interaction history despite newly appended visual feedback. We further introduce a separability analysis to identify which in-game scores provide reliable signals of model competence, and use the benchmark to study how memory design and prompting strategies affect performance. Overall, AtariBench exposes a persistent gap between passive visual perception and active decision-making, providing a lightweight and rigorous testbed for developing VLMs that can reason and act in dynamic environments.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link4">
+      <summary class="paper-row-summary">
+        <span class="queue-index">5</span>
+        <span class="paper-row-copy">
+          <strong>Seeing vs. Counting: Complexity Twins Show Where Multimodal LLMs Fail on Diagrams</strong>
+          <small>Yin Liu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Multimodal LLM</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 5 / arXiv:2611.08998</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08998">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 2 very closely: it studies multimodal LLM failure modes on diagrams with a careful benchmark-style analysis and surprising empirical results.</p>
+        <p class="abstract">When a multimodal LLM miscounts in a diagram, does it fail at seeing or at counting? Existing visual graph and puzzle benchmarks vary visual density and algorithmic hardness together, confounding the two. We pair counting questions about the same drawing that sit in different counting-complexity classes, such as its spanning trees (a determinant) and its simple paths (#P-complete), and use a transcription probe and a text-only control to separate reading from computing. We test Gemini, Gemma and Qwen3-VL models; for the Gemini models, the answer depends on how the model computes. In chain of thought, most of them read small drawings correctly and then fail at counting, at a rate set far more by the size of the answer than by its complexity class (for the primary model, the odds of an exact answer fall 2.38-fold per decade of the answer). Given code and an exact transcription, the primary model counts correctly even on 10x10 grids, and reading becomes the bottleneck: a single view misses horizontal edges, and a second reading of a rotated copy with crop checks reads 86/96 large grids exactly, against 57/96 when the upright reading is simply repeated.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link6">
+      <summary class="paper-row-summary">
+        <span class="queue-index">7</span>
+        <span class="paper-row-copy">
+          <strong>Video-Coder: Reinforcing Agentic Coding for Video Generation</strong>
+          <small>Chaoyang Wang, Sicheng Gao, Junan Hu, Kunyang Li, Dongyang Chen, Yiyang Zhou, Huaxiu Yao, Yong Jae Lee, Radu Timofte, Yuzhang Shang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">11</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 7 / arXiv:2611.09894</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09894">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 and partly criterion 3: a generative video model with an agentic code-driven pipeline and a new training harness for controllable video generation.</p>
+        <p class="abstract">Recent years have witnessed remarkable progress in video generation in terms of visual quality and temporal consistency. However, generating videos with precise spatial structure, coherent motion dynamics, and controllable scene composition remains challenging. In this paper, we introduce Video-Coder, the first attempt to train a code-driven video generation agent, which autonomously writes and executes code to construct a dynamic 3D scene (Draft Video) that provides structure and motion signals to downstream video generators. To support this paradigm, we design a dedicated data pipeline and curate two high-quality datasets, Video-Coder-SFT-6k and Video-Coder-RL-2k, which contain diverse prompts and ground-truth reference videos. We further develop the Video- Coder Harness, a unified interactive environment integrating code execution, 3D scene rendering, and execution feedback for agent training and inference. We then train Video-Coder with SFT fol- lowed by harness-native agentic reinforcement learning with dual reward feedback, which combines execution-based and video-based rewards. Additionally, we design an annealing training strategy that gradually reduces the execution reward over time, allowing the model to rely more on the video reward in the later training stages. Experiments show that Video-Coder achieves significant gains, improving Minimax-H3 by approximately 7 points on PhyGenBench and 24 points on VBench-2.0. We hope this work can serve as an open foundation for coding agents in video generation, and we fully open-source our data, models, and code</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link13">
+      <summary class="paper-row-summary">
+        <span class="queue-index">14</span>
+        <span class="paper-row-copy">
+          <strong>Decoupled Mode Connectivity for Base-to-Novel Generalization in Vision-Language Models</strong>
+          <small>Imad Eddine Marouf, Khalid Oublal, Enzo Tartaglione, St\&#x27;ephane Lathuili\`ere</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">9</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 14 / arXiv:2611.09655</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09655">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: this is a vision-language model method paper, improving prompt-learning generalization for CLIP-style VLMs.</p>
+        <p class="abstract">Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP&#x27;s zero-shot feature space. Because both objectives act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine baseline. We propose Decoupled Mode Connectivity (DMC), which gives each objective its own prompt. Starting from a base-trained prompt, DMC trains a specialization prompt and a generalization prompt, and merges their text features with a fixed coefficient at test time, at the inference cost of a single prompt. A linear mode connectivity (LMC) corridor in text-feature space keeps the classification loss low for every classifier interpolated between the two endpoints, and a Visual Anchor KL term preserves CLIP&#x27;s zero-shot class-similarity distribution of each image during specialization. We further argue that such regularizers should satisfy class-permutation invariance (CPI), and show via Fano&#x27;s inequality, in an idealized model, that violating CPI lower-bounds the drop in novel accuracy by a term proportional to the mutual information between the prompt and the base-class labels. Across 11 datasets, DMC improves the average harmonic mean of base and novel accuracy over MergeTune for both CoOp and KgCoOp, and its interpolation curves pass beyond the single-prompt operating point, shifting the base-novel frontier rather than trading along it. Code is available at https://github.com/IemProg/DMC.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link14">
+      <summary class="paper-row-summary">
+        <span class="queue-index">15</span>
+        <span class="paper-row-copy">
+          <strong>eSharp: Diffusion-based Sharp Monocular Metric Event-to-Depth Estimation</strong>
+          <small>Qiushi Dai, Aniket Dashpute, Yuhao Liu, Rishubh Parihar, Guha Balakrishnan, Ashok Veeraraghavan</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">8</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 15 / arXiv:2611.08731</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08731">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No strong match to the criteria; this is a depth-estimation/perception paper, relevant to vision but not specifically spatial intelligence on embodied agents or VLLMs/MLLMs.</p>
+        <p class="abstract">Depth perception is fundamental for autonomous navigation, industrial inspection, and mixed-reality systems. It often operates under strict constraints on power and form factor. In such cases, monocular depth estimation (MDE) is often used. Even as recent advances continue to improve monocular depth quality, conventional frame-based MDE systems remain challenged by fast motion and high-dynamic-range scenes. This work introduces eSharp, an MDE framework that addresses these problems using an event camera. eSharp repurposes pretrained diffusion priors for event-only MDE and produces accurate metric depth with unparalleled sharpness on real data. Real-world event datasets provide only sparse LiDAR depth maps for ground-truth supervision, making dense prediction challenging. We address this limitation through cross-modal distillation, using LiDAR-calibrated dense pseudo-labels generated from a spatially co-registered frame camera to train eSharp. Experiments show that eSharp outperforms prior event-to-depth baselines in both metric-depth accuracy and spatial fidelity, establishing diffusion models as a promising foundation for event-driven 3D perception.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link15">
+      <summary class="paper-row-summary">
+        <span class="queue-index">16</span>
+        <span class="paper-row-copy">
+          <strong>SPSC: Zero-Shot Cross-Subject EEG-to-Image Reconstruction via Semantic Preservation and Subspace Calibration</strong>
+          <small>Yutang Lu, Shuai Jiang, Fei Su, Zhicheng Zhao</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Vision-Language Reasoning</span>
+<span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">7</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 16 / arXiv:2611.09380</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09380">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>4</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match to the listed criteria; it is most relevant as a generative multimodal reconstruction paper that leverages pretrained vision-language models and diffusion, but it is not a new VLLM/MLLM or embodied-AI benchmark/method paper.</p>
+        <p class="abstract">Pretrained vision-language models and diffusion generators have driven rapid progress in brain-to-image generation, while EEG-based reconstruction is still constrained by low signal-to-noise ratio and cross-subject semantic shifts. Zero-shot cross-subject reconstruction poses even greater challenges: EEG semantic embeddings learned from source subjects deviate from the manifold of image embeddings of the unseen target subject, particularly when neither target labels nor target image embeddings are available. To address this issue, we introduce the Semantic Preservation and Subspace Calibration (SPSC) framework, which first uses Object Mask Contrastive Regularization (OMCR) with object identity for backend training, and then constructs Subspace Candidate Gate (SCG) to achieve label-free semantic correction for target subjects during inference. Specifically, OMCR regularizes the conditioning space with object-level positive samples to preserve object-level feature neighborhoods within the reconstruction prior and low-level branch, while SCG exploits training image prototypes and batch statistics of unlabeled target EEG to select candidates for each task within subspaces of image prototypes. Under the leave-one-subject-out (LOSO) setting across ten subjects on the THINGS-EEG dataset, SPSC improves the cross-subject reconstruction from 0.552 to 0.713 on CLIP and from 0.612 to 0.745 on Alex.5. These significant gains indicate that the semantically calibrated conditions can better support generation for the target subjects under label-free inference.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Benchmark &amp; Evaluation</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link2">
+      <summary class="paper-row-summary">
+        <span class="queue-index">3</span>
+        <span class="paper-row-copy">
+          <strong>TouchAnnotator: Multi-Source Tactile Supervision with Privileged-View Distillation</strong>
+          <small>Ao Li, Zhihao Yuan, Chubin Zhang, Kunrui Huang, Sheng Xu, Zengjue Chen, Junjie Wang, Jiawei Li, Yansong Tang</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Embodied Interaction</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 3 / arXiv:2611.09129</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09129">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Good match to criterion 3: it introduces a new embodied/human-robot supervision method with privileged-view distillation for tactile perception, which is a novel sensing angle often ignored.</p>
+        <p class="abstract">Egocentric video captures human-object interaction at scale but rarely includes tactile labels for hidden contact and pressure. We introduce TouchAnnotator, an ego-only bimanual tactile annotator trained with multi-source tactile supervision and privileged-view distillation. A canonical hand field unifies glove pressure, geometry-derived human contact, and robot fingertip deformation from six datasets and three embodiments, while source-aware masks preserve valid targets. During training, an EMA teacher observes synchronized ego and wrist views and distills hand-local representations and tactile predictions into a student that uses only ego video and estimated pose at inference. Compact past-clip memory supplies temporal context. We evaluate on EgoTouch, zero-shot FPHA transfer, and 860 synchronized glove recordings. The model transfers to bare-hand contact and produces qualitatively coherent tactile responses across bare-hand, gloved-hand, and robot embodiments. On measured recordings, it improves temporal accuracy by 5.38 points and Volumetric IoU by 5.02 points under a shared protocol. These results show that heterogeneous human--robot supervision and privileged training views can turn egocentric video into dense tactile annotations.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link3">
+      <summary class="paper-row-summary">
+        <span class="queue-index">4</span>
+        <span class="paper-row-copy">
+          <strong>VoluCompose: Constructing Compact Volumetric Visual Representations for Medical Image Understanding</strong>
+          <small>Zanting Ye, Yunrui Lin, Shengyuan Liu, Jing Hao, Chen Hu, Yefeng Zheng, Lijun Lu</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 4 / arXiv:2611.08649</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08649">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Strong match to criterion 4: it is directly about a vision foundation-model application for efficient volumetric visual representation in medical image understanding.</p>
+        <p class="abstract">Medical vision--language models can interpret volumetric images, but processing full volumes is costly because hundreds of slices produce long, redundant visual-token sequences. Existing compression methods often couple content selection with budget determination. We observe that neighboring slices share visual features and that attention concentration varies across visual encoders. We propose VoluCompose, a training-free, model-agnostic framework that separates what visual content to retain from how many tokens to allocate. Its hyperbolic token composition module groups contiguous slices into ordered support units and uses the Lorentz distance to account for feature magnitude and direction during token allocation, anchor selection, and refinement. Its capacity control module uses visual-encoder attention entropy to allocate more tokens when attention is more dispersed. We evaluate VoluCompose on two tasks across three datasets and four backbones. Across nine calibrated settings, VoluCompose attains the highest mean quality--retention hypervolume among the compared methods. It achieves a mean relative quality of 121.68\% against the uncompressed references while retaining 22.78% of visual tokens on average. Compression remains robust even at a 10% token budget. Across settings, the lowest ROUGE-L ratio to the uncompressed reference is 96.4\% for VoluCompose. The corresponding minima for the compression baselines range from 15.0% to 70.5%. Code is available at https://github.com/yezanting/VoluCompose.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link5">
+      <summary class="paper-row-summary">
+        <span class="queue-index">6</span>
+        <span class="paper-row-copy">
+          <strong>T2I Models Rarely Invert Negation but Often Fail to Suppress Negated Concepts: Benchmarking Negation Suppression in Text-to-Image Generation</strong>
+          <small>Akansha Gautam, Aparna Bharati, Mayank Vatsa, Richa Singh</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">12</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 6 / arXiv:2611.09304</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09304">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>6</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4 very closely: this is a vision foundation model / text-to-image diffusion benchmark and evaluation paper focused on negation suppression.</p>
+        <p class="abstract">Text-to-image diffusion models often fail to suppress explicitly negated concepts, such as a lamp for &quot;a desk without a lamp.&quot; We introduce T2I-NSI, a benchmark and metric for measuring negation sensitivity in text-to-image generation. It pairs each negated prompt with a canonical positive counterpart and factorizes negation by linguistic form (lexical/semantic, morphological, syntactic) and target type (objects, attributes, relations, compositions, and nested cases). The benchmark contains 759,869 paired prompt atoms over a 5,082-object catalog, with 916,272 images (911,982 open-weights, 4,290 closed-source), scored by a Basic CLIP estimator and a Robust ensemble of CLIP, VQA and open-vocabulary detection. Negation sensitivity is low: open-weights generators score NSI &lt;= 0.038, while GPT-Image-1.5 and Gemini-2.5-Flash-Image reach about 0.09. The dominant failure is under-suppression rather than misdirection. Inverse interpretation is essentially absent (0.00% across over 450K atom-model evaluations), whereas models render the concept under both prompts on 8-19% of atoms and only partly suppress it on a further 9-25%; most remaining atoms are too weakly rendered to label. A blinded human study (420 atoms, nine annotators) corroborates the near-absence of inversion and the high persistence rate, and a matched-prompt comparison shows the open-versus-closed gap (~3.5x) is not a prompt-generator artifact. Code and data: https://github.com/IAB-IITJ/T2I-NSI</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link7">
+      <summary class="paper-row-summary">
+        <span class="queue-index">8</span>
+        <span class="paper-row-copy">
+          <strong>The APL Doesn&#x27;t Fall Far From The Tree: Unsupervised Artefact Prototype Learning in Histopathology</strong>
+          <small>Emilia Agasi, Charlie Gourley, C. Simon Herrington, Robert L. Hollis, T. Ian Simpson</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Medical AI</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 8 / arXiv:2611.08838</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08838">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Good match to criterion 4: it leverages pre-trained histopathology foundation-model embeddings for a new unsupervised artefact detection method.</p>
+        <p class="abstract">Histopathology foundation models provide rich representations of tissue morphology, but technical artefacts in whole slide images introduce noise that may impact diagnostic accuracy. We introduce Artefact Prototype Learning (APL), a novel approach to detecting these artefacts that exploits the geometry of pre-trained embedding spaces without manual labels or fine-tuning. Rather than treating artefacts as isolated outliers, APL computes prototypes of out-of-distribution patches and uses them to distinguish artefact-associated patterns from tissue. Evaluation on a single-centre dataset shows that APL outperforms prior methods GrandQC and HistoART in detecting artefacts such as blur, dark spots, slide edges and pen marks, but struggles with tissue folds and blood. These results show that frozen pre-trained embeddings already carry information that allows artefact detection without expensive labels or vast computational resources.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link8">
+      <summary class="paper-row-summary">
+        <span class="queue-index">9</span>
+        <span class="paper-row-copy">
+          <strong>GlobalPuzzle: Globally Informed Genetic Search for Eroded Jigsaw Puzzle Reassembly</strong>
+          <small>Lunyan Wang, Chuanzhi Xu, Ziyuan Tao, Weidong Cai</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 9 / arXiv:2611.09077</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09077">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>4</strong></span>
+          <span>Novelty <strong>6</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Partial match to criterion 3: it is a new benchmark-like/algorithmic embodied-vision style reconstruction paper, but not really embodied AI; still relevant for novel spatial/global reasoning in vision.</p>
+        <p class="abstract">Jigsaw puzzle reassembly remains a highly challenging task, particularly when piece boundaries are irregularly eroded to simulate damage to cultural artifacts. On the GAP benchmark, existing methods achieve a perfect assembly accuracy of only 0.3% on $5 \times 5$ puzzles, whereas humans can solve jigsaw puzzles with remarkably high accuracy. Humans typically approach puzzle solving by identifying potentially adjacent pieces, evaluating the current assembly, and iteratively performing complex operations such as adding pieces, replacing incorrectly placed pieces, and moving entire connected groups of pieces. However, existing methods face a fundamental limitation: approaches that leverage global visual information typically predict piece arrangements directly, making it difficult to explicitly perform such complex iterative operations, while search based methods can rearrange pieces but primarily rely on pairwise boundary compatibility, lacking global visual information to evaluate and guide the search process. To bridge this gap, we propose GlobalPuzzle, a jigsaw puzzle reassembly framework that integrates global canvas level evaluation, action guidance, and genetic search. By incorporating global visual information into the evaluation and optimization of candidate assemblies, GlobalPuzzle aims to resolve ambiguous adjacency relationships that are difficult to determine from irregularly eroded piece boundaries alone, enabling flexible, globally informed reconstruction.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link9">
+      <summary class="paper-row-summary">
+        <span class="queue-index">10</span>
+        <span class="paper-row-copy">
+          <strong>MESAM: Enhancing SAM2 for Few-Shot Segmentation through Semantic-Visual Memory Generation and Refinement</strong>
+          <small>Tianyu Zou, Shengwu Xiong, Rui Wu, Ruilin Yao, Yi Rong</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 10 / arXiv:2611.08943</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.08943">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 4: it builds on SAM2, a vision foundation model, with a new few-shot segmentation method and memory refinement strategy.</p>
+        <p class="abstract">This paper investigates how to leverage the powerful capabilities of the Segment Anything Model 2 (SAM2) to tackle few-shot segmentation (FSS) tasks. One major challenge lies in the substantial appearance differences between the support and query images, which may diminish the effectiveness of the memory-matching process in SAM2. Through systematic analysis, we find that the memory generated based on the categorical semantic information is robust to this appearance divergence and is more compatible with SAM2. Based on these observations, we propose a new Memory-Enhanced SAM2 (MESAM) method, which first introduces a Semantic-Visual Memory Generation (SVMG) module to separately construct a query semantic memory, a query foreground visual memory, and a support adaptive visual memory. Then, in our designed Interactive Semantic Memory Refinement (ISMR) module, we further enrich the obtained semantic memory with fine-grained visual details, and suppress its misatcivated background responses. Extensive experiments on the PASCAL-$5^i$, COCO-$20^i$, and LVIS-$92^i$ datasets demonstrate that MESAM consistently outperforms existing FSS methods, achieving new state-of-the-art segmentation performance. Our source code is available at: \href{https://github.com/tianyu-zou/MESAM}{https://github.com/tianyu-zou/MESAM}.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link10">
+      <summary class="paper-row-summary">
+        <span class="queue-index">11</span>
+        <span class="paper-row-copy">
+          <strong>GRAC: Graph-Based Retrieval-Augmented Captioning for Surgical Scene Description</strong>
+          <small>Rochak Dhakal, Chen Zhao, Soup Cobb, Xin Qian, Xiaofeng Yang, Weihua Zhou</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Retrieval &amp; Grounding</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 11 / arXiv:2611.09866</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09866">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: embodied/medical scene understanding with a new retrieval-augmented captioning method on surgical scene benchmarks.</p>
+        <p class="abstract">Purpose: Surgical operative reports support procedural documentation, surgical training, performance assessment, and workflow review. However, extracting meaningful information often requires extensive manual review and clinical expertise. Automated surgical scene descriptions could reduce this burden by leveraging recurring surgical activities and prior knowledge. Methods: We propose GRAC (Graph-Based Retrieval-Augmented Captioning), a framework that represents surgical scenes as graphs capturing relationships among instruments, actions, and anatomical structures. Given an input scene graph, GRAC learns to retrieve relevant graph-caption pairs from training data. It compares instrument-tissue interactions between retrieved examples and the input scene, using comparison features to condition retrieved-caption representations during generation. Results: On the EndoVis-18 benchmark, GRAC achieved a CIDEr-D of 5.88, compared with 4.23 for SGT and 3.36 for the strongest conventional Transformer baseline. Exact instrument-action-target triplet-set accuracy reached 52.6%, compared with 32.7% for SGT and 26.2% for the strongest conventional baseline. These results demonstrate improvements in language quality and factual agreement. On TORS, GRAC achieved a CIDEr-D of 5.06, compared with 3.80 for the strongest baseline. Conclusion: GRAC demonstrates that combining structured surgical scene representations with retrieved examples improves surgical scene captioning and produces more contextually meaningful descriptions.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link11">
+      <summary class="paper-row-summary">
+        <span class="queue-index">12</span>
+        <span class="paper-row-copy">
+          <strong>Left-Right-Consistent Iterative Stereo Matching via Cross-Injection</strong>
+          <small>Manuel Knott, Diogo Luvizon, Daniel Scharstein, Elias Vansteenkiste</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Generative Modeling</span>
+<span class="topic-tag">LLM Interpretability</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 12 / arXiv:2611.09458</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09458">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 1: proposes a new methodological improvement for spatial understanding in stereo matching, especially left-right consistency and occlusion handling.</p>
+        <p class="abstract">State-of-the-art stereo matching models predominantly predict the disparity of only the left (reference) view. However, applications such as per-eye AR/VR rendering, novel view synthesis, or two-view depth fusion require disparity for both views, and need those two maps to agree. The usual workaround of running the network a second time on the horizontally flipped and swapped pair gives two independent predictions that can be inconsistent, especially on transparent surfaces, in textureless regions, and at occlusion boundaries. We introduce cross-injection (CI), a lightweight extension for iterative (refinement-based) models that can be added to any pretrained left-only iterative matcher. It couples the two passes by injecting the explicit, signed left-right inconsistency as an additional input cue at every step of the refinement stage. We empirically show that CI substantially reduces left-right disagreement on every benchmark (more than halving it on Booster for FoundationStereo), while largely preserving sharp object boundaries. Furthermore, using two state-of-the-art stereo matching models, we show that CI also reduces the single-view disparity error, making it a worthwhile extension even if only left disparity is needed.</p>
+      </div>
+    </details>
+
+
+    <details class="paper-row" id="link12">
+      <summary class="paper-row-summary">
+        <span class="queue-index">13</span>
+        <span class="paper-row-copy">
+          <strong>ExQuery: Explicit Structured Query Priors for Temporal 3D Object Detection</strong>
+          <small>Honglin Sun, Yifei Zhang, Junyang Zhang, Kenji Hashimoto</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Benchmark &amp; Evaluation</span>
+<span class="topic-tag">Safety &amp; Backdoors</span>
+<span class="topic-tag">LLM Interpretability</span>
+<span class="topic-tag">Time-Series LLM</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-mid">10</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 13 / arXiv:2611.09527</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09527">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>5</strong></span>
+          <span>Novelty <strong>5</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> Matches criterion 3: an embodied/autonomous 3D perception method for temporal 3D object detection with a new structured query design.</p>
+        <p class="abstract">Sparse query-based 3D detectors commonly encode heterogeneous semantic, geometric, and motion information into unified latent queries, including when explicit 3D anchors are used. We introduce ExQuery, an explicit structured query framework for temporal 3D object detection. Each decoded query is organized into a shared semantic context slice and physical-state-specific slices for center, dimensions, orientation, and velocity. This structure is preserved from prior encoding to branch-specific regression and is reused to reconstruct temporal queries: predicted physical states are transformed by ego motion, classification scores form soft semantic priors, and the reconstructed query is fused with the stored latent instance feature through gated affine modulation. Experiments on the nuScenes benchmark show that our method achieves competitive detection performance, and ablation studies validate the effectiveness of our proposed modules.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+
+    <details class="topic-section" open>
+      <summary class="topic-heading">Safety &amp; Backdoors</summary>
+      <div class="queue">
+
+    <details class="paper-row" id="link16">
+      <summary class="paper-row-summary">
+        <span class="queue-index">17</span>
+        <span class="paper-row-copy">
+          <strong>Dual Architecture Fusion Vehicle Lidar 3D Target Detection</strong>
+          <small>Muyun Li, Weizheng Jin, Yuan Sun</small>
+
+    <div class="topic-tags" aria-label="fine-grained topic tags">
+      <span class="topic-tag">Safety &amp; Backdoors</span>
+    </div>
+
+
+    <div class="category-tags" aria-label="arXiv categories">
+      <span class="category-tag">ArXiv</span>
+    </div>
+
+        </span>
+        <span class="score-pill score-low">6</span>
+      </summary>
+      <div class="paper-row-detail">
+        <div class="paper-row-meta">
+          <span>Paper 17 / arXiv:2611.09664</span>
+          <a class="paper-action" href="https://arxiv.org/abs/2611.09664">Open arXiv</a>
+        </div>
+
+        <div class="paper-scores" aria-label="model scores">
+          <span>Relevance <strong>3</strong></span>
+          <span>Novelty <strong>3</strong></span>
+        </div>
+
+        <p class="comment"><strong>Why selected:</strong> No very close match; it is a conventional 3D lidar detection architecture paper, but not clearly a novel embodied-AI angle or benchmark.</p>
+        <p class="abstract">In this paper, a 3D backbone network (SpconvTransformer) based on the fusion of convolutional architecture branch and Transformer architecture branch is proposed. The convolution branch uses 3D sparse convolution and submanifold convolution to learn local voxel features and semantic information, and the Transformer branch uses the self-attention mechanism to model the remote relationship between voxels, uses the broad receptive field to capture rich context information, and complementing the advantages of the two architectures by fusing the local features extracted from the two branches and the global features solves the problem of limited receptive fields of 3D convolutional neural networks. The experimental results show that the average accuracy of SpconvTransformer in 3D object detection and bird&#x27;s-eye view detection tasks reaches 81.45% and 88.09%, respectively, and the average directional similarity reaches 91.10%, which is significantly better than other existing algorithms.</p>
+      </div>
+    </details>
+
+      </div>
+    </details>
+
+    </details>
+
+    </nav>
+    <section class="archive-summary">
+
+    <div class="metric">
+      <span>Archived papers</span>
+      <strong>17</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Top score</span>
+      <strong>15</strong>
+    </div>
+
+
+    <div class="metric">
+      <span>Average score</span>
+      <strong>10.4</strong>
+    </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
